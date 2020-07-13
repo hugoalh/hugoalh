@@ -4,10 +4,12 @@
 
 - [Await Time](https://github.com/hugoalh/GitHubAction.AwaitTime)
 - [Event Payload Fetcher](https://github.com/hugoalh/GitHubAction.EventPayloadFetcher)
+- [Repository Label Manager](https://github.com/hugoalh/GitHubAction.RepositoryLabelManager)
+- [Repository Secret Manager](https://github.com/hugoalh/GitHubAction.RepositorySecretManager)
 - [Send To Discord](https://github.com/hugoalh/GitHubAction.SendToDiscord)
 - [Send To IFTTT](https://github.com/hugoalh/GitHubAction.SendToIFTTT)
 
-### NodeJS/NPMJS Module/Library
+### NodeJS/NPM Module/Library
 
 - [Advanced Determine](https://github.com/hugoalh/AdvancedDetermine)
 - [Advanced Random](https://github.com/hugoalh/AdvancedRandom)

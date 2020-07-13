@@ -8,6 +8,7 @@
 
 - [Await Time](https://github.com/hugoalh/GitHubAction.AwaitTime)
 - [Event Payload Fetcher](https://github.com/hugoalh/GitHubAction.EventPayloadFetcher)
+- 🚧 [Minecraft Java Data Pack Code Quality Review](https://github.com/hugoalh/GitHubAction.MinecraftJavaDataPackCodeQualityReview)
 - 🚧 [Repository Label Manager](https://github.com/hugoalh/GitHubAction.RepositoryLabelManager)
 - 🚧 [Repository Secret Manager](https://github.com/hugoalh/GitHubAction.RepositorySecretManager)
 - [Send To Discord](https://github.com/hugoalh/GitHubAction.SendToDiscord)

@@ -20,5 +20,5 @@
 - [Advanced Random](https://github.com/hugoalh/NodeJS.AdvancedRandom)
 - [More Array](https://github.com/hugoalh/NodeJS.MoreArray)
 - 🚧 [More JSON](https://github.com/hugoalh/NodeJS.MoreJSON)
-- 🚧 [More String](https://github.com/hugoalh/NodeJS.MoreString)
+- [More String](https://github.com/hugoalh/NodeJS.MoreString)
 - 🚧 [Network Request](https://github.com/hugoalh/NodeJS.NetworkRequest)

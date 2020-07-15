@@ -11,6 +11,7 @@
 - 🚧 [Minecraft Java Data Pack Code Quality Review](https://github.com/hugoalh/GitHubAction.MinecraftJavaDataPackCodeQualityReview)
 - 🚧 [Repository Label Manager](https://github.com/hugoalh/GitHubAction.RepositoryLabelManager)
 - 🚧 [Repository Secret Manager](https://github.com/hugoalh/GitHubAction.RepositorySecretManager)
+- 🚧 [Repository Wiki Manager](https://github.com/hugoalh/GitHubAction.RepositoryWikiManager)
 - [Send To Discord](https://github.com/hugoalh/GitHubAction.SendToDiscord)
 - [Send To IFTTT](https://github.com/hugoalh/GitHubAction.SendToIFTTT)
 

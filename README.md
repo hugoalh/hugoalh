@@ -1,10 +1,17 @@
 # [@hugoalh](https://github.com/hugoalh)
 
-[![](https://hugoalh.github.io/Library.SVG.Icon/Twitter.svg)](https://twitter.com/hugoalhofficial)
+[![Twitter](https://hugoalh.github.io/Library.SVG.Icon/Twitter.svg)](https://twitter.com/hugoalhofficial)
+
+## Programming Language
+
+- HTML / CSS
+- JavaScript / NodeJS
+- ModernScript
+- Python
 
 ## Project
 
-### ![](https://hugoalh.github.io/Library.SVG.Icon/GitHub.svg) GitHub Action
+### ![GitHub](https://hugoalh.github.io/Library.SVG.Icon/GitHub.svg) GitHub Action
 
 - [Await Time](https://github.com/hugoalh/GitHubAction.AwaitTime)
 - [Event Payload Fetcher](https://github.com/hugoalh/GitHubAction.EventPayloadFetcher)
@@ -15,7 +22,7 @@
 - [Send To Discord](https://github.com/hugoalh/GitHubAction.SendToDiscord)
 - [Send To IFTTT](https://github.com/hugoalh/GitHubAction.SendToIFTTT)
 
-### ![](https://hugoalh.github.io/Library.SVG.Icon/NodeJS_Alt.svg)![](https://hugoalh.github.io/Library.SVG.Icon/NPM_Alt.svg) NodeJS/NPM Module/Library
+### ![NodeJS](https://hugoalh.github.io/Library.SVG.Icon/NodeJS_Alt.svg)![NPM](https://hugoalh.github.io/Library.SVG.Icon/NPM_Alt.svg) NodeJS/NPM Module/Library
 
 - [Advanced Determine](https://github.com/hugoalh/NodeJS.AdvancedDetermine)
 - [Advanced Random](https://github.com/hugoalh/NodeJS.AdvancedRandom)

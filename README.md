@@ -26,6 +26,7 @@
 
 - [Advanced Determine](https://github.com/hugoalh/NodeJS.AdvancedDetermine)
 - [Advanced Random](https://github.com/hugoalh/NodeJS.AdvancedRandom)
+- 🚧 [Discord Webhook](https://github.com/hugoalh/NodeJS.DiscordWebhook)
 - [More Array](https://github.com/hugoalh/NodeJS.MoreArray)
 - 🚧 [More JSON](https://github.com/hugoalh/NodeJS.MoreJSON)
 - [More String](https://github.com/hugoalh/NodeJS.MoreString)

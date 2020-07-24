@@ -22,6 +22,10 @@
 - [Send To Discord](https://github.com/hugoalh/GitHubAction.SendToDiscord)
 - [Send To IFTTT](https://github.com/hugoalh/GitHubAction.SendToIFTTT)
 
+### ![JavaScript](https://hugoalh.github.io/Library.SVG.Icon/JavaScript.svg) JavaScript
+
+- 🧪 [JavaScript Macro](https://github.com/hugoalh-studio/JavaScriptMacro)
+
 ### ![Minecraft Creeper](https://hugoalh.github.io/Library.SVG.Icon/Minecraft/Creeper_Face.svg) Minecraft
 
 - [\[Java Data Pack\] Disable Minecraft Advancement](https://github.com/hugoalh/Minecraft.Java.DataPack.DisableMinecraftAdvancement)

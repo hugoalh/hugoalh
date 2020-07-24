@@ -22,6 +22,16 @@
 - [Send To Discord](https://github.com/hugoalh/GitHubAction.SendToDiscord)
 - [Send To IFTTT](https://github.com/hugoalh/GitHubAction.SendToIFTTT)
 
+### ![Minecraft Creeper](https://hugoalh.github.io/Library.SVG.Icon/Minecraft/Creeper_Face.svg) Minecraft
+
+- [\[Java Data Pack\] Disable Minecraft Advancement](https://github.com/hugoalh/Minecraft.Java.DataPack.DisableMinecraftAdvancement)
+- [\[Java Data Pack\] Enchant+](https://github.com/hugoalh/Minecraft.Java.DataPack.EnchantPlus)
+- [\[Java Data Pack\] No Enderman Griefing](https://github.com/hugoalh/Minecraft.Java.DataPack.NoEndermanGriefing)
+- [\[Java Data Pack\] No Item Despawn](https://github.com/hugoalh/Minecraft.Java.DataPack.NoItemDespawn)
+- [\[Java Data Pack\] No Mob Despawn](https://github.com/hugoalh/Minecraft.Java.DataPack.NoMobDespawn)
+- [\[Java Data Pack\] Recipe+](https://github.com/hugoalh/Minecraft.Java.DataPack.RecipePlus)
+- [\[Java Data Pack\] Tag+](https://github.com/hugoalh/Minecraft.Java.DataPack.TagPlus)
+
 ### ![NodeJS](https://hugoalh.github.io/Library.SVG.Icon/NodeJS_Alt.svg)![NPM](https://hugoalh.github.io/Library.SVG.Icon/NPM_Alt.svg) NodeJS/NPM Module/Library
 
 - [Advanced Determine](https://github.com/hugoalh/NodeJS.AdvancedDetermine)

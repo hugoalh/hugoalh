@@ -15,16 +15,16 @@
 
 - [Await Time](https://github.com/hugoalh/GitHubAction.AwaitTime)
 - [Event Payload Fetcher](https://github.com/hugoalh/GitHubAction.EventPayloadFetcher)
-- 🚧 [Minecraft Java Data Pack Code Quality Review](https://github.com/hugoalh/GitHubAction.MinecraftJavaDataPackCodeQualityReview)
-- 🚧 [Repository Label Manager](https://github.com/hugoalh/GitHubAction.RepositoryLabelManager)
-- 🚧 [Repository Secret Manager](https://github.com/hugoalh/GitHubAction.RepositorySecretManager)
-- 🚧 [Repository Wiki Manager](https://github.com/hugoalh/GitHubAction.RepositoryWikiManager)
+- [🚧 Minecraft Java Data Pack Lint (MJDPLint)](https://github.com/hugoalh/GitHubAction.MinecraftJavaDataPackLint)
+- [🚧 Repository Label Manager](https://github.com/hugoalh/GitHubAction.RepositoryLabelManager)
+- [🚧 Repository Secret Manager](https://github.com/hugoalh/GitHubAction.RepositorySecretManager)
+- [🚧 Repository Wiki Manager](https://github.com/hugoalh/GitHubAction.RepositoryWikiManager)
 - [Send To Discord](https://github.com/hugoalh/GitHubAction.SendToDiscord)
 - [Send To IFTTT](https://github.com/hugoalh/GitHubAction.SendToIFTTT)
 
 ### ![JavaScript](https://hugoalh.github.io/Library.SVG.Icon/JavaScript.svg) JavaScript
 
-- 🧪 [JavaScript Macro](https://github.com/hugoalh-studio/JavaScriptMacro)
+- [🧪 JavaScript Macro](https://github.com/hugoalh-studio/JavaScriptMacro)
 
 ### ![Minecraft Creeper](https://hugoalh.github.io/Library.SVG.Icon/Minecraft/Creeper_Face.svg) Minecraft
 
@@ -44,8 +44,10 @@
 
 - [Advanced Determine](https://github.com/hugoalh/NodeJS.AdvancedDetermine)
 - [Advanced Random](https://github.com/hugoalh/NodeJS.AdvancedRandom)
-- 🚧 [Discord Webhook](https://github.com/hugoalh/NodeJS.DiscordWebhook)
+- [🚧 Discord Webhook](https://github.com/hugoalh/NodeJS.DiscordWebhook)
+- [🚧 IFTTT Webhook](https://github.com/hugoalh/NodeJS.IFTTTWebhook)
+- [🚧 Minecraft Java Data Pack Lint (MJDPLint)](https://github.com/hugoalh/NodeJS.MinecraftJavaDataPackLint)
 - [More Array](https://github.com/hugoalh/NodeJS.MoreArray)
-- 🚧 [More JSON](https://github.com/hugoalh/NodeJS.MoreJSON)
-- [More String](https://github.com/hugoalh/NodeJS.MoreString)
-- 🚧 [Network Request](https://github.com/hugoalh/NodeJS.NetworkRequest)
+- [🚧 More JSON](https://github.com/hugoalh/NodeJS.MoreJSON)
+- [🧪 More String](https://github.com/hugoalh/NodeJS.MoreString)
+- [🚧 Network Request](https://github.com/hugoalh/NodeJS.NetworkRequest)

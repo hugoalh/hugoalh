@@ -1,12 +1,17 @@
 # [@hugoalh](https://github.com/hugoalh)
 
+## Network
+
 [![Twitter](https://hugoalh.github.io/Library.SVG.Icon/Twitter.svg)](https://twitter.com/hugoalhofficial)
 
 ## Programming Language
 
-- HTML / CSS
-- JavaScript / NodeJS
+- CSS
+- HTML
+- JavaScript
+- MCFunction
 - ModernScript
+- NodeJS
 - Python
 
 ## Project

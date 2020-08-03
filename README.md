@@ -51,6 +51,7 @@
 - [Advanced Random](https://github.com/hugoalh/NodeJS.AdvancedRandom)
 - [🚧 Discord Webhook](https://github.com/hugoalh/NodeJS.DiscordWebhook)
 - [🚧 IFTTT Webhook](https://github.com/hugoalh/NodeJS.IFTTTWebhook)
+- [🚧 Minecraft Java Data Pack Compiler (MJDPC)](https://github.com/hugoalh/NodeJS.MinecraftJavaDataPackCompiler)
 - [🚧 Minecraft Java Data Pack Lint (MJDPLint)](https://github.com/hugoalh/NodeJS.MinecraftJavaDataPackLint)
 - [More Array](https://github.com/hugoalh/NodeJS.MoreArray)
 - [🚧 More JSON](https://github.com/hugoalh/NodeJS.MoreJSON)

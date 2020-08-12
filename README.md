@@ -54,7 +54,7 @@
 - [🚧 Minecraft Java Data Pack Compiler (MJDPC)](https://github.com/hugoalh/NodeJS.MinecraftJavaDataPackCompiler)
 - [🚧 Minecraft Java Data Pack Lint (MJDPLint)](https://github.com/hugoalh/NodeJS.MinecraftJavaDataPackLint)
 - [More Array](https://github.com/hugoalh/NodeJS.MoreArray)
-- [🚧 More JSON](https://github.com/hugoalh/NodeJS.MoreJSON)
+- [🚧 More Object](https://github.com/hugoalh/NodeJS.MoreObject)
 - [🧪 More String](https://github.com/hugoalh/NodeJS.MoreString)
 - [🚧 Network Request](https://github.com/hugoalh/NodeJS.NetworkRequest)
 - [Read Directory Depth](https://github.com/hugoalh/NodeJS.ReadDirectoryDepth)

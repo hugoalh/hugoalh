@@ -30,6 +30,7 @@
 
 ### ![JavaScript](https://hugoalh.github.io/Library.SVG.Icon/JavaScript.svg) JavaScript
 
+- [🚧 Advanced Determine](https://github.com/hugoalh-studio/JavaScript.AdvancedDetermine)
 - [🚧 Unit Convert](https://github.com/hugoalh-studio/JavaScript.UnitConvert)
 
 ### ![Minecraft Creeper](https://hugoalh.github.io/Library.SVG.Icon/Minecraft/Creeper_Face.svg) Minecraft

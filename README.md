@@ -58,6 +58,6 @@
 - [More Array](https://github.com/hugoalh/NodeJS.MoreArray)
 - [🚧 More Object](https://github.com/hugoalh/NodeJS.MoreObject)
 - [🧪 More String](https://github.com/hugoalh/NodeJS.MoreString)
-- [🚧 Network Request](https://github.com/hugoalh/NodeJS.NetworkRequest)
+- [Network Request](https://github.com/hugoalh/NodeJS.NetworkRequest)
 - [Read Directory Depth](https://github.com/hugoalh/NodeJS.ReadDirectoryDepth)
 - [🚧 Unit Convert](https://github.com/hugoalh/NodeJS.UnitConvert)

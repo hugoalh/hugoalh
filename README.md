@@ -61,3 +61,7 @@
 - [Network Request](https://github.com/hugoalh/NodeJS.NetworkRequest)
 - [Read Directory Depth](https://github.com/hugoalh/NodeJS.ReadDirectoryDepth)
 - [🚧 Unit Convert](https://github.com/hugoalh/NodeJS.UnitConvert)
+
+### Miscellaneous
+
+[Universal Blacklist](https://github.com/hugoalh/UniversalBlacklist)

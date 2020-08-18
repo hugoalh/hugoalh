@@ -75,4 +75,4 @@
 
 ### Miscellaneous
 
-- [Universal Blacklist](https://github.com/hugoalh-studio/UniversalBlacklist)
+[Universal Blacklist](https://github.com/hugoalh-studio/UniversalBlacklist)

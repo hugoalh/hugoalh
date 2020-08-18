@@ -22,8 +22,6 @@
 - [Await Time](https://github.com/hugoalh/GitHubAction.AwaitTime)
 - [Event Payload Fetcher](https://github.com/hugoalh/GitHubAction.EventPayloadFetcher)
 - [🚧 Minecraft Java Data Pack Lint (MJDPLint)](https://github.com/hugoalh/GitHubAction.MinecraftJavaDataPackLint)
-- [🚧 Repository Label Manager](https://github.com/hugoalh/GitHubAction.RepositoryLabelManager)
-- [🚧 Repository Secret Manager](https://github.com/hugoalh/GitHubAction.RepositorySecretManager)
 - [🚧 Repository Wiki Manager](https://github.com/hugoalh/GitHubAction.RepositoryWikiManager)
 - [Send To Discord](https://github.com/hugoalh/GitHubAction.SendToDiscord)
 - [Send To IFTTT](https://github.com/hugoalh/GitHubAction.SendToIFTTT)
@@ -31,6 +29,11 @@
 ### ![JavaScript](https://hugoalh.github.io/Library.SVG.Icon/JavaScript.svg) JavaScript
 
 - [🚧 Advanced Determine](https://github.com/hugoalh-studio/JavaScript.AdvancedDetermine)
+- [🚧 Advanced Random](https://github.com/hugoalh-studio/JavaScript.AdvancedRandom)
+- [🚧 More Array](https://github.com/hugoalh/JavaScript.MoreArray)
+- [🚧 More Object](https://github.com/hugoalh/JavaScript.MoreObject)
+- [🚧 More String](https://github.com/hugoalh/JavaScript.MoreString)
+- [🚧 Network Request](https://github.com/hugoalh/JavaScript.NetworkRequest)
 - [🚧 Unit Convert](https://github.com/hugoalh-studio/JavaScript.UnitConvert)
 
 ### ![Minecraft Creeper](https://hugoalh.github.io/Library.SVG.Icon/Minecraft/Creeper_Face.svg) Minecraft
@@ -52,6 +55,9 @@
 - [Advanced Determine](https://github.com/hugoalh/NodeJS.AdvancedDetermine)
 - [Advanced Random](https://github.com/hugoalh/NodeJS.AdvancedRandom)
 - [🚧 Discord Webhook](https://github.com/hugoalh/NodeJS.DiscordWebhook)
+- [🚧 GitHub Repository Label Manager](https://github.com/hugoalh/NodeJS.GitHubRepositoryLabelManager)
+- [🚧 GitHub Repository Secret Manager](https://github.com/hugoalh/NodeJS.GitHubRepositorySecretManager)
+- [🚧 GitHub Repository Wiki Manager](https://github.com/hugoalh/NodeJS.GitHubRepositoryWikiManager)
 - [🚧 IFTTT Webhook](https://github.com/hugoalh/NodeJS.IFTTTWebhook)
 - [🚧 Minecraft Java Data Pack Compiler (MJDPC)](https://github.com/hugoalh/NodeJS.MinecraftJavaDataPackCompiler)
 - [🚧 Minecraft Java Data Pack Lint (MJDPLint)](https://github.com/hugoalh/NodeJS.MinecraftJavaDataPackLint)
@@ -62,6 +68,11 @@
 - [Read Directory Depth](https://github.com/hugoalh/NodeJS.ReadDirectoryDepth)
 - [Unit Convert](https://github.com/hugoalh-studio/NodeJS.UnitConvert)
 
+### Web Application
+
+- [🧪 GitHub Repository Label Manager](https://hugoalh.github.io/GitHubRepositoryLabelManager)
+- [🚧 GitHub Repository Secret Manager](https://hugoalh.github.io/GitHubRepositorySecretManager)
+
 ### Miscellaneous
 
-[Universal Blacklist](https://github.com/hugoalh-studio/UniversalBlacklist)
+- [Universal Blacklist](https://github.com/hugoalh-studio/UniversalBlacklist)

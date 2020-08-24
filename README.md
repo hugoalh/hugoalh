@@ -30,10 +30,10 @@
 
 - [🚧 Advanced Determine](https://github.com/hugoalh-studio/JavaScript.AdvancedDetermine)
 - [🚧 Advanced Random](https://github.com/hugoalh-studio/JavaScript.AdvancedRandom)
-- [🚧 More Array](https://github.com/hugoalh/JavaScript.MoreArray)
-- [🚧 More Object](https://github.com/hugoalh/JavaScript.MoreObject)
-- [🚧 More String](https://github.com/hugoalh/JavaScript.MoreString)
-- [🚧 Network Request](https://github.com/hugoalh/JavaScript.NetworkRequest)
+- [🚧 More Array](https://github.com/hugoalh-studio/JavaScript.MoreArray)
+- [🚧 More Object](https://github.com/hugoalh-studio/JavaScript.MoreObject)
+- [🚧 More String](https://github.com/hugoalh-studio/JavaScript.MoreString)
+- [🚧 Network Request](https://github.com/hugoalh-studio/JavaScript.NetworkRequest)
 - [🚧 Unit Convert](https://github.com/hugoalh-studio/JavaScript.UnitConvert)
 
 ### ![Minecraft Creeper](https://hugoalh.github.io/Library.SVG.Icon/Minecraft/Creeper_Face.svg) Minecraft
@@ -44,34 +44,32 @@
 
 - [Disable Minecraft Advancement](https://github.com/hugoalh/Minecraft.Java.DataPack.DisableMinecraftAdvancement)
 - [Enchant+](https://github.com/hugoalh/Minecraft.Java.DataPack.EnchantPlus)
-- [No Enderman Griefing](https://github.com/hugoalh/Minecraft.Java.DataPack.NoEndermanGriefing)
-- [No Item Despawn](https://github.com/hugoalh/Minecraft.Java.DataPack.NoItemDespawn)
+- [No Enderman Griefing](https://github.com/hugoalh-studio/Minecraft.Java.DataPack.NoEndermanGriefing)
+- [No Item Despawn](https://github.com/hugoalh-studio/Minecraft.Java.DataPack.NoItemDespawn)
 - [No Mob Despawn](https://github.com/hugoalh/Minecraft.Java.DataPack.NoMobDespawn)
 - [Recipe+](https://github.com/hugoalh/Minecraft.Java.DataPack.RecipePlus)
 - [Tag+](https://github.com/hugoalh/Minecraft.Java.DataPack.TagPlus)
 
 ### ![NodeJS](https://hugoalh.github.io/Library.SVG.Icon/NodeJS_Alt.svg)![NPM](https://hugoalh.github.io/Library.SVG.Icon/NPM_Alt.svg) NodeJS/NPM Module/Library
 
-- [Advanced Determine](https://github.com/hugoalh/NodeJS.AdvancedDetermine)
+- [Advanced Determine](https://github.com/hugoalh-studio/NodeJS.AdvancedDetermine)
 - [Advanced Random](https://github.com/hugoalh/NodeJS.AdvancedRandom)
-- [🚧 Discord Webhook](https://github.com/hugoalh/NodeJS.DiscordWebhook)
-- [🚧 GitHub Repository Label Manager](https://github.com/hugoalh/NodeJS.GitHubRepositoryLabelManager)
-- [🚧 GitHub Repository Secret Manager](https://github.com/hugoalh/NodeJS.GitHubRepositorySecretManager)
-- [🚧 GitHub Repository Wiki Manager](https://github.com/hugoalh/NodeJS.GitHubRepositoryWikiManager)
-- [🚧 IFTTT Webhook](https://github.com/hugoalh/NodeJS.IFTTTWebhook)
-- [🚧 Minecraft Java Data Pack Compiler (MJDPC)](https://github.com/hugoalh/NodeJS.MinecraftJavaDataPackCompiler)
-- [🚧 Minecraft Java Data Pack Lint (MJDPLint)](https://github.com/hugoalh/NodeJS.MinecraftJavaDataPackLint)
-- [More Array](https://github.com/hugoalh/NodeJS.MoreArray)
-- [🚧 More Object](https://github.com/hugoalh/NodeJS.MoreObject)
-- [🧪 More String](https://github.com/hugoalh/NodeJS.MoreString)
+- [CLI Argument Parser](https://github.com/hugoalh-studio/NodeJS.CLIArgumentParser)
+- [🚧 Discord Webhook](https://github.com/hugoalh-studio/NodeJS.DiscordWebhook)
+- [🚧 GitHub Manager](https://github.com/hugoalh-studio/NodeJS.GitHubManager)
+- [🚧 IFTTT Webhook](https://github.com/hugoalh-studio/NodeJS.IFTTTWebhook)
+- [🚧 Minecraft Java Data Pack Compiler (MJDPC)](https://github.com/hugoalh-studio/NodeJS.MinecraftJavaDataPackCompiler)
+- [🚧 Minecraft Java Data Pack Lint (MJDPLint)](https://github.com/hugoalh-studio/NodeJS.MinecraftJavaDataPackLint)
+- [More Array](https://github.com/hugoalh-studio/NodeJS.MoreArray)
+- [🚧 More Object](https://github.com/hugoalh-studio/NodeJS.MoreObject)
+- [🧪 More String](https://github.com/hugoalh-studio/NodeJS.MoreString)
 - [Network Request](https://github.com/hugoalh/NodeJS.NetworkRequest)
 - [Read Directory Depth](https://github.com/hugoalh/NodeJS.ReadDirectoryDepth)
 - [Unit Convert](https://github.com/hugoalh-studio/NodeJS.UnitConvert)
 
 ### Web Application
 
-- [🧪 GitHub Repository Label Manager](https://hugoalh.github.io/GitHubRepositoryLabelManager)
-- [🚧 GitHub Repository Secret Manager](https://hugoalh.github.io/GitHubRepositorySecretManager)
+- [🚧 GitHub Manager](https://hugoalh.github.io/GitHubManager)
 
 ### Miscellaneous
 

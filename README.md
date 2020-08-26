@@ -48,12 +48,12 @@
 - [No Item Despawn](https://github.com/hugoalh-studio/Minecraft.Java.DataPack.NoItemDespawn)
 - [No Mob Despawn](https://github.com/hugoalh/Minecraft.Java.DataPack.NoMobDespawn)
 - [Recipe+](https://github.com/hugoalh/Minecraft.Java.DataPack.RecipePlus)
-- [Tag+](https://github.com/hugoalh/Minecraft.Java.DataPack.TagPlus)
+- [Tag+](https://github.com/hugoalh-studio/Minecraft.Java.DataPack.TagPlus)
 
 ### ![NodeJS](https://hugoalh.github.io/Library.SVG.Icon/NodeJS_Alt.svg)![NPM](https://hugoalh.github.io/Library.SVG.Icon/NPM_Alt.svg) NodeJS/NPM Module/Library
 
 - [Advanced Determine](https://github.com/hugoalh-studio/NodeJS.AdvancedDetermine)
-- [Advanced Random](https://github.com/hugoalh/NodeJS.AdvancedRandom)
+- [Advanced Random](https://github.com/hugoalh-studio/NodeJS.AdvancedRandom)
 - [CLI Argument Parser](https://github.com/hugoalh-studio/NodeJS.CLIArgumentParser)
 - [🚧 Discord Webhook](https://github.com/hugoalh-studio/NodeJS.DiscordWebhook)
 - [🚧 GitHub Manager](https://github.com/hugoalh-studio/NodeJS.GitHubManager)

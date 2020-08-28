@@ -17,10 +17,8 @@
 
 ## Project
 
-**Legend:**
-
-|  | **Description** |
-|:----|:----|
+| **Legend** | **Description** |
+|:---:|:----|
 | ❌ | **Deprecated/Removed:** This is officially deprecated/removed. |
 | 👎 | **Soon Deprecate/Remove:** This will officially deprecate/remove in the future. |
 | 🧪 | **Experimental:** This is in testing, may available in the future. |

@@ -26,7 +26,7 @@
 
 ### ![GitHub](https://hugoalh.github.io/Library.SVG.Icon/GitHub.svg) GitHub Action
 
-- **❌ Await Time:** An action to wait for a specified amount of time.
+- [**Await Time:** An action to wait for a specified amount of time.](https://github.com/hugoalh-studio/GitHubAction.AwaitTime)
 - [**👎 Event Payload Fetcher:** An action to fetch event payload.](https://github.com/hugoalh/GitHubAction.EventPayloadFetcher)
 - [🚧 Minecraft Java Data Pack Lint (MJDPLint)](https://github.com/hugoalh/GitHubAction.MinecraftJavaDataPackLint)
 - [🚧 Repository Wiki Manager](https://github.com/hugoalh/GitHubAction.RepositoryWikiManager)

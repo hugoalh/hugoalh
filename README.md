@@ -28,8 +28,8 @@
 
 ### ![GitHub](https://hugoalh.github.io/Library.SVG.Icon/GitHub.svg) GitHub Action
 
-- ❌ Await Time -- An action to wait for a specified amount of time.
-- [👎 Event Payload Fetcher](https://github.com/hugoalh/GitHubAction.EventPayloadFetcher)
+- **❌ Await Time:** An action to wait for a specified amount of time.
+- [**👎 Event Payload Fetcher:** An action to fetch event payload.](https://github.com/hugoalh/GitHubAction.EventPayloadFetcher)
 - [🚧 Minecraft Java Data Pack Lint (MJDPLint)](https://github.com/hugoalh/GitHubAction.MinecraftJavaDataPackLint)
 - [🚧 Repository Wiki Manager](https://github.com/hugoalh/GitHubAction.RepositoryWikiManager)
 - [Send To Discord](https://github.com/hugoalh/GitHubAction.SendToDiscord)

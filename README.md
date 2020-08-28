@@ -17,10 +17,19 @@
 
 ## Project
 
+**Legend:**
+
+|  | **Description** |
+|:----|:----|
+| ❌ | **Deprecated/Removed:** This is officially deprecated/removed. |
+| 👎 | **Soon Deprecate/Remove:** This will officially deprecate/remove in the future. |
+| 🧪 | **Experimental:** This is in testing, may available in the future. |
+| 🚧 | **Constructing:** This is in constructing, may available in the future. |
+
 ### ![GitHub](https://hugoalh.github.io/Library.SVG.Icon/GitHub.svg) GitHub Action
 
-- [Await Time](https://github.com/hugoalh/GitHubAction.AwaitTime)
-- [Event Payload Fetcher](https://github.com/hugoalh/GitHubAction.EventPayloadFetcher)
+- ❌ Await Time -- An action to wait for a specified amount of time.
+- [👎 Event Payload Fetcher](https://github.com/hugoalh/GitHubAction.EventPayloadFetcher)
 - [🚧 Minecraft Java Data Pack Lint (MJDPLint)](https://github.com/hugoalh/GitHubAction.MinecraftJavaDataPackLint)
 - [🚧 Repository Wiki Manager](https://github.com/hugoalh/GitHubAction.RepositoryWikiManager)
 - [Send To Discord](https://github.com/hugoalh/GitHubAction.SendToDiscord)

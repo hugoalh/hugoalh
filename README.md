@@ -28,7 +28,7 @@
 
 - [**Await Time:** An action to wait for a specified amount of time.](https://github.com/hugoalh-studio/GitHubAction.AwaitTime)
 - [**👎 Event Payload Fetcher:** An action to fetch event payload.](https://github.com/hugoalh/GitHubAction.EventPayloadFetcher)
-- [🚧 Minecraft Java Data Pack Lint (MJDPLint)](https://github.com/hugoalh/GitHubAction.MinecraftJavaDataPackLint)
+- [🚧 MJDPLint (Minecraft Java Data Pack Lint)](https://github.com/hugoalh/GitHubAction.MJDPLint)
 - [🚧 Repository Wiki Manager](https://github.com/hugoalh/GitHubAction.RepositoryWikiManager)
 - [Send To Discord](https://github.com/hugoalh/GitHubAction.SendToDiscord)
 - [Send To IFTTT](https://github.com/hugoalh/GitHubAction.SendToIFTTT)
@@ -65,13 +65,14 @@
 - [🚧 Discord Webhook](https://github.com/hugoalh-studio/NodeJS.DiscordWebhook)
 - [🚧 GitHub Manager](https://github.com/hugoalh-studio/NodeJS.GitHubManager)
 - [🚧 IFTTT Webhook](https://github.com/hugoalh-studio/NodeJS.IFTTTWebhook)
-- [🚧 Minecraft Java Data Pack Compiler (MJDPC)](https://github.com/hugoalh-studio/NodeJS.MinecraftJavaDataPackCompiler)
-- [🚧 Minecraft Java Data Pack Lint (MJDPLint)](https://github.com/hugoalh-studio/NodeJS.MinecraftJavaDataPackLint)
+- [🚧 MJDPC (Minecraft Java Data Pack Compiler)](https://github.com/hugoalh-studio/NodeJS.MJDPC)
+- [🚧 MJDPLint (Minecraft Java Data Pack Lint)](https://github.com/hugoalh-studio/NodeJS.MJDPLint)
 - [More Array](https://github.com/hugoalh-studio/NodeJS.MoreArray)
 - [🚧 More Object](https://github.com/hugoalh-studio/NodeJS.MoreObject)
 - [🧪 More String](https://github.com/hugoalh-studio/NodeJS.MoreString)
 - [Network Request](https://github.com/hugoalh/NodeJS.NetworkRequest)
 - [Read Directory Depth](https://github.com/hugoalh/NodeJS.ReadDirectoryDepth)
+- [🧪🚧 RegExpify (Regular Expressionify)](https://github.com/hugoalh-studio/NodeJS.RegExpify)
 - [Unit Convert](https://github.com/hugoalh-studio/NodeJS.UnitConvert)
 
 ### Web Application

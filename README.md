@@ -2,6 +2,7 @@
 
 ## Network
 
+[![Email](https://hugoalh.github.io/Library.SVG.Icon/Mail.svg)](mailto:32359235+hugoalh@users.noreply.github.com)
 [![Twitter](https://hugoalh.github.io/Library.SVG.Icon/Twitter.svg)](https://twitter.com/hugoalhofficial)
 
 ## Programming Language

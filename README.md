@@ -36,7 +36,7 @@
 
 ### ![JavaScript](https://hugoalh.github.io/Library.SVG.Icon/JavaScript.svg) JavaScript
 
-- [🚧 Advanced Determine](https://github.com/hugoalh-studio/JavaScript.AdvancedDetermine)
+- [🚧 **Advanced Determine:** A module/library to provide a better and more accurate way to determine item type.](https://github.com/hugoalh-studio/JavaScript.AdvancedDetermine)
 - [🚧 Advanced Random](https://github.com/hugoalh-studio/JavaScript.AdvancedRandom)
 - [🚧 More Array](https://github.com/hugoalh-studio/JavaScript.MoreArray)
 - [🚧 More Object](https://github.com/hugoalh-studio/JavaScript.MoreObject)
@@ -60,8 +60,8 @@
 
 ### ![NodeJS](https://hugoalh.github.io/Library.SVG.Icon/NodeJS_Alt.svg)![NPM](https://hugoalh.github.io/Library.SVG.Icon/NPM_Alt.svg) NodeJS/NPM Module/Library
 
-- [Advanced Determine](https://github.com/hugoalh-studio/NodeJS.AdvancedDetermine)
-- [Advanced Random](https://github.com/hugoalh-studio/NodeJS.AdvancedRandom)
+- [**Advanced Determine:** A module/library to provide a better and more accurate way to determine item type.](https://github.com/hugoalh-studio/NodeJS.AdvancedDetermine)
+- [**Advanced Random:** A module/library to provide a better random method via crypto.](https://github.com/hugoalh-studio/NodeJS.AdvancedRandom)
 - [CLI Argument Parser](https://github.com/hugoalh-studio/NodeJS.CLIArgumentParser)
 - [🚧 Discord Webhook](https://github.com/hugoalh-studio/NodeJS.DiscordWebhook)
 - [🚧 GitHub Manager](https://github.com/hugoalh-studio/NodeJS.GitHubManager)

@@ -31,8 +31,8 @@
 - [**👎 Event Payload Fetcher:** An action to fetch event payload.](https://github.com/hugoalh/GitHubAction.EventPayloadFetcher)
 - [🚧 MJDPLint (Minecraft Java Data Pack Lint)](https://github.com/hugoalh/GitHubAction.MJDPLint)
 - [🚧 Repository Wiki Manager](https://github.com/hugoalh/GitHubAction.RepositoryWikiManager)
-- [Send To Discord](https://github.com/hugoalh/GitHubAction.SendToDiscord)
-- [Send To IFTTT](https://github.com/hugoalh/GitHubAction.SendToIFTTT)
+- [**Send To Discord:** Send message to Discord via webhook, support variables.](https://github.com/hugoalh/GitHubAction.SendToDiscord)
+- [**Send To IFTTT:** Send data to IFTTT applet via webhook, support variables.](https://github.com/hugoalh/GitHubAction.SendToIFTTT)
 
 ### ![JavaScript](https://hugoalh.github.io/Library.SVG.Icon/JavaScript.svg) JavaScript
 

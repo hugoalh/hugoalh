@@ -10,7 +10,7 @@
 - CSS
 - HTML
 - JavaScript
-- MCFunction
+- MCFunction (Minecraft Java Function)
 - ModernScript
 - NodeJS
 - Python

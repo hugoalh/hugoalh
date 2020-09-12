@@ -28,7 +28,8 @@
 ### ![GitHub](https://hugoalh.github.io/Library.SVG.Icon/GitHub.svg) GitHub Action
 
 - [**Await Time:** An action to wait for a specified amount of time.](https://github.com/hugoalh-studio/GitHubAction.AwaitTime)
-- [**👎 Event Payload Fetcher:** An action to fetch event payload.](https://github.com/hugoalh/GitHubAction.EventPayloadFetcher)
+- [**❌ Event Payload Fetcher:** An action to fetch event payload.](https://github.com/hugoalh/GitHubAction.EventPayloadFetcher)
+- [🚧 LGTM Analysis Trigger](https://github.com/hugoalh/GitHubAction.LGTMAnalysisTrigger)
 - [🚧 MJDPLint (Minecraft Java Data Pack Lint)](https://github.com/hugoalh/GitHubAction.MJDPLint)
 - [🚧 Repository Wiki Manager](https://github.com/hugoalh/GitHubAction.RepositoryWikiManager)
 - [**Send To Discord:** Send message to Discord via webhook, support variables.](https://github.com/hugoalh/GitHubAction.SendToDiscord)

@@ -80,7 +80,7 @@
 
 ### Web Application
 
-- [🚧 GitHub Manager](https://hugoalh.github.io/GitHubManager)
+[🚧 GitHub Manager](https://hugoalh.github.io/GitHubManager)
 
 ### Miscellaneous
 

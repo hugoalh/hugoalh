@@ -1,0 +1,13 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "00:00"
+    # assignees:
+    # labels:
+    open-pull-requests-limit: 128
+    pull-request-branch-name:
+      separator: "/"
+    rebase-strategy: "disabled"

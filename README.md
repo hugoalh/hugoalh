@@ -34,7 +34,6 @@
 
 <kbd>[Await Time](https://github.com/hugoalh-studio/GitHubAction.AwaitTime)</kbd>
 <kbd>[Event Payload Fetcher ❌](https://github.com/hugoalh/GitHubAction.EventPayloadFetcher)</kbd>
-<kbd>[LGTM Analysis Trigger 🚧](https://github.com/hugoalh/GitHubAction.LGTMAnalysisTrigger)</kbd>
 <kbd>[MJDPLint (Minecraft Java Data Pack Lint) 🚧](https://github.com/hugoalh/GitHubAction.MJDPLint)</kbd>
 <kbd>[Repository Wiki Manager 🚧](https://github.com/hugoalh/GitHubAction.RepositoryWikiManager)</kbd>
 <kbd>[Send To Discord](https://github.com/hugoalh/GitHubAction.SendToDiscord)</kbd>

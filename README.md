@@ -32,7 +32,7 @@
 
 ### <img align="center" alt="GitHub" src="https://hugoalh.github.io/Library.SVG.Icon/GitHub.svg" /> GitHub Action
 
-<kbd>[Await Time](https://github.com/hugoalh-studio/GitHubAction.AwaitTime)</kbd>
+<kbd>[Await Time ❌](https://github.com/hugoalh-studio/GitHubAction.AwaitTime)</kbd>
 <kbd>[Event Payload Fetcher ❌](https://github.com/hugoalh/GitHubAction.EventPayloadFetcher)</kbd>
 <kbd>[MJDPLint (Minecraft Java Data Pack Lint) 🚧](https://github.com/hugoalh/GitHubAction.MJDPLint)</kbd>
 <kbd>[Repository Wiki Manager 🚧](https://github.com/hugoalh/GitHubAction.RepositoryWikiManager)</kbd>

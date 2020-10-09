@@ -43,9 +43,7 @@
 
 <kbd>[Advanced Determine 🚧](https://github.com/hugoalh-studio/JavaScript.AdvancedDetermine)</kbd>
 <kbd>[Advanced Random 🚧](https://github.com/hugoalh-studio/JavaScript.AdvancedRandom)</kbd>
-<kbd>[More Array 🚧](https://github.com/hugoalh-studio/JavaScript.MoreArray)</kbd>
-<kbd>[More Object 🚧](https://github.com/hugoalh-studio/JavaScript.MoreObject)</kbd>
-<kbd>[More String 🚧](https://github.com/hugoalh-studio/JavaScript.MoreString)</kbd>
+<kbd>[More Method 🚧](https://github.com/hugoalh-studio/JavaScript.MoreMethod)</kbd>
 <kbd>[Network Request 🚧](https://github.com/hugoalh-studio/JavaScript.NetworkRequest)</kbd>
 <kbd>[Unit Convert 🚧](https://github.com/hugoalh-studio/JavaScript.UnitConvert)</kbd>
 
@@ -68,15 +66,14 @@
 <kbd>[Advanced Determine](https://github.com/hugoalh-studio/NodeJS.AdvancedDetermine)</kbd>
 <kbd>[Advanced Random](https://github.com/hugoalh-studio/NodeJS.AdvancedRandom)</kbd>
 <kbd>[CLI Argument Parser](https://github.com/hugoalh-studio/NodeJS.CLIArgumentParser)</kbd>
-<kbd>[Discord Webhook  🚧](https://github.com/hugoalh-studio/NodeJS.DiscordWebhook)</kbd>
-<kbd>[GitHub Manager  🚧](https://github.com/hugoalh-studio/NodeJS.GitHubManager)</kbd>
-<kbd>[IFTTT Webhook  🚧](https://github.com/hugoalh-studio/NodeJS.IFTTTWebhook)</kbd>
+<kbd>[Discord Webhook 🚧](https://github.com/hugoalh-studio/NodeJS.DiscordWebhook)</kbd>
+<kbd>[GitHub Manager 🚧](https://github.com/hugoalh-studio/NodeJS.GitHubManager)</kbd>
+<kbd>[IFTTT Webhook 🚧](https://github.com/hugoalh-studio/NodeJS.IFTTTWebhook)</kbd>
 <kbd>[MATS (Make Asynchronous To Synchronous) ❌](https://github.com/hugoalh-studio/NodeJS.MATS)</kbd>
-<kbd>[MJDPC (Minecraft Java Data Pack Compiler)  🚧](https://github.com/hugoalh-studio/NodeJS.MJDPC)</kbd>
-<kbd>[MJDPLint (Minecraft Java Data Pack Lint)  🚧](https://github.com/hugoalh-studio/NodeJS.MJDPLint)</kbd>
-<kbd>[More Array](https://github.com/hugoalh-studio/NodeJS.MoreArray)</kbd>
-<kbd>[More Object  🚧](https://github.com/hugoalh-studio/NodeJS.MoreObject)</kbd>
-<kbd>[More String 🧪](https://github.com/hugoalh-studio/NodeJS.MoreString)</kbd>
+<kbd>[MJDPC (Minecraft Java Data Pack Compiler) 🚧](https://github.com/hugoalh-studio/NodeJS.MJDPC)</kbd>
+<kbd>[MJDPLint (Minecraft Java Data Pack Lint) 🚧](https://github.com/hugoalh-studio/NodeJS.MJDPLint)</kbd>
+<kbd>[More Array 👎](https://github.com/hugoalh-studio/NodeJS.MoreArray)</kbd>
+<kbd>[More Method 🚧](https://github.com/hugoalh-studio/NodeJS.MoreMethod)</kbd>
 <kbd>[Network Request](https://github.com/hugoalh/NodeJS.NetworkRequest)</kbd>
 <kbd>[Read Directory Depth](https://github.com/hugoalh/NodeJS.ReadDirectoryDepth)</kbd>
 <kbd>[RegExpify (Regular Expressionify) 🧪](https://github.com/hugoalh-studio/NodeJS.RegExpify)</kbd>

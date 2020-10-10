@@ -61,7 +61,7 @@
 <kbd>[Recipe+](https://github.com/hugoalh/Minecraft.Java.DataPack.RecipePlus)</kbd>
 <kbd>[Tag+](https://github.com/hugoalh-studio/Minecraft.Java.DataPack.TagPlus)</kbd>
 
-### <img align="center" alt="NodeJS" src="https://hugoalh.github.io/Library.SVG.Icon/NodeJS_Alt.svg" /><img align="center" alt="NPM" src="https://hugoalh.github.io/Library.SVG.Icon/NPM_Alt.svg" /> NodeJS/NPM Module/Library
+### <img align="center" alt="NodeJS" src="https://hugoalh.github.io/Library.SVG.Icon/NodeJS_Alt.svg" /> NodeJS
 
 <kbd>[Advanced Determine](https://github.com/hugoalh-studio/NodeJS.AdvancedDetermine)</kbd>
 <kbd>[Advanced Random](https://github.com/hugoalh-studio/NodeJS.AdvancedRandom)</kbd>

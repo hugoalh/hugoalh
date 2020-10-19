@@ -76,7 +76,6 @@
 <kbd>[More Method 🚧](https://github.com/hugoalh-studio/NodeJS.MoreMethod)</kbd>
 <kbd>[Network Request](https://github.com/hugoalh/NodeJS.NetworkRequest)</kbd>
 <kbd>[Read Directory Depth](https://github.com/hugoalh/NodeJS.ReadDirectoryDepth)</kbd>
-<kbd>[RegExpify (Regular Expressionify) 🧪](https://github.com/hugoalh-studio/NodeJS.RegExpify)</kbd>
 <kbd>[Unit Convert 🧪](https://github.com/hugoalh-studio/NodeJS.UnitConvert)</kbd>
 
 ### Web Application

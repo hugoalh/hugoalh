@@ -32,6 +32,7 @@
 <kbd>[Await Time ❌](https://github.com/hugoalh-studio/GitHubAction.AwaitTime)</kbd>
 <kbd>[Event Payload Fetcher ❌](https://github.com/hugoalh/GitHubAction.EventPayloadFetcher)</kbd>
 <kbd>[File Unifier 🚧](https://github.com/hugoalh/GitHubAction.FileUnifier)</kbd>
+<kbd>[GitHub Secret Manager 🚧](https://github.com/hugoalh/GitHubAction.GitHubSecretManager)</kbd>
 <kbd>[MJDPLint (Minecraft Java Data Pack Lint) 🚧](https://github.com/hugoalh/GitHubAction.MJDPLint)</kbd>
 <kbd>[Send To Discord](https://github.com/hugoalh/GitHubAction.SendToDiscord)</kbd>
 <kbd>[Send To IFTTT](https://github.com/hugoalh/GitHubAction.SendToIFTTT)</kbd>

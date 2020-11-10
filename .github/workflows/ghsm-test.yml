@@ -1,0 +1,16 @@
+name: "GHSM Test"
+on: "workflow_dispatch"
+jobs:
+  test1:
+    name: "Test 1"
+    runs-on: "ubuntu-latest"
+    steps:
+      - id: "test1-main"
+        uses: "hugoalh/GitHubAction.GitHubSecretManager@master"
+        with:
+          token: "${{secrets.GITHUB_TOKEN_FOR_GHSM}}"
+          mode: "pushmerge"
+          target: |
+            hugoalh/Library.RepositoryResource
+          prefix: "ghsm_"
+          ghsm_ghsm_test: "${{secrets.GHSM_TEST}}"

@@ -8,7 +8,7 @@ jobs:
       - id: "test1-main"
         uses: "hugoalh/GitHubAction.GitHubSecretManager@master"
         with:
-          token: "${{secrets.GITHUB_TOKEN_FOR_GHSM}}"
+          token: "${{secrets.GHT_FOR_GHSM}}"
           mode: "pushmerge"
           target: |
             hugoalh/Library.RepositoryResource

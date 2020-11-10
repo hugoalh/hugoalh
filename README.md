@@ -65,13 +65,15 @@
 <kbd>[Advanced Random](https://github.com/hugoalh-studio/NodeJS.AdvancedRandom)</kbd>
 <kbd>[CLI Argument Parser 🧪](https://github.com/hugoalh-studio/NodeJS.CLIArgumentParser)</kbd>
 <kbd>[GitHub Manager](https://github.com/hugoalh-studio/NodeJS.GitHubManager)</kbd>
+<kbd>[GitHub Sodium](https://github.com/hugoalh-studio/NodeJS.GitHubSodium)</kbd>
 <kbd>[MATS (Make Asynchronous To Synchronous) ❌](https://github.com/hugoalh-studio/NodeJS.MATS)</kbd>
 <kbd>[MJDPC (Minecraft Java Data Pack Compiler) 🚧](https://github.com/hugoalh-studio/NodeJS.MJDPC)</kbd>
 <kbd>[MJDPLint (Minecraft Java Data Pack Lint) 🚧](https://github.com/hugoalh-studio/NodeJS.MJDPLint)</kbd>
 <kbd>[More Array 👎](https://github.com/hugoalh-studio/NodeJS.MoreArray)</kbd>
 <kbd>[More Method 🚧](https://github.com/hugoalh-studio/NodeJS.MoreMethod)</kbd>
-<kbd>[Network Request ⏸](https://github.com/hugoalh/NodeJS.NetworkRequest)</kbd>
+<kbd>[Network Request ❌](https://github.com/hugoalh/NodeJS.NetworkRequest)</kbd>
 <kbd>[Read Directory Depth ⏸](https://github.com/hugoalh/NodeJS.ReadDirectoryDepth)</kbd>
+<kbd>[Symmetric Crypto](https://github.com/hugoalh-studio/NodeJS.SymmetricCrypto)</kbd>
 <kbd>[Unit Convert 🧪](https://github.com/hugoalh-studio/NodeJS.UnitConvert)</kbd>
 
 ### Web Application

@@ -32,7 +32,7 @@
 <kbd>[Await Time ❌](https://github.com/hugoalh-studio/GitHubAction.AwaitTime)</kbd>
 <kbd>[Event Payload Fetcher ❌](https://github.com/hugoalh/GitHubAction.EventPayloadFetcher)</kbd>
 <kbd>[File Unifier 🚧](https://github.com/hugoalh/GitHubAction.FileUnifier)</kbd>
-<kbd>[GitHub Secret Manager 🚧](https://github.com/hugoalh/GitHubAction.GitHubSecretManager)</kbd>
+<kbd>[GitHub Secret Manager](https://github.com/hugoalh/GitHubAction.GitHubSecretManager)</kbd>
 <kbd>[MJDPLint (Minecraft Java Data Pack Lint) 🚧](https://github.com/hugoalh/GitHubAction.MJDPLint)</kbd>
 <kbd>[Send To Discord](https://github.com/hugoalh/GitHubAction.SendToDiscord)</kbd>
 <kbd>[Send To IFTTT](https://github.com/hugoalh/GitHubAction.SendToIFTTT)</kbd>
@@ -42,7 +42,6 @@
 <kbd>[Advanced Determine 🚧](https://github.com/hugoalh-studio/JavaScript.AdvancedDetermine)</kbd>
 <kbd>[Advanced Random 🚧](https://github.com/hugoalh-studio/JavaScript.AdvancedRandom)</kbd>
 <kbd>[More Method 🚧](https://github.com/hugoalh-studio/JavaScript.MoreMethod)</kbd>
-<kbd>[Network Request 🚧](https://github.com/hugoalh-studio/JavaScript.NetworkRequest)</kbd>
 <kbd>[Unit Convert 🚧](https://github.com/hugoalh-studio/JavaScript.UnitConvert)</kbd>
 
 ### <img align="center" alt="Minecraft Creeper" src="https://hugoalh.github.io/Library.SVG.Icon/Minecraft/Creeper_Face.svg" /> Minecraft

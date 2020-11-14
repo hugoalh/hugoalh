@@ -10,13 +10,12 @@ jobs:
       - id: "discord-english-main"
         uses: "hugoalh/GitHubAction.SendToDiscord@v3.0.0"
         with:
-          configuration: ".github/workflows_configuration/happy-birthday-send-to-discord.yml"
-          webhook_id: "${{secrets.DISCORD_WEBHOOK_BIRTHDAYCAKE_ID}}"
-          webhook_token: "${{secrets.DISCORD_WEBHOOK_BIRTHDAYCAKE_TOKEN}}"
+          webhook_id: "${{secrets.DISCORD_WEBHOOK_HUGOALHSTUDIO_STUDIOANNOUNCEMENT_BIRTHDAYCAKE_ID}}"
+          webhook_token: "${{secrets.DISCORD_WEBHOOK_HUGOALHSTUDIO_STUDIOANNOUNCEMENT_BIRTHDAYCAKE_TOKEN}}"
           variable_join: "."
-          # variable_list_external:
           variable_prefix: "%"
           variable_suffix: "%"
+          message_text: "🎉 Happy birthday, hugoalh! 🎂"
   ifttt-english:
     name: "IFTTT (English)"
     runs-on: "ubuntu-latest"
@@ -25,11 +24,8 @@ jobs:
         uses: "hugoalh/GitHubAction.SendToIFTTT@v3.0.0"
         with:
           webhook_eventname: "githubaction_twitter"
-          webhook_key: "${{secrets.IFTTT_WEBHOOK_KEY}}"
+          webhook_key: "${{secrets.IFTTT_WEBHOOK_HUGOALH_KEY}}"
           variable_join: "."
-          # variable_list_external:
           variable_prefix: "%"
           variable_suffix: "%"
           value1: "🎉 Happy birthday, hugoalh! 🎂"
-          # value2:
-          # value3:

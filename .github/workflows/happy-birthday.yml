@@ -10,8 +10,8 @@ jobs:
       - id: "discord-english-main"
         uses: "hugoalh/GitHubAction.SendToDiscord@v3.0.0"
         with:
-          webhook_id: "${{secrets.DISCORD_WEBHOOK_HUGOALHSTUDIO_STUDIOANNOUNCEMENT_BIRTHDAYCAKE_ID}}"
-          webhook_token: "${{secrets.DISCORD_WEBHOOK_HUGOALHSTUDIO_STUDIOANNOUNCEMENT_BIRTHDAYCAKE_TOKEN}}"
+          webhook_id: "${{secrets.DISCORDWEBHOOK_HUGOALHSTUDIO_STUDIOANNOUNCEMENT_BIRTHDAYCAKE_ID}}"
+          webhook_token: "${{secrets.DISCORDWEBHOOK_HUGOALHSTUDIO_STUDIOANNOUNCEMENT_BIRTHDAYCAKE_TOKEN}}"
           variable_join: "."
           variable_prefix: "%"
           variable_suffix: "%"
@@ -24,7 +24,7 @@ jobs:
         uses: "hugoalh/GitHubAction.SendToIFTTT@v3.0.0"
         with:
           webhook_eventname: "githubaction_twitter"
-          webhook_key: "${{secrets.IFTTT_WEBHOOK_HUGOALH_KEY}}"
+          webhook_key: "${{secrets.IFTTTWEBHOOK_HUGOALH_KEY}}"
           variable_join: "."
           variable_prefix: "%"
           variable_suffix: "%"

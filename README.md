@@ -2,14 +2,13 @@
 
 ## Network
 
-<a href="mailto:32359235+hugoalh@users.noreply.github.com"><img align="center" alt="Email" src="https://hugoalh.github.io/Library.SVG.Icon/Mail.svg" /></a>
-<a href="https://twitter.com/hugoalhofficial"><img align="center" alt="Twitter" src="https://hugoalh.github.io/Library.SVG.Icon/Twitter.svg" /></a>
+[<img align="center" alt="Twitter" src="https://hugoalh.github.io/Library.SVG.Icon/Twitter.svg" />](https://twitter.com/hugoalhofficial)
 
 ## Programming Language
 
-- CSS
+- CSS (Cascading Style Sheets)
 - Deno
-- HTML
+- HTML (HyperText Markup Language)
 - JavaScript
 - MCFunction (Minecraft Java Function)
 - ModernScript
@@ -48,13 +47,13 @@
 
 ##### Data Pack
 
-- [Disable Minecraft Advancement ⏸](https://github.com/hugoalh/Minecraft.Java.DataPack.DisableMinecraftAdvancement)
-- [Enchant+ ⏸](https://github.com/hugoalh/Minecraft.Java.DataPack.EnchantPlus)
+- [Disable Minecraft Advancement ⏸](https://github.com/hugoalh-studio/Minecraft.Java.DataPack.DisableMinecraftAdvancement)
+- [Enchant+ ⏸](https://github.com/hugoalh-studio/Minecraft.Java.DataPack.EnchantPlus)
 - [No Enderman Griefing ⏸](https://github.com/hugoalh-studio/Minecraft.Java.DataPack.NoEndermanGriefing)
 - [No Item Despawn ⏸](https://github.com/hugoalh-studio/Minecraft.Java.DataPack.NoItemDespawn)
-- [No Mob Despawn ⏸](https://github.com/hugoalh/Minecraft.Java.DataPack.NoMobDespawn)
-- [Recipe+ ⏸](https://github.com/hugoalh/Minecraft.Java.DataPack.RecipePlus)
-- [Tag+ ⏸](https://github.com/hugoalh-studio/Minecraft.Java.DataPack.TagPlus)
+- [No Mob Despawn ⏸](https://github.com/hugoalh-studio/Minecraft.Java.DataPack.NoMobDespawn)
+- [Recipe+ ⏸](https://github.com/hugoalh-studio/Minecraft.Java.DataPack.RecipePlus)
+- [Tag+ ⏸](https://github.com/hugoalh-studio-studio/Minecraft.Java.DataPack.TagPlus)
 
 ### <img align="center" alt="NodeJS" src="https://hugoalh.github.io/Library.SVG.Icon/NodeJS_Alt.svg" /> NodeJS
 

@@ -6,29 +6,34 @@
 
 ## Programming Language
 
+### Major
+
 - CSS (Cascading Style Sheets)
-- Deno
 - HTML (HyperText Markup Language)
 - JavaScript
 - MCFunction (Minecraft Java Function)
 - ModernScript
 - NodeJS
+
+### Minor
+
+- Deno
 - Python
 - TypeScript
 
 ## Project
 
-> | **Legend** | **Description** |
-> |:---:|:----|
-> | ❌ | **Deprecated/Removed:** This is officially deprecated or removed. |
-> | 👎 | **Soon Deprecate/Remove:** This will officially deprecate or remove in the future. |
-> | ⏸ | **Pause:** This is not actively, but not deprecate or remove. |
-> | 🧪 | **Experimental:** This is in testing, may available in the future. |
-> | 🚧 | **Constructing:** This is in constructing, may available in the future. |
+| **Legend** | **Description** |
+|:---:|:----|
+| ❌ | **Deprecated/Removed:** This is officially deprecated or removed. |
+| 👎 | **Soon Deprecate/Remove:** This will officially deprecate or remove in the future. |
+| 🧪 | **Experimental:** This is in testing, may available in the future. |
+| 🚧 | **Constructing:** This is in constructing, may available in the future. |
 
 ### <img align="center" alt="GitHub" src="https://hugoalh.github.io/Library.SVG.Icon/GitHub.svg" /> GitHub Action
 
 - [File Unifier 🚧](https://github.com/hugoalh/GitHubAction.FileUnifier)
+- [GitHub Action Activity Digest 🚧](https://github.com/hugoalh/GitHubAction.GitHubActionActivityDigest)
 - [GitHub Secret Manager](https://github.com/hugoalh/GitHubAction.GitHubSecretManager)
 - [MJDPLint (Minecraft Java Data Pack Lint) 🚧](https://github.com/hugoalh/GitHubAction.MJDPLint)
 - [Send To Discord](https://github.com/hugoalh/GitHubAction.SendToDiscord)
@@ -44,17 +49,15 @@
 
 ### <img align="center" alt="Minecraft Creeper" src="https://hugoalh.github.io/Library.SVG.Icon/Minecraft/Creeper_Face.svg" /> Minecraft
 
-#### Java
+#### Java Data Pack
 
-##### Data Pack
-
-- [Disable Minecraft Advancement ⏸](https://github.com/hugoalh-studio/Minecraft.Java.DataPack.DisableMinecraftAdvancement)
-- [Enchant+ ⏸](https://github.com/hugoalh-studio/Minecraft.Java.DataPack.EnchantPlus)
-- [No Enderman Griefing ⏸](https://github.com/hugoalh-studio/Minecraft.Java.DataPack.NoEndermanGriefing)
-- [No Item Despawn ⏸](https://github.com/hugoalh-studio/Minecraft.Java.DataPack.NoItemDespawn)
-- [No Mob Despawn ⏸](https://github.com/hugoalh-studio/Minecraft.Java.DataPack.NoMobDespawn)
-- [Recipe+ ⏸](https://github.com/hugoalh-studio/Minecraft.Java.DataPack.RecipePlus)
-- [Tag+ ⏸](https://github.com/hugoalh-studio-studio/Minecraft.Java.DataPack.TagPlus)
+- [Disable Minecraft Advancement](https://github.com/hugoalh-studio/Minecraft.Java.DataPack.DisableMinecraftAdvancement)
+- [Enchant+](https://github.com/hugoalh-studio/Minecraft.Java.DataPack.EnchantPlus)
+- [No Enderman Griefing](https://github.com/hugoalh-studio/Minecraft.Java.DataPack.NoEndermanGriefing)
+- [No Item Despawn](https://github.com/hugoalh-studio/Minecraft.Java.DataPack.NoItemDespawn)
+- [No Mob Despawn](https://github.com/hugoalh-studio/Minecraft.Java.DataPack.NoMobDespawn)
+- [Recipe+](https://github.com/hugoalh-studio/Minecraft.Java.DataPack.RecipePlus)
+- [Tag+](https://github.com/hugoalh-studio-studio/Minecraft.Java.DataPack.TagPlus)
 
 ### <img align="center" alt="NodeJS" src="https://hugoalh.github.io/Library.SVG.Icon/NodeJS_Alt.svg" /> NodeJS
 
@@ -67,7 +70,7 @@
 - [MJDPLint (Minecraft Java Data Pack Lint) 🚧](https://github.com/hugoalh-studio/NodeJS.MJDPLint)
 - [More Array 👎](https://github.com/hugoalh-studio/NodeJS.MoreArray)
 - [More Method 🚧](https://github.com/hugoalh-studio/NodeJS.MoreMethod)
-- [Read Directory Depth ⏸](https://github.com/hugoalh/NodeJS.ReadDirectoryDepth)
+- [Read Directory Depth](https://github.com/hugoalh/NodeJS.ReadDirectoryDepth)
 - [Symmetric Crypto](https://github.com/hugoalh-studio/NodeJS.SymmetricCrypto)
 - [Unit Convert 🧪](https://github.com/hugoalh-studio/NodeJS.UnitConvert)
 
@@ -78,3 +81,7 @@
 ### Miscellaneous
 
 - [Universal Blacklist](https://github.com/hugoalh-studio/UniversalBlacklist)
+
+---
+
+**Last Updated:** 2020-11-25 08:48 UTC

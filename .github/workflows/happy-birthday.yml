@@ -1,0 +1,31 @@
+name: "Happy Birthday"
+on:
+  schedule:
+    - cron: "0 12 25 11 *"
+jobs:
+  discord-english:
+    name: "Discord (English)"
+    runs-on: "ubuntu-latest"
+    steps:
+      - id: "discord-english-main"
+        uses: "hugoalh/GitHubAction.SendToDiscord@v3.1.0"
+        with:
+          webhook_id: "${{secrets.DISCORDWEBHOOK_HUGOALHSTUDIO_STUDIOANNOUNCEMENT_BIRTHDAYCAKE_ID}}"
+          webhook_token: "${{secrets.DISCORDWEBHOOK_HUGOALHSTUDIO_STUDIOANNOUNCEMENT_BIRTHDAYCAKE_TOKEN}}"
+          variable_join: "."
+          variable_prefix: "%"
+          variable_suffix: "%"
+          message_text: "🎉 Happy birthday, hugoalh! 🎂"
+  ifttt-english:
+    name: "IFTTT (English)"
+    runs-on: "ubuntu-latest"
+    steps:
+      - id: "ifttt-english-main"
+        uses: "hugoalh/GitHubAction.SendToIFTTT@v3.1.1"
+        with:
+          webhook_eventname: "githubaction_twitter"
+          webhook_key: "${{secrets.IFTTTWEBHOOK_HUGOALH_KEY}}"
+          variable_join: "."
+          variable_prefix: "%"
+          variable_suffix: "%"
+          value1: "🎉 Happy birthday, hugoalh! 🎂"

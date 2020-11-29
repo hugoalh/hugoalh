@@ -1,3 +1,5 @@
+🌐 | [English](./LICENSE.md) / [中文](./LICENSE-zh-TW.md)
+
 # MIT License
 
 © 2020 hugoalh

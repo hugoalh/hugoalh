@@ -2,7 +2,7 @@
 
 ## Network
 
-- [Twitter <img align="center" src="https://hugoalh.github.io/Library.SVG.Icon/Twitter.svg" />](https://twitter.com/hugoalhofficial)
+- [Twitter (@hugoalhofficial) <img align="center" src="https://hugoalh.github.io/Library.SVG.Icon/Twitter.svg" />](https://twitter.com/hugoalhofficial)
 
 ## Programming Language
 
@@ -14,12 +14,12 @@
 - MCFunction (Minecraft Java Function)
 - ModernScript
 - NodeJS
+- TypeScript
 
 ### Minor
 
 - Deno
 - Python
-- TypeScript
 
 ## Project
 
@@ -84,4 +84,4 @@
 
 ---
 
-**Last Updated:** 2020-11-25 08:48 UTC
+**Last Updated:** 2020-12-09 06:06 UTC

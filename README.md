@@ -1,10 +1,11 @@
 # [@hugoalh](https://github.com/hugoalh)
 
-## Network
+## 🙌 Network
 
-- [Twitter (@hugoalhofficial) <img align="center" src="https://hugoalh.github.io/Library.SVG.Icon/Twitter.svg" />](https://twitter.com/hugoalhofficial)
+- <img align="center" src="https://hugoalh.github.io/Library.SVG.Icon/Discord.svg" /> Discord (hugoalh Studio)
+- [<img align="center" src="https://hugoalh.github.io/Library.SVG.Icon/Twitter.svg" /> Twitter (@hugoalhofficial)](https://twitter.com/hugoalhofficial)
 
-## Programming Language
+## 💻 Programming Language
 
 ### Major
 
@@ -21,7 +22,7 @@
 - Deno
 - Python
 
-## Project
+## 📦 Project
 
 | **Legend** | **Description** |
 |:---:|:----|
@@ -74,7 +75,7 @@
 - [Symmetric Crypto](https://github.com/hugoalh-studio/NodeJS.SymmetricCrypto)
 - [Unit Convert 🧪](https://github.com/hugoalh-studio/NodeJS.UnitConvert)
 
-### Web Application
+### <img align="center" alt="HTML5" src="https://hugoalh.github.io/Library.SVG.Icon/HTML5.svg" /> Web Application
 
 - [GitHub Manager 🚧](https://hugoalh.github.io/GitHubManager)
 
@@ -84,4 +85,4 @@
 
 ---
 
-**Last Updated:** 2020-12-09 06:06 UTC
+**Last Updated:** 2020-12-11 02:30 UTC

@@ -3,6 +3,7 @@
 ## 🙌 Network
 
 - <img align="center" src="https://hugoalh.github.io/Library.SVG.Icon/Discord.svg" /> Discord (hugoalh Studio)
+- [<img align="center" src="https://hugoalh.github.io/Library.SVG.Icon/GitHub.svg" /> GitHub Discussion](https://github.com/hugoalh/hugoalh/discussions)
 - [<img align="center" src="https://hugoalh.github.io/Library.SVG.Icon/Twitter.svg" /> Twitter (@hugoalhofficial)](https://twitter.com/hugoalhofficial)
 
 ## 💻 Programming Language
@@ -20,6 +21,7 @@
 ### Minor
 
 - Deno
+- Docker
 - Python
 
 ## 📦 Project
@@ -85,4 +87,4 @@
 
 ---
 
-**Last Updated:** 2020-12-11 02:30 UTC
+**Last Updated:** 2020-12-20 02:45 UTC

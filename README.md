@@ -1,14 +1,27 @@
 # [@hugoalh](https://github.com/hugoalh)
 
-## 🙌 Network
+## ℹ About Me
+
+### 🌐 Language
+
+- Chinese (中文)
+  - Cantonese
+  - Hong Kong
+  - Macao
+  - Republic Of China (Taiwan)
+  - Traditional
+- English
+
+### 🙌 Network
 
 - <img align="center" src="https://hugoalh.github.io/Library.SVG.Icon/Discord.svg" /> Discord (hugoalh Studio)
 - [<img align="center" src="https://hugoalh.github.io/Library.SVG.Icon/GitHub.svg" /> GitHub Discussion](https://github.com/hugoalh/hugoalh/discussions)
+- [MeWe](https://mewe.com/i/hugoalh)
 - [<img align="center" src="https://hugoalh.github.io/Library.SVG.Icon/Twitter.svg" /> Twitter (@hugoalhofficial)](https://twitter.com/hugoalhofficial)
 
-## 💻 Programming Language
+### 💻 Programming Language
 
-### Major
+#### Major
 
 - CSS (Cascading Style Sheets)
 - HTML (HyperText Markup Language)
@@ -18,7 +31,7 @@
 - NodeJS
 - TypeScript
 
-### Minor
+#### Minor
 
 - Deno
 - Docker
@@ -85,6 +98,13 @@
 
 - [Universal Blacklist](https://github.com/hugoalh-studio/UniversalBlacklist)
 
+## Translation
+
+- [MrCrayfish/Controllable](https://github.com/MrCrayfish/Controllable)
+- [MrCrayfish/MrCrayfishFurnitureMod](https://github.com/MrCrayfish/MrCrayfishFurnitureMod)
+- [MrCrayfish/MrCrayfishGunMod](https://github.com/MrCrayfish/MrCrayfishGunMod)
+- [MrCrayfish/MrCrayfishVehicleMod](https://github.com/MrCrayfish/MrCrayfishVehicleMod)
+
 ---
 
-**Last Updated:** 2020-12-20 02:45 UTC
+**Last Updated:** 2021-01-15 06:45 UTC

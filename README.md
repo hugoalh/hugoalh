@@ -5,11 +5,11 @@
 ### 🌐 Language
 
 - Chinese (中文)
-  - Cantonese
+  - Cantonese (粵語 / 廣東話)
   - Hong Kong
   - Macao
   - Republic Of China (Taiwan)
-  - Traditional
+  - Traditional (繁體)
 - English
 
 ### 🙌 Network

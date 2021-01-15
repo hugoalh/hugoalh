@@ -104,7 +104,8 @@
 - [MrCrayfish/MrCrayfishFurnitureMod](https://github.com/MrCrayfish/MrCrayfishFurnitureMod)
 - [MrCrayfish/MrCrayfishGunMod](https://github.com/MrCrayfish/MrCrayfishGunMod)
 - [MrCrayfish/MrCrayfishVehicleMod](https://github.com/MrCrayfish/MrCrayfishVehicleMod)
+- [Querz/mcaselector](https://github.com/Querz/mcaselector)
 
 ---
 
-**Last Updated:** 2021-01-15 06:45 UTC
+**Last Updated:** 2021-01-15 09:20 UTC

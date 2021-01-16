@@ -16,6 +16,7 @@
 
 - <img align="center" src="https://hugoalh.github.io/Library.SVG.Icon/Discord.svg" /> Discord (hugoalh Studio)
 - [<img align="center" src="https://hugoalh.github.io/Library.SVG.Icon/GitHub.svg" /> GitHub Discussion](https://github.com/hugoalh/hugoalh/discussions)
+- [<img align="center" src="https://hugoalh.github.io/Library.SVG.Icon/GitHub.svg" /> GitHub Gist](https://gist.github.com/hugoalh)
 - [MeWe](https://mewe.com/i/hugoalh)
 - [<img align="center" src="https://hugoalh.github.io/Library.SVG.Icon/Twitter.svg" /> Twitter (@hugoalhofficial)](https://twitter.com/hugoalhofficial)
 
@@ -108,4 +109,4 @@
 
 ---
 
-**Last Updated:** 2021-01-15 09:20 UTC
+**Last Updated:** 2021-01-16 08:55 UTC

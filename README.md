@@ -78,7 +78,7 @@
 
 ### <img align="center" alt="NodeJS" src="https://hugoalh.github.io/Library.SVG.Icon/NodeJS_Alt.svg" /> NodeJS
 
-- [Advanced Determine](https://github.com/hugoalh-studio/NodeJS.AdvancedDetermine)
+- [Advanced Determine](https://github.com/hugoalh-studio/AdvancedDetermine.NodeJS)
 - [Advanced Random](https://github.com/hugoalh-studio/NodeJS.AdvancedRandom)
 - [CLI Argument Parser 🧪](https://github.com/hugoalh-studio/NodeJS.CLIArgumentParser)
 - [GitHub Manager](https://github.com/hugoalh-studio/NodeJS.GitHubManager)

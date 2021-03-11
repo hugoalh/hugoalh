@@ -79,17 +79,17 @@
 ### <img align="center" alt="NodeJS" src="https://hugoalh.github.io/Library.SVG.Icon/NodeJS_Alt.svg" /> NodeJS
 
 - [Advanced Determine](https://github.com/hugoalh-studio/AdvancedDetermine.NodeJS)
-- [Advanced Random](https://github.com/hugoalh-studio/NodeJS.AdvancedRandom)
-- [CLI Argument Parser 🧪](https://github.com/hugoalh-studio/NodeJS.CLIArgumentParser)
-- [GitHub Manager](https://github.com/hugoalh-studio/NodeJS.GitHubManager)
-- [GitHub Sodium](https://github.com/hugoalh-studio/NodeJS.GitHubSodium)
-- [MJDPC (Minecraft Java Data Pack Compiler) 🚧](https://github.com/hugoalh-studio/NodeJS.MJDPC)
-- [MJDPLint (Minecraft Java Data Pack Lint) 🚧](https://github.com/hugoalh-studio/NodeJS.MJDPLint)
-- [More Array 👎](https://github.com/hugoalh-studio/NodeJS.MoreArray)
-- [More Method 🚧](https://github.com/hugoalh-studio/NodeJS.MoreMethod)
-- [Read Directory Depth](https://github.com/hugoalh/NodeJS.ReadDirectoryDepth)
-- [Symmetric Crypto](https://github.com/hugoalh-studio/NodeJS.SymmetricCrypto)
-- [Unit Convert 🧪](https://github.com/hugoalh-studio/NodeJS.UnitConvert)
+- [Advanced Random](https://github.com/hugoalh-studio/AdvancedRandom.NodeJS)
+- [CLI Argument Parser 🧪](https://github.com/hugoalh-studio/CLIArgumentParser.NodeJS)
+- [GitHub Manager](https://github.com/hugoalh-studio/GitHubManager.NodeJS)
+- [GitHub Sodium](https://github.com/hugoalh-studio/GitHubSodium.NodeJS)
+- [MJDPC (Minecraft Java Data Pack Compiler) 🚧](https://github.com/hugoalh-studio/MJDPC.NodeJS)
+- [MJDPLint (Minecraft Java Data Pack Lint) 🚧](https://github.com/hugoalh-studio/MJDPLint.NodeJS)
+- [More Array 👎](https://github.com/hugoalh-studio/MoreArray.NodeJS)
+- [More Method 🚧](https://github.com/hugoalh-studio/MoreMethod.NodeJS)
+- [Read Directory Depth](https://github.com/hugoalh/ReadDirectoryDepth.NodeJS)
+- [Symmetric Crypto](https://github.com/hugoalh-studio/SymmetricCrypto.NodeJS)
+- [Unit Convert 🧪](https://github.com/hugoalh-studio/UnitConvert.NodeJS)
 
 ### <img align="center" alt="HTML5" src="https://hugoalh.github.io/Library.SVG.Icon/HTML5.svg" /> Web Application
 
@@ -110,4 +110,4 @@
 
 ---
 
-**Last Updated:** 2021-01-28 09:00 UTC
+**Last Updated:** 2021-03-11 08:55 UTC

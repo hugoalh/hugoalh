@@ -2,7 +2,7 @@
 
 ## 👤 About Me
 
-### 🌐 Language
+### 💬 Language
 
 - Chinese (中文)
   - Cantonese (粵語 / 廣東話)
@@ -53,7 +53,7 @@
 
 |  | **Executable** | **Web** |
 |:-:|:-:|:-:|
-| GitHub Manager |  | [Web 🚧](https://hugoalh.github.io/GitHubManager) |
+| GitHub Manager |  | [● 🚧](https://hugoalh.github.io/GitHubManager) |
 
 ### <img align="center" alt="GitHub" src="https://hugoalh.github.io/Library.SVG.Icon/GitHub.svg" /> GitHub Action
 
@@ -67,40 +67,22 @@
 
 ### <img align="center" alt="JavaScript" src="https://hugoalh.github.io/Library.SVG.Icon/JavaScript.svg" /> JavaScript
 
-> Some of the links are broken and attempting to fix those as soon as possible!
-
-|  | **CommonJS / NodeJS** | **ModuleJS** | **Browser** | **Deno** |
-|:-:|:-:|:-:|:-:|:-:|
-| Advanced Determine | [NodeJS][AdvancedDetermine.NodeJS] | [ModuleJS 🚧][AdvancedDetermine.ModuleJS] |  | [ModuleJS 🚧][AdvancedDetermine.ModuleJS] |
-| Advanced Random | [NodeJS][AdvancedRandom.NodeJS] | [ModuleJS 🚧][AdvancedRandom.ModuleJS] |  | [ModuleJS 🚧][AdvancedRandom.ModuleJS] |
-| CLI Argument Parser | [NodeJS][CLIArgumentParser.NodeJS] |  |  | Deno 🚧 |
-| GitHub Manager | NodeJS |  |  |  |
-| GitHub Sodium | NodeJS | ModuleJS 🚧 |  | ModuleJS 🚧 |
-| Is Array |  |  |  |  |
-| Is Object |  |  |  |  |
-| Is String |  |  |  |  |
-| MJDPT (Minecraft Java Data Pack Toolbox) | NodeJS |  |  |  |
-| More Array | NodeJS 👎 |  |  |  |
-| More Method | NodeJS 🚧 | ModuleJS 🚧 |  | ModuleJS 🚧 |
-| Read Directory Depth | NodeJS |  |  | Deno 🚧 |
-| Symmetric Crypto | [NodeJS][SymmetricCrypto.NodeJS] | ModuleJS |  | ModuleJS |
-| Unit Convert | NodeJS | [ModuleJS 🚧][UnitConvert.ModuleJS] |  | [ModuleJS 🚧][UnitConvert.ModuleJS] |
-
-[AdvancedDetermine.NodeJS]: https://github.com/hugoalh-studio/AdvancedDetermine.NodeJS
-[AdvancedDetermine.ModuleJS]: https://github.com/hugoalh-studio/AdvancedDetermine.ModuleJS
-[AdvancedRandom.NodeJS]: https://github.com/hugoalh-studio/AdvancedRandom.NodeJS
-[AdvancedRandom.ModuleJS]: https://github.com/hugoalh-studio/AdvancedRandom.ModuleJS
-[CLIArgumentParser.NodeJS]: https://github.com/hugoalh-studio/CLIArgumentParser.NodeJS
-[GitHubManager.NodeJS]: https://github.com/hugoalh-studio/GitHubManager.NodeJS
-[GitHubSodium.NodeJS]: https://github.com/hugoalh-studio/GitHubSodium.NodeJS
-[MJDPT.NodeJS]: https://github.com/hugoalh-studio/MJDPT.NodeJS
-[MoreArray.NodeJS]: https://github.com/hugoalh-studio/MoreArray.NodeJS
-[MoreMethod.NodeJS]: https://github.com/hugoalh-studio/MoreMethod.NodeJS
-[MoreMethod.ModuleJS]: https://github.com/hugoalh-studio/MoreMethod.ModuleJS
-[ReadDirectoryDepth.NodeJS]: https://github.com/hugoalh/ReadDirectoryDepth.NodeJS
-[SymmetricCrypto.NodeJS]: https://github.com/hugoalh-studio/SymmetricCrypto.NodeJS
-[UnitConvert.NodeJS]: https://github.com/hugoalh-studio/UnitConvert.NodeJS
-[UnitConvert.ModuleJS]: https://github.com/hugoalh-studio/UnitConvert.ModuleJS
+|  | **NodeJS** | **Browser** | **Deno** |
+|:-:|:-:|:-:|:-:|
+| Advanced Determine | [●](https://github.com/hugoalh-studio/AdvancedDetermine.NodeJS) |  | [● 🚧](https://github.com/hugoalh-studio/AdvancedDetermine.Deno) |
+| Advanced Random | [●](https://github.com/hugoalh-studio/AdvancedRandom.NodeJS) |  | [● 🚧](https://github.com/hugoalh-studio/AdvancedRandom.Deno) |
+| CLI Argument Parser | [●](https://github.com/hugoalh-studio/CLIArgumentParser.NodeJS) |  | ● 🚧 |
+| GitHub Manager | [Command Edition](https://github.com/hugoalh-studio/GitHubManager.NodeJS) |  |  |
+| GitHub Sodium | [●](https://github.com/hugoalh-studio/GitHubSodium.NodeJS) |  | ● 🚧 |
+| Is Array | ● 🚧 | ● 🚧 | ● 🚧 |
+| Is Object | ● 🚧 | ● 🚧 | ● 🚧 |
+| Is String | ● 🚧 | ● 🚧 | ● 🚧 |
+| MJDPT (Minecraft Java Data Pack Toolbox) | [Command Edition 🚧](https://github.com/hugoalh-studio/MJDPT.NodeJS) |  |  |
+| More Array | [● 👎](https://github.com/hugoalh-studio/MoreArray.NodeJS) |  |  |
+| More Method | [● 🚧](https://github.com/hugoalh-studio/MoreMethod.NodeJS) | ● 🚧 | [● 🚧](https://github.com/hugoalh-studio/MoreMethod.Deno) |
+| Read Directory Depth | [●](https://github.com/hugoalh/ReadDirectoryDepth.NodeJS) |  | ● 🚧 |
+| Symmetric Crypto | [●](https://github.com/hugoalh-studio/SymmetricCrypto.NodeJS) | ● 🚧 | ● 🚧 |
+| Unit Convert | [● 🚧](https://github.com/hugoalh-studio/UnitConvert.NodeJS) | ● 🚧 | [● 🚧](https://github.com/hugoalh-studio/UnitConvert.ModuleJS) |
 
 ### <img align="center" alt="Minecraft Creeper" src="https://hugoalh.github.io/Library.SVG.Icon/Minecraft/Creeper_Face.svg" /> Minecraft
 
@@ -130,4 +112,4 @@
 
 ---
 
-**Last Updated:** 2021-03-30 10:00 UTC
+**Last Updated:** 2021-03-31 05:00 UTC

@@ -8,7 +8,7 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
       - id: "discord-english-main"
-        uses: "hugoalh/GitHubAction.SendToDiscord@v3.1.0"
+        uses: "hugoalh/GitHubAction.SendToDiscord@v3.1.1"
         with:
           webhook_id: "${{secrets.DISCORDWEBHOOK_HUGOALHSTUDIO_STUDIOANNOUNCEMENT_BIRTHDAYCAKE_ID}}"
           webhook_token: "${{secrets.DISCORDWEBHOOK_HUGOALHSTUDIO_STUDIOANNOUNCEMENT_BIRTHDAYCAKE_TOKEN}}"

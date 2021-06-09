@@ -1,9 +1,7 @@
 ---
 name: "Bug Report"
 about: "Report a bug."
-title: ""
 labels: "bug🐛,unconfirm📋"
-assignees: ""
 ---
 > ### Suggested Content List
 >

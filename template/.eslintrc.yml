@@ -1,12 +1,4 @@
-# ==================
-# hugoalh ESLint Configuration
-#   Language:
-#     YAML
-#   Version:
-#     20210303
-#   Schema:
-#     https://eslint.org/docs/user-guide/configuring
-# ==================
+# $<Schema>$ https://eslint.org/docs/user-guide/configuring
 env:
   amd: false
   applescript: false

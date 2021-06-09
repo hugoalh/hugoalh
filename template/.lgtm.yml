@@ -1,12 +1,4 @@
-# ==================
-# hugoalh LGTM Configuration
-#   Language:
-#     YAML
-#   Version:
-#     20210303
-#   Schema:
-#     https://lgtm.com/help/lgtm/lgtm.yml-configuration-file
-# ==================
+# $<Schema>$ https://lgtm.com/help/lgtm/lgtm.yml-configuration-file
 path_classifiers:
   generated:
     - "compiled/*"

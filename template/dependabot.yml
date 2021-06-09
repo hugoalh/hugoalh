@@ -1,12 +1,4 @@
-# ==================
-# hugoalh GitHub Dependabot
-#   Language:
-#     YAML
-#   Version:
-#     20210303
-#   Schema:
-#     https://docs.github.com/en/github/administering-a-repository/configuration-options-for-dependency-updates
-# ==================
+# $<Schema>$ https://docs.github.com/en/github/administering-a-repository/configuration-options-for-dependency-updates
 version: 2
 updates:
   - package-ecosystem: "github-actions"

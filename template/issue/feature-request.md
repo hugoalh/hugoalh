@@ -1,7 +1,7 @@
 ---
 name: "Feature Request"
 about: "Suggest an idea."
-labels: "enhancement➕,unconfirm📋"
+labels: "➕enhancement,🔵unconfirm"
 ---
 > ### Suggested Content List
 >

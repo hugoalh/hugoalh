@@ -3,7 +3,7 @@
 ## Supported Version
 
 > | **Legend** | **Description** |
-> |:---:|:----|
+> |:-:|:--|
 > | L | **LTS:** This is long term supported. |
 > | ✔ | **Yes:** This is supported. |
 > | 👎 | **Partly:** This is partly supported due to this version(s) is deprecated by a newer version(s). |
@@ -11,7 +11,7 @@
 > | ⚠ | **Issue:** This is not supported due to this version(s) is confirmed contains bug(s) and/or issue(s). |
 
 | **Version** | **Targeted NodeJS Version** | **Support** |
-|:---:|:---:|:---:|
+|:-:|:-:|:-:|
 | *(N/A)* | *(N/A)* | *(N/A)* |
 
 ## Report Vulnerability

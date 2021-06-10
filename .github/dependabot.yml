@@ -8,8 +8,8 @@ updates:
       time: "00:00"
       timezone: "Etc/UTC"
     labels:
-      - "dependency📦"
-      - "unconfirm📋"
+      - "📦dependency"
+      - "🔵unconfirm"
     open-pull-requests-limit: 100
     pull-request-branch-name:
       separator: "/"

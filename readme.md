@@ -72,9 +72,6 @@
 | Command Line Parser *(CLI Argument Parser)* | [●](https://github.com/hugoalh-studio/command-line-parser-nodejs) |  | ● 🚧 |
 | GitHub Manager | [Command Line](https://github.com/hugoalh-studio/github-manager-nodejscli) |  |  |
 | GitHub Sodium | [●](https://github.com/hugoalh-studio/github-sodium-nodejs) |  | ● 🚧 |
-| Is Array | ● 🚧 | ● 🚧 | ● 🚧 |
-| Is Object | ● 🚧 | ● 🚧 | ● 🚧 |
-| Is String | ● 🚧 | ● 🚧 | ● 🚧 |
 | MCJT (Minecraft Java Toolbox) | [Command Line 🚧](https://github.com/hugoalh-studio/minecraft-java-toolbox-nodejscli) |  |  |
 | More Array | [● 👎](https://github.com/hugoalh-studio/more-array-nodejs) |  |  |
 | More Method | [● 🚧](https://github.com/hugoalh-studio/more-method-nodejs) | ● 🚧 | [● 🚧](https://github.com/hugoalh-studio/more-method-deno) |

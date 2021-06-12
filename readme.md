@@ -22,12 +22,10 @@
 
 ### 💻 Programming Language
 
-| **Legend** | **Description** |
-|:-:|:--|
-| 🎒 | Learning |
+*\* Learning*
 
 - CSS (Cascading Style Sheets)
-- Docker 🎒
+- *Docker\**
 - HTML (HyperText Markup Language)
 - JavaScript
   - CommonJS
@@ -35,10 +33,10 @@
   - ModuleJS (ECMAScript Module)
     - Browser
     - Deno
-- MCJFunction (Minecraft Java Function)
+- MCFunction (Minecraft Function)
 - ModernScript
-- Python 🎒
-- TypeScript 🎒
+- *Python\**
+- *TypeScript\**
 
 ## 📦 Project
 
@@ -49,53 +47,60 @@
 | 🧪 | **Experimental:** This is in testing, may available in the future. |
 | 🚧 | **Constructing:** This is in constructing, may available in the future. |
 
-### <img align="center" alt="Application" src="https://hugoalh.github.io/Library.SVG.Icon/Applications.svg" /> Application
-
-|  | **Executable** | **Web** |
-|:-:|:-:|:-:|
-| *N/A* |  |  |
-
-### <img align="center" alt="GitHub" src="https://hugoalh.github.io/Library.SVG.Icon/GitHub.svg" /> GitHub Action
-
-- [File Unifier 🚧](https://github.com/hugoalh/GitHubAction.FileUnifier)
-- [GitHub Secret Manager](https://github.com/hugoalh/GitHubAction.GitHubSecretManager)
-- [Send To Discord](https://github.com/hugoalh/GitHubAction.SendToDiscord)
-- [Send To IFTTT](https://github.com/hugoalh/GitHubAction.SendToIFTTT)
-- [Send To Pipedream](https://github.com/hugoalh/GitHubAction.SendToPipedream)
-
-### <img align="center" alt="JavaScript" src="https://hugoalh.github.io/Library.SVG.Icon/JavaScript.svg" /> JavaScript
-
-|  | **NodeJS** | **Browser** | **Deno** |
-|:-:|:-:|:-:|:-:|
-| Advanced Determine | [●](https://github.com/hugoalh-studio/advanced-determine-nodejs) |  | [● 🚧](https://github.com/hugoalh-studio/advanced-determine-deno) |
-| Advanced Random | [●](https://github.com/hugoalh-studio/advanced-random-nodejs) |  | [● 🚧](https://github.com/hugoalh-studio/advanced-random-deno) |
-| Command Line Parser *(CLI Argument Parser)* | [●](https://github.com/hugoalh-studio/command-line-parser-nodejs) |  | ● 🚧 |
-| GitHub Manager | [Command Line](https://github.com/hugoalh-studio/github-manager-nodejscli) |  |  |
-| GitHub Sodium | [●](https://github.com/hugoalh-studio/github-sodium-nodejs) |  | ● 🚧 |
-| MCJT (Minecraft Java Toolbox) | [Command Line 🚧](https://github.com/hugoalh-studio/minecraft-java-toolbox-nodejscli) |  |  |
-| More Array | [● 👎](https://github.com/hugoalh-studio/more-array-nodejs) |  |  |
-| More Method | [● 🚧](https://github.com/hugoalh-studio/more-method-nodejs) | ● 🚧 | [● 🚧](https://github.com/hugoalh-studio/more-method-deno) |
-| Read Directory Depth | [●](https://github.com/hugoalh-studio/read-directory-depth-nodejs) |  | ● 🚧 |
-| Symmetric Crypto | [●](https://github.com/hugoalh-studio/symmetric-crypto-nodejs) | ● 🚧 | ● 🚧 |
-| Unit Convert | [● 🚧](https://github.com/hugoalh-studio/unit-convert-nodejs) | ● 🚧 | ● 🚧 |
-
-### <img align="center" alt="Minecraft Creeper" src="https://hugoalh.github.io/Library.SVG.Icon/Minecraft/Creeper_Face.svg" /> Minecraft
-
-#### Java Data Pack
-
-- [Disable Advancement *(Disable Minecraft Advancement)*](https://github.com/hugoalh-studio/disable-advancement-mcjdp)
-- [Enchant+](https://github.com/hugoalh-studio/enchant-plus-mcjdp)
-- [No Enderman Griefing](https://github.com/hugoalh-studio/no-enderman-griefing-mcjdp)
-- [No Item Despawn](https://github.com/hugoalh-studio/no-item-despawn-mcjdp)
-- [No Mob Despawn](https://github.com/hugoalh-studio/no-mob-despawn-mcjdp)
-- [Recipe+](https://github.com/hugoalh-studio/recipe-plus-mcjdp)
-- [Tag+](https://github.com/hugoalh-studio-studio/tag-plus-mcjdp)
-
-### Miscellaneous
-
+- Advanced Determine
+  - [Deno 🚧](https://github.com/hugoalh-studio/advanced-determine-deno)
+  - [NodeJS](https://github.com/hugoalh-studio/advanced-determine-nodejs)
+- Advanced Random
+  - [Deno🚧](https://github.com/hugoalh-studio/advanced-random-deno)
+  - [NodeJS](https://github.com/hugoalh-studio/advanced-random-nodejs)
+- ClamAV
+  - [GitHub Action](https://github.com/hugoalh/clamav-ghaction)
+- Command Line Parser *(CLI Argument Parser)*
+  - [NodeJS](https://github.com/hugoalh-studio/command-line-parser-nodejs)
+- Disable Advancement *(Disable Minecraft Advancement)*
+  - [Minecraft Java Data Pack](https://github.com/hugoalh-studio/disable-advancement-mcjdp)
+- Enchant+
+  - [Minecraft Java Data Pack](https://github.com/hugoalh-studio/enchant-plus-mcjdp)
+- File Unifier
+  - [GitHub Action 🚧](https://github.com/hugoalh/file-unifier-ghaction)
+- GitHub Manager
+  - [NodeJS CLI](https://github.com/hugoalh-studio/github-manager-nodejscli)
+- GitHub Secret Manager
+  - [GitHub Action](https://github.com/hugoalh/GitHubAction.GitHubSecretManager)
+- GitHub Sodium
+  - [NodeJS](https://github.com/hugoalh-studio/github-sodium-nodejs)
+- MCJT (Minecraft Java Toolbox)
+  - [NodeJS CLI 🚧](https://github.com/hugoalh-studio/minecraft-java-toolbox-nodejscli)
+- More Array
+  - [NodeJS 👎](https://github.com/hugoalh-studio/more-array-nodejs)
+- More Method
+  - [Deno 🚧](https://github.com/hugoalh-studio/more-method-deno)
+  - [NodeJS 🚧](https://github.com/hugoalh-studio/more-method-nodejs)
+- No Enderman Griefing
+  - [Minecraft Java Data Pack](https://github.com/hugoalh-studio/no-enderman-griefing-mcjdp)
+- No Item Despawn
+  - [Minecraft Java Data Pack](https://github.com/hugoalh-studio/no-item-despawn-mcjdp)
+- No Mob Despawn
+  - [Minecraft Java Data Pack](https://github.com/hugoalh-studio/no-mob-despawn-mcjdp)
+- Read Directory Depth
+  - [NodeJS](https://github.com/hugoalh-studio/read-directory-depth-nodejs)
+- Recipe+
+  - [Minecraft Java Data Pack](https://github.com/hugoalh-studio/recipe-plus-mcjdp)
+- Send To Discord
+  - [GitHub Action](https://github.com/hugoalh/GitHubAction.SendToDiscord)
+- Send To IFTTT
+  - [GitHub Action](https://github.com/hugoalh/GitHubAction.SendToIFTTT)
+- Send To Pipedream
+  - [GitHub Action](https://github.com/hugoalh/GitHubAction.SendToPipedream)
+- Symmetric Crypto
+  - [NodeJS](https://github.com/hugoalh-studio/symmetric-crypto-nodejs)
+- Tag+
+  - [Minecraft Java Data Pack](https://github.com/hugoalh-studio-studio/tag-plus-mcjdp)
+- Unit Convert
+  - [NodeJS 🚧](https://github.com/hugoalh-studio/unit-convert-nodejs)
 - [Universal Blacklist](https://github.com/hugoalh-studio/universal-blacklist)
 
-## Translation
+## 🌐 Translation
 
 - [MCA Selector](https://github.com/Querz/mcaselector)
 - [MrCrayfish Controllable](https://github.com/MrCrayfish/Controllable)
@@ -106,4 +111,4 @@
 
 ---
 
-**Last Updated:** 2021-06-10 08:30 UTC
+**Last Updated:** 2021-06-12 04:30 UTC

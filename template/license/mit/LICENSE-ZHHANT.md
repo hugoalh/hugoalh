@@ -1,4 +1,4 @@
-🌐 | [English](./license.md) / [中文](./license-zhhant.md)
+🌐 | [English](./LICENSE.md) / [中文](./LICENSE-ZHHANT.md)
 
 # MIT授權條款
 

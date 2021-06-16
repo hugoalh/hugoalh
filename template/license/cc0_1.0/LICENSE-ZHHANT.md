@@ -1,4 +1,4 @@
-🌐 | [English](./license.md) / [中文](./license-zhhant.md)
+🌐 | [English](./LICENSE.md) / [中文](./LICENSE-ZHHANT.md)
 
 # CC0 1.0 通用
 

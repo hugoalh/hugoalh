@@ -48,7 +48,7 @@
 - Advanced Determine
   - [NodeJS](https://github.com/hugoalh-studio/advanced-determine-nodejs)
 - Advanced Random
-  - [Deno🚧](https://github.com/hugoalh-studio/advanced-random-deno)
+  - [Deno 🚧](https://github.com/hugoalh-studio/advanced-random-deno)
   - [NodeJS](https://github.com/hugoalh-studio/advanced-random-nodejs)
 - ClamAV
   - [GitHub Action](https://github.com/hugoalh/clamav-ghaction)

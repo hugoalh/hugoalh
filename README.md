@@ -22,21 +22,19 @@
 
 ### 💻 Programming Language
 
-*\* Learning*
-
+- C# (C-Sharp) \*
 - CSS (Cascading Style Sheets)
-- *Docker\**
+- Docker \*
 - HTML (HyperText Markup Language)
 - JavaScript
   - CommonJS
-    - NodeJS
   - ModuleJS (ECMAScript Module)
-    - Browser
-    - Deno
 - MCFunction (Minecraft Function)
 - ModernScript
-- *Python\**
-- *TypeScript\**
+- Python \*
+- TypeScript \*
+
+\* Learning
 
 ## 📦 Project
 
@@ -48,7 +46,6 @@
 | 🚧 | **Constructing:** This is in constructing, may available in the future. |
 
 - Advanced Determine
-  - [Deno 🚧](https://github.com/hugoalh-studio/advanced-determine-deno)
   - [NodeJS](https://github.com/hugoalh-studio/advanced-determine-nodejs)
 - Advanced Random
   - [Deno🚧](https://github.com/hugoalh-studio/advanced-random-deno)
@@ -64,12 +61,14 @@
 - File Unifier
   - [GitHub Action 🚧](https://github.com/hugoalh/file-unifier-ghaction)
 - GitHub Manager
+  - [.Net 🚧](https://github.com/hugoalh-studio/github-manager-dotnet)
   - [NodeJS CLI](https://github.com/hugoalh-studio/github-manager-nodejscli)
 - GitHub Secret Manager
   - [GitHub Action](https://github.com/hugoalh/GitHubAction.GitHubSecretManager)
 - GitHub Sodium
   - [NodeJS](https://github.com/hugoalh-studio/github-sodium-nodejs)
 - MCJT (Minecraft Java Toolbox)
+  - [.Net 🚧](https://github.com/hugoalh-studio/minecraft-java-toolbox-dotnet)
   - [NodeJS CLI 🚧](https://github.com/hugoalh-studio/minecraft-java-toolbox-nodejscli)
 - More Array
   - [NodeJS 👎](https://github.com/hugoalh-studio/more-array-nodejs)
@@ -111,4 +110,4 @@
 
 ---
 
-**Last Updated:** 2021-06-12 04:30 UTC
+**Last Updated:** 2021-06-25 05:10 UTC

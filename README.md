@@ -8,7 +8,7 @@
   - Cantonese (粵語 / 廣東話)
   - Hong Kong
   - Macao
-  - Republic Of China (Taiwan)
+  - Republic of China (Taiwan)
   - Traditional (繁體)
 - English
 

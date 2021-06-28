@@ -22,7 +22,8 @@
 
 ### 💻 Programming Language
 
-- C# (C-Sharp) \*
+- .NET \*
+  - C# (C-Sharp) \*
 - CSS (Cascading Style Sheets)
 - Docker \*
 - HTML (HyperText Markup Language)

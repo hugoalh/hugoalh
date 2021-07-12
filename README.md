@@ -1,6 +1,6 @@
 # [@hugoalh](https://github.com/hugoalh)
 
-## 👤 About Me
+## 🧐 About Me
 
 ### 💬 Language
 
@@ -12,7 +12,7 @@
   - Traditional (繁體)
 - English
 
-### 🙌 Network
+### 🕸 Network
 
 - Discord (hugoalh Studio)
 - [GitHub Discussion](https://github.com/hugoalh/hugoalh/discussions)
@@ -47,15 +47,18 @@
 | 🚧 | **Constructing:** This is in constructing, may available in the future. |
 
 - Advanced Determine
+  - [Deno 🚧](https://github.com/hugoalh-studio/advanced-determine-deno)
   - [NodeJS](https://github.com/hugoalh-studio/advanced-determine-nodejs)
+- Advanced File System
+  - [NodeJS 🚧](https://github.com/hugoalh-studio/advanced-file-system-nodejs)
 - Advanced Random
   - [Deno 🚧](https://github.com/hugoalh-studio/advanced-random-deno)
   - [NodeJS](https://github.com/hugoalh-studio/advanced-random-nodejs)
 - ClamAV
   - [GitHub Action](https://github.com/hugoalh/clamav-ghaction)
-- Command Line Parser *(CLI Argument Parser)*
+- Command Line Parser (**Previous:** CLI Argument Parser)
   - [NodeJS](https://github.com/hugoalh-studio/command-line-parser-nodejs)
-- Disable Advancement *(Disable Minecraft Advancement)*
+- Disable Advancement (**Previous:** Disable Minecraft Advancement)
   - [Minecraft Java Data Pack](https://github.com/hugoalh-studio/disable-advancement-mcjdp)
 - Enchant+
   - [Minecraft Java Data Pack](https://github.com/hugoalh-studio/enchant-plus-mcjdp)
@@ -71,19 +74,19 @@
 - MCJT (Minecraft Java Toolbox)
   - [.Net 🚧](https://github.com/hugoalh-studio/minecraft-java-toolbox-dotnet)
   - [NodeJS CLI 🚧](https://github.com/hugoalh-studio/minecraft-java-toolbox-nodejscli)
-- More Array
-  - [NodeJS 👎](https://github.com/hugoalh-studio/more-array-nodejs)
+- More Array (**Replacement:** More Method)
+  - [NodeJS ❌](https://github.com/hugoalh-studio/more-array-nodejs) 
 - More Method
   - [Deno 🚧](https://github.com/hugoalh-studio/more-method-deno)
-  - [NodeJS 🚧](https://github.com/hugoalh-studio/more-method-nodejs)
+  - [NodeJS](https://github.com/hugoalh-studio/more-method-nodejs)
 - No Enderman Griefing
   - [Minecraft Java Data Pack](https://github.com/hugoalh-studio/no-enderman-griefing-mcjdp)
 - No Item Despawn
   - [Minecraft Java Data Pack](https://github.com/hugoalh-studio/no-item-despawn-mcjdp)
 - No Mob Despawn
   - [Minecraft Java Data Pack](https://github.com/hugoalh-studio/no-mob-despawn-mcjdp)
-- Read Directory Depth
-  - [NodeJS](https://github.com/hugoalh-studio/read-directory-depth-nodejs)
+- Read Directory Depth (**Replacement:** Advanced File System)
+  - [NodeJS 👎](https://github.com/hugoalh-studio/read-directory-depth-nodejs)
 - Recipe+
   - [Minecraft Java Data Pack](https://github.com/hugoalh-studio/recipe-plus-mcjdp)
 - Send To Discord
@@ -108,7 +111,3 @@
 - [MrCrayfish Gun Mod](https://github.com/MrCrayfish/MrCrayfishGunMod)
 - [MrCrayfish Vehicle Mod](https://github.com/MrCrayfish/MrCrayfishVehicleMod)
 - *and more...*
-
----
-
-**Last Updated:** 2021-06-25 05:10 UTC

@@ -54,8 +54,6 @@
 - Advanced Random
   - [Deno 🚧](https://github.com/hugoalh-studio/advanced-random-deno)
   - [NodeJS](https://github.com/hugoalh-studio/advanced-random-nodejs)
-- ClamAV
-  - [GitHub Action](https://github.com/hugoalh/clamav-ghaction)
 - Command Line Parser (**Previous:** CLI Argument Parser)
   - [NodeJS](https://github.com/hugoalh-studio/command-line-parser-nodejs)
 - Disable Advancement (**Previous:** Disable Minecraft Advancement)

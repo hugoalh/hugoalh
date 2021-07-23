@@ -47,7 +47,6 @@
 | 🚧 | **Constructing:** This is in constructing, may available in the future. |
 
 - Advanced Determine
-  - [Deno 🚧](https://github.com/hugoalh-studio/advanced-determine-deno)
   - [NodeJS](https://github.com/hugoalh-studio/advanced-determine-nodejs)
 - Advanced File System
   - [NodeJS 🚧](https://github.com/hugoalh-studio/advanced-file-system-nodejs)
@@ -88,12 +87,18 @@
   - [NodeJS 👎](https://github.com/hugoalh-studio/read-directory-depth-nodejs)
 - Recipe+
   - [Minecraft Java Data Pack](https://github.com/hugoalh-studio/recipe-plus-mcjdp)
-- Send To Discord
-  - [GitHub Action](https://github.com/hugoalh/GitHubAction.SendToDiscord)
-- Send To IFTTT
-  - [GitHub Action](https://github.com/hugoalh/GitHubAction.SendToIFTTT)
-- Send To Pipedream
-  - [GitHub Action](https://github.com/hugoalh/GitHubAction.SendToPipedream)
+- Send Discord Webhook
+  - [GitHub Action 🚧](https://github.com/hugoalh/send-discord-webhook-ghaction)
+- Send IFTTT Webhook
+  - [GitHub Action 🚧](https://github.com/hugoalh/send-ifttt-webhook-ghaction)
+- Send Pipedream Webhook
+  - [GitHub Action 🚧](https://github.com/hugoalh/send-pipedream-webhook-ghaction)
+- Send To Discord (**Replacement:** Send Discord Webhook)
+  - [GitHub Action 👎](https://github.com/hugoalh/GitHubAction.SendToDiscord)
+- Send To IFTTT (**Replacement:** Send IFTTT Webhook)
+  - [GitHub Action 👎](https://github.com/hugoalh/GitHubAction.SendToIFTTT)
+- Send To Pipedream (**Replacement:** Send Pipedream Webhook)
+  - [GitHub Action 👎](https://github.com/hugoalh/GitHubAction.SendToPipedream)
 - Symmetric Crypto
   - [NodeJS](https://github.com/hugoalh-studio/symmetric-crypto-nodejs)
 - Tag+

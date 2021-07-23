@@ -55,6 +55,7 @@
   - [Deno 🚧](https://github.com/hugoalh-studio/advanced-random-deno)
   - [NodeJS](https://github.com/hugoalh-studio/advanced-random-nodejs)
 - Command Line Parser (**Previous:** CLI Argument Parser)
+  - [Deno](https://github.com/hugoalh-studio/command-line-parser-deno)
   - [NodeJS](https://github.com/hugoalh-studio/command-line-parser-nodejs)
 - Disable Advancement (**Previous:** Disable Minecraft Advancement)
   - [Minecraft Java Data Pack](https://github.com/hugoalh-studio/disable-advancement-mcjdp)

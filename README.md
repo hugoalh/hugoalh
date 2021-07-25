@@ -84,25 +84,19 @@
 - No Mob Despawn
   - [Minecraft Java Data Pack](https://github.com/hugoalh-studio/no-mob-despawn-mcjdp)
 - Read Directory Depth (**Replacement:** Advanced File System)
-  - [NodeJS 👎](https://github.com/hugoalh-studio/read-directory-depth-nodejs)
+  - [NodeJS ❌](https://github.com/hugoalh-studio/read-directory-depth-nodejs)
 - Recipe+
   - [Minecraft Java Data Pack](https://github.com/hugoalh-studio/recipe-plus-mcjdp)
-- Send Discord Webhook
-  - [GitHub Action 🚧](https://github.com/hugoalh/send-discord-webhook-ghaction)
-- Send IFTTT Webhook
-  - [GitHub Action 🚧](https://github.com/hugoalh/send-ifttt-webhook-ghaction)
-- Send Pipedream Webhook
-  - [GitHub Action 🚧](https://github.com/hugoalh/send-pipedream-webhook-ghaction)
-- Send To Discord (**Replacement:** Send Discord Webhook)
-  - [GitHub Action 👎](https://github.com/hugoalh/GitHubAction.SendToDiscord)
-- Send To IFTTT (**Replacement:** Send IFTTT Webhook)
-  - [GitHub Action 👎](https://github.com/hugoalh/GitHubAction.SendToIFTTT)
-- Send To Pipedream (**Replacement:** Send Pipedream Webhook)
-  - [GitHub Action 👎](https://github.com/hugoalh/GitHubAction.SendToPipedream)
+- Send Discord Webhook (**Replacement:** Send To Discord)
+  - [GitHub Action](https://github.com/hugoalh/send-discord-webhook-ghaction)
 - Symmetric Crypto
   - [NodeJS](https://github.com/hugoalh-studio/symmetric-crypto-nodejs)
 - Tag+
   - [Minecraft Java Data Pack](https://github.com/hugoalh-studio-studio/tag-plus-mcjdp)
+- Trigger IFTTT Webhook Applet (**Previous:** Send To IFTTT)
+  - [GitHub Action](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction)
+- Trigger Pipedream Workflow (**Previous:** Send To Pipedream)
+  - [GitHub Action](https://github.com/hugoalh/trigger-pipedream-workflow-ghaction)
 - Unit Convert
   - [NodeJS 🚧](https://github.com/hugoalh-studio/unit-convert-nodejs)
 - [Universal Blacklist](https://github.com/hugoalh-studio/universal-blacklist)

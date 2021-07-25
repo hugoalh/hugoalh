@@ -66,7 +66,7 @@
   - [.Net 🚧](https://github.com/hugoalh-studio/github-manager-dotnet)
   - [NodeJS CLI](https://github.com/hugoalh-studio/github-manager-nodejscli)
 - GitHub Secret Manager
-  - [GitHub Action](https://github.com/hugoalh/GitHubAction.GitHubSecretManager)
+  - [GitHub Action](https://github.com/hugoalh/github-secret-manager-ghaction)
 - GitHub Sodium
   - [NodeJS](https://github.com/hugoalh-studio/github-sodium-nodejs)
 - MCJT (Minecraft Java Toolbox)

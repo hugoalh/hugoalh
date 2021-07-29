@@ -87,7 +87,7 @@
   - [NodeJS ❌](https://github.com/hugoalh-studio/read-directory-depth-nodejs)
 - Recipe+
   - [Minecraft Java Data Pack](https://github.com/hugoalh-studio/recipe-plus-mcjdp)
-- Send Discord Webhook (**Replacement:** Send To Discord)
+- Send Discord Webhook (**Previous:** Send To Discord)
   - [GitHub Action](https://github.com/hugoalh/send-discord-webhook-ghaction)
 - Symmetric Crypto
   - [NodeJS](https://github.com/hugoalh-studio/symmetric-crypto-nodejs)

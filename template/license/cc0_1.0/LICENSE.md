@@ -70,13 +70,11 @@ In either case contrary to Affirmer's express Statement of Purpose.
 
 *This is a short and simple list that mostly concluded this license about the permission(s), condition(s), and limitation(s); The license content section shall prevail.*
 
-|  |  |
-|:-:|:--|
-| ✔ | Commercial Use |
-| ✔ | Distribution |
-| ✔ | Modification |
-| ✔ | Private Use |
-| ❌ | Liability |
-| ❌ | Patent Use |
-| ❌ | Trademark Use |
-| ❌ | Warranty |
+- Commercial Use ✔
+- Distribution ✔
+- Liability ❌
+- Modification ✔
+- Patent Use ❌
+- Private Use ✔
+- Trademark Use ❌
+- Warranty ❌

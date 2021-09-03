@@ -40,12 +40,12 @@
 
 | **Legend** | **Description** |
 |:-:|:--|
-| 🚧 | **Constructing:** This is in constructing, may available in the future. |
-| 🧪 | **Experimental:** This is in testing, may available in the future. |
-| ⏲{👎} | **Planned Deprecate:** This is planned to deprecate. |
-| 👎 | **Deprecated:** This is officially deprecated, maybe remove in the future. |
-| ⏲{❌} | **Planned Remove:** This is officially deprecated and planned to remove. |
-| ❌ | **Removed:** This is officially removed. |
+| 🚧 | **Constructing:** This project is in constructing, maybe available in the future. |
+| 🧪 | **Experimental:** This project is in testing, maybe available in the future. |
+| ⏲{👎} | **Planned Deprecate:** This project is planned to deprecate. |
+| 👎 | **Deprecated:** This project is officially deprecated, maybe remove in the future. |
+| ⏲{❌} | **Planned Remove:** This project is officially deprecated and planned to remove. |
+| ❌ | **Removed:** This project is officially removed. |
 
 - [Advanced Determine (NodeJS Edition)](https://github.com/hugoalh-studio/advanced-determine-nodejs)
 - [Advanced Random (NodeJS Edition)](https://github.com/hugoalh-studio/advanced-random-nodejs)

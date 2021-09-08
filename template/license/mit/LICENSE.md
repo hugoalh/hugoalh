@@ -17,6 +17,7 @@ The software is provided "as is", without warranty of any kind, express or impli
 - Commercial Use ✔
 - Distribution ✔
 - Liability ❌
+- License & Copyright Notice ✏
 - Modification ✔
 - Private Use ✔
 - Warranty ❌

@@ -21,20 +21,21 @@
 
 ### 💻 Programming Language
 
-- .NET \*
-  - C# (C-Sharp) \*
 - CSS (Cascading Style Sheets)
-- Docker \*
 - HTML (HyperText Markup Language)
 - JavaScript
   - CommonJS
   - ModuleJS (ECMAScript Module)
 - MCFunction (Minecraft Function)
 - ModernScript
-- Python \*
-- TypeScript \*
 
-\* Learning
+#### Learning
+
+- .NET
+  - C# (C-Sharp)
+- Docker
+- Python
+- TypeScript
 
 ## 📦 Project
 
@@ -50,8 +51,8 @@
 - [Advanced Determine (NodeJS Edition)](https://github.com/hugoalh-studio/advanced-determine-nodejs)
 - [Advanced Random (NodeJS Edition)](https://github.com/hugoalh-studio/advanced-random-nodejs)
 - [Command Line Parser (Deno Editon)](https://github.com/hugoalh-studio/command-line-parser-deno)
-- [Command Line Parser (NodeJS Edition)](https://github.com/hugoalh-studio/command-line-parser-nodejs) (**Previous:** [NodeJS] CLI Argument Parser)
-- [Disable Advancement (Minecraft Java Data Pack Editon)](https://github.com/hugoalh-studio/disable-advancement-mcjdp) (**Previous:** [Minecraft Java Data Pack] Disable Minecraft Advancement)
+- [Command Line Parser (NodeJS Edition)](https://github.com/hugoalh-studio/command-line-parser-nodejs) *(**Previous:** [NodeJS] CLI Argument Parser)*
+- [Disable Advancement (Minecraft Java Data Pack Editon)](https://github.com/hugoalh-studio/disable-advancement-mcjdp) *(**Previous:** [Minecraft Java Data Pack] Disable Minecraft Advancement)*
 - [Enchant+ (Minecraft Java Data Pack Edition)](https://github.com/hugoalh-studio/enchant-plus-mcjdp)
 - [GitHub Manager (NodeJS CLI Edition)](https://github.com/hugoalh-studio/github-manager-nodejscli)
 - [GitHub Secret Manager (GitHub Action Edition)](https://github.com/hugoalh/github-secret-manager-ghaction)
@@ -61,11 +62,11 @@
 - [No Item Despawn (Minecraft Java Data Pack Edition)](https://github.com/hugoalh-studio/no-item-despawn-mcjdp)
 - [No Mob Despawn (Minecraft Java Data Pack Edition)](https://github.com/hugoalh-studio/no-mob-despawn-mcjdp)
 - [Recipe+ (Minecraft Java Data Pack Edition)](https://github.com/hugoalh-studio/recipe-plus-mcjdp)
-- [Send Discord Webhook (GitHub Action Edition)](https://github.com/hugoalh/send-discord-webhook-ghaction) (**Previous:** [GitHub Action] Send To Discord)
+- [Send Discord Webhook (GitHub Action Edition)](https://github.com/hugoalh/send-discord-webhook-ghaction) *(**Previous:** [GitHub Action] Send To Discord)*
 - [Symmetric Crypto (NodeJS Edition)](https://github.com/hugoalh-studio/symmetric-crypto-nodejs)
 - [Tag+ (Minecraft Java Data Pack Edition)](https://github.com/hugoalh-studio-studio/tag-plus-mcjdp)
-- [Trigger IFTTT Webhook Applet (GitHub Action Edition)](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction) (**Previous:** [GitHub Action] Send To IFTTT)
-- [Trigger Pipedream Workflow (GitHub Action Edition)](https://github.com/hugoalh/trigger-pipedream-workflow-ghaction) (**Previous:** [GitHub Action] Send To Pipedream)
+- [Trigger IFTTT Webhook Applet (GitHub Action Edition)](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction) *(**Previous:** [GitHub Action] Send To IFTTT)*
+- [Trigger Pipedream Workflow (GitHub Action Edition)](https://github.com/hugoalh/trigger-pipedream-workflow-ghaction) *(**Previous:** [GitHub Action] Send To Pipedream)*
 - [Universal Blacklist](https://github.com/hugoalh-studio/universal-blacklist)
 - [Advanced File System (NodeJS Edition) 🚧](https://github.com/hugoalh-studio/advanced-file-system-nodejs)
 - [Advanced Random (Deno Edition) 🚧](https://github.com/hugoalh-studio/advanced-random-deno)
@@ -76,14 +77,14 @@
 - [More Method (Deno Edition) 🚧](https://github.com/hugoalh-studio/more-method-deno)
 - [REPattern (NodeJS Edition) 🚧](https://github.com/hugoalh-studio/repattern-nodejs)
 - [Unit Convert (NodeJS Edition) 🚧](https://github.com/hugoalh-studio/unit-convert-nodejs)
-- More Array (NodeJS Edition) ❌ (**Replaced By:** More Method (NodeJS Edition))
-- Read Directory Depth (NodeJS Edition) ❌ (**Replaced By:** Advanced File System (NodeJS Edition))
 
 ## 🌐 Translation
+
+### Previous
 
 - [MCA Selector](https://github.com/Querz/mcaselector)
 - [MrCrayfish Controllable](https://github.com/MrCrayfish/Controllable)
 - [MrCrayfish Furniture Mod](https://github.com/MrCrayfish/MrCrayfishFurnitureMod)
 - [MrCrayfish Gun Mod](https://github.com/MrCrayfish/MrCrayfishGunMod)
 - [MrCrayfish Vehicle Mod](https://github.com/MrCrayfish/MrCrayfishVehicleMod)
-- *and more...*
+- and more...

@@ -62,6 +62,7 @@
 - [No Item Despawn (Minecraft Java Data Pack Edition)](https://github.com/hugoalh-studio/no-item-despawn-mcjdp)
 - [No Mob Despawn (Minecraft Java Data Pack Edition)](https://github.com/hugoalh-studio/no-mob-despawn-mcjdp)
 - [Recipe+ (Minecraft Java Data Pack Edition)](https://github.com/hugoalh-studio/recipe-plus-mcjdp)
+- [REPattern (NodeJS Edition)](https://github.com/hugoalh-studio/repattern-nodejs)
 - [Send Discord Webhook (GitHub Action Edition)](https://github.com/hugoalh/send-discord-webhook-ghaction) *(**Previous:** [GitHub Action] Send To Discord)*
 - [Symmetric Crypto (NodeJS Edition)](https://github.com/hugoalh-studio/symmetric-crypto-nodejs)
 - [Tag+ (Minecraft Java Data Pack Edition)](https://github.com/hugoalh-studio-studio/tag-plus-mcjdp)
@@ -75,7 +76,6 @@
 - [MCJT (Minecraft Java Toolbox) (.Net Edition) 🚧](https://github.com/hugoalh-studio/minecraft-java-toolbox-dotnet)
 - [MCJT (Minecraft Java Toolbox) (NodeJS CLI Edition) 🚧](https://github.com/hugoalh-studio/minecraft-java-toolbox-nodejscli)
 - [More Method (Deno Edition) 🚧](https://github.com/hugoalh-studio/more-method-deno)
-- [REPattern (NodeJS Edition) 🚧](https://github.com/hugoalh-studio/repattern-nodejs)
 - [Unit Convert (NodeJS Edition) 🚧](https://github.com/hugoalh-studio/unit-convert-nodejs)
 
 ## 🌐 Translation

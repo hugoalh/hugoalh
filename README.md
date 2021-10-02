@@ -69,7 +69,7 @@
 - [No Item Despawn (Minecraft Java Data Pack Edition) 🗄](https://github.com/hugoalh-studio/no-item-despawn-mcjdp)
 - [No Mob Despawn (Minecraft Java Data Pack Edition) 🗄](https://github.com/hugoalh-studio/no-mob-despawn-mcjdp)
 - [Recipe+ (Minecraft Java Data Pack Edition) 🗄](https://github.com/hugoalh-studio/recipe-plus-mcjdp)
-- [Tag+ (Minecraft Java Data Pack Edition) 🗄](https://github.com/hugoalh-studio-studio/tag-plus-mcjdp)
+- [Tag+ (Minecraft Java Data Pack Edition) 🗄](https://github.com/hugoalh-studio/tag-plus-mcjdp)
 - [Advanced File System (NodeJS Edition) 🚧](https://github.com/hugoalh-studio/advanced-file-system-nodejs)
 - [Advanced Random (Deno Edition) 🚧](https://github.com/hugoalh-studio/advanced-random-deno)
 - [File Unifier (GitHub Action Edition) 🚧](https://github.com/hugoalh/file-unifier-ghaction)

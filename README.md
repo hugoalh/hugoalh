@@ -37,6 +37,7 @@
   - C# (C-Sharp)
 - Docker
 - Python
+- SVG (Scalable Vector Graphics)
 - TypeScript
 
 ## 📦 Project
@@ -61,7 +62,7 @@
 
 ### 🗄 Archive
 
-> Currently discontinue but not deprecate, maybe back in the future.
+> Currently discontinue but not planned to deprecate or deprecated, maybe back in the future.
 
 - [Disable Advancement (Minecraft Java Data Pack Edition)](https://github.com/hugoalh-studio/disable-advancement-mcjdp) *(**Previous:** [Minecraft Java Data Pack] Disable Minecraft Advancement)*
 - [Enchant+ (Minecraft Java Data Pack Edition)](https://github.com/hugoalh-studio/enchant-plus-mcjdp)

@@ -68,7 +68,7 @@ In either case contrary to Affirmer's express Statement of Purpose.
 
 ---
 
-*This is a short and simple list that mostly concluded this license about the permission(s) 🟢, condition(s) 🔵, and limitation(s) 🔴, this license content section shall prevail.*
+*This is a short and simple list that mostly concluded this license about the permissions 🟢, conditions 🔵, and limitations 🔴, this license content section shall prevail.*
 
 - Commercial Use 🟢
 - Distribution 🟢

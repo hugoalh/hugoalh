@@ -4,11 +4,11 @@
 
 > | **Legend** | **Description** |
 > |:-:|:--|
-> | L | **LTS:** This version(s) is long term supported. |
-> | ✔ | **Yes:** This version(s) is supported. |
-> | 👎 | **Partly:** This version(s) is partly supported due to deprecated by a newer version(s). |
-> | ❌ | **No:** This version(s) is not supported due to too old. |
-> | ⚠ | **Issue:** This version(s) is not supported due to confirmed contains bug(s) and/or issue(s). |
+> | L | Long term supported. |
+> | ✔ | Supported. |
+> | 👎{🧓} | Partly supported due to deprecated by newer versions. |
+> | ❌{🧓} | Not supported due to too old. |
+> | ❌{🐛} | Not supported due to confirmed contains bugs and/or issues. |
 
 | **Tag / Version** | **Target** | **Support** |
 |:-:|:-:|:-:|
@@ -26,8 +26,8 @@ Send an email to anyone who listed in here (click the link to obtain the email a
 
 - Your GitHub account username (e.g.: `@octocat`)
 - Project identification name
-- Affected version(s) (must be a supported version(s))
-- Affected file(s)
-- Issue(s) to cause this security issue
-- Common Vulnerabilities and Exposures (CVE) identification number(s)
-- Reference of this security issue
+- Affected versions (version must be listed as supported)
+- Affected files
+- Issues to cause this security issue
+- Common Vulnerabilities and Exposures (CVE) identification numbers
+- References of this security issue

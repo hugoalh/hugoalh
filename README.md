@@ -1,6 +1,6 @@
 # [@hugoalh](https://github.com/hugoalh)
 
-## 🧐 About Me
+## 👤 About Me
 
 ### 💬 Language
 
@@ -21,6 +21,8 @@
 
 ### 💻 Programming Language
 
+#### ✔ Known
+
 - CSS (Cascading Style Sheets)
 - HTML (HyperText Markup Language)
 - JavaScript
@@ -29,7 +31,7 @@
 - MCFunction (Minecraft Function)
 - ModernScript
 
-#### Learning
+#### 📖 Learning
 
 - .NET
   - C# (C-Sharp)
@@ -39,15 +41,7 @@
 
 ## 📦 Project
 
-| **Legend** | **Description** |
-|:-:|:--|
-| 🗄 | **Archive:** This project is currently discontinue but not deprecate, maybe back in the future. |
-| 🚧 | **Constructing:** This project is in constructing, maybe available in the future. |
-| 🧪 | **Experimental:** This project is in testing, maybe available in the future. |
-| ⏲{👎} | **Planned Deprecate:** This project is planned to deprecate. |
-| 👎 | **Deprecated:** This project is officially deprecated, maybe remove in the future. |
-| ⏲{❌} | **Planned Remove:** This project is officially deprecated and planned to remove. |
-| ❌ | **Removed:** This project is officially removed. |
+### 🆙 Active / Current
 
 - [Advanced Determine (NodeJS Edition)](https://github.com/hugoalh-studio/advanced-determine-nodejs)
 - [Advanced Random (NodeJS Edition)](https://github.com/hugoalh-studio/advanced-random-nodejs)
@@ -64,25 +58,69 @@
 - [Trigger Pipedream Workflow (GitHub Action Edition)](https://github.com/hugoalh/trigger-pipedream-workflow-ghaction) *(**Previous:** [GitHub Action] Send To Pipedream)*
 - [Undefinish (NodeJS Edition)](https://github.com/hugoalh-studio/undefinish-nodejs)
 - [Universal Blacklist](https://github.com/hugoalh-studio/universal-blacklist)
-- [Disable Advancement (Minecraft Java Data Pack Edition) 🗄](https://github.com/hugoalh-studio/disable-advancement-mcjdp) *(**Previous:** [Minecraft Java Data Pack] Disable Minecraft Advancement)*
-- [Enchant+ (Minecraft Java Data Pack Edition) 🗄](https://github.com/hugoalh-studio/enchant-plus-mcjdp)
-- [No Enderman Griefing (Minecraft Java Data Pack Edition) 🗄](https://github.com/hugoalh-studio/no-enderman-griefing-mcjdp)
-- [No Item Despawn (Minecraft Java Data Pack Edition) 🗄](https://github.com/hugoalh-studio/no-item-despawn-mcjdp)
-- [No Mob Despawn (Minecraft Java Data Pack Edition) 🗄](https://github.com/hugoalh-studio/no-mob-despawn-mcjdp)
-- [Recipe+ (Minecraft Java Data Pack Edition) 🗄](https://github.com/hugoalh-studio/recipe-plus-mcjdp)
-- [Tag+ (Minecraft Java Data Pack Edition) 🗄](https://github.com/hugoalh-studio/tag-plus-mcjdp)
-- [Advanced File System (NodeJS Edition) 🚧](https://github.com/hugoalh-studio/advanced-file-system-nodejs)
-- [Advanced Random (Deno Edition) 🚧](https://github.com/hugoalh-studio/advanced-random-deno)
-- [File Unifier (GitHub Action Edition) 🚧](https://github.com/hugoalh/file-unifier-ghaction)
-- [GitHub Manager (.Net Edition) 🚧](https://github.com/hugoalh-studio/github-manager-dotnet)
-- [MCJT (Minecraft Java Toolbox) (.Net Edition) 🚧](https://github.com/hugoalh-studio/minecraft-java-toolbox-dotnet)
-- [MCJT (Minecraft Java Toolbox) (NodeJS CLI Edition) 🚧](https://github.com/hugoalh-studio/minecraft-java-toolbox-nodejscli)
-- [More Method (Deno Edition) 🚧](https://github.com/hugoalh-studio/more-method-deno)
-- [Unit Convert (NodeJS Edition) 🚧](https://github.com/hugoalh-studio/unit-convert-nodejs)
+
+### 🗄 Archive
+
+> Currently discontinue but not deprecate, maybe back in the future.
+
+- [Disable Advancement (Minecraft Java Data Pack Edition)](https://github.com/hugoalh-studio/disable-advancement-mcjdp) *(**Previous:** [Minecraft Java Data Pack] Disable Minecraft Advancement)*
+- [Enchant+ (Minecraft Java Data Pack Edition)](https://github.com/hugoalh-studio/enchant-plus-mcjdp)
+- [No Enderman Griefing (Minecraft Java Data Pack Edition)](https://github.com/hugoalh-studio/no-enderman-griefing-mcjdp)
+- [No Item Despawn (Minecraft Java Data Pack Edition)](https://github.com/hugoalh-studio/no-item-despawn-mcjdp)
+- [No Mob Despawn (Minecraft Java Data Pack Edition)](https://github.com/hugoalh-studio/no-mob-despawn-mcjdp)
+- [Recipe+ (Minecraft Java Data Pack Edition)](https://github.com/hugoalh-studio/recipe-plus-mcjdp)
+- [Tag+ (Minecraft Java Data Pack Edition)](https://github.com/hugoalh-studio/tag-plus-mcjdp)
+
+### 🚧 Constructing
+
+> In constructing, maybe available in the future.
+
+- [Advanced File System (NodeJS Edition)](https://github.com/hugoalh-studio/advanced-file-system-nodejs)
+- [Advanced Random (Deno Edition)](https://github.com/hugoalh-studio/advanced-random-deno)
+- [File Unifier (GitHub Action Edition)](https://github.com/hugoalh/file-unifier-ghaction)
+- [GitHub Manager (.Net Edition)](https://github.com/hugoalh-studio/github-manager-dotnet)
+- [MCJT (Minecraft Java Toolbox) (.Net Edition)](https://github.com/hugoalh-studio/minecraft-java-toolbox-dotnet)
+- [MCJT (Minecraft Java Toolbox) (NodeJS CLI Edition)](https://github.com/hugoalh-studio/minecraft-java-toolbox-nodejscli)
+- [More Method (Deno Edition)](https://github.com/hugoalh-studio/more-method-deno)
+- [Unit Convert (NodeJS Edition)](https://github.com/hugoalh-studio/unit-convert-nodejs)
+
+### 🧪 Experimental
+
+> In testing, maybe available in the future.
+
+*N/A*
+
+### ⏲{👎} Planned Deprecate
+
+> Planned to deprecate.
+
+*N/A*
+
+### 👎 Deprecated
+
+> Officially deprecated, maybe remove in the future.
+
+*N/A*
+
+### ⏲{❌} Planned Remove
+
+> Officially deprecated and planned to remove.
+
+*N/A*
+
+### ❌ Removed
+
+> Officially removed.
+
+*N/A*
 
 ## 🌐 Translation
 
-### Previous
+### 🆙 Active / Current
+
+*N/A*
+
+### ⏮️ Previous
 
 - [MCA Selector](https://github.com/Querz/mcaselector)
 - [MrCrayfish Controllable](https://github.com/MrCrayfish/Controllable)

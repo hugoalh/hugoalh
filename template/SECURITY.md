@@ -26,7 +26,7 @@ Send an email to anyone who listed in here (click the link to obtain the email a
 
 - Your GitHub account username (e.g.: `@octocat`)
 - Project identification name
-- Affected versions (version must be listed as supported)
+- Affected versions (versions must be listed as supported)
 - Affected files
 - Issues to cause this security issue
 - Common Vulnerabilities and Exposures (CVE) identification numbers

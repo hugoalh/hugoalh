@@ -6,9 +6,10 @@
 > |:-:|:--|
 > | L | Long term supported. |
 > | ✔ | Supported. |
+> | 👎{🐛} | Partly supported due to confirmed contains bugs and/or issues. |
 > | 👎{🧓} | Partly supported due to deprecated by newer versions. |
-> | ❌{🧓} | Not supported due to too old. |
 > | ❌{🐛} | Not supported due to confirmed contains bugs and/or issues. |
+> | ❌{🧓} | Not supported due to too old. |
 
 | **Tag / Version** | **Target** | **Support** |
 |:-:|:-:|:-:|

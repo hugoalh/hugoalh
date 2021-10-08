@@ -5,9 +5,6 @@ labels:
   - "📚documentation"
   - "🔵unconfirm"
 body:
-  - type: "markdown"
-    attributes:
-      value: "> <b>🧪 實驗：</b>GitHub議題表單目前處於測試階段；如果遇到任何問題，請使用Markdown版。"
   - type: "textarea"
     id: "describe"
     attributes:

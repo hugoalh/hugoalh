@@ -23,20 +23,34 @@
 
 #### ✔ Known
 
+- CSON (CoffeeScript Object Notation)
 - CSS (Cascading Style Sheets)
+- CSV (Comma Separated Values)
 - HTML (HyperText Markup Language)
 - JavaScript
   - CommonJS
   - ModuleJS (ECMAScript Module)
+- JSON (JavaScript Object Notation)
+- JSON5 (JavaScript Object Notation for Humans)
+- JSONC (JavaScript Object Notation with Comments)
 - MCFunction (Minecraft Function)
 - ModernScript
+- TOML (Tom's Obvious, Minimal Language)
+- TSV (Tab Separated Values)
+- YAML / YML (YAML Ain't Markup Language)
 
 #### 📖 Learning
 
+- Bash
+- BASIC (Beginner's All-purpose Symbolic Instruction Code)
 - .NET
   - C# (C-Sharp)
 - Docker
+- Go
+- Perl
+- Powershell
 - Python
+- Raku (Perl 6)
 - SVG (Scalable Vector Graphics)
 - TypeScript
 

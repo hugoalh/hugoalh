@@ -20,9 +20,9 @@ body:
     validations:
       required: false
   - type: "textarea"
-    id: "additional"
+    id: "additional-information"
     attributes:
-      label: "其他"
-      description: "如果有任何與此議題相關但是不適用於任何欄位的資料，請在此處列出。"
+      label: "額外資料"
+      description: "如果有與此議題相關但是不適用於其他欄位的資料，請在此處列出。"
     validations:
       required: false

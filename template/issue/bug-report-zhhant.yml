@@ -16,7 +16,7 @@ body:
     id: "version"
     attributes:
       label: "版本"
-      description: "甚麼版本受到影響？必須是「安全政策（英文）」（/.github/SECURITY.md）中列出的受支持版本。"
+      description: "甚麼版本受到影響？必須是安全政策（/.github/SECURITY.md，英文）中列出的受支持版本。"
       multiple: true
       options:
         - "vX.X.X"
@@ -37,9 +37,9 @@ body:
     validations:
       required: false
   - type: "textarea"
-    id: "additional"
+    id: "additional-information"
     attributes:
-      label: "其他"
-      description: "如果有任何與此議題相關但是不適用於任何欄位的資料，請在此處列出。"
+      label: "額外資料"
+      description: "如果有與此議題相關但是不適用於其他欄位的資料，請在此處列出。"
     validations:
       required: false

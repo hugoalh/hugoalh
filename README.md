@@ -4,13 +4,13 @@
 
 ### 💬 Language
 
-- Chinese (中文)
-  - Cantonese (粵語 / 廣東話)
-  - Hong Kong
-  - Macao
-  - Republic of China (Taiwan)
-  - Traditional (繁體)
-- English
+- [Chinese (中文)](https://en.wikipedia.org/wiki/Chinese_language)
+  - [Cantonese (粵語 / 廣東話)](https://en.wikipedia.org/wiki/Cantonese)
+  - [Hong Kong](https://en.wikipedia.org/wiki/Hong_Kong)
+  - [Macao](https://en.wikipedia.org/wiki/Macau)
+  - [Republic of China (Taiwan)](https://en.wikipedia.org/wiki/Taiwan)
+  - [Traditional (繁體)](https://en.wikipedia.org/wiki/Traditional_Chinese_characters)
+- [English](https://en.wikipedia.org/wiki/English_language)
 
 ### 🕸 Network
 
@@ -23,36 +23,36 @@
 
 #### ✔ Known
 
-- CSON (CoffeeScript Object Notation)
-- CSS (Cascading Style Sheets)
-- CSV (Comma Separated Values)
-- HTML (HyperText Markup Language)
-- JavaScript
-  - CommonJS
-  - ModuleJS (ECMAScript Module)
-- JSON (JavaScript Object Notation)
+- [CSS (Cascading Style Sheets)](https://en.wikipedia.org/wiki/CSS)
+- [CSV (Comma Separated Values)](https://en.wikipedia.org/wiki/Comma-separated_values)
+- [HTML (HyperText Markup Language)](https://en.wikipedia.org/wiki/HTML)
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+  - [CommonJS](https://en.wikipedia.org/wiki/CommonJS)
+  - [ModuleJS (ECMAScript Module)](https://en.wikipedia.org/wiki/ECMAScript#6th_Edition_%E2%80%93_ECMAScript_2015)
+- [JSON (JavaScript Object Notation)](https://en.wikipedia.org/wiki/JSON)
 - JSON5 (JavaScript Object Notation for Humans)
 - JSONC (JavaScript Object Notation with Comments)
 - MCFunction (Minecraft Function)
 - ModernScript
-- TOML (Tom's Obvious, Minimal Language)
-- TSV (Tab Separated Values)
-- YAML / YML (YAML Ain't Markup Language)
+- [TOML (Tom's Obvious, Minimal Language)](https://en.wikipedia.org/wiki/TOML)
+- [TSV (Tab Separated Values)](https://en.wikipedia.org/wiki/Tab-separated_values)
+- [YAML / YML (YAML Ain't Markup Language)](https://en.wikipedia.org/wiki/YAML)
 
 #### 📖 Learning
 
-- Bash
-- BASIC (Beginner's All-purpose Symbolic Instruction Code)
-- .NET
-  - C# (C-Sharp)
-- Docker
-- Go
-- Perl
-- Powershell
-- Python
-- Raku (Perl 6)
-- SVG (Scalable Vector Graphics)
-- TypeScript
+- [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
+- [BASIC (Beginner's All-purpose Symbolic Instruction Code)](https://en.wikipedia.org/wiki/BASIC)
+- [.NET](https://en.wikipedia.org/wiki/.NET)
+  - [C# (C-Sharp)](https://en.wikipedia.org/wiki/C_Sharp_(programming_language))
+- [CSON (CoffeeScript Object Notation)](https://en.wikipedia.org/wiki/CoffeeScript)
+- [Docker](https://en.wikipedia.org/wiki/Docker_(software))
+- [Go](https://en.wikipedia.org/wiki/Go_(programming_language))
+- [Perl](https://en.wikipedia.org/wiki/Perl)
+- [Powershell](https://en.wikipedia.org/wiki/PowerShell)
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+- [Raku (Perl 6)](https://en.wikipedia.org/wiki/Raku_(programming_language))
+- [SVG (Scalable Vector Graphics)](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics)
+- [TypeScript](https://en.wikipedia.org/wiki/TypeScript)
 
 ## 📦 Project
 

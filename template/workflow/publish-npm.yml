@@ -28,7 +28,7 @@ jobs:
         if: "${{github.event.release.prerelease == false || startsWith(steps.get-package-meta.outputs.version, '0.')}}"
         run: |
           npm publish
-          npm dist-tag add \"${{steps.get-package-meta.outputs.name}}@${{steps.get-package-meta.outputs.version}}\" pre
+          npm dist-tag add "${{steps.get-package-meta.outputs.name}}@${{steps.get-package-meta.outputs.version}}" pre
         env:
           NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
       - name: "Publish To Tag @pre"

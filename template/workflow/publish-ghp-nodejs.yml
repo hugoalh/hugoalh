@@ -20,7 +20,7 @@ jobs:
         run: |
           $packageContent = (Get-Content -Path .\package.json -Encoding utf8NoBOM -Raw)
           $packageOriginalName = (ConvertFrom-Json -InputObject $packageContent | Select-Object -ExpandProperty name)
-          Set-Content -Path .\package.json -Value $(($packageContent).Replace($packageOriginalName, "@${{github.repository}}")) -Encoding utf8NoBOM
+          Set-Content -Path .\package.json -Value "$(($packageContent).Replace($packageOriginalName, "@${{github.repository}}"))" -Encoding utf8NoBOM
         shell: "pwsh"
       - name: "Setup NodeJS"
         uses: "actions/setup-node@v2.4.1"

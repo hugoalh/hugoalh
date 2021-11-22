@@ -48,7 +48,7 @@
 - [Docker](https://en.wikipedia.org/wiki/Docker_(software))
 - [Go](https://en.wikipedia.org/wiki/Go_(programming_language))
 - [Perl](https://en.wikipedia.org/wiki/Perl)
-- [Powershell](https://en.wikipedia.org/wiki/PowerShell)
+- [PowerShell](https://en.wikipedia.org/wiki/PowerShell)
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 - [Raku (Perl 6)](https://en.wikipedia.org/wiki/Raku_(programming_language))
 - [SVG (Scalable Vector Graphics)](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics)
@@ -67,6 +67,7 @@
 - [GitHub Sodium (NodeJS)](https://github.com/hugoalh-studio/github-sodium-nodejs)
 - [More Method (NodeJS)](https://github.com/hugoalh-studio/more-method-nodejs)
 - [REPattern (NodeJS)](https://github.com/hugoalh-studio/repattern-nodejs)
+- [Scan Virus (GitHub Action)](https://github.com/hugoalh/scan-virus-ghaction)
 - [Send Discord Webhook (GitHub Action)](https://github.com/hugoalh/send-discord-webhook-ghaction) *(**Previous:** [GitHub Action] Send To Discord)*
 - [Symmetric Crypto (NodeJS)](https://github.com/hugoalh-studio/symmetric-crypto-nodejs)
 - [Trigger IFTTT Webhook Applet (GitHub Action)](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction) *(**Previous:** [GitHub Action] Send To IFTTT)*

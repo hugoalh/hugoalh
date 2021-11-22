@@ -58,46 +58,46 @@
 
 ### 🆙 Active / Current
 
-- [Advanced Determine (NodeJS Edition)](https://github.com/hugoalh-studio/advanced-determine-nodejs)
-- [Advanced Random (NodeJS Edition)](https://github.com/hugoalh-studio/advanced-random-nodejs)
-- [Command Line Parser (Deno Edition)](https://github.com/hugoalh-studio/command-line-parser-deno)
-- [Command Line Parser (NodeJS Edition)](https://github.com/hugoalh-studio/command-line-parser-nodejs) *(**Previous:** [NodeJS] CLI Argument Parser)*
-- [GitHub Manager (NodeJS CLI Edition)](https://github.com/hugoalh-studio/github-manager-nodejscli)
-- [GitHub Secret Manager (GitHub Action Edition)](https://github.com/hugoalh/github-secret-manager-ghaction)
-- [GitHub Sodium (NodeJS Edition)](https://github.com/hugoalh-studio/github-sodium-nodejs)
-- [More Method (NodeJS Edition)](https://github.com/hugoalh-studio/more-method-nodejs)
-- [REPattern (NodeJS Edition)](https://github.com/hugoalh-studio/repattern-nodejs)
-- [Send Discord Webhook (GitHub Action Edition)](https://github.com/hugoalh/send-discord-webhook-ghaction) *(**Previous:** [GitHub Action] Send To Discord)*
-- [Symmetric Crypto (NodeJS Edition)](https://github.com/hugoalh-studio/symmetric-crypto-nodejs)
-- [Trigger IFTTT Webhook Applet (GitHub Action Edition)](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction) *(**Previous:** [GitHub Action] Send To IFTTT)*
-- [Trigger Pipedream Workflow (GitHub Action Edition)](https://github.com/hugoalh/trigger-pipedream-workflow-ghaction) *(**Previous:** [GitHub Action] Send To Pipedream)*
-- [Undefinish (NodeJS Edition)](https://github.com/hugoalh-studio/undefinish-nodejs)
+- [Advanced Determine (NodeJS)](https://github.com/hugoalh-studio/advanced-determine-nodejs)
+- [Advanced Random (NodeJS)](https://github.com/hugoalh-studio/advanced-random-nodejs)
+- [Command Line Parser (Deno)](https://github.com/hugoalh-studio/command-line-parser-deno)
+- [Command Line Parser (NodeJS)](https://github.com/hugoalh-studio/command-line-parser-nodejs) *(**Previous:** [NodeJS] CLI Argument Parser)*
+- [GitHub Manager (NodeJS CLI)](https://github.com/hugoalh-studio/github-manager-nodejscli)
+- [GitHub Secret Manager (GitHub Action)](https://github.com/hugoalh/github-secret-manager-ghaction)
+- [GitHub Sodium (NodeJS)](https://github.com/hugoalh-studio/github-sodium-nodejs)
+- [More Method (NodeJS)](https://github.com/hugoalh-studio/more-method-nodejs)
+- [REPattern (NodeJS)](https://github.com/hugoalh-studio/repattern-nodejs)
+- [Send Discord Webhook (GitHub Action)](https://github.com/hugoalh/send-discord-webhook-ghaction) *(**Previous:** [GitHub Action] Send To Discord)*
+- [Symmetric Crypto (NodeJS)](https://github.com/hugoalh-studio/symmetric-crypto-nodejs)
+- [Trigger IFTTT Webhook Applet (GitHub Action)](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction) *(**Previous:** [GitHub Action] Send To IFTTT)*
+- [Trigger Pipedream Workflow (GitHub Action)](https://github.com/hugoalh/trigger-pipedream-workflow-ghaction) *(**Previous:** [GitHub Action] Send To Pipedream)*
+- [Undefinish (NodeJS)](https://github.com/hugoalh-studio/undefinish-nodejs)
 - [Universal Blacklist](https://github.com/hugoalh-studio/universal-blacklist)
 
 ### 🗄 Archive
 
 > Currently discontinue but not planned to deprecate or deprecated, maybe back in the future.
 
-- [Disable Advancement (Minecraft Java Data Pack Edition)](https://github.com/hugoalh-studio/disable-advancement-mcjdp) *(**Previous:** [Minecraft Java Data Pack] Disable Minecraft Advancement)*
-- [Enchant+ (Minecraft Java Data Pack Edition)](https://github.com/hugoalh-studio/enchant-plus-mcjdp)
-- [No Enderman Griefing (Minecraft Java Data Pack Edition)](https://github.com/hugoalh-studio/no-enderman-griefing-mcjdp)
-- [No Item Despawn (Minecraft Java Data Pack Edition)](https://github.com/hugoalh-studio/no-item-despawn-mcjdp)
-- [No Mob Despawn (Minecraft Java Data Pack Edition)](https://github.com/hugoalh-studio/no-mob-despawn-mcjdp)
-- [Recipe+ (Minecraft Java Data Pack Edition)](https://github.com/hugoalh-studio/recipe-plus-mcjdp)
-- [Tag+ (Minecraft Java Data Pack Edition)](https://github.com/hugoalh-studio/tag-plus-mcjdp)
+- [Disable Advancement (Minecraft Java Data Pack)](https://github.com/hugoalh-studio/disable-advancement-mcjdp) *(**Previous:** [Minecraft Java Data Pack] Disable Minecraft Advancement)*
+- [Enchant+ (Minecraft Java Data Pack)](https://github.com/hugoalh-studio/enchant-plus-mcjdp)
+- [No Enderman Griefing (Minecraft Java Data Pack)](https://github.com/hugoalh-studio/no-enderman-griefing-mcjdp)
+- [No Item Despawn (Minecraft Java Data Pack)](https://github.com/hugoalh-studio/no-item-despawn-mcjdp)
+- [No Mob Despawn (Minecraft Java Data Pack)](https://github.com/hugoalh-studio/no-mob-despawn-mcjdp)
+- [Recipe+ (Minecraft Java Data Pack)](https://github.com/hugoalh-studio/recipe-plus-mcjdp)
+- [Tag+ (Minecraft Java Data Pack)](https://github.com/hugoalh-studio/tag-plus-mcjdp)
 
 ### 🚧 Constructing
 
 > In constructing, maybe available in the future.
 
-- [Advanced File System (NodeJS Edition)](https://github.com/hugoalh-studio/advanced-file-system-nodejs)
-- [Advanced Random (Deno Edition)](https://github.com/hugoalh-studio/advanced-random-deno)
-- [File Unifier (GitHub Action Edition)](https://github.com/hugoalh/file-unifier-ghaction)
-- [GitHub Manager (.Net Edition)](https://github.com/hugoalh-studio/github-manager-dotnet)
-- [MCJT (Minecraft Java Toolbox) (.Net Edition)](https://github.com/hugoalh-studio/minecraft-java-toolbox-dotnet)
-- [MCJT (Minecraft Java Toolbox) (NodeJS CLI Edition)](https://github.com/hugoalh-studio/minecraft-java-toolbox-nodejscli)
-- [More Method (Deno Edition)](https://github.com/hugoalh-studio/more-method-deno)
-- [Unit Convert (NodeJS Edition)](https://github.com/hugoalh-studio/unit-convert-nodejs)
+- [Advanced File System (NodeJS)](https://github.com/hugoalh-studio/advanced-file-system-nodejs)
+- [Advanced Random (Deno)](https://github.com/hugoalh-studio/advanced-random-deno)
+- [File Unifier (GitHub Action)](https://github.com/hugoalh/file-unifier-ghaction)
+- [GitHub Manager (.Net)](https://github.com/hugoalh-studio/github-manager-dotnet)
+- [MCJT (Minecraft Java Toolbox) (.Net)](https://github.com/hugoalh-studio/minecraft-java-toolbox-dotnet)
+- [MCJT (Minecraft Java Toolbox) (NodeJS CLI)](https://github.com/hugoalh-studio/minecraft-java-toolbox-nodejscli)
+- [More Method (Deno)](https://github.com/hugoalh-studio/more-method-deno)
+- [Unit Convert (NodeJS)](https://github.com/hugoalh-studio/unit-convert-nodejs)
 
 ### 🧪 Experimental
 

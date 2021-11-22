@@ -1,5 +1,5 @@
 # $<Schema>$ https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions
-name: "Publish - GitHub Packages For NodeJS"
+name: "Publish - GitHub Packages - NodeJS"
 on:
   workflow_dispatch:
     inputs:
@@ -8,7 +8,7 @@ on:
         required: true
 jobs:
   publish-ghp-nodejs:
-    name: "Publish - GitHub Packages For NodeJS"
+    name: "Publish - GitHub Packages - NodeJS"
     if: "${{github.actor == 'hugoalh'}}"
     runs-on: "ubuntu-latest"
     steps:

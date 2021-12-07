@@ -60,8 +60,6 @@
 
 - [Advanced Determine (NodeJS)](https://github.com/hugoalh-studio/advanced-determine-nodejs)
 - [Advanced Random (NodeJS)](https://github.com/hugoalh-studio/advanced-random-nodejs)
-- [Command Line Parser (Deno)](https://github.com/hugoalh-studio/command-line-parser-deno)
-- [Command Line Parser (NodeJS)](https://github.com/hugoalh-studio/command-line-parser-nodejs) *(**Previous:** [NodeJS] CLI Argument Parser)*
 - [GitHub Manager (NodeJS CLI)](https://github.com/hugoalh-studio/github-manager-nodejscli)
 - [GitHub Secret Manager (GitHub Action)](https://github.com/hugoalh/github-secret-manager-ghaction)
 - [GitHub Sodium (NodeJS)](https://github.com/hugoalh-studio/github-sodium-nodejs)
@@ -116,7 +114,8 @@
 
 > Officially deprecated, maybe remove in the future.
 
-*N/A*
+- [Command Line Parser (Deno)](https://github.com/hugoalh-studio/command-line-parser-deno)
+- [Command Line Parser (NodeJS)](https://github.com/hugoalh-studio/command-line-parser-nodejs) *(**Previous:** [NodeJS] CLI Argument Parser)*
 
 ### ⏲{❌} Planned Remove
 

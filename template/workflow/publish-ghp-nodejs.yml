@@ -4,12 +4,11 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: "Tag without prefix `v`."
+        description: "{string} Tag without prefix `v`."
         required: true
 jobs:
   publish-ghp-nodejs:
     name: "Publish - GitHub Packages - NodeJS"
-    if: "${{github.actor == 'hugoalh'}}"
     runs-on: "ubuntu-latest"
     steps:
       - name: "Checkout Repository"
@@ -18,9 +17,8 @@ jobs:
           ref: "v${{github.event.inputs.tag}}"
       - name: "Correct Package Name"
         run: |
-          $packageContent = (Get-Content -Path .\package.json -Encoding utf8NoBOM -Raw)
-          $packageOriginalName = (ConvertFrom-Json -InputObject $packageContent | Select-Object -ExpandProperty name)
-          Set-Content -Path .\package.json -Value "$(($packageContent).Replace($packageOriginalName, "@${{github.repository}}"))" -Encoding utf8NoBOM
+          [string]$PackageContent = Get-Content -Encoding utf8NoBOM -Path .\package.json -Raw
+          Set-Content -Encoding utf8NoBOM -Path .\package.json -Value $($PackageContent -replace $(ConvertFrom-Json -InputObject $PackageContent).name, "@${{github.repository}}")
         shell: "pwsh"
       - name: "Setup NodeJS"
         uses: "actions/setup-node@v2.5.0"

@@ -53,6 +53,7 @@
 - [Raku (Perl 6)](https://en.wikipedia.org/wiki/Raku_(programming_language))
 - [SVG (Scalable Vector Graphics)](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics)
 - [TypeScript](https://en.wikipedia.org/wiki/TypeScript)
+- [YARA (Yet Another Ridiculous Acronym)](https://en.wikipedia.org/wiki/YARA)
 
 ## 📦 Project
 
@@ -92,10 +93,12 @@
 - [Advanced File System (NodeJS)](https://github.com/hugoalh-studio/advanced-file-system-nodejs)
 - [Advanced Random (Deno)](https://github.com/hugoalh-studio/advanced-random-deno)
 - [File Unifier (GitHub Action)](https://github.com/hugoalh/file-unifier-ghaction)
+- [GitHub Actions Toolkit (PowerShell)](https://github.com/hugoalh-studio/ghactions-toolkit-powershell)
 - [GitHub Manager (.Net)](https://github.com/hugoalh-studio/github-manager-dotnet)
 - [MCJT (Minecraft Java Toolbox) (.Net)](https://github.com/hugoalh-studio/minecraft-java-toolbox-dotnet)
 - [MCJT (Minecraft Java Toolbox) (NodeJS CLI)](https://github.com/hugoalh-studio/minecraft-java-toolbox-nodejscli)
 - [More Method (Deno)](https://github.com/hugoalh-studio/more-method-deno)
+- [More Method (PowerShell)](https://github.com/hugoalh-studio/more-method-powershell)
 - [Unit Convert (NodeJS)](https://github.com/hugoalh-studio/unit-convert-nodejs)
 
 ### 🧪 Experimental

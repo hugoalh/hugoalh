@@ -17,8 +17,8 @@ jobs:
           ref: "v${{github.event.inputs.tag}}"
       - name: "Correct Package Name"
         run: |
-          [string]$PackageContent = Get-Content -Encoding utf8NoBOM -Path .\package.json -Raw
-          Set-Content -Encoding utf8NoBOM -Path .\package.json -Value $($PackageContent -replace $(ConvertFrom-Json -InputObject $PackageContent).name, "@${{github.repository}}")
+          [string]$PackageContent = Get-Content -Path '.\package.json' -Raw -Encoding utf8NoBOM
+          Set-Content -Path '.\package.json' -Value $($PackageContent -replace $(ConvertFrom-Json -InputObject $PackageContent).name, "@${{github.repository}}") -NoNewLine -Encoding utf8NoBOM
         shell: "pwsh"
       - name: "Setup NodeJS"
         uses: "actions/setup-node@v2.5.1"

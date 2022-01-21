@@ -14,10 +14,13 @@
 
 ### 🕸 Network
 
+- Discord
 - [GitHub Discussion](https://github.com/hugoalh/hugoalh/discussions)
 - [GitHub Gist](https://gist.github.com/hugoalh)
 - [MeWe](https://mewe.com/i/hugoalh)
+- Signal
 - [Twitter (@hugoalhofficial)](https://twitter.com/hugoalhofficial)
+- [Telegram (@hugoalh)](https://t.me/hugoalh)
 
 ### 💻 Programming Language
 
@@ -30,8 +33,8 @@
   - [CommonJS](https://en.wikipedia.org/wiki/CommonJS)
   - [ModuleJS (ECMAScript Module)](https://en.wikipedia.org/wiki/ECMAScript#6th_Edition_%E2%80%93_ECMAScript_2015)
 - [JSON (JavaScript Object Notation)](https://en.wikipedia.org/wiki/JSON)
-- JSON5 (JavaScript Object Notation for Humans)
-- JSONC (JavaScript Object Notation with Comments)
+  - JSON5 (JavaScript Object Notation for Humans)
+  - JSONC (JavaScript Object Notation with Comments)
 - MCFunction (Minecraft Function)
 - ModernScript
 - [TOML (Tom's Obvious, Minimal Language)](https://en.wikipedia.org/wiki/TOML)
@@ -53,6 +56,7 @@
 - [Raku (Perl 6)](https://en.wikipedia.org/wiki/Raku_(programming_language))
 - [SVG (Scalable Vector Graphics)](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics)
 - [TypeScript](https://en.wikipedia.org/wiki/TypeScript)
+- [V](https://vlang.io)
 - [YARA (Yet Another Ridiculous Acronym)](https://en.wikipedia.org/wiki/YARA)
 
 ## 📦 Project
@@ -79,6 +83,8 @@
 
 > Currently discontinue but not planned to deprecate or deprecated, maybe back in the future.
 
+- [Command Line Parser (Deno)](https://github.com/hugoalh-studio/command-line-parser-deno)
+- [Command Line Parser (NodeJS)](https://github.com/hugoalh-studio/command-line-parser-nodejs) *(**Previous:** [NodeJS] CLI Argument Parser)*
 - [Disable Advancement (Minecraft Java Data Pack)](https://github.com/hugoalh-studio/disable-advancement-mcjdp) *(**Previous:** [Minecraft Java Data Pack] Disable Minecraft Advancement)*
 - [Enchant+ (Minecraft Java Data Pack)](https://github.com/hugoalh-studio/enchant-plus-mcjdp)
 - [No Enderman Griefing (Minecraft Java Data Pack)](https://github.com/hugoalh-studio/no-enderman-griefing-mcjdp)
@@ -117,8 +123,7 @@
 
 > Officially deprecated, maybe remove in the future.
 
-- [Command Line Parser (Deno)](https://github.com/hugoalh-studio/command-line-parser-deno)
-- [Command Line Parser (NodeJS)](https://github.com/hugoalh-studio/command-line-parser-nodejs) *(**Previous:** [NodeJS] CLI Argument Parser)*
+*N/A*
 
 ### ⏲{❌} Planned Remove
 

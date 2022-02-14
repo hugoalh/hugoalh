@@ -101,6 +101,7 @@
 - [Advanced Random (Deno)](https://github.com/hugoalh-studio/advanced-random-deno)
 - [File Unifier (GitHub Action)](https://github.com/hugoalh/file-unifier-ghaction)
 - [GitHub Manager (.Net)](https://github.com/hugoalh-studio/github-manager-dotnet)
+- [GitHub Manager (PowerShell)](https://github.com/hugoalh-studio/github-manager-powershell)
 - [MCJT (Minecraft Java Toolbox) (.Net)](https://github.com/hugoalh-studio/minecraft-java-toolbox-dotnet)
 - [MCJT (Minecraft Java Toolbox) (NodeJS CLI)](https://github.com/hugoalh-studio/minecraft-java-toolbox-nodejscli)
 - [More Method (Deno)](https://github.com/hugoalh-studio/more-method-deno)

@@ -2,7 +2,7 @@
 name: "錯誤報告（表單）"
 description: "報告一個錯誤。"
 labels:
-  - "Status/Unread 🔵"
+  - "Status/Pending 🔵"
   - "Type/Bug 🐛"
 body:
   - type: "textarea"

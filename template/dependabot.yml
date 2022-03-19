@@ -8,7 +8,7 @@ updates:
       time: "00:00"
       timezone: "Etc/UTC"
     labels:
-      - "Status/Unread 🔵"
+      - "Status/Pending 🔵"
       - "Type/Dependency 📦"
     open-pull-requests-limit: 100
     pull-request-branch-name:
@@ -21,7 +21,7 @@ updates:
       time: "00:00"
       timezone: "Etc/UTC"
     labels:
-      - "Status/Unread 🔵"
+      - "Status/Pending 🔵"
       - "Type/Dependency 📦"
     open-pull-requests-limit: 100
     pull-request-branch-name:
@@ -34,7 +34,7 @@ updates:
       time: "00:00"
       timezone: "Etc/UTC"
     labels:
-      - "Status/Unread 🔵"
+      - "Status/Pending 🔵"
       - "Type/Dependency 📦"
     open-pull-requests-limit: 100
     pull-request-branch-name:
@@ -47,10 +47,10 @@ updates:
       time: "00:00"
       timezone: "Etc/UTC"
     labels:
-      - "Status/Unread 🔵"
+      - "Status/Pending 🔵"
       - "Type/Dependency 📦"
     open-pull-requests-limit: 100
     pull-request-branch-name:
       separator: "/"
     rebase-strategy: "disabled"
-    versioning-strategy: "auto"
+    versioning-strategy: "increase"

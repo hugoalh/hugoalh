@@ -17,11 +17,10 @@
 - Discord
 - [GitHub Discussion](https://github.com/hugoalh/hugoalh/discussions)
 - [GitHub Gist](https://gist.github.com/hugoalh)
-- [MeWe](https://mewe.com/i/hugoalh)
 - [Twitter (@hugoalhofficial)](https://twitter.com/hugoalhofficial)
 - [Telegram (@hugoalh)](https://t.me/hugoalh)
 
-### 💻 Programming Language
+### 💻 Programming Language & Syntax
 
 #### ✔ Known
 
@@ -107,21 +106,9 @@
 - [More Method (PowerShell)](https://github.com/hugoalh-studio/more-method-powershell)
 - [Unit Convert (NodeJS)](https://github.com/hugoalh-studio/unit-convert-nodejs)
 
-### ⏲{👎} Planned Deprecate
-
-> Planned to deprecate.
-
-*N/A*
-
 ### 👎 Deprecated
 
 > Officially deprecated, maybe remove in the future.
-
-*N/A*
-
-### ⏲{❌} Planned Remove
-
-> Officially deprecated and planned to remove.
 
 - [Enchant+ (Minecraft Java Data Pack)](https://github.com/hugoalh-studio/enchant-plus-mcjdp)
 - [Recipe+ (Minecraft Java Data Pack)](https://github.com/hugoalh-studio/recipe-plus-mcjdp)

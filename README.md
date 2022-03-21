@@ -20,7 +20,7 @@
 - [Twitter (@hugoalhofficial)](https://twitter.com/hugoalhofficial)
 - [Telegram (@hugoalh)](https://t.me/hugoalh)
 
-### 💻 Programming Language & Syntax
+### 💻 Programming Language, Markup, & Syntax
 
 #### ✔ Known
 

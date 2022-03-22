@@ -24,7 +24,7 @@ updates:
       time: "00:00"
       timezone: "Etc/UTC"
     commit-message:
-      prefix: "[Git Submodule]"
+      prefix: "[GitSubmodule]"
     labels:
       - "Status/Pending 🔵"
       - "Type/Dependency 📦"
@@ -39,7 +39,7 @@ updates:
       time: "00:00"
       timezone: "Etc/UTC"
     commit-message:
-      prefix: "[GitHub Actions]"
+      prefix: "[GHAction]"
     labels:
       - "Platform/GitHub/Actions :octocat:"
       - "Status/Pending 🔵"

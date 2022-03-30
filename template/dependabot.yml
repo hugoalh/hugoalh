@@ -7,8 +7,6 @@ updates:
       interval: "daily"
       time: "00:00"
       timezone: "Etc/UTC"
-    commit-message:
-      prefix: "[Docker]"
     labels:
       - "Platform/Docker 🐳"
       - "Status/Pending 🔵"
@@ -23,8 +21,6 @@ updates:
       interval: "daily"
       time: "00:00"
       timezone: "Etc/UTC"
-    commit-message:
-      prefix: "[GitSubmodule]"
     labels:
       - "Status/Pending 🔵"
       - "Type/Dependency 📦"
@@ -38,8 +34,6 @@ updates:
       interval: "daily"
       time: "00:00"
       timezone: "Etc/UTC"
-    commit-message:
-      prefix: "[GHAction]"
     labels:
       - "Platform/GitHub/Actions :octocat:"
       - "Status/Pending 🔵"
@@ -54,8 +48,6 @@ updates:
       interval: "daily"
       time: "00:00"
       timezone: "Etc/UTC"
-    commit-message:
-      prefix: "[NPM]"
     labels:
       - "Platform/NodeJS 🔘"
       - "Status/Pending 🔵"

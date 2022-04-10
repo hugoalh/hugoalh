@@ -9,10 +9,25 @@ jobs:
     name: "Announce New Release - Discord"
     runs-on: "ubuntu-latest"
     steps:
-      - uses: "hugoalh/send-discord-webhook-ghaction@v4.1.1"
+      - uses: "hugoalh/send-discord-webhook-ghaction@v4.2.0"
         with:
           key: "${{secrets.DISCORDWEBHOOK_HUGOALHSTUDIO_STUDIOANNOUNCEMENT_PROJECTNEWRELEASEANNOUNCER}}"
           payload: |
-            {
-              "content": "Hello, world!"
-            }
+            content: |
+              **__Scan Virus (GitHub Action)__**
+
+              Version ${{github.event.release.name}} (${{github.event.release.tag_name}}) is released and available on:
+
+              - **GitHub Repository Release (& Changelog):** <${{github.event.release.html_url}}>
+              - **GitHub Marketplace:** <https://github.com/marketplace/actions/scan-virus>
+            embeds:
+              - description: |
+                  **__Scan Virus (GitHub Action)__**
+
+                  ${{github.event.repository.description}}
+
+                  - **GitHub:** ${{github.event.repository.html_url}}
+                color: "16,116,231"
+                thumbnail:
+                  url: "https://i.imgur.com/knmLbFg.png"
+          wait: "true"

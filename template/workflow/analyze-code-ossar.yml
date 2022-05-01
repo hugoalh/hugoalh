@@ -1,4 +1,3 @@
-# $<Schema>$ https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions
 name: "Analyze Code - Open Source Static Analysis Runner"
 on:
   push:
@@ -19,7 +18,7 @@ jobs:
     runs-on: "windows-latest"
     steps:
       - name: "Checkout Repository"
-        uses: "actions/checkout@v3.0.1"
+        uses: "actions/checkout@v3.0.2"
         with:
           fetch-depth: 0
       # Ensure a compatible version of .NET is installed.
@@ -31,6 +30,6 @@ jobs:
         id: "ossar"
         uses: "github/ossar-action@v1.1.0"
       - name: "Upload Result"
-        uses: "github/codeql-action/upload-sarif@v1"
+        uses: "github/codeql-action/upload-sarif@v2"
         with:
           sarif_file: "${{steps.ossar.outputs.sarifFile}}"

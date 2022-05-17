@@ -26,6 +26,7 @@ jobs:
           check-latest: true
           registry-url: "https://npm.pkg.github.com/"
       - name: "Publish"
-        run: "npm publish"
+        run: |
+          npm publish
         env:
           NODE_AUTH_TOKEN: "${{github.token}}"

@@ -35,8 +35,11 @@
   - JSONC (JavaScript Object Notation with Comments)
 - MCFunction (Minecraft Function)
 - ModernScript
+- [PowerShell](https://en.wikipedia.org/wiki/PowerShell)
+- [SVG (Scalable Vector Graphics)](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics)
 - [TOML (Tom's Obvious, Minimal Language)](https://en.wikipedia.org/wiki/TOML)
 - [TSV (Tab Separated Values)](https://en.wikipedia.org/wiki/Tab-separated_values)
+- [TypeScript](https://en.wikipedia.org/wiki/TypeScript)
 - [YAML / YML (YAML Ain't Markup Language)](https://en.wikipedia.org/wiki/YAML)
 
 #### 📖 Learning
@@ -49,11 +52,8 @@
 - [Docker](https://en.wikipedia.org/wiki/Docker_(software))
 - [Go](https://en.wikipedia.org/wiki/Go_(programming_language))
 - [Perl](https://en.wikipedia.org/wiki/Perl)
-- [PowerShell](https://en.wikipedia.org/wiki/PowerShell)
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 - [Raku (Perl 6)](https://en.wikipedia.org/wiki/Raku_(programming_language))
-- [SVG (Scalable Vector Graphics)](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics)
-- [TypeScript](https://en.wikipedia.org/wiki/TypeScript)
 - [V](https://vlang.io)
 - [YARA (Yet Another Ridiculous Acronym)](https://en.wikipedia.org/wiki/YARA)
 
@@ -70,7 +70,6 @@
 - [GitHub Secret Manager (GitHub Action)](https://github.com/hugoalh/github-secret-manager-ghaction)
 - [GitHub Sodium (NodeJS)](https://github.com/hugoalh-studio/github-sodium-nodejs)
 - [More Method (NodeJS)](https://github.com/hugoalh-studio/more-method-nodejs)
-- [REPattern (NodeJS)](https://github.com/hugoalh-studio/repattern-nodejs)
 - [Scan Virus (GitHub Action)](https://github.com/hugoalh/scan-virus-ghaction)
 - [Send Discord Webhook (GitHub Action)](https://github.com/hugoalh/send-discord-webhook-ghaction) *(**Previous:** \[GitHub Action\] Send To Discord)*
 - [Symmetric Crypto (NodeJS)](https://github.com/hugoalh-studio/symmetric-crypto-nodejs)
@@ -83,12 +82,11 @@
 
 > Currently discontinue but not planned to deprecate or deprecated, maybe back in the future.
 
-- [Command Line Parser (Deno)](https://github.com/hugoalh-studio/command-line-parser-deno)
-- [Command Line Parser (NodeJS)](https://github.com/hugoalh-studio/command-line-parser-nodejs) *(**Previous:** \[NodeJS\] CLI Argument Parser)*
 - [Disable Advancement (Minecraft Java Data Pack)](https://github.com/hugoalh-studio/disable-advancement-mcjdp) *(**Previous:** \[Minecraft Java Data Pack\] Disable Minecraft Advancement)*
 - [No Enderman Griefing (Minecraft Java Data Pack)](https://github.com/hugoalh-studio/no-enderman-griefing-mcjdp)
 - [No Item Despawn (Minecraft Java Data Pack)](https://github.com/hugoalh-studio/no-item-despawn-mcjdp)
 - [No Mob Despawn (Minecraft Java Data Pack)](https://github.com/hugoalh-studio/no-mob-despawn-mcjdp)
+- [REPattern (NodeJS)](https://github.com/hugoalh-studio/repattern-nodejs)
 
 ### 🧪 Experimental
 
@@ -110,6 +108,8 @@
 
 > Officially deprecated, maybe remove in the future.
 
+- [Command Line Parser (Deno)](https://github.com/hugoalh-studio/command-line-parser-deno)
+- [Command Line Parser (NodeJS)](https://github.com/hugoalh-studio/command-line-parser-nodejs) *(**Previous:** \[NodeJS\] CLI Argument Parser)*
 - [Enchant+ (Minecraft Java Data Pack)](https://github.com/hugoalh-studio/enchant-plus-mcjdp)
 - [Recipe+ (Minecraft Java Data Pack)](https://github.com/hugoalh-studio/recipe-plus-mcjdp)
 - [Tag+ (Minecraft Java Data Pack)](https://github.com/hugoalh-studio/tag-plus-mcjdp)

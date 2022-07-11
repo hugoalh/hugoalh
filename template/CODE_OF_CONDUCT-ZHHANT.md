@@ -1,3 +1,5 @@
+🌐 | [English](./CODE_OF_CONDUCT.md) / [中文](./CODE_OF_CONDUCT-ZHHANT.md)
+
 # 貢獻者公約
 
 ## 我們的承諾

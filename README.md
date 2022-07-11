@@ -104,17 +104,17 @@
 
 > Officially deprecated, maybe remove in the future.
 
-- [Command Line Parser (Deno)](https://github.com/hugoalh-studio/command-line-parser-deno)
-- [Command Line Parser (NodeJS)](https://github.com/hugoalh-studio/command-line-parser-nodejs) *(**Previous:** \[NodeJS\] CLI Argument Parser)*
-- [Enchant+ (Minecraft Java Data Pack)](https://github.com/hugoalh-studio/enchant-plus-mcjdp)
-- [Recipe+ (Minecraft Java Data Pack)](https://github.com/hugoalh-studio/recipe-plus-mcjdp)
-- [Tag+ (Minecraft Java Data Pack)](https://github.com/hugoalh-studio/tag-plus-mcjdp)
+*N/A*
 
 ### ❌ Removed
 
 > Officially removed.
 
-*N/A*
+- Command Line Parser (Deno)
+- Command Line Parser (NodeJS) *(**Previous:** \[NodeJS\] CLI Argument Parser)*
+- Enchant+ (Minecraft Java Data Pack)
+- Recipe+ (Minecraft Java Data Pack)
+- Tag+ (Minecraft Java Data Pack)
 
 ## 🌐 Translation
 

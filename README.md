@@ -65,11 +65,15 @@
 
 - [Advanced Determine (NodeJS)](https://github.com/hugoalh-studio/advanced-determine-nodejs)
 - [Advanced Random (NodeJS)](https://github.com/hugoalh-studio/advanced-random-nodejs)
+- [Disable Advancement (Minecraft Java Data Pack)](https://github.com/hugoalh/disable-advancement-mcjdp) *(**Previous:** \[Minecraft Java Data Pack\] Disable Minecraft Advancement)*
 - [GitHub Actions Toolkit (PowerShell)](https://github.com/hugoalh-studio/ghactions-toolkit-powershell)
 - [GitHub Manager (NodeJS CLI)](https://github.com/hugoalh-studio/github-manager-nodejscli)
 - [GitHub Secret Manager (GitHub Action)](https://github.com/hugoalh/github-secret-manager-ghaction)
 - [GitHub Sodium (NodeJS)](https://github.com/hugoalh-studio/github-sodium-nodejs)
 - [More Method (NodeJS)](https://github.com/hugoalh-studio/more-method-nodejs)
+- [No Enderman Griefing (Minecraft Java Data Pack)](https://github.com/hugoalh/no-enderman-griefing-mcjdp)
+- [No Item Despawn (Minecraft Java Data Pack)](https://github.com/hugoalh/no-item-despawn-mcjdp)
+- [No Mob Despawn (Minecraft Java Data Pack)](https://github.com/hugoalh/no-mob-despawn-mcjdp)
 - [Scan Virus (GitHub Action)](https://github.com/hugoalh/scan-virus-ghaction)
 - [Send Discord Webhook (GitHub Action)](https://github.com/hugoalh/send-discord-webhook-ghaction) *(**Previous:** \[GitHub Action\] Send To Discord)*
 - [Symmetric Crypto (NodeJS)](https://github.com/hugoalh-studio/symmetric-crypto-nodejs)
@@ -82,10 +86,6 @@
 
 > Currently discontinue but not planned to deprecate or deprecated, maybe back in the future.
 
-- [Disable Advancement (Minecraft Java Data Pack)](https://github.com/hugoalh-studio/disable-advancement-mcjdp) *(**Previous:** \[Minecraft Java Data Pack\] Disable Minecraft Advancement)*
-- [No Enderman Griefing (Minecraft Java Data Pack)](https://github.com/hugoalh-studio/no-enderman-griefing-mcjdp)
-- [No Item Despawn (Minecraft Java Data Pack)](https://github.com/hugoalh-studio/no-item-despawn-mcjdp)
-- [No Mob Despawn (Minecraft Java Data Pack)](https://github.com/hugoalh-studio/no-mob-despawn-mcjdp)
 - [REPattern (NodeJS)](https://github.com/hugoalh-studio/repattern-nodejs)
 
 ### 🧪 Experimental

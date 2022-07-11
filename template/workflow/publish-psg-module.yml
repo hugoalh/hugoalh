@@ -21,10 +21,10 @@ jobs:
           Set-PSRepository -Name 'PSGallery' -InstallationPolicy 'Trusted' -Verbose
       - name: "Setup PowerShellGet"
         run: |
-          Install-Module -Name 'PowerShellGet' -MinimumVersion '2.2.5' -Scope 'AllUsers' -AcceptLicense -Verbose
+          Install-Module -Name 'PowerShellGet' -MinimumVersion '2.2.5' -Scope 'AllUsers' -AcceptLicense -Confirm:$False -Verbose
       - name: "Update PowerShell Modules"
         run: |
-          Update-Module -Scope 'AllUsers' -AcceptLicense -Verbose
+          Update-Module -Scope 'AllUsers' -AcceptLicense -Confirm:$False -Verbose
       - name: "Test Publish"
         run: |
           Publish-Module -Path '.\hugoalh.GitHubActionsToolkit\' -NugetAPIKey 'GUID' -WhatIf -Verbose

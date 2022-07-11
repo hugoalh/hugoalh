@@ -98,11 +98,7 @@
 
 > In constructing, maybe available in the future.
 
-- [GitHub Manager (.Net)](https://github.com/hugoalh-studio/github-manager-dotnet)
-- [GitHub Manager (PowerShell)](https://github.com/hugoalh-studio/github-manager-powershell)
-- [More Method (Deno)](https://github.com/hugoalh-studio/more-method-deno)
-- [More Method (PowerShell)](https://github.com/hugoalh-studio/more-method-powershell)
-- [Unit Convert (NodeJS)](https://github.com/hugoalh-studio/unit-convert-nodejs)
+*N/A*
 
 ### 👎 Deprecated
 

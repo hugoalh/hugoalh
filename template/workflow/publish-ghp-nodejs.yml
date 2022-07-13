@@ -20,7 +20,7 @@ jobs:
           Set-Content -Path '.\package.json' -Value ($PackageContent -ireplace (ConvertFrom-Json -InputObject $PackageContent).name, "@${{github.repository}}") -NoNewLine -Encoding 'UTF8NoBOM' -Confirm:$False
         shell: "pwsh"
       - name: "Setup NodeJS"
-        uses: "actions/setup-node@v3.3.0"
+        uses: "actions/setup-node@v3.4.0"
         with:
           node-version: 14
           check-latest: true

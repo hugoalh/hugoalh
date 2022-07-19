@@ -6,22 +6,30 @@ Anyone is free to copy, modify, publish, use, compile, sell, or distribute this 
 
 In jurisdictions that recognize copyright laws, the author or authors of this software dedicate any and all copyright interest in the software to the public domain. We make this dedication for the benefit of the public at large and to the detriment of our heirs and successors. We intend this dedication to be an overt act of relinquishment in perpetuity of all present and future rights to this software under copyright law.
 
-The Software is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the Software or the use or other dealings in the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
----
+## TLDR
 
-*This is a short and simple list that mostly concluded this license about the permissions 🟢, conditions 🔵, and limitations 🔴, this license content section shall prevail.*
+This is a short and simple list that mostly concluded this license about the permissions, conditions, and limitations, this license content section shall prevail.
 
-- Commercial Use 🟢
-- Distribution 🟢
-- Modification 🟢
-- Patent Use
-- Private Use 🟢
-- Disclose Source
-- License & Copyright Notice
-- Network Use Is Distribution
-- Same License
-- State Changes
-- Liability 🔴
-- Trademark Use
-- Warranty 🔴
+### Permissions
+
+- **Commercial Use:** The licensed material and derivatives may be used for commercial purposes.
+- **Distribution:** The licensed material may be distributed.
+- **Modification:** The licensed material may be modified.
+- **Private Use:** The licensed material may be used and modified in private.
+
+### Conditions
+
+*N/A*
+
+### Limitations
+
+- **Liability:** This license includes a limitation of liability.
+- **Warranty:** This license explicitly states that it does not provide any warranty.
+
+## Attribution
+
+This license is adopted from [Choose A License](https://choosealicense.com/), available at [here](https://choosealicense.com/licenses/unlicense).
+
+For more information, please refer to https://unlicense.org.

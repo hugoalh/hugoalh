@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: "hugoalh/send-discord-webhook-ghaction@v4.2.1"
         with:
-          key: "${{secrets.DISCORDWEBHOOK_HUGOALHSTUDIO_STUDIOANNOUNCEMENT_PROJECTNEWRELEASEANNOUNCER}}"
+          key: "${{secrets.DISCORD_WEBHOOK_HXHS_PROJECTNEWRELEASEANNOUNCER}}"
           payload: |
             embeds:
               - title: "Scan Virus (GitHub Action)"
@@ -20,7 +20,7 @@ jobs:
                   Version ${{github.event.release.name}} (${{github.event.release.tag_name}}) just released!
                 color: "16,116,231"
                 thumbnail:
-                  url: "https://i.imgur.com/knmLbFg.png"
+                  url: "https://i.imgur.com/6qM8z4w.png"
                 fields:
                   - name: "GitHub: ${{github.event.repository.full_name}}"
                     value: "${{github.event.repository.html_url}}"

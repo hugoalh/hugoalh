@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: "hugoalh/send-discord-webhook-ghaction@v4.2.1"
         with:
-          key: "${{secrets.DISCORD_WEBHOOK_HXHS_PROJECTNEWRELEASEANNOUNCER}}"
+          key: "${{secrets.DISCORD_HXHS_PROJECTNEWRELEASEANNOUNCER_WEBHOOK}}"
           payload: |
             embeds:
               - title: "Scan Virus (GitHub Action)"

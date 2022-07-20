@@ -1,5 +1,7 @@
 🌐 | [English](./CODE_OF_CONDUCT.md) / [中文](./CODE_OF_CONDUCT-ZHHANT.md)
 
+---
+
 # Contributor Covenant Code of Conduct
 
 ## Our Pledge

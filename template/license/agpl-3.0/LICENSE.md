@@ -1,8 +1,10 @@
 # GNU Affero General Public License v3.0
 
 > 19 November 2007
+>
+> Copyright © 2007 Free Software Foundation, Inc. https://fsf.org/
 
-© 2022 hugoalh
+Copyright © 2022 hxhS (hugoalh & hugoalh Studio)
 
 Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.
 
@@ -24,7 +26,7 @@ An older license, called the Affero General Public License and published by Affe
 
 The precise terms and conditions for copying, distribution and modification follow.
 
-## Terms and Conditions
+## TERMS AND CONDITIONS
 
 ### 0. Definitions
 
@@ -124,8 +126,7 @@ When you convey a copy of a covered work, you may at your option remove any addi
 Notwithstanding any other provision of this License, for material you add to a covered work, you may (if authorized by the copyright holders of that material) supplement the terms of this License with terms:
 
 <ol type="a">
-  <li>Disclaiming warranty or limiting liability differently from the
-terms of sections 15 and 16 of this License; or
+  <li>Disclaiming warranty or limiting liability differently from the terms of sections 15 and 16 of this License; or</li>
   <li>Requiring preservation of specified reasonable legal notices or author attributions in that material or in the Appropriate Legal Notices displayed by works containing it; or</li>
   <li>Prohibiting misrepresentation of the origin of that material, or requiring that modified versions of such material be marked in reasonable ways as different from the original version; or</li>
   <li>Limiting the use for publicity purposes of names of licensors or authors of the material; or</li>
@@ -232,22 +233,33 @@ Also add information on how to contact you by electronic and paper mail.
 
 If your software can interact with users remotely through a computer network, you should also make sure that it provides a way for users to get its source. For example, if your program is a web application, its interface could display a "Source" link that leads users to an archive of the code. There are many ways you could offer source, and different solutions will be better for different programs; see section 13 for the specific requirements.
 
-You should also get your employer (if you work as a programmer) or school, if any, to sign a "copyright disclaimer" for the program, if necessary. For more information on this, and how to apply and follow the GNU AGPL, see https://www.gnu.org/licenses/.
+You should also get your employer (if you work as a programmer) or school, if any, to sign a "copyright disclaimer" for the program, if necessary. For more information on this, and how to apply and follow the GNU AGPL, see <https://www.gnu.org/licenses/>.
 
----
+## TLDR
 
-*This is a short and simple list that mostly concluded this license about the permissions 🟢, conditions 🔵, and limitations 🔴, this license content section shall prevail.*
+This is a short and simple list that mostly concluded this license about the permissions, conditions, and limitations, this license content section shall prevail.
 
-- Commercial Use 🟢
-- Distribution 🟢
-- Modification 🟢
-- Patent Use 🟢
-- Private Use 🟢
-- Disclose Source 🔵
-- License & Copyright Notice 🔵
-- Network Use Is Distribution 🔵
-- Same License 🔵
-- State Changes 🔵
-- Liability 🔴
-- Trademark Use
-- Warranty 🔴
+### Permissions
+
+- **Commercial Use:** The licensed material and derivatives may be used for commercial purposes.
+- **Distribution:** The licensed material may be distributed.
+- **Modification:** The licensed material may be modified.
+- **Patent Use:** This license provides an express grant of patent rights from contributors.
+- **Private Use:** The licensed material may be used and modified in private.
+
+### Conditions
+
+- **Disclose Source:** Source code must be made available when the licensed material is distributed.
+- **License & Copyright Notice:** A copy of the license and copyright notice must be included with the licensed material.
+- **Network Use Is Distribution:** Users who interact with the licensed material via network are given the right to receive a copy of the source code.
+- **Same License:** Modifications must be released under the same license when distributing the licensed material. In some cases a similar or related license may be used.
+- **State Changes:** Changes made to the licensed material must be documented.
+
+### Limitations
+
+- **Liability:** This license includes a limitation of liability.
+- **Warranty:** This license explicitly states that it does not provide any warranty.
+
+## Attribution
+
+This license is adopted from [Choose A License](https://choosealicense.com/), available at [here](https://choosealicense.com/licenses/agpl-3.0).

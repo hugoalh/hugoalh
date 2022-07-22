@@ -70,7 +70,6 @@
 - [GitHub Manager (NodeJS CLI)](https://github.com/hugoalh-studio/github-manager-nodejscli)
 - [GitHub Secret Manager (GitHub Action)](https://github.com/hugoalh/github-secret-manager-ghaction)
 - [GitHub Sodium (NodeJS)](https://github.com/hugoalh-studio/github-sodium-nodejs)
-- [More Method (NodeJS)](https://github.com/hugoalh-studio/more-method-nodejs)
 - [No Enderman Griefing (Minecraft Java Data Pack)](https://github.com/hugoalh/no-enderman-griefing-mcjdp)
 - [No Item Despawn (Minecraft Java Data Pack)](https://github.com/hugoalh/no-item-despawn-mcjdp)
 - [No Mob Despawn (Minecraft Java Data Pack)](https://github.com/hugoalh/no-mob-despawn-mcjdp)
@@ -86,7 +85,7 @@
 
 > Currently discontinue but not planned to deprecate or deprecated, maybe back in the future.
 
-- [REPattern (NodeJS)](https://github.com/hugoalh-studio/repattern-nodejs)
+*N/A*
 
 ### 🧪 Experimental
 
@@ -104,7 +103,8 @@
 
 > Officially deprecated, maybe remove in the future.
 
-*N/A*
+- [More Method (NodeJS)](https://github.com/hugoalh-studio/more-method-nodejs)
+- [REPattern (NodeJS)](https://github.com/hugoalh-studio/repattern-nodejs)
 
 ### ❌ Removed
 

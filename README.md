@@ -73,12 +73,14 @@
 - [No Enderman Griefing (Minecraft Java Data Pack)](https://github.com/hugoalh/no-enderman-griefing-mcjdp)
 - [No Item Despawn (Minecraft Java Data Pack)](https://github.com/hugoalh/no-item-despawn-mcjdp)
 - [No Mob Despawn (Minecraft Java Data Pack)](https://github.com/hugoalh/no-mob-despawn-mcjdp)
+- [Regular Expression Constructor (NodeJS)](https://github.com/hugoalh-studio/regular-expression-constructor-nodejs)
 - [Scan Virus (GitHub Action)](https://github.com/hugoalh/scan-virus-ghaction)
 - [Send Discord Webhook (GitHub Action)](https://github.com/hugoalh/send-discord-webhook-ghaction) *(**Previous:** \[GitHub Action\] Send To Discord)*
 - [Symmetric Crypto (NodeJS)](https://github.com/hugoalh-studio/symmetric-crypto-nodejs)
 - [Trigger IFTTT Webhook Applet (GitHub Action)](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction) *(**Previous:** \[GitHub Action\] Send To IFTTT)*
 - [Trigger Pipedream Workflow (GitHub Action)](https://github.com/hugoalh/trigger-pipedream-workflow-ghaction) *(**Previous:** \[GitHub Action\] Send To Pipedream)*
 - [Undefinish (NodeJS)](https://github.com/hugoalh-studio/undefinish-nodejs)
+- [Unique Array (NodeJS)](https://github.com/hugoalh-studio/unique-array-nodejs)
 - [Universal Blacklist](https://github.com/hugoalh-studio/universal-blacklist)
 
 ### 🗄 Archive

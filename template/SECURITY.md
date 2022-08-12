@@ -40,19 +40,19 @@ Send an e-mail to either one who listed in here (e-mail address is in the profil
 
 Please provide as much as you can to help us for better understand the nature, scope of the possible issues, and triage your report more quickly.
 
-- Your account's platform (e.g.: GitHub, GitLab, ...)
-- Your account's username (e.g.: `@octocat`)
-- Project's ID or repository URI
-  - Project's ID is display at the top part of readme (i.e.: `README` file), below the project display name (i.e.: header), inside a code block
-- Affected branches, commits, tags, and/or versions
-  - Versions must be listed as supported
-  - For multiple versions, you can use version range instead
-- Affected files
-  - Relative files' paths related to the manifestation of this security vulnerability based on repository root
-- Issues to cause this security vulnerability (e.g.: buffer overflow, cross-site scripting, SQL injection, ...)
-- Any special/specific configuration required to reproduce this security vulnerability
-- Steps' instructions to reproduce this security vulnerability
-- Proof of concept and/or exploit code
-  - How an attacker might exploit this security vulnerability
-- Common Vulnerabilities and Exposures (CVE) identification numbers
-- References of this security vulnerability
+- Your account's platform (e.g.: GitHub, GitLab, ...).
+- Your account's username (e.g.: `@octocat`).
+- Project's ID or repository URI.
+  - Project's ID is display at the top part of readme (i.e.: `README` file), below the project display name (i.e.: header), inside a code block.
+- Affected branches, commits, tags, and/or versions.
+  - Versions must be listed as supported.
+  - For multiple versions, you can use version range instead.
+- Affected files.
+  - Relative files' paths related to the manifestation of this security vulnerability based on repository root.
+- Issues to cause this security vulnerability (e.g.: buffer overflow, cross-site scripting, SQL injection, ...).
+- Any special/specific configuration required to reproduce this security vulnerability?
+- Steps' instructions to reproduce this security vulnerability.
+- Proof of concept and/or exploit code.
+  - How an attacker might exploit this security vulnerability?
+- Common Vulnerabilities and Exposures (CVE) identification numbers.
+- References of this security vulnerability.

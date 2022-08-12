@@ -21,6 +21,15 @@ If you believe you have found any security vulnerability, please do not report i
 
 All new reports may need up to `~48 hours (~2 days)` to begin the process.
 
+> **⚠ Important:**
+>
+> All reports will only proceed to further process while:
+>
+> - with the correct personal information of the reporter, and
+> - with the correct project's ID or repository URI.
+>
+> Otherwise the report will mark as invalid immediately, not proceed, and without any notification.
+
 ### Via Send An E-mail
 
 Send an e-mail to either one who listed in here (e-mail address is in the profile):

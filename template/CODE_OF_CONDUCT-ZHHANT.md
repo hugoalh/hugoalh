@@ -97,4 +97,4 @@
 
 有關本行為準則的常見問題的答案，參見[https://www.contributor-covenant.org/faq](https://www.contributor-covenant.org/faq)。其他語言翻譯參見[https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations)。
 
-*（此中文版本貢獻者公約為英文版本譯本，如果中、英文兩個版本有任何抵觸或不相符之處，應以英文版本為準。）*
+> 本中文版本貢獻者公約為英文版本之譯本，如果中、英文兩個版本有任何抵觸或不相符之處，應以英文版本為準。

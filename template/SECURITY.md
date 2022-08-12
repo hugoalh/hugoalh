@@ -38,7 +38,7 @@ Send an e-mail to either one who listed in here (e-mail address is listed in the
 
 #### Suggested Content List
 
-Please provide as much as you can to help security vulnerability report supervisors for better understand the nature, scope of the possible issues, and triage your report more quickly.
+Please provide as much as you can to help the security vulnerability report supervisors for better understand the nature, scope of the possible issues, and triage your report more quickly.
 
 - Your account's platform (e.g.: GitHub, GitLab, ...).
 - Your account's username (e.g.: `@octocat`).

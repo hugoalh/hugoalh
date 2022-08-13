@@ -14,7 +14,7 @@ If you still confused, try to create a discussion or an issue.
 
 ## Discussions
 
-- Before create a discussion, check if any similar discussions are already exist.
+- Before create a discussion, check whether any similar discussions are already exist.
 
 ## Documentations, Documents & Wikis
 
@@ -22,12 +22,14 @@ If you still confused, try to create a discussion or an issue.
 
 ## Issues
 
-- Before create an issue, check if any similar issues are already exist.
+- Before create an issue, check whether any similar issues are already exist.
 
 ## Pull Requests
 
-- Before create a pull request, check if any similar pull requests are already exist.
+- Before create a pull request, check whether any similar pull requests are already exist.
 - Always create a pull request to the `main` branch of this repository.
 - Try to avoid merge conflicts if possible.
-- Try to avoid a pull request with too many changes if possible. A large pull request not only stretches the review time, but also makes it much harder to spot issues; In such cases, it is better to split the pull request to multiple smaller ones.
+- Try to avoid a pull request with too many changes if possible.
+  - A large pull request not only stretches the review time, but also makes it much harder to spot issues.
+  - It is better to split the pull request to multiple smaller ones.
 - If your pull request is not ready but want to save it first, submit your pull request as draft, and no need to add any identifications to the title (e.g.: `WIP`).

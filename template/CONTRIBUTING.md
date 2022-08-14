@@ -2,10 +2,10 @@
 
 ## Preface
 
-This contributing guide includes the guidelines and methods/ways to contribute by categories/items/types; If this contributing guide does not include some of the categories/items/types, maybe:
+This contributing guide includes the guidelines, methods, and ways to contribute on different categories, items, and types; If this contributing guide does not include some of the categories, items, and/or types, maybe:
 
-- those guidelines and methods/ways are separated from this contributing guide and exist/store in their corresponding places,
-- those categories/items/types are easy to understand how to correctly contributing, or
+- those guidelines, methods, and/or ways are separated from this contributing guide and exist and/or store in their corresponding places,
+- those categories, items, and/or types are easy to understand how to correctly contributing, or
 - maintainers and/or owners forgot to edit this contributing guide.
 
 If you still confused, try to create a discussion or an issue.

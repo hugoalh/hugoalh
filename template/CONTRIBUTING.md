@@ -12,6 +12,8 @@ If you still confused, try to create a discussion or an issue.
 
 ## Codes
 
+## Deploys, Releases, Tags & Versions
+
 ## Discussions
 
 - Before create a discussion, check whether any similar discussions are already exist.
@@ -32,4 +34,4 @@ If you still confused, try to create a discussion or an issue.
 - Try to avoid a pull request with too many changes if possible.
   - A large pull request not only stretches the review time, but also makes it much harder to spot issues.
   - It is better to split the pull request to multiple smaller ones.
-- If your pull request is not ready but want to save it first, submit your pull request as draft, and no need to add any identifications to the title (e.g.: `WIP`).
+- If your pull request is not ready but want to save it first, you can submit it by mark as draft, and no need to add any identifications to the title (e.g.: `WIP`).

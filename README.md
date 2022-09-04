@@ -1,8 +1,6 @@
-# [@hugoalh](https://github.com/hugoalh)
+# [hugoalh](https://github.com/hugoalh)
 
-## 👤 About Me
-
-### 💬 Language
+## 💬 Language
 
 - [Chinese (中文)](https://en.wikipedia.org/wiki/Chinese_language)
   - [Cantonese (粵語 / 廣東話)](https://en.wikipedia.org/wiki/Cantonese)
@@ -12,17 +10,16 @@
   - [Traditional (繁體)](https://en.wikipedia.org/wiki/Traditional_Chinese_characters)
 - [English](https://en.wikipedia.org/wiki/English_language)
 
-### 🕸 Network
+## 🕸 Network
 
 - Discord
 - [GitHub Discussion](https://github.com/hugoalh/hugoalh/discussions)
 - [GitHub Gist](https://gist.github.com/hugoalh)
 - [Twitter (@hugoalhofficial)](https://twitter.com/hugoalhofficial)
-- [Telegram (@hugoalh)](https://t.me/hugoalh)
 
-### 💻 Markup & Programming Language
+## 💻 Markup & Programming Language
 
-#### ✔ Known
+### ✔ Known
 
 - [CSS (Cascading Style Sheets)](https://en.wikipedia.org/wiki/CSS)
 - [CSV (Comma Separated Values)](https://en.wikipedia.org/wiki/Comma-separated_values)
@@ -42,7 +39,7 @@
 - [TypeScript](https://en.wikipedia.org/wiki/TypeScript)
 - [YAML / YML (YAML Ain't Markup Language)](https://en.wikipedia.org/wiki/YAML)
 
-#### 📖 Learning
+### 📖 Learning
 
 - [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
 - [BASIC (Beginner's All-purpose Symbolic Instruction Code)](https://en.wikipedia.org/wiki/BASIC)
@@ -65,7 +62,9 @@
 
 - [Advanced Determine (NodeJS)](https://github.com/hugoalh-studio/advanced-determine-nodejs)
 - [Advanced Random (NodeJS)](https://github.com/hugoalh-studio/advanced-random-nodejs)
+- [Concatenate (NodeJS)](https://github.com/hugoalh-studio/concatenate-nodejs)
 - [Disable Advancement (Minecraft Java Data Pack)](https://github.com/hugoalh/disable-advancement-mcjdp) *(**Previous:** \[Minecraft Java Data Pack\] Disable Minecraft Advancement)*
+- [Environment Paths (NodeJS)](https://github.com/hugoalh-studio/environment-paths-nodejs)
 - [GitHub Actions Toolkit (PowerShell)](https://github.com/hugoalh-studio/ghactions-toolkit-powershell)
 - [GitHub Manager (NodeJS)](https://github.com/hugoalh-studio/github-manager-nodejs)
 - [GitHub Manager CLI (NodeJS)](https://github.com/hugoalh-studio/github-manager-cli-nodejs)
@@ -74,10 +73,12 @@
 - [No Enderman Griefing (Minecraft Java Data Pack)](https://github.com/hugoalh/no-enderman-griefing-mcjdp)
 - [No Item Despawn (Minecraft Java Data Pack)](https://github.com/hugoalh/no-item-despawn-mcjdp)
 - [No Mob Despawn (Minecraft Java Data Pack)](https://github.com/hugoalh/no-mob-despawn-mcjdp)
+- [Pressure (NodeJS)](https://github.com/hugoalh-studio/pressure-nodejs)
 - [Regular Expression Constructor (NodeJS)](https://github.com/hugoalh-studio/regular-expression-constructor-nodejs)
 - [Scan Virus (GitHub Action)](https://github.com/hugoalh/scan-virus-ghaction)
 - [Send Discord Webhook (GitHub Action)](https://github.com/hugoalh/send-discord-webhook-ghaction) *(**Previous:** \[GitHub Action\] Send To Discord)*
 - [Symmetric Crypto (NodeJS)](https://github.com/hugoalh-studio/symmetric-crypto-nodejs)
+- [Temperature (NodeJS)](https://github.com/hugoalh-studio/temperature-nodejs)
 - [Trigger IFTTT Webhook Applet (GitHub Action)](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction) *(**Previous:** \[GitHub Action\] Send To IFTTT)*
 - [Trigger Pipedream Workflow (GitHub Action)](https://github.com/hugoalh/trigger-pipedream-workflow-ghaction) *(**Previous:** \[GitHub Action\] Send To Pipedream)*
 - [Undefinish (NodeJS)](https://github.com/hugoalh-studio/undefinish-nodejs)
@@ -119,7 +120,7 @@
 - Recipe+ (Minecraft Java Data Pack)
 - Tag+ (Minecraft Java Data Pack)
 
-## 🌐 Translation
+## 🌐 Internationalization & Translation
 
 ### 🆙 Active / Current
 

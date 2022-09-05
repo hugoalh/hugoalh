@@ -11,7 +11,7 @@
 > | ❌{🐛} | **No (Issue):** Not supported due to confirmed contains bugs and/or issues. |
 > | ❌{🧓} | **No (Old):** Not supported due to too old. |
 
-| **Tags / Versions** | **Status** | **Targets** |
+| **Releases / Tags / Versions** | **Status** | **Target** |
 |:-:|:-:|:-:|
 |  |  |  |
 

@@ -1,0 +1,22 @@
+{
+	"commands-show-output": false,
+	"heading-increment": true,
+	"heading-style": {
+		"style": "atx"
+	},
+	"list-indent": true,
+	"line-length": false,
+	"no-missing-space-atx": true,
+	"no-multiple-blanks": {
+		"maximum": 1
+	},
+	"no-reversed-links": true,
+	"ul-indent": {
+		"indent": 2,
+		"start_indent": 2,
+		"start_indented": false
+	},
+	"ul-style": {
+		"style": "dash"
+	}
+}

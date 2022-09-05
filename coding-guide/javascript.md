@@ -1,27 +1,31 @@
 [hugoalh]: https://github.com/hugoalh
 [hugoalh Studio]: https://github.com/hugoalh-studio
 
-# hxhS ([hugoalh][hugoalh] and [hugoalh Studio][hugoalh Studio]) JavaScript Additional Coding Guide
+# hxhS ([hugoalh][hugoalh] and [hugoalh Studio][hugoalh Studio]) Coding Guide - Additional For JavaScript
 
-- **📅 Last Update:** 2022/09/04 09:00 UTC
+> **📅 Last Update:** 2022/09/05 04:00 UTC
 
 ## Preface
 
 This JavaScript Additional Coding Guide applies to all of the hxhS ([hugoalh][hugoalh] and [hugoalh Studio][hugoalh Studio]) projects and repositories, and an additional over the main [Coding Guide](./main.md), this JavaScript Additional Coding Guide has priority when there have any conflicts.
 
+### Linter
+
+*To be draft.*
+
 ## Comparisons
 
-Always use strict equality (triple equals (`===`)) on every comparisons.
+Always use strict equality (`===` and `!==`) on every comparisons.
 
 ```js
 let foo = 1;
 
 /* Good */
-typeof foo === "string";
+foo === "1";
 //=> false
 
 /* Bad */
-typeof foo == "string";
+foo == "1";
 //=> true
 ```
 
@@ -35,10 +39,10 @@ typeof foo == "string";
 | `let` | Lower Camel |
 
 ```js
-class Foo {};
-const foo;
-function foo(bar, gaz) {};
-let foo;
+class FooBar {};
+const fooBar;
+function fooBar(bar, gaz) {};
+let fooBar;
 ```
 
 ## Semi-Colons
@@ -52,9 +56,13 @@ if (typeof foo === "string") {
 };
 ```
 
-## String Quotes
+## Sort
 
-Never use single quotes (`'`) for string! Instead, use double quotes (`"`), or backtick (<code>`</code>) for template literals (template strings).
+*To be draft.*
+
+## Strings Quote
+
+Never use single quote (`'`) for strings! Instead, use double quote (`"`) for strings, or backtick (<code>`</code>) for template literals/strings.
 
 ## `var`
 

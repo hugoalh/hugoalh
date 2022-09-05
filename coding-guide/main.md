@@ -3,17 +3,19 @@
 
 # hxhS ([hugoalh][hugoalh] and [hugoalh Studio][hugoalh Studio]) Coding Guide
 
-- **📅 Last Update:** 2022/09/04 09:00 UTC
+> **📅 Last Update:** 2022/09/05 04:00 UTC
 
 ## Preface
 
-This Coding Guide applies to all of the hxhS ([hugoalh][hugoalh] and [hugoalh Studio][hugoalh Studio]) projects and repositories, and covers most of the markups and programming languages; Some of the markups and programming languages have additional coding guide.
+This Coding Guide applies to all of the hxhS ([hugoalh][hugoalh] and [hugoalh Studio][hugoalh Studio]) projects and repositories, and applies to all of the markups and programming languages; Some of the markups and programming languages have additional coding guide.
 
 - [JavaScript](./javascript.md)
 
 ## Files Encoding
 
-Always save the source code files with encoding UTF-8 (8-bit Unicode Transformation Format) without BOM (byte order mark).
+Always save the source code files with encoding UTF-8 No-BOM (8-bit Unicode Transformation Format without byte order mark).
+
+> **💡 Hint:** Some of the editors maybe have options of `UTF-8` and `UTF-8 BOM` instead, thus select `UTF-8`.
 
 ## Indents
 

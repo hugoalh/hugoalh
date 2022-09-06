@@ -17,10 +17,11 @@ This JavaScript Additional Coding Guide applies to all of the hxhS ([hugoalh][hu
 
 When add items to the array, use `.push()` but not direct assignment.
 
-<table width="100%">
+<table width=100%>
+<tbody valign="top">
 <tr>
-<td align="center" width="50%"><b><i>Good</i></b></td>
-<td align="center" width="50%"><b><i>Bad</i></b></td>
+<td align="center" width=50%><b><i>Good</i></b></td>
+<td align="center" width=50%><b><i>Bad</i></b></td>
 </tr>
 <tr>
 <td>
@@ -40,16 +41,18 @@ pets[pets.length] = "cat";
 
 </td>
 </tr>
+</tbody>
 </table>
 
 ## Comparisons with strict equality
 
 Always use strict equality (`===` and `!==`) on every comparisons.
 
-<table width="100%">
+<table width=100%>
+<tbody valign="top">
 <tr>
-<td align="center" width="50%"><b><i>Good</i></b></td>
-<td align="center" width="50%"><b><i>Bad</i></b></td>
+<td align="center" width=50%><b><i>Good</i></b></td>
+<td align="center" width=50%><b><i>Bad</i></b></td>
 </tr>
 <tr>
 <td>
@@ -71,6 +74,7 @@ foo == "1";
 
 </td>
 </tr>
+</tbody>
 </table>
 
 ## Namespaces with camel case
@@ -101,10 +105,11 @@ let fooBar;
 
 When use arrow functions, never use implicit return (also known as concise body).
 
-<table width="100%">
+<table width=100%>
+<tbody valign="top">
 <tr>
-<td align="center" width="50%"><b><i>Good</i></b></td>
-<td align="center" width="50%"><b><i>Bad</i></b></td>
+<td align="center" width=50%><b><i>Good</i></b></td>
+<td align="center" width=50%><b><i>Bad</i></b></td>
 </tr>
 <tr>
 <td>
@@ -124,16 +129,18 @@ arr.map((e) => e.id);
 
 </td>
 </tr>
+</tbody>
 </table>
 
 ## No `if () { return } else { return };`
 
 There is one notable case to keep in mind for the `if...else` control statements, if the `if` statement ends with a `return`, no need to add an `else` statement.
 
-<table width="100%">
+<table width=100%>
+<tbody valign="top">
 <tr>
-<td align="center" width="50%"><b><i>Good</i></b></td>
-<td align="center" width="50%"><b><i>Bad</i></b></td>
+<td align="center" width=50%><b><i>Good</i></b></td>
+<td align="center" width=50%><b><i>Bad</i></b></td>
 </tr>
 <tr>
 <td>
@@ -158,14 +165,16 @@ if (something) {
 
 </td>
 </tr>
+</tbody>
 </table>
 
 ## No negative `if` whenever possible
 
-<table width="100%">
+<table width=100%>
+<tbody valign="top">
 <tr>
-<td align="center" width="50%"><b><i>Good</i></b></td>
-<td align="center" width="50%"><b><i>Bad</i></b></td>
+<td align="center" width=50%><b><i>Good</i></b></td>
+<td align="center" width=50%><b><i>Bad</i></b></td>
 </tr>
 <tr>
 <td>
@@ -191,16 +200,18 @@ if (!something) {
 
 </td>
 </tr>
+</tbody>
 </table>
 
 ## No `new Array()`, `new BigInt()`, `new Boolean()`, `new Number()`, and `new String()` constructors
 
 `Array`s, `BigInt`s, `Boolean`s, `Number`s and `String`s are all able to create via literals method; `RegExp`s are exceptions.
 
-<table width="100%">
+<table width=100%>
+<tbody valign="top">
 <tr>
-<td align="center" width="50%"><b><i>Good</i></b></td>
-<td align="center" width="50%"><b><i>Bad</i></b></td>
+<td align="center" width=50%><b><i>Good</i></b></td>
+<td align="center" width=50%><b><i>Bad</i></b></td>
 </tr>
 <tr>
 <td>
@@ -218,6 +229,7 @@ let cities = new Array(length);
 
 </td>
 </tr>
+</tbody>
 </table>
 
 ## No `"use strict";`
@@ -232,10 +244,11 @@ let cities = new Array(length);
 
 Always add 1 semi-colon at the end of every statements.
 
-<table width="100%">
+<table width=100%>
+<tbody valign="top">
 <tr>
-<td align="center" width="50%"><b><i>Good</i></b></td>
-<td align="center" width="50%"><b><i>Bad</i></b></td>
+<td align="center" width=50%><b><i>Good</i></b></td>
+<td align="center" width=50%><b><i>Bad</i></b></td>
 </tr>
 <tr>
 <td>
@@ -259,6 +272,7 @@ if (typeof foo === "string") {
 
 </td>
 </tr>
+</tbody>
 </table>
 
 ## Sort namespaces whenever possible
@@ -269,10 +283,11 @@ if (typeof foo === "string") {
 
 Never use single quote (`'`) for strings! Instead, use double quote (`"`) for strings, or backtick (<code>`</code>) for template literals/strings.
 
-<table width="100%">
+<table width=100%>
+<tbody valign="top">
 <tr>
-<td align="center" width="50%"><b><i>Good</i></b></td>
-<td align="center" width="50%"><b><i>Bad</i></b></td>
+<td align="center" width=50%><b><i>Good</i></b></td>
+<td align="center" width=50%><b><i>Bad</i></b></td>
 </tr>
 <tr>
 <td>
@@ -296,16 +311,18 @@ let fooGoo = foo + goo;
 
 </td>
 </tr>
+</tbody>
 </table>
 
 ## Use function declarations but not function expressions
 
 Always use function declarations but not function expressions.
 
-<table width="100%">
+<table width=100%>
+<tbody valign="top">
 <tr>
-<td align="center" width="50%"><b><i>Good</i></b></td>
-<td align="center" width="50%"><b><i>Bad</i></b></td>
+<td align="center" width=50%><b><i>Good</i></b></td>
+<td align="center" width=50%><b><i>Bad</i></b></td>
 </tr>
 <tr>
 <td>
@@ -325,14 +342,16 @@ const sum = function (a, b) {
 ```
 </td>
 </tr>
+</tbody>
 </table>
 
 When use anonymous functions as a callback (a function passed to another method invocation), if it do not need to access `this`, use an arrow function to make the code shorter and cleaner.
 
-<table width="100%">
+<table width=100%>
+<tbody valign="top">
 <tr>
-<td align="center" width="50%"><b><i>Good</i></b></td>
-<td align="center" width="50%"><b><i>Bad</i></b></td>
+<td align="center" width=50%><b><i>Good</i></b></td>
+<td align="center" width=50%><b><i>Bad</i></b></td>
 </tr>
 <tr>
 <td>
@@ -355,4 +374,5 @@ let sum = array1.reduce(function (a, b) {
 ```
 </td>
 </tr>
+</tbody>
 </table>

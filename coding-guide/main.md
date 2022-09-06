@@ -39,10 +39,11 @@ Codes in Markdown code blocks have special exceptions, those are always use spac
 
 Always keep `AND` conditions in single line.
 
-<table width="100%">
+<table width=100%>
+<tbody valign="top">
 <tr>
-<td align="center" width="50%"><b><i>Good</i></b></td>
-<td align="center" width="50%"><b><i>Bad</i></b></td>
+<td align="center" width=50%><b><i>Good</i></b></td>
+<td align="center" width=50%><b><i>Bad</i></b></td>
 </tr>
 <tr>
 <td>
@@ -68,14 +69,16 @@ if (
 
 </td>
 </tr>
+</tbody>
 </table>
 
 Always keep `OR` conditions in multiple lines.
 
-<table width="100%">
+<table width=100%>
+<tbody valign="top">
 <tr>
-<td align="center" width="50%"><b><i>Good</i></b></td>
-<td align="center" width="50%"><b><i>Bad</i></b></td>
+<td align="center" width=50%><b><i>Good</i></b></td>
+<td align="center" width=50%><b><i>Bad</i></b></td>
 </tr>
 <tr>
 <td>
@@ -101,6 +104,7 @@ if (a || b || c) {
 
 </td>
 </tr>
+</tbody>
 </table>
 
 Mixed `AND` and `OR` conditions also keep the same style.

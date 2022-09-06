@@ -3,31 +3,37 @@
 
 # hxhS ([hugoalh][hugoalh] and [hugoalh Studio][hugoalh Studio]) Coding Guide
 
-> **📅 Last Update:** 2022/09/05 04:00 UTC
-
-## Preface
+> **📅 Last Update:** 2022/09/06 03:00 UTC
 
 This Coding Guide applies to all of the hxhS ([hugoalh][hugoalh] and [hugoalh Studio][hugoalh Studio]) projects and repositories, and applies to all of the markups and programming languages; Some of the markups and programming languages have additional coding guide.
 
 - [JavaScript](./javascript.md)
 
-## Files Encoding
+---
 
-Always save the source code files with encoding UTF-8 No-BOM (8-bit Unicode Transformation Format without byte order mark).
+## Indents with tabs whenever possible
 
-> **💡 Hint:** Some of the editors maybe have options of `UTF-8` and `UTF-8 BOM` instead, thus select `UTF-8`.
+> **⚠ Important:** All of the markups and programming languages must follow this indents rule, any invalid indents are not acceptable!
 
-## Indents
+Always use tab (`\t`) for indents on most of the markups and programming languages, such as:
 
-> **⚠ Important:** All of the markups and programming languages must obey this indents rule, any invalid indents are not acceptable!
+- CSS (Cascading Style Sheets),
+- HTML (HyperText Markup Language),
+- JavaScript,
+- JSON (JavaScript Object Notation),
+- PowerShell,
+- TypeScript, and
+- XML.
 
-Always use tab (`\t`) for indents on most of the markups and programming languages, such as CSS (Cascading Style Sheets), HTML (HyperText Markup Language), JavaScript, JSON (JavaScript Object Notation), PowerShell, TypeScript, and XML.
+However, some of the markups and programming languages are not support use tab (`\t`) for indents, keep use space (`\s`) for indents on these markups and programming languages, such as:
 
-However, some of the markups and programming languages are not support use tab (`\t`) for indents, keep use space (`\s`) for indents on these markups and programming languages, such as Markdown, Python, and YAML/YML (YAML Ain't Markup Language).
+- Markdown,
+- Python, and
+- YAML/YML (YAML Ain't Markup Language).
 
-Codes in Markdown code blocks have special exception, those are always use space (`\s`) for indents in order to prevent incorrect indents on view mode.
+Codes in Markdown code blocks have special exceptions, those are always use space (`\s`) for indents in order to prevent weird display on the Markdown view mode.
 
-## Logical Operators
+## Keep `AND` conditions in single line; Keep `OR` conditions in multiple lines; Keep coalescing in single line
 
 > **📋 Note:** All of the examples in here are based on JavaScript, similar style should apply on other programming languages.
 
@@ -78,3 +84,9 @@ Always keep nullish coalescing in single line.
 let foo = a ?? b ?? c;
 bar ??= d ?? e ?? f;
 ```
+
+## Source code files encoding with UTF-8 No-BOM
+
+All of the source code files must always save with encoding UTF-8 No-BOM (8-bit Unicode Transformation Format without byte order mark).
+
+> **💡 Hint:** Some of the editors maybe have options of `UTF-8` and `UTF-8 BOM` instead, thus select `UTF-8`.

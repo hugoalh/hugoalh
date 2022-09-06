@@ -33,7 +33,7 @@ However, some of the markups and programming languages are not support use tab (
 
 Codes in Markdown code blocks have special exceptions, those are always use space (`\s`) for indents in order to prevent weird display on the Markdown view mode.
 
-## Keep `AND` conditions in single line; Keep `OR` conditions in multiple lines; Keep coalescing in single line
+## Keep `OR` conditions in multiple lines; Keep other conditions in single line
 
 > **📋 Note:** All of the examples in here are based on JavaScript, similar style should apply on other programming languages.
 

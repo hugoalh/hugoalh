@@ -1,6 +1,6 @@
 # [hugoalh](https://github.com/hugoalh)
 
-## 💬 Language
+## 💬 Languages
 
 - [Chinese (中文)](https://en.wikipedia.org/wiki/Chinese_language)
   - [Cantonese (粵語 / 廣東話)](https://en.wikipedia.org/wiki/Cantonese)
@@ -10,14 +10,14 @@
   - [Traditional (繁體)](https://en.wikipedia.org/wiki/Traditional_Chinese_characters)
 - [English](https://en.wikipedia.org/wiki/English_language)
 
-## 🕸 Network
+## 🕸 Networks
 
 - Discord
 - [GitHub Discussion](https://github.com/hugoalh/hugoalh/discussions)
 - [GitHub Gist](https://gist.github.com/hugoalh)
 - [Twitter (@hugoalhofficial)](https://twitter.com/hugoalhofficial)
 
-## 💻 Markup & Programming Language
+## 💻 Markups & Programming Languages
 
 ### ✔ Known
 
@@ -54,7 +54,7 @@
 - [V](https://vlang.io)
 - [YARA (Yet Another Ridiculous Acronym)](https://en.wikipedia.org/wiki/YARA)
 
-## 📦 Project
+## 📦 Projects
 
 ### 🆙 Active / Current
 
@@ -120,7 +120,7 @@
 - Recipe+ (Minecraft Java Data Pack)
 - Tag+ (Minecraft Java Data Pack)
 
-## 🌐 Internationalization & Translation
+## 🌐 I18ns (Internationalizations) & Translations
 
 ### 🆙 Active / Current
 

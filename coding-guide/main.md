@@ -45,8 +45,8 @@ Always keep `AND` conditions in single line.
 <table>
 <tbody valign="top">
 <tr>
-<td align="center" width=50%><b><i>Good</i></b></td>
-<td align="center" width=50%><b><i>Bad</i></b></td>
+<td align="center"><b><i>Good</i></b></td>
+<td align="center"><b><i>Bad</i></b></td>
 </tr>
 <tr>
 <td>
@@ -80,8 +80,8 @@ Always keep `OR` conditions in multiple lines.
 <table>
 <tbody valign="top">
 <tr>
-<td align="center" width=50%><b><i>Good</i></b></td>
-<td align="center" width=50%><b><i>Bad</i></b></td>
+<td align="center"><b><i>Good</i></b></td>
+<td align="center"><b><i>Bad</i></b></td>
 </tr>
 <tr>
 <td>
@@ -153,8 +153,8 @@ In such cases, hard wrap between each sentences whenever possible.
 <table>
 <tbody valign="top">
 <tr>
-<td align="center" width=50%><b><i>Good</i></b></td>
-<td align="center" width=50%><b><i>Bad</i></b></td>
+<td align="center"><b><i>Good</i></b></td>
+<td align="center"><b><i>Bad</i></b></td>
 </tr>
 <tr>
 <td>

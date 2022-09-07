@@ -1,11 +1,13 @@
 [hugoalh]: https://github.com/hugoalh
 [hugoalh-studio]: https://github.com/hugoalh-studio
 
-# hxhS ([hugoalh][hugoalh] and [hugoalh Studio][hugoalh-studio]) Coding Guide - Additional For JavaScript
+# hxhS ([hugoalh][hugoalh] and [hugoalh Studio][hugoalh-studio]) Coding Guide - JavaScript (Additional)
 
-> **📅 Last Update:** 2022/09/07 05:00 UTC
+> **📅 Last Update:** 2022/09/07 09:00 UTC
+>
+> **🚧 Constructing:** This document is in constructing, contents maybe change rapidly.
 
-This JavaScript Additional Coding Guide applies to all of the hxhS ([hugoalh][hugoalh] and [hugoalh Studio][hugoalh-studio]) projects and repositories, and an additional over the main [Coding Guide](./main.md), this JavaScript Additional Coding Guide has priority when there have any conflicts.
+This JavaScript Additional Coding Guide is an additional over the main [Coding Guide](./main.md), and has priority when there have any conflicts.
 
 ## Linter
 
@@ -13,38 +15,9 @@ This JavaScript Additional Coding Guide applies to all of the hxhS ([hugoalh][hu
 
 ---
 
-## Add `Array` items with `.push()`
+## General
 
-When add items to the array, use `.push()` but not direct assignment.
-
-<table width=100%>
-<tbody valign="top">
-<tr>
-<td align="center" width=50%><b><i>Good</i></b></td>
-<td align="center" width=50%><b><i>Bad</i></b></td>
-</tr>
-<tr>
-<td>
-
-```js
-let pets = [];
-pets.push("cat");
-```
-
-</td>
-<td>
-
-```js
-let pets = [];
-pets[pets.length] = "cat";
-```
-
-</td>
-</tr>
-</tbody>
-</table>
-
-## Comparisons with strict equality
+### Comparisons with strict equality
 
 Always use strict equality (`===` and `!==`) on every comparisons.
 
@@ -77,7 +50,7 @@ foo == "1";
 </tbody>
 </table>
 
-## Namespaces with camel case
+### Namespaces with camel case
 
 Use concise, human-readable, and semantic names as appropriately.
 
@@ -101,38 +74,7 @@ function fooBar(bar, gaz) {};
 let fooBar;
 ```
 
-## No arrow function's implicit return
-
-When use arrow functions, never use implicit return (also known as concise body).
-
-<table width=100%>
-<tbody valign="top">
-<tr>
-<td align="center" width=50%><b><i>Good</i></b></td>
-<td align="center" width=50%><b><i>Bad</i></b></td>
-</tr>
-<tr>
-<td>
-
-```js
-arr.map((e) => {
-  return e.id;
-});
-```
-
-</td>
-<td>
-
-```js
-arr.map((e) => e.id);
-```
-
-</td>
-</tr>
-</tbody>
-</table>
-
-## No `if () { return } else { return };`
+### No `if () { return } else { return };`
 
 There is one notable case to keep in mind for the `if...else` control statements, if the `if` statement ends with a `return`, no need to add an `else` statement.
 
@@ -168,7 +110,9 @@ if (something) {
 </tbody>
 </table>
 
-## No negative `if` whenever possible
+### No negative `if...else` whenever possible
+
+Negative `if...else` control statements can cause confusing.
 
 <table width=100%>
 <tbody valign="top">
@@ -203,7 +147,7 @@ if (!something) {
 </tbody>
 </table>
 
-## No `new Array()`, `new BigInt()`, `new Boolean()`, `new Number()`, and `new String()` constructors
+### No `new Array()`, `new BigInt()`, `new Boolean()`, `new Number()`, and `new String()` constructors
 
 `Array`s, `BigInt`s, `Boolean`s, `Number`s and `String`s are all able to create via literals method; `RegExp`s are exceptions.
 
@@ -232,15 +176,15 @@ let cities = new Array(length);
 </tbody>
 </table>
 
-## No `"use strict";`
+### No `"use strict";`
 
-*To be draft.*
+Strict mode is already applied to all of the JavaScript files, hence no need to add an extra statement `"use strict";`.
 
-## No `var`
+### No `var`
 
-`var` must not use in anywhere of the codes to prevent fuzzy declaration and/or hoisting unexpectedly.
+Never use `var` in anywhere of the codes to prevent fuzzy declaration and/or hoisting unexpectedly; Instead, use `let`.
 
-## Semi-colons at the end of every statements
+### Semi-colons (`;`) at the end of every statements
 
 Always add 1 semi-colon at the end of every statements.
 
@@ -275,13 +219,15 @@ if (typeof foo === "string") {
 </tbody>
 </table>
 
-## Sort namespaces whenever possible
+### Sort namespaces whenever possible
 
 *To be draft.*
 
-## Strings quote no single quote
+## Array
 
-Never use single quote (`'`) for strings! Instead, use double quote (`"`) for strings, or backtick (<code>`</code>) for template literals/strings.
+### Add `Array` items with `.push()`
+
+When add items to the array, use `.push()` but never direct assignment.
 
 <table width=100%>
 <tbody valign="top">
@@ -293,20 +239,16 @@ Never use single quote (`'`) for strings! Instead, use double quote (`"`) for st
 <td>
 
 ```js
-let foo = "bar";
-let goo = "gar";
-let fooGoo = `${foo}${goo}`;
-//=> "bargar"
+let pets = [];
+pets.push("cat");
 ```
 
 </td>
 <td>
 
 ```js
-let foo = 'bar';
-let goo = 'gar';
-let fooGoo = foo + goo;
-//=> 'bargar'
+let pets = [];
+pets[pets.length] = "cat";
 ```
 
 </td>
@@ -314,7 +256,40 @@ let fooGoo = foo + goo;
 </tbody>
 </table>
 
-## Use function declarations but not function expressions
+## Function
+
+### No arrow function's implicit return
+
+When use arrow functions, never use implicit return (also known as concise body).
+
+<table width=100%>
+<tbody valign="top">
+<tr>
+<td align="center" width=50%><b><i>Good</i></b></td>
+<td align="center" width=50%><b><i>Bad</i></b></td>
+</tr>
+<tr>
+<td>
+
+```js
+arr.map((e) => {
+  return e.id;
+});
+```
+
+</td>
+<td>
+
+```js
+arr.map((e) => e.id);
+```
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### Use function declarations but not function expressions
 
 Always use function declarations but not function expressions.
 
@@ -372,6 +347,43 @@ let sum = array1.reduce(function (a, b) {
 });
 
 ```
+</td>
+</tr>
+</tbody>
+</table>
+
+## String
+
+### Strings' quote no single quote
+
+Never use single quote (`'`) for strings! Instead, use double quote (`"`) for strings, or backtick (<code>`</code>) for template literals/strings.
+
+<table width=100%>
+<tbody valign="top">
+<tr>
+<td align="center" width=50%><b><i>Good</i></b></td>
+<td align="center" width=50%><b><i>Bad</i></b></td>
+</tr>
+<tr>
+<td>
+
+```js
+let foo = "bar";
+let goo = "gar";
+let fooGoo = `${foo}${goo}`;
+//=> "bargar"
+```
+
+</td>
+<td>
+
+```js
+let foo = 'bar';
+let goo = 'gar';
+let fooGoo = foo + goo;
+//=> 'bargar'
+```
+
 </td>
 </tr>
 </tbody>

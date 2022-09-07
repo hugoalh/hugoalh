@@ -3,11 +3,14 @@
 
 # hxhS ([hugoalh][hugoalh] and [hugoalh Studio][hugoalh-studio]) Coding Guide
 
-> **📅 Last Update:** 2022/09/07 05:00 UTC
+> **📅 Last Update:** 2022/09/07 09:00 UTC
+>
+> **🚧 Constructing:** This document is in constructing, contents maybe change rapidly.
 
 This Coding Guide applies to all of the hxhS ([hugoalh][hugoalh] and [hugoalh Studio][hugoalh-studio]) projects and repositories, and applies to all of the markups and programming languages; Some of the markups and programming languages have additional coding guide.
 
 - [JavaScript (Additional)](./javascript.md)
+- [PowerShell (Additional)](./powershell.md)
 
 ---
 
@@ -145,7 +148,7 @@ However, few of the markups are only support to have 256 characters per line, th
 
 - Properties (`.conf`).
 
-In such cases, hard wrap should be happen between each sentences.
+In such cases, hard wrap between each sentences whenever possible.
 
 <table width=100%>
 <tbody valign="top">
@@ -157,10 +160,6 @@ In such cases, hard wrap should be happen between each sentences.
 <td>
 
 ```md
-|1  |5   |10  |15  |20  |25  |30  |35  |40  |45  |50  |55  |60  |65  |70  |75  |80
-
----
-
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 Pellentesque tincidunt vestibulum enim quis egestas.
 Nunc eget quam ultrices, accumsan lorem id, porttitor nulla.
@@ -178,10 +177,6 @@ Sed lobortis blandit nisi, id pretium felis facilisis et.
 <td>
 
 ```md
-|1  |5   |10  |15  |20  |25  |30  |35  |40
-
----
-
 Lorem ipsum dolor sit amet,
 consectetur adipiscing elit.
 Pellentesque tincidunt vestibulum

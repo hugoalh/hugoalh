@@ -1,11 +1,11 @@
 [hugoalh]: https://github.com/hugoalh
-[hugoalh Studio]: https://github.com/hugoalh-studio
+[hugoalh-studio]: https://github.com/hugoalh-studio
 
-# hxhS ([hugoalh][hugoalh] and [hugoalh Studio][hugoalh Studio]) Coding Guide - Additional For JavaScript
+# hxhS ([hugoalh][hugoalh] and [hugoalh Studio][hugoalh-studio]) Coding Guide - Additional For JavaScript
 
-> **📅 Last Update:** 2022/09/06 05:00 UTC
+> **📅 Last Update:** 2022/09/07 05:00 UTC
 
-This JavaScript Additional Coding Guide applies to all of the hxhS ([hugoalh][hugoalh] and [hugoalh Studio][hugoalh Studio]) projects and repositories, and an additional over the main [Coding Guide](./main.md), this JavaScript Additional Coding Guide has priority when there have any conflicts.
+This JavaScript Additional Coding Guide applies to all of the hxhS ([hugoalh][hugoalh] and [hugoalh Studio][hugoalh-studio]) projects and repositories, and an additional over the main [Coding Guide](./main.md), this JavaScript Additional Coding Guide has priority when there have any conflicts.
 
 ## Linter
 

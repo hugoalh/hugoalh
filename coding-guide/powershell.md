@@ -40,8 +40,8 @@ Global scoped alias, functions, and/or variables maybe override exist alias, fun
 <table>
 <tbody valign="top">
 <tr>
-<td align="center" width=100%><b><i>Good</i></b></td>
-<td align="center" width=100%><b><i>Bad</i></b></td>
+<td align="center" width=50%><b><i>Good</i></b></td>
+<td align="center" width=50%><b><i>Bad</i></b></td>
 </tr>
 <tr>
 <td>
@@ -81,8 +81,8 @@ Never end lines with a semi-colon.
 <table>
 <tbody valign="top">
 <tr>
-<td align="center" width=100%><b><i>Good</i></b></td>
-<td align="center" width=100%><b><i>Bad</i></b></td>
+<td align="center" width=50%><b><i>Good</i></b></td>
+<td align="center" width=50%><b><i>Bad</i></b></td>
 </tr>
 <tr>
 <td>

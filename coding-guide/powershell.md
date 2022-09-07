@@ -37,11 +37,11 @@ Function FooBar($Bar, $Gaz) {}
 
 Global scoped alias, functions, and/or variables maybe override exist alias, functions, and/or variables within the sessions with matching names; This name collision can cause difficult to debug issues for consumers of modules.
 
-<table width=100%>
+<table>
 <tbody valign="top">
 <tr>
-<td align="center" width=50%><b><i>Good</i></b></td>
-<td align="center" width=50%><b><i>Bad</i></b></td>
+<td align="center" width=100%><b><i>Good</i></b></td>
+<td align="center" width=100%><b><i>Bad</i></b></td>
 </tr>
 <tr>
 <td>
@@ -78,11 +78,11 @@ Function Test-NotGlobal ($Var) {
 
 Never end lines with a semi-colon.
 
-<table width=100%>
+<table>
 <tbody valign="top">
 <tr>
-<td align="center" width=50%><b><i>Good</i></b></td>
-<td align="center" width=50%><b><i>Bad</i></b></td>
+<td align="center" width=100%><b><i>Good</i></b></td>
+<td align="center" width=100%><b><i>Bad</i></b></td>
 </tr>
 <tr>
 <td>

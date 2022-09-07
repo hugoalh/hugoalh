@@ -21,11 +21,11 @@ This JavaScript Additional Coding Guide is an additional over the main [Coding G
 
 Always use strict equality (`===` and `!==`) on every comparisons.
 
-<table width=100%>
+<table>
 <tbody valign="top">
 <tr>
-<td align="center" width=50%><b><i>Good</i></b></td>
-<td align="center" width=50%><b><i>Bad</i></b></td>
+<td align="center" width=100%><b><i>Good</i></b></td>
+<td align="center" width=100%><b><i>Bad</i></b></td>
 </tr>
 <tr>
 <td>
@@ -78,11 +78,11 @@ let fooBar;
 
 There is one notable case to keep in mind for the `if...else` control statements, if the `if` statement ends with a `return`, no need to add an `else` statement.
 
-<table width=100%>
+<table>
 <tbody valign="top">
 <tr>
-<td align="center" width=50%><b><i>Good</i></b></td>
-<td align="center" width=50%><b><i>Bad</i></b></td>
+<td align="center" width=100%><b><i>Good</i></b></td>
+<td align="center" width=100%><b><i>Bad</i></b></td>
 </tr>
 <tr>
 <td>
@@ -114,11 +114,11 @@ if (something) {
 
 Negative `if...else` control statements can cause confusing.
 
-<table width=100%>
+<table>
 <tbody valign="top">
 <tr>
-<td align="center" width=50%><b><i>Good</i></b></td>
-<td align="center" width=50%><b><i>Bad</i></b></td>
+<td align="center" width=100%><b><i>Good</i></b></td>
+<td align="center" width=100%><b><i>Bad</i></b></td>
 </tr>
 <tr>
 <td>
@@ -151,11 +151,11 @@ if (!something) {
 
 `Array`s, `BigInt`s, `Boolean`s, `Number`s and `String`s are all able to create via literals method; `RegExp`s are exceptions.
 
-<table width=100%>
+<table>
 <tbody valign="top">
 <tr>
-<td align="center" width=50%><b><i>Good</i></b></td>
-<td align="center" width=50%><b><i>Bad</i></b></td>
+<td align="center" width=100%><b><i>Good</i></b></td>
+<td align="center" width=100%><b><i>Bad</i></b></td>
 </tr>
 <tr>
 <td>
@@ -188,11 +188,11 @@ Never use `var` in anywhere of the codes to prevent fuzzy declaration and/or hoi
 
 Always add 1 semi-colon at the end of every statements.
 
-<table width=100%>
+<table>
 <tbody valign="top">
 <tr>
-<td align="center" width=50%><b><i>Good</i></b></td>
-<td align="center" width=50%><b><i>Bad</i></b></td>
+<td align="center" width=100%><b><i>Good</i></b></td>
+<td align="center" width=100%><b><i>Bad</i></b></td>
 </tr>
 <tr>
 <td>
@@ -229,11 +229,11 @@ if (typeof foo === "string") {
 
 When add items to the array, use `.push()` but never direct assignment.
 
-<table width=100%>
+<table>
 <tbody valign="top">
 <tr>
-<td align="center" width=50%><b><i>Good</i></b></td>
-<td align="center" width=50%><b><i>Bad</i></b></td>
+<td align="center" width=100%><b><i>Good</i></b></td>
+<td align="center" width=100%><b><i>Bad</i></b></td>
 </tr>
 <tr>
 <td>
@@ -262,11 +262,11 @@ pets[pets.length] = "cat";
 
 When use arrow functions, never use implicit return (also known as concise body).
 
-<table width=100%>
+<table>
 <tbody valign="top">
 <tr>
-<td align="center" width=50%><b><i>Good</i></b></td>
-<td align="center" width=50%><b><i>Bad</i></b></td>
+<td align="center" width=100%><b><i>Good</i></b></td>
+<td align="center" width=100%><b><i>Bad</i></b></td>
 </tr>
 <tr>
 <td>
@@ -293,11 +293,11 @@ arr.map((e) => e.id);
 
 Always use function declarations but not function expressions.
 
-<table width=100%>
+<table>
 <tbody valign="top">
 <tr>
-<td align="center" width=50%><b><i>Good</i></b></td>
-<td align="center" width=50%><b><i>Bad</i></b></td>
+<td align="center" width=100%><b><i>Good</i></b></td>
+<td align="center" width=100%><b><i>Bad</i></b></td>
 </tr>
 <tr>
 <td>
@@ -322,11 +322,11 @@ const sum = function (a, b) {
 
 When use anonymous functions as a callback (a function passed to another method invocation), if it do not need to access `this`, use an arrow function to make the code shorter and cleaner.
 
-<table width=100%>
+<table>
 <tbody valign="top">
 <tr>
-<td align="center" width=50%><b><i>Good</i></b></td>
-<td align="center" width=50%><b><i>Bad</i></b></td>
+<td align="center" width=100%><b><i>Good</i></b></td>
+<td align="center" width=100%><b><i>Bad</i></b></td>
 </tr>
 <tr>
 <td>
@@ -358,11 +358,11 @@ let sum = array1.reduce(function (a, b) {
 
 Never use single quote (`'`) for strings! Instead, use double quote (`"`) for strings, or backtick (<code>`</code>) for template literals/strings.
 
-<table width=100%>
+<table>
 <tbody valign="top">
 <tr>
-<td align="center" width=50%><b><i>Good</i></b></td>
-<td align="center" width=50%><b><i>Bad</i></b></td>
+<td align="center" width=100%><b><i>Good</i></b></td>
+<td align="center" width=100%><b><i>Bad</i></b></td>
 </tr>
 <tr>
 <td>

@@ -1,13 +1,13 @@
 [hugoalh]: https://github.com/hugoalh
 [hugoalh-studio]: https://github.com/hugoalh-studio
 
-# hxhS ([hugoalh][hugoalh] and [hugoalh Studio][hugoalh-studio]) Coding Guide
+# hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Coding Guide
 
 > **📅 Last Update:** 2022/09/07 09:00 UTC
 >
 > **🚧 Constructing:** This document is in constructing, contents maybe change rapidly.
 
-This Coding Guide applies to all of the hxhS ([hugoalh][hugoalh] and [hugoalh Studio][hugoalh-studio]) projects and repositories, and applies to all of the markups and programming languages; Some of the markups and programming languages have additional coding guide.
+This Coding Guide applies to all of the hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) projects and repositories, and applies to all of the markups and programming languages; Some of the markups and programming languages have additional coding guide.
 
 - [JavaScript (Additional)](./javascript.md)
 - [PowerShell (Additional)](./powershell.md)

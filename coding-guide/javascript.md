@@ -1,7 +1,7 @@
 [hugoalh]: https://github.com/hugoalh
 [hugoalh-studio]: https://github.com/hugoalh-studio
 
-# hxhS ([hugoalh][hugoalh] and [hugoalh Studio][hugoalh-studio]) Coding Guide - JavaScript (Additional)
+# hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Coding Guide - JavaScript (Additional)
 
 > **📅 Last Update:** 2022/09/07 09:00 UTC
 >

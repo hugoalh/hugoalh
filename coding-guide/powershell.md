@@ -11,7 +11,7 @@ This PowerShell Additional Coding Guide is an additional over the main [Coding G
 
 ## Linter
 
-In PowerShell, [`PSScriptAnalyzer`](https://github.com/PowerShell/PSScriptAnalyzer) does most of the linting works, but linter can wrongly assert as well, this PowerShell Additional Coding Guide has priority when there have any conflicts.
+[`PSScriptAnalyzer`](https://github.com/PowerShell/PSScriptAnalyzer) does most of the linting works in here, but linter can wrongly assert as well, this PowerShell Additional Coding Guide has priority when there have any conflicts.
 
 ---
 
@@ -29,11 +29,11 @@ Function FooBar($Bar, $Gaz) {}
 
 ### No global
 
-> **🔍 Linter:**
+> **🔍 Linter Rule:**
 >
-> - `PSScriptAnalyzer` > `AvoidGlobalAliases`
-> - `PSScriptAnalyzer` > `AvoidGlobalFunctions`
-> - `PSScriptAnalyzer` > `AvoidGlobalVars`
+> - `AvoidGlobalAliases`
+> - `AvoidGlobalFunctions`
+> - `AvoidGlobalVars`
 
 Global scoped alias, functions, and/or variables maybe override exist alias, functions, and/or variables within the sessions with matching names; This name collision can cause difficult to debug issues for consumers of modules.
 
@@ -74,7 +74,7 @@ Function Test-NotGlobal ($Var) {
 
 ### No semi-colons (`;`)
 
-> **🔍 Linter:** `PSScriptAnalyzer` > `AvoidSemicolonsAsLineTerminators`
+> **🔍 Linter Rule:** `AvoidSemicolonsAsLineTerminators`
 
 Never end lines with a semi-colon.
 

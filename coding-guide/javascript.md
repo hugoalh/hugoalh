@@ -3,7 +3,7 @@
 
 # hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Coding Guide - JavaScript (Additional)
 
-> **📅 Last Update:** 2022/09/07 09:00 UTC
+> **📅 Last Update:** 2022/09/08 09:00 UTC
 >
 > **🚧 Constructing:** This document is in constructing, contents maybe change rapidly.
 
@@ -11,7 +11,7 @@ This JavaScript Additional Coding Guide is an additional over the main [Coding G
 
 ## Linter
 
-*To be draft.*
+[`ESLint`](https://eslint.org) does most of the linting works in here, but linter can wrongly assert as well, this JavaScript Additional Coding Guide has priority when there have any conflicts.
 
 ---
 

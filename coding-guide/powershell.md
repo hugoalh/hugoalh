@@ -3,7 +3,7 @@
 
 # hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Coding Guide - PowerShell (Additional)
 
-> **📅 Last Update:** 2022/09/07 09:00 UTC
+> **📅 Last Update:** 2022/09/08 09:00 UTC
 >
 > **🚧 Constructing:** This document is in constructing, contents maybe change rapidly.
 
@@ -35,7 +35,7 @@ Function FooBar($Bar, $Gaz) {}
 > - `AvoidGlobalFunctions`
 > - `AvoidGlobalVars`
 
-Global scoped alias, functions, and/or variables maybe override exist alias, functions, and/or variables within the sessions with matching names; This name collision can cause difficult to debug issues for consumers of modules.
+Global scoped aliases, functions, and/or variables maybe override exist aliases, functions, and/or variables within the sessions with matching names; This name collision can cause difficult to debug issues for consumers of modules.
 
 <table>
 <tbody valign="top">

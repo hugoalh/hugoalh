@@ -9,12 +9,14 @@
 
 This Coding Guide applies to all of the hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) projects and repositories, and applies to all of the markups and programming languages; Some of the markups and programming languages have additional coding guide.
 
-- [JavaScript (Additional)](./javascript.md)
-- [PowerShell (Additional)](./powershell.md)
+- [JavaScript (Additional) 🚧](./javascript.md)
+- [PowerShell (Additional) 🚧](./powershell.md)
 
 ---
 
-## Indents with tab (`\t`) whenever possible
+## General
+
+### Indents with tab (`\t`) whenever possible
 
 > **⚠ Important:** All of the markups and programming languages must follow this indents rule, any invalid indents are not acceptable!
 
@@ -36,7 +38,7 @@ However, some of the markups and programming languages are only support to use s
 
 Codes in Markdown code blocks are also as exceptions, always use space (`\s`) for indentations in order to prevent weird display on the Markdown view mode.
 
-## Keep `OR` conditions in multiple lines; Keep other conditions in single line
+### Keep `OR` conditions in multiple lines; Keep other conditions in single line
 
 > **📋 Note:** All of the examples in here are based on JavaScript, similar style should apply on other programming languages.
 
@@ -138,17 +140,17 @@ let foo = a ?? b ?? c;
 bar ??= d ?? e ?? f;
 ```
 
-## No hard wrap
+### No hard word wrap
 
-Use of hard wrap can cause accessibility issues, difficult to edit, and looks like "texts-quake" (~~"earthquake"~~) on the small screen.
+Use of hard word wrap can cause accessibility issues, difficult to edit, and looks like "texts-quake" ("texts earthquake") on the small screen.
 
-[![Example of "texts-quake" when use of hard wrap.](https://martin-ueding.de/posts/hard-vs-soft-line-wrap/vim-hard-narrow.png "Example of \"texts-quake\" when use of hard wrap.")](https://martin-ueding.de/posts/hard-vs-soft-line-wrap)
+[![Example of "texts-quake" when use of hard word wrap.](https://martin-ueding.de/posts/hard-vs-soft-line-wrap/vim-hard-narrow.png "Example of \"texts-quake\" when use of hard word wrap.")](https://martin-ueding.de/posts/hard-vs-soft-line-wrap)
 
 However, few of the markups are only support to have 256 characters per line, these are as exceptions, including but not limited to:
 
 - Properties (`.conf`).
 
-In such cases, hard wrap between each sentences whenever possible.
+In such cases, applies hard word wrap between each sentences whenever possible.
 
 <table>
 <tbody valign="top">
@@ -208,7 +210,7 @@ pretium felis facilisis et.
 </tbody>
 </table>
 
-## Source code files encoding with `UTF-8 No-BOM`
+### Source code files encoding with `UTF-8 No-BOM`
 
 Always save all of the source code files with encoding `UTF-8 No-BOM` (8-bit Unicode Transformation Format without byte order mark).
 

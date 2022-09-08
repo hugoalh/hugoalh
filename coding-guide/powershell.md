@@ -27,6 +27,158 @@ Class FooBar {}
 Function FooBar($Bar, $Gaz) {}
 ```
 
+### No assignment statements alignments
+
+Consecutive assignment statements are more readable if they are aligned, but also cause some issues. Keep only 1 space (`\s`) between the equal (`=`).
+
+<table>
+<tbody valign="top">
+<tr>
+<td align="center"><b><i>Good</i></b></td>
+<td align="center"><b><i>Bad</i></b></td>
+</tr>
+<tr>
+<td>
+
+```ps1
+[String]$MyLanguage = 'en_US'
+[String]$ThisIsAVeryLoooooooooooooooooooongVariableName = 'fooBar'
+```
+
+</td>
+<td>
+
+```ps1
+[String]$MyLanguage                                     = 'en_US'
+[String]$ThisIsAVeryLoooooooooooooooooooongVariableName = 'fooBar'
+```
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### No assignment to automatic variables
+
+> **🔍 Linter Rule:** `AvoidAssignmentToAutomaticVariable`
+
+PowerShell has built in variables known as automatic variables, many of them are read only and PowerShell throws an error when trying to assign an value on those, other automatic variables should only be assigned in certain special cases to achieve a certain effect as a special technique.
+
+<table>
+<tbody valign="top">
+<tr>
+<td align="center"><b><i>Good</i></b></td>
+<td align="center"><b><i>Bad</i></b></td>
+</tr>
+<tr>
+<td>
+
+```ps1
+Function Get-CustomErrorMessage($ErrorMessage){
+  $FinalErrorMessage = "Error occurred: $ErrorMessage"
+}
+```
+
+</td>
+<td>
+
+```ps1
+Function Get-CustomErrorMessage($ErrorMessage){
+  $Error = "Error occurred: $ErrorMessage"
+}
+```
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### No default value for mandatory parameters
+
+> **🔍 Linter Rule:** `AvoidDefaultValueForMandatoryParameter`
+
+Mandatory parameters should not have a default values because there is no scenario where the default can be used. PowerShell prompts for a value if the parameter value is not specified when calling the function.
+
+<table>
+<tbody valign="top">
+<tr>
+<td align="center"><b><i>Good</i></b></td>
+<td align="center"><b><i>Bad</i></b></td>
+</tr>
+<tr>
+<td>
+
+```ps1
+Function Test {
+  [CmdletBinding()]
+  Param (
+    [Parameter(Mandatory = $True)]$Parameter1
+  )
+}
+```
+
+</td>
+<td>
+
+```ps1
+Function Test {
+  [CmdletBinding()]
+  Param (
+    [Parameter(Mandatory = $True)]$Parameter1 = 'default Value'
+  )
+}
+```
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### No default value for switch type parameters
+
+> **🔍 Linter Rule:** `AvoidDefaultValueSwitchParameter`
+
+Switch parameters for commands should default to `$False`.
+
+<table>
+<tbody valign="top">
+<tr>
+<td align="center"><b><i>Good</i></b></td>
+<td align="center"><b><i>Bad</i></b></td>
+</tr>
+<tr>
+<td>
+
+```ps1
+Function Test-Script {
+  [CmdletBinding()]
+  Param (
+      [String]$Param1,
+      [Switch]$Switch
+  )
+  ...
+}
+```
+
+</td>
+<td>
+
+```ps1
+Function Test-Script {
+  [CmdletBinding()]
+  Param (
+      [String]$Param1,
+      [Switch]$Switch = $True
+  )
+  ...
+}
+```
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ### No global
 
 > **🔍 Linter Rule:**
@@ -72,11 +224,11 @@ Function Test-NotGlobal ($Var) {
 </tbody>
 </table>
 
-### No semi-colons (`;`)
+### No semi-colons (`;`) at the end of any lines
 
 > **🔍 Linter Rule:** `AvoidSemicolonsAsLineTerminators`
 
-Never end lines with a semi-colon.
+Never end lines with the semi-colons.
 
 <table>
 <tbody valign="top">

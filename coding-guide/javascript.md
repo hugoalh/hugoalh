@@ -3,7 +3,7 @@
 
 # hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Coding Guide - JavaScript (Additional)
 
-> **📅 Last Update:** 2022/09/08 09:00 UTC
+> **📅 Last Update:** 2022/09/09 05:00 UTC
 >
 > **🚧 Constructing:** This document is in constructing, contents maybe change rapidly.
 

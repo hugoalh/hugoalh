@@ -23,11 +23,15 @@ These are always the works for the maintainers and owners.
 
 ## Documentations, Documents & Wikis
 
+To improve the documentations and/or documents, clone this repository, edit the documentations and/or documents, and create a pull request.
+
+This project and repository does not have wikis.
+
 ## I18ns (Internationalizations) & Translations
 
 This project and repository does not have necessary things to do i18ns and/or translations.
 
-If you want to do i18ns and/or translations on the documentations, documents and/or wikis, please see "[Documentations, Documents & Wikis](#documentations-documents--wikis)".
+If you want to do i18ns and/or translations on the documentations, documents and/or wikis, please see section "[Documentations, Documents & Wikis](#documentations-documents--wikis)".
 
 ## Issues
 

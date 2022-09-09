@@ -28,7 +28,7 @@ This YAML/YML Additional Coding Guide is an additional over the main [Coding Gui
 >   max: 0
 > ```
 
-New line of end of files are exceptions.
+New line for end of files are exceptions.
 
 <table>
 <tbody valign="top">

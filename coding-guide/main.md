@@ -19,7 +19,7 @@ This Coding Guide applies to all of the hxhS ([hugoalh][hugoalh] & [hugoalh Stud
 
 ### Indents with tab (`\t`) whenever possible
 
-> **⚠ Important:** All of the markups and programming languages must follow this indents rule, any invalid indents are not acceptable!
+> **⚠ Important:** All of the markups and programming languages must follow this indentation rule, any invalid indentation are not acceptable!
 
 Always use tab (`\t`) for indentations on most of the markups and programming languages, including but not limited to:
 
@@ -147,7 +147,7 @@ Use of hard word wrap can cause accessibility issues, difficult to edit, and loo
 
 [![Example of "texts-quake" when use of hard word wrap.](https://martin-ueding.de/posts/hard-vs-soft-line-wrap/vim-hard-narrow.png "Example of \"texts-quake\" when use of hard word wrap.")](https://martin-ueding.de/posts/hard-vs-soft-line-wrap)
 
-However, few of the markups are only support to have 256 characters per line, these are as exceptions, including but not limited to:
+However, few of the markups are only support to have maximum 256 characters per line, these are as exceptions, including but not limited to:
 
 - Properties (`.conf`).
 
@@ -216,3 +216,113 @@ pretium felis facilisis et.
 Always save all of the source code files with encoding `UTF-8 No-BOM` (8-bit Unicode Transformation Format without byte order mark).
 
 Some of the editors maybe have options of `UTF-8` and `UTF-8 BOM` instead, thus select `UTF-8`.
+
+## Structure
+
+### Known Files
+
+<table>
+<tr>
+<td><b>Relative Paths (Glob)</b></td>
+<td><b>Markups & Programming Languages</b></td>
+<td><b>Description</b></td>
+</tr>
+<tr>
+<td><code>.cfduplication.yml</code></td>
+<td>All</td>
+<td>CodeFactor duplication configuration file.</td>
+</tr>
+<tr>
+<td><code>.eslintrc.yml</code></td>
+<td>
+<ul>
+<li>JavaScript</li>
+<li>TypeScript</li>
+</ul>
+</td>
+<td>ESLint configuration file.</td>
+</tr>
+<tr>
+<td><code>.gitattributes</code></td>
+<td>All</td>
+<td>Git attributes.</td>
+</tr>
+<tr>
+<td><code>.github/CODEOWNERS</code></td>
+<td>All</td>
+<td>GitHub code owners metadata.</td>
+</tr>
+<tr>
+<td><code>.github/dependabot.yml</code></td>
+<td>
+<ul>
+<li>Docker</li>
+<ul>
+<li>Dockerfile</li>
+</ul>
+<li>Git Submodule</li>
+<li>GitHub Actions</li>
+<li>JavaScript</li>
+<ul>
+<li>NodeJS</li>
+</ul>
+<li><i>... (Others are omitted due to not in use)</i></li>
+</ul>
+</td>
+<td>GitHub Dependabot configuration file.</td>
+</tr>
+<tr>
+<td><code>.github/ISSUE_TEMPLATE/</code></td>
+<td>All</td>
+<td>GitHub issue templates.</td>
+</tr>
+<tr>
+<td><code>.github/PULL_REQUEST_TEMPLATE.md</code></td>
+<td>All</td>
+<td>GitHub pull request templates.</td>
+</tr>
+<tr>
+<td><code>.github/workflows/</code></td>
+<td>All</td>
+<td>GitHub Actions workflows.</td>
+</tr>
+<tr>
+<td><code>.gitignore</code></td>
+<td>All</td>
+<td>Git ignore.</td>
+</tr>
+<tr>
+<td><code>.yamllint.yml</code></td>
+<td>
+<ul>
+<li>YAML/YML</li>
+</ul>
+</td>
+<td>YAMLLint configuration file.</td>
+</tr>
+<tr>
+<td><code>CODE_OF_CONDUCT.md</code></td>
+<td>All</td>
+<td>Contributor covenant code of conduct.</td>
+</tr>
+<tr>
+<td><code>CONTRIBUTING.md</code></td>
+<td>All</td>
+<td>Contributing guide.</td>
+</tr>
+<tr>
+<td><code>LICENSE.md</code></td>
+<td>All</td>
+<td>License.</td>
+</tr>
+<tr>
+<td><code>README.md</code></td>
+<td>All</td>
+<td>Readme.</td>
+</tr>
+<tr>
+<td><code>SECURITY.md</code></td>
+<td>All</td>
+<td>Security policy.</td>
+</tr>
+</table>

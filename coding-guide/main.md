@@ -223,14 +223,14 @@ Some of the editors maybe have options of `UTF-8` and `UTF-8 BOM` instead, thus 
 
 <table>
 <tr>
-<td><b>Relative Paths (Glob)</b></td>
+<td><b>Relative Path (Glob)</b></td>
 <td><b>Markups & Programming Languages</b></td>
 <td><b>Description</b></td>
 </tr>
 <tr>
 <td><code>.cfduplication.yml</code></td>
 <td>All</td>
-<td>CodeFactor duplication configuration file.</td>
+<td>CodeFactor duplication configuration.</td>
 </tr>
 <tr>
 <td><code>.eslintrc.yml</code></td>
@@ -240,7 +240,7 @@ Some of the editors maybe have options of `UTF-8` and `UTF-8 BOM` instead, thus 
 <li>TypeScript</li>
 </ul>
 </td>
-<td>ESLint configuration file.</td>
+<td>ESLint configuration.</td>
 </tr>
 <tr>
 <td><code>.gitattributes</code></td>
@@ -266,15 +266,20 @@ Some of the editors maybe have options of `UTF-8` and `UTF-8 BOM` instead, thus 
 <ul>
 <li>NodeJS</li>
 </ul>
-<li><i>... (Others are omitted due to not in use)</i></li>
+<li><i>(Others are omitted due to not in use)</i></li>
 </ul>
 </td>
-<td>GitHub Dependabot configuration file.</td>
+<td>GitHub Dependabot configuration.</td>
 </tr>
 <tr>
-<td><code>.github/ISSUE_TEMPLATE/</code></td>
+<td><code>.github/ISSUE_TEMPLATE/*.md</code></td>
 <td>All</td>
 <td>GitHub issue templates.</td>
+</tr>
+<tr>
+<td><code>.github/ISSUE_TEMPLATE/config.yml</code></td>
+<td>All</td>
+<td>GitHub issue configuration.</td>
 </tr>
 <tr>
 <td><code>.github/PULL_REQUEST_TEMPLATE.md</code></td>
@@ -282,7 +287,7 @@ Some of the editors maybe have options of `UTF-8` and `UTF-8 BOM` instead, thus 
 <td>GitHub pull request templates.</td>
 </tr>
 <tr>
-<td><code>.github/workflows/</code></td>
+<td><code>.github/workflows/*.yml</code></td>
 <td>All</td>
 <td>GitHub Actions workflows.</td>
 </tr>
@@ -292,13 +297,39 @@ Some of the editors maybe have options of `UTF-8` and `UTF-8 BOM` instead, thus 
 <td>Git ignore.</td>
 </tr>
 <tr>
+<td><code>.npmignore</code></td>
+<td>
+<ul>
+<li>JavaScript</li>
+<ul>
+<li>NodeJS</li>
+</ul>
+<li>TypeScript</li>
+</ul>
+</td>
+<td>NPM ignore.</td>
+</tr>
+<tr>
+<td><code>.npmrc</code></td>
+<td>
+<ul>
+<li>JavaScript</li>
+<ul>
+<li>NodeJS</li>
+</ul>
+<li>TypeScript</li>
+</ul>
+</td>
+<td>NPM configuration.</td>
+</tr>
+<tr>
 <td><code>.yamllint.yml</code></td>
 <td>
 <ul>
 <li>YAML/YML</li>
 </ul>
 </td>
-<td>YAMLLint configuration file.</td>
+<td>YAMLLint configuration.</td>
 </tr>
 <tr>
 <td><code>CODE_OF_CONDUCT.md</code></td>
@@ -316,6 +347,45 @@ Some of the editors maybe have options of `UTF-8` and `UTF-8 BOM` instead, thus 
 <td>License.</td>
 </tr>
 <tr>
+<td><code>node_modules/**</code></td>
+<td>
+<ul>
+<li>JavaScript</li>
+<ul>
+<li>NodeJS</li>
+</ul>
+<li>TypeScript</li>
+</ul>
+</td>
+<td>NodeJS modules.</td>
+</tr>
+<tr>
+<td><code>package-lock.json</code></td>
+<td>
+<ul>
+<li>JavaScript</li>
+<ul>
+<li>NodeJS</li>
+</ul>
+<li>TypeScript</li>
+</ul>
+</td>
+<td>NodeJS package metadata.</td>
+</tr>
+<tr>
+<td><code>package.json</code></td>
+<td>
+<ul>
+<li>JavaScript</li>
+<ul>
+<li>NodeJS</li>
+</ul>
+<li>TypeScript</li>
+</ul>
+</td>
+<td>NodeJS package metadata.</td>
+</tr>
+<tr>
 <td><code>README.md</code></td>
 <td>All</td>
 <td>Readme.</td>
@@ -324,5 +394,18 @@ Some of the editors maybe have options of `UTF-8` and `UTF-8 BOM` instead, thus 
 <td><code>SECURITY.md</code></td>
 <td>All</td>
 <td>Security policy.</td>
+</tr>
+<tr>
+<td><code>tsconfig.json</code></td>
+<td>
+<ul>
+<li>JavaScript</li>
+<ul>
+<li>NodeJS</li>
+</ul>
+<li>TypeScript</li>
+</ul>
+</td>
+<td>TypeScript configuration.</td>
 </tr>
 </table>

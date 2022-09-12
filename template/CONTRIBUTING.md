@@ -21,17 +21,17 @@ These are always the works for the maintainers and owners.
 - Before create a discussion, check whether any similar discussions are already exist.
 - Any reports and requests should create an issue instead.
 
-## Documentations, Documents & Wikis
+## Documentations, Documents & Wiki
 
 To improve the documentations and/or documents, clone this repository, edit the documentations and/or documents, and create a pull request.
 
-This project and repository does not have wikis.
+To improve the wiki, create an issue.
 
 ## I18ns (Internationalizations) & Translations
 
 This project and repository does not have necessary things to do i18ns and/or translations.
 
-If you want to do i18ns and/or translations on the documentations, documents and/or wikis, please see section "[Documentations, Documents & Wikis](#documentations-documents--wikis)".
+If you want to do i18ns and/or translations on the documentations, documents and/or wiki, please see section "[Documentations, Documents & Wiki](#documentations-documents--wiki)".
 
 ## Issues
 

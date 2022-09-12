@@ -10,7 +10,7 @@ If you have any questions and/or still confused, try to create a discussion.
 
 ## Codes
 
-All of the codes in this project and repository are follow the "[hxhS (hugoalh & hugoalh Studio) Coding Guide](https://github.com/hugoalh/hugoalh/blob/main/coding-guide/main.md)".
+All of the codes in this project and repository are follow the [hxhS (hugoalh & hugoalh Studio) Coding Guide](https://github.com/hugoalh/hugoalh/blob/main/coding-guide/main.md).
 
 ## Deploys, Releases, Tags & Versions
 

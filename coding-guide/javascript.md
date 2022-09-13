@@ -3,7 +3,7 @@
 
 # hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Coding Guide - JavaScript (Additional)
 
-> **📅 Last Update:** 2022/09/09 05:00 UTC
+> **📅 Last Update:** 2022/09/13 04:40 UTC
 >
 > **🚧 Constructing:** This document is in constructing, contents maybe change rapidly.
 
@@ -184,7 +184,50 @@ Strict mode is already applied to all of the JavaScript files, hence no need to 
 
 Never use `var` in anywhere of the codes to prevent fuzzy declaration and/or hoisting unexpectedly; Instead, use `let`.
 
-### Semi-colons (`;`) at the end of every statements
+### Sort namespaces whenever possible
+
+*To be draft.*
+
+### Wisely use of semi-colons (`;`)
+
+#### For ECMAScript 6 or above
+
+Only add 1 semi-colon at the end of every non-braces-block statements.
+
+<table>
+<tbody valign="top">
+<tr>
+<td align="center"><b><i>Good</i></b></td>
+<td align="center"><b><i>Bad</i></b></td>
+</tr>
+<tr>
+<td>
+
+```js
+let foo = "bar";
+if (typeof foo === "string") {
+  return true;
+}
+```
+
+</td>
+<td>
+
+```js
+let foo = "bar"//;
+if (typeof foo === "string") {
+  return true//;
+};//
+```
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### For ECMAScript 5 or below
+
+> **⚠ Important:** All of the JavaScript which for ECMAScript 5 or below must follow this semi-colons rule to prevent security vulnerability issues!
 
 Always add 1 semi-colon at the end of every statements.
 
@@ -218,10 +261,6 @@ if (typeof foo === "string") {
 </tr>
 </tbody>
 </table>
-
-### Sort namespaces whenever possible
-
-*To be draft.*
 
 ## Array
 

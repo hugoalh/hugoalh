@@ -3,7 +3,7 @@
 
 # hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Coding Guide
 
-> **📅 Last Update:** 2022/09/09 05:00 UTC
+> **📅 Last Update:** 2022/09/13 06:20 UTC
 >
 > **🚧 Constructing:** This document is in constructing, contents maybe change rapidly.
 
@@ -57,7 +57,7 @@ Always keep `AND` conditions in single line.
 ```js
 if (a && b && c) {
   return true;
-};
+}
 ```
 
 </td>
@@ -70,7 +70,7 @@ if (
   c
 ) {
   return true;
-};
+}
 ```
 
 </td>
@@ -96,7 +96,7 @@ if (
   c
 ) {
   return true;
-};
+}
 ```
 
 </td>
@@ -105,7 +105,7 @@ if (
 ```js
 if (a || b || c) {
   return true;
-};
+}
 ```
 
 </td>
@@ -131,7 +131,7 @@ if (
   g
 ) {
   return true;
-};
+}
 ```
 
 Always keep nullish coalescing in single line.

@@ -3,7 +3,7 @@
 
 # hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Coding Guide - YAML/YML (Additional)
 
-> **📅 Last Update:** 2022/09/09 05:00 UTC
+> **📅 Last Update:** 2022/09/13 06:20 UTC
 >
 > **🚧 Constructing:** This document is in constructing, contents maybe change rapidly.
 

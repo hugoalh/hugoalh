@@ -3,7 +3,7 @@
 
 # hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Coding Guide - JavaScript (Additional)
 
-> **📅 Last Update:** 2022/09/13 04:40 UTC
+> **📅 Last Update:** 2022/09/13 06:20 UTC
 >
 > **🚧 Constructing:** This document is in constructing, contents maybe change rapidly.
 
@@ -54,23 +54,23 @@ foo == "1";
 
 Use concise, human-readable, and semantic names as appropriately.
 
-| **Type** | **Case** |
-|:-:|:-:|
-| `class` | Upper Camel |
-| `class`'s Method  | Lower Camel |
-| `class`'s Property  | Lower Camel |
-| `const` | Lower Camel |
-| `function` | Lower Camel |
-| `function`'s Argument | Lower Camel |
-| `let` | Lower Camel |
+| **Type** | **Upper Camel Case** | **Lower Camel Case** |
+|:-:|:-:|:-:|
+| `class` | ✔ |  |
+| `class`'s Method  |  | ✔ |
+| `class`'s Property  |  | ✔ |
+| `const` |  | ✔ |
+| `function` |  | ✔ |
+| `function`'s Argument |  | ✔ |
+| `let` |  | ✔ |
 
 ```js
 class FooBar {
   catName = "Lucas";
-  love(name) {};
-};
+  love(name) {}
+}
 const fooBar;
-function fooBar(bar, gaz) {};
+function fooBar(bar, gaz) {}
 let fooBar;
 ```
 
@@ -90,7 +90,7 @@ There is one notable case to keep in mind for the `if...else` control statements
 ```js
 if (something) {
   return 0;
-};
+}
 return 1;
 ```
 
@@ -102,7 +102,7 @@ if (something) {
   return 0;
 } else {
   return 1;
-};
+}
 ```
 
 </td>
@@ -128,7 +128,7 @@ if (something) {
   console.log(something);
 } else {
   console.log(anything);
-};
+}
 ```
 
 </td>
@@ -139,7 +139,7 @@ if (!something) {
   console.log(anything);
 } else {
   console.log(something);
-};
+}
 ```
 
 </td>
@@ -344,7 +344,7 @@ Always use function declarations but not function expressions.
 ```js
 function sum(a, b) {
   return a + b;
-};
+}
 ```
 </td>
 <td>

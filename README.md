@@ -1,18 +1,21 @@
 # [hugoalh](https://github.com/hugoalh)
 
 ![Discord (hugoalh#1167)](https://img.shields.io/badge/Discord%20%28hugoalh%231167%29-5865F2?logo=discord&logoColor=ffffff&style=flat-square "Discord (hugoalh#1167)")
-[![GitHub Discussion](https://img.shields.io/badge/GitHub%20Discussion-24292F?logo=github&logoColor=ffffff&style=flat-square "GitHub Discussion")](https://github.com/hugoalh/hugoalh/discussions)
-[![GitHub Gist](https://img.shields.io/badge/GitHub%20Gist-24292F?logo=github&logoColor=ffffff&style=flat-square "GitHub Gist")](https://gist.github.com/hugoalh)
-[![Twitter (@hugoalhofficial)](https://img.shields.io/badge/Twitter%20%28@hugoalhofficial%29-1D9BF0?logo=twitter&logoColor=ffffff&style=flat-square "Twitter (@hugoalhofficial)")](https://twitter.com/hugoalhofficial)
+[![GitHub Discussion](https://img.shields.io/badge/GitHub%20Discussion-181717?logo=github&logoColor=ffffff&style=flat-square "GitHub Discussion")](https://github.com/hugoalh/hugoalh/discussions)
+[![GitHub Gist](https://img.shields.io/badge/GitHub%20Gist-181717?logo=github&logoColor=ffffff&style=flat-square "GitHub Gist")](https://gist.github.com/hugoalh)
+[![Twitter (@hugoalhofficial)](https://img.shields.io/badge/Twitter%20%28@hugoalhofficial%29-1DA1F2?logo=twitter&logoColor=ffffff&style=flat-square "Twitter (@hugoalhofficial)")](https://twitter.com/hugoalhofficial)
 
 ## 💬 Languages
 
-- [Chinese (中文)](https://en.wikipedia.org/wiki/Chinese_language)
-  - [Cantonese (粵語 / 廣東話)](https://en.wikipedia.org/wiki/Cantonese)
-  - [Hong Kong](https://en.wikipedia.org/wiki/Hong_Kong)
-  - [Macao](https://en.wikipedia.org/wiki/Macau)
+- [Cantonese (粵語 / 廣東話)](https://en.wikipedia.org/wiki/Cantonese)
+  - [Hong Kong][wiki-hongkong]
+  - [wiki-macau][wiki-macau]
+  - [Traditional (繁體)][wiki-chinesetraditional]
+- [Chinese (漢語 / 中文)](https://en.wikipedia.org/wiki/Chinese_language)
+  - [Hong Kong][wiki-hongkong]
+  - [wiki-macau][wiki-macau]
   - [Republic of China (Taiwan)](https://en.wikipedia.org/wiki/Taiwan)
-  - [Traditional (繁體)](https://en.wikipedia.org/wiki/Traditional_Chinese_characters)
+  - [Traditional (繁體)][wiki-chinesetraditional]
 - [English](https://en.wikipedia.org/wiki/English_language)
 
 ## 💻 Markups & Programming Languages
@@ -138,6 +141,9 @@
 
 [badge-csharp]: https://img.shields.io/badge/C%23-800080?logo=c-sharp&logoColor=ffffff&style=flat-square "C#"
 [badge-deno]: https://img.shields.io/badge/Deno-000000?logo=deno&logoColor=ffffff&style=flat-square "Deno"
-[badge-githubaction]: https://img.shields.io/badge/GitHub%20Action-1074E7?logo=github-actions&logoColor=ffffff&style=flat-square "GitHub Action"
-[badge-nodejs]: https://img.shields.io/badge/NodeJS-026E00?logo=nodedotjs&logoColor=ffffff&style=flat-square "NodeJS"
+[badge-githubaction]: https://img.shields.io/badge/GitHub%20Action-2088FF?logo=github-actions&logoColor=ffffff&style=flat-square "GitHub Action"
+[badge-nodejs]: https://img.shields.io/badge/NodeJS-339933?logo=nodedotjs&logoColor=ffffff&style=flat-square "NodeJS"
 [badge-powershell]: https://img.shields.io/badge/PowerShell-0072C6?logo=powershell&logoColor=ffffff&style=flat-square "PowerShell"
+[wiki-chinesetraditional]: https://en.wikipedia.org/wiki/Traditional_Chinese_characters
+[wiki-hongkong]: https://en.wikipedia.org/wiki/Hong_Kong
+[wiki-macau]: https://en.wikipedia.org/wiki/Macau

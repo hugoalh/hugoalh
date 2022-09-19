@@ -9,11 +9,11 @@
 
 - [Cantonese (粵語 / 廣東話)](https://en.wikipedia.org/wiki/Cantonese)
   - [Hong Kong][wiki-hongkong]
-  - [wiki-macau][wiki-macau]
+  - [Macau][wiki-macau]
   - [Traditional (繁體)][wiki-chinesetraditional]
 - [Chinese (漢語 / 中文)](https://en.wikipedia.org/wiki/Chinese_language)
   - [Hong Kong][wiki-hongkong]
-  - [wiki-macau][wiki-macau]
+  - [Macau][wiki-macau]
   - [Republic of China (Taiwan)](https://en.wikipedia.org/wiki/Taiwan)
   - [Traditional (繁體)][wiki-chinesetraditional]
 - [English](https://en.wikipedia.org/wiki/English_language)

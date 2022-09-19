@@ -30,7 +30,7 @@
   - JSONC (JavaScript Object Notation with Comments)
 - MCFunction (Minecraft Function)
 - ModernScript
-- [![PowerShell][badge-powershell](https://en.wikipedia.org/wiki/PowerShell)
+- [![PowerShell][badge-powershell]](https://en.wikipedia.org/wiki/PowerShell)
 - [SVG (Scalable Vector Graphics)](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics)
 - [TOML (Tom's Obvious, Minimal Language)](https://en.wikipedia.org/wiki/TOML)
 - [TSV (Tab Separated Values)](https://en.wikipedia.org/wiki/Tab-separated_values)

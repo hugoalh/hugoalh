@@ -1,4 +1,4 @@
-🌐 | [English](./CODE_OF_CONDUCT.md) / [中文](./CODE_OF_CONDUCT-ZHHANT.md)
+🌐 | [English](./CODE_OF_CONDUCT.md) / [漢語](./CODE_OF_CONDUCT-ZH.md)
 
 ---
 
@@ -69,13 +69,13 @@
 - 你帳戶的平台（例如：GitHub、GitLab、…）。
 - 你帳戶的用戶名（例如：`@octocat`）。
 - 項目編號或存儲庫鏈結。
-  - 項目編號顯示在自述文件的頂部（即：`README`文件），項目顯示名稱（即：標題）下方，代碼塊內。
+  - 項目編號顯示在自述文件（文件：`README.md`）的頂部，項目顯示名稱（即：標題）下方，代碼塊內。
 - 被告和證人。
 - 被告是否包括任何工作人員、版主和／或管理員？
   - 這可能會影響誰將處理此投訴。
 - 投訴詳情。
 - 預期的行動。
-  - 你（原告）希望我們採取什麼樣的行動來懲罰被告？
+  - 你（原告）希望我們採取甚麼行動來懲罰被告？
 - 證據。
 
 ## 處理方針
@@ -97,4 +97,4 @@
 
 有關本行為準則的常見問題的答案，參見[https://www.contributor-covenant.org/faq](https://www.contributor-covenant.org/faq)。其他語言翻譯參見[https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations)。
 
-> 本中文版本貢獻者公約為英文版本之譯本，如果中、英文兩個版本有任何抵觸或不相符之處，應以英文版本為準。
+> 本漢語版本貢獻者公約為英文版本之譯本，如果有任何抵觸或不相符之處，應以英文版本為準。

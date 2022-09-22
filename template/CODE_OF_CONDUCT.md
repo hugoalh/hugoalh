@@ -1,4 +1,4 @@
-🌐 | [English](./CODE_OF_CONDUCT.md) / [中文](./CODE_OF_CONDUCT-ZHHANT.md)
+🌐 | [English](./CODE_OF_CONDUCT.md) / [漢語](./CODE_OF_CONDUCT-ZH.md)
 
 ---
 
@@ -71,7 +71,7 @@ Please provide as much as you can to help the community leaders for better under
 - Your account's platform (e.g.: GitHub, GitLab, ...).
 - Your account's username (e.g.: `@octocat`).
 - Project's ID or repository URI.
-  - Project's ID is displayed at the top part of Readme (file: `README.md`), below the project display name (i.e.: header), inside a code block.
+  - Project's ID is displayed at the top part of the Readme (file: `README.md`), below the project display name (i.e.: header), inside a code block.
 - Defendants and witnesses.
 - Are defendants include any staffs, moderators, and/or administrators?
   - This can affect who will proceed this complaint.

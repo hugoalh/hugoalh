@@ -33,8 +33,8 @@ New line for end of files are exceptions.
 <table>
 <tbody valign="top">
 <tr>
-<td align="center"><b><i>Good</i></b></td>
-<td align="center"><b><i>Bad</i></b></td>
+<td align="center"><b><i>✔ Good</i></b></td>
+<td align="center"><b><i>❌ Bad</i></b></td>
 </tr>
 <tr>
 <td>
@@ -88,8 +88,8 @@ array:
 <table>
 <tbody valign="top">
 <tr>
-<td align="center"><b><i>Good</i></b></td>
-<td align="center"><b><i>Bad</i></b></td>
+<td align="center"><b><i>✔ Good</i></b></td>
+<td align="center"><b><i>❌ Bad</i></b></td>
 </tr>
 <tr>
 <td>
@@ -171,8 +171,8 @@ Use empty braces and/or brackets to specify the type of values which empty.
 <table>
 <tbody valign="top">
 <tr>
-<td align="center"><b><i>Good</i></b></td>
-<td align="center"><b><i>Bad</i></b></td>
+<td align="center"><b><i>✔ Good</i></b></td>
+<td align="center"><b><i>❌ Bad</i></b></td>
 </tr>
 <tr>
 <td>
@@ -251,8 +251,8 @@ Fuzzy truthy cause confusing, always use `true` or `false` only.
 <table>
 <tbody valign="top">
 <tr>
-<td align="center"><b><i>Good</i></b></td>
-<td align="center"><b><i>Bad</i></b></td>
+<td align="center"><b><i>✔ Good</i></b></td>
+<td align="center"><b><i>❌ Bad</i></b></td>
 </tr>
 <tr>
 <td>
@@ -287,8 +287,8 @@ sayYes: YES
 <table>
 <tbody valign="top">
 <tr>
-<td align="center"><b><i>Good</i></b></td>
-<td align="center"><b><i>Bad</i></b></td>
+<td align="center"><b><i>✔ Good</i></b></td>
+<td align="center"><b><i>❌ Bad</i></b></td>
 </tr>
 <tr>
 <td>
@@ -349,8 +349,8 @@ In YAML/YML, numbers that start with `0` are interpreted as octal, but this is n
 <table>
 <tbody valign="top">
 <tr>
-<td align="center"><b><i>Good</i></b></td>
-<td align="center"><b><i>Bad</i></b></td>
+<td align="center"><b><i>✔ Good</i></b></td>
+<td align="center"><b><i>❌ Bad</i></b></td>
 </tr>
 <tr>
 <td>

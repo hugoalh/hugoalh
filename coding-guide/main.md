@@ -3,7 +3,7 @@
 
 # hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Coding Guide
 
-> **📅 Last Update:** 2022/09/13 06:20 UTC
+> **📅 Last Update:** 2022/10/11 04:00 UTC
 >
 > **🚧 Constructing:** This document is in constructing, contents maybe change rapidly.
 
@@ -16,6 +16,31 @@ This Coding Guide applies to all of the hxhS ([hugoalh][hugoalh] & [hugoalh Stud
 ---
 
 ## General
+
+### Forbidden markups and programming languages
+
+These markups and programming languages must not appear in any projects and repositories.
+
+> - Listed without any releases/tags/versions means all
+> - Markups and programming languages which in beta status should not appear as well
+
+- Go
+  - < v1.13.0
+- Java
+- Lua
+  - Roblox
+  - Roblox Studio
+- NodeJS
+  - Non-LTS (Long Term Supported) (e.g.: v5.X.X, v7.X.X, v9.X.X, v11.X.X, v13.X.X, v15.X.X, v17.X.X, ...)
+- PowerShell
+  - v7.0.X
+  - v6.X.X
+  - < v5.0.0 (Windows PowerShell)
+- Python
+  - v3.10.6
+  - v3.10.5
+  - v2.X.X
+  - v1.X.X
 
 ### Indents with tab (`\t`) whenever possible
 
@@ -228,12 +253,25 @@ Some of the editors maybe have options of `UTF-8` and `UTF-8 BOM` instead, thus 
 <td><b>Description</b></td>
 </tr>
 <tr>
-<td><code>.cfduplication.yml</code></td>
+<td>
+<ul>
+<li><code>.cfduplication.yaml</code> <i>(Legacy)</i></li>
+<li><code>.cfduplication.yml</code></li>
+</ul>
+</td>
 <td>All</td>
 <td>CodeFactor duplication configuration.</td>
 </tr>
 <tr>
-<td><code>.eslintrc.yml</code></td>
+<td>
+<ul>
+<li><code>.eslintrc</code> <i>(Legacy)</i></li>
+<li><code>.eslintrc.mjs</code> <i>(Legacy)</i></li>
+<li><code>.eslintrc.js</code> <i>(Legacy)</i></li>
+<li><code>.eslintrc.yaml</code> <i>(Legacy)</i></li>
+<li><code>.eslintrc.yml</code></li>
+</ul>
+</td>
 <td>
 <ul>
 <li>JavaScript</li>
@@ -253,7 +291,12 @@ Some of the editors maybe have options of `UTF-8` and `UTF-8 BOM` instead, thus 
 <td>GitHub code owners metadata.</td>
 </tr>
 <tr>
-<td><code>.github/dependabot.yml</code></td>
+<td>
+<ul>
+<li><code>.github/dependabot.yaml</code> <i>(Legacy)</i></li>
+<li><code>.github/dependabot.yml</code></li>
+</ul>
+</td>
 <td>
 <ul>
 <li>Docker</li>
@@ -277,7 +320,12 @@ Some of the editors maybe have options of `UTF-8` and `UTF-8 BOM` instead, thus 
 <td>GitHub issue templates.</td>
 </tr>
 <tr>
-<td><code>.github/ISSUE_TEMPLATE/config.yml</code></td>
+<td>
+<ul>
+<li><code>.github/ISSUE_TEMPLATE/config.yaml</code> <i>(Legacy)</i></li>
+<li><code>.github/ISSUE_TEMPLATE/config.yml</code></li>
+</ul>
+</td>
 <td>All</td>
 <td>GitHub issue configuration.</td>
 </tr>
@@ -287,7 +335,12 @@ Some of the editors maybe have options of `UTF-8` and `UTF-8 BOM` instead, thus 
 <td>GitHub pull request templates.</td>
 </tr>
 <tr>
-<td><code>.github/workflows/*.yml</code></td>
+<td>
+<ul>
+<li><code>.github/workflows/*.yaml</code> <i>(Legacy)</i></li>
+<li><code>.github/workflows/*.yml</code></li>
+</ul>
+</td>
 <td>All</td>
 <td>GitHub Actions workflows.</td>
 </tr>
@@ -323,7 +376,12 @@ Some of the editors maybe have options of `UTF-8` and `UTF-8 BOM` instead, thus 
 <td>NPM configuration.</td>
 </tr>
 <tr>
-<td><code>.yamllint.yml</code></td>
+<td>
+<ul>
+<li><code>.yamllint.yaml</code> <i>(Legacy)</i></li>
+<li><code>.yamllint.yml</code></li>
+</ul>
+</td>
 <td>
 <ul>
 <li>YAML/YML</li>
@@ -332,14 +390,34 @@ Some of the editors maybe have options of `UTF-8` and `UTF-8 BOM` instead, thus 
 <td>YAMLLint configuration.</td>
 </tr>
 <tr>
-<td><code>CODE_OF_CONDUCT.md</code></td>
+<td>
+<ul>
+<li><code>.github/CODE_OF_CONDUCT.md</code> <i>(Legacy)</i></li>
+<li><code>CODE_OF_CONDUCT.md</code></li>
+</ul>
+</td>
 <td>All</td>
 <td>Contributor covenant code of conduct.</td>
 </tr>
 <tr>
-<td><code>CONTRIBUTING.md</code></td>
+<td>
+<ul>
+<li><code>.github/CONTRIBUTING.md</code> <i>(Legacy)</i></li>
+<li><code>CONTRIBUTING.md</code></li>
+</ul>
+</td>
 <td>All</td>
 <td>Contributing guide.</td>
+</tr>
+<tr>
+<td>
+<ul>
+<li><code>.lgtm.yaml</code> <i>(Legacy)</i></li>
+<li><code>.lgtm.yml</code> <i>(Legacy)</i></li>
+</ul>
+</td>
+<td>All</td>
+<td><i>(Legacy)</i> LGTM configuration.</td>
 </tr>
 <tr>
 <td><code>LICENSE.md</code></td>
@@ -370,7 +448,7 @@ Some of the editors maybe have options of `UTF-8` and `UTF-8 BOM` instead, thus 
 <li>TypeScript</li>
 </ul>
 </td>
-<td>NodeJS package metadata.</td>
+<td>NodeJS package metadata lock.</td>
 </tr>
 <tr>
 <td><code>package.json</code></td>
@@ -391,7 +469,12 @@ Some of the editors maybe have options of `UTF-8` and `UTF-8 BOM` instead, thus 
 <td>Readme.</td>
 </tr>
 <tr>
-<td><code>SECURITY.md</code></td>
+<td>
+<ul>
+<li><code>.github/SECURITY.md</code> <i>(Legacy)</i></li>
+<li><code>SECURITY.md</code></li>
+</ul>
+</td>
 <td>All</td>
 <td>Security policy.</td>
 </tr>

@@ -3,7 +3,7 @@
 
 # hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Coding Guide
 
-> **📅 Last Update:** 2022/10/11 04:00 UTC
+> **📅 Last Update:** 2022/10/12 05:30 UTC
 >
 > **🚧 Constructing:** This document is in constructing, contents maybe change rapidly.
 
@@ -17,30 +17,39 @@ This Coding Guide applies to all of the hxhS ([hugoalh][hugoalh] & [hugoalh Stud
 
 ## General
 
-### Forbidden markups and programming languages
+### Forbidden targets
 
-These markups and programming languages must not appear in any projects and repositories.
+These targets are forbidden in any projects and repositories.
 
-> - Listed without any releases/tags/versions means all
-> - Markups and programming languages which in beta status should not appear as well
+> - Listed without any target's releases/tags/versions means all
+> - Targets which in beta or deprecated status should also forbidden
 
+- Firefox
+- GitHub Actions / GitHub Actions Runner
+  - v1.X.X
 - Go
   - < v1.13.0
+- Internet Explorer
 - Java
 - Lua
   - Roblox
   - Roblox Studio
+- Microsoft Edge
+  - EdgeHTML
 - NodeJS
-  - Non-LTS (Long Term Supported) (e.g.: v5.X.X, v7.X.X, v9.X.X, v11.X.X, v13.X.X, v15.X.X, v17.X.X, ...)
+  - Non-LTS (Long Term Supported) releases/tags/versions (e.g.: v5.X.X, v7.X.X, v9.X.X, v11.X.X, v13.X.X, v15.X.X, v17.X.X, ...)
+  - < v6.9.0
+- Opera
 - PowerShell
   - v7.0.X
-  - v6.X.X
-  - < v5.0.0 (Windows PowerShell)
+  - v6.X.X *(PowerShell Core)*
+  - < v5.0.0 *(Windows PowerShell)*
 - Python
   - v3.10.6
   - v3.10.5
   - v2.X.X
   - v1.X.X
+- Safari
 
 ### Indents with tab (`\t`) whenever possible
 

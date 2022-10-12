@@ -3,7 +3,7 @@
 
 # hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Coding Guide - JavaScript (Additional)
 
-> **📅 Last Update:** 2022/09/13 06:20 UTC
+> **📅 Last Update:** 2022/10/12 05:30 UTC
 >
 > **🚧 Constructing:** This document is in constructing, contents maybe change rapidly.
 
@@ -74,7 +74,42 @@ function fooBar(bar, gaz) {}
 let fooBar;
 ```
 
-### No `if () { return } else { return };`
+### No extra semi-colons (`;`)
+
+Only add 1 semi-colon at the end of every statements.
+
+<table>
+<tbody valign="top">
+<tr>
+<td align="center"><b><i>✔ Good</i></b></td>
+<td align="center"><b><i>❌ Bad</i></b></td>
+</tr>
+<tr>
+<td>
+
+```js
+let foo = "bar";
+if (typeof foo === "string") {
+  return true;
+}
+```
+
+</td>
+<td>
+
+```js
+let foo = "bar"//;
+if (typeof foo === "string") {
+  return true//;
+};//
+```
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### No `if () { return } else { return }`
 
 There is one notable case to keep in mind for the `if...else` control statements, if the `if` statement ends with a `return`, no need to add an `else` statement.
 
@@ -187,80 +222,6 @@ Never use `var` in anywhere of the codes to prevent fuzzy declaration and/or hoi
 ### Sort namespaces whenever possible
 
 *To be draft.*
-
-### Wisely use of semi-colons (`;`)
-
-#### For ECMAScript 6 or above
-
-Only add 1 semi-colon at the end of every non-braces-block statements.
-
-<table>
-<tbody valign="top">
-<tr>
-<td align="center"><b><i>✔ Good</i></b></td>
-<td align="center"><b><i>❌ Bad</i></b></td>
-</tr>
-<tr>
-<td>
-
-```js
-let foo = "bar";
-if (typeof foo === "string") {
-  return true;
-}
-```
-
-</td>
-<td>
-
-```js
-let foo = "bar"//;
-if (typeof foo === "string") {
-  return true//;
-};//
-```
-
-</td>
-</tr>
-</tbody>
-</table>
-
-#### For ECMAScript 5 or below
-
-> **⚠ Important:** All of the JavaScript which for ECMAScript 5 or below must follow this semi-colons rule to prevent security vulnerability issues!
-
-Always add 1 semi-colon at the end of every statements.
-
-<table>
-<tbody valign="top">
-<tr>
-<td align="center"><b><i>✔ Good</i></b></td>
-<td align="center"><b><i>❌ Bad</i></b></td>
-</tr>
-<tr>
-<td>
-
-```js
-let foo = "bar";
-if (typeof foo === "string") {
-  return true;
-};
-```
-
-</td>
-<td>
-
-```js
-let foo = "bar"//;
-if (typeof foo === "string") {
-  return true//;
-}//;
-```
-
-</td>
-</tr>
-</tbody>
-</table>
 
 ## Array
 

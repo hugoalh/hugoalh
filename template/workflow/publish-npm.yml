@@ -27,7 +27,7 @@ jobs:
           Set-GitHubActionsOutput -Name 'version' -Value $PackageMeta.version
         shell: "pwsh"
       - name: "Setup NodeJS"
-        uses: "actions/setup-node@v3.5.0"
+        uses: "actions/setup-node@v3.5.1"
         with:
           node-version: 14
           check-latest: true

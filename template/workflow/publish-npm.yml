@@ -15,7 +15,7 @@ jobs:
           Set-PSRepository -Name 'PSGallery' -InstallationPolicy 'Trusted' -Verbose
       - name: "Setup GitHub Actions PowerShell Toolkit"
         run: |
-          Install-Module -Name 'hugoalh.GitHubActionsToolkit' -MinimumVersion '1.0.2' -Scope 'AllUsers' -AcceptLicense -Confirm:$False -Verbose
+          Install-Module -Name 'hugoalh.GitHubActionsToolkit' -MinimumVersion '1.1.1' -Scope 'AllUsers' -AcceptLicense -Confirm:$False -Verbose
         shell: "pwsh"
       - name: "Get Package Meta"
         id: "get-package-meta"
@@ -29,7 +29,7 @@ jobs:
       - name: "Setup NodeJS"
         uses: "actions/setup-node@v3.5.1"
         with:
-          node-version: 14
+          node-version: "lts/*"
           check-latest: true
           registry-url: "https://registry.npmjs.org/"
       - name: "Publish To Tag @latest"

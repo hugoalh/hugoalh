@@ -1,5 +1,7 @@
 # [hugoalh](https://github.com/hugoalh)
 
+![hugoalh's Banner](https://i.imgur.com/d7CW6xWh.png)
+
 > **📅 Last Update:** 2023/01/06 04:40 UTC
 
 ![Discord (hugoalh#1167)](https://img.shields.io/badge/Discord%20%28hugoalh%231167%29-5865F2?logo=discord&logoColor=ffffff&style=flat-square "Discord (hugoalh#1167)")

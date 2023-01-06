@@ -35,7 +35,7 @@
 |:--|:-:|
 | CSS (Cascading Style Sheets) | ✔ |
 | CSV (Comma Separated Values) | ✔ |
-| HTML | ✔ |
+| HTML (HyperText Markup Language) | ✔ |
 | JavaScript - Browsers | ✔ |
 | JavaScript - Deno | ✔ |
 | JavaScript - NodeJS | ✔ |

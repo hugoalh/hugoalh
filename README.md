@@ -1,5 +1,7 @@
 # [hugoalh](https://github.com/hugoalh)
 
+> **📅 Last Update:** 2023/01/06 03:40 UTC
+
 ![Discord (hugoalh#1167)](https://img.shields.io/badge/Discord%20%28hugoalh%231167%29-5865F2?logo=discord&logoColor=ffffff&style=flat-square "Discord (hugoalh#1167)")
 [![GitHub Discussion](https://img.shields.io/badge/GitHub%20Discussion-181717?logo=github&logoColor=ffffff&style=flat-square "GitHub Discussion")](https://github.com/hugoalh/hugoalh/discussions)
 [![GitHub Gist](https://img.shields.io/badge/GitHub%20Gist-181717?logo=github&logoColor=ffffff&style=flat-square "GitHub Gist")](https://gist.github.com/hugoalh)
@@ -127,7 +129,7 @@
 
 > Currently active.
 
-*N/A*
+- [Auto Dark Mode](https://github.com/AutoDarkMode/Windows-Auto-Night-Mode)
 
 ### ⏮️ Previous
 

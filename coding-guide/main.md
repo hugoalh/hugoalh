@@ -3,7 +3,7 @@
 
 # hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Coding Guide
 
-> **📅 Last Update:** 2022/10/12 05:30 UTC
+> **📅 Last Update:** 2023/01/08 08:20 UTC
 >
 > **🚧 Constructing:** This document is in constructing, contents maybe change rapidly.
 
@@ -21,7 +21,7 @@ This Coding Guide applies to all of the hxhS ([hugoalh][hugoalh] & [hugoalh Stud
 
 These targets are forbidden in any projects and repositories.
 
-> - Listed without any target's releases/tags/versions means all
+> - Listed without any target's releases/tags/versions means all of the releases/tags/versions
 > - Targets which in beta or deprecated status should also forbidden
 
 - Firefox
@@ -29,15 +29,15 @@ These targets are forbidden in any projects and repositories.
   - v1.X.X
 - Go
   - < v1.13.0
-- Internet Explorer
 - Java
 - Lua
   - Roblox
   - Roblox Studio
 - Microsoft Edge
   - EdgeHTML
+- Microsoft Internet Explorer
 - NodeJS
-  - Non-LTS (Long Term Supported) releases/tags/versions (e.g.: v5.X.X, v7.X.X, v9.X.X, v11.X.X, v13.X.X, v15.X.X, v17.X.X, ...)
+  - Non-LTS (Long Term Supported) releases/tags/versions (e.g.: v7.X.X, v9.X.X, v11.X.X, v13.X.X, v15.X.X, v17.X.X, ...)
   - < v6.9.0
 - Opera
 - PowerShell

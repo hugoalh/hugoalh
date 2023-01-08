@@ -3,7 +3,7 @@
 
 # hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Coding Guide - PowerShell (Additional)
 
-> **📅 Last Update:** 2022/09/13 06:20 UTC
+> **📅 Last Update:** 2023/01/08 08:20 UTC
 >
 > **🚧 Constructing:** This document is in constructing, contents maybe change rapidly.
 

@@ -1,6 +1,6 @@
 # Security Policy
 
-## Supported Releases, Tags & Versions
+## Supported Versions
 
 > | **Legend** | **Description** |
 > |:-:|:--|
@@ -11,7 +11,7 @@
 > | ❌{🐛} | **No (Issue):** Not supported due to confirmed contains bugs and/or issues. |
 > | ❌{🧓} | **No (Old):** Not supported due to too old. |
 
-| **Releases / Tags / Versions** | **Status** | **Target** |
+| **Versions** | **Status** | **Target** |
 |:-:|:-:|:-:|
 |  |  |  |
 

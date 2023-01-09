@@ -21,7 +21,7 @@ This Coding Guide applies to all of the hxhS ([hugoalh][hugoalh] & [hugoalh Stud
 
 These targets are forbidden in any projects and repositories.
 
-> - Listed without any target's releases/tags/versions means all of the releases/tags/versions
+> - Listed without any target's versions means all of the versions
 > - Targets which in beta or deprecated status should also forbidden
 
 - Firefox
@@ -37,7 +37,7 @@ These targets are forbidden in any projects and repositories.
   - EdgeHTML
 - Microsoft Internet Explorer
 - NodeJS
-  - Non-LTS (Long Term Supported) releases/tags/versions (e.g.: v7.X.X, v9.X.X, v11.X.X, v13.X.X, v15.X.X, v17.X.X, ...)
+  - Non-LTS (Long Term Supported) versions (e.g.: v7.X.X, v9.X.X, v11.X.X, v13.X.X, v15.X.X, v17.X.X, ...)
   - < v6.9.0
 - Opera
 - PowerShell

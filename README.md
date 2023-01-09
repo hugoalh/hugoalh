@@ -2,7 +2,7 @@
 
 ![hugoalh's Banner](https://i.imgur.com/d7CW6xWh.png)
 
-> **📅 Last Update:** 2023/01/06 04:40 UTC
+> **🕰️ Last Update:** 2023/01/09 04:00 UTC
 
 ![Discord (hugoalh#1167)](https://img.shields.io/badge/Discord%20%28hugoalh%231167%29-5865F2?logo=discord&logoColor=ffffff&style=flat-square "Discord (hugoalh#1167)")
 [![GitHub Discussion](https://img.shields.io/badge/GitHub%20Discussion-181717?logo=github&logoColor=ffffff&style=flat-square "GitHub Discussion")](https://github.com/hugoalh/hugoalh/discussions)
@@ -73,7 +73,7 @@
 > | **Legend** | **Description** |
 > |:-:|:--|
 > | 🆙 | **Active / Current:** Currently active. |
-> | 🗄 | **Archive:** Currently discontinue but not planned to deprecate or deprecated, maybe back in the future. |
+> | 🗄 | **Archive:** Currently discontinue but not planned to deprecate and/or remove, maybe back in the future. |
 > | 🧪 | **Experimental:** In testing, maybe available in the future. |
 > | 🚧 | **Constructing:** In constructing, maybe available in the future. |
 > | 👎 | **Deprecated:** Officially deprecated, maybe remove in the future. |

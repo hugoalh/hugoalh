@@ -1,17 +1,17 @@
 [hugoalh]: https://github.com/hugoalh
 [hugoalh-studio]: https://github.com/hugoalh-studio
 
-# hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Coding Guide - PowerShell (Additional)
+# hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Coding Guide - PowerShell
 
-> **📅 Last Update:** 2023/01/08 08:20 UTC
+> **🕰️ Last Update:** 2023/01/09 04:00 UTC
 >
 > **🚧 Constructing:** This document is in constructing, contents maybe change rapidly.
 
-This PowerShell Additional Coding Guide is an additional over the main [Coding Guide](./main.md), and has priority when there have any conflicts.
+This PowerShell Coding Guide is an additional over the main [Coding Guide](./main.md), and has priority when there have any conflicts.
 
 ## Linter
 
-[`PSScriptAnalyzer`](https://github.com/PowerShell/PSScriptAnalyzer) does most of the linting works in here, but linter can wrongly assert as well, this PowerShell Additional Coding Guide has priority when there have any conflicts.
+[`PSScriptAnalyzer`](https://github.com/PowerShell/PSScriptAnalyzer) does most of the linting works in here, but linter can wrongly assert as well, this PowerShell Coding Guide has priority when there have any conflicts.
 
 ---
 

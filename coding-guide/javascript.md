@@ -1,17 +1,17 @@
 [hugoalh]: https://github.com/hugoalh
 [hugoalh-studio]: https://github.com/hugoalh-studio
 
-# hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Coding Guide - JavaScript (Additional)
+# hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Coding Guide - JavaScript
 
-> **📅 Last Update:** 2023/01/08 08:20 UTC
+> **🕰️ Last Update:** 2023/01/09 04:00 UTC
 >
 > **🚧 Constructing:** This document is in constructing, contents maybe change rapidly.
 
-This JavaScript Additional Coding Guide is an additional over the main [Coding Guide](./main.md), and has priority when there have any conflicts.
+This JavaScript Coding Guide is an additional over the main [Coding Guide](./main.md), and has priority when there have any conflicts.
 
 ## Linter
 
-[`ESLint`](https://eslint.org) does most of the linting works in here, but linter can wrongly assert as well, this JavaScript Additional Coding Guide has priority when there have any conflicts.
+[`ESLint`](https://eslint.org) does most of the linting works in here, but linter can wrongly assert as well, this JavaScript Coding Guide has priority when there have any conflicts.
 
 ---
 

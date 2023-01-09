@@ -1,17 +1,17 @@
 [hugoalh]: https://github.com/hugoalh
 [hugoalh-studio]: https://github.com/hugoalh-studio
 
-# hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Coding Guide - YAML/YML (Additional)
+# hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Coding Guide - YAML/YML
 
-> **📅 Last Update:** 2023/01/08 08:20 UTC
+> **🕰️ Last Update:** 2023/01/09 04:00 UTC
 >
 > **🚧 Constructing:** This document is in constructing, contents maybe change rapidly.
 
-This YAML/YML Additional Coding Guide is an additional over the main [Coding Guide](./main.md), and has priority when there have any conflicts.
+This YAML/YML Coding Guide is an additional over the main [Coding Guide](./main.md), and has priority when there have any conflicts.
 
 ## Linter
 
-[`YAMLLint`](https://github.com/adrienverge/yamllint) does most of the linting works in here, but linter can wrongly assert as well, this YAML/YML Additional Coding Guide has priority when there have any conflicts.
+[`YAMLLint`](https://github.com/adrienverge/yamllint) does most of the linting works in here, but linter can wrongly assert as well, this YAML/YML Coding Guide has priority when there have any conflicts.
 
 ---
 

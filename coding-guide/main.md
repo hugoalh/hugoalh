@@ -3,7 +3,7 @@
 
 # hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Coding Guide
 
-> **🕰️ Last Update:** 2023/01/09 04:00 UTC
+> **🕰️ Last Update:** 2023/01/14 09:00 UTC
 >
 > **🚧 Constructing:** This document is in constructing, contents maybe change rapidly.
 
@@ -29,11 +29,14 @@ These targets are forbidden in any projects and repositories.
   - v1.X.X
 - Go
   - < v1.13.0
+- Google Chrome
+  - v109.X.X
 - Java
 - Lua
   - Roblox
   - Roblox Studio
 - Microsoft Edge
+  - v109.X.X
   - EdgeHTML
 - Microsoft Internet Explorer
 - NodeJS

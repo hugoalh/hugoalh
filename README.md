@@ -104,7 +104,6 @@
 | [Trigger Pipedream Workflow (GitHub Action)](https://github.com/hugoalh/trigger-pipedream-workflow-ghaction) <br />*(**Previous:** \[GitHub Action\] Send To Pipedream)* | 🆙 |
 | [Undefinish (NodeJS)](https://github.com/hugoalh-studio/undefinish-nodejs) | 🆙 |
 | [Unique Array (NodeJS)](https://github.com/hugoalh-studio/unique-array-nodejs) | 🆙 |
-| [Universal Blacklist](https://github.com/hugoalh-studio/universal-blacklist) | 🆙 |
 | [More Method (NodeJS)](https://github.com/hugoalh-studio/more-method-nodejs) | 👎 |
 | [REPattern (NodeJS)](https://github.com/hugoalh-studio/repattern-nodejs) | 👎 |
 | Command Line Parser (Deno) | ❌ |

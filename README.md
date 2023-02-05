@@ -83,12 +83,12 @@
 |:--|:-:|
 | [Advanced Determine (NodeJS)](https://github.com/hugoalh-studio/advanced-determine-nodejs) | 🆙 |
 | [Advanced Random (NodeJS)](https://github.com/hugoalh-studio/advanced-random-nodejs) | 🆙 |
+| [Bulk GitHub Request CLI (NodeJS)](https://github.com/hugoalh-studio/bulk-github-request-cli-nodejs) <br />*(**Previous:** \GitHub Manager CLI (NodeJS)* | 🆙 |
 | [Concatenate (NodeJS)](https://github.com/hugoalh-studio/concatenate-nodejs) | 🆙 |
 | [Disable Advancement (Minecraft Java Data Pack)](https://github.com/hugoalh/disable-advancement-mcjdp) <br />*(**Previous:** \[Minecraft Java Data Pack\] Disable Minecraft Advancement)* | 🆙 |
 | [Environment Paths (NodeJS)](https://github.com/hugoalh-studio/environment-paths-nodejs) | 🆙 |
 | [GitHub Actions Toolkit (PowerShell)](https://github.com/hugoalh-studio/ghactions-toolkit-powershell) | 🆙 |
 | [GitHub Manager (NodeJS)](https://github.com/hugoalh-studio/github-manager-nodejs) | 🆙 |
-| [GitHub Manager CLI (NodeJS)](https://github.com/hugoalh-studio/github-manager-cli-nodejs) | 🆙 |
 | [GitHub Secret Manager (GitHub Action)](https://github.com/hugoalh/github-secret-manager-ghaction) | 🆙 |
 | [GitHub Sodium (NodeJS)](https://github.com/hugoalh-studio/github-sodium-nodejs) | 🆙 |
 | [No Enderman Griefing (Minecraft Java Data Pack)](https://github.com/hugoalh/no-enderman-griefing-mcjdp) | 🆙 |

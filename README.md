@@ -83,7 +83,7 @@
 |:--|:-:|
 | [Advanced Determine (NodeJS)](https://github.com/hugoalh-studio/advanced-determine-nodejs) | 🆙 |
 | [Advanced Random (NodeJS)](https://github.com/hugoalh-studio/advanced-random-nodejs) | 🆙 |
-| [Bulk GitHub Request CLI (NodeJS)](https://github.com/hugoalh-studio/bulk-github-request-cli-nodejs) <br />*(**Previous:** \GitHub Manager CLI (NodeJS)* | 🆙 |
+| [Bulk GitHub Request CLI (NodeJS)](https://github.com/hugoalh-studio/bulk-github-request-cli-nodejs) <br />*(**Previous:** GitHub Manager CLI (NodeJS)* | 🆙 |
 | [Concatenate (NodeJS)](https://github.com/hugoalh-studio/concatenate-nodejs) | 🆙 |
 | [Disable Advancement (Minecraft Java Data Pack)](https://github.com/hugoalh/disable-advancement-mcjdp) <br />*(**Previous:** \[Minecraft Java Data Pack\] Disable Minecraft Advancement)* | 🆙 |
 | [Environment Paths (NodeJS)](https://github.com/hugoalh-studio/environment-paths-nodejs) | 🆙 |

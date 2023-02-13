@@ -2,7 +2,7 @@
 
 ![hugoalh's Banner](https://i.imgur.com/d7CW6xWh.png)
 
-> **🕰️ Last Update:** 2023/02/05 09:40 UTC
+> **🕰️ Last Update:** 2023/02/13 03:00 UTC
 
 ![Discord (hugoalh#1167)](https://img.shields.io/badge/Discord%20%28hugoalh%231167%29-5865F2?logo=discord&logoColor=ffffff&style=flat-square "Discord (hugoalh#1167)")
 [![GitHub Discussion](https://img.shields.io/badge/GitHub%20Discussion-181717?logo=github&logoColor=ffffff&style=flat-square "GitHub Discussion")](https://github.com/hugoalh/hugoalh/discussions)
@@ -83,13 +83,10 @@
 |:--|:-:|
 | [Advanced Determine (NodeJS)](https://github.com/hugoalh-studio/advanced-determine-nodejs) | 🆙 |
 | [Advanced Random (NodeJS)](https://github.com/hugoalh-studio/advanced-random-nodejs) | 🆙 |
-| [Bulk GitHub Request CLI (NodeJS)](https://github.com/hugoalh-studio/bulk-github-request-cli-nodejs) <br />*(**Previous:** GitHub Manager CLI (NodeJS)* | 🆙 |
 | [Concatenate (NodeJS)](https://github.com/hugoalh-studio/concatenate-nodejs) | 🆙 |
 | [Disable Advancement (Minecraft Java Data Pack)](https://github.com/hugoalh/disable-advancement-mcjdp) <br />*(**Previous:** \[Minecraft Java Data Pack\] Disable Minecraft Advancement)* | 🆙 |
 | [Environment Paths (NodeJS)](https://github.com/hugoalh-studio/environment-paths-nodejs) | 🆙 |
 | [GitHub Actions Toolkit (PowerShell)](https://github.com/hugoalh-studio/ghactions-toolkit-powershell) | 🆙 |
-| [GitHub Manager (NodeJS)](https://github.com/hugoalh-studio/github-manager-nodejs) | 🆙 |
-| [GitHub Secret Manager (GitHub Action)](https://github.com/hugoalh/github-secret-manager-ghaction) | 🆙 |
 | [GitHub Sodium (NodeJS)](https://github.com/hugoalh-studio/github-sodium-nodejs) | 🆙 |
 | [No Enderman Griefing (Minecraft Java Data Pack)](https://github.com/hugoalh/no-enderman-griefing-mcjdp) | 🆙 |
 | [No Item Despawn (Minecraft Java Data Pack)](https://github.com/hugoalh/no-item-despawn-mcjdp) | 🆙 |
@@ -104,10 +101,11 @@
 | [Trigger Pipedream Workflow (GitHub Action)](https://github.com/hugoalh/trigger-pipedream-workflow-ghaction) <br />*(**Previous:** \[GitHub Action\] Send To Pipedream)* | 🆙 |
 | [Undefinish (NodeJS)](https://github.com/hugoalh-studio/undefinish-nodejs) | 🆙 |
 | [Unique Array (NodeJS)](https://github.com/hugoalh-studio/unique-array-nodejs) | 🆙 |
+| [Bulk GitHub Configuration (NodeJS)](https://github.com/hugoalh-studio/bulk-github-configuration-nodejs) <br />*(**Previous:** Bulk GitHub Request (NodeJS), GitHub Manager (NodeJS CLI))* | 🚧 |
+| [Bulk GitHub Configuration CLI (NodeJS)](https://github.com/hugoalh-studio/bulk-github-configuration-cli-nodejs) <br />*(**Previous:** Bulk GitHub Request CLI (NodeJS), GitHub Manager CLI (NodeJS), GitHub Manager (NodeJS CLI))* | 🚧 |
+| [GitHub Secret Manager (GitHub Action)](https://github.com/hugoalh/github-secret-manager-ghaction) | 👎 |
 | [More Method (NodeJS)](https://github.com/hugoalh-studio/more-method-nodejs) | 👎 |
 | [REPattern (NodeJS)](https://github.com/hugoalh-studio/repattern-nodejs) | 👎 |
-| Command Line Parser (Deno) | ❌ |
-| Command Line Parser (NodeJS) <br />*(**Previous:** \[NodeJS\] CLI Argument Parser)* | ❌ |
 | Enchant+ (Minecraft Java Data Pack) | ❌ |
 | Recipe+ (Minecraft Java Data Pack) | ❌ |
 | Tag+ (Minecraft Java Data Pack) | ❌ |

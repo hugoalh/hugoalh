@@ -5,8 +5,8 @@
 
 # hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Versioning Guide
 
-> **🕰️ Last Update:** 2022/09/13 06:20 UTC
->
+> **🕰️ Last Update:** 2023/02/13 03:00 UTC
+
 > **🚧 Constructing:** This document is in constructing, contents maybe change rapidly.
 
 This Versioning Guide applies to all of the hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) projects and repositories.
@@ -15,25 +15,16 @@ This Versioning Guide applies to all of the hxhS ([hugoalh][hugoalh] & [hugoalh 
 
 ## Classification
 
+Most of the projects and repositories must use [Semantic Versioning (SemVer) 2.0.0][semver-2-0-0] for versioning unless otherwise specified.
+
 | **Type** | **Package Manager / Registry** | **Schema** |
 |:-:|:-:|:-:|
-| Deno |  | [Semantic Versioning (SemVer) 2.0.0][semver-2-0-0] |
-| Minecraft Data Pack |  | [Semantic Versioning (SemVer) 2.0.0][semver-2-0-0] |
-| Minecraft Resource Pack |  | [Semantic Versioning (SemVer) 2.0.0][semver-2-0-0] |
-| NodeJS | GitHub Packages | [Semantic Versioning (SemVer) 2.0.0][semver-2-0-0] |
-| NodeJS | NPM | [Semantic Versioning (SemVer) 2.0.0][semver-2-0-0] |
-| Web |  | Timestamp: Date-Time |
+| Web | *N/A* | Timestamp: Date-Time |
 
 ## Schema
 
 ### Semantic Versioning (SemVer) 2.0.0
 
-- `Major` version when you make incompatible API changes
-- `Minor` version when you add functionality in a backwards compatible manner
-- `Patch` version when you make backwards compatible bug fixes
-
-### Timestamp: Date
-
-### Timestamp: Date-Alphabet
-
-### Timestamp: Date-Time
+- `Major` version when have incompatible API changes
+- `Minor` version when add functionality in a backwards compatible manner
+- `Patch` version when make backwards compatible bug fixes

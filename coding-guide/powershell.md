@@ -4,7 +4,7 @@
 # hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Coding Guide - PowerShell
 
 > **🕰️ Last Update:** 2023/01/09 04:00 UTC
->
+
 > **🚧 Constructing:** This document is in constructing, contents maybe change rapidly.
 
 This PowerShell Coding Guide is an additional over the main [Coding Guide](./main.md), and has priority when there have any conflicts.

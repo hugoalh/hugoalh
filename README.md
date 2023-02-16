@@ -2,7 +2,7 @@
 
 ![hugoalh's Banner](https://i.imgur.com/d7CW6xWh.png)
 
-> **🕰️ Last Update:** 2023/02/13 03:00 UTC
+> **🕰️ Last Update:** 2023/02/16 09:20 UTC
 
 ![Discord (hugoalh#1167)](https://img.shields.io/badge/Discord%20%28hugoalh%231167%29-5865F2?logo=discord&logoColor=ffffff&style=flat-square "Discord (hugoalh#1167)")
 [![GitHub Discussion](https://img.shields.io/badge/GitHub%20Discussion-181717?logo=github&logoColor=ffffff&style=flat-square "GitHub Discussion")](https://github.com/hugoalh/hugoalh/discussions)
@@ -72,7 +72,7 @@
 
 > | **Legend** | **Description** |
 > |:-:|:--|
-> | 🆙 | **Active / Current:** Currently active. |
+> |  | **Active / Current:** Currently active. |
 > | 🗄 | **Archive:** Currently discontinue but not planned to deprecate and/or remove, maybe back in the future. |
 > | 🧪 | **Experimental:** In testing, maybe available in the future. |
 > | 🚧 | **Constructing:** In constructing, maybe available in the future. |
@@ -81,26 +81,27 @@
 
 |  |  |
 |:--|:-:|
-| [Advanced Determine (NodeJS)](https://github.com/hugoalh-studio/advanced-determine-nodejs) | 🆙 |
-| [Advanced Random (NodeJS)](https://github.com/hugoalh-studio/advanced-random-nodejs) | 🆙 |
-| [Concatenate (NodeJS)](https://github.com/hugoalh-studio/concatenate-nodejs) | 🆙 |
-| [Disable Advancement (Minecraft Java Data Pack)](https://github.com/hugoalh/disable-advancement-mcjdp) <br />*(**Previous:** \[Minecraft Java Data Pack\] Disable Minecraft Advancement)* | 🆙 |
-| [Environment Paths (NodeJS)](https://github.com/hugoalh-studio/environment-paths-nodejs) | 🆙 |
-| [GitHub Actions Toolkit (PowerShell)](https://github.com/hugoalh-studio/ghactions-toolkit-powershell) | 🆙 |
-| [GitHub Sodium (NodeJS)](https://github.com/hugoalh-studio/github-sodium-nodejs) | 🆙 |
-| [No Enderman Griefing (Minecraft Java Data Pack)](https://github.com/hugoalh/no-enderman-griefing-mcjdp) | 🆙 |
-| [No Item Despawn (Minecraft Java Data Pack)](https://github.com/hugoalh/no-item-despawn-mcjdp) | 🆙 |
-| [No Mob Despawn (Minecraft Java Data Pack)](https://github.com/hugoalh/no-mob-despawn-mcjdp) | 🆙 |
-| [Pressure (NodeJS)](https://github.com/hugoalh-studio/pressure-nodejs) | 🆙 |
-| [Regular Expression Constructor (NodeJS)](https://github.com/hugoalh-studio/regular-expression-constructor-nodejs) | 🆙 |
-| [Scan Virus (GitHub Action)](https://github.com/hugoalh/scan-virus-ghaction) | 🆙 |
-| [Send Discord Webhook (GitHub Action)](https://github.com/hugoalh/send-discord-webhook-ghaction) <br />*(**Previous:** \[GitHub Action\] Send To Discord)* | 🆙 |
-| [Symmetric Crypto (NodeJS)](https://github.com/hugoalh-studio/symmetric-crypto-nodejs) | 🆙 |
-| [Temperature (NodeJS)](https://github.com/hugoalh-studio/temperature-nodejs) | 🆙 |
-| [Trigger IFTTT Webhook Applet (GitHub Action)](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction) <br />*(**Previous:** \[GitHub Action\] Send To IFTTT)* | 🆙 |
-| [Trigger Pipedream Workflow (GitHub Action)](https://github.com/hugoalh/trigger-pipedream-workflow-ghaction) <br />*(**Previous:** \[GitHub Action\] Send To Pipedream)* | 🆙 |
-| [Undefinish (NodeJS)](https://github.com/hugoalh-studio/undefinish-nodejs) | 🆙 |
-| [Unique Array (NodeJS)](https://github.com/hugoalh-studio/unique-array-nodejs) | 🆙 |
+| [Advanced Determine (NodeJS)](https://github.com/hugoalh-studio/advanced-determine-nodejs) |  |
+| [Advanced Random (NodeJS)](https://github.com/hugoalh-studio/advanced-random-nodejs) |  |
+| [Concatenate (NodeJS)](https://github.com/hugoalh-studio/concatenate-nodejs) |  |
+| [Disable Advancement (Minecraft Java Data Pack)](https://github.com/hugoalh/disable-advancement-mcjdp) <br />*(**Previous:** \[Minecraft Java Data Pack\] Disable Minecraft Advancement)* |  |
+| [Environment Paths (NodeJS)](https://github.com/hugoalh-studio/environment-paths-nodejs) |  |
+| [GitHub Actions Toolkit (PowerShell)](https://github.com/hugoalh-studio/ghactions-toolkit-powershell) |  |
+| [GitHub Sodium (NodeJS)](https://github.com/hugoalh-studio/github-sodium-nodejs) |  |
+| [No Enderman Griefing (Minecraft Java Data Pack)](https://github.com/hugoalh/no-enderman-griefing-mcjdp) |  |
+| [No Item Despawn (Minecraft Java Data Pack)](https://github.com/hugoalh/no-item-despawn-mcjdp) |  |
+| [No Mob Despawn (Minecraft Java Data Pack)](https://github.com/hugoalh/no-mob-despawn-mcjdp) |  |
+| [Pressure (NodeJS)](https://github.com/hugoalh-studio/pressure-nodejs) |  |
+| [Regular Expression Constructor (NodeJS)](https://github.com/hugoalh-studio/regular-expression-constructor-nodejs) |  |
+| [Scan Virus (GitHub Action)](https://github.com/hugoalh/scan-virus-ghaction) |  |
+| [Send Discord Webhook (GitHub Action)](https://github.com/hugoalh/send-discord-webhook-ghaction) <br />*(**Previous:** \[GitHub Action\] Send To Discord)* |  |
+| [String Overflow (NodeJS)](https://github.com/hugoalh-studio/string-overflow-nodejs) |  |
+| [Symmetric Crypto (NodeJS)](https://github.com/hugoalh-studio/symmetric-crypto-nodejs) |  |
+| [Temperature (NodeJS)](https://github.com/hugoalh-studio/temperature-nodejs) |  |
+| [Trigger IFTTT Webhook Applet (GitHub Action)](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction) <br />*(**Previous:** \[GitHub Action\] Send To IFTTT)* |  |
+| [Trigger Pipedream Workflow (GitHub Action)](https://github.com/hugoalh/trigger-pipedream-workflow-ghaction) <br />*(**Previous:** \[GitHub Action\] Send To Pipedream)* |  |
+| [Undefinish (NodeJS)](https://github.com/hugoalh-studio/undefinish-nodejs) |  |
+| [Unique Array (NodeJS)](https://github.com/hugoalh-studio/unique-array-nodejs) |  |
 | [Bulk GitHub Configuration (NodeJS)](https://github.com/hugoalh-studio/bulk-github-configuration-nodejs) <br />*(**Previous:** Bulk GitHub Request (NodeJS), GitHub Manager (NodeJS CLI))* | 🚧 |
 | [Bulk GitHub Configuration CLI (NodeJS)](https://github.com/hugoalh-studio/bulk-github-configuration-cli-nodejs) <br />*(**Previous:** Bulk GitHub Request CLI (NodeJS), GitHub Manager CLI (NodeJS), GitHub Manager (NodeJS CLI))* | 🚧 |
 | [GitHub Secret Manager (GitHub Action)](https://github.com/hugoalh/github-secret-manager-ghaction) | 👎 |
@@ -117,12 +118,12 @@
 
 > | **Legend** | **Description** |
 > |:-:|:--|
-> | 🆙 | **Active / Current:** Currently active. |
+> |  | **Active / Current:** Currently active. |
 > | ⏮️ | **Previous:** Currently inactive. |
 
 |  |  |
 |:--|:-:|
-| [Auto Dark Mode](https://github.com/AutoDarkMode/Windows-Auto-Night-Mode) | 🆙 |
+| [Auto Dark Mode](https://github.com/AutoDarkMode/Windows-Auto-Night-Mode) |  |
 | [MCA Selector](https://github.com/Querz/mcaselector) | ⏮️ |
 | [MrCrayfish Controllable](https://github.com/MrCrayfish/Controllable) | ⏮️ |
 | [MrCrayfish Furniture Mod](https://github.com/MrCrayfish/MrCrayfishFurnitureMod) | ⏮️ |

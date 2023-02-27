@@ -2,7 +2,7 @@
 
 ![hugoalh's Banner](https://i.imgur.com/d7CW6xWh.png)
 
-> **🕰️ Last Update:** 2023/02/20 07:30 UTC
+> **🕰️ Last Update:** 2023/02/27 04:45 UTC
 
 ![Discord (hugoalh#1167)](https://img.shields.io/badge/Discord%20%28hugoalh%231167%29-5865F2?logo=discord&logoColor=ffffff&style=flat-square "Discord (hugoalh#1167)")
 [![GitHub Discussion](https://img.shields.io/badge/GitHub%20Discussion-181717?logo=github&logoColor=ffffff&style=flat-square "GitHub Discussion")](https://github.com/hugoalh/hugoalh/discussions)
@@ -85,14 +85,12 @@
 | [Advanced Random (NodeJS)](https://github.com/hugoalh-studio/advanced-random-nodejs) |  |
 | [Concatenate (NodeJS)](https://github.com/hugoalh-studio/concatenate-nodejs) |  |
 | [Disable Advancement (Minecraft Java Data Pack)](https://github.com/hugoalh/disable-advancement-mcjdp) <br />*(**Previous:** \[Minecraft Java Data Pack\] Disable Minecraft Advancement)* |  |
-| [Environment Paths (NodeJS)](https://github.com/hugoalh-studio/environment-paths-nodejs) |  |
 | [GitHub Actions Toolkit (PowerShell)](https://github.com/hugoalh-studio/ghactions-toolkit-powershell) |  |
 | [GitHub Sodium (NodeJS)](https://github.com/hugoalh-studio/github-sodium-nodejs) |  |
 | [No Enderman Griefing (Minecraft Java Data Pack)](https://github.com/hugoalh/no-enderman-griefing-mcjdp) |  |
 | [No Item Despawn (Minecraft Java Data Pack)](https://github.com/hugoalh/no-item-despawn-mcjdp) |  |
 | [No Mob Despawn (Minecraft Java Data Pack)](https://github.com/hugoalh/no-mob-despawn-mcjdp) |  |
 | [Pressure (NodeJS)](https://github.com/hugoalh-studio/pressure-nodejs) |  |
-| [Regular Expression Constructor (NodeJS)](https://github.com/hugoalh-studio/regular-expression-constructor-nodejs) |  |
 | [Scan Virus (GitHub Action)](https://github.com/hugoalh/scan-virus-ghaction) |  |
 | [Send Discord Webhook (GitHub Action)](https://github.com/hugoalh/send-discord-webhook-ghaction) <br />*(**Previous:** \[GitHub Action\] Send To Discord)* |  |
 | [String Overflow (NodeJS)](https://github.com/hugoalh-studio/string-overflow-nodejs) |  |
@@ -103,8 +101,10 @@
 | [Undefinish (NodeJS)](https://github.com/hugoalh-studio/undefinish-nodejs) |  |
 | [Unique Array (NodeJS)](https://github.com/hugoalh-studio/unique-array-nodejs) |  |
 | [Bulk GitHub Configuration (NodeJS)](https://github.com/hugoalh-studio/bulk-github-configuration-nodejs) <br />*(**Previous:** GitHub Manager (NodeJS CLI))* | 🚧 |
+| [Environment Paths (NodeJS)](https://github.com/hugoalh-studio/environment-paths-nodejs) | 👎 |
 | [GitHub Secret Manager (GitHub Action)](https://github.com/hugoalh/github-secret-manager-ghaction) | 👎 |
 | [More Method (NodeJS)](https://github.com/hugoalh-studio/more-method-nodejs) | 👎 |
+| [Regular Expression Constructor (NodeJS)](https://github.com/hugoalh-studio/regular-expression-constructor-nodejs) | 👎 |
 | [REPattern (NodeJS)](https://github.com/hugoalh-studio/repattern-nodejs) | 👎 |
 | Enchant+ (Minecraft Java Data Pack) | ❌ |
 | Recipe+ (Minecraft Java Data Pack) | ❌ |

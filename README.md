@@ -2,11 +2,12 @@
 
 ![hugoalh's Banner](https://i.imgur.com/d7CW6xWh.png)
 
-> **🕰️ Last Update:** 2023/02/27 04:45 UTC
+> **🕰️ Last Update:** 2023/03/03 02:25 UTC
 
 ![Discord (hugoalh#1167)](https://img.shields.io/badge/Discord%20%28hugoalh%231167%29-5865F2?logo=discord&logoColor=ffffff&style=flat-square "Discord (hugoalh#1167)")
 [![GitHub Discussion](https://img.shields.io/badge/GitHub%20Discussion-181717?logo=github&logoColor=ffffff&style=flat-square "GitHub Discussion")](https://github.com/hugoalh/hugoalh/discussions)
 [![GitHub Gist](https://img.shields.io/badge/GitHub%20Gist-181717?logo=github&logoColor=ffffff&style=flat-square "GitHub Gist")](https://gist.github.com/hugoalh)
+[![Tumblr](https://img.shields.io/badge/Tumblr-36465D?logo=tumblr&logoColor=ffffff&style=flat-square "Tumblr")](https://hugoalh.tumblr.com)
 [![Twitter (@hugoalhofficial)](https://img.shields.io/badge/Twitter%20%28@hugoalhofficial%29-1DA1F2?logo=twitter&logoColor=ffffff&style=flat-square "Twitter (@hugoalhofficial)")](https://twitter.com/hugoalhofficial)
 
 <details>

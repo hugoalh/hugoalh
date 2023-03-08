@@ -38,8 +38,6 @@ jobs:
             type=raw,enable=${{github.event.inputs.latest == 'true'}},value=latest
             type=semver,enable=${{github.event.inputs.tag == ''}},pattern={{version}}
             type=semver,enable=${{github.event.inputs.tag == ''}},pattern={{major}}.{{minor}}.{{patch}}
-            type=semver,enable=${{github.event.inputs.tag == ''}},pattern={{major}}.{{minor}}
-            type=semver,enable=${{github.event.inputs.tag == ''}},pattern={{major}}
           labels: |
             org.opencontainers.image.authors=hugoalh
             org.opencontainers.image.licenses=MIT

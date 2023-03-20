@@ -2,7 +2,7 @@
 
 ![hugoalh's Banner](https://i.imgur.com/d7CW6xWh.png)
 
-> **🕰️ Last Update:** 2023/03/03 02:25 UTC
+> **🕰️ Last Update:** 2023/03/20 02:35 UTC
 
 ![Discord (hugoalh#1167)](https://img.shields.io/badge/Discord%20%28hugoalh%231167%29-5865F2?logo=discord&logoColor=ffffff&style=flat-square "Discord (hugoalh#1167)")
 [![GitHub Discussion](https://img.shields.io/badge/GitHub%20Discussion-181717?logo=github&logoColor=ffffff&style=flat-square "GitHub Discussion")](https://github.com/hugoalh/hugoalh/discussions)
@@ -84,6 +84,7 @@
 |:--|:-:|
 | [Advanced Determine (NodeJS)](https://github.com/hugoalh-studio/advanced-determine-nodejs) |  |
 | [Advanced Random (NodeJS)](https://github.com/hugoalh-studio/advanced-random-nodejs) |  |
+| [Argv (NodeJS)](https://github.com/hugoalh-studio/argv-nodejs) |  |
 | [Concatenate (NodeJS)](https://github.com/hugoalh-studio/concatenate-nodejs) |  |
 | [Disable Advancement (Minecraft Java Data Pack)](https://github.com/hugoalh/disable-advancement-mcjdp) <br />*(**Previous:** \[Minecraft Java Data Pack\] Disable Minecraft Advancement)* |  |
 | [GitHub Actions Toolkit (PowerShell)](https://github.com/hugoalh-studio/ghactions-toolkit-powershell) |  |
@@ -94,6 +95,7 @@
 | [Pressure (NodeJS)](https://github.com/hugoalh-studio/pressure-nodejs) |  |
 | [Scan Virus (GitHub Action)](https://github.com/hugoalh/scan-virus-ghaction) |  |
 | [Send Discord Webhook (GitHub Action)](https://github.com/hugoalh/send-discord-webhook-ghaction) <br />*(**Previous:** \[GitHub Action\] Send To Discord)* |  |
+| [String Dissect (NodeJS)](https://github.com/hugoalh-studio/string-dissect-nodejs) |  |
 | [String Overflow (NodeJS)](https://github.com/hugoalh-studio/string-overflow-nodejs) |  |
 | [Symmetric Crypto (NodeJS)](https://github.com/hugoalh-studio/symmetric-crypto-nodejs) |  |
 | [Temperature (NodeJS)](https://github.com/hugoalh-studio/temperature-nodejs) |  |
@@ -101,8 +103,8 @@
 | [Trigger Pipedream Workflow (GitHub Action)](https://github.com/hugoalh/trigger-pipedream-workflow-ghaction) <br />*(**Previous:** \[GitHub Action\] Send To Pipedream)* |  |
 | [Undefinish (NodeJS)](https://github.com/hugoalh-studio/undefinish-nodejs) |  |
 | [Unique Array (NodeJS)](https://github.com/hugoalh-studio/unique-array-nodejs) |  |
+| [Environment Paths (NodeJS)](https://github.com/hugoalh-studio/environment-paths-nodejs) | 🗄 |
 | [Bulk GitHub Configuration (NodeJS)](https://github.com/hugoalh-studio/bulk-github-configuration-nodejs) <br />*(**Previous:** GitHub Manager (NodeJS CLI))* | 🚧 |
-| [Environment Paths (NodeJS)](https://github.com/hugoalh-studio/environment-paths-nodejs) | 👎 |
 | [GitHub Secret Manager (GitHub Action)](https://github.com/hugoalh/github-secret-manager-ghaction) | 👎 |
 | [More Method (NodeJS)](https://github.com/hugoalh-studio/more-method-nodejs) | 👎 |
 | [Regular Expression Constructor (NodeJS)](https://github.com/hugoalh-studio/regular-expression-constructor-nodejs) | 👎 |

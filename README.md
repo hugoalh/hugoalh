@@ -2,7 +2,7 @@
 
 ![hugoalh's Banner](https://i.imgur.com/d7CW6xWh.png)
 
-> **🕰️ Last Update:** 2023/03/20 02:35 UTC
+> **🕰️ Last Update:** 2023/04/05 09:00 UTC
 
 ![Discord (hugoalh#1167)](https://img.shields.io/badge/Discord%20%28hugoalh%231167%29-5865F2?logo=discord&logoColor=ffffff&style=flat-square "Discord (hugoalh#1167)")
 [![GitHub Discussion](https://img.shields.io/badge/GitHub%20Discussion-181717?logo=github&logoColor=ffffff&style=flat-square "GitHub Discussion")](https://github.com/hugoalh/hugoalh/discussions)
@@ -95,6 +95,8 @@
 | [Pressure (NodeJS)](https://github.com/hugoalh-studio/pressure-nodejs) |  |
 | [Scan Virus (GitHub Action)](https://github.com/hugoalh/scan-virus-ghaction) |  |
 | [Send Discord Webhook (GitHub Action)](https://github.com/hugoalh/send-discord-webhook-ghaction) <br />*(**Previous:** \[GitHub Action\] Send To Discord)* |  |
+| [Setation (NodeJS)](https://github.com/hugoalh-studio/setation-nodejs) |  |
+| [Setup PowerShell Toolkit (GitHub Action)](https://github.com/hugoalh-studio/setup-powershell-toolkit-ghaction) |  |
 | [String Dissect (NodeJS)](https://github.com/hugoalh-studio/string-dissect-nodejs) |  |
 | [String Overflow (NodeJS)](https://github.com/hugoalh-studio/string-overflow-nodejs) |  |
 | [Symmetric Crypto (NodeJS)](https://github.com/hugoalh-studio/symmetric-crypto-nodejs) |  |

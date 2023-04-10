@@ -26,38 +26,46 @@ jobs:
           [PSCustomObject]$EventPayload = Get-GitHubActionsWebhookEventPayload
           [PSCustomObject]$PackageMeta = Get-Content -LiteralPath '.\package.json' -Raw -Encoding 'UTF8NoBOM' |
             ConvertFrom-Json -Depth 100
-          [String]$PackageName = $PackageMeta.name
           [SemVer]$PackageVersionCurrent = [SemVer]::Parse($PackageMeta.version)
+          [Boolean]$PackageVersionIsPreRelease = $EventPayload.release.prerelease -and ($PackageVersionCurrent.Major -igt 0 -or $Null -ine $PackageVersionCurrent.PreReleaseLabel)
+          [Boolean]$PackageTagLatest = !$PackageVersionIsPreRelease
+          [Boolean]$PackageTagPre = $True
           [String[]]$PackageDevDependencies = $PackageMeta.devDependencies.PSObject.Properties.Name ?? @()
-          [String]$PackageTarballName = "$($PackageName -ireplace '^@', '' -ireplace '\/', '-')-$($PackageVersionCurrent.ToString()).tgz"
-          [Boolean]$PackageVersionIsPreRelease = $EventPayload.release.prerelease -and $PackageVersionCurrent.Major -ine 0
-          [String[]]$PackageTags = @()
-          $PackageTags += $PackageVersionIsPreRelease ? 'pre-publish' : 'latest-publish'
+          [String]$PackageTarballName = "$($PackageMeta.name -ireplace '^@', '' -ireplace '\/', '-')-$($PackageMeta.version).tgz"
           Try {
-            [PSCustomObject]$PackageRegistry = Invoke-WebRequest -Uri "https://registry.npmjs.org/$PackageName" -Headers @{
-              'Content-Type' = 'application/json'
-            } -MaximumRedirection 5 -MaximumRetryCount 5 -RetryIntervalSec 10 -Method 'Get' -SkipHeaderValidation |
+            [PSCustomObject]$PackageRegistry = Invoke-WebRequest -Uri "https://registry.npmjs.org/$($PackageMeta.name)" -Headers @{ 'Content-Type' = 'application/json' } -MaximumRedirection 5 -MaximumRetryCount 5 -RetryIntervalSec 10 -Method 'Get' -SkipHeaderValidation |
               Select-Object -ExpandProperty 'Content' |
               ConvertFrom-Json -Depth 100
+            If ($PackageVersionCurrent -ilt [SemVer]::Parse($PackageRegistry.dist-tags.latest)) {
+              $PackageTagLatest = $False
+            }
+            If ($PackageVersionCurrent -ilt [SemVer]::Parse($PackageRegistry.dist-tags.pre)) {
+              $PackageTagLatest = $False
+              $PackageTagPre = $False
+            }
           }
           Catch {
-            $PackageTags += $PackageVersionIsPreRelease ? 'pre' : 'latest'
+            $PackageTagLatest = $True
           }
+          [String[]]$PackageTags = @("pre-$($PackageVersionCurrent.Major)")
+          If (!$PackageVersionIsPreRelease) {
+            $PackageTags += "latest-$($PackageVersionCurrent.Major)"
+          }
+          [Boolean]$BuildDistribution = 'typescript' -iin $PackageDevDependencies -and !(Test-Path -LiteralPath '.\dist' -PathType 'Container') -and (Test-Path -LiteralPath '.\src' -PathType 'Container') -and (Test-Path -LiteralPath '.\tsconfig.json' -PathType 'Leaf')
           [Boolean]$BuildAssetsTarball = $PackageTarballName -inotin (
             $EventPayload.release.assets |
               Select-Object -ExpandProperty 'name'
           )
-          [Boolean]$BuildDistribution = 'typescript' -iin $PackageDevDependencies -and !(Test-Path -LiteralPath '.\dist' -PathType 'Container') -and (Test-Path -LiteralPath '.\src' -PathType 'Container') -and (Test-Path -LiteralPath '.\tsconfig.json' -PathType 'Leaf')
-          Set-GitHubActionsOutput -Name 'name' -Value $PackageName
-          Set-GitHubActionsOutput -Name 'version' -Value $PackageVersionCurrent.ToString()
-          Set-GitHubActionsOutput -Name 'tarballname' -Value $PackageTarballName
+          Set-GitHubActionsOutput -Name 'descriptor' -Value "$($PackageMeta.name)@$($PackageMeta.version)"
+          Set-GitHubActionsOutput -Name 'tag_latest' -Value $PackageTagLatest.ToString().ToLower()
+          Set-GitHubActionsOutput -Name 'tag_pre' -Value $PackageTagPre.ToString().ToLower()
           Set-GitHubActionsOutput -Name 'tags' -Value (
             $PackageTags |
-              Sort-Object |
               Join-String -Separator ';'
           )
-          Set-GitHubActionsOutput -Name 'build_assetstarball' -Value $BuildAssetsTarball.ToString().ToLower()
+          Set-GitHubActionsOutput -Name 'tarballname' -Value $PackageTarballName
           Set-GitHubActionsOutput -Name 'build_distribution' -Value $BuildDistribution.ToString().ToLower()
+          Set-GitHubActionsOutput -Name 'build_assetstarball' -Value $BuildAssetsTarball.ToString().ToLower()
           Set-GitHubActionsOutput -Name 'release_assetsuploadurl' -Value ($Payload.release.upload_url -ireplace '\{.+?\}$', '')
       - name: "Setup PNPM"
         if: "${{steps.get-package-meta.outputs.build_distribution == 'true' || steps.get-package-meta.outputs.build_assetstarball == 'true'}}"
@@ -75,13 +83,36 @@ jobs:
           Invoke-Expression -Command "$($TscPath.Path) -p $($ConfigPath.Path)"
       - name: "Publish"
         run: |
-          [String]$PackageName = '${{steps.get-package-meta.outputs.name}}'
-          [String]$PackageVersion = '${{steps.get-package-meta.outputs.version}}'
+          Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
+          [String]$PackageDescriptor = '${{steps.get-package-meta.outputs.descriptor}}'
+          [Boolean]$PackageTagLatest = [Boolean]::Parse('${{steps.get-package-meta.outputs.tag_latest}}')
+          [Boolean]$PackageTagPre = [Boolean]::Parse('${{steps.get-package-meta.outputs.tag_pre}}')
           [String[]]$PackageTags = '${{steps.get-package-meta.outputs.tags}}' -isplit ';'
-          npm publish --tag latest
-          npm dist-tag add "$($PackageName)@$($PackageVersion)" pre
+          If ($PackageTagLatest) {
+            npm publish
+            Invoke-Expression -Command "npm dist-tag add `"$PackageDescriptor`" pre"
+          }
+          ElseIf ($PackageTagPre) {
+            npm publish --tag pre
+          }
+          Else {
+            [String]$Tag = $PackageTags |
+              Select-Object -First 1
+            $PackageTags = $PackageTags |
+              Where-Object -FilterScript { $_ -ine $Tag }
+            Invoke-Expression -Command "npm publish --tag `"$Tag`""
+          }
+          ForEach ($Tag In $PackageTags) {
+            Try {
+              Invoke-Expression -Command "npm dist-tag add `"$PackageDescriptor`" `"$Tag`""
+            }
+            Catch {
+              Write-GitHubActionsError -Message $_
+            }
+          }
         env:
           NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
+        continue-on-error: true
       - name: "Build & Upload Assets Tarball"
         if: "${{steps.get-package-meta.outputs.build_assetstarball == 'true'}}"
         run: |

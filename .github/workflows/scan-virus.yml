@@ -11,12 +11,22 @@ on:
       - "opened"
       - "reopened"
       - "synchronize"
+  workflow_call:
+    inputs:
+      git_deep:
+        type: "string"
+        description: "{boolean} Scan deeper for Git repository."
+        required: true
   workflow_dispatch:
     inputs:
       git_deep:
+        type: "choice"
         description: "{boolean} Scan deeper for Git repository."
         required: false
         default: "true"
+        options:
+          - "true"
+          - "false"
 jobs:
   scan-virus:
     name: "Scan Virus"

@@ -1,9 +1,15 @@
 name: "Publish NodeJS Package - NPM (Reusable Workflow)"
 on:
   workflow_call:
+    secrets:
+      NPM_TOKEN:
+        description: "{string} NPM token."
+        required: true
 defaults:
   run:
     shell: "pwsh"
+env:
+  NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
 jobs:
   publish-nodejs-package-npm:
     name: "Publish NodeJS Package - NPM"
@@ -33,14 +39,16 @@ jobs:
           [String[]]$PackageDevDependencies = $PackageMeta.devDependencies.PSObject.Properties.Name ?? @()
           [String]$PackageTarballName = "$($PackageMeta.name -ireplace '^@', '' -ireplace '\/', '-')-$($PackageMeta.version).tgz"
           Try {
-            [PSCustomObject]$PackageRegistry = Invoke-WebRequest -Uri "https://registry.npmjs.org/$($PackageMeta.name)" -Headers @{ 'Content-Type' = 'application/json' } -MaximumRedirection 5 -MaximumRetryCount 5 -RetryIntervalSec 10 -Method 'Get' -SkipHeaderValidation |
-              Select-Object -ExpandProperty 'Content' |
+            [PSCustomObject]$PackageRegistry = Invoke-Expression -Command "npm view `"$($PackageMeta.name)`" --json" |
+              Join-String -Separator "`n" |
               ConvertFrom-Json -Depth 100
+            If ($LASTEXITCODE -ine 0) {
+              Throw
+            }
             If ($PackageVersionCurrent -ilt [SemVer]::Parse($PackageRegistry.dist-tags.latest)) {
               $PackageTagLatest = $False
             }
             If ($PackageVersionCurrent -ilt [SemVer]::Parse($PackageRegistry.dist-tags.pre)) {
-              $PackageTagLatest = $False
               $PackageTagPre = $False
             }
           }
@@ -48,7 +56,7 @@ jobs:
             $PackageTagLatest = $True
           }
           [String[]]$PackageTags = @("pre-$($PackageVersionCurrent.Major)")
-          If (!$PackageVersionIsPreRelease) {
+          If ($PackageTagLatest -or !$PackageVersionIsPreRelease) {
             $PackageTags += "latest-$($PackageVersionCurrent.Major)"
           }
           [Boolean]$BuildDistribution = 'typescript' -iin $PackageDevDependencies -and !(Test-Path -LiteralPath '.\dist' -PathType 'Container') -and (Test-Path -LiteralPath '.\src' -PathType 'Container') -and (Test-Path -LiteralPath '.\tsconfig.json' -PathType 'Leaf')
@@ -71,7 +79,7 @@ jobs:
         if: "${{steps.get-package-meta.outputs.build_distribution == 'true' || steps.get-package-meta.outputs.build_assetstarball == 'true'}}"
         run: |
           npm --global install pnpm
-      - name: "Build From TypeScript"
+      - name: "Build Distribution"
         if: "${{steps.get-package-meta.outputs.build_distribution == 'true'}}"
         run: |
           pnpm install
@@ -87,7 +95,7 @@ jobs:
           [String]$PackageDescriptor = '${{steps.get-package-meta.outputs.descriptor}}'
           [Boolean]$PackageTagLatest = [Boolean]::Parse('${{steps.get-package-meta.outputs.tag_latest}}')
           [Boolean]$PackageTagPre = [Boolean]::Parse('${{steps.get-package-meta.outputs.tag_pre}}')
-          [String[]]$PackageTags = '${{steps.get-package-meta.outputs.tags}}' -isplit ';' + @('publish')
+          [String[]]$PackageTags = ('${{steps.get-package-meta.outputs.tags}}' -isplit ';') + @('publish')
           If ($PackageTagLatest) {
             npm publish
             Invoke-Expression -Command "npm dist-tag add `"$PackageDescriptor`" pre"
@@ -110,9 +118,6 @@ jobs:
               Write-GitHubActionsError -Message $_
             }
           }
-        env:
-          NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
-        continue-on-error: true
       - name: "Build & Upload Assets Tarball"
         if: "${{steps.get-package-meta.outputs.build_assetstarball == 'true'}}"
         run: |

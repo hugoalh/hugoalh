@@ -15,13 +15,13 @@ on:
     inputs:
       git_deep:
         type: "string"
-        description: "{boolean} Scan deeper for Git repository."
+        description: "{Boolean} Scan deeper for Git repository."
         required: false
   workflow_dispatch:
     inputs:
       git_deep:
         type: "choice"
-        description: "{boolean} Scan deeper for Git repository."
+        description: "{Boolean} Scan deeper for Git repository."
         required: false
         default: "true"
         options:

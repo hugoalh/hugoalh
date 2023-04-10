@@ -1,6 +1,16 @@
 name: "Publish PowerShell Module - PowerShell Gallery (Reusable Workflow)"
 on:
   workflow_call:
+    inputs:
+      path:
+        type: "string"
+        description: "{String} PowerShell module root."
+        required: false
+        default: ".\\"
+    secrets:
+      POWERSHELLGALLERY_TOKEN:
+        description: "{String} PowerShell Gallery token."
+        required: true
 defaults:
   run:
     shell: "pwsh"
@@ -17,7 +27,7 @@ jobs:
           toolkit_setup: "false"
       - name: "Test Publish"
         run: |
-          Publish-Module -Path '.\hugoalh.GitHubActionsToolkit\' -NugetAPIKey 'GUID' -WhatIf -Verbose
+          Publish-Module -Path '${{github.event.inputs.path}}' -NugetAPIKey 'GUID' -WhatIf -Verbose
       - name: "Publish"
         run: |
-          Publish-Module -Path '.\hugoalh.GitHubActionsToolkit\' -NugetAPIKey '${{secrets.POWERSHELLGALLERY_TOKEN}}' -Verbose
+          Publish-Module -Path '${{github.event.inputs.path}}' -NugetAPIKey '${{secrets.POWERSHELLGALLERY_TOKEN}}' -Verbose

@@ -15,7 +15,7 @@ on:
     inputs:
       git_deep:
         type: "choice"
-        description: "{boolean} Scan deeper for Git repository."
+        description: "{Boolean} Scan deeper for Git repository."
         required: false
         default: "true"
         options:
@@ -25,4 +25,3 @@ jobs:
   scan-virus:
     name: "Scan Virus (Reusable Workflow)"
     uses: "hugoalh/hugoalh/.github/workflows/scan-virus.yml@main"
-    secrets: "inherit"

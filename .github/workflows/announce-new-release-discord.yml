@@ -1,0 +1,64 @@
+name: "Announce New Release - Discord (Reusable Workflow)"
+on:
+  workflow_call:
+    inputs:
+      name:
+        type: "string"
+        description: "{string} Repository name."
+        required: true
+      color:
+        type: "string"
+        description: "{string} Color."
+        required: false
+        default: "random"
+      thumbnail:
+        type: "string"
+        description: "{string} Thumbnail."
+        required: false
+      repositories:
+        type: "string"
+        description: "{string} Repositories."
+        required: false
+        default: |
+          **- GitHub (${{github.event.repository.full_name}}):** ${{github.event.repository.html_url}}
+      releases:
+        type: "string"
+        description: "{string} Releases."
+        required: false
+        default: |
+          **- GitHub (& Changelog):** ${{github.event.release.html_url}}
+    secrets:
+      DISCORD_WEBHOOK:
+        description: "{string} Discord webhook."
+        required: true
+jobs:
+  announce-new-release-discord:
+    name: "Announce New Release - Discord"
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: "hugoalh/send-discord-webhook-ghaction@v5.0.3"
+        with:
+          key: "${{secrets.DISCORD_WEBHOOK}}"
+          payload: |
+            embeds:
+              - title: "${{github.event.inputs.name}}"
+                description: |
+                  > ${{github.event.repository.description}}
+
+                  Version ${{github.event.release.name}} (${{github.event.release.tag_name}}) just released!
+                timestamp: "${{github.event.release.published_at}}"
+                color: "${{github.event.inputs.color}}"
+                thumbnail:
+                  url: "${{github.event.inputs.thumbnail}}"
+                author:
+                  name: "${{github.event.release.author.login}}"
+                  url: "${{github.event.release.author.html_url}}"
+                  icon_url: "${{github.event.release.author.avatar_url}}"
+                fields:
+                  - name: "Repositories"
+                    value: "${{github.event.inputs.repositories}}"
+                    inline: false
+                  - name: "Releases"
+                    value: "${{github.event.inputs.releases}}"
+                    inline: false
+          wait: "true"

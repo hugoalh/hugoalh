@@ -1,0 +1,84 @@
+name: "Publish Docker Container - GitHub Packages (Reusable Workflow)"
+on:
+  workflow_call:
+    inputs:
+      title:
+        type: "string"
+        description: "{string} Title."
+        required: true
+      description:
+        type: "string"
+        description: "{string} Description."
+        required: true
+      license:
+        type: "string"
+        description: "{string} License."
+        required: true
+      context:
+        type: "string"
+        description: "{string} Context."
+        required: false
+        default: "./"
+      dockerfile:
+        type: "string"
+        description: "{string} Docker file."
+        required: false
+        default: "Dockerfile"
+      tag:
+        type: "string"
+        description: "{string} Tag."
+        required: false
+      latest:
+        type: "string"
+        description: "{boolean} Latest."
+        required: false
+        default: "false"
+      platforms:
+        type: "string"
+        description: "{string} Platforms."
+        required: false
+        default: |
+          linux/amd64
+env:
+  REGISTRY: "ghcr.io"
+  IMAGE_NAME: "${{github.event.repository.full_name}}"
+jobs:
+  publish-docker-container-ghp:
+    name: "Publish Docker Container - GitHub Packages"
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "Checkout Repository"
+        uses: "actions/checkout@v3.5.0"
+      - name: "Sign In To Registry ${{env.REGISTRY}}"
+        uses: "docker/login-action@v2.1.0"
+        with:
+          registry: "${{env.REGISTRY}}"
+          username: "${{github.actor}}"
+          password: "${{github.token}}"
+      - name: "Generate Docker Metadata"
+        id: "docker-meta"
+        uses: "docker/metadata-action@v4.1.0"
+        with:
+          images: "${{env.REGISTRY}}/${{env.IMAGE_NAME}}"
+          tags: |
+            type=raw,enable=${{github.event.inputs.tag != ''}},value=${{github.event.inputs.tag}}
+            type=raw,enable=${{github.event.inputs.latest == 'true'}},value=latest
+            type=semver,enable=${{github.event.inputs.tag == ''}},pattern={{version}}
+            type=semver,enable=${{github.event.inputs.tag == ''}},pattern={{major}}.{{minor}}.{{patch}}
+            type=semver,enable=${{github.event.inputs.tag == ''}},pattern={{major}}.{{minor}}
+            type=semver,enable=${{github.event.inputs.tag == ''}},pattern={{major}}
+          labels: |
+            org.opencontainers.image.authors=${{github.event.repository.owner}}
+            org.opencontainers.image.licenses=${{github.event.inputs.license}}
+            org.opencontainers.image.title=${{github.event.inputs.title}}
+            org.opencontainers.image.description=${{github.event.inputs.description}}
+      - name: "Build & Push Docker Image"
+        uses: "docker/build-push-action@v3.2.0"
+        with:
+          context: "${{github.event.inputs.context}}"
+          file: "${{github.event.inputs.dockerfile}}"
+          labels: "${{steps.docker-meta.outputs.labels}}"
+          platforms: "${{github.event.inputs.platforms}}"
+          pull: "true"
+          push: "true"
+          tags: "${{steps.docker-meta.outputs.tags}}"

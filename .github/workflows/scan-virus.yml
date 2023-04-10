@@ -16,7 +16,7 @@ on:
       git_deep:
         type: "string"
         description: "{boolean} Scan deeper for Git repository."
-        required: true
+        required: false
   workflow_dispatch:
     inputs:
       git_deep:

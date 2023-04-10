@@ -23,5 +23,6 @@ on:
           - "false"
 jobs:
   scan-virus:
+    name: "Scan Virus (Reusable Workflow)"
     uses: "hugoalh/hugoalh/.github/workflows/scan-virus.yml@main"
     secrets: "inherit"

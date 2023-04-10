@@ -14,5 +14,6 @@ on:
   workflow_dispatch:
 jobs:
   codeql-analysis:
+    name: "CodeQL - Analysis (Reusable Workflow)"
     uses: "hugoalh/hugoalh/.github/workflows/codeql-analysis.yml@main"
     secrets: "inherit"

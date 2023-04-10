@@ -87,7 +87,7 @@ jobs:
           [String]$PackageDescriptor = '${{steps.get-package-meta.outputs.descriptor}}'
           [Boolean]$PackageTagLatest = [Boolean]::Parse('${{steps.get-package-meta.outputs.tag_latest}}')
           [Boolean]$PackageTagPre = [Boolean]::Parse('${{steps.get-package-meta.outputs.tag_pre}}')
-          [String[]]$PackageTags = '${{steps.get-package-meta.outputs.tags}}' -isplit ';'
+          [String[]]$PackageTags = '${{steps.get-package-meta.outputs.tags}}' -isplit ';' + @('publish')
           If ($PackageTagLatest) {
             npm publish
             Invoke-Expression -Command "npm dist-tag add `"$PackageDescriptor`" pre"

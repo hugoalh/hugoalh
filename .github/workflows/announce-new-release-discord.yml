@@ -56,9 +56,11 @@ jobs:
                   icon_url: "${{github.event.release.author.avatar_url}}"
                 fields:
                   - name: "Repositories"
-                    value: "${{inputs.repositories}}"
+                    value: |
+                      ${{inputs.repositories}}
                     inline: false
                   - name: "Releases"
-                    value: "${{inputs.releases}}"
+                    value: |
+                      ${{inputs.releases}}
                     inline: false
           wait: "true"

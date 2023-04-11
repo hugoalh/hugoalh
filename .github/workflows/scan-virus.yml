@@ -40,4 +40,4 @@ jobs:
       - name: "Scan Repository"
         uses: "hugoalh/scan-virus-ghaction@v0.6.4"
         with:
-          git_deep: "${{github.event.inputs.git_deep || 'false'}}"
+          git_deep: "${{inputs.git_deep || 'false'}}"

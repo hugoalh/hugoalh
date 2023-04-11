@@ -61,24 +61,24 @@ jobs:
         with:
           images: "${{env.REGISTRY}}/${{env.IMAGE_NAME}}"
           tags: |
-            type=raw,enable=${{github.event.inputs.tag != ''}},value=${{github.event.inputs.tag}}
-            type=raw,enable=${{github.event.inputs.latest == 'true'}},value=latest
-            type=semver,enable=${{github.event.inputs.tag == ''}},pattern={{version}}
-            type=semver,enable=${{github.event.inputs.tag == ''}},pattern={{major}}.{{minor}}.{{patch}}
-            type=semver,enable=${{github.event.inputs.tag == ''}},pattern={{major}}.{{minor}}
-            type=semver,enable=${{github.event.inputs.tag == ''}},pattern={{major}}
+            type=raw,enable=${{inputs.tag != ''}},value=${{inputs.tag}}
+            type=raw,enable=${{inputs.latest == 'true'}},value=latest
+            type=semver,enable=${{inputs.tag == ''}},pattern={{version}}
+            type=semver,enable=${{inputs.tag == ''}},pattern={{major}}.{{minor}}.{{patch}}
+            type=semver,enable=${{inputs.tag == ''}},pattern={{major}}.{{minor}}
+            type=semver,enable=${{inputs.tag == ''}},pattern={{major}}
           labels: |
             org.opencontainers.image.authors=${{github.event.repository.owner}}
-            org.opencontainers.image.licenses=${{github.event.inputs.license}}
-            org.opencontainers.image.title=${{github.event.inputs.title}}
-            org.opencontainers.image.description=${{github.event.inputs.description}}
+            org.opencontainers.image.licenses=${{inputs.license}}
+            org.opencontainers.image.title=${{inputs.title}}
+            org.opencontainers.image.description=${{inputs.description}}
       - name: "Build & Push Docker Image"
         uses: "docker/build-push-action@v4.0.0"
         with:
-          context: "${{github.event.inputs.context}}"
-          file: "${{github.event.inputs.dockerfile}}"
+          context: "${{inputs.context}}"
+          file: "${{inputs.dockerfile}}"
           labels: "${{steps.docker-meta.outputs.labels}}"
-          platforms: "${{github.event.inputs.platforms}}"
+          platforms: "${{inputs.platforms}}"
           pull: "true"
           push: "true"
           tags: "${{steps.docker-meta.outputs.tags}}"

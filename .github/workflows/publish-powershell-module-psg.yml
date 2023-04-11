@@ -27,7 +27,7 @@ jobs:
           toolkit_setup: "false"
       - name: "Test Publish"
         run: |
-          Publish-Module -Path '${{github.event.inputs.path}}' -NugetAPIKey 'GUID' -WhatIf -Verbose
+          Publish-Module -Path '${{inputs.path}}' -NugetAPIKey 'GUID' -WhatIf -Verbose
       - name: "Publish"
         run: |
-          Publish-Module -Path '${{github.event.inputs.path}}' -NugetAPIKey '${{secrets.POWERSHELLGALLERY_TOKEN}}' -Verbose
+          Publish-Module -Path '${{inputs.path}}' -NugetAPIKey '${{secrets.POWERSHELLGALLERY_TOKEN}}' -Verbose

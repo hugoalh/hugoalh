@@ -48,8 +48,8 @@ jobs:
           [String]$Releases = @'
           ${{inputs.releases}}
           '@
-          Set-GitHubActionsOutput -Name 'repositories' -Value ($Repositories -ireplace '\r?\n', '\\n')
-          Set-GitHubActionsOutput -Name 'release' -Value ($Releases -ireplace '\r?\n', '\\n')
+          Set-GitHubActionsOutput -Name 'repositories' -Value ($Repositories -ireplace '\r?\n', '\n')
+          Set-GitHubActionsOutput -Name 'releases' -Value ($Releases -ireplace '\r?\n', '\n')
         shell: "pwsh"
       - uses: "hugoalh/send-discord-webhook-ghaction@v5.0.3"
         with:

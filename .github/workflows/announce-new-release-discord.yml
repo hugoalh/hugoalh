@@ -41,24 +41,24 @@ jobs:
           key: "${{secrets.DISCORD_WEBHOOK}}"
           payload: |
             embeds:
-              - title: "${{github.event.inputs.name}}"
+              - title: "${{inputs.name}}"
                 description: |
                   > ${{github.event.repository.description}}
 
                   Version ${{github.event.release.name}} (${{github.event.release.tag_name}}) just released!
                 timestamp: "${{github.event.release.published_at}}"
-                color: "${{github.event.inputs.color}}"
+                color: "${{inputs.color}}"
                 thumbnail:
-                  url: "${{github.event.inputs.thumbnail}}"
+                  url: "${{inputs.thumbnail}}"
                 author:
                   name: "${{github.event.release.author.login}}"
                   url: "${{github.event.release.author.html_url}}"
                   icon_url: "${{github.event.release.author.avatar_url}}"
                 fields:
                   - name: "Repositories"
-                    value: "${{github.event.inputs.repositories}}"
+                    value: "${{inputs.repositories}}"
                     inline: false
                   - name: "Releases"
-                    value: "${{github.event.inputs.releases}}"
+                    value: "${{inputs.releases}}"
                     inline: false
           wait: "true"

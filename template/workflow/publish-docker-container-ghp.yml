@@ -12,9 +12,6 @@ on:
         description: "{boolean} Latest."
         required: false
         default: "false"
-env:
-  REGISTRY: "ghcr.io"
-  IMAGE_NAME: "${{github.repository}}"
 jobs:
   publish-docker-container-ghp:
     name: "Publish Docker Container - GitHub Packages (Reusable Workflow)"

@@ -36,6 +36,21 @@ jobs:
     name: "Announce New Release - Discord"
     runs-on: "ubuntu-latest"
     steps:
+      - name: "Setup PowerShell Toolkit"
+        uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v1.2.0"
+      - name: "Resolve YAML"
+        id: "resolve-yaml"
+        run: |
+          Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
+          [String]$Repositories = @'
+          ${{inputs.repositories}}
+          '@
+          [String]$Releases = @'
+          ${{inputs.releases}}
+          '@
+          Set-GitHubActionsOutput -Name 'repositories' -Value ($Repositories -ireplace '\r?\n', '\\n')
+          Set-GitHubActionsOutput -Name 'release' -Value ($Releases -ireplace '\r?\n', '\\n')
+        shell: "pwsh"
       - uses: "hugoalh/send-discord-webhook-ghaction@v5.0.3"
         with:
           key: "${{secrets.DISCORD_WEBHOOK}}"
@@ -56,11 +71,9 @@ jobs:
                   icon_url: "${{github.event.release.author.avatar_url}}"
                 fields:
                   - name: "Repositories"
-                    value: >
-                      ${{inputs.repositories}}
+                    value: "${{steps.resolve-yaml.outputs.repositories}}"
                     inline: false
                   - name: "Releases"
-                    value: >
-                      ${{inputs.releases}}
+                    value: "${{steps.resolve-yaml.outputs.releases}}"
                     inline: false
           wait: "true"

@@ -74,7 +74,7 @@ jobs:
           Set-GitHubActionsOutput -Name 'tarballname' -Value $PackageTarballName
           Set-GitHubActionsOutput -Name 'build_distribution' -Value $BuildDistribution.ToString().ToLower()
           Set-GitHubActionsOutput -Name 'build_assetstarball' -Value $BuildAssetsTarball.ToString().ToLower()
-          Set-GitHubActionsOutput -Name 'release_assetsuploadurl' -Value ($Payload.release.upload_url -ireplace '\{.+?\}$', '')
+          Set-GitHubActionsOutput -Name 'release_assetsuploadurl' -Value ($EventPayload.release.upload_url -ireplace '\{.+?\}$', '')
       - name: "Setup PNPM"
         if: "${{steps.get-package-meta.outputs.build_distribution == 'true' || steps.get-package-meta.outputs.build_assetstarball == 'true'}}"
         run: |

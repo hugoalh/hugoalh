@@ -37,7 +37,7 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
       - name: "Setup PowerShell Toolkit"
-        uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v1.2.1"
+        uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v1.2.2"
       - name: "Resolve YAML"
         id: "resolve-yaml"
         run: |

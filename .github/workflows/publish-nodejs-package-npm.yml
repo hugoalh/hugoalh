@@ -24,7 +24,7 @@ jobs:
           check-latest: true
           registry-url: "https://registry.npmjs.org/"
       - name: "Setup PowerShell Toolkit"
-        uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v1.2.1"
+        uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v1.2.2"
       - name: "Get Package Meta"
         id: "get-package-meta"
         run: |

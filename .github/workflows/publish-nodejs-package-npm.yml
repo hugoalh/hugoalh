@@ -45,10 +45,10 @@ jobs:
             If ($LASTEXITCODE -ine 0) {
               Throw
             }
-            If ($PackageVersionCurrent -ilt [SemVer]::Parse($PackageRegistry.dist-tags.latest)) {
+            If ($PackageVersionCurrent -ilt [SemVer]::Parse($PackageRegistry['dist-tags'].latest)) {
               $PackageTagLatest = $False
             }
-            If ($PackageVersionCurrent -ilt [SemVer]::Parse($PackageRegistry.dist-tags.pre)) {
+            If ($PackageVersionCurrent -ilt [SemVer]::Parse($PackageRegistry['dist-tags'].pre)) {
               $PackageTagPre = $False
             }
           }

@@ -69,6 +69,7 @@ jobs:
           Set-GitHubActionsOutput -Name 'tag_pre' -Value $PackageTagPre.ToString().ToLower()
           Set-GitHubActionsOutput -Name 'tags' -Value (
             $PackageTags |
+              Sort-Object -Unique |
               Join-String -Separator ';'
           )
           Set-GitHubActionsOutput -Name 'tarballname' -Value $PackageTarballName

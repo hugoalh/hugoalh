@@ -33,7 +33,7 @@ jobs:
           [PSCustomObject]$PackageMeta = Get-Content -LiteralPath '.\package.json' -Raw -Encoding 'UTF8NoBOM' |
             ConvertFrom-Json -Depth 100
           [SemVer]$PackageVersionCurrent = [SemVer]::Parse($PackageMeta.version)
-          [Boolean]$PackageVersionIsPreRelease = $EventPayload.release.prerelease -and ($PackageVersionCurrent.Major -igt 0 -or $Null -ine $PackageVersionCurrent.PreReleaseLabel)
+          [Boolean]$PackageVersionIsPreRelease = $Null -ine $PackageVersionCurrent.PreReleaseLabel
           [Boolean]$PackageTagLatest = !$PackageVersionIsPreRelease
           [Boolean]$PackageTagPre = $True
           [String[]]$PackageDevDependencies = $PackageMeta.devDependencies.PSObject.Properties.Name ?? @()
@@ -45,15 +45,15 @@ jobs:
             If ($LASTEXITCODE -ine 0) {
               Throw
             }
-            If ($PackageVersionCurrent -ilt [SemVer]::Parse($PackageRegistry['dist-tags'].latest)) {
+            If ($PackageVersionCurrent -ile [SemVer]::Parse($PackageRegistry.'dist-tags'.latest ?? '0.0.0')) {
               $PackageTagLatest = $False
             }
-            If ($PackageVersionCurrent -ilt [SemVer]::Parse($PackageRegistry['dist-tags'].pre)) {
+            If ($PackageVersionCurrent -ile [SemVer]::Parse($PackageRegistry.'dist-tags'.pre ?? '0.0.0')) {
               $PackageTagPre = $False
             }
           }
           Catch {
-            $PackageTagLatest = $True
+            Write-Warning -Message "Unable to analysis package ``dist-tags``: $_"
           }
           [String[]]$PackageTags = @("pre-$($PackageVersionCurrent.Major)")
           If ($PackageTagLatest -or !$PackageVersionIsPreRelease) {

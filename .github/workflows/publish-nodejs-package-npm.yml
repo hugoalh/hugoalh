@@ -10,6 +10,20 @@ defaults:
     shell: "pwsh"
 env:
   NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
+permissions:
+  actions: "write"
+  checks: "write"
+  contents: "write"
+  deployments: "write"
+  discussions: "write"
+  id-token: "write"
+  issues: "write"
+  packages: "write"
+  pages: "write"
+  pull-requests: "write"
+  repository-projects: "write"
+  security-events: "write"
+  statuses: "write"
 jobs:
   publish-nodejs-package-npm:
     name: "Publish NodeJS Package - NPM"
@@ -23,6 +37,9 @@ jobs:
           node-version: "lts/*"
           check-latest: true
           registry-url: "https://registry.npmjs.org/"
+      - name: "Setup NPM"
+        run: |
+          npm --global install npm@latest
       - name: "Setup PowerShell Toolkit"
         uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v1.2.2"
       - name: "Get Package Meta"
@@ -43,7 +60,7 @@ jobs:
               Join-String -Separator "`n" |
               ConvertFrom-Json -Depth 100
             If ($LASTEXITCODE -ine 0) {
-              Throw
+              Throw 'Most likely this is a new package.'
             }
             If ($PackageVersionCurrent -ile [SemVer]::Parse($PackageRegistry.'dist-tags'.latest ?? '0.0.0')) {
               $PackageTagLatest = $False
@@ -90,7 +107,39 @@ jobs:
             Remove-Item -LiteralPath '.\dist' -Recurse -Force -Confirm:$False
           }
           Invoke-Expression -Command "$($TscPath.Path) -p $($ConfigPath.Path)"
+      - name: "Publish (NPM Provenance Beta)"
+        id: "publish-npm-provenance-beta"
+        run: |
+          Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
+          [String]$PackageDescriptor = '${{steps.get-package-meta.outputs.descriptor}}'
+          [Boolean]$PackageTagLatest = [Boolean]::Parse('${{steps.get-package-meta.outputs.tag_latest}}')
+          [Boolean]$PackageTagPre = [Boolean]::Parse('${{steps.get-package-meta.outputs.tag_pre}}')
+          [String[]]$PackageTags = ('${{steps.get-package-meta.outputs.tags}}' -isplit ';') + @('publish')
+          If ($PackageTagLatest) {
+            npm publish --provenance
+            Invoke-Expression -Command "npm dist-tag add `"$PackageDescriptor`" pre"
+          }
+          ElseIf ($PackageTagPre) {
+            npm publish --provenance --tag pre
+          }
+          Else {
+            [String]$Tag = $PackageTags |
+              Select-Object -First 1
+            $PackageTags = $PackageTags |
+              Where-Object -FilterScript { $_ -ine $Tag }
+            Invoke-Expression -Command "npm publish --provenance --tag `"$Tag`""
+          }
+          ForEach ($Tag In $PackageTags) {
+            Try {
+              Invoke-Expression -Command "npm dist-tag add `"$PackageDescriptor`" `"$Tag`""
+            }
+            Catch {
+              Write-GitHubActionsError -Message $_
+            }
+          }
+        continue-on-error: true
       - name: "Publish"
+        if: "${{steps.publish-npm-provenance-beta.outcome != 'success'}}"
         run: |
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
           [String]$PackageDescriptor = '${{steps.get-package-meta.outputs.descriptor}}'

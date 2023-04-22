@@ -51,7 +51,7 @@ jobs:
           Set-GitHubActionsOutput -Name 'repositories' -Value ($Repositories -ireplace '\r?\n', '\n')
           Set-GitHubActionsOutput -Name 'releases' -Value ($Releases -ireplace '\r?\n', '\n')
         shell: "pwsh"
-      - uses: "hugoalh/send-discord-webhook-ghaction@v5.0.3"
+      - uses: "hugoalh/send-discord-webhook-ghaction@v5.0.4"
         with:
           key: "${{secrets.DISCORD_WEBHOOK}}"
           payload: |

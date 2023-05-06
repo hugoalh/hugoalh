@@ -68,7 +68,7 @@ jobs:
             type=semver,enable=${{inputs.tag == ''}},pattern={{major}}.{{minor}}
             type=semver,enable=${{inputs.tag == ''}},pattern={{major}}
           labels: |
-            org.opencontainers.image.authors=${{github.event.repository.owner}}
+            org.opencontainers.image.authors=${{github.event.repository.owner.login}}
             org.opencontainers.image.licenses=${{inputs.license}}
             org.opencontainers.image.title=${{inputs.title}}
             org.opencontainers.image.description=${{inputs.description}}

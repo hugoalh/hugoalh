@@ -13,20 +13,72 @@ on:
       - "synchronize"
   workflow_call:
     inputs:
-      git_deep:
+      input_tablemarkup:
         type: "string"
-        description: "{Boolean} Scan deeper for Git repository."
+        description: "{String} Markup language when the input is type of table."
+        required: false
+        default: "yaml"
+      git_integrate:
+        type: "boolean"
+        description: "{Boolean} Whether to integrate with Git to perform scan by the commits."
+        required: false
+        default: false
+      git_ignores:
+        type: "string"
+        description: "{Table} Ignores for the Git commits."
+        required: false
+      git_limit:
+        type: "number"
+        description: "{UInt} Limit on how many Git commits will scan."
+        required: false
+        default: 0
+      git_reverse:
+        type: "boolean"
+        description: "{Boolean} Whether to reverse the scan order of the Git commits."
+        required: false
+        default: false
+      ignores:
+        type: "string"
+        description: "{Table} Ignores for the paths, rules (YARA), sessions, and/or signatures (ClamAV)."
         required: false
   workflow_dispatch:
     inputs:
-      git_deep:
+      input_tablemarkup:
         type: "choice"
-        description: "{Boolean} Scan deeper for Git repository."
+        description: "{String} Markup language when the input is type of table."
         required: false
-        default: "True"
+        default: "yaml"
         options:
-          - "False"
-          - "True"
+          - "csv"
+          - "csvm"
+          - "csvs"
+          - "json"
+          - "tsv"
+          - "yaml"
+          - "yml"
+      git_integrate:
+        type: "boolean"
+        description: "{Boolean} Whether to integrate with Git to perform scan by the commits."
+        required: false
+        default: false
+      git_ignores:
+        type: "string"
+        description: "{Table} Ignores for the Git commits."
+        required: false
+      git_limit:
+        type: "number"
+        description: "{UInt} Limit on how many Git commits will scan."
+        required: false
+        default: 0
+      git_reverse:
+        type: "boolean"
+        description: "{Boolean} Whether to reverse the scan order of the Git commits."
+        required: false
+        default: false
+      ignores:
+        type: "string"
+        description: "{Table} Ignores for the paths, rules (YARA), sessions, and/or signatures (ClamAV)."
+        required: false
 jobs:
   scan-virus:
     name: "Scan Virus"
@@ -38,6 +90,11 @@ jobs:
         with:
           fetch-depth: 0
       - name: "Scan Repository"
-        uses: "hugoalh/scan-virus-ghaction@v0.6.4"
+        uses: "hugoalh/scan-virus-ghaction@v0.10.0"
         with:
-          git_deep: "${{inputs.git_deep || github.event.inputs.git_deep || 'False'}}"
+          input_tablemarkup: "${{inputs.input_tablemarkup || github.event.inputs.input_tablemarkup || 'yaml'}}"
+          git_integrate: "${{inputs.git_integrate || github.event.inputs.git_integrate || 'False'}}"
+          git_ignores: "${{inputs.git_ignores || github.event.inputs.git_ignores}}"
+          git_limit: "${{inputs.git_limit || github.event.inputs.git_limit || '0'}}"
+          git_reverse: "${{inputs.git_reverse || github.event.inputs.git_reverse || 'False'}}"
+          ignores: "${{inputs.ignores || github.event.inputs.ignores}}"

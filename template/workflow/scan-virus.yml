@@ -13,28 +13,11 @@ on:
       - "synchronize"
   workflow_dispatch:
     inputs:
-      input_tablemarkup:
-        type: "choice"
-        description: "{String} Markup language when the input is type of table."
-        required: false
-        default: "yaml"
-        options:
-          - "csv"
-          - "csvm"
-          - "csvs"
-          - "json"
-          - "tsv"
-          - "yaml"
-          - "yml"
       git_integrate:
         type: "boolean"
         description: "{Boolean} Whether to integrate with Git to perform scan by the commits."
         required: false
         default: false
-      git_ignores:
-        type: "string"
-        description: "{Table} Ignores for the Git commits."
-        required: false
       git_limit:
         type: "number"
         description: "{UInt} Limit on how many Git commits will scan."
@@ -45,18 +28,11 @@ on:
         description: "{Boolean} Whether to reverse the scan order of the Git commits."
         required: false
         default: false
-      ignores:
-        type: "string"
-        description: "{Table} Ignores for the paths, rules (YARA), sessions, and/or signatures (ClamAV)."
-        required: false
 jobs:
   scan-virus:
     name: "Scan Virus (Reusable Workflow)"
     uses: "hugoalh/hugoalh/.github/workflows/scan-virus.yml@main"
     with:
-      input_tablemarkup: "${{github.event.inputs.input_tablemarkup || 'yaml'}}"
       git_integrate: "${{github.event.inputs.git_integrate || 'False'}}"
-      git_ignores: "${{github.event.inputs.git_ignores}}"
       git_limit: "${{github.event.inputs.git_limit || '0'}}"
       git_reverse: "${{github.event.inputs.git_reverse || 'False'}}"
-      ignores: "${{github.event.inputs.ignores}}"

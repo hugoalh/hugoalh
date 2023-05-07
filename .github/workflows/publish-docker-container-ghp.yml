@@ -29,10 +29,10 @@ on:
         description: "{string} Tag."
         required: false
       latest:
-        type: "boolean"
+        type: "string"
         description: "{boolean} Latest."
         required: false
-        default: false
+        default: "false"
       platforms:
         type: "string"
         description: "{string} Platforms."

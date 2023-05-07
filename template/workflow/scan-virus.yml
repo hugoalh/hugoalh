@@ -33,6 +33,6 @@ jobs:
     name: "Scan Virus (Reusable Workflow)"
     uses: "hugoalh/hugoalh/.github/workflows/scan-virus.yml@main"
     with:
-      git_integrate: "${{github.event.inputs.git_integrate || 'False'}}"
-      git_limit: "${{github.event.inputs.git_limit || '0'}}"
-      git_reverse: "${{github.event.inputs.git_reverse || 'False'}}"
+      git_integrate: "${{github.event.inputs.git_integrate || false}}"
+      git_limit: "${{github.event.inputs.git_limit || 0}}"
+      git_reverse: "${{github.event.inputs.git_reverse || false}}"

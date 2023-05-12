@@ -77,5 +77,5 @@ jobs:
           git_limit: "${{inputs.git_limit || github.event.inputs.git_limit || '0'}}"
           git_reverse: "${{inputs.git_reverse || github.event.inputs.git_reverse || 'False'}}"
           ignores: "${{inputs.ignores}}"
-          summary_found: "Redirect"
-          summary_statistics: "Redirect"
+          summary_found: "Clone"
+          summary_statistics: "Clone"

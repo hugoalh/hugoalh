@@ -70,12 +70,13 @@ jobs:
         with:
           fetch-depth: 0
       - name: "Scan Repository"
-        uses: "hugoalh/scan-virus-ghaction@v0.11.1"
+        uses: "hugoalh/scan-virus-ghaction@v0.12.0"
         with:
           git_integrate: "${{inputs.git_integrate || github.event.inputs.git_integrate || 'False'}}"
           git_ignores: "${{inputs.git_ignores}}"
           git_limit: "${{inputs.git_limit || github.event.inputs.git_limit || '0'}}"
           git_reverse: "${{inputs.git_reverse || github.event.inputs.git_reverse || 'False'}}"
           ignores: "${{inputs.ignores}}"
+          log_elements: "OnlyCurrent"
           summary_found: "Clone"
           summary_statistics: "Clone"

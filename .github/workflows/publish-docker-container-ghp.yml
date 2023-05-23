@@ -79,7 +79,6 @@ jobs:
           file: "${{inputs.dockerfile}}"
           labels: "${{steps.docker-meta.outputs.labels}}"
           platforms: "${{inputs.platforms}}"
-          provenance: "true"
           pull: "true"
           push: "true"
           tags: "${{steps.docker-meta.outputs.tags}}"

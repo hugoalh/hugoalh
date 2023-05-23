@@ -37,7 +37,7 @@ on:
         type: "string"
         description: "{string} Platforms."
         required: false
-        default: |
+        default: |-
           linux/amd64
 env:
   REGISTRY: "ghcr.io"
@@ -60,14 +60,14 @@ jobs:
         uses: "docker/metadata-action@v4.4.0"
         with:
           images: "${{env.REGISTRY}}/${{env.IMAGE_NAME}}"
-          tags: |
+          tags: |-
             type=raw,enable=${{inputs.tag != ''}},value=${{inputs.tag}}
             type=raw,enable=${{inputs.latest == 'true'}},value=latest
             type=semver,enable=${{inputs.tag == ''}},pattern={{version}}
             type=semver,enable=${{inputs.tag == ''}},pattern={{major}}.{{minor}}.{{patch}}
             type=semver,enable=${{inputs.tag == ''}},pattern={{major}}.{{minor}}
             type=semver,enable=${{inputs.tag == ''}},pattern={{major}}
-          labels: |
+          labels: |-
             org.opencontainers.image.authors=${{github.event.repository.owner.login}}
             org.opencontainers.image.licenses=${{inputs.license}}
             org.opencontainers.image.title=${{inputs.title}}
@@ -75,10 +75,13 @@ jobs:
       - name: "Build & Push Docker Image"
         uses: "docker/build-push-action@v4.0.0"
         with:
+          cache-to: |-
+            type=gha,mode=max,ignore-error=true
           context: "${{inputs.context}}"
           file: "${{inputs.dockerfile}}"
           labels: "${{steps.docker-meta.outputs.labels}}"
           platforms: "${{inputs.platforms}}"
+          provenance: "true"
           pull: "true"
           push: "true"
           tags: "${{steps.docker-meta.outputs.tags}}"

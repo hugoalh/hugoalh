@@ -75,8 +75,6 @@ jobs:
       - name: "Build & Push Docker Image"
         uses: "docker/build-push-action@v4.0.0"
         with:
-          cache-to: |-
-            type=gha,mode=max,ignore-error=true
           context: "${{inputs.context}}"
           file: "${{inputs.dockerfile}}"
           labels: "${{steps.docker-meta.outputs.labels}}"

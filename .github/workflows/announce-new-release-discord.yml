@@ -32,8 +32,8 @@ on:
         description: "{string} Discord webhook."
         required: true
 jobs:
-  announce-new-release-discord:
-    name: "Announce New Release - Discord"
+  main:
+    name: "Main"
     runs-on: "ubuntu-latest"
     steps:
       - name: "Setup PowerShell Toolkit"
@@ -51,7 +51,8 @@ jobs:
           Set-GitHubActionsOutput -Name 'repositories' -Value ($Repositories -ireplace '\r?\n', '\n')
           Set-GitHubActionsOutput -Name 'releases' -Value ($Releases -ireplace '\r?\n', '\n')
         shell: "pwsh"
-      - uses: "hugoalh/send-discord-webhook-ghaction@v5.0.5"
+      - name: "Send Discord Webhook"
+        uses: "hugoalh/send-discord-webhook-ghaction@v5.0.5"
         with:
           key: "${{secrets.DISCORD_WEBHOOK}}"
           payload: |

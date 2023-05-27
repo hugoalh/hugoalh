@@ -15,8 +15,8 @@ defaults:
   run:
     shell: "pwsh"
 jobs:
-  publish-powershell-module-psg:
-    name: "Publish PowerShell Module - PowerShell Gallery"
+  main:
+    name: "Main"
     runs-on: "windows-latest"
     steps:
       - name: "Checkout Repository"

@@ -2,8 +2,8 @@ name: "CodeQL - Analysis (Reusable Workflow)"
 on:
   workflow_call:
 jobs:
-  codeql-analysis:
-    name: "CodeQL - Analysis"
+  main:
+    name: "Main"
     runs-on: "ubuntu-latest"
     if: "${{!(github.event_name == 'pull_request' && startsWith(github.event.pull_request.head.label, format('{0}:', github.repository_owner)))}}"
     steps:

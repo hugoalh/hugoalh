@@ -82,13 +82,6 @@ jobs:
           pull: "true"
           push: "true"
           tags: "${{steps.docker-meta.outputs.tags}}"
-  check:
-    name: "Check"
-    needs:
-      - "main"
-    if: "${{always()}}"
-    runs-on: "ubuntu-latest"
-    steps:
-      - run: |
-          docker image pull --all-tags "${{env.REGISTRY}}/${{env.IMAGE_NAME}}"
+      - name: "List Docker Image"
+        run: |
           docker image ls --all --digests --no-trunc

@@ -52,7 +52,7 @@ jobs:
           Set-GitHubActionsOutput -Name 'releases' -Value ($Releases -ireplace '\r?\n', '\n')
         shell: "pwsh"
       - name: "Send Discord Webhook"
-        uses: "hugoalh/send-discord-webhook-ghaction@v5.0.5"
+        uses: "hugoalh/send-discord-webhook-ghaction@v5.0.6"
         with:
           key: "${{secrets.DISCORD_WEBHOOK}}"
           payload: |

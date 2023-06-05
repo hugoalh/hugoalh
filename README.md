@@ -2,7 +2,7 @@
 
 ![hugoalh's Banner](https://i.imgur.com/d7CW6xWh.png)
 
-> **🕰️ Last Update:** 2023/05/12 08:00 UTC
+> **🕰️ Last Update:** 2023/06/05 09:30 UTC
 
 ![Discord (hugoalh#1167)](https://img.shields.io/badge/Discord%20%28hugoalh%231167%29-5865F2?logo=discord&logoColor=ffffff&style=flat-square "Discord (hugoalh#1167)")
 [![GitHub Discussion](https://img.shields.io/badge/GitHub%20Discussion-181717?logo=github&logoColor=ffffff&style=flat-square "GitHub Discussion")](https://github.com/hugoalh/hugoalh/discussions)
@@ -31,29 +31,28 @@
 
 > | **Legend** | **Description** |
 > |:-:|:--|
-> | ✔ | Known. |
+> |  | Known. |
 > | 📖 | Learning. |
 
 |  |  |
 |:--|:-:|
-| CSS (Cascading Style Sheets) | ✔ |
-| CSV (Comma Separated Values) | ✔ |
-| HTML (HyperText Markup Language) | ✔ |
-| JavaScript - Browsers | ✔ |
-| JavaScript - Deno | ✔ |
-| JavaScript - NodeJS | ✔ |
-| JSON (JavaScript Object Notation) | ✔ |
-| JSON5 (JavaScript Object Notation for Humans) | ✔ |
-| JSONC (JavaScript Object Notation with Comments) | ✔ |
-| MCFunction (Minecraft Function) | ✔ |
-| ModernScript | ✔ |
-| PowerShell | ✔ |
-| SVG (Scalable Vector Graphics) | ✔ |
-| TOML (Tom's Obvious, Minimal Language) | ✔ |
-| TSV (Tab Separated Values) | ✔ |
-| TypeScript - Deno | ✔ |
-| TypeScript - NodeJS | ✔ |
-| YAML / YML (YAML Ain't Markup Language) | ✔ |
+| CSS (Cascading Style Sheets) |  |
+| CSV (Comma Separated Values) |  |
+| HTML (HyperText Markup Language) |  |
+| JavaScript - Browsers |  |
+| JavaScript - Deno |  |
+| JavaScript - NodeJS |  |
+| JSON (JavaScript Object Notation) |  |
+| JSON5 (JavaScript Object Notation for Humans) |  |
+| JSONC (JavaScript Object Notation with Comments) |  |
+| ModernScript |  |
+| PowerShell |  |
+| SVG (Scalable Vector Graphics) |  |
+| TOML (Tom's Obvious, Minimal Language) |  |
+| TSV (Tab Separated Values) |  |
+| TypeScript - Deno |  |
+| TypeScript - NodeJS |  |
+| YAML / YML (YAML Ain't Markup Language) |  |
 | .NET | 📖 |
 | Bash | 📖 |
 | BASIC (Beginner's All-purpose Symbolic Instruction Code) | 📖 |
@@ -61,6 +60,7 @@
 | CSON (CoffeeScript Object Notation) | 📖 |
 | Docker | 📖 |
 | Go | 📖 |
+| MCFunction (Minecraft Function) | 📖 |
 | Perl | 📖 |
 | Python | 📖 |
 | Raku (Perl 6) | 📖 |
@@ -107,6 +107,7 @@
 | [Unique Array (NodeJS)](https://github.com/hugoalh-studio/unique-array-nodejs) |  |
 | [Bulk GitHub Configuration (NodeJS)](https://github.com/hugoalh-studio/bulk-github-configuration-nodejs) <br />*(**Previous:** GitHub Manager (NodeJS CLI))* | 🚧 |
 | [RegExp Pattern (NodeJS)](https://github.com/hugoalh-studio/regexp-pattern-nodejs) <br />*(**Previous:** REPattern (NodeJS))* | 🚧 |
+| Send IFTTT Webhook [(Deno)](https://github.com/hugoalh-studio/send-ifttt-webhook-deno) [(NodeJS)](https://github.com/hugoalh-studio/send-ifttt-webhook-nodejs) | 🚧 |
 | [GitHub Secret Manager (GitHub Action)](https://github.com/hugoalh/github-secret-manager-ghaction) | 👎 |
 | [More Method (NodeJS)](https://github.com/hugoalh-studio/more-method-nodejs) | 👎 |
 | Enchant+ (Minecraft Java Data Pack) | ❌ |

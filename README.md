@@ -95,19 +95,20 @@
 | [Pressure (NodeJS)](https://github.com/hugoalh-studio/pressure-nodejs) |  |
 | [Scan Virus (GitHub Action)](https://github.com/hugoalh/scan-virus-ghaction) |  |
 | [Send Discord Webhook (GitHub Action)](https://github.com/hugoalh/send-discord-webhook-ghaction) <br />*(**Previous:** \[GitHub Action\] Send To Discord)* |  |
+| [Send IFTTT Webhook (Deno)](https://github.com/hugoalh-studio/send-ifttt-webhook-deno) |  |
+| [Send IFTTT Webhook (GitHub Action)](https://github.com/hugoalh/send-ifttt-webhook-ghaction) <br />*(**Previous:** Trigger IFTTT Webhook Applet (GitHub Action) / \[GitHub Action\] Send To IFTTT)* |  |
+| [Send IFTTT Webhook (NodeJS)](https://github.com/hugoalh-studio/send-ifttt-webhook-nodejs) |  |
 | [Setation (NodeJS)](https://github.com/hugoalh-studio/setation-nodejs) |  |
 | [Setup PowerShell Toolkit (GitHub Action)](https://github.com/hugoalh-studio/setup-powershell-toolkit-ghaction) |  |
 | [String Dissect (NodeJS)](https://github.com/hugoalh-studio/string-dissect-nodejs) |  |
 | [String Overflow (NodeJS)](https://github.com/hugoalh-studio/string-overflow-nodejs) |  |
 | [Symmetric Crypto (NodeJS)](https://github.com/hugoalh-studio/symmetric-crypto-nodejs) |  |
 | [Temperature (NodeJS)](https://github.com/hugoalh-studio/temperature-nodejs) |  |
-| [Trigger IFTTT Webhook Applet (GitHub Action)](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction) <br />*(**Previous:** \[GitHub Action\] Send To IFTTT)* |  |
 | [Trigger Pipedream Workflow (GitHub Action)](https://github.com/hugoalh/trigger-pipedream-workflow-ghaction) <br />*(**Previous:** \[GitHub Action\] Send To Pipedream)* |  |
 | [Undefinish (NodeJS)](https://github.com/hugoalh-studio/undefinish-nodejs) |  |
 | [Unique Array (NodeJS)](https://github.com/hugoalh-studio/unique-array-nodejs) |  |
 | [Bulk GitHub Configuration (NodeJS)](https://github.com/hugoalh-studio/bulk-github-configuration-nodejs) <br />*(**Previous:** GitHub Manager (NodeJS CLI))* | 🚧 |
 | [RegExp Pattern (NodeJS)](https://github.com/hugoalh-studio/regexp-pattern-nodejs) <br />*(**Previous:** REPattern (NodeJS))* | 🚧 |
-| Send IFTTT Webhook [(Deno)](https://github.com/hugoalh-studio/send-ifttt-webhook-deno) [(NodeJS)](https://github.com/hugoalh-studio/send-ifttt-webhook-nodejs) | 🚧 |
 | [GitHub Secret Manager (GitHub Action)](https://github.com/hugoalh/github-secret-manager-ghaction) | 👎 |
 | [More Method (NodeJS)](https://github.com/hugoalh-studio/more-method-nodejs) | 👎 |
 | Enchant+ (Minecraft Java Data Pack) | ❌ |

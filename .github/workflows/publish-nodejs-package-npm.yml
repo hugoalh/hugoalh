@@ -47,7 +47,7 @@ jobs:
         run: |
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
           [PSCustomObject]$EventPayload = Get-GitHubActionsWebhookEventPayload
-          [PSCustomObject]$PackageMeta = Get-Content -LiteralPath '.\package.json' -Raw -Encoding 'UTF8NoBOM' |
+          [PSCustomObject]$PackageMeta = Get-Content -LiteralPath (Join-Path -Path $Env:GITHUB_WORKSPACE -ChildPath 'package.json') -Raw -Encoding 'UTF8NoBOM' |
             ConvertFrom-Json -Depth 100
           [SemVer]$PackageVersionCurrent = [SemVer]::Parse($PackageMeta.version)
           [Boolean]$PackageVersionIsPreRelease = $Null -ine $PackageVersionCurrent.PreReleaseLabel

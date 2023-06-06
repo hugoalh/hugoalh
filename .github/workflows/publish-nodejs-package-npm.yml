@@ -55,6 +55,7 @@ jobs:
           [Boolean]$PackageTagPre = $True
           [String[]]$PackageDevDependencies = $PackageMeta.devDependencies.PSObject.Properties.Name ?? @()
           [String]$PackageTarballName = "$($PackageMeta.name -ireplace '^@', '' -ireplace '\/', '-')-$($PackageMeta.version).tgz"
+          $ErrorActionPreference = 'Continue'
           Try {
             [PSCustomObject]$PackageRegistry = Invoke-Expression -Command "npm view `"$($PackageMeta.name)`" --json" |
               Join-String -Separator "`n" |
@@ -72,6 +73,7 @@ jobs:
           Catch {
             Write-Warning -Message "Unable to analysis package ``dist-tags``: $_"
           }
+          $ErrorActionPreference = 'Stop'
           [String[]]$PackageTags = @("pre-$($PackageVersionCurrent.Major)")
           If ($PackageTagLatest -or !$PackageVersionIsPreRelease) {
             $PackageTags += "latest-$($PackageVersionCurrent.Major)"

@@ -2,9 +2,9 @@
 
 ---
 
-# MIT授權條款
+# MIT 授權條款
 
-版權所有 © 2022 hxhS（hugoalh與hugoalh Studio）
+版權所有 © 2022 hxhS（hugoalh 與 hugoalh Studio）
 
 特此免費授予任何人獲得本軟件和相關文檔文件（「軟件」）的複本，以不受限制地處理本軟件，包括但不限於使用、複製、修改、合併、發佈、分發、從屬授權條款，和／或出售本軟件的複本，並允許向其提供本軟件的人這樣做，但須符合以下條件：
 
@@ -38,4 +38,4 @@
 
 ## 來源
 
-本授權條款採用自[Choose A License](https://choosealicense.com/)，可以在[此處](https://choosealicense.com/licenses/mit)獲得。
+本授權條款採用自 [Choose A License](https://choosealicense.com/)，可以在[此處](https://choosealicense.com/licenses/mit)獲得。

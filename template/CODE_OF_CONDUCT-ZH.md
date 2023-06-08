@@ -61,10 +61,10 @@
 
 ## 參見
 
-本行為準則改編自[Contributor Covenant](https://www.contributor-covenant.org)，2.1版，參見[https://www.contributor-covenant.org/version/2/1/code_of_conduct.html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html)。
+本行為準則改編自 [Contributor Covenant](https://www.contributor-covenant.org)，2.1 版，參見 [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html)。
 
-社區處理方針靈感來源於[Mozilla's code of conduct enforcement ladder](https://github.com/mozilla/diversity)。
+社區處理方針靈感來源於 [Mozilla's code of conduct enforcement ladder](https://github.com/mozilla/diversity)。
 
-有關本行為準則的常見問題的答案，參見[https://www.contributor-covenant.org/faq](https://www.contributor-covenant.org/faq)。其他語言翻譯參見[https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations)。
+有關本行為準則的常見問題的答案，參見 [https://www.contributor-covenant.org/faq](https://www.contributor-covenant.org/faq)。其他語言翻譯參見 [https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations)。
 
 > 本漢語版本貢獻者公約為英文版本之譯本，如果有任何抵觸或不相符之處，應以英文版本為準。

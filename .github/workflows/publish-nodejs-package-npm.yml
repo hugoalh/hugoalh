@@ -77,7 +77,7 @@ jobs:
             $PackageTags += "latest-$($PackageVersionCurrent.Major)"
           }
           [Boolean]$BuildDistribution = 'typescript' -iin $PackageDevDependencies -and !(Test-Path -LiteralPath '.\dist' -PathType 'Container') -and (Test-Path -LiteralPath '.\src' -PathType 'Container') -and (Test-Path -LiteralPath '.\tsconfig.json' -PathType 'Leaf')
-          [Boolean]$BuildAssetsTarball = $PackageTarballName -inotin (
+          [Boolean]$BuildTarball = $PackageTarballName -inotin (
             $EventPayload.release.assets |
               Select-Object -ExpandProperty 'name'
           )
@@ -91,10 +91,10 @@ jobs:
           )
           Set-GitHubActionsOutput -Name 'tarballname' -Value $PackageTarballName
           Set-GitHubActionsOutput -Name 'build_distribution' -Value $BuildDistribution.ToString().ToLower()
-          Set-GitHubActionsOutput -Name 'build_assetstarball' -Value $BuildAssetsTarball.ToString().ToLower()
+          Set-GitHubActionsOutput -Name 'build_tarball' -Value $BuildTarball.ToString().ToLower()
           Set-GitHubActionsOutput -Name 'release_assetsuploadurl' -Value ($EventPayload.release.upload_url -ireplace '\{.+?\}$', '')
       - name: "Setup PNPM"
-        if: "${{steps.get-package-meta.outputs.build_distribution == 'true' || steps.get-package-meta.outputs.build_assetstarball == 'true'}}"
+        if: "${{steps.get-package-meta.outputs.build_distribution == 'true' || steps.get-package-meta.outputs.build_tarball == 'true'}}"
         run: |
           npm --global install pnpm
       - name: "Build Distribution"
@@ -168,8 +168,8 @@ jobs:
               Write-GitHubActionsError -Message $_
             }
           }
-      - name: "Build & Upload Assets Tarball To GitHub Release"
-        if: "${{steps.get-package-meta.outputs.build_assetstarball == 'true'}}"
+      - name: "Build & Upload Tarball To GitHub Release"
+        if: "${{steps.get-package-meta.outputs.build_tarball == 'true'}}"
         run: |
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
           pnpm pack

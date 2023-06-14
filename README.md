@@ -2,12 +2,12 @@
 
 ![hugoalh's Banner](https://i.imgur.com/d7CW6xWh.png)
 
-> **🕰️ Last Update:** 2023/06/12 08:55 UTC
+> **🕰️ Last Update:** 2023/06/14 02:30 UTC
 
-![Discord (hugoalh#1167)](https://img.shields.io/badge/Discord%20%28hugoalh%231167%29-5865F2?logo=discord&logoColor=ffffff&style=flat-square "Discord (hugoalh#1167)")
+![Discord (@hugoalh)](https://img.shields.io/badge/Discord%20%28@hugoalh%29-5865F2?logo=discord&logoColor=ffffff&style=flat-square "Discord (@hugoalh)")
 [![GitHub Discussion](https://img.shields.io/badge/GitHub%20Discussion-181717?logo=github&logoColor=ffffff&style=flat-square "GitHub Discussion")](https://github.com/hugoalh/hugoalh/discussions)
 [![GitHub Gist](https://img.shields.io/badge/GitHub%20Gist-181717?logo=github&logoColor=ffffff&style=flat-square "GitHub Gist")](https://gist.github.com/hugoalh)
-[![Tumblr](https://img.shields.io/badge/Tumblr-36465D?logo=tumblr&logoColor=ffffff&style=flat-square "Tumblr")](https://hugoalh.tumblr.com)
+[![Tumblr (@hugoalh)](https://img.shields.io/badge/Tumblr%20%28@hugoalh%29-36465D?logo=tumblr&logoColor=ffffff&style=flat-square "Tumblr (@hugoalh)")](https://hugoalh.tumblr.com)
 [![Twitter (@hugoalhofficial)](https://img.shields.io/badge/Twitter%20%28@hugoalhofficial%29-1DA1F2?logo=twitter&logoColor=ffffff&style=flat-square "Twitter (@hugoalhofficial)")](https://twitter.com/hugoalhofficial)
 
 <details>
@@ -109,13 +109,13 @@
 | [RegExp Pattern (NodeJS)](https://github.com/hugoalh-studio/regexp-pattern-nodejs) <br />*(**Previous:** REPattern (NodeJS))* | 🚧 |
 | [GitHub Secret Manager (GitHub Action)](https://github.com/hugoalh/github-secret-manager-ghaction) | 👎 |
 | Enchant+ (Minecraft Java Data Pack) | ❌ |
-| [Environment Paths (NodeJS)](https://github.com/hugoalh-studio/environment-paths-nodejs) | ❌<br />*Remove at 2023/07/01 00:00 UTC* |
+| [Environment Paths (NodeJS)](https://github.com/hugoalh-studio/environment-paths-nodejs) | ❌<br />*Delete at 2023/07/01 00:00 UTC* |
 | More Method (NodeJS) | ❌ |
 | Recipe+ (Minecraft Java Data Pack) | ❌ |
-| [Regular Expression Constructor (NodeJS)](https://github.com/hugoalh-studio/regular-expression-constructor-nodejs) | ❌<br />*Remove at 2023/07/01 00:00 UTC* |
+| [Regular Expression Constructor (NodeJS)](https://github.com/hugoalh-studio/regular-expression-constructor-nodejs) | ❌<br />*Delete at 2023/07/01 00:00 UTC* |
 | Tag+ (Minecraft Java Data Pack) | ❌ |
-| [Trigger Pipedream Workflow (GitHub Action)](https://github.com/hugoalh/trigger-pipedream-workflow-ghaction) <br />*(**Previous:** \[GitHub Action\] Send To Pipedream)* | ❌<br />*Remove at 2024/01/01 00:00 UTC* |
-| [Undefinish (NodeJS)](https://github.com/hugoalh-studio/undefinish-nodejs) | ❌<br />*Remove at 2024/01/01 00:00 UTC* |
+| [Trigger Pipedream Workflow (GitHub Action)](https://github.com/hugoalh/trigger-pipedream-workflow-ghaction) <br />*(**Previous:** \[GitHub Action\] Send To Pipedream)* | ❌<br />*Delete at 2024/01/01 00:00 UTC* |
+| [Undefinish (NodeJS)](https://github.com/hugoalh-studio/undefinish-nodejs) | ❌<br />*Delete at 2024/01/01 00:00 UTC* |
 
 </details>
 

@@ -31,41 +31,41 @@
 
 > | **Legend** | **Description** |
 > |:-:|:--|
-> |  | Known. |
+> | ✔ | Known. |
 > | 📖 | Learning. |
 
 |  |  |
-|:--|:-:|
-| CSS (Cascading Style Sheets) |  |
-| CSV (Comma Separated Values) |  |
-| HTML (HyperText Markup Language) |  |
-| JavaScript - Browsers |  |
-| JavaScript - Deno |  |
-| JavaScript - NodeJS |  |
-| JSON (JavaScript Object Notation) |  |
-| JSON5 (JavaScript Object Notation for Humans) |  |
-| JSONC (JavaScript Object Notation with Comments) |  |
-| ModernScript |  |
-| PowerShell |  |
-| SVG (Scalable Vector Graphics) |  |
-| TOML (Tom's Obvious, Minimal Language) |  |
-| TSV (Tab Separated Values) |  |
-| TypeScript - Deno |  |
-| TypeScript - NodeJS |  |
-| YAML / YML (YAML Ain't Markup Language) |  |
-| .NET | 📖 |
-| Bash | 📖 |
-| BASIC (Beginner's All-purpose Symbolic Instruction Code) | 📖 |
-| C# | 📖 |
-| CSON (CoffeeScript Object Notation) | 📖 |
-| Docker | 📖 |
-| Go | 📖 |
-| MCFunction (Minecraft Function) | 📖 |
-| Perl | 📖 |
-| Python | 📖 |
-| Raku (Perl 6) | 📖 |
-| V | 📖 |
-| YARA (Yet Another Ridiculous Acronym) | 📖 |
+|:-:|:--|
+| ✔ | CSS (Cascading Style Sheets) |
+| ✔ | CSV (Comma Separated Values) |
+| ✔ | HTML (HyperText Markup Language) |
+| ✔ | JavaScript - Browsers |
+| ✔ | JavaScript - Deno |
+| ✔ | JavaScript - NodeJS |
+| ✔ | JSON (JavaScript Object Notation) |
+| ✔ | JSON5 (JavaScript Object Notation for Humans) |
+| ✔ | JSONC (JavaScript Object Notation with Comments) |
+| ✔ | ModernScript |
+| ✔ | PowerShell |
+| ✔ | SVG (Scalable Vector Graphics) |
+| ✔ | TOML (Tom's Obvious, Minimal Language) |
+| ✔ | TSV (Tab Separated Values) |
+| ✔ | TypeScript - Deno |
+| ✔ | TypeScript - NodeJS |
+| ✔ | YAML / YML (YAML Ain't Markup Language) |
+| 📖 | .NET |
+| 📖 | Bash |
+| 📖 | BASIC (Beginner's All-purpose Symbolic Instruction Code) |
+| 📖 | C# |
+| 📖 | CSON (CoffeeScript Object Notation) |
+| 📖 | Docker |
+| 📖 | Go |
+| 📖 | MCFunction (Minecraft Function) |
+| 📖 | Perl |
+| 📖 | Python |
+| 📖 | Raku (Perl 6) |
+| 📖 | V |
+| 📖 | YARA (Yet Another Ridiculous Acronym) |
 
 </details>
 <details open>
@@ -73,7 +73,7 @@
 
 > | **Legend** | **Description** |
 > |:-:|:--|
-> |  | **Active / Current:** Currently active. |
+> | ✔ | **Active / Current:** Currently active. |
 > | 🗄 | **Archive:** Currently discontinue but not planned to deprecate and/or remove, maybe back in the future. |
 > | 🧪 | **Experimental:** In testing, maybe available in the future. |
 > | 🚧 | **Constructing:** In constructing, maybe available in the future. |
@@ -81,43 +81,43 @@
 > | ❌ | **Removed:** Officially removed. |
 
 |  |  |
-|:--|:-:|
-| [Advanced Determine (NodeJS)](https://github.com/hugoalh-studio/advanced-determine-nodejs) |  |
-| [Advanced Random (NodeJS)](https://github.com/hugoalh-studio/advanced-random-nodejs) |  |
-| [Argv (NodeJS)](https://github.com/hugoalh-studio/argv-nodejs) |  |
-| [Concatenate (NodeJS)](https://github.com/hugoalh-studio/concatenate-nodejs) |  |
-| [Disable Advancement (Minecraft Java Data Pack)](https://github.com/hugoalh/disable-advancement-mcjdp) <br />*(**Previous:** \[Minecraft Java Data Pack\] Disable Minecraft Advancement)* |  |
-| [GitHub Actions Toolkit (PowerShell)](https://github.com/hugoalh-studio/ghactions-toolkit-powershell) |  |
-| [GitHub Sodium (NodeJS)](https://github.com/hugoalh-studio/github-sodium-nodejs) |  |
-| [No Enderman Griefing (Minecraft Java Data Pack)](https://github.com/hugoalh/no-enderman-griefing-mcjdp) |  |
-| [No Item Despawn (Minecraft Java Data Pack)](https://github.com/hugoalh/no-item-despawn-mcjdp) |  |
-| [No Mob Despawn (Minecraft Java Data Pack)](https://github.com/hugoalh/no-mob-despawn-mcjdp) |  |
-| [Pressure (NodeJS)](https://github.com/hugoalh-studio/pressure-nodejs) |  |
-| [Scan Virus (GitHub Action)](https://github.com/hugoalh/scan-virus-ghaction) |  |
-| [Send Discord Webhook (GitHub Action)](https://github.com/hugoalh/send-discord-webhook-ghaction) <br />*(**Previous:** \[GitHub Action\] Send To Discord)* |  |
-| [Send IFTTT Webhook (Deno)](https://github.com/hugoalh-studio/send-ifttt-webhook-deno) |  |
-| [Send IFTTT Webhook (GitHub Action)](https://github.com/hugoalh/send-ifttt-webhook-ghaction) <br />*(**Previous:** Trigger IFTTT Webhook Applet (GitHub Action) / \[GitHub Action\] Send To IFTTT)* |  |
-| [Send IFTTT Webhook (NodeJS)](https://github.com/hugoalh-studio/send-ifttt-webhook-nodejs) |  |
-| [Setation (NodeJS)](https://github.com/hugoalh-studio/setation-nodejs) |  |
-| [Setup PowerShell Toolkit (GitHub Action)](https://github.com/hugoalh-studio/setup-powershell-toolkit-ghaction) |  |
-| [Shuffle Array (Deno)](https://github.com/hugoalh-studio/shuffle-array-deno) |  |
-| [Shuffle Array (NodeJS)](https://github.com/hugoalh-studio/shuffle-array-nodejs) |  |
-| [String Dissect (NodeJS)](https://github.com/hugoalh-studio/string-dissect-nodejs) |  |
-| [String Overflow (NodeJS)](https://github.com/hugoalh-studio/string-overflow-nodejs) |  |
-| [Symmetric Crypto (NodeJS)](https://github.com/hugoalh-studio/symmetric-crypto-nodejs) |  |
-| [Temperature (NodeJS)](https://github.com/hugoalh-studio/temperature-nodejs) |  |
-| [Unique Array (NodeJS)](https://github.com/hugoalh-studio/unique-array-nodejs) |  |
-| [Bulk GitHub Configuration (NodeJS)](https://github.com/hugoalh-studio/bulk-github-configuration-nodejs) <br />*(**Previous:** GitHub Manager (NodeJS CLI))* | 🚧 |
-| [RegExp Pattern (NodeJS)](https://github.com/hugoalh-studio/regexp-pattern-nodejs) <br />*(**Previous:** REPattern (NodeJS))* | 🚧 |
-| [GitHub Secret Manager (GitHub Action)](https://github.com/hugoalh/github-secret-manager-ghaction) | 👎 |
-| Enchant+ (Minecraft Java Data Pack) | ❌ |
-| [Environment Paths (NodeJS)](https://github.com/hugoalh-studio/environment-paths-nodejs) | ❌<br />*Delete at 2023/07/01 00:00 UTC* |
-| More Method (NodeJS) | ❌ |
-| Recipe+ (Minecraft Java Data Pack) | ❌ |
-| [Regular Expression Constructor (NodeJS)](https://github.com/hugoalh-studio/regular-expression-constructor-nodejs) | ❌<br />*Delete at 2023/07/01 00:00 UTC* |
-| Tag+ (Minecraft Java Data Pack) | ❌ |
-| [Trigger Pipedream Workflow (GitHub Action)](https://github.com/hugoalh/trigger-pipedream-workflow-ghaction) <br />*(**Previous:** \[GitHub Action\] Send To Pipedream)* | ❌<br />*Delete at 2024/01/01 00:00 UTC* |
-| [Undefinish (NodeJS)](https://github.com/hugoalh-studio/undefinish-nodejs) | ❌<br />*Delete at 2024/01/01 00:00 UTC* |
+|:--|:--|
+| ✔ | [Advanced Determine (NodeJS)](https://github.com/hugoalh-studio/advanced-determine-nodejs) |
+| ✔ | [Advanced Random (NodeJS)](https://github.com/hugoalh-studio/advanced-random-nodejs) |
+| ✔ | [Argv (NodeJS)](https://github.com/hugoalh-studio/argv-nodejs) |
+| ✔ | [Concatenate (NodeJS)](https://github.com/hugoalh-studio/concatenate-nodejs) |
+| ✔ | [Disable Advancement (Minecraft Java Data Pack)](https://github.com/hugoalh/disable-advancement-mcjdp) <br />*(**Previous:** \[Minecraft Java Data Pack\] Disable Minecraft Advancement)* |
+| ✔ | [GitHub Actions Toolkit (PowerShell)](https://github.com/hugoalh-studio/ghactions-toolkit-powershell) |
+| ✔ | [GitHub Sodium (NodeJS)](https://github.com/hugoalh-studio/github-sodium-nodejs) |
+| ✔ | [No Enderman Griefing (Minecraft Java Data Pack)](https://github.com/hugoalh/no-enderman-griefing-mcjdp) |
+| ✔ | [No Item Despawn (Minecraft Java Data Pack)](https://github.com/hugoalh/no-item-despawn-mcjdp) |
+| ✔ | [No Mob Despawn (Minecraft Java Data Pack)](https://github.com/hugoalh/no-mob-despawn-mcjdp) |
+| ✔ | [Pressure (NodeJS)](https://github.com/hugoalh-studio/pressure-nodejs) |
+| ✔ | [Scan Virus (GitHub Action)](https://github.com/hugoalh/scan-virus-ghaction) |
+| ✔ | [Send Discord Webhook (GitHub Action)](https://github.com/hugoalh/send-discord-webhook-ghaction) <br />*(**Previous:** \[GitHub Action\] Send To Discord)* |
+| ✔ | [Send IFTTT Webhook (Deno)](https://github.com/hugoalh-studio/send-ifttt-webhook-deno) |
+| ✔ | [Send IFTTT Webhook (GitHub Action)](https://github.com/hugoalh/send-ifttt-webhook-ghaction) <br />*(**Previous:** Trigger IFTTT Webhook Applet (GitHub Action) / \[GitHub Action\] Send To IFTTT)* |
+| ✔ | [Send IFTTT Webhook (NodeJS)](https://github.com/hugoalh-studio/send-ifttt-webhook-nodejs) |
+| ✔ | [Setation (NodeJS)](https://github.com/hugoalh-studio/setation-nodejs) |
+| ✔ | [Setup PowerShell Toolkit (GitHub Action)](https://github.com/hugoalh-studio/setup-powershell-toolkit-ghaction) |
+| ✔ | [Shuffle Array (Deno)](https://github.com/hugoalh-studio/shuffle-array-deno) |
+| ✔ | [Shuffle Array (NodeJS)](https://github.com/hugoalh-studio/shuffle-array-nodejs) |
+| ✔ | [String Dissect (NodeJS)](https://github.com/hugoalh-studio/string-dissect-nodejs) |
+| ✔ | [String Overflow (NodeJS)](https://github.com/hugoalh-studio/string-overflow-nodejs) |
+| ✔ | [Symmetric Crypto (NodeJS)](https://github.com/hugoalh-studio/symmetric-crypto-nodejs) |
+| ✔ | [Temperature (NodeJS)](https://github.com/hugoalh-studio/temperature-nodejs) |
+| ✔ | [Unique Array (NodeJS)](https://github.com/hugoalh-studio/unique-array-nodejs) |
+| 🚧 | [Bulk GitHub Configuration (NodeJS)](https://github.com/hugoalh-studio/bulk-github-configuration-nodejs) <br />*(**Previous:** GitHub Manager (NodeJS CLI))* |
+| 🚧 | [RegExp Pattern (NodeJS)](https://github.com/hugoalh-studio/regexp-pattern-nodejs) <br />*(**Previous:** REPattern (NodeJS))* |
+| 👎 | [GitHub Secret Manager (GitHub Action)](https://github.com/hugoalh/github-secret-manager-ghaction) |
+| ❌ | Enchant+ (Minecraft Java Data Pack) |
+| ❌ | [Environment Paths (NodeJS)](https://github.com/hugoalh-studio/environment-paths-nodejs) <br />*Delete at 2023/07/01 00:00 UTC* |
+| ❌ | More Method (NodeJS) |
+| ❌ | Recipe+ (Minecraft Java Data Pack) |
+| ❌ | [Regular Expression Constructor (NodeJS)](https://github.com/hugoalh-studio/regular-expression-constructor-nodejs) <br />*Delete at 2023/07/01 00:00 UTC* |
+| ❌ | Tag+ (Minecraft Java Data Pack) |
+| ❌ | [Trigger Pipedream Workflow (GitHub Action)](https://github.com/hugoalh/trigger-pipedream-workflow-ghaction) <br />*(**Previous:** \[GitHub Action\] Send To Pipedream)* <br />*Delete at 2024/01/01 00:00 UTC* |
+| ❌ | [Undefinish (NodeJS)](https://github.com/hugoalh-studio/undefinish-nodejs) <br />*Delete at 2024/01/01 00:00 UTC* |
 
 </details>
 
@@ -126,14 +126,14 @@
 
 > | **Legend** | **Description** |
 > |:-:|:--|
-> |  | **Active / Current:** Currently active. |
+> | ✔ | **Active / Current:** Currently active. |
 > | ⏮️ | **Previous:** Currently inactive. |
 
 |  |  |
-|:--|:-:|
-| [Auto Dark Mode](https://github.com/AutoDarkMode/Windows-Auto-Night-Mode) |  |
-| [MCA Selector](https://github.com/Querz/mcaselector) | ⏮️ |
-| [MrCrayfish Controllable](https://github.com/MrCrayfish/Controllable) | ⏮️ |
-| [MrCrayfish Furniture Mod](https://github.com/MrCrayfish/MrCrayfishFurnitureMod) | ⏮️ |
-| [MrCrayfish Gun Mod](https://github.com/MrCrayfish/MrCrayfishGunMod) | ⏮️ |
-| [MrCrayfish Vehicle Mod](https://github.com/MrCrayfish/MrCrayfishVehicleMod) | ⏮️ |
+|:-:|:--|
+| ⏮️ | [Auto Dark Mode](https://github.com/AutoDarkMode/Windows-Auto-Night-Mode) |
+| ⏮️ | [MCA Selector](https://github.com/Querz/mcaselector) |
+| ⏮️ | [MrCrayfish Controllable](https://github.com/MrCrayfish/Controllable) |
+| ⏮️ | [MrCrayfish Furniture Mod](https://github.com/MrCrayfish/MrCrayfishFurnitureMod) |
+| ⏮️ | [MrCrayfish Gun Mod](https://github.com/MrCrayfish/MrCrayfishGunMod) |
+| ⏮️ | [MrCrayfish Vehicle Mod](https://github.com/MrCrayfish/MrCrayfishVehicleMod) |

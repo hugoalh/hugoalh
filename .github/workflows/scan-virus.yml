@@ -70,13 +70,13 @@ jobs:
         with:
           fetch-depth: 0
       - name: "Scan Repository"
-        uses: "hugoalh/scan-virus-ghaction/clamav@v0.15.1"
+        uses: "hugoalh/scan-virus-ghaction/clamav@v0.16.0"
         with:
           git_integrate: "${{inputs.git_integrate || github.event.inputs.git_integrate || 'False'}}"
           git_ignores: "${{inputs.git_ignores}}"
           git_limit: "${{inputs.git_limit || github.event.inputs.git_limit || '0'}}"
           git_reverse: "${{inputs.git_reverse || github.event.inputs.git_reverse || 'False'}}"
           ignores: "${{inputs.ignores}}"
-          log_elements: "OnlyCurrent"
+          log_elements: "None"
           summary_found: "Clone"
           summary_statistics: "Clone"

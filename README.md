@@ -36,45 +36,42 @@
 
 </details>
 <details>
-<summary><h2>💻 Markups & Programming Languages</h2></summary>
+<summary><h2>💻 Markups, Programming Languages & Softwares</h2></summary>
 
 > | **Legend** | **Description** |
 > |:-:|:--|
 > | ✔ | Known. |
 > | 📖 | Learning. |
 
-|  |  |
-|:-:|:--|
-| ✔ | CSS (Cascading Style Sheets) |
-| ✔ | CSV (Comma Separated Values) |
-| ✔ | HTML (HyperText Markup Language) |
-| ✔ | JavaScript - Browsers |
-| ✔ | JavaScript - Deno |
-| ✔ | JavaScript - NodeJS |
-| ✔ | JSON (JavaScript Object Notation) |
-| ✔ | JSON5 (JavaScript Object Notation for Humans) |
-| ✔ | JSONC (JavaScript Object Notation with Comments) |
-| ✔ | ModernScript |
-| ✔ | PowerShell |
-| ✔ | SVG (Scalable Vector Graphics) |
-| ✔ | TOML (Tom's Obvious, Minimal Language) |
-| ✔ | TSV (Tab Separated Values) |
-| ✔ | TypeScript - Deno |
-| ✔ | TypeScript - NodeJS |
-| ✔ | YAML / YML (YAML Ain't Markup Language) |
-| 📖 | .NET |
-| 📖 | Bash |
-| 📖 | BASIC (Beginner's All-purpose Symbolic Instruction Code) |
-| 📖 | C# |
-| 📖 | CSON (CoffeeScript Object Notation) |
-| 📖 | Docker |
-| 📖 | Go |
-| 📖 | MCFunction (Minecraft Function) |
-| 📖 | Perl |
-| 📖 | Python |
-| 📖 | Raku (Perl 6) |
-| 📖 | V |
-| 📖 | YARA (Yet Another Ridiculous Acronym) |
+|  |  |  |
+|:-:|:--|:--|
+| ✔ | CSS | Cascading Style Sheets |
+| ✔ | CSV | Comma Separated Values |
+| ✔ | Docker |  |
+| ✔ | HTML | HyperText Markup Language |
+| ✔ | JavaScript - Browsers |  |
+| ✔ | JavaScript - Deno |  |
+| ✔ | JavaScript - NodeJS |  |
+| ✔ | JSON | JavaScript Object Notation |
+| ✔ | JSON5 | JavaScript Object Notation for Humans |
+| ✔ | JSONC | JavaScript Object Notation with Comments |
+| ✔ | ModernScript |  |
+| ✔ | PowerShell |  |
+| ✔ | SVG | Scalable Vector Graphics |
+| ✔ | TOML | Tom's Obvious, Minimal Language |
+| ✔ | TSV | Tab Separated Values |
+| ✔ | TypeScript - Deno |  |
+| ✔ | TypeScript - NodeJS |  |
+| ✔ | YAML / YML | YAML Ain't Markup Language |
+| 📖 | .NET - C# |  |
+| 📖 | Bash |  |
+| 📖 | CSON | CoffeeScript Object Notation |
+| 📖 | Go |  |
+| 📖 | MCFunction | Minecraft Function |
+| 📖 | Python |  |
+| 📖 | Rust |  |
+| 📖 | V |  |
+| 📖 | YARA | Yet Another Ridiculous Acronym |
 
 </details>
 <details open>

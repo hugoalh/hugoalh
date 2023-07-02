@@ -1,8 +1,10 @@
-# [hugoalh](https://github.com/hugoalh)
+<h1 align="center">
+<a href="https://github.com/hugoalh">
+<img alt="hugoalh" src="https://i.imgur.com/d7CW6xWl.png" />
+</a>
+</h1>
 
-![hugoalh's Banner](https://i.imgur.com/d7CW6xWh.png)
-
-> **🕰️ Last Update:** 2023/06/18 09:30 UTC
+> **🕰️ Last Update:** 2023/07/02 03:30 UTC
 
 ![Discord (@hugoalh)](https://img.shields.io/badge/Discord%20%28@hugoalh%29-5865F2?logo=discord&logoColor=ffffff&style=flat-square "Discord (@hugoalh)")
 [![GitHub Discussion](https://img.shields.io/badge/GitHub%20Discussion-181717?logo=github&logoColor=ffffff&style=flat-square "GitHub Discussion")](https://github.com/hugoalh/hugoalh/discussions)
@@ -120,10 +122,10 @@
 | 🚧 | [RegExp Pattern (NodeJS)](https://github.com/hugoalh-studio/regexp-pattern-nodejs) <br />*(**Previous:** REPattern (NodeJS))* |
 | 👎 | [GitHub Secret Manager (GitHub Action)](https://github.com/hugoalh/github-secret-manager-ghaction) |
 | ❌ | Enchant+ (Minecraft Java Data Pack) |
-| ❌ | [Environment Paths (NodeJS)](https://github.com/hugoalh-studio/environment-paths-nodejs) <br />*Delete at 2023/07/01 00:00 UTC* |
+| ❌ | Environment Paths (NodeJS) |
 | ❌ | More Method (NodeJS) |
 | ❌ | Recipe+ (Minecraft Java Data Pack) |
-| ❌ | [Regular Expression Constructor (NodeJS)](https://github.com/hugoalh-studio/regular-expression-constructor-nodejs) <br />*Delete at 2023/07/01 00:00 UTC* |
+| ❌ | Regular Expression Constructor (NodeJS) |
 | ❌ | Tag+ (Minecraft Java Data Pack) |
 | ❌ | [Trigger Pipedream Workflow (GitHub Action)](https://github.com/hugoalh/trigger-pipedream-workflow-ghaction) <br />*(**Previous:** \[GitHub Action\] Send To Pipedream)* <br />*Delete at 2024/01/01 00:00 UTC* |
 | ❌ | [Undefinish (NodeJS)](https://github.com/hugoalh-studio/undefinish-nodejs) <br />*Delete at 2024/01/01 00:00 UTC* |

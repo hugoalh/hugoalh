@@ -4,7 +4,7 @@
 </a>
 </h1>
 
-> **🕰️ Last Update:** 2023/07/02 03:30 UTC
+> **🕰️ Last Update:** 2023/07/02 05:00 UTC
 
 ![Discord (@hugoalh)](https://img.shields.io/badge/Discord%20%28@hugoalh%29-5865F2?logo=discord&logoColor=ffffff&style=flat-square "Discord (@hugoalh)")
 [![GitHub Discussion](https://img.shields.io/badge/GitHub%20Discussion-181717?logo=github&logoColor=ffffff&style=flat-square "GitHub Discussion")](https://github.com/hugoalh/hugoalh/discussions)
@@ -93,7 +93,8 @@
 | ✔ | [Argv (NodeJS)](https://github.com/hugoalh-studio/argv-nodejs) |
 | ✔ | [Concatenate (NodeJS)](https://github.com/hugoalh-studio/concatenate-nodejs) |
 | ✔ | [Disable Advancement (Minecraft Java Data Pack)](https://github.com/hugoalh/disable-advancement-mcjdp) <br />*(**Previous:** \[Minecraft Java Data Pack\] Disable Minecraft Advancement)* |
-| ✔ | [Equal (NodeJS)](https://github.com/hugoalh-studio/equal-nodejs) 🆕 |
+| ✔ | [Disk Space Optimizer (GitHub Action)](https://github.com/hugoalh/disk-space-optimizer-ghaction) 🆕 |
+| ✔ | [Equal (NodeJS)](https://github.com/hugoalh-studio/equal-nodejs) |
 | ✔ | [GitHub Actions Toolkit (PowerShell)](https://github.com/hugoalh-studio/ghactions-toolkit-powershell) |
 | ✔ | [GitHub Sodium (NodeJS)](https://github.com/hugoalh-studio/github-sodium-nodejs) |
 | ✔ | [No Enderman Griefing (Minecraft Java Data Pack)](https://github.com/hugoalh/no-enderman-griefing-mcjdp) |
@@ -107,13 +108,13 @@
 | ✔ | [Send IFTTT Webhook (NodeJS)](https://github.com/hugoalh-studio/send-ifttt-webhook-nodejs) |
 | ✔ | [Setation (NodeJS)](https://github.com/hugoalh-studio/setation-nodejs) |
 | ✔ | [Setup PowerShell Toolkit (GitHub Action)](https://github.com/hugoalh-studio/setup-powershell-toolkit-ghaction) |
-| ✔ | [Shuffle Array (Deno)](https://github.com/hugoalh-studio/shuffle-array-deno) 🆕 |
-| ✔ | [Shuffle Array (NodeJS)](https://github.com/hugoalh-studio/shuffle-array-nodejs) 🆕 |
+| ✔ | [Shuffle Array (Deno)](https://github.com/hugoalh-studio/shuffle-array-deno) |
+| ✔ | [Shuffle Array (NodeJS)](https://github.com/hugoalh-studio/shuffle-array-nodejs) |
 | ✔ | [String Dissect (NodeJS)](https://github.com/hugoalh-studio/string-dissect-nodejs) |
 | ✔ | [String Overflow (NodeJS)](https://github.com/hugoalh-studio/string-overflow-nodejs) |
 | ✔ | [Symmetric Crypto (NodeJS)](https://github.com/hugoalh-studio/symmetric-crypto-nodejs) |
 | ✔ | [Temperature (NodeJS)](https://github.com/hugoalh-studio/temperature-nodejs) |
-| ✔ | [Unique Array (Deno)](https://github.com/hugoalh-studio/unique-array-deno) 🆕 |
+| ✔ | [Unique Array (Deno)](https://github.com/hugoalh-studio/unique-array-deno) |
 | ✔ | [Unique Array (NodeJS)](https://github.com/hugoalh-studio/unique-array-nodejs) |
 | 🚧 | [Bulk GitHub Configuration (NodeJS)](https://github.com/hugoalh-studio/bulk-github-configuration-nodejs) <br />*(**Previous:** GitHub Manager (NodeJS CLI))* |
 | 🚧 | [RegExp Pattern (NodeJS)](https://github.com/hugoalh-studio/regexp-pattern-nodejs) <br />*(**Previous:** REPattern (NodeJS))* |

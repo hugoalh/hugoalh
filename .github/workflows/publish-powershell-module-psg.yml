@@ -24,7 +24,7 @@ jobs:
       - name: "Setup PowerShell Environment"
         uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v1.3.0"
         with:
-          toolkit_setup: "false"
+          toolkit_setup: "False"
       - name: "Test Publish"
         run: |
           Publish-Module -Path '${{inputs.path}}' -NugetAPIKey 'GUID' -WhatIf -Verbose

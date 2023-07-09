@@ -43,8 +43,7 @@ jobs:
       - name: "Setup PowerShell Toolkit"
         uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v1.3.0"
         with:
-          toolkit_version: "1.6.0-beta4"
-          toolkit_allowprerelease: "True"
+          toolkit_version: "1.6.0"
       - name: "Get Package Meta"
         id: "get-package-meta"
         run: |

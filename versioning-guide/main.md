@@ -5,17 +5,13 @@
 
 # hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Versioning Guide
 
-> **🕰️ Last Update:** 2023/02/13 03:00 UTC
-
-> **🚧 Constructing:** This document is in constructing, contents maybe change rapidly.
+> **🕰️ Last Update:** 2023/07/09 02:45 UTC
 
 This Versioning Guide applies to all of the hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) projects and repositories.
 
----
-
 ## Classification
 
-Most of the projects and repositories must use [Semantic Versioning (SemVer) 2.0.0][semver-2-0-0] for versioning unless otherwise specified.
+Most of the projects and repositories use [Semantic Versioning (SemVer) 2.0.0][semver-2-0-0] for versioning unless otherwise specified.
 
 | **Type** | **Package Manager / Registry** | **Schema** |
 |:-:|:-:|:-:|

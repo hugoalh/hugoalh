@@ -3,29 +3,34 @@
 
 # hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Coding Guide
 
-> **🕰️ Last Update:** 2023/01/14 09:00 UTC
+> **🕰️ Last Update:** 2023/07/09 02:45 UTC
 
 > **🚧 Constructing:** This document is in constructing, contents maybe change rapidly.
 
-This Coding Guide applies to all of the hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) projects and repositories, and applies to all of the markups and programming languages; Some of the markups and programming languages have additional coding guide.
+This Coding Guide applies to all of the hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) projects and repositories, and for all of the markups and programming languages.
+
+Some of the markups and/or programming languages have additional coding guide:
 
 - [JavaScript 🚧](./javascript.md)
+- [TypeScript 🚧](./typescript.md)
 - [PowerShell 🚧](./powershell.md)
 - [YAML/YML 🚧](./yaml.md)
 
----
+> **ℹ️ Notice:** All of the examples in this Coding Guide are based on JavaScript, similar style should apply on other programming languages.
 
 ## General
 
 ### Forbidden targets
 
-These targets are forbidden in any projects and repositories.
+These targets are forbidden in all of the projects and repositories.
 
+> **ℹ️ Notice:**
+>
 > - Listed without any target's versions means all of the versions
-> - Targets which in beta or deprecated status should also forbidden
+> - Targets which in beta or deprecated status are always forbidden
 
-- Firefox
-- GitHub Actions / GitHub Actions Runner
+- Mozilla Firefox
+- GitHub Actions Runner
   - v1.X.X
 - Go
   - < v1.13.0
@@ -45,42 +50,38 @@ These targets are forbidden in any projects and repositories.
 - Opera
 - PowerShell
   - v7.0.X
-  - v6.X.X *(PowerShell Core)*
-  - < v5.0.0 *(Windows PowerShell)*
+  - v6.X.X (PowerShell Core)
+  - < v5.0.0 (Windows PowerShell)
 - Python
   - v3.10.6
   - v3.10.5
   - v2.X.X
   - v1.X.X
-- Safari
+- Safari (Web Browser)
 
-### Indents with tab (`\t`) whenever possible
+### Indent with tab whenever possible
 
-> **⚠ Important:** All of the markups and programming languages must follow this indentation rule, any invalid indentation are not acceptable!
+> **⚠️ Important:** All of the markups and programming languages must follow this indentation rule, any invalid indentation are not acceptable!
 
-Always use tab (`\t`) for indentations on most of the markups and programming languages, including but not limited to:
+Always use tab for indentation on most of the markups and programming languages, including but not limited to:
 
-- CSS (Cascading Style Sheets),
-- HTML (HyperText Markup Language),
-- JavaScript,
-- JSON (JavaScript Object Notation),
-- PowerShell,
-- TypeScript, and
-- XML.
+- CSS (Cascading Style Sheets)
+- HTML (HyperText Markup Language)
+- JavaScript
+- JSON (JavaScript Object Notation)
+- PowerShell
+- TypeScript
+- XML
 
-However, some of the markups and programming languages are only support to use space (`\s`) for indentations, these are as exceptions, including but not limited to:
+However, some of the markups and/or programming languages are only support to use space for indentation, these are as exception, including but not limited to:
 
-- Markdown,
-- Python, and
-- YAML/YML (YAML Ain't Markup Language).
+- Markdown
+- Python
+- YAML/YML (YAML Ain't Markup Language)
 
-Codes in Markdown code blocks are also as exceptions, always use space (`\s`) for indentations in order to prevent weird display on the Markdown view mode.
+Codes in Markdown code blocks are also as exceptions, always use space for indentation in order to prevent weird display on the view mode.
 
-### Keep `OR` conditions in multiple lines; Keep other conditions in single line
-
-> **📋 Note:** All of the examples in here are based on JavaScript, similar style should apply on other programming languages.
-
-Always keep `AND` conditions in single line.
+### Keep AND conditions in single line
 
 <table>
 <tbody valign="top">
@@ -115,7 +116,7 @@ if (
 </tbody>
 </table>
 
-Always keep `OR` conditions in multiple lines.
+### Keep OR conditions in multiple lines
 
 <table>
 <tbody valign="top">
@@ -150,7 +151,7 @@ if (a || b || c) {
 </tbody>
 </table>
 
-Mixed `AND` and `OR` conditions also keep the same style.
+### Keep mixed AND and OR conditions in the same way
 
 ```js
 /*
@@ -171,7 +172,7 @@ if (
 }
 ```
 
-Always keep nullish coalescing in single line.
+### Keep nullish coalescing in single line
 
 ```js
 let foo = a ?? b ?? c;
@@ -180,13 +181,13 @@ bar ??= d ?? e ?? f;
 
 ### No hard word wrap
 
-Use of hard word wrap can cause accessibility issues, difficult to edit, and looks like "texts-quake" ("texts earthquake") on the small screen.
+Use of hard word wrap can cause accessibility issues, difficult to edit, and looks like "texts-quake" ("texts earthquake") on the small screen:
 
 [![Example of "texts-quake" when use of hard word wrap.](https://martin-ueding.de/posts/hard-vs-soft-line-wrap/vim-hard-narrow.png "Example of \"texts-quake\" when use of hard word wrap.")](https://martin-ueding.de/posts/hard-vs-soft-line-wrap)
 
 However, few of the markups are only support to have maximum 256 characters per line, these are as exceptions, including but not limited to:
 
-- Properties (`.conf`).
+- Properties (`.conf`)
 
 In such cases, applies hard word wrap between each sentences whenever possible.
 
@@ -248,15 +249,13 @@ pretium felis facilisis et.
 </tbody>
 </table>
 
-### Source code files encoding with `UTF-8 No-BOM`
+### Save source code files with `UTF-8 No-BOM` encode
 
-Always save all of the source code files with encoding `UTF-8 No-BOM` (8-bit Unicode Transformation Format without byte order mark).
+Always save all of the source code files with `UTF-8 No-BOM` (8-bit Unicode Transformation Format without byte order mark) encode.
 
 Some of the editors maybe have options of `UTF-8` and `UTF-8 BOM` instead, thus select `UTF-8`.
 
 ## Structure
-
-### Known Files
 
 <table>
 <tr>
@@ -287,7 +286,13 @@ Some of the editors maybe have options of `UTF-8` and `UTF-8 BOM` instead, thus 
 <td>
 <ul>
 <li>JavaScript</li>
+<ul>
+<li>NodeJS</li>
+</ul>
 <li>TypeScript</li>
+<ul>
+<li>NodeJS</li>
+</ul>
 </ul>
 </td>
 <td>ESLint configuration.</td>
@@ -309,21 +314,7 @@ Some of the editors maybe have options of `UTF-8` and `UTF-8 BOM` instead, thus 
 <li><code>.github/dependabot.yml</code></li>
 </ul>
 </td>
-<td>
-<ul>
-<li>Docker</li>
-<ul>
-<li>Dockerfile</li>
-</ul>
-<li>Git Submodule</li>
-<li>GitHub Actions</li>
-<li>JavaScript</li>
-<ul>
-<li>NodeJS</li>
-</ul>
-<li><i>(Others are omitted due to not in use)</i></li>
-</ul>
-</td>
+<td></td>
 <td>GitHub Dependabot configuration.</td>
 </tr>
 <tr>
@@ -370,6 +361,9 @@ Some of the editors maybe have options of `UTF-8` and `UTF-8 BOM` instead, thus 
 <li>NodeJS</li>
 </ul>
 <li>TypeScript</li>
+<ul>
+<li>NodeJS</li>
+</ul>
 </ul>
 </td>
 <td>NPM ignore.</td>
@@ -383,6 +377,9 @@ Some of the editors maybe have options of `UTF-8` and `UTF-8 BOM` instead, thus 
 <li>NodeJS</li>
 </ul>
 <li>TypeScript</li>
+<ul>
+<li>NodeJS</li>
+</ul>
 </ul>
 </td>
 <td>NPM configuration.</td>
@@ -432,6 +429,22 @@ Some of the editors maybe have options of `UTF-8` and `UTF-8 BOM` instead, thus 
 <td><i>(Legacy)</i> LGTM configuration.</td>
 </tr>
 <tr>
+<td><code>deno.json</code></td>
+<td>
+<ul>
+<li>JavaScript</li>
+<ul>
+<li>Deno</li>
+</ul>
+<li>TypeScript</li>
+<ul>
+<li>Deno</li>
+</ul>
+</ul>
+</td>
+<td>Deno configuration.</td>
+</tr>
+<tr>
 <td><code>LICENSE.md</code></td>
 <td>All</td>
 <td>License.</td>
@@ -445,6 +458,9 @@ Some of the editors maybe have options of `UTF-8` and `UTF-8 BOM` instead, thus 
 <li>NodeJS</li>
 </ul>
 <li>TypeScript</li>
+<ul>
+<li>NodeJS</li>
+</ul>
 </ul>
 </td>
 <td>NodeJS modules.</td>
@@ -458,6 +474,9 @@ Some of the editors maybe have options of `UTF-8` and `UTF-8 BOM` instead, thus 
 <li>NodeJS</li>
 </ul>
 <li>TypeScript</li>
+<ul>
+<li>NodeJS</li>
+</ul>
 </ul>
 </td>
 <td>NodeJS package metadata lock.</td>
@@ -471,12 +490,36 @@ Some of the editors maybe have options of `UTF-8` and `UTF-8 BOM` instead, thus 
 <li>NodeJS</li>
 </ul>
 <li>TypeScript</li>
+<ul>
+<li>NodeJS</li>
+</ul>
 </ul>
 </td>
 <td>NodeJS package metadata.</td>
 </tr>
 <tr>
-<td><code>README.md</code></td>
+<td><code>pnpm-lock.yaml</code></td>
+<td>
+<ul>
+<li>JavaScript</li>
+<ul>
+<li>NodeJS</li>
+</ul>
+<li>TypeScript</li>
+<ul>
+<li>NodeJS</li>
+</ul>
+</ul>
+</td>
+<td>PNPM package metadata lock.</td>
+</tr>
+<tr>
+<td>
+<ul>
+<li><code>.github/README.md</code> <i>(Legacy)</i></li>
+<li><code>README.md</code></li>
+</ul>
+</td>
 <td>All</td>
 <td>Readme.</td>
 </tr>
@@ -499,6 +542,9 @@ Some of the editors maybe have options of `UTF-8` and `UTF-8 BOM` instead, thus 
 <li>NodeJS</li>
 </ul>
 <li>TypeScript</li>
+<ul>
+<li>NodeJS</li>
+</ul>
 </ul>
 </td>
 <td>TypeScript configuration.</td>

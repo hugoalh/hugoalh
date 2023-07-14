@@ -22,9 +22,9 @@ jobs:
       - name: "Checkout Repository"
         uses: "actions/checkout@v3.5.3"
       - name: "Setup PowerShell Environment"
-        uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v1.3.1"
+        uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v1.4.0"
         with:
-          toolkit_setup: "False"
+          version: "^1.6.0"
       - name: "Test Publish"
         run: |
           Publish-Module -Path '${{inputs.path}}' -NugetAPIKey 'GUID' -WhatIf -Verbose

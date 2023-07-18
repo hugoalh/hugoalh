@@ -86,7 +86,7 @@ Codes in Markdown code blocks are also as exceptions, always use space for inden
 <table>
 <tbody valign="top">
 <tr>
-<td align="center"><b><i>✔ Good</i></b></td>
+<td align="center"><b><i>✔️ Good</i></b></td>
 <td align="center"><b><i>❌ Bad</i></b></td>
 </tr>
 <tr>
@@ -121,7 +121,7 @@ if (
 <table>
 <tbody valign="top">
 <tr>
-<td align="center"><b><i>✔ Good</i></b></td>
+<td align="center"><b><i>✔️ Good</i></b></td>
 <td align="center"><b><i>❌ Bad</i></b></td>
 </tr>
 <tr>
@@ -194,7 +194,7 @@ In such cases, applies hard word wrap between each sentences whenever possible.
 <table>
 <tbody valign="top">
 <tr>
-<td align="center"><b><i>✔ Good</i></b></td>
+<td align="center"><b><i>✔️ Good</i></b></td>
 <td align="center"><b><i>❌ Bad</i></b></td>
 </tr>
 <tr>

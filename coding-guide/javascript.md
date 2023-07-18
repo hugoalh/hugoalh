@@ -24,7 +24,7 @@ Always use strict equality (`===` and `!==`) on every comparisons.
 <table>
 <tbody valign="top">
 <tr>
-<td align="center"><b><i>✔ Good</i></b></td>
+<td align="center"><b><i>✔️ Good</i></b></td>
 <td align="center"><b><i>❌ Bad</i></b></td>
 </tr>
 <tr>
@@ -56,13 +56,13 @@ Use concise, human-readable, and semantic names as appropriately.
 
 | **Type** | **Upper Camel Case** | **Lower Camel Case** |
 |:-:|:-:|:-:|
-| `class` | ✔ |  |
-| `class`'s Method  |  | ✔ |
-| `class`'s Property  |  | ✔ |
-| `const` |  | ✔ |
-| `function` |  | ✔ |
-| `function`'s Argument |  | ✔ |
-| `let` |  | ✔ |
+| `class` | ✔️ |  |
+| `class`'s Method  |  | ✔️ |
+| `class`'s Property  |  | ✔️ |
+| `const` |  | ✔️ |
+| `function` |  | ✔️ |
+| `function`'s Argument |  | ✔️ |
+| `let` |  | ✔️ |
 
 ```js
 class FooBar {
@@ -81,7 +81,7 @@ Only add 1 semi-colon at the end of every statements.
 <table>
 <tbody valign="top">
 <tr>
-<td align="center"><b><i>✔ Good</i></b></td>
+<td align="center"><b><i>✔️ Good</i></b></td>
 <td align="center"><b><i>❌ Bad</i></b></td>
 </tr>
 <tr>
@@ -116,7 +116,7 @@ There is one notable case to keep in mind for the `if...else` control statements
 <table>
 <tbody valign="top">
 <tr>
-<td align="center"><b><i>✔ Good</i></b></td>
+<td align="center"><b><i>✔️ Good</i></b></td>
 <td align="center"><b><i>❌ Bad</i></b></td>
 </tr>
 <tr>
@@ -152,7 +152,7 @@ Negative `if...else` control statements can cause confusing.
 <table>
 <tbody valign="top">
 <tr>
-<td align="center"><b><i>✔ Good</i></b></td>
+<td align="center"><b><i>✔️ Good</i></b></td>
 <td align="center"><b><i>❌ Bad</i></b></td>
 </tr>
 <tr>
@@ -189,7 +189,7 @@ if (!something) {
 <table>
 <tbody valign="top">
 <tr>
-<td align="center"><b><i>✔ Good</i></b></td>
+<td align="center"><b><i>✔️ Good</i></b></td>
 <td align="center"><b><i>❌ Bad</i></b></td>
 </tr>
 <tr>
@@ -232,7 +232,7 @@ When add items to the array, use `.push()` but never direct assignment.
 <table>
 <tbody valign="top">
 <tr>
-<td align="center"><b><i>✔ Good</i></b></td>
+<td align="center"><b><i>✔️ Good</i></b></td>
 <td align="center"><b><i>❌ Bad</i></b></td>
 </tr>
 <tr>
@@ -265,7 +265,7 @@ When use arrow functions, never use implicit return (also known as concise body)
 <table>
 <tbody valign="top">
 <tr>
-<td align="center"><b><i>✔ Good</i></b></td>
+<td align="center"><b><i>✔️ Good</i></b></td>
 <td align="center"><b><i>❌ Bad</i></b></td>
 </tr>
 <tr>
@@ -296,7 +296,7 @@ Always use function declarations but not function expressions.
 <table>
 <tbody valign="top">
 <tr>
-<td align="center"><b><i>✔ Good</i></b></td>
+<td align="center"><b><i>✔️ Good</i></b></td>
 <td align="center"><b><i>❌ Bad</i></b></td>
 </tr>
 <tr>
@@ -325,7 +325,7 @@ When use anonymous functions as a callback (a function passed to another method 
 <table>
 <tbody valign="top">
 <tr>
-<td align="center"><b><i>✔ Good</i></b></td>
+<td align="center"><b><i>✔️ Good</i></b></td>
 <td align="center"><b><i>❌ Bad</i></b></td>
 </tr>
 <tr>
@@ -361,7 +361,7 @@ Never use single quote (`'`) for strings! Instead, use double quote (`"`) for st
 <table>
 <tbody valign="top">
 <tr>
-<td align="center"><b><i>✔ Good</i></b></td>
+<td align="center"><b><i>✔️ Good</i></b></td>
 <td align="center"><b><i>❌ Bad</i></b></td>
 </tr>
 <tr>

@@ -34,7 +34,7 @@ Consecutive assignment statements are more readable if they are aligned, but als
 <table>
 <tbody valign="top">
 <tr>
-<td align="center"><b><i>✔ Good</i></b></td>
+<td align="center"><b><i>✔️ Good</i></b></td>
 <td align="center"><b><i>❌ Bad</i></b></td>
 </tr>
 <tr>
@@ -67,7 +67,7 @@ PowerShell has built in variables known as automatic variables, many of them are
 <table>
 <tbody valign="top">
 <tr>
-<td align="center"><b><i>✔ Good</i></b></td>
+<td align="center"><b><i>✔️ Good</i></b></td>
 <td align="center"><b><i>❌ Bad</i></b></td>
 </tr>
 <tr>
@@ -102,7 +102,7 @@ Mandatory parameters should not have a default values because there is no scenar
 <table>
 <tbody valign="top">
 <tr>
-<td align="center"><b><i>✔ Good</i></b></td>
+<td align="center"><b><i>✔️ Good</i></b></td>
 <td align="center"><b><i>❌ Bad</i></b></td>
 </tr>
 <tr>
@@ -143,7 +143,7 @@ Switch parameters for commands should default to `$False`.
 <table>
 <tbody valign="top">
 <tr>
-<td align="center"><b><i>✔ Good</i></b></td>
+<td align="center"><b><i>✔️ Good</i></b></td>
 <td align="center"><b><i>❌ Bad</i></b></td>
 </tr>
 <tr>
@@ -192,7 +192,7 @@ Global scoped aliases, functions, and/or variables maybe override exist aliases,
 <table>
 <tbody valign="top">
 <tr>
-<td align="center"><b><i>✔ Good</i></b></td>
+<td align="center"><b><i>✔️ Good</i></b></td>
 <td align="center"><b><i>❌ Bad</i></b></td>
 </tr>
 <tr>
@@ -233,7 +233,7 @@ Never end lines with the semi-colons.
 <table>
 <tbody valign="top">
 <tr>
-<td align="center"><b><i>✔ Good</i></b></td>
+<td align="center"><b><i>✔️ Good</i></b></td>
 <td align="center"><b><i>❌ Bad</i></b></td>
 </tr>
 <tr>

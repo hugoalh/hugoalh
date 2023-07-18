@@ -33,7 +33,7 @@ New line for end of files are exceptions.
 <table>
 <tbody valign="top">
 <tr>
-<td align="center"><b><i>✔ Good</i></b></td>
+<td align="center"><b><i>✔️ Good</i></b></td>
 <td align="center"><b><i>❌ Bad</i></b></td>
 </tr>
 <tr>
@@ -88,7 +88,7 @@ array:
 <table>
 <tbody valign="top">
 <tr>
-<td align="center"><b><i>✔ Good</i></b></td>
+<td align="center"><b><i>✔️ Good</i></b></td>
 <td align="center"><b><i>❌ Bad</i></b></td>
 </tr>
 <tr>
@@ -171,7 +171,7 @@ Use empty braces and/or brackets to specify the type of values which empty.
 <table>
 <tbody valign="top">
 <tr>
-<td align="center"><b><i>✔ Good</i></b></td>
+<td align="center"><b><i>✔️ Good</i></b></td>
 <td align="center"><b><i>❌ Bad</i></b></td>
 </tr>
 <tr>
@@ -251,7 +251,7 @@ Fuzzy truthy cause confusing, always use `true` or `false` only.
 <table>
 <tbody valign="top">
 <tr>
-<td align="center"><b><i>✔ Good</i></b></td>
+<td align="center"><b><i>✔️ Good</i></b></td>
 <td align="center"><b><i>❌ Bad</i></b></td>
 </tr>
 <tr>
@@ -287,7 +287,7 @@ sayYes: YES
 <table>
 <tbody valign="top">
 <tr>
-<td align="center"><b><i>✔ Good</i></b></td>
+<td align="center"><b><i>✔️ Good</i></b></td>
 <td align="center"><b><i>❌ Bad</i></b></td>
 </tr>
 <tr>
@@ -349,7 +349,7 @@ In YAML/YML, numbers that start with `0` are interpreted as octal, but this is n
 <table>
 <tbody valign="top">
 <tr>
-<td align="center"><b><i>✔ Good</i></b></td>
+<td align="center"><b><i>✔️ Good</i></b></td>
 <td align="center"><b><i>❌ Bad</i></b></td>
 </tr>
 <tr>

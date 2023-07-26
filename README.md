@@ -4,14 +4,14 @@
 </a>
 </h1>
 
-> **🕰️ Last Update:** 2023/07/18 09:00 UTC
+> **🕰️ Last Update:** 2023/07/26 02:20 UTC
 
 ![Discord (@hugoalh)](https://img.shields.io/badge/Discord%20%28@hugoalh%29-5865F2?logo=discord&logoColor=ffffff&style=flat-square "Discord (@hugoalh)")
 [![GitHub Discussion](https://img.shields.io/badge/GitHub%20Discussion-181717?logo=github&logoColor=ffffff&style=flat-square "GitHub Discussion")](https://github.com/hugoalh/hugoalh/discussions)
 [![GitHub Gist](https://img.shields.io/badge/GitHub%20Gist-181717?logo=github&logoColor=ffffff&style=flat-square "GitHub Gist")](https://gist.github.com/hugoalh)
 [![Mastodon (@hugoalh@mastodon.social)](https://img.shields.io/badge/Mastodon%20%28@hugoalh@mastodon.social%29-6364FF?logo=mastodon&logoColor=ffffff&style=flat-square "Mastodon (@hugoalh@mastodon.social)")](https://mastodon.social/@hugoalh)
 [![Tumblr (@hugoalh)](https://img.shields.io/badge/Tumblr%20%28@hugoalh%29-36465D?logo=tumblr&logoColor=ffffff&style=flat-square "Tumblr (@hugoalh)")](https://hugoalh.tumblr.com)
-[![Twitter (@hugoalhofficial)](https://img.shields.io/badge/Twitter%20%28@hugoalhofficial%29-1DA1F2?logo=twitter&logoColor=ffffff&style=flat-square "Twitter (@hugoalhofficial)")](https://twitter.com/hugoalhofficial)
+[![X (Twitter)(@hugoalhofficial)](https://img.shields.io/badge/X%20%28Twitter%29%28@hugoalhofficial%29-000000?logo=x&logoColor=ffffff&style=flat-square "X (Twitter)(@hugoalhofficial)")](https://twitter.com/hugoalhofficial)
 
 <details>
 <summary><h2>💬 Languages</h2></summary>

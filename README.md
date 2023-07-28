@@ -4,7 +4,7 @@
 </a>
 </h1>
 
-> **🕰️ Last Update:** 2023/07/26 02:20 UTC
+> **🕰️ Last Update:** 2023/07/28 03:10 UTC
 
 ![Discord (@hugoalh)](https://img.shields.io/badge/Discord%20%28@hugoalh%29-5865F2?logo=discord&logoColor=ffffff&style=flat-square "Discord (@hugoalh)")
 [![GitHub Discussion](https://img.shields.io/badge/GitHub%20Discussion-181717?logo=github&logoColor=ffffff&style=flat-square "GitHub Discussion")](https://github.com/hugoalh/hugoalh/discussions)
@@ -90,6 +90,7 @@
 |  |  |
 |:-:|:--|
 | ✔️ | [Advanced Determine (NodeJS)](https://github.com/hugoalh-studio/advanced-determine-nodejs) |
+| ✔️ | [Advanced Determine (Deno)](https://github.com/hugoalh-studio/advanced-determine-deno) 🆕 |
 | ✔️ | [Advanced Random (NodeJS)](https://github.com/hugoalh-studio/advanced-random-nodejs) |
 | ✔️ | [Argv (NodeJS)](https://github.com/hugoalh-studio/argv-nodejs) |
 | ✔️ | [Concatenate (NodeJS)](https://github.com/hugoalh-studio/concatenate-nodejs) |
@@ -102,6 +103,7 @@
 | ✔️ | [No Item Despawn (Minecraft Java Data Pack)](https://github.com/hugoalh/no-item-despawn-mcjdp) |
 | ✔️ | [No Mob Despawn (Minecraft Java Data Pack)](https://github.com/hugoalh/no-mob-despawn-mcjdp) |
 | ✔️ | [Pressure (NodeJS)](https://github.com/hugoalh-studio/pressure-nodejs) |
+| ✔️ | [Replit Database Client (Deno)](https://github.com/hugoalh-studio/replit-database-client-deno) 🆕 |
 | ✔️ | [Scan Virus (GitHub Action)](https://github.com/hugoalh/scan-virus-ghaction) |
 | ✔️ | [Send Discord Webhook (GitHub Action)](https://github.com/hugoalh/send-discord-webhook-ghaction) <br />*(**Previous:** \[GitHub Action\] Send To Discord)* |
 | ✔️ | [Send IFTTT Webhook (Deno)](https://github.com/hugoalh-studio/send-ifttt-webhook-deno) |

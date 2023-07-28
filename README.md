@@ -89,8 +89,8 @@
 
 |  |  |
 |:-:|:--|
-| ✔️ | [Advanced Determine (NodeJS)](https://github.com/hugoalh-studio/advanced-determine-nodejs) |
 | ✔️ | [Advanced Determine (Deno)](https://github.com/hugoalh-studio/advanced-determine-deno) 🆕 |
+| ✔️ | [Advanced Determine (NodeJS)](https://github.com/hugoalh-studio/advanced-determine-nodejs) |
 | ✔️ | [Advanced Random (NodeJS)](https://github.com/hugoalh-studio/advanced-random-nodejs) |
 | ✔️ | [Argv (NodeJS)](https://github.com/hugoalh-studio/argv-nodejs) |
 | ✔️ | [Concatenate (NodeJS)](https://github.com/hugoalh-studio/concatenate-nodejs) |

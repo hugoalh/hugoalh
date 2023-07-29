@@ -89,6 +89,7 @@
 
 |  |  |
 |:-:|:--|
+| ✔️ | [__Path (NodeJS)](https://github.com/hugoalh-studio/underscore-path-nodejs) |
 | ✔️ | [Advanced Determine (Deno)](https://github.com/hugoalh-studio/advanced-determine-deno) 🆕 |
 | ✔️ | [Advanced Determine (NodeJS)](https://github.com/hugoalh-studio/advanced-determine-nodejs) |
 | ✔️ | [Advanced Random (NodeJS)](https://github.com/hugoalh-studio/advanced-random-nodejs) |

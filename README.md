@@ -1,17 +1,15 @@
 <h1 align="center">
 <a href="https://github.com/hugoalh">
-<img alt="hugoalh" src="https://i.imgur.com/d7CW6xWl.png" />
+<img alt="hugoalh" src="https://i.imgur.com/d7CW6xWl.png" title="hugoalh" />
 </a>
 </h1>
 
-> **🕰️ Last Update:** 2023/07/28 03:10 UTC
+> **🕰️ Last Update:** 2023/08/06 02:30 UTC
 
-![Discord (@hugoalh)](https://img.shields.io/badge/Discord%20%28@hugoalh%29-5865F2?logo=discord&logoColor=ffffff&style=flat-square "Discord (@hugoalh)")
-[![GitHub Discussion](https://img.shields.io/badge/GitHub%20Discussion-181717?logo=github&logoColor=ffffff&style=flat-square "GitHub Discussion")](https://github.com/hugoalh/hugoalh/discussions)
-[![GitHub Gist](https://img.shields.io/badge/GitHub%20Gist-181717?logo=github&logoColor=ffffff&style=flat-square "GitHub Gist")](https://gist.github.com/hugoalh)
-[![Mastodon (@hugoalh@mastodon.social)](https://img.shields.io/badge/Mastodon%20%28@hugoalh@mastodon.social%29-6364FF?logo=mastodon&logoColor=ffffff&style=flat-square "Mastodon (@hugoalh@mastodon.social)")](https://mastodon.social/@hugoalh)
-[![Tumblr (@hugoalh)](https://img.shields.io/badge/Tumblr%20%28@hugoalh%29-36465D?logo=tumblr&logoColor=ffffff&style=flat-square "Tumblr (@hugoalh)")](https://hugoalh.tumblr.com)
-[![X (Twitter)(@hugoalhofficial)](https://img.shields.io/badge/X%20%28Twitter%29%28@hugoalhofficial%29-000000?logo=x&logoColor=ffffff&style=flat-square "X (Twitter)(@hugoalhofficial)")](https://twitter.com/hugoalhofficial)
+![Discord: @hugoalh](https://img.shields.io/badge/Discord-@hugoalh-808080?labelColor=5865F2&logo=discord&logoColor=ffffff&style=flat-square "Discord: @hugoalh")
+[![Mastodon: @hugoalh@mastodon.social](https://img.shields.io/badge/Mastodon-@hugoalh@mastodon.social-808080?labelColor=6364FF&logo=mastodon&logoColor=ffffff&style=flat-square "Mastodon: @hugoalh@mastodon.social")](https://mastodon.social/@hugoalh)
+[![Tumblr: @hugoalh](https://img.shields.io/badge/Tumblr-@hugoalh-808080?labelColor=36465D&logo=tumblr&logoColor=ffffff&style=flat-square "Tumblr: @hugoalh")](https://hugoalh.tumblr.com)
+[![X (Twitter): @hugoalhofficial](https://img.shields.io/badge/X%20%28Twitter%29-@hugoalhofficial-808080?labelColor=000000&logo=x&logoColor=ffffff&style=flat-square "X (Twitter): @hugoalhofficial")](https://twitter.com/hugoalhofficial)
 
 <details>
 <summary><h2>💬 Languages</h2></summary>
@@ -90,14 +88,15 @@
 |  |  |
 |:-:|:--|
 | ✔️ | [__Path (NodeJS)](https://github.com/hugoalh-studio/underscore-path-nodejs) |
-| ✔️ | [Advanced Determine (Deno)](https://github.com/hugoalh-studio/advanced-determine-deno) 🆕 |
+| ✔️ | [Advanced Determine (Deno)](https://github.com/hugoalh-studio/advanced-determine-deno) |
 | ✔️ | [Advanced Determine (NodeJS)](https://github.com/hugoalh-studio/advanced-determine-nodejs) |
 | ✔️ | [Advanced Random (NodeJS)](https://github.com/hugoalh-studio/advanced-random-nodejs) |
 | ✔️ | [Argv (NodeJS)](https://github.com/hugoalh-studio/argv-nodejs) |
 | ✔️ | [Concatenate (NodeJS)](https://github.com/hugoalh-studio/concatenate-nodejs) |
 | ✔️ | [Disable Advancement (Minecraft Java Data Pack)](https://github.com/hugoalh/disable-advancement-mcjdp) <br />*(**Previous:** \[Minecraft Java Data Pack\] Disable Minecraft Advancement)* |
-| ✔️ | [Disk Space Optimizer (GitHub Action)](https://github.com/hugoalh/disk-space-optimizer-ghaction) 🆕 |
+| ✔️ | [Disk Space Optimizer (GitHub Action)](https://github.com/hugoalh/disk-space-optimizer-ghaction) |
 | ✔️ | [Equal (NodeJS)](https://github.com/hugoalh-studio/equal-nodejs) |
+| ✔️ | [exFetch (Deno)](https://github.com/hugoalh-studio/exfetch-deno) 🆕 |
 | ✔️ | [GitHub Actions Toolkit (PowerShell)](https://github.com/hugoalh-studio/ghactions-toolkit-powershell) |
 | ✔️ | [GitHub Sodium (NodeJS)](https://github.com/hugoalh-studio/github-sodium-nodejs) |
 | ✔️ | [No Enderman Griefing (Minecraft Java Data Pack)](https://github.com/hugoalh/no-enderman-griefing-mcjdp) |

@@ -3,7 +3,7 @@
 
 # hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Versioning Guide
 
-> **🕰️ Last Update:** 2023/07/14 04:00 UTC
+> **🕰️ Last Update:** 2023/08/06 02:30 UTC
 
 This Versioning Guide applies to all of the hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) projects.
 
@@ -13,13 +13,13 @@ Most of the projects use [Semantic Versioning (SemVer) 2.0.0](#semantic-versioni
 
 | **Type** | **Package Manager / Registry** | **Schema** |
 |:-:|:-:|:-:|
-| Web | *N/A* | Snapshot ID / Timestamp (ISO 8601) / UUID 4 |
+| Web | *N/A* | Snapshot ID / Timestamp (ISO 8601) |
 
 ## Schema
 
 ### Semantic Versioning (SemVer) 2.0.0
 
-```
+```txt
 <Major>.<Minor>.<Patch>
 <Major>.<Minor>.<Patch>-<PreRelease>
 <Major>.<Minor>.<Patch>+<Build>

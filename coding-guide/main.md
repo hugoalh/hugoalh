@@ -3,11 +3,11 @@
 
 # hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Coding Guide
 
-> **🕰️ Last Update:** 2023/07/09 02:45 UTC
+> **🕰️ Last Update:** 2023/08/06 02:30 UTC
 
 > **🚧 Constructing:** This document is in constructing, contents maybe change rapidly.
 
-This Coding Guide applies to all of the hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) projects and repositories, and for all of the markups and programming languages.
+This Coding Guide applies to all of the hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) projects, and for all of the markups and programming languages.
 
 Some of the markups and/or programming languages have additional coding guide:
 
@@ -22,7 +22,7 @@ Some of the markups and/or programming languages have additional coding guide:
 
 ### Forbidden targets
 
-These targets are forbidden in all of the projects and repositories.
+These targets are forbidden in all of the projects.
 
 > **ℹ️ Notice:**
 >

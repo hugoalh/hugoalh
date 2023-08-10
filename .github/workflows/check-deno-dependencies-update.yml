@@ -14,4 +14,4 @@ jobs:
         uses: "actions/checkout@v3.5.3"
       - name: "Check Deno Dependencies Update"
         run: |
-          deno run --allow-net --allow-read="$GITHUB_WORKSPACE" --no-prompt https://deno.land/x/udd/main.ts --dry-run **/*.ts
+          deno run --allow-net --allow-read="$GITHUB_WORKSPACE" --no-prompt https://deno.land/x/udd/main.ts --dry-run *.ts **/*.ts

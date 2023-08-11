@@ -61,9 +61,6 @@ jobs:
             [PSCustomObject]$PackageRegistry = Invoke-WebRequest -Uri "https://registry.npmjs.org/$($PackageMeta.name)" -Headers @{ 'Content-Type' = 'application/json' } -MaximumRedirection 1 -MaximumRetryCount 2 -RetryIntervalSec 5 -Method 'Get' |
               Select-Object -ExpandProperty 'Content' |
               ConvertFrom-Json -Depth 100
-            If ($LASTEXITCODE -ine 0) {
-              Throw 'Most likely this is a new package.'
-            }
             If ($PackageVersionCurrent -ile [SemVer]::Parse($PackageRegistry.'dist-tags'.latest ?? '0.0.0')) {
               $PackageTagLatest = $False
             }
@@ -72,7 +69,7 @@ jobs:
             }
           }
           Catch {
-            Write-Warning -Message "Unable to analysis package ``dist-tags``: $_"
+            Write-Warning -Message "Unable to analysis package: $_"
           }
           [String[]]$PackageTags = @("pre-$($PackageVersionCurrent.Major)")
           If ($PackageTagLatest -or !$PackageVersionIsPreRelease) {

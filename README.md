@@ -121,7 +121,7 @@
 | ✔️ | [Unique Array (NodeJS)](https://github.com/hugoalh-studio/unique-array-nodejs) |
 | 🚧 | [Advanced Random (Deno)](https://github.com/hugoalh-studio/advanced-random-deno) 🆕 |
 | 🚧 | [exFetch (NodeJS)](https://github.com/hugoalh-studio/exfetch-nodejs) 🆕 |
-| 🚧 | [Label Manager (GitHub Action)](https://github.com/hugoalh/label-manager-ghaction) 🆕 |
+| 🚧 | [GitHub Label Manager (GitHub Action)](https://github.com/hugoalh/github-label-manager-ghaction) 🆕 |
 | 🚧 | [Pressure (Deno)](https://github.com/hugoalh-studio/pressure-deno) 🆕 |
 | 🚧 | [RegExp Pattern (NodeJS)](https://github.com/hugoalh-studio/regexp-pattern-nodejs) <br />*(**Previous:** REPattern (NodeJS))* |
 | 🚧 | [Send Discord Webhook (NodeJS)](https://github.com/hugoalh-studio/send-discord-webhook-nodejs) 🆕 |

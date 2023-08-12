@@ -4,7 +4,7 @@
 </a>
 </h1>
 
-> **🕰️ Last Update:** 2023/08/06 02:30 UTC
+> **🕰️ Last Update:** 2023/08/12 02:40 UTC
 
 ![Discord: @hugoalh](https://img.shields.io/badge/Discord-@hugoalh-808080?labelColor=5865F2&logo=discord&logoColor=ffffff&style=flat-square "Discord: @hugoalh")
 [![Mastodon: @hugoalh@mastodon.social](https://img.shields.io/badge/Mastodon-@hugoalh@mastodon.social-808080?labelColor=6364FF&logo=mastodon&logoColor=ffffff&style=flat-square "Mastodon: @hugoalh@mastodon.social")](https://mastodon.social/@hugoalh)
@@ -119,11 +119,20 @@
 | ✔️ | [Temperature (NodeJS)](https://github.com/hugoalh-studio/temperature-nodejs) |
 | ✔️ | [Unique Array (Deno)](https://github.com/hugoalh-studio/unique-array-deno) |
 | ✔️ | [Unique Array (NodeJS)](https://github.com/hugoalh-studio/unique-array-nodejs) |
-| 🚧 | [Bulk GitHub Configuration (NodeJS)](https://github.com/hugoalh-studio/bulk-github-configuration-nodejs) <br />*(**Previous:** GitHub Manager (NodeJS CLI))* |
+| 🚧 | [Advanced Random (Deno)](https://github.com/hugoalh-studio/advanced-random-deno) 🆕 |
+| 🚧 | [exFetch (NodeJS)](https://github.com/hugoalh-studio/exfetch-nodejs) 🆕 |
+| 🚧 | [Pressure (Deno)](https://github.com/hugoalh-studio/pressure-deno) 🆕 |
 | 🚧 | [RegExp Pattern (NodeJS)](https://github.com/hugoalh-studio/regexp-pattern-nodejs) <br />*(**Previous:** REPattern (NodeJS))* |
-| 👎 | [GitHub Secret Manager (GitHub Action)](https://github.com/hugoalh/github-secret-manager-ghaction) |
+| 🚧 | [Send Discord Webhook (NodeJS)](https://github.com/hugoalh-studio/send-discord-webhook-nodejs) 🆕 |
+| 🚧 | [Setation (Deno)](https://github.com/hugoalh-studio/setation-deno) 🆕 |
+| 🚧 | [String Dissect (Deno)](https://github.com/hugoalh-studio/string-dissect-deno) 🆕 |
+| 🚧 | [String Overflow (Deno)](https://github.com/hugoalh-studio/string-overflow-deno) 🆕 |
+| 🚧 | [Symmetric Crypto (Deno)](https://github.com/hugoalh-studio/symmetric-crypto-deno) 🆕 |
+| 🚧 | [Temperature (Deno)](https://github.com/hugoalh-studio/temperature-deno) 🆕 |
 | ❌ | Enchant+ (Minecraft Java Data Pack) |
 | ❌ | Environment Paths (NodeJS) |
+| ❌ | [GitHub Manager (NodeJS CLI)](https://github.com/hugoalh-studio/bulk-github-configuration-nodejs) <br />*Delete at 2024/02/01 00:00 UTC* |
+| ❌ | [GitHub Secret Manager (GitHub Action)](https://github.com/hugoalh/github-secret-manager-ghaction) <br />*Delete at 2024/02/01 00:00 UTC* |
 | ❌ | More Method (NodeJS) |
 | ❌ | Recipe+ (Minecraft Java Data Pack) |
 | ❌ | Regular Expression Constructor (NodeJS) |

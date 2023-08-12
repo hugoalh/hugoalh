@@ -119,10 +119,9 @@
 | ✔️ | [Temperature (NodeJS)](https://github.com/hugoalh-studio/temperature-nodejs) |
 | ✔️ | [Unique Array (Deno)](https://github.com/hugoalh-studio/unique-array-deno) |
 | ✔️ | [Unique Array (NodeJS)](https://github.com/hugoalh-studio/unique-array-nodejs) |
-| 🗄️ | [GitHub Secret Manager (GitHub Action)](https://github.com/hugoalh/github-secret-manager-ghaction) |
 | 🚧 | [Advanced Random (Deno)](https://github.com/hugoalh-studio/advanced-random-deno) 🆕 |
 | 🚧 | [exFetch (NodeJS)](https://github.com/hugoalh-studio/exfetch-nodejs) 🆕 |
-| 🚧 | [GitHub Label Manager (GitHub Action)](https://github.com/hugoalh/github-label-manager-ghaction) 🆕 |
+| 🚧 | [Label Manager (GitHub Action)](https://github.com/hugoalh/label-manager-ghaction) 🆕 |
 | 🚧 | [Pressure (Deno)](https://github.com/hugoalh-studio/pressure-deno) 🆕 |
 | 🚧 | [RegExp Pattern (NodeJS)](https://github.com/hugoalh-studio/regexp-pattern-nodejs) <br />*(**Previous:** REPattern (NodeJS))* |
 | 🚧 | [Send Discord Webhook (NodeJS)](https://github.com/hugoalh-studio/send-discord-webhook-nodejs) 🆕 |
@@ -134,6 +133,7 @@
 | ❌ | Enchant+ (Minecraft Java Data Pack) |
 | ❌ | Environment Paths (NodeJS) |
 | ❌ | [GitHub Manager (NodeJS CLI)](https://github.com/hugoalh-studio/bulk-github-configuration-nodejs) <br />*Delete at 2024/02/01 00:00 UTC* |
+| ❌ | [GitHub Secret Manager (GitHub Action)](https://github.com/hugoalh/github-secret-manager-ghaction) <br />*Delete at 2024/02/01 00:00 UTC* |
 | ❌ | More Method (NodeJS) |
 | ❌ | Recipe+ (Minecraft Java Data Pack) |
 | ❌ | Regular Expression Constructor (NodeJS) |

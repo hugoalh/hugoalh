@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+name: "Sync Label (Reusable Workflow)"
+on:
+  push:
+    branches:
+      - "main"
+    paths:
+      - ".github/label.yml"
+  workflow_call:
+  workflow_dispatch:
+jobs:
+  main:
+    name: "Main"
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "Checkout Repository"
+        uses: "actions/checkout@v3.5.3"
+      - name: "Sync Label"
+        uses: "EndBug/label-sync@v2.3.2"
+        with:
+          config-file: ".github/label.yml"

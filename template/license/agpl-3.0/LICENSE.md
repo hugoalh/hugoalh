@@ -235,6 +235,8 @@ If your software can interact with users remotely through a computer network, yo
 
 You should also get your employer (if you work as a programmer) or school, if any, to sign a "copyright disclaimer" for the program, if necessary. For more information on this, and how to apply and follow the GNU AGPL, see <https://www.gnu.org/licenses/>.
 
+---
+
 ## TLDR
 
 This is a short and simple list that mostly concluded this license about the permissions, conditions, and limitations, this license content section shall prevail.

@@ -1,13 +1,13 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: "Sync Label"
+name: "Sync Labels"
 on:
   push:
     branches:
       - "main"
     paths:
-      - ".github/label.yml"
+      - ".github/labels.yml"
   workflow_dispatch:
 jobs:
   main:
     name: "Main"
-    uses: "hugoalh/hugoalh/.github/workflows/sync-label.yml@main"
+    uses: "hugoalh/hugoalh/.github/workflows/sync-labels.yml@main"

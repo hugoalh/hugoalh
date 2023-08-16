@@ -18,4 +18,10 @@ jobs:
           deno vendor mod.ts
       - name: "Check Deno Dependencies Update"
         run: |
-          deno run --allow-net --allow-read="$GITHUB_WORKSPACE" --no-prompt https://deno.land/x/udd/main.ts --dry-run *.ts **/*.ts
+          [RegEx]$DenoVendorPathRegEx = "^$(Join-Path -Path $Env:GITHUB_WORKSPACE -ChildPath 'vendor')"
+          Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Include @('*.[jt]s') -Recurse -File |
+            Where-Object -FilterScript { $_.FullName -inotmatch $DenoVendorPathRegEx } |
+            ForEach-Object -Process {
+              deno run --allow-net --allow-read="$Env:GITHUB_WORKSPACE" --no-prompt https://deno.land/x/udd/main.ts --dry-run $_.FullName
+            }
+        shell: "pwsh"

@@ -19,9 +19,16 @@ jobs:
       - name: "Check Deno Dependencies Update"
         run: |
           [RegEx]$DenoVendorPathRegEx = "^$(Join-Path -Path $Env:GITHUB_WORKSPACE -ChildPath 'vendor')"
-          Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Include @('*.[jt]s') -Recurse -File |
+          [String[]]$Files = Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Include @('*.[jt]s') -Recurse -File |
             Where-Object -FilterScript { $_.FullName -inotmatch $DenoVendorPathRegEx } |
-            ForEach-Object -Process {
-              deno run --allow-net --allow-read="$Env:GITHUB_WORKSPACE" --no-prompt https://deno.land/x/udd/main.ts --dry-run $_.FullName
+            Select-Object -ExpandProperty 'FullName'
+          [Boolean]$IsFail = $False
+          ForEach ($File In $Files) {
+            [String]$Output =  deno run --allow-net --allow-read="$Env:GITHUB_WORKSPACE" --no-prompt https://deno.land/x/udd/main.ts --dry-run $File |
+              Join-String -Separator "`n"
+            If ($Output -imatch 'able to update') {
+              $IsFail = $True
             }
+            Write-Host -Object $Output
+          }
         shell: "pwsh"

@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+name: "Check Deno Dependencies (Reusable Workflow)"
+on:
+  workflow_call:
+jobs:
+  main:
+    name: "Main"
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "Setup Deno"
+        uses: "denoland/setup-deno@v1.1.2"
+        with:
+          deno-version: "^1.36.0"
+      - name: "Checkout Repository"
+        uses: "actions/checkout@v3.5.3"
+      - name: "Verify Deno Dependencies"
+        run: |
+          deno vendor mod.ts
+      - name: "Check Deno Dependencies Update"
+        run: |
+          deno run --allow-net --allow-read="$GITHUB_WORKSPACE" --no-prompt https://deno.land/x/udd/main.ts --dry-run *.ts **/*.ts

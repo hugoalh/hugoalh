@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+name: "CI/CD - Deno (Reusable Workflow)"
+on:
+  workflow_call:
+defaults:
+  run:
+    shell: "pwsh"
+jobs:
+  main:
+    name: "Main"
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "Setup Deno"
+        uses: "denoland/setup-deno@v1.1.2"
+        with:
+          deno-version: "^1.36.1"
+      - name: "Checkout Repository"
+        uses: "actions/checkout@v3.5.3"
+      - name: "Verify Dependencies"
+        id: "verify-dependencies"
+        run: |
+          deno vendor mod.ts
+        continue-on-error: true
+      - name: "Remove Dependencies Vendor Data"
+        run: |
+          [String]$DenoVendorPath = Join-Path -Path $Env:GITHUB_WORKSPACE -ChildPath 'vendor'
+          If (Test-Path -Path $DenoVendorPath) {
+            Remove-Item -LiteralPath $DenoVendorPath -Recurse -Confirm:$False
+          }
+      - name: "Check Dependencies Update"
+        id: "check-dependencies-update"
+        run: |
+          [String[]]$Files = Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Include @('*.[jt]s', '*.[jt]sx', '*.m[jt]s') -Recurse -File |
+            Select-Object -ExpandProperty 'FullName'
+          [Boolean]$IsFail = $False
+          ForEach ($File In $Files) {
+            [String]$Output =  deno run --allow-net --allow-read="$Env:GITHUB_WORKSPACE" --no-prompt https://deno.land/x/udd/main.ts --dry-run $File |
+              Join-String -Separator "`n"
+            If ($Output -imatch 'able to update') {
+              $IsFail = $True
+            }
+            Write-Host -Object $Output
+          }
+          If ($IsFail) {
+            Exit 1
+          }
+        continue-on-error: true
+      - name: "Test Code"
+        id: "test"
+        run: |
+          If (Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Include @('*_test.[jt]s', '*_test.[jt]sx', '*_test.m[jt]s', '*.test.[jt]s', '*.test.[jt]sx', '*.test.m[jt]s', 'test.[jt]s', 'test.[jt]sx', 'test.m[jt]s')) {
+            deno test --allow-all --no-check
+          }
+        continue-on-error: true
+      - name: "Bench Code"
+        id: "bench"
+        run: |
+          If (Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Include @('*_bench.[jt]s', '*_bench.[jt]sx', '*_bench.m[jt]s', '*.bench.[jt]s', '*.bench.[jt]sx', '*.bench.m[jt]s', 'bench.[jt]s', 'bench.[jt]sx', 'bench.m[jt]s')) {
+            deno bench --allow-all
+          }
+        continue-on-error: true
+      - name: "Set Fail"
+        if: "${{steps.verify-dependencies.outcome == 'failure' || steps.check-dependencies-update.outcome == 'failure' || steps.test.outcome == 'failure' || steps.bench.outcome == 'failure'}}"
+        run: |
+          Exit 1

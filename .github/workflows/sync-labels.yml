@@ -22,3 +22,4 @@ jobs:
         uses: "srealmoreno/label-sync-action@v1.0.2"
         with:
           config-file: ".github/labels.yml"
+          clean-labels: "true"

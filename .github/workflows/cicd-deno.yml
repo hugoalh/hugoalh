@@ -6,8 +6,8 @@ defaults:
   run:
     shell: "pwsh"
 jobs:
-  main:
-    name: "Main"
+  dry:
+    name: "(Dry Operation)"
     runs-on: "ubuntu-latest"
     steps:
       - name: "Setup Deno"
@@ -16,17 +16,6 @@ jobs:
           deno-version: "^1.36.1"
       - name: "Checkout Repository"
         uses: "actions/checkout@v3.5.3"
-      - name: "Verify Dependencies"
-        id: "verify-dependencies"
-        run: |
-          deno vendor mod.ts
-        continue-on-error: true
-      - name: "Remove Dependencies Vendor Data"
-        run: |
-          [String]$DenoVendorPath = Join-Path -Path $Env:GITHUB_WORKSPACE -ChildPath 'vendor'
-          If (Test-Path -Path $DenoVendorPath) {
-            Remove-Item -LiteralPath $DenoVendorPath -Recurse -Confirm:$False
-          }
       - name: "Check Dependencies Update"
         id: "check-dependencies-update"
         run: |
@@ -52,14 +41,42 @@ jobs:
             deno test --allow-all --no-check
           }
         continue-on-error: true
-      - name: "Bench Code"
-        id: "bench"
+      - name: "Benchmark Code"
+        id: "benchmark"
         run: |
           If (Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Include @('*_bench.[jt]s', '*_bench.[jt]sx', '*_bench.m[jt]s', '*.bench.[jt]s', '*.bench.[jt]sx', '*.bench.m[jt]s', 'bench.[jt]s', 'bench.[jt]sx', 'bench.m[jt]s')) {
             deno bench --allow-all
           }
         continue-on-error: true
+    outputs:
+      benchmark: "${{steps.benchmark.outcome}}"
+      check-dependencies-update: "${{steps.check-dependencies-update.outcome}}"
+      test: "${{steps.test.outcome}}"
+  wet-1:
+    name: "(Wet Operation 1)"
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "Setup Deno"
+        uses: "denoland/setup-deno@v1.1.2"
+        with:
+          deno-version: "^1.36.1"
+      - name: "Checkout Repository"
+        uses: "actions/checkout@v3.5.3"
+      - name: "Verify Dependencies"
+        id: "verify-dependencies"
+        run: |
+          deno vendor mod.ts
+        continue-on-error: true
+    outputs:
+      verify-dependencies: "${{steps.verify-dependencies.outcome}}"
+  outcome:
+    name: "(Outcome)"
+    runs-on: "ubuntu-latest"
+    needs:
+      - "dry"
+      - "wet-1"
+    steps:
       - name: "Set Fail"
-        if: "${{steps.verify-dependencies.outcome == 'failure' || steps.check-dependencies-update.outcome == 'failure' || steps.test.outcome == 'failure' || steps.bench.outcome == 'failure'}}"
+        if: "${{needs.dry.outputs.benchmark == 'failure' || needs.dry.outputs.check-dependencies-update == 'failure' || needs.dry.outputs.test == 'failure' || needs.wet-1.outputs.verify-dependencies == 'failure'}}"
         run: |
           Exit 1

@@ -57,6 +57,9 @@
   aliases:
     - "Platform/GitHub/Actions"
     - "Platform/GitHub/Actions :octocat:"
+- name: "Platform/GitHubPackages"
+  color: "#181717"
+  description: "Related to GitHub Packages."
 - name: "Platform/GitHubPages"
   color: "#222222"
   description: "Related to GitHub Pages."
@@ -191,6 +194,17 @@
 - name: "Status/Duplicated 🔁"
   color: "#C0C0C0"
   description: "This already exists."
+- name: "Status/HelpWanted ⛑️"
+  color: "#008672"
+  description: "Need extra attention."
+  aliases:
+    - "Status/Help-Wanted ⛑"
+    - "Status/Help-Wanted ⛑️"
+    - "Status/HelpWanted ⛑"
+    - "Type/Help-Wanted ⛑"
+    - "Type/Help-Wanted ⛑️"
+    - "Type/HelpWanted ⛑️"
+    - "Type/HelpWanted ⛑"
 - name: "Status/Invalid ⚠️"
   color: "#E4E669"
   description: "This does not seem right."
@@ -220,6 +234,8 @@
 - name: "Status/Transfer ↗️"
   color: "#808080"
   description: "This is transferred to a more relevant place."
+  aliases:
+    - "Status/Transfer ↗"
 - name: "Status/WillNotFix 🙅"
   color: "#FFFFFF"
   description: "This will not be worked on."
@@ -241,10 +257,3 @@
   description: "New feature or request."
   aliases:
     - "Type/Enhancement ➕"
-- name: "Type/HelpWanted ⛑️"
-  color: "#008672"
-  description: "Need extra attention."
-  aliases:
-    - "Type/Help-Wanted ⛑"
-    - "Type/Help-Wanted ⛑️"
-    - "Type/HelpWanted ⛑"

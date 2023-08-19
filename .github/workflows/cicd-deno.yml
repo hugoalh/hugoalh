@@ -6,37 +6,36 @@ defaults:
   run:
     shell: "pwsh"
 jobs:
-  benchmark:
-    name: "Benchmark"
+  main:
+    name: "Main"
     runs-on: "ubuntu-latest"
     steps:
       - name: "Checkout Repository"
         uses: "actions/checkout@v3.5.3"
-      - name: "Dispatcher"
+      - name: "Setup Deno"
+        uses: "denoland/setup-deno@v1.1.2"
+        with:
+          deno-version: "^1.36.1"
+      - name: "Steps Dispatcher"
         id: "dispatcher"
         run: |
-          [String[]]$Files = Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Include @('*_bench.[jt]s', '*_bench.[jt]sx', '*_bench.m[jt]s', '*.bench.[jt]s', '*.bench.[jt]sx', '*.bench.m[jt]s', 'bench.[jt]s', 'bench.[jt]sx', 'bench.m[jt]s') -Recurse -File |
+          [String[]]$FilesBenchmark = Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Include @('*_bench.[jt]s', '*_bench.[jt]sx', '*_bench.m[jt]s', '*.bench.[jt]s', '*.bench.[jt]sx', '*.bench.m[jt]s', 'bench.[jt]s', 'bench.[jt]sx', 'bench.m[jt]s') -Recurse -File |
             Select-Object -ExpandProperty 'FullName'
-          Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "dispatch=$(($Files.Count -gt 0).ToString().ToLower())"
-      - name: "Setup Deno"
-        if: "${{steps.dispatcher.outputs.dispatch == 'true'}}"
-        uses: "denoland/setup-deno@v1.1.2"
-        with:
-          deno-version: "^1.36.1"
-      - name: "Benchmark Code"
-        if: "${{steps.dispatcher.outputs.dispatch == 'true'}}"
+          Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "benchmark=$(($FilesBenchmark.Count -gt 0).ToString().ToLower())"
+      - name: "Verify Dependencies"
         run: |
-          deno bench
-  check-dependencies-update:
-    name: "Check Dependencies Update"
-    runs-on: "ubuntu-latest"
-    steps:
-      - name: "Checkout Repository"
-        uses: "actions/checkout@v3.5.3"
-      - name: "Setup Deno"
-        uses: "denoland/setup-deno@v1.1.2"
-        with:
-          deno-version: "^1.36.1"
+          [String]$DenoConfigPath = Join-Path -Path $Env:GITHUB_WORKSPACE -ChildPath 'deno.json'
+          [String]$DenoConfigContent = Get-Content -LiteralPath $DenoConfigPath -Raw -Encoding 'UTF8NoBOM' |
+            Join-String -Separator "`n"
+          Try {
+            deno vendor mod.ts
+          }
+          Finally {
+            Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE |
+              Where-Object -FilterScript { $_.PSIsContainer -and $_.FullName -imatch '(?:node_modules?|vendor)$' } |
+              Remove-Item -Recurse -Confirm:$False
+            Set-Content -LiteralPath $DenoConfigPath -Value $DenoConfigContent -Confirm:$False -Encoding 'UTF8NoBOM'
+          }
       - name: "Check Dependencies Update"
         id: "check-dependencies-update"
         run: |
@@ -51,42 +50,29 @@ jobs:
             }
             Write-Host -Object $Output
           }
-          If ($IsFail) {
+          Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "fail=$($IsFail.ToString().ToLower())"
+      - name: "Test Code"
+        id: "test"
+        if: "${{github.event_name != 'schedule'}}"
+        run: |
+          deno test --allow-none --no-check --no-prompt --parallel
+        continue-on-error: true
+      - name: "Benchmark Code"
+        id: "benchmark"
+        if: "${{github.event_name != 'schedule' && steps.dispatcher.outputs.benchmark == 'true'}}"
+        run: |
+          deno bench --no-prompt
+        continue-on-error: true
+      - name: "Conclusion"
+        run: |
+          [Boolean]$FailBenchmark = [Boolean]::Parse($Env:INPUT_FAIL_BENCHMARK)
+          [Boolean]$FailTest = [Boolean]::Parse($Env:INPUT_FAIL_TEST)
+          [Boolean]$FailUpdate = [Boolean]::Parse($Env:INPUT_FAIL_UPDATE)
+          Write-Host -Object "::notice::Benchmark: $($FailBenchmark ? 'Fail' : 'Pass'); Test: $($FailTest ? 'Fail' : 'Pass'); Update: $($FailUpdate ? 'Fail' : 'Pass')"
+          If ($FailBenchmark -or $FailTest -or $FailUpdate) {
             Exit 1
           }
-  test:
-    name: "Test"
-    runs-on: "ubuntu-latest"
-    steps:
-      - name: "Checkout Repository"
-        uses: "actions/checkout@v3.5.3"
-      - name: "Dispatcher"
-        id: "dispatcher"
-        run: |
-          [String[]]$Files = Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Include @('*_test.[jt]s', '*_test.[jt]sx', '*_test.m[jt]s', '*.test.[jt]s', '*.test.[jt]sx', '*.test.m[jt]s', 'test.[jt]s', 'test.[jt]sx', 'test.m[jt]s') -Recurse -File |
-            Select-Object -ExpandProperty 'FullName'
-          Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "dispatch=$(($Files.Count -gt 0).ToString().ToLower())"
-      - name: "Setup Deno"
-        if: "${{steps.dispatcher.outputs.dispatch == 'true'}}"
-        uses: "denoland/setup-deno@v1.1.2"
-        with:
-          deno-version: "^1.36.1"
-      - name: "Test Code"
-        if: "${{steps.dispatcher.outputs.dispatch == 'true'}}"
-        id: "test"
-        run: |
-          deno test --no-check
-  verify-dependencies:
-    name: "Verify Dependencies"
-    runs-on: "ubuntu-latest"
-    steps:
-      - name: "Setup Deno"
-        uses: "denoland/setup-deno@v1.1.2"
-        with:
-          deno-version: "^1.36.1"
-      - name: "Checkout Repository"
-        uses: "actions/checkout@v3.5.3"
-      - name: "Verify Dependencies"
-        id: "verify-dependencies"
-        run: |
-          deno vendor mod.ts
+        env:
+          INPUT_FAIL_BENCHMARK: "${{steps.benchmark.outcome == 'failure'}}"
+          INPUT_FAIL_TEST: "${{steps.test.outcome == 'failure'}}"
+          INPUT_FAIL_UPDATE: "${{steps.check-dependencies-update.outputs.fail}}"

@@ -24,18 +24,21 @@ jobs:
           Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "benchmark=$(($FilesBenchmark.Count -gt 0).ToString().ToLower())"
       - name: "Verify Dependencies"
         run: |
-          [String]$DenoConfigPath = Join-Path -Path $Env:GITHUB_WORKSPACE -ChildPath 'deno.json'
-          [String]$DenoConfigContent = Get-Content -LiteralPath $DenoConfigPath -Raw -Encoding 'UTF8NoBOM' |
-            Join-String -Separator "`n"
-          Try {
-            deno vendor mod.ts
-          }
-          Finally {
-            Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE |
-              Where-Object -FilterScript { $_.PSIsContainer -and $_.FullName -imatch '(?:node_modules?|vendor)$' } |
-              Remove-Item -Recurse -Confirm:$False
-            Set-Content -LiteralPath $DenoConfigPath -Value $DenoConfigContent -Confirm:$False -Encoding 'UTF8NoBOM'
-          }
+          deno cache --reload mod.ts
+      # - name: "Verify Dependencies"
+      #   run: |
+      #     [String]$DenoConfigPath = Join-Path -Path $Env:GITHUB_WORKSPACE -ChildPath 'deno.json'
+      #     [String]$DenoConfigContent = Get-Content -LiteralPath $DenoConfigPath -Raw -Encoding 'UTF8NoBOM' |
+      #       Join-String -Separator "`n"
+      #     Try {
+      #       deno vendor mod.ts
+      #     }
+      #     Finally {
+      #       Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE |
+      #         Where-Object -FilterScript { $_.PSIsContainer -and $_.FullName -imatch '(?:node_modules?|vendor)$' } |
+      #         Remove-Item -Recurse -Confirm:$False
+      #       Set-Content -LiteralPath $DenoConfigPath -Value $DenoConfigContent -Confirm:$False -Encoding 'UTF8NoBOM'
+      #     }
       - name: "Check Dependencies Update"
         id: "check-dependencies-update"
         run: |

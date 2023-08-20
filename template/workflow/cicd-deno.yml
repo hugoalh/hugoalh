@@ -4,11 +4,6 @@ on:
   push:
     branches:
       - "**"
-    paths:
-      - "**/*.[jt]s"
-      - "**/*.[jt]sx"
-      - "**/*.m[jt]s"
-      - "deno.json"
   pull_request:
     branches:
       - "**"

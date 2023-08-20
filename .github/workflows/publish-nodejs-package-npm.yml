@@ -38,13 +38,10 @@ jobs:
           node-version: "lts/*"
           check-latest: true
           registry-url: "https://registry.npmjs.org/"
-      - name: "Setup NPM"
-        run: |
-          npm --global install npm@latest
       - name: "Setup PowerShell Toolkit"
         uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v1.4.1"
         with:
-          version: "^1.6.0"
+          version: "^1.7.1"
       - name: "Get Package Meta"
         id: "get-package-meta"
         run: |
@@ -93,20 +90,17 @@ jobs:
           Set-GitHubActionsOutput -Name 'build_distribution' -Value $BuildDistribution.ToString().ToLower()
           Set-GitHubActionsOutput -Name 'build_tarball' -Value $BuildTarball.ToString().ToLower()
           Set-GitHubActionsOutput -Name 'release_assetsuploadurl' -Value ($EventPayload.release.upload_url -ireplace '\{.+?\}$', '')
-      - name: "Setup PNPM"
-        if: "${{steps.get-package-meta.outputs.build_distribution == 'true' || steps.get-package-meta.outputs.build_tarball == 'true'}}"
-        run: |
-          npm --global install pnpm
       - name: "Build Distribution"
         if: "${{steps.get-package-meta.outputs.build_distribution == 'true'}}"
         run: |
-          pnpm install
+          npm install
           $TscPath = Resolve-Path -LiteralPath '.\node_modules\.bin\tsc.ps1'
           $ConfigPath = Resolve-Path -LiteralPath '.\tsconfig.json'
           If (Test-Path -LiteralPath '.\dist') {
             Remove-Item -LiteralPath '.\dist' -Recurse -Force -Confirm:$False
           }
-          Invoke-Expression -Command "$($TscPath.Path) -p $($ConfigPath.Path)"
+          . $TscPath.Path -p $ConfigPath.Path
+          # Invoke-Expression -Command "$($TscPath.Path) -p $($ConfigPath.Path)"
       - name: "Publish (NPM Provenance Beta)"
         id: "publish-npm-provenance-beta"
         run: |
@@ -117,7 +111,8 @@ jobs:
           [String[]]$PackageTags = ('${{steps.get-package-meta.outputs.tags}}' -isplit ';') + @('publish')
           If ($PackageTagLatest) {
             npm publish --provenance
-            Invoke-Expression -Command "npm dist-tag add `"$PackageDescriptor`" pre"
+            npm dist-tag add $PackageDescriptor pre
+            # Invoke-Expression -Command "npm dist-tag add `"$PackageDescriptor`" pre"
           }
           ElseIf ($PackageTagPre) {
             npm publish --provenance --tag pre
@@ -127,11 +122,13 @@ jobs:
               Select-Object -First 1
             $PackageTags = $PackageTags |
               Where-Object -FilterScript { $_ -ine $Tag }
-            Invoke-Expression -Command "npm publish --provenance --tag `"$Tag`""
+            npm publish --provenance --tag $Tag
+            # Invoke-Expression -Command "npm publish --provenance --tag `"$Tag`""
           }
           ForEach ($Tag In $PackageTags) {
             Try {
-              Invoke-Expression -Command "npm dist-tag add `"$PackageDescriptor`" `"$Tag`""
+              npm dist-tag add $PackageDescriptor $Tag
+              # Invoke-Expression -Command "npm dist-tag add `"$PackageDescriptor`" `"$Tag`""
             }
             Catch {
               Write-GitHubActionsError -Message $_
@@ -148,7 +145,8 @@ jobs:
           [String[]]$PackageTags = ('${{steps.get-package-meta.outputs.tags}}' -isplit ';') + @('publish')
           If ($PackageTagLatest) {
             npm publish
-            Invoke-Expression -Command "npm dist-tag add `"$PackageDescriptor`" pre"
+            npm dist-tag add $PackageDescriptor pre
+            # Invoke-Expression -Command "npm dist-tag add `"$PackageDescriptor`" pre"
           }
           ElseIf ($PackageTagPre) {
             npm publish --tag pre
@@ -158,11 +156,13 @@ jobs:
               Select-Object -First 1
             $PackageTags = $PackageTags |
               Where-Object -FilterScript { $_ -ine $Tag }
-            Invoke-Expression -Command "npm publish --tag `"$Tag`""
+            npm publish --tag $Tag
+            # Invoke-Expression -Command "npm publish --tag `"$Tag`""
           }
           ForEach ($Tag In $PackageTags) {
             Try {
-              Invoke-Expression -Command "npm dist-tag add `"$PackageDescriptor`" `"$Tag`""
+              npm dist-tag add $PackageDescriptor $Tag
+              # Invoke-Expression -Command "npm dist-tag add `"$PackageDescriptor`" `"$Tag`""
             }
             Catch {
               Write-GitHubActionsError -Message $_
@@ -172,7 +172,7 @@ jobs:
         if: "${{steps.get-package-meta.outputs.build_tarball == 'true'}}"
         run: |
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
-          pnpm pack
+          npm pack
           Try {
             Invoke-WebRequest -Uri "${{steps.get-package-meta.outputs.release_assetsuploadurl}}?name=$([Uri]::EscapeDataString('${{steps.get-package-meta.outputs.tarballname}}'))" -Headers @{
               Accept = 'application/vnd.github+json'

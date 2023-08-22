@@ -57,15 +57,19 @@ jobs:
             Write-Host -Object $Output
           }
           Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "fail=$($IsFail.ToString().ToLower())" -Confirm:$False -Encoding 'UTF8NoBOM'
+      - name: "Lint Code"
+        id: "lint"
+        run: |
+          deno lint
+        continue-on-error: true
       - name: "Test Code"
         id: "test"
-        if: "${{github.event_name != 'schedule'}}"
         run: |
           deno test --allow-none --no-check --no-prompt --parallel
         continue-on-error: true
       - name: "Benchmark Code"
         id: "benchmark"
-        if: "${{github.event_name != 'schedule' && steps.dispatcher.outputs.benchmark == 'true'}}"
+        if: "${{steps.dispatcher.outputs.benchmark == 'true'}}"
         run: |
           deno bench --no-prompt
         continue-on-error: true
@@ -81,13 +85,15 @@ jobs:
       - name: "Conclusion"
         run: |
           [Boolean]$FailBenchmark = [Boolean]::Parse($Env:INPUT_FAIL_BENCHMARK)
+          [Boolean]$FailLint = [Boolean]::Parse($Env:INPUT_FAIL_LINT)
           [Boolean]$FailTest = [Boolean]::Parse($Env:INPUT_FAIL_TEST)
           [Boolean]$FailUpdate = [Boolean]::Parse($Env:INPUT_FAIL_UPDATE)
-          Write-Host -Object "::notice::Benchmark: $($FailBenchmark ? 'Fail' : 'Pass'); Test: $($FailTest ? 'Fail' : 'Pass'); Update: $($FailUpdate ? 'Fail' : 'Pass')"
-          If ($FailBenchmark -or $FailTest -or $FailUpdate) {
+          Write-Host -Object "::notice::Benchmark: $($FailBenchmark ? 'Fail' : 'Pass'); Lint: $($FailLint ? 'Fail' : 'Pass'); Test: $($FailTest ? 'Fail' : 'Pass'); Update: $($FailUpdate ? 'Fail' : 'Pass')"
+          If ($FailBenchmark -or $FailLint -or $FailTest -or $FailUpdate) {
             Exit 1
           }
         env:
           INPUT_FAIL_BENCHMARK: "${{steps.benchmark.outcome == 'failure'}}"
+          INPUT_FAIL_LINT: "${{steps.lint.outcome == 'failure'}}"
           INPUT_FAIL_TEST: "${{steps.test.outcome == 'failure'}}"
           INPUT_FAIL_UPDATE: "${{steps.check-dependencies-update.outputs.fail}}"

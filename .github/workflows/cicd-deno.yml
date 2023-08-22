@@ -12,33 +12,36 @@ jobs:
     steps:
       - name: "Checkout Repository"
         uses: "actions/checkout@v3.5.3"
-      - name: "Setup Deno"
-        uses: "denoland/setup-deno@v1.1.2"
-        with:
-          deno-version: "^1.36.1"
       - name: "Steps Dispatcher"
         id: "dispatcher"
         run: |
           [String[]]$FilesBenchmark = Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Include @('*_bench.[jt]s', '*_bench.[jt]sx', '*_bench.m[jt]s', '*.bench.[jt]s', '*.bench.[jt]sx', '*.bench.m[jt]s', 'bench.[jt]s', 'bench.[jt]sx', 'bench.m[jt]s') -Recurse -File |
             Select-Object -ExpandProperty 'FullName'
-          Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "benchmark=$(($FilesBenchmark.Count -gt 0).ToString().ToLower())"
-      - name: "Verify Dependencies"
+          Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "benchmark=$(($FilesBenchmark.Count -gt 0).ToString().ToLower())" -Confirm:$False -Encoding 'UTF8NoBOM'
+      - name: "Setup Deno"
+        uses: "denoland/setup-deno@v1.1.2"
+        with:
+          deno-version: "^1.36.1"
+      - name: "Get Deno Cache Directory"
+        run: |
+          [String]$DenoCacheDirectory = deno info --json |
+            Join-String -Separator "`n" |
+            ConvertFrom-Json -Depth 100 |
+            Select-Object -ExpandProperty 'denoDir'
+          Add-Content -LiteralPath $Env:GITHUB_ENV -Value "DENO_DIR=$DenoCacheDirectory" -Confirm:$False -Encoding 'UTF8NoBOM'
+      - name: "Restore Deno Cache"
+        uses: "actions/cache/restore@v3.3.1"
+        with:
+          key: "deno-cache"
+          path: "${{env.DENO_DIR}}"
+      - name: "Verify Dependencies (Cache First)"
+        if: "${{github.event_name != 'schedule'}}"
+        run: |
+          deno cache mod.ts
+      - name: "Verify Dependencies (Cache Reload)"
+        if: "${{github.event_name == 'schedule'}}"
         run: |
           deno cache --reload mod.ts
-      # - name: "Verify Dependencies"
-      #   run: |
-      #     [String]$DenoConfigPath = Join-Path -Path $Env:GITHUB_WORKSPACE -ChildPath 'deno.json'
-      #     [String]$DenoConfigContent = Get-Content -LiteralPath $DenoConfigPath -Raw -Encoding 'UTF8NoBOM' |
-      #       Join-String -Separator "`n"
-      #     Try {
-      #       deno vendor mod.ts
-      #     }
-      #     Finally {
-      #       Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE |
-      #         Where-Object -FilterScript { $_.PSIsContainer -and $_.FullName -imatch '(?:node_modules?|vendor)$' } |
-      #         Remove-Item -Recurse -Confirm:$False
-      #       Set-Content -LiteralPath $DenoConfigPath -Value $DenoConfigContent -Confirm:$False -Encoding 'UTF8NoBOM'
-      #     }
       - name: "Check Dependencies Update"
         id: "check-dependencies-update"
         run: |
@@ -46,14 +49,14 @@ jobs:
             Select-Object -ExpandProperty 'FullName'
           [Boolean]$IsFail = $False
           ForEach ($File In $Files) {
-            [String]$Output =  deno run --allow-net --allow-read="$Env:GITHUB_WORKSPACE" --no-prompt https://deno.land/x/udd/main.ts --dry-run $File |
+            [String]$Output =  deno run --allow-net --allow-read="$Env:GITHUB_WORKSPACE" --no-prompt https://deno.land/x/udd@0.8.2/main.ts --dry-run $File |
               Join-String -Separator "`n"
             If ($Output -imatch 'able to update') {
               $IsFail = $True
             }
             Write-Host -Object $Output
           }
-          Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "fail=$($IsFail.ToString().ToLower())"
+          Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "fail=$($IsFail.ToString().ToLower())" -Confirm:$False -Encoding 'UTF8NoBOM'
       - name: "Test Code"
         id: "test"
         if: "${{github.event_name != 'schedule'}}"
@@ -65,6 +68,15 @@ jobs:
         if: "${{github.event_name != 'schedule' && steps.dispatcher.outputs.benchmark == 'true'}}"
         run: |
           deno bench --no-prompt
+        continue-on-error: true
+      - name: "Polish Deno Cache"
+        run: |
+          Remove-Item -LiteralPath (Join-Path -Path $Env:DENO_DIR -ChildPath 'gen' -AdditionalChildPath @('file')) -Recurse -Confirm:$False
+      - name: "Save Deno Cache"
+        uses: "actions/cache/save@v3.3.1"
+        with:
+          key: "deno-cache"
+          path: "${{env.DENO_DIR}}"
         continue-on-error: true
       - name: "Conclusion"
         run: |

@@ -38,8 +38,6 @@ jobs:
             Deno/${{github.run_id}}-${{github.run_attempt}}-
             Deno/${{github.run_id}}-
             Deno/
-            deno-cache-
-            deno-cache
       - name: "Verify Dependencies (Cache First)"
         if: "${{github.event_name != 'schedule'}}"
         run: |

@@ -32,9 +32,12 @@ jobs:
       - name: "Restore Deno Cache"
         uses: "actions/cache/restore@v3.3.1"
         with:
-          key: "deno-cache-${{github.run_id}}-${{github.run_number}}-${{github.run_attempt}}"
+          key: "Deno/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
           path: "${{env.DENO_DIR}}"
           restore-keys: |-
+            Deno/${{github.run_id}}-${{github.run_attempt}}-
+            Deno/${{github.run_id}}-
+            Deno/
             deno-cache-
             deno-cache
       - name: "Verify Dependencies (Cache First)"
@@ -82,7 +85,7 @@ jobs:
       - name: "Save Deno Cache"
         uses: "actions/cache/save@v3.3.1"
         with:
-          key: "deno-cache-${{github.run_id}}-${{github.run_number}}-${{github.run_attempt}}"
+          key: "Deno/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
           path: "${{env.DENO_DIR}}"
         continue-on-error: true
       - name: "Conclusion"

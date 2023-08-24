@@ -134,9 +134,8 @@ jobs:
               Write-GitHubActionsError -Message $_
             }
           }
-        continue-on-error: true
       - name: "Publish"
-        if: "${{steps.publish-npm-provenance-beta.outcome != 'success'}}"
+        if: "${{steps.publish-npm-provenance-beta.outcome == 'failure'}}"
         run: |
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
           [String]$PackageDescriptor = '${{steps.get-package-meta.outputs.descriptor}}'
@@ -169,7 +168,7 @@ jobs:
             }
           }
       - name: "Build & Upload Tarball To GitHub Release"
-        if: "${{steps.get-package-meta.outputs.build_tarball == 'true'}}"
+        if: "${{!cancelled() && steps.get-package-meta.outputs.build_tarball == 'true'}}"
         run: |
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
           npm pack

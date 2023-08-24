@@ -60,44 +60,34 @@ jobs:
             }
             Write-Host -Object $Output
           }
-          Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "fail=$($IsFail.ToString().ToLower())" -Confirm:$False -Encoding 'UTF8NoBOM'
+          If ($IsFail) {
+            Exit 1
+          }
       - name: "Lint Code"
         id: "lint"
+        if: "${{!cancelled()}}"
+        # if: "${{steps.check-dependencies-update.outcome != 'cancelled'}}"
         run: |
           deno lint
-        continue-on-error: true
       - name: "Test Code"
         id: "test"
+        if: "${{!cancelled()}}"
+        # if: "${{steps.lint.outcome != 'cancelled'}}"
         run: |
           deno test --allow-none --no-check --no-prompt --parallel
-        continue-on-error: true
       - name: "Benchmark Code"
         id: "benchmark"
-        if: "${{steps.dispatcher.outputs.benchmark == 'true'}}"
+        if: "${{!cancelled() && steps.dispatcher.outputs.benchmark == 'true'}}"
+        # if: "${{steps.test.outcome != 'cancelled' && steps.dispatcher.outputs.benchmark == 'true'}}"
         run: |
           deno bench --no-prompt
-        continue-on-error: true
       - name: "Polish Deno Cache"
+        if: "${{!cancelled()}}"
         run: |
           Remove-Item -LiteralPath (Join-Path -Path $Env:DENO_DIR -ChildPath 'gen' -AdditionalChildPath @('file')) -Recurse -Confirm:$False
       - name: "Save Deno Cache"
+        if: "${{!cancelled()}}"
         uses: "actions/cache/save@v3.3.1"
         with:
           key: "Deno/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
           path: "${{env.DENO_DIR}}"
-        continue-on-error: true
-      - name: "Conclusion"
-        run: |
-          [Boolean]$FailBenchmark = [Boolean]::Parse($Env:INPUT_FAIL_BENCHMARK)
-          [Boolean]$FailLint = [Boolean]::Parse($Env:INPUT_FAIL_LINT)
-          [Boolean]$FailTest = [Boolean]::Parse($Env:INPUT_FAIL_TEST)
-          [Boolean]$FailUpdate = [Boolean]::Parse($Env:INPUT_FAIL_UPDATE)
-          Write-Host -Object "::notice::Benchmark: $($FailBenchmark ? 'Fail' : 'Pass'); Lint: $($FailLint ? 'Fail' : 'Pass'); Test: $($FailTest ? 'Fail' : 'Pass'); Update: $($FailUpdate ? 'Fail' : 'Pass')"
-          If ($FailBenchmark -or $FailLint -or $FailTest -or $FailUpdate) {
-            Exit 1
-          }
-        env:
-          INPUT_FAIL_BENCHMARK: "${{steps.benchmark.outcome == 'failure'}}"
-          INPUT_FAIL_LINT: "${{steps.lint.outcome == 'failure'}}"
-          INPUT_FAIL_TEST: "${{steps.test.outcome == 'failure'}}"
-          INPUT_FAIL_UPDATE: "${{steps.check-dependencies-update.outputs.fail}}"

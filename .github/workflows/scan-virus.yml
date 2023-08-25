@@ -67,7 +67,7 @@ jobs:
     if: "${{!(github.event_name == 'pull_request' && startsWith(github.event.pull_request.head.label, format('{0}:', github.repository_owner)))}}"
     steps:
       - name: "Checkout Repository"
-        uses: "actions/checkout@v3.5.3"
+        uses: "actions/checkout@v3.6.0"
         with:
           fetch-depth: 0
       - name: "Scan Repository"

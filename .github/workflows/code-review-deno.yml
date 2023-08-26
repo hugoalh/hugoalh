@@ -20,27 +20,18 @@ jobs:
         id: "reader"
         run: |
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
-          [String[]]$FilesConfig = @(Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Include @('deno.json', 'deno.jsonc') -File -Name)
+          [String[]]$FilesConfig = Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Include @('deno.json', 'deno.jsonc') -File -Name
           If ($FilesConfig.Count -eq 0) {
             Write-GitHubActionsFail -Message 'Missing Deno config!'
           }
-          [String[]]$FilesGeneral = @(Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Include @('*.[jt]s', '*.[jt]sx', '*.m[jt]s') -Recurse -File -Name)
-          [String[]]$FilesBenchmark = @(Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Include @('*_bench.[jt]s', '*_bench.[jt]sx', '*_bench.m[jt]s', '*.bench.[jt]s', '*.bench.[jt]sx', '*.bench.m[jt]s', 'bench.[jt]s', 'bench.[jt]sx', 'bench.m[jt]s') -Recurse -File -Name)
-          [String[]]$FilesTest = @(Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Include @('*_test.[jt]s', '*_test.[jt]sx', '*_test.m[jt]s', '*.test.[jt]s', '*.test.[jt]sx', '*.test.m[jt]s', 'test.[jt]s', 'test.[jt]sx', 'test.m[jt]s') -Recurse -File -Name)
-          Set-GitHubActionsOutput -Name 'general_files' -Value (
-            $FilesGeneral |
-              ConvertTo-Json -Depth 100 -Compress
-          )
+          [String[]]$FilesGeneral = Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Include @('*.[jt]s', '*.[jt]sx', '*.m[jt]s') -Recurse -File -Name
+          [String[]]$FilesBenchmark = Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Include @('*_bench.[jt]s', '*_bench.[jt]sx', '*_bench.m[jt]s', '*.bench.[jt]s', '*.bench.[jt]sx', '*.bench.m[jt]s', 'bench.[jt]s', 'bench.[jt]sx', 'bench.m[jt]s') -Recurse -File -Name
+          [String[]]$FilesTest = Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Include @('*_test.[jt]s', '*_test.[jt]sx', '*_test.m[jt]s', '*.test.[jt]s', '*.test.[jt]sx', '*.test.m[jt]s', 'test.[jt]s', 'test.[jt]sx', 'test.m[jt]s') -Recurse -File -Name
+          Set-GitHubActionsOutput -Name 'general_files' -Value (ConvertTo-Json -InputObject $FilesGeneral -Depth 100 -Compress)
           Set-GitHubActionsOutput -Name 'benchmark_dispatch' -Value ($FilesBenchmark.Count -gt 0).ToString().ToLower()
-          Set-GitHubActionsOutput -Name 'benchmark_files' -Value (
-            $FilesBenchmark |
-              ConvertTo-Json -Depth 100 -Compress
-          )
+          Set-GitHubActionsOutput -Name 'benchmark_files' -Value (ConvertTo-Json -InputObject $FilesBenchmark -Depth 100 -Compress)
           Set-GitHubActionsOutput -Name 'test_dispatch' -Value ($FilesTest.Count -gt 0).ToString().ToLower()
-          Set-GitHubActionsOutput -Name 'test_files' -Value (
-            $FilesTest |
-              ConvertTo-Json -Depth 100 -Compress
-          )
+          Set-GitHubActionsOutput -Name 'test_files' -Value (ConvertTo-Json -InputObject $FilesTest -Depth 100 -Compress)
       - name: "Setup Deno"
         uses: "denoland/setup-deno@v1.1.2"
         with:
@@ -48,11 +39,10 @@ jobs:
       - name: "Get Deno Cache Directory"
         run: |
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
-          [String]$DenoCacheDirectory = deno info --json |
+          [PSCustomObject]$DenoInfo = deno info --json |
             Join-String -Separator "`n" |
-            ConvertFrom-Json -Depth 100 |
-            Select-Object -ExpandProperty 'denoDir'
-          Set-GitHubActionsEnvironmentVariable -Name 'DENO_DIR' -Value $DenoCacheDirectory -Scope Subsequent
+            ConvertFrom-Json -Depth 100
+          Set-GitHubActionsEnvironmentVariable -Name 'DENO_DIR' -Value $DenoInfo.denoDir -Scope Subsequent
       - name: "Restore Deno Cache"
         id: "restore-cache"
         uses: "actions/cache/restore@v3.3.1"

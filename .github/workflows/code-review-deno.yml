@@ -64,10 +64,10 @@ jobs:
           )) {
             Try {
               If ($ShouldReload) {
-                deno cache --reload $_
+                deno cache --reload $File
               }
               Else {
-                deno cache $_
+                deno cache $File
               }
             }
             Catch {

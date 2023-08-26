@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: "Code Review (Deno)(Reusable Workflow)"
+name: "Code Review - NodeJS (Reusable Workflow)"
 on:
   workflow_call:
 defaults:
@@ -20,13 +20,13 @@ jobs:
         id: "reader"
         run: |
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
-          [String[]]$FilesConfig = @(Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Include @('deno.json', 'deno.jsonc') -File -Name)
+          [String[]]$FilesConfig = Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Include @('package.json') -File -Name
           If ($FilesConfig.Count -eq 0) {
-            Write-GitHubActionsFail -Message 'Missing Deno config!'
+            Write-GitHubActionsFail -Message 'Missing NodeJS config!'
           }
-          [String[]]$FilesGeneral = @(Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Include @('*.[jt]s', '*.[jt]sx', '*.m[jt]s') -Recurse -File -Name)
-          [String[]]$FilesBenchmark = @(Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Include @('*_bench.[jt]s', '*_bench.[jt]sx', '*_bench.m[jt]s', '*.bench.[jt]s', '*.bench.[jt]sx', '*.bench.m[jt]s', 'bench.[jt]s', 'bench.[jt]sx', 'bench.m[jt]s') -Recurse -File -Name)
-          [String[]]$FilesTest = @(Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Include @('*_test.[jt]s', '*_test.[jt]sx', '*_test.m[jt]s', '*.test.[jt]s', '*.test.[jt]sx', '*.test.m[jt]s', 'test.[jt]s', 'test.[jt]sx', 'test.m[jt]s') -Recurse -File -Name)
+          [String[]]$FilesGeneral = Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Include @('*.[jt]s', '*.[jt]sx', '*.m[jt]s') -Recurse -File -Name
+          [String[]]$FilesBenchmark = Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Include @('*_bench.[jt]s', '*_bench.[jt]sx', '*_bench.m[jt]s', '*.bench.[jt]s', '*.bench.[jt]sx', '*.bench.m[jt]s', 'bench.[jt]s', 'bench.[jt]sx', 'bench.m[jt]s') -Recurse -File -Name
+          [String[]]$FilesTest = Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Include @('*_test.[jt]s', '*_test.[jt]sx', '*_test.m[jt]s', '*.test.[jt]s', '*.test.[jt]sx', '*.test.m[jt]s', 'test.[jt]s', 'test.[jt]sx', 'test.m[jt]s') -Recurse -File -Name
           Set-GitHubActionsOutput -Name 'general_files' -Value (
             $FilesGeneral |
               ConvertTo-Json -Depth 100 -Compress
@@ -41,28 +41,29 @@ jobs:
             $FilesTest |
               ConvertTo-Json -Depth 100 -Compress
           )
-      - name: "Setup Deno"
-        uses: "denoland/setup-deno@v1.1.2"
+      - name: "Setup NodeJS"
+        uses: "actions/setup-node@v3.8.1"
         with:
-          deno-version: "^1.36.3"
-      - name: "Get Deno Cache Directory"
+          node-version: "lts/*"
+          check-latest: true
+          registry-url: "https://registry.npmjs.org/"
+      - name: "Get Cache Directory"
+        id: "cache-path"
         run: |
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
-          [String]$DenoCacheDirectory = deno info --json |
-            Join-String -Separator "`n" |
-            ConvertFrom-Json -Depth 100 |
-            Select-Object -ExpandProperty 'denoDir'
-          Set-GitHubActionsEnvironmentVariable -Name 'DENO_DIR' -Value $DenoCacheDirectory -Scope Subsequent
-      - name: "Restore Deno Cache"
-        id: "restore-cache"
+          [String]$NPMCacheDirectory = npm config get cache |
+            Join-String -Separator "`n"
+          
+      - name: "Restore NPM Cache"
+        id: "restore-npm-cache"
         uses: "actions/cache/restore@v3.3.1"
         with:
-          key: "Deno/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
-          path: "${{env.DENO_DIR}}"
+          key: "NPM/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
+          path: "${{steps.cache-path.outputs.npm}}"
           restore-keys: |-
-            Deno/${{github.run_id}}-${{github.run_attempt}}-
-            Deno/${{github.run_id}}-
-            Deno/
+            NPM/${{github.run_id}}-${{github.run_attempt}}-
+            NPM/${{github.run_id}}-
+            NPM/
       - name: "Verify Dependencies"
         id: "verify-dependencies"
         run: |
@@ -134,3 +135,22 @@ jobs:
         with:
           key: "Deno/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
           path: "${{env.DENO_DIR}}"
+  codeql:
+    name: "CodeQL"
+    runs-on: "ubuntu-latest"
+    if: "${{!(github.event_name == 'pull_request' && startsWith(github.event.pull_request.head.label, format('{0}:', github.repository_owner)))}}"
+    steps:
+      - name: "Checkout Repository"
+        uses: "actions/checkout@v3.6.0"
+        with:
+          fetch-depth: 0
+      - name: "Initialize CodeQL"
+        uses: "github/codeql-action/init@v2.21.4"
+        with:
+          queries: "+security-and-quality"
+      # Automatically build attempts to build any compiled languages (C/C++, C#, Go, or Java).
+      - name: "Build Repository"
+        uses: "github/codeql-action/autobuild@v2.21.4"
+        continue-on-error: true
+      - name: "Analyze Repository"
+        uses: "github/codeql-action/analyze@v2.21.4"

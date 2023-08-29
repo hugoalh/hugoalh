@@ -4,7 +4,7 @@
 </a>
 </h1>
 
-> **🕰️ Last Update:** 2023/08/12 02:40 UTC
+> **🕰️ Last Update:** 2023/08/29 02:30 UTC
 
 ![Discord: @hugoalh](https://img.shields.io/badge/Discord-@hugoalh-808080?labelColor=5865F2&logo=discord&logoColor=ffffff&style=flat-square "Discord: @hugoalh")
 [![Mastodon: @hugoalh@mastodon.social](https://img.shields.io/badge/Mastodon-@hugoalh@mastodon.social-808080?labelColor=6364FF&logo=mastodon&logoColor=ffffff&style=flat-square "Mastodon: @hugoalh@mastodon.social")](https://mastodon.social/@hugoalh)
@@ -103,6 +103,7 @@
 | ✔️ | [No Item Despawn (Minecraft Java Data Pack)](https://github.com/hugoalh/no-item-despawn-mcjdp) |
 | ✔️ | [No Mob Despawn (Minecraft Java Data Pack)](https://github.com/hugoalh/no-mob-despawn-mcjdp) |
 | ✔️ | [Pressure (NodeJS)](https://github.com/hugoalh-studio/pressure-nodejs) |
+| ✔️ | [Range Iterator (Deno)](https://github.com/hugoalh-studio/range-iterator-deno) 🆕 |
 | ✔️ | [Replit Database Client (Deno)](https://github.com/hugoalh-studio/replit-database-client-deno) 🆕 |
 | ✔️ | [Scan Virus (GitHub Action)](https://github.com/hugoalh/scan-virus-ghaction) |
 | ✔️ | [Send Discord Webhook (GitHub Action)](https://github.com/hugoalh/send-discord-webhook-ghaction) <br />*(**Previous:** \[GitHub Action\] Send To Discord)* |
@@ -119,17 +120,18 @@
 | ✔️ | [Temperature (NodeJS)](https://github.com/hugoalh-studio/temperature-nodejs) |
 | ✔️ | [Unique Array (Deno)](https://github.com/hugoalh-studio/unique-array-deno) |
 | ✔️ | [Unique Array (NodeJS)](https://github.com/hugoalh-studio/unique-array-nodejs) |
-| 🚧 | [Advanced Random (Deno)](https://github.com/hugoalh-studio/advanced-random-deno) 🆕 |
-| 🚧 | [exFetch (NodeJS)](https://github.com/hugoalh-studio/exfetch-nodejs) 🆕 |
-| 🚧 | [GitHub Label Manager (GitHub Action)](https://github.com/hugoalh/github-label-manager-ghaction) 🆕 |
-| 🚧 | [Pressure (Deno)](https://github.com/hugoalh-studio/pressure-deno) 🆕 |
+| 🚧 | [Advanced Random (Deno)](https://github.com/hugoalh-studio/advanced-random-deno) |
+| 🚧 | [exFetch (NodeJS)](https://github.com/hugoalh-studio/exfetch-nodejs) |
+| 🚧 | [GitHub Label Manager (GitHub Action)](https://github.com/hugoalh/github-label-manager-ghaction) |
+| 🚧 | [Pressure (Deno)](https://github.com/hugoalh-studio/pressure-deno) |
+| 🚧 | [Range Iterator (NodeJS)](https://github.com/hugoalh-studio/range-iterator-nodejs) |
 | 🚧 | [RegExp Pattern (NodeJS)](https://github.com/hugoalh-studio/regexp-pattern-nodejs) <br />*(**Previous:** REPattern (NodeJS))* |
-| 🚧 | [Send Discord Webhook (NodeJS)](https://github.com/hugoalh-studio/send-discord-webhook-nodejs) 🆕 |
-| 🚧 | [Setation (Deno)](https://github.com/hugoalh-studio/setation-deno) 🆕 |
-| 🚧 | [String Dissect (Deno)](https://github.com/hugoalh-studio/string-dissect-deno) 🆕 |
-| 🚧 | [String Overflow (Deno)](https://github.com/hugoalh-studio/string-overflow-deno) 🆕 |
-| 🚧 | [Symmetric Crypto (Deno)](https://github.com/hugoalh-studio/symmetric-crypto-deno) 🆕 |
-| 🚧 | [Temperature (Deno)](https://github.com/hugoalh-studio/temperature-deno) 🆕 |
+| 🚧 | [Send Discord Webhook (NodeJS)](https://github.com/hugoalh-studio/send-discord-webhook-nodejs) |
+| 🚧 | [Setation (Deno)](https://github.com/hugoalh-studio/setation-deno) |
+| 🚧 | [String Dissect (Deno)](https://github.com/hugoalh-studio/string-dissect-deno) |
+| 🚧 | [String Overflow (Deno)](https://github.com/hugoalh-studio/string-overflow-deno) |
+| 🚧 | [Symmetric Crypto (Deno)](https://github.com/hugoalh-studio/symmetric-crypto-deno) |
+| 🚧 | [Temperature (Deno)](https://github.com/hugoalh-studio/temperature-deno) |
 | ❌ | Enchant+ (Minecraft Java Data Pack) |
 | ❌ | Environment Paths (NodeJS) |
 | ❌ | [GitHub Manager (NodeJS CLI)](https://github.com/hugoalh-studio/bulk-github-configuration-nodejs) <br />*Delete at 2024/02/01 00:00 UTC* |

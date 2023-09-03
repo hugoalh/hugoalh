@@ -5,28 +5,62 @@ on:
     inputs:
       macos:
         type: "string"
-        description: "{boolean} Run on MacOS."
+        description: "{Boolean} Run on MacOS."
         required: false
-        default: "false"
+        default: "False"
       ubuntu:
         type: "string"
-        description: "{boolean} Run on Ubuntu."
+        description: "{Boolean} Run on Ubuntu."
         required: false
-        default: "true"
+        default: "True"
       windows:
         type: "string"
-        description: "{boolean} Run on Windows."
+        description: "{Boolean} Run on Windows."
         required: false
-        default: "false"
+        default: "False"
 defaults:
   run:
     shell: "pwsh"
 jobs:
-  macos:
-    name: "MacOS"
-    if: "${{inputs.macos == 'true'}}"
-    runs-on: "macos-latest"
-    steps: &CodeReviewDenoSteps
+  resolve:
+    name: "(Resolve Matrix)"
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "Setup PowerShell Toolkit"
+        uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v1.5.0"
+        with:
+          version: "^1.7.2"
+      - name: "Resolve"
+        id: "resolve"
+        run: |
+          Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
+          [String[]]$ResolveOS = @()
+          If ([Boolean]::Parse($Env:INPUT_MACOS)) {
+            $ResolveOS += 'macos-latest'
+          }
+          If ([Boolean]::Parse($Env:INPUT_UBUNTU)) {
+            $ResolveOS += 'ubuntu-latest'
+          }
+          If ([Boolean]::Parse($Env:INPUT_WINDOWS)) {
+            $ResolveOS += 'windows-latest'
+          }
+          Set-GitHubActionsOutput -Name 'os' -Value (ConvertTo-Json -InputObject $ResolveOS -Depth 100 -Compress)
+        env:
+          INPUT_MACOS: "${{inputs.macos}}"
+          INPUT_UBUNTU: "${{inputs.ubuntu}}"
+          INPUT_WINDOWS: "${{inputs.windows}}"
+    outputs:
+      os: "${{steps.resolve.outputs.os}}"
+  main:
+    name: "${{matrix.os}}"
+    needs:
+      - "resolve"
+    strategy:
+      matrix:
+        os: "${{fromJson(needs.resolve.outputs.os)}}"
+      fail-fast: false
+    runs-on: "${{matrix.os}}"
+    steps:
       - name: "Setup PowerShell Toolkit"
         uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v1.5.0"
         with:
@@ -125,7 +159,7 @@ jobs:
         id: "test"
         if: "${{!cancelled() && steps.verify-dependencies.outcome == 'success' && steps.reader.outputs.test_dispatch == 'true'}}"
         run: |
-          deno test --no-check --no-prompt
+          deno test --no-prompt
       - name: "Benchmark Code"
         id: "benchmark"
         if: "${{!cancelled() && steps.verify-dependencies.outcome == 'success' && steps.reader.outputs.benchmark_dispatch == 'true'}}"
@@ -141,13 +175,3 @@ jobs:
         with:
           key: "Deno/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
           path: "${{env.DENO_DIR}}"
-  ubuntu:
-    name: "Ubuntu"
-    if: "${{inputs.ubuntu == 'true'}}"
-    runs-on: "ubuntu-latest"
-    steps: *CodeReviewDenoSteps
-  windows:
-    name: "Windows"
-    if: "${{inputs.windows == 'true'}}"
-    runs-on: "windows-latest"
-    steps: *CodeReviewDenoSteps

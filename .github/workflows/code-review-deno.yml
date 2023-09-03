@@ -2,14 +2,31 @@
 name: "Code Review (Deno)(Reusable Workflow)"
 on:
   workflow_call:
+    inputs:
+      macos:
+        type: "string"
+        description: "{boolean} Run on MacOS."
+        required: false
+        default: "false"
+      ubuntu:
+        type: "string"
+        description: "{boolean} Run on Ubuntu."
+        required: false
+        default: "true"
+      windows:
+        type: "string"
+        description: "{boolean} Run on Windows."
+        required: false
+        default: "false"
 defaults:
   run:
     shell: "pwsh"
 jobs:
-  main:
-    name: "Main"
-    runs-on: "ubuntu-latest"
-    steps:
+  macos:
+    name: "MacOS"
+    if: "${{inputs.macos == 'true'}}"
+    runs-on: "macos-latest"
+    steps: &CodeReviewDenoSteps
       - name: "Setup PowerShell Toolkit"
         uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v1.5.0"
         with:
@@ -124,3 +141,13 @@ jobs:
         with:
           key: "Deno/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
           path: "${{env.DENO_DIR}}"
+  ubuntu:
+    name: "Ubuntu"
+    if: "${{inputs.ubuntu == 'true'}}"
+    runs-on: "ubuntu-latest"
+    steps: *CodeReviewDenoSteps
+  windows:
+    name: "Windows"
+    if: "${{inputs.windows == 'true'}}"
+    runs-on: "windows-latest"
+    steps: *CodeReviewDenoSteps

@@ -98,11 +98,15 @@ jobs:
         id: "restore-cache"
         uses: "actions/cache/restore@v3.3.1"
         with:
-          key: "Deno/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
+          key: "Deno/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}-${{runner.os}}"
           path: "${{env.DENO_DIR}}"
           restore-keys: |-
+            Deno/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}-
+            Deno/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}
             Deno/${{github.run_id}}-${{github.run_attempt}}-
+            Deno/${{github.run_id}}-${{github.run_attempt}}
             Deno/${{github.run_id}}-
+            Deno/${{github.run_id}}
             Deno/
       - name: "Verify Dependencies"
         id: "verify-dependencies"
@@ -173,5 +177,5 @@ jobs:
         if: "${{!cancelled() && steps.restore-cache.outcome == 'success'}}"
         uses: "actions/cache/save@v3.3.1"
         with:
-          key: "Deno/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
+          key: "Deno/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}-${{runner.os}}"
           path: "${{env.DENO_DIR}}"

@@ -163,12 +163,12 @@ jobs:
         id: "test"
         if: "${{!cancelled() && steps.verify-dependencies.outcome == 'success' && steps.reader.outputs.test_dispatch == 'true'}}"
         run: |
-          deno test --no-prompt
+          deno test --allow-all --no-prompt
       - name: "Benchmark Code"
         id: "benchmark"
         if: "${{!cancelled() && steps.verify-dependencies.outcome == 'success' && steps.reader.outputs.benchmark_dispatch == 'true'}}"
         run: |
-          deno bench --no-prompt
+          deno bench --allow-all --no-prompt
       - name: "Polish Deno Cache"
         if: "${{!cancelled() && steps.restore-cache.outcome == 'success'}}"
         run: |

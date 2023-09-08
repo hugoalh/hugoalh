@@ -96,7 +96,7 @@ jobs:
           Set-GitHubActionsEnvironmentVariable -Name 'DENO_DIR' -Value $DenoInfo.denoDir -Scope Subsequent
       - name: "Restore Deno Cache"
         id: "restore-cache"
-        uses: "actions/cache/restore@v3.3.1"
+        uses: "actions/cache/restore@v3.3.2"
         with:
           key: "Deno/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}-${{runner.os}}"
           path: "${{env.DENO_DIR}}"
@@ -175,7 +175,7 @@ jobs:
           Remove-Item -LiteralPath (Join-Path -Path $Env:DENO_DIR -ChildPath 'gen' -AdditionalChildPath @('file')) -Recurse -Confirm:$False
       - name: "Save Deno Cache"
         if: "${{!cancelled() && steps.restore-cache.outcome == 'success'}}"
-        uses: "actions/cache/save@v3.3.1"
+        uses: "actions/cache/save@v3.3.2"
         with:
           key: "Deno/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}-${{runner.os}}"
           path: "${{env.DENO_DIR}}"

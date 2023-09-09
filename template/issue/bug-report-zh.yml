@@ -9,37 +9,50 @@ body:
     id: "describe"
     attributes:
       label: "描述"
-      description: "是甚麼錯誤？"
+      description: |-
+        是甚麼錯誤？
     validations:
-      required: false
-  - type: "dropdown"
+      required: true
+  - type: "textarea"
     id: "version"
     attributes:
       label: "版本"
-      description: "甚麼版本受到影響？必須是安全政策（檔案：`SECURITY-ZH.md`）中列出的受支持版本。"
-      multiple: true
-      options:
-        - "vX.X.X"
+      description: |-
+        甚麼版本受到這個錯誤影響？
+        
+        > **ℹ️ 注意：**
+        >
+        > - 接受版本範圍。
+        > - 對於多個版本和／或版本範圍，使用 Markdown 無序列表語法列出。
+        > - 必須是安全政策（檔案：`SECURITY-ZH.md`）中列出的受支持版本。
     validations:
-      required: false
+      required: true
   - type: "textarea"
     id: "reproduce"
     attributes:
       label: "重現"
-      description: "如果該錯誤可以重現，請列出所需步驟！"
+      description: |-
+        這個錯誤是否可以重現？如果可以重現，請列出所需步驟！
+      placeholder: |-
+        1. 前往＊＊＊＊。
+        2. 點擊＊＊＊＊。
+        3. 移動到＊＊＊＊。
+        4. 遇到這個錯誤。
     validations:
       required: false
   - type: "textarea"
-    id: "expected-behavior"
+    id: "expected-behaviour"
     attributes:
       label: "預期行為"
-      description: "應該要發生甚麼事情？"
+      description: |-
+        應該要發生甚麼事情？
     validations:
-      required: false
+      required: true
   - type: "textarea"
     id: "additional-information"
     attributes:
       label: "額外資料"
-      description: "如果有與此議題相關但是不適用於其他欄位的資料，請在此處列出。"
+      description: |-
+        如果有與這個錯誤相關但是不適用於其他欄位的資料，請在此處列出。
     validations:
       required: false

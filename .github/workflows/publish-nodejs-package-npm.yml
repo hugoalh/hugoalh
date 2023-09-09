@@ -3,9 +3,6 @@ name: "Publish NodeJS Package - NPM (Reusable Workflow)"
 on:
   workflow_call:
     secrets:
-      GITHUB_TOKEN:
-        description: "{string} GitHub token."
-        required: true
       NPM_TOKEN:
         description: "{string} NPM token."
         required: true

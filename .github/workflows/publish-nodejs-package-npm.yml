@@ -3,6 +3,9 @@ name: "Publish NodeJS Package - NPM (Reusable Workflow)"
 on:
   workflow_call:
     secrets:
+      GITHUB_TOKEN:
+        description: "{string} GitHub token."
+        required: true
       NPM_TOKEN:
         description: "{string} NPM token."
         required: true
@@ -42,11 +45,10 @@ jobs:
         uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v1.5.0"
         with:
           version: "^1.7.1"
-      - name: "Get Package Meta"
-        id: "get-package-meta"
+      - name: "Resolve Variables"
+        id: "resolve-variables"
         run: |
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
-          [PSCustomObject]$EventPayload = Get-GitHubActionsWebhookEventPayload
           [PSCustomObject]$PackageMeta = Get-Content -LiteralPath (Join-Path -Path $Env:GITHUB_WORKSPACE -ChildPath 'package.json') -Raw -Encoding 'UTF8NoBOM' |
             ConvertFrom-Json -Depth 100
           [SemVer]$PackageVersionCurrent = [SemVer]::Parse($PackageMeta.version)
@@ -56,7 +58,7 @@ jobs:
           [String[]]$PackageDevDependencies = $PackageMeta.devDependencies.PSObject.Properties.Name ?? @()
           [String]$PackageTarballName = "$($PackageMeta.name -ireplace '^@', '' -ireplace '\/', '-')-$($PackageMeta.version).tgz"
           Try {
-            [PSCustomObject]$PackageRegistry = Invoke-WebRequest -Uri "https://registry.npmjs.org/$($PackageMeta.name)" -Headers @{ 'Content-Type' = 'application/json' } -MaximumRedirection 1 -MaximumRetryCount 2 -RetryIntervalSec 5 -Method 'Get' |
+            [PSCustomObject]$PackageRegistry = Invoke-WebRequest -Uri "https://registry.npmjs.org/$($PackageMeta.name)" -Headers @{ 'Content-Type' = 'application/json' } -MaximumRetryCount 2 -RetryIntervalSec 5 -Method 'Get' |
               Select-Object -ExpandProperty 'Content' |
               ConvertFrom-Json -Depth 100
             If ($PackageVersionCurrent -ile [SemVer]::Parse($PackageRegistry.'dist-tags'.latest ?? '0.0.0')) {
@@ -74,10 +76,6 @@ jobs:
             $PackageTags += "latest-$($PackageVersionCurrent.Major)"
           }
           [Boolean]$BuildDistribution = 'typescript' -iin $PackageDevDependencies -and !(Test-Path -LiteralPath '.\dist' -PathType 'Container') -and (Test-Path -LiteralPath '.\src' -PathType 'Container') -and (Test-Path -LiteralPath '.\tsconfig.json' -PathType 'Leaf')
-          [Boolean]$BuildTarball = $PackageTarballName -inotin (
-            $EventPayload.release.assets |
-              Select-Object -ExpandProperty 'name'
-          )
           Set-GitHubActionsOutput -Name 'descriptor' -Value "$($PackageMeta.name)@$($PackageMeta.version)"
           Set-GitHubActionsOutput -Name 'tag_latest' -Value $PackageTagLatest.ToString().ToLower()
           Set-GitHubActionsOutput -Name 'tag_pre' -Value $PackageTagPre.ToString().ToLower()
@@ -88,10 +86,8 @@ jobs:
           )
           Set-GitHubActionsOutput -Name 'tarballname' -Value $PackageTarballName
           Set-GitHubActionsOutput -Name 'build_distribution' -Value $BuildDistribution.ToString().ToLower()
-          Set-GitHubActionsOutput -Name 'build_tarball' -Value $BuildTarball.ToString().ToLower()
-          Set-GitHubActionsOutput -Name 'release_assetsuploadurl' -Value ($EventPayload.release.upload_url -ireplace '\{.+?\}$', '')
       - name: "Build Distribution"
-        if: "${{steps.get-package-meta.outputs.build_distribution == 'true'}}"
+        if: "${{steps.resolve-variables.outputs.build_distribution == 'true'}}"
         run: |
           npm install
           $TscPath = Resolve-Path -LiteralPath '.\node_modules\.bin\tsc.ps1'
@@ -100,21 +96,17 @@ jobs:
             Remove-Item -LiteralPath '.\dist' -Recurse -Force -Confirm:$False
           }
           . $TscPath.Path -p $ConfigPath.Path
-          # Invoke-Expression -Command "$($TscPath.Path) -p $($ConfigPath.Path)"
       - name: "Publish (NPM Provenance Beta)"
         id: "publish-npm-provenance-beta"
         run: |
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
-          [String]$PackageDescriptor = '${{steps.get-package-meta.outputs.descriptor}}'
-          [Boolean]$PackageTagLatest = [Boolean]::Parse('${{steps.get-package-meta.outputs.tag_latest}}')
-          [Boolean]$PackageTagPre = [Boolean]::Parse('${{steps.get-package-meta.outputs.tag_pre}}')
-          [String[]]$PackageTags = ('${{steps.get-package-meta.outputs.tags}}' -isplit ';') + @('publish')
-          If ($PackageTagLatest) {
+          [String]$PackageDescriptor = '${{steps.resolve-variables.outputs.descriptor}}'
+          [String[]]$PackageTags = ('${{steps.resolve-variables.outputs.tags}}' -isplit ';') + @('publish')
+          If ([Boolean]::Parse('${{steps.resolve-variables.outputs.tag_latest}}')) {
             npm publish --provenance
             npm dist-tag add $PackageDescriptor pre
-            # Invoke-Expression -Command "npm dist-tag add `"$PackageDescriptor`" pre"
           }
-          ElseIf ($PackageTagPre) {
+          ElseIf ([Boolean]::Parse('${{steps.resolve-variables.outputs.tag_pre}}')) {
             npm publish --provenance --tag pre
           }
           Else {
@@ -123,12 +115,10 @@ jobs:
             $PackageTags = $PackageTags |
               Where-Object -FilterScript { $_ -ine $Tag }
             npm publish --provenance --tag $Tag
-            # Invoke-Expression -Command "npm publish --provenance --tag `"$Tag`""
           }
           ForEach ($Tag In $PackageTags) {
             Try {
               npm dist-tag add $PackageDescriptor $Tag
-              # Invoke-Expression -Command "npm dist-tag add `"$PackageDescriptor`" `"$Tag`""
             }
             Catch {
               Write-GitHubActionsError -Message $_
@@ -138,16 +128,13 @@ jobs:
         if: "${{steps.publish-npm-provenance-beta.outcome == 'failure'}}"
         run: |
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
-          [String]$PackageDescriptor = '${{steps.get-package-meta.outputs.descriptor}}'
-          [Boolean]$PackageTagLatest = [Boolean]::Parse('${{steps.get-package-meta.outputs.tag_latest}}')
-          [Boolean]$PackageTagPre = [Boolean]::Parse('${{steps.get-package-meta.outputs.tag_pre}}')
-          [String[]]$PackageTags = ('${{steps.get-package-meta.outputs.tags}}' -isplit ';') + @('publish')
-          If ($PackageTagLatest) {
+          [String]$PackageDescriptor = '${{steps.resolve-variables.outputs.descriptor}}'
+          [String[]]$PackageTags = ('${{steps.resolve-variables.outputs.tags}}' -isplit ';') + @('publish')
+          If ([Boolean]::Parse('${{steps.resolve-variables.outputs.tag_latest}}')) {
             npm publish
             npm dist-tag add $PackageDescriptor pre
-            # Invoke-Expression -Command "npm dist-tag add `"$PackageDescriptor`" pre"
           }
-          ElseIf ($PackageTagPre) {
+          ElseIf ([Boolean]::Parse('${{steps.resolve-variables.outputs.tag_pre}}')) {
             npm publish --tag pre
           }
           Else {
@@ -156,31 +143,23 @@ jobs:
             $PackageTags = $PackageTags |
               Where-Object -FilterScript { $_ -ine $Tag }
             npm publish --tag $Tag
-            # Invoke-Expression -Command "npm publish --tag `"$Tag`""
           }
           ForEach ($Tag In $PackageTags) {
             Try {
               npm dist-tag add $PackageDescriptor $Tag
-              # Invoke-Expression -Command "npm dist-tag add `"$PackageDescriptor`" `"$Tag`""
             }
             Catch {
               Write-GitHubActionsError -Message $_
             }
           }
-      - name: "Build & Upload Tarball To GitHub Release"
-        if: "${{!cancelled() && steps.get-package-meta.outputs.build_tarball == 'true'}}"
+      - name: "Build Tarball"
+        id: "build-tarball"
+        if: "${{!cancelled() && steps.resolve-variables.outcome == 'success'}}"
         run: |
-          Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
           npm pack
-          Try {
-            Invoke-WebRequest -Uri "${{steps.get-package-meta.outputs.release_assetsuploadurl}}?name=$([Uri]::EscapeDataString('${{steps.get-package-meta.outputs.tarballname}}'))" -Headers @{
-              Accept = 'application/vnd.github+json'
-              Authorization = 'Bearer ${{github.token}}'
-              'Content-Type' = 'application/gzip'
-              'User-Agent' = $Env:GITHUB_WORKFLOW_REF
-              'X-GitHub-Api-Version' = '2022-11-28'
-            } -Method 'Post' -InFile '.\${{steps.get-package-meta.outputs.tarballname}}' -SkipHeaderValidation
-          }
-          Catch {
-            Write-GitHubActionsError -Message "Unable to upload assets tarball: $_"
-          }
+      - name: "Upload Tarball To GitHub Release"
+        if: "${{!cancelled() && steps.build-tarball.outcome == 'success'}}"
+        run: |
+          gh release upload '${{github.event.release.tag_name}}' ${{steps.resolve-variables.outputs.tarballname}} --clobber --repo '${{github.repository}}'
+        env:
+          GH_TOKEN: "${{secrets.GITHUB_TOKEN}}"

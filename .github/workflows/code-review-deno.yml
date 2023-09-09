@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: "Code Review (Deno)(Reusable Workflow)"
+name: "Code Review - Deno (Reusable Workflow)"
 on:
   workflow_call:
     inputs:

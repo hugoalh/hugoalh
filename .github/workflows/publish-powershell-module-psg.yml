@@ -23,7 +23,7 @@ jobs:
       - name: "Checkout Repository"
         uses: "actions/checkout@v4.0.0"
       - name: "Setup PowerShell Environment"
-        uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v1.5.0"
+        uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v1.5.1"
         with:
           version: "^1.7.2"
       - name: "Test Publish"
@@ -42,7 +42,7 @@ jobs:
       - name: "Checkout Repository"
         uses: "actions/checkout@v4.0.0"
       - name: "Setup PowerShell Environment"
-        uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v1.5.0"
+        uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v1.5.1"
         with:
           version: "^1.7.2"
       - name: "Test Publish"

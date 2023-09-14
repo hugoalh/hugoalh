@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+name: "[Reusable] Scan Virus"
+on:
+  workflow_call:
+    inputs:
+      git_integrate:
+        type: "string"
+        description: "{Boolean} Whether to integrate with Git to perform scan by the commits."
+        required: false
+        default: "False"
+      git_ignores:
+        type: "string"
+        description: "{Table} Ignores for the Git commits."
+        required: false
+      git_limit:
+        type: "string"
+        description: "{UInt} Limit on how many Git commits will scan."
+        required: false
+        default: "0"
+      git_reverse:
+        type: "string"
+        description: "{Boolean} Whether to reverse the scan order of the Git commits."
+        required: false
+        default: "False"
+      ignores:
+        type: "string"
+        description: "{Table} Ignores for the paths, rules (YARA), sessions, and/or signatures (ClamAV)."
+        required: false
+jobs:
+  main:
+    name: "Main"
+    runs-on: "ubuntu-latest"
+    if: "${{!(github.event_name == 'pull_request' && startsWith(github.event.pull_request.head.label, format('{0}:', github.repository_owner)))}}"
+    steps:
+      - name: "Checkout Repository"
+        uses: "actions/checkout@v4.0.0"
+        with:
+          fetch-depth: 0
+      - name: "Scan Repository"
+        uses: "hugoalh/scan-virus-ghaction/clamav@v0.16.1"
+        with:
+          git_integrate: "${{inputs.git_integrate}}"
+          git_ignores: "${{inputs.git_ignores}}"
+          git_limit: "${{inputs.git_limit}}"
+          git_reverse: "${{inputs.git_reverse}}"
+          ignores: "${{inputs.ignores}}"
+          log_elements: "None"
+          summary_found: "Clone"
+          summary_statistics: "Clone"

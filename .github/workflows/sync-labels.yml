@@ -1,12 +1,11 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: "Sync Labels (Reusable Workflow)"
+name: "Sync Labels"
 on:
   push:
     branches:
       - "main"
     paths:
       - ".github/labels.yml"
-  workflow_call:
   workflow_dispatch:
 permissions:
   issues: "write"
@@ -14,12 +13,4 @@ permissions:
 jobs:
   main:
     name: "Main"
-    runs-on: "ubuntu-latest"
-    steps:
-      - name: "Checkout Repository"
-        uses: "actions/checkout@v4.0.0"
-      - name: "Sync Labels"
-        uses: "srealmoreno/label-sync-action@v1.0.2"
-        with:
-          config-file: ".github/labels.yml"
-          clean-labels: "true"
+    uses: "hugoalh/hugoalh/.github/workflows/reusable-sync-labels.yml@main"

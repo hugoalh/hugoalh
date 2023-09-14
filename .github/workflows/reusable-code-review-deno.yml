@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: "Code Review - Deno (Reusable Workflow)"
+name: "[Reusable] Code Review - Deno"
 on:
   workflow_call:
     inputs:
@@ -22,15 +22,15 @@ defaults:
   run:
     shell: "pwsh"
 jobs:
-  resolve:
-    name: "(Resolve Matrix)"
+  resolve-matrix:
+    name: "Resolve Matrix"
     runs-on: "ubuntu-latest"
     steps:
       - name: "Setup PowerShell Toolkit"
         uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v1.5.1"
         with:
           version: "^1.7.2"
-      - name: "Resolve"
+      - name: "Resolve Matrix"
         id: "resolve"
         run: |
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
@@ -54,10 +54,10 @@ jobs:
   main:
     name: "${{matrix.os}}"
     needs:
-      - "resolve"
+      - "resolve-matrix"
     strategy:
       matrix:
-        os: "${{fromJson(needs.resolve.outputs.os)}}"
+        os: "${{fromJson(needs.resolve-matrix.outputs.os)}}"
       fail-fast: false
     runs-on: "${{matrix.os}}"
     steps:
@@ -67,8 +67,8 @@ jobs:
           version: "^1.7.2"
       - name: "Checkout Repository"
         uses: "actions/checkout@v4.0.0"
-      - name: "Read Repository"
-        id: "reader"
+      - name: "Resolve Repository"
+        id: "resolve"
         run: |
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
           [String[]]$FilesConfig = Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Include @('deno.json', 'deno.jsonc') -File -Name
@@ -133,7 +133,7 @@ jobs:
             Exit 1
           }
         env:
-          INPUT_GENERAL_FILES: "${{steps.reader.outputs.general_files}}"
+          INPUT_GENERAL_FILES: "${{steps.resolve.outputs.general_files}}"
       - name: "Check Dependencies Update"
         id: "check-dependencies-update"
         run: |
@@ -153,7 +153,7 @@ jobs:
             Exit 1
           }
         env:
-          INPUT_GENERAL_FILES: "${{steps.reader.outputs.general_files}}"
+          INPUT_GENERAL_FILES: "${{steps.resolve.outputs.general_files}}"
       - name: "Lint Code"
         id: "lint"
         if: "${{!cancelled() && steps.verify-dependencies.outcome == 'success'}}"
@@ -161,12 +161,12 @@ jobs:
           deno lint
       - name: "Test Code"
         id: "test"
-        if: "${{!cancelled() && steps.verify-dependencies.outcome == 'success' && steps.reader.outputs.test_dispatch == 'true'}}"
+        if: "${{!cancelled() && steps.verify-dependencies.outcome == 'success' && steps.resolve.outputs.test_dispatch == 'true'}}"
         run: |
           deno test --allow-all --no-prompt
       - name: "Benchmark Code"
         id: "benchmark"
-        if: "${{!cancelled() && steps.verify-dependencies.outcome == 'success' && steps.reader.outputs.benchmark_dispatch == 'true'}}"
+        if: "${{!cancelled() && steps.verify-dependencies.outcome == 'success' && steps.resolve.outputs.benchmark_dispatch == 'true'}}"
         run: |
           deno bench --allow-all --no-prompt
       - name: "Polish Deno Cache"

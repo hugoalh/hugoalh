@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: "Publish PowerShell Module - PowerShell Gallery (Reusable Workflow)"
+name: "[Reusable] Publish PowerShell Module - PowerShell Gallery"
 on:
   workflow_call:
     inputs:
@@ -32,8 +32,8 @@ jobs:
       - name: "Publish"
         run: |
           Publish-Module -Path '${{inputs.path}}' -NugetAPIKey '${{secrets.POWERSHELLGALLERY_TOKEN}}' -Verbose
-  main-fallback:
-    name: "Main (Fallback)"
+  fallback:
+    name: "Fallback"
     needs:
       - "main"
     if: "${{needs.main.result == 'failure'}}"

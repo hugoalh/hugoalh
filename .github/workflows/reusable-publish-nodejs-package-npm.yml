@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: "Publish NodeJS Package - NPM (Reusable Workflow)"
+name: "[Reusable] Publish NodeJS Package - NPM"
 on:
   workflow_call:
     secrets:

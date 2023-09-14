@@ -10,6 +10,7 @@ defaults:
   run:
     shell: "pwsh"
 env:
+  INPUT_RELEASETAG: "${{github.event.release.tag_name}}"
   NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
 permissions:
   actions: "write"
@@ -42,49 +43,72 @@ jobs:
         uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v1.5.1"
         with:
           version: "^1.7.1"
-      - name: "Resolve Variables"
-        id: "resolve-variables"
+      - name: "Resolve Package"
+        id: "resolve"
         run: |
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
-          [PSCustomObject]$PackageMeta = Get-Content -LiteralPath (Join-Path -Path $Env:GITHUB_WORKSPACE -ChildPath 'package.json') -Raw -Encoding 'UTF8NoBOM' |
+          [PSCustomObject]$PackageMetaLocal = Get-Content -LiteralPath (Join-Path -Path $Env:GITHUB_WORKSPACE -ChildPath 'package.json') -Raw -Encoding 'UTF8NoBOM' |
             ConvertFrom-Json -Depth 100
-          [SemVer]$PackageVersionCurrent = [SemVer]::Parse($PackageMeta.version)
-          [Boolean]$PackageVersionIsPreRelease = $Null -ine $PackageVersionCurrent.PreReleaseLabel
-          [Boolean]$PackageTagLatest = !$PackageVersionIsPreRelease
+          [SemVer]$PackageMetaLocalVersion = [SemVer]::Parse($PackageMetaLocal.version)
+          [SemVer]$PackageMetaReleaseVersion = [SemVer]::Parse(($Env:INPUT_RELEASETAG -ireplace '^v', ''))
+          If ($PackageMetaReleaseVersion -ine $PackageMetaLocalVersion) {
+            Write-GitHubActionsWarning -Message "The local version ``$($PackageMetaLocalVersion.ToString())`` is not match the release version ``$($PackageMetaReleaseVersion.ToString())``! Will apply hot fix."
+            npm version $PackageMetaReleaseVersion.ToString()
+            $PackageMetaLocalVersion = $PackageMetaReleaseVersion
+          }
+          [String]$PackageName = $PackageMetaLocal.Name
+          [String]$PackageTarballName = "$($PackageName -ireplace '^@', '' -ireplace '\/', '-')-$($PackageMetaLocalVersion.ToString()).tgz"
+          [String[]]$PackageMetaLocalDevDependencies = $PackageMetaLocal.devDependencies.PSObject.Properties.Name ?? @()
+          [Boolean]$PackageNeedBuild = 'typescript' -iin $PackageMetaLocalDevDependencies -and !(Test-Path -LiteralPath '.\dist' -PathType 'Container') -and (Test-Path -LiteralPath '.\src' -PathType 'Container') -and (Test-Path -LiteralPath '.\tsconfig.json' -PathType 'Leaf')
+          [Boolean]$PackageTagLatest = $Null -ieq $PackageMetaLocalVersion.PreReleaseLabel
           [Boolean]$PackageTagPre = $True
-          [String[]]$PackageDevDependencies = $PackageMeta.devDependencies.PSObject.Properties.Name ?? @()
-          [String]$PackageTarballName = "$($PackageMeta.name -ireplace '^@', '' -ireplace '\/', '-')-$($PackageMeta.version).tgz"
           Try {
-            [PSCustomObject]$PackageRegistry = Invoke-WebRequest -Uri "https://registry.npmjs.org/$($PackageMeta.name)" -Headers @{ 'Content-Type' = 'application/json' } -MaximumRetryCount 2 -RetryIntervalSec 5 -Method 'Get' |
-              Select-Object -ExpandProperty 'Content' |
+            [PSCustomObject]$PackageMetaRegistry = npm show $PackageName --json |
+              Join-String -Separator "`n" |
               ConvertFrom-Json -Depth 100
-            If ($PackageVersionCurrent -ile [SemVer]::Parse($PackageRegistry.'dist-tags'.latest ?? '0.0.0')) {
+            If ($LASTEXITCODE -ne 0) {
+              Throw 'Package not found!'
+            }
+            If ($PackageMetaLocalVersion -ile [SemVer]::Parse(($PackageMetaRegistry.'dist-tags'.latest ?? '0.0.0'))) {
               $PackageTagLatest = $False
             }
-            If ($PackageVersionCurrent -ile [SemVer]::Parse($PackageRegistry.'dist-tags'.pre ?? '0.0.0')) {
+            If ($PackageMetaLocalVersion -ile [SemVer]::Parse(($PackageMetaRegistry.'dist-tags'.pre ?? '0.0.0'))) {
               $PackageTagPre = $False
             }
           }
           Catch {
             Write-Warning -Message "Unable to analysis package: $_"
           }
-          [String[]]$PackageTags = @("pre-$($PackageVersionCurrent.Major)")
-          If ($PackageTagLatest -or !$PackageVersionIsPreRelease) {
-            $PackageTags += "latest-$($PackageVersionCurrent.Major)"
+          [String[]]$PackageTags = @()
+          If ($PackageTagLatest) {
+            $PackageTags += 'latest'
           }
-          [Boolean]$BuildDistribution = 'typescript' -iin $PackageDevDependencies -and !(Test-Path -LiteralPath '.\dist' -PathType 'Container') -and (Test-Path -LiteralPath '.\src' -PathType 'Container') -and (Test-Path -LiteralPath '.\tsconfig.json' -PathType 'Leaf')
-          Set-GitHubActionsOutput -Name 'descriptor' -Value "$($PackageMeta.name)@$($PackageMeta.version)"
-          Set-GitHubActionsOutput -Name 'tag_latest' -Value $PackageTagLatest.ToString().ToLower()
-          Set-GitHubActionsOutput -Name 'tag_pre' -Value $PackageTagPre.ToString().ToLower()
-          Set-GitHubActionsOutput -Name 'tags' -Value (
+          If ($PackageTagPre) {
+            $PackageTags += 'pre'
+          }
+          $PackageTags += "latest-$($PackageMetaLocalVersion.Major)"
+          $PackageTags += "pre-$($PackageMetaLocalVersion.Major)"
+          $PackageTags += 'publish'
+          If ($PackageTags.Count -eq 0) {
+            Write-GitHubActionsFail -Message 'No available tags!'
+          }
+          [String]$PackageTagsFirst = $PackageTags[0]
+          [String[]]$PackageTagsRest = (
             $PackageTags |
-              Sort-Object -Unique |
+              Select-Object -SkipIndex 0
+          ) ?? @()
+          Set-GitHubActionsOutput -Name 'name' -Value $PackageName
+          Set-GitHubActionsOutput -Name 'version' -Value $PackageMetaLocalVersion.ToString()
+          Set-GitHubActionsOutput -Name 'descriptor' -Value "$($PackageName)@$($PackageMetaLocalVersion.ToString())"
+          Set-GitHubActionsOutput -Name 'tags_first' -Value $PackageTagsFirst
+          Set-GitHubActionsOutput -Name 'tags_rest' -Value (
+            $PackageTagsRest |
               Join-String -Separator ';'
           )
           Set-GitHubActionsOutput -Name 'tarballname' -Value $PackageTarballName
-          Set-GitHubActionsOutput -Name 'build_distribution' -Value $BuildDistribution.ToString().ToLower()
-      - name: "Build Distribution"
-        if: "${{steps.resolve-variables.outputs.build_distribution == 'true'}}"
+          Set-GitHubActionsOutput -Name 'build' -Value $PackageNeedBuild.ToString().ToLower()
+      - name: "Build Package"
+        if: "${{steps.resolve.outputs.build == 'true'}}"
         run: |
           npm install
           $TscPath = Resolve-Path -LiteralPath '.\node_modules\.bin\tsc.ps1'
@@ -93,70 +117,43 @@ jobs:
             Remove-Item -LiteralPath '.\dist' -Recurse -Force -Confirm:$False
           }
           . $TscPath.Path -p $ConfigPath.Path
-      - name: "Publish (NPM Provenance Beta)"
-        id: "publish-npm-provenance-beta"
+      - name: "Publish With Tag ${{steps.resolve.outputs.tags_first}} (Provenance)"
+        id: "publish-provenance"
+        run: |
+          [String]$PackageTagsFirst = $Env:INPUT_TAGSFIRST
+          npm publish --provenance --tag $PackageTagsFirst
+        env:
+          INPUT_TAGSFIRST: "${{steps.resolve.outputs.tags_first}}"
+      - name: "Publish With Tag ${{steps.resolve.outputs.tags_first}}"
+        if: "${{steps.publish-provenance.outcome == 'failure'}}"
+        id: "publish"
+        run: |
+          [String]$PackageTagsFirst = $Env:INPUT_TAGSFIRST
+          npm publish --tag $PackageTagsFirst
+        env:
+          INPUT_TAGSFIRST: "${{steps.resolve.outputs.tags_first}}"
+      - name: "Publish With Rest Tags"
+        if: "${{(steps.publish-provenance.outcome == 'success' || steps.publish.outcome == 'success') && steps.resolve.outputs.tags_rest != ''}}"
         run: |
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
-          [String]$PackageDescriptor = '${{steps.resolve-variables.outputs.descriptor}}'
-          [String[]]$PackageTags = ('${{steps.resolve-variables.outputs.tags}}' -isplit ';') + @('publish')
-          If ([Boolean]::Parse('${{steps.resolve-variables.outputs.tag_latest}}')) {
-            npm publish --provenance
-            npm dist-tag add $PackageDescriptor pre
-          }
-          ElseIf ([Boolean]::Parse('${{steps.resolve-variables.outputs.tag_pre}}')) {
-            npm publish --provenance --tag pre
-          }
-          Else {
-            [String]$Tag = $PackageTags |
-              Select-Object -First 1
-            $PackageTags = $PackageTags |
-              Where-Object -FilterScript { $_ -ine $Tag }
-            npm publish --provenance --tag $Tag
-          }
-          ForEach ($Tag In $PackageTags) {
+          [String]$PackageDescriptor = $Env:INPUT_DESCRIPTOR
+          [String[]]$PackageTagsRest = $Env:INPUT_TAGSREST -isplit ';'
+          ForEach ($PackageTagRest In $PackageTagsRest) {
             Try {
-              npm dist-tag add $PackageDescriptor $Tag
+              npm dist-tag add $PackageDescriptor $PackageTagRest
             }
             Catch {
               Write-GitHubActionsError -Message $_
             }
           }
-      - name: "Publish"
-        if: "${{steps.publish-npm-provenance-beta.outcome == 'failure'}}"
-        run: |
-          Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
-          [String]$PackageDescriptor = '${{steps.resolve-variables.outputs.descriptor}}'
-          [String[]]$PackageTags = ('${{steps.resolve-variables.outputs.tags}}' -isplit ';') + @('publish')
-          If ([Boolean]::Parse('${{steps.resolve-variables.outputs.tag_latest}}')) {
-            npm publish
-            npm dist-tag add $PackageDescriptor pre
-          }
-          ElseIf ([Boolean]::Parse('${{steps.resolve-variables.outputs.tag_pre}}')) {
-            npm publish --tag pre
-          }
-          Else {
-            [String]$Tag = $PackageTags |
-              Select-Object -First 1
-            $PackageTags = $PackageTags |
-              Where-Object -FilterScript { $_ -ine $Tag }
-            npm publish --tag $Tag
-          }
-          ForEach ($Tag In $PackageTags) {
-            Try {
-              npm dist-tag add $PackageDescriptor $Tag
-            }
-            Catch {
-              Write-GitHubActionsError -Message $_
-            }
-          }
-      - name: "Build Tarball"
-        id: "build-tarball"
-        if: "${{!cancelled() && steps.resolve-variables.outcome == 'success'}}"
+        env:
+          INPUT_DESCRIPTOR: "${{steps.resolve.outputs.descriptor}}"
+          INPUT_TAGSREST: "${{steps.resolve.outputs.tags_rest}}"
+      - name: "Pack & Upload Tarball `${{steps.resolve.outputs.tarballname}}` To GitHub Release Tag ${{env.INPUT_RELEASETAG}}"
+        if: "${{!cancelled() && steps.resolve.outcome == 'success'}}"
         run: |
           npm pack
-      - name: "Upload Tarball To GitHub Release"
-        if: "${{!cancelled() && steps.build-tarball.outcome == 'success'}}"
-        run: |
-          gh release upload '${{github.event.release.tag_name}}' ${{steps.resolve-variables.outputs.tarballname}} --clobber --repo '${{github.repository}}'
+          gh release upload $Env:INPUT_RELEASETAG $Env:INPUT_TARBALLNAME --clobber --repo $Env:GITHUB_REPOSITORY
         env:
           GH_TOKEN: "${{secrets.GITHUB_TOKEN}}"
+          INPUT_TARBALLNAME: "${{steps.resolve.outputs.tarballname}}"

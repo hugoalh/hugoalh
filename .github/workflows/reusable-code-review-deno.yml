@@ -27,9 +27,7 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
       - name: "Setup PowerShell Toolkit"
-        uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v1.5.1"
-        with:
-          version: "^1.7.2"
+        uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v1.6.0"
       - name: "Resolve Matrix"
         id: "resolve"
         run: |
@@ -62,9 +60,7 @@ jobs:
     runs-on: "${{matrix.os}}"
     steps:
       - name: "Setup PowerShell Toolkit"
-        uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v1.5.1"
-        with:
-          version: "^1.7.2"
+        uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v1.6.0"
       - name: "Checkout Repository"
         uses: "actions/checkout@v4.0.0"
       - name: "Resolve Repository"

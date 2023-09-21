@@ -61,7 +61,7 @@
 | ✔️ | TSV | Tab Separated Values |
 | ✔️ | TypeScript - Deno |  |
 | ✔️ | TypeScript - NodeJS |  |
-| ✔️ | YAML / YML | YAML Ain't Markup Language |
+| ✔️ | YAML | YAML Ain't Markup Language |
 | 📖 | .NET - C# |  |
 | 📖 | Bash |  |
 | 📖 | CSON | CoffeeScript Object Notation |

@@ -1,17 +1,17 @@
 [hugoalh]: https://github.com/hugoalh
 [hugoalh-studio]: https://github.com/hugoalh-studio
 
-# hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Coding Guide - YAML/YML
+# hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Coding Guide - YAML
 
 > **🕰️ Last Update:** 2023/01/09 04:00 UTC
 
 > **🚧 Constructing:** This document is in constructing, contents maybe change rapidly.
 
-This YAML/YML Coding Guide is an additional over the main [Coding Guide](./main.md), and has priority when there have any conflicts.
+This YAML Coding Guide is an additional over the main [Coding Guide](./main.md), and has priority when there have any conflicts.
 
 ## Linter
 
-[`YAMLLint`](https://github.com/adrienverge/yamllint) does most of the linting works in here, but linter can wrongly assert as well, this YAML/YML Coding Guide has priority when there have any conflicts.
+[`YAMLLint`](https://github.com/adrienverge/yamllint) does most of the linting works in here, but linter can wrongly assert as well, this YAML Coding Guide has priority when there have any conflicts.
 
 ---
 
@@ -164,7 +164,7 @@ on lines 1 and 3
 >   forbid-in-flow-mappings: true
 > ```
 
-*This is YAML/YML, not JSON!*
+*This is YAML, not JSON!*
 
 Use empty braces and/or brackets to specify the type of values which empty.
 
@@ -332,7 +332,7 @@ anemometer:
 >   forbid-explicit-octal: true
 > ```
 
-In YAML/YML, numbers that start with `0` are interpreted as octal, but this is not always wanted. For instance `010` is the city code of Beijing, and should not be converted to `8`.
+In YAML, numbers that start with `0` are interpreted as octal, but this is not always wanted. For instance `010` is the city code of Beijing, and should not be converted to `8`.
 
 ## String
 

@@ -11,10 +11,9 @@ This Coding Guide applies to all of the hxhS ([hugoalh][hugoalh] & [hugoalh Stud
 
 Some of the markups and/or programming languages have additional coding guide:
 
-- [JavaScript 🚧](./javascript.md)
-- [TypeScript 🚧](./typescript.md)
+- [ECMAScript 🚧](./ecmascript.md)
 - [PowerShell 🚧](./powershell.md)
-- [YAML/YML 🚧](./yaml.md)
+- [YAML 🚧](./yaml.md)
 
 > **ℹ️ Notice:** All of the examples in this Coding Guide are based on JavaScript, similar style should apply on other programming languages.
 
@@ -26,8 +25,8 @@ These targets are forbidden in all of the projects.
 
 > **ℹ️ Notice:**
 >
-> - Listed without any target's versions means all of the versions
-> - Targets which in beta or deprecated status are always forbidden
+> - Targets without versions means all of the versions.
+> - Targets which in beta or deprecated status are always forbidden.
 
 - Mozilla Firefox
 - GitHub Actions Runner
@@ -77,7 +76,7 @@ However, some of the markups and/or programming languages are only support to us
 
 - Markdown
 - Python
-- YAML/YML (YAML Ain't Markup Language)
+- YAML (YAML Ain't Markup Language)
 
 Codes in Markdown code blocks are also as exceptions, always use space for indentation in order to prevent weird display on the view mode.
 
@@ -393,7 +392,7 @@ Some of the editors maybe have options of `UTF-8` and `UTF-8 BOM` instead, thus 
 </td>
 <td>
 <ul>
-<li>YAML/YML</li>
+<li>YAML</li>
 </ul>
 </td>
 <td>YAMLLint configuration.</td>

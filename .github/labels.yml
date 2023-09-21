@@ -206,9 +206,6 @@
 - name: "Type/Dependency 📦"
   color: "#6D4C41"
   description: "Related to dependency."
-- name: "Type/DevelopmentResource 🧰"
-  color: "#8D6E63"
-  description: "Related to development resource."
 - name: "Type/Documentation 📓"
   color: "#0075CA" # GitHub Default Label Color
   description: "Additions or improvements to the documentation."

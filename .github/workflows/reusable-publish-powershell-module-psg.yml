@@ -62,16 +62,10 @@ jobs:
           Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "packagename=$($PackageName.ToLower()).$($PackageVersion).nupkg" -Confirm:$False -Encoding 'UTF8NoBOM'
       - name: "Test Publish"
         run: |
-          Publish-Module -Path $Env:INPUT_PATH -NugetAPIKey 'GUID' -Force -WhatIf -Verbose
-        env:
-          INPUT_PATH: "${{inputs.path}}"
-          INPUT_TOKEN: "${{secrets.POWERSHELLGALLERY_TOKEN}}"
+          Publish-Module -Path '${{inputs.path}}' -NugetAPIKey 'GUID' -Force -WhatIf -Verbose
       - name: "Publish"
         run: |
-          Publish-Module -Path $Env:INPUT_PATH -NugetAPIKey $Env:INPUT_TOKEN -Force -Verbose
-        env:
-          INPUT_PATH: "${{inputs.path}}"
-          INPUT_TOKEN: "${{secrets.POWERSHELLGALLERY_TOKEN}}"
+          Publish-Module -Path '${{inputs.path}}' -NugetAPIKey '${{secrets.POWERSHELLGALLERY_TOKEN}}' -Force -Verbose
     outputs:
       packagename: "${{steps.resolve.outputs.packagename}}"
   assets:

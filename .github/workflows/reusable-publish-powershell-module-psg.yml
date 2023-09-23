@@ -62,10 +62,10 @@ jobs:
           Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "packagename=$($PackageName.ToLower()).$($PackageVersion).nupkg" -Confirm:$False -Encoding 'UTF8NoBOM'
       - name: "Test Publish"
         run: |
-          Publish-Module -Path $Env:INPUT_PATH -NugetAPIKey 'GUID' -WhatIf -Verbose
+          Publish-Module -Path $Env:INPUT_PATH -NugetAPIKey 'GUID' -Force -AllowPrerelease -WhatIf -Verbose
       - name: "Publish"
         run: |
-          Publish-Module -Path $Env:INPUT_PATH -NugetAPIKey $Env:INPUT_TOKEN -Verbose
+          Publish-Module -Path $Env:INPUT_PATH -NugetAPIKey $Env:INPUT_TOKEN -Force -AllowPrerelease -Verbose
     outputs:
       packagename: "${{steps.resolve.outputs.packagename}}"
   assets:

@@ -63,9 +63,15 @@ jobs:
       - name: "Test Publish"
         run: |
           Publish-Module -Path $Env:INPUT_PATH -NugetAPIKey 'GUID' -Force -WhatIf -Verbose
+        env:
+          INPUT_PATH: "${{inputs.path}}"
+          INPUT_TOKEN: "${{secrets.POWERSHELLGALLERY_TOKEN}}"
       - name: "Publish"
         run: |
           Publish-Module -Path $Env:INPUT_PATH -NugetAPIKey $Env:INPUT_TOKEN -Force -Verbose
+        env:
+          INPUT_PATH: "${{inputs.path}}"
+          INPUT_TOKEN: "${{secrets.POWERSHELLGALLERY_TOKEN}}"
     outputs:
       packagename: "${{steps.resolve.outputs.packagename}}"
   assets:

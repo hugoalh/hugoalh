@@ -15,39 +15,73 @@ on:
 defaults:
   run:
     shell: "pwsh"
+env:
+  INPUT_RELEASETAG: "${{github.event.release.tag_name}}"
+permissions:
+  actions: "write"
+  checks: "write"
+  contents: "write"
+  deployments: "write"
+  id-token: "write"
+  security-events: "write"
+  statuses: "write"
 jobs:
   main:
     name: "Main"
     runs-on: "ubuntu-latest"
+    env:
+      INPUT_PATH: "${{inputs.path}}"
+      INPUT_TOKEN: "${{secrets.POWERSHELLGALLERY_TOKEN}}"
     steps:
       - name: "Checkout Repository"
-        uses: "actions/checkout@v4.0.0"
+        uses: "actions/checkout@v4.1.0"
       - name: "Setup PowerShell Environment"
         uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v1.6.0"
         with:
           version: "^1.7.2"
+      - name: "Resolve Package"
+        id: "resolve"
+        run: |
+          $ManifestsPath = Get-ChildItem -LiteralPath (Join-Path -Path $Env:GITHUB_WORKSPACE -ChildPath $Env:INPUT_PATH) -Filter '*.psd1' -File
+          If ($ManifestsPath.Count -eq 0) {
+            Write-Host -Object '::error::Missing manifest.'
+            Exit 1
+          }
+          If ($ManifestsPath.Count -gt 1) {
+            Write-Host -Object '::error::Too many manifests.'
+            Exit 1
+          }
+          [String]$ManifestPath = $ManifestsPath[0].FullName
+          $ManifestFromTest = Test-ModuleManifest -Path $ManifestPath -Verbose
+          $ManifestFromData = Import-PowerShellDataFile -LiteralPath $ManifestPath -SkipLimitCheck
+          [String]$PackageName = $ManifestFromTest.Name
+          [String]$PackageVersion = $ManifestFromData.ModuleVersion
+          If ($Null -ine $ManifestFromData.PrivateData.PSData.Prerelease) {
+            $PackageVersion += "-$($ManifestFromData.PrivateData.PSData.Prerelease)"
+          }
+          Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "packagename=$($PackageName.ToLower()).$($PackageVersion).nupkg" -Confirm:$False -Encoding 'UTF8NoBOM'
       - name: "Test Publish"
         run: |
-          Publish-Module -Path '${{inputs.path}}' -NugetAPIKey 'GUID' -WhatIf -Verbose
+          Publish-Module -Path $Env:INPUT_PATH -NugetAPIKey 'GUID' -WhatIf -Verbose
       - name: "Publish"
         run: |
-          Publish-Module -Path '${{inputs.path}}' -NugetAPIKey '${{secrets.POWERSHELLGALLERY_TOKEN}}' -Verbose
-  fallback:
-    name: "Fallback"
+          Publish-Module -Path $Env:INPUT_PATH -NugetAPIKey $Env:INPUT_TOKEN -Verbose
+    outputs:
+      packagename: "${{steps.resolve.outputs.packagename}}"
+  assets:
+    name: "Assets"
     needs:
       - "main"
-    if: "${{needs.main.result == 'failure'}}"
-    runs-on: "windows-latest"
+    if: "${{needs.main.result == 'success'}}"
+    runs-on: "ubuntu-latest"
     steps:
-      - name: "Checkout Repository"
-        uses: "actions/checkout@v4.0.0"
-      - name: "Setup PowerShell Environment"
-        uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v1.6.0"
-        with:
-          version: "^1.7.2"
-      - name: "Test Publish"
+      - name: "Wait For Registry Update"
         run: |
-          Publish-Module -Path '${{inputs.path}}' -NugetAPIKey 'GUID' -WhatIf -Verbose
-      - name: "Publish"
+          Start-Sleep -Seconds 60
+      - name: "Copy `${{needs.main.outputs.packagename}}` To GitHub Release Tag ${{env.INPUT_RELEASETAG}}"
         run: |
-          Publish-Module -Path '${{inputs.path}}' -NugetAPIKey '${{secrets.POWERSHELLGALLERY_TOKEN}}' -Verbose
+          Invoke-WebRequest -Uri "https://psg-prod-eastus.azureedge.net/packages/$Env:INPUT_PACKAGENAME" -MaximumRedirection 1 -MaximumRetryCount 5 -RetryIntervalSec 5 -Method 'GET' -OutFile $Env:INPUT_PACKAGENAME
+          gh release upload $Env:INPUT_RELEASETAG $Env:INPUT_PACKAGENAME --clobber --repo $Env:GITHUB_REPOSITORY
+        env:
+          GH_TOKEN: "${{secrets.GITHUB_TOKEN}}"
+          INPUT_PACKAGENAME: "${{needs.main.outputs.packagename}}"

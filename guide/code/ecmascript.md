@@ -3,15 +3,17 @@
 
 # hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Coding Guide - ECMAScript
 
-> **🕰️ Last Update:** 2023/01/09 04:00 UTC
+> **🕰️ Last Update:** 2023/09/23 10:00 UTC
 
 > **🚧 Constructing:** This document is in constructing, contents maybe change rapidly.
 
 This ECMAScript Coding Guide is an additional over the main [Coding Guide](./main.md), and has priority when there have any conflicts.
 
+> **ℹ️ Notice:** All of the examples in this Coding Guide are based on TypeScript, similar style should apply on other programming languages.
+
 ## Linter
 
-[`ESLint`](https://eslint.org) does most of the linting works in here, but linter can wrongly assert as well, this JavaScript Coding Guide has priority when there have any conflicts.
+[`ESLint`](https://eslint.org) does most of the linting works in here, but linter can wrongly assert as well, this ECMAScript Coding Guide has priority when there have any conflicts.
 
 ---
 
@@ -21,34 +23,21 @@ This ECMAScript Coding Guide is an additional over the main [Coding Guide](./mai
 
 Always use strict equality (`===` and `!==`) on every comparisons.
 
-<table>
-<tbody valign="top">
-<tr>
-<td align="center"><b><i>✔️ Good</i></b></td>
-<td align="center"><b><i>❌ Bad</i></b></td>
-</tr>
-<tr>
-<td>
+**👎 Bad**
 
-```js
-let foo = 1;
-foo === "1";
-//=> false
-```
-
-</td>
-<td>
-
-```js
-let foo = 1;
+```ts
+const foo = 1;
 foo == "1";
 //=> true
 ```
 
-</td>
-</tr>
-</tbody>
-</table>
+**👍 Good**
+
+```ts
+const foo = 1;
+foo === "1";
+//=> false
+```
 
 ### Namespaces with camel case
 
@@ -64,7 +53,9 @@ Use concise, human-readable, and semantic names as appropriately.
 | `function`'s Argument |  | ✔️ |
 | `let` |  | ✔️ |
 
-```js
+**👍 Good**
+
+```ts
 class FooBar {
   catName = "Lucas";
   love(name) {}
@@ -78,61 +69,31 @@ let fooBar;
 
 Only add 1 semi-colon at the end of every statements.
 
-<table>
-<tbody valign="top">
-<tr>
-<td align="center"><b><i>✔️ Good</i></b></td>
-<td align="center"><b><i>❌ Bad</i></b></td>
-</tr>
-<tr>
-<td>
+**👎 Bad**
 
-```js
-let foo = "bar";
+```ts
+const foo = "bar"//<<<<
 if (typeof foo === "string") {
-  return true;
-}
+  return true//<<<<
+};//<<<<
 ```
 
-</td>
-<td>
+**👍 Good**
 
-```js
-let foo = "bar"//;
+```ts
+const foo = "bar";//<<<<
 if (typeof foo === "string") {
-  return true//;
-};//
+  return true;//<<<<
+}//<<<<
 ```
 
-</td>
-</tr>
-</tbody>
-</table>
+### No `if-return-else-return`
 
-### No `if () { return } else { return }`
+There is one notable case to keep in mind for the `if-else` control statements, if the `if` statement ends with a `return`, no need to add an `else` statement.
 
-There is one notable case to keep in mind for the `if...else` control statements, if the `if` statement ends with a `return`, no need to add an `else` statement.
+**👎 Bad**
 
-<table>
-<tbody valign="top">
-<tr>
-<td align="center"><b><i>✔️ Good</i></b></td>
-<td align="center"><b><i>❌ Bad</i></b></td>
-</tr>
-<tr>
-<td>
-
-```js
-if (something) {
-  return 0;
-}
-return 1;
-```
-
-</td>
-<td>
-
-```js
+```ts
 if (something) {
   return 0;
 } else {
@@ -140,36 +101,22 @@ if (something) {
 }
 ```
 
-</td>
-</tr>
-</tbody>
-</table>
+**👍 Good**
 
-### No negative `if...else` whenever possible
-
-Negative `if...else` control statements can cause confusing.
-
-<table>
-<tbody valign="top">
-<tr>
-<td align="center"><b><i>✔️ Good</i></b></td>
-<td align="center"><b><i>❌ Bad</i></b></td>
-</tr>
-<tr>
-<td>
-
-```js
+```ts
 if (something) {
-  console.log(something);
-} else {
-  console.log(anything);
+  return 0;
 }
+return 1;
 ```
 
-</td>
-<td>
+### No negative `if-else` whenever possible
 
-```js
+Negative `if-else` control statements can cause confusing.
+
+**👎 Bad**
+
+```ts
 if (!something) {
   console.log(anything);
 } else {
@@ -177,214 +124,120 @@ if (!something) {
 }
 ```
 
-</td>
-</tr>
-</tbody>
-</table>
+**👍 Good**
 
-### No `new Array()`, `new BigInt()`, `new Boolean()`, `new Number()`, and `new String()` constructors
-
-`Array`s, `BigInt`s, `Boolean`s, `Number`s and `String`s are all able to create via literals method; `RegExp`s are exceptions.
-
-<table>
-<tbody valign="top">
-<tr>
-<td align="center"><b><i>✔️ Good</i></b></td>
-<td align="center"><b><i>❌ Bad</i></b></td>
-</tr>
-<tr>
-<td>
-
-```js
-let cities = [];
+```ts
+if (something) {
+  console.log(something);
+} else {
+  console.log(anything);
+}
 ```
-
-</td>
-<td>
-
-```js
-let cities = new Array(length);
-```
-
-</td>
-</tr>
-</tbody>
-</table>
 
 ### No `"use strict";`
 
-Strict mode is already applied to all of the JavaScript files, hence no need to add an extra statement `"use strict";`.
+Strict mode is already applied to all of the ECMAScript files, hence no need to add an extra statement `"use strict";`.
 
 ### No `var`
 
 Never use `var` in anywhere of the codes to prevent fuzzy declaration and/or hoisting unexpectedly; Instead, use `let`.
 
-### Sort namespaces whenever possible
+### Sort `import` by source
 
-*To be draft.*
+### Add array elements with `.push()`
 
-## Array
+When add elements to the array, use `.push()` but never direct assignment.
 
-### Add `Array` items with `.push()`
+**👎 Bad**
 
-When add items to the array, use `.push()` but never direct assignment.
-
-<table>
-<tbody valign="top">
-<tr>
-<td align="center"><b><i>✔️ Good</i></b></td>
-<td align="center"><b><i>❌ Bad</i></b></td>
-</tr>
-<tr>
-<td>
-
-```js
-let pets = [];
-pets.push("cat");
-```
-
-</td>
-<td>
-
-```js
-let pets = [];
+```ts
+const pets = [];
 pets[pets.length] = "cat";
 ```
 
-</td>
-</tr>
-</tbody>
-</table>
+**👍 Good**
 
-## Function
+```ts
+const pets = [];
+pets.push("cat");
+```
 
 ### No arrow function's implicit return
 
 When use arrow functions, never use implicit return (also known as concise body).
 
-<table>
-<tbody valign="top">
-<tr>
-<td align="center"><b><i>✔️ Good</i></b></td>
-<td align="center"><b><i>❌ Bad</i></b></td>
-</tr>
-<tr>
-<td>
+**👎 Bad**
 
-```js
+```ts
+arr.map((e) => e.id);
+```
+
+**👍 Good**
+
+```ts
 arr.map((e) => {
   return e.id;
 });
 ```
 
-</td>
-<td>
-
-```js
-arr.map((e) => e.id);
-```
-
-</td>
-</tr>
-</tbody>
-</table>
-
 ### Use function declarations but not function expressions
 
 Always use function declarations but not function expressions.
 
-<table>
-<tbody valign="top">
-<tr>
-<td align="center"><b><i>✔️ Good</i></b></td>
-<td align="center"><b><i>❌ Bad</i></b></td>
-</tr>
-<tr>
-<td>
+**👎 Bad**
 
-```js
-function sum(a, b) {
-  return a + b;
-}
-```
-</td>
-<td>
-
-```js
+```ts
 const sum = function (a, b) {
   return a + b;
 };
 ```
-</td>
-</tr>
-</tbody>
-</table>
+
+**👍 Good**
+
+```ts
+function sum(a, b) {
+  return a + b;
+}
+```
 
 When use anonymous functions as a callback (a function passed to another method invocation), if it do not need to access `this`, use an arrow function to make the code shorter and cleaner.
 
-<table>
-<tbody valign="top">
-<tr>
-<td align="center"><b><i>✔️ Good</i></b></td>
-<td align="center"><b><i>❌ Bad</i></b></td>
-</tr>
-<tr>
-<td>
+**👎 Bad**
 
-```js
-let array1 = [1, 2, 3, 4];
-let sum = array1.reduce((a, b) => {
+```ts
+const array1 = [1, 2, 3, 4];
+const sum = array1.reduce(function (a, b) {
   return (a + b);
 });
 ```
-</td>
-<td>
 
-```js
-let array1 = [1, 2, 3, 4];
-let sum = array1.reduce(function (a, b) {
+**👍 Good**
+
+```ts
+const array1 = [1, 2, 3, 4];
+const sum = array1.reduce((a, b) => {
   return (a + b);
 });
-
 ```
-</td>
-</tr>
-</tbody>
-</table>
 
-## String
-
-### Strings' quote no single quote
+### No strings' single quote
 
 Never use single quote (`'`) for strings! Instead, use double quote (`"`) for strings, or backtick (<code>`</code>) for template literals/strings.
 
-<table>
-<tbody valign="top">
-<tr>
-<td align="center"><b><i>✔️ Good</i></b></td>
-<td align="center"><b><i>❌ Bad</i></b></td>
-</tr>
-<tr>
-<td>
+**👎 Bad**
 
-```js
-let foo = "bar";
-let goo = "gar";
-let fooGoo = `${foo}${goo}`;
-//=> "bargar"
-```
-
-</td>
-<td>
-
-```js
-let foo = 'bar';
-let goo = 'gar';
-let fooGoo = foo + goo;
+```ts
+const foo = 'bar';
+const goo = 'gar';
+const fooGoo = foo + goo;
 //=> 'bargar'
 ```
 
-</td>
-</tr>
-</tbody>
-</table>
+**👍 Good**
+
+```ts
+const foo = "bar";
+const goo = "gar";
+const fooGoo = `${foo}${goo}`;
+//=> "bargar"
+```

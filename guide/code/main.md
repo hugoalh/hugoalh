@@ -3,7 +3,7 @@
 
 # hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Coding Guide
 
-> **🕰️ Last Update:** 2023/08/06 02:30 UTC
+> **🕰️ Last Update:** 2023/09/23 10:00 UTC
 
 > **🚧 Constructing:** This document is in constructing, contents maybe change rapidly.
 
@@ -15,7 +15,7 @@ Some of the markups and/or programming languages have additional coding guide:
 - [PowerShell 🚧](./powershell.md)
 - [YAML 🚧](./yaml.md)
 
-> **ℹ️ Notice:** All of the examples in this Coding Guide are based on JavaScript, similar style should apply on other programming languages.
+> **ℹ️ Notice:** All of the examples in this Coding Guide are based on TypeScript, similar style should apply on other programming languages.
 
 ## General
 
@@ -36,9 +36,6 @@ These targets are forbidden in all of the projects.
 - Google Chrome
   - v109.X.X
 - Java
-- Lua
-  - Roblox
-  - Roblox Studio
 - Microsoft Edge
   - v109.X.X
   - EdgeHTML
@@ -78,29 +75,13 @@ However, some of the markups and/or programming languages are only support to us
 - Python
 - YAML (YAML Ain't Markup Language)
 
-Codes in Markdown code blocks are also as exceptions, always use space for indentation in order to prevent weird display on the view mode.
+> **ℹ️ Notice:** Codes in Markdown code blocks are also as exceptions, always use space for indentation in order to prevent weird display on the view mode.
 
 ### Keep AND conditions in single line
 
-<table>
-<tbody valign="top">
-<tr>
-<td align="center"><b><i>✔️ Good</i></b></td>
-<td align="center"><b><i>❌ Bad</i></b></td>
-</tr>
-<tr>
-<td>
+**👎 Bad**
 
-```js
-if (a && b && c) {
-  return true;
-}
-```
-
-</td>
-<td>
-
-```js
+```ts
 if (
   a &&
   b &&
@@ -110,23 +91,27 @@ if (
 }
 ```
 
-</td>
-</tr>
-</tbody>
-</table>
+**👍 Good**
+
+```ts
+if (a && b && c) {
+  return true;
+}
+```
 
 ### Keep OR conditions in multiple lines
 
-<table>
-<tbody valign="top">
-<tr>
-<td align="center"><b><i>✔️ Good</i></b></td>
-<td align="center"><b><i>❌ Bad</i></b></td>
-</tr>
-<tr>
-<td>
+**👎 Bad**
 
-```js
+```ts
+if (a || b || c) {
+  return true;
+}
+```
+
+**👍 Good**
+
+```ts
 if (
   a ||
   b ||
@@ -136,23 +121,11 @@ if (
 }
 ```
 
-</td>
-<td>
-
-```js
-if (a || b || c) {
-  return true;
-}
-```
-
-</td>
-</tr>
-</tbody>
-</table>
-
 ### Keep mixed AND and OR conditions in the same way
 
-```js
+**👍 Good**
+
+```ts
 /*
 True when:
 
@@ -173,8 +146,10 @@ if (
 
 ### Keep nullish coalescing in single line
 
-```js
-let foo = a ?? b ?? c;
+**👍 Good**
+
+```ts
+const foo = a ?? b ?? c;
 bar ??= d ?? e ?? f;
 ```
 
@@ -186,35 +161,12 @@ Use of hard word wrap can cause accessibility issues, difficult to edit, and loo
 
 However, few of the markups are only support to have maximum 256 characters per line, these are as exceptions, including but not limited to:
 
-- Properties (`.conf`)
+- Configs
+- Properties
 
 In such cases, applies hard word wrap between each sentences whenever possible.
 
-<table>
-<tbody valign="top">
-<tr>
-<td align="center"><b><i>✔️ Good</i></b></td>
-<td align="center"><b><i>❌ Bad</i></b></td>
-</tr>
-<tr>
-<td>
-
-```md
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Pellentesque tincidunt vestibulum enim quis egestas.
-Nunc eget quam ultrices, accumsan lorem id, porttitor nulla.
-Curabitur dui metus, rhoncus at accumsan nec, fringilla vel ligula.
-Pellentesque mollis ipsum at risus rhoncus, id iaculis lorem molestie.
-Ut sed tempus nibh.
-Donec suscipit et nulla ac congue.
-Pellentesque sed convallis neque.
-Aenean tortor dolor, laoreet quis lectus sed, luctus eleifend metus. 
-Pellentesque pulvinar tempor nibh et interdum. 
-Sed lobortis blandit nisi, id pretium felis facilisis et.
-```
-
-</td>
-<td>
+**👎 Bad**
 
 ```md
 Lorem ipsum dolor sit amet,
@@ -243,309 +195,24 @@ Sed lobortis blandit nisi, id
 pretium felis facilisis et.
 ```
 
-</td>
-</tr>
-</tbody>
-</table>
+**👍 Good**
 
-### Save source code files with `UTF-8 No-BOM` encode
+```md
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Pellentesque tincidunt vestibulum enim quis egestas.
+Nunc eget quam ultrices, accumsan lorem id, porttitor nulla.
+Curabitur dui metus, rhoncus at accumsan nec, fringilla vel ligula.
+Pellentesque mollis ipsum at risus rhoncus, id iaculis lorem molestie.
+Ut sed tempus nibh.
+Donec suscipit et nulla ac congue.
+Pellentesque sed convallis neque.
+Aenean tortor dolor, laoreet quis lectus sed, luctus eleifend metus. 
+Pellentesque pulvinar tempor nibh et interdum. 
+Sed lobortis blandit nisi, id pretium felis facilisis et.
+```
 
-Always save all of the source code files with `UTF-8 No-BOM` (8-bit Unicode Transformation Format without byte order mark) encode.
+### Save source code files with "UTF-8 No-BOM" encode
 
-Some of the editors maybe have options of `UTF-8` and `UTF-8 BOM` instead, thus select `UTF-8`.
+Always save all of the source code files with "UTF-8 No-BOM" (8-bit Unicode Transformation Format without byte order mark) encode.
 
-## Structure
-
-<table>
-<tr>
-<td><b>Relative Path (Glob)</b></td>
-<td><b>Markups & Programming Languages</b></td>
-<td><b>Description</b></td>
-</tr>
-<tr>
-<td>
-<ul>
-<li><code>.cfduplication.yaml</code> <i>(Legacy)</i></li>
-<li><code>.cfduplication.yml</code></li>
-</ul>
-</td>
-<td>All</td>
-<td>CodeFactor duplication configuration.</td>
-</tr>
-<tr>
-<td>
-<ul>
-<li><code>.eslintrc</code> <i>(Legacy)</i></li>
-<li><code>.eslintrc.mjs</code> <i>(Legacy)</i></li>
-<li><code>.eslintrc.js</code> <i>(Legacy)</i></li>
-<li><code>.eslintrc.yaml</code> <i>(Legacy)</i></li>
-<li><code>.eslintrc.yml</code></li>
-</ul>
-</td>
-<td>
-<ul>
-<li>JavaScript</li>
-<ul>
-<li>NodeJS</li>
-</ul>
-<li>TypeScript</li>
-<ul>
-<li>NodeJS</li>
-</ul>
-</ul>
-</td>
-<td>ESLint configuration.</td>
-</tr>
-<tr>
-<td><code>.gitattributes</code></td>
-<td>All</td>
-<td>Git attributes.</td>
-</tr>
-<tr>
-<td><code>.github/CODEOWNERS</code></td>
-<td>All</td>
-<td>GitHub code owners metadata.</td>
-</tr>
-<tr>
-<td>
-<ul>
-<li><code>.github/dependabot.yaml</code> <i>(Legacy)</i></li>
-<li><code>.github/dependabot.yml</code></li>
-</ul>
-</td>
-<td></td>
-<td>GitHub Dependabot configuration.</td>
-</tr>
-<tr>
-<td><code>.github/ISSUE_TEMPLATE/*.md</code></td>
-<td>All</td>
-<td>GitHub issue templates.</td>
-</tr>
-<tr>
-<td>
-<ul>
-<li><code>.github/ISSUE_TEMPLATE/config.yaml</code> <i>(Legacy)</i></li>
-<li><code>.github/ISSUE_TEMPLATE/config.yml</code></li>
-</ul>
-</td>
-<td>All</td>
-<td>GitHub issue configuration.</td>
-</tr>
-<tr>
-<td><code>.github/PULL_REQUEST_TEMPLATE.md</code></td>
-<td>All</td>
-<td>GitHub pull request templates.</td>
-</tr>
-<tr>
-<td>
-<ul>
-<li><code>.github/workflows/*.yaml</code> <i>(Legacy)</i></li>
-<li><code>.github/workflows/*.yml</code></li>
-</ul>
-</td>
-<td>All</td>
-<td>GitHub Actions workflows.</td>
-</tr>
-<tr>
-<td><code>.gitignore</code></td>
-<td>All</td>
-<td>Git ignore.</td>
-</tr>
-<tr>
-<td><code>.npmignore</code></td>
-<td>
-<ul>
-<li>JavaScript</li>
-<ul>
-<li>NodeJS</li>
-</ul>
-<li>TypeScript</li>
-<ul>
-<li>NodeJS</li>
-</ul>
-</ul>
-</td>
-<td>NPM ignore.</td>
-</tr>
-<tr>
-<td><code>.npmrc</code></td>
-<td>
-<ul>
-<li>JavaScript</li>
-<ul>
-<li>NodeJS</li>
-</ul>
-<li>TypeScript</li>
-<ul>
-<li>NodeJS</li>
-</ul>
-</ul>
-</td>
-<td>NPM configuration.</td>
-</tr>
-<tr>
-<td>
-<ul>
-<li><code>.yamllint.yaml</code> <i>(Legacy)</i></li>
-<li><code>.yamllint.yml</code></li>
-</ul>
-</td>
-<td>
-<ul>
-<li>YAML</li>
-</ul>
-</td>
-<td>YAMLLint configuration.</td>
-</tr>
-<tr>
-<td>
-<ul>
-<li><code>.github/CODE_OF_CONDUCT.md</code> <i>(Legacy)</i></li>
-<li><code>CODE_OF_CONDUCT.md</code></li>
-</ul>
-</td>
-<td>All</td>
-<td>Contributor covenant code of conduct.</td>
-</tr>
-<tr>
-<td>
-<ul>
-<li><code>.github/CONTRIBUTING.md</code> <i>(Legacy)</i></li>
-<li><code>CONTRIBUTING.md</code></li>
-</ul>
-</td>
-<td>All</td>
-<td>Contributing guide.</td>
-</tr>
-<tr>
-<td>
-<ul>
-<li><code>.lgtm.yaml</code> <i>(Legacy)</i></li>
-<li><code>.lgtm.yml</code> <i>(Legacy)</i></li>
-</ul>
-</td>
-<td>All</td>
-<td><i>(Legacy)</i> LGTM configuration.</td>
-</tr>
-<tr>
-<td><code>deno.json</code></td>
-<td>
-<ul>
-<li>JavaScript</li>
-<ul>
-<li>Deno</li>
-</ul>
-<li>TypeScript</li>
-<ul>
-<li>Deno</li>
-</ul>
-</ul>
-</td>
-<td>Deno configuration.</td>
-</tr>
-<tr>
-<td><code>LICENSE.md</code></td>
-<td>All</td>
-<td>License.</td>
-</tr>
-<tr>
-<td><code>node_modules/**</code></td>
-<td>
-<ul>
-<li>JavaScript</li>
-<ul>
-<li>NodeJS</li>
-</ul>
-<li>TypeScript</li>
-<ul>
-<li>NodeJS</li>
-</ul>
-</ul>
-</td>
-<td>NodeJS modules.</td>
-</tr>
-<tr>
-<td><code>package-lock.json</code></td>
-<td>
-<ul>
-<li>JavaScript</li>
-<ul>
-<li>NodeJS</li>
-</ul>
-<li>TypeScript</li>
-<ul>
-<li>NodeJS</li>
-</ul>
-</ul>
-</td>
-<td>NodeJS package metadata lock.</td>
-</tr>
-<tr>
-<td><code>package.json</code></td>
-<td>
-<ul>
-<li>JavaScript</li>
-<ul>
-<li>NodeJS</li>
-</ul>
-<li>TypeScript</li>
-<ul>
-<li>NodeJS</li>
-</ul>
-</ul>
-</td>
-<td>NodeJS package metadata.</td>
-</tr>
-<tr>
-<td><code>pnpm-lock.yaml</code></td>
-<td>
-<ul>
-<li>JavaScript</li>
-<ul>
-<li>NodeJS</li>
-</ul>
-<li>TypeScript</li>
-<ul>
-<li>NodeJS</li>
-</ul>
-</ul>
-</td>
-<td>PNPM package metadata lock.</td>
-</tr>
-<tr>
-<td>
-<ul>
-<li><code>.github/README.md</code> <i>(Legacy)</i></li>
-<li><code>README.md</code></li>
-</ul>
-</td>
-<td>All</td>
-<td>Readme.</td>
-</tr>
-<tr>
-<td>
-<ul>
-<li><code>.github/SECURITY.md</code> <i>(Legacy)</i></li>
-<li><code>SECURITY.md</code></li>
-</ul>
-</td>
-<td>All</td>
-<td>Security policy.</td>
-</tr>
-<tr>
-<td><code>tsconfig.json</code></td>
-<td>
-<ul>
-<li>JavaScript</li>
-<ul>
-<li>NodeJS</li>
-</ul>
-<li>TypeScript</li>
-<ul>
-<li>NodeJS</li>
-</ul>
-</ul>
-</td>
-<td>TypeScript configuration.</td>
-</tr>
-</table>
+Some of the editors maybe have options of "UTF-8" and "UTF-8 BOM" instead, thus select "UTF-8".

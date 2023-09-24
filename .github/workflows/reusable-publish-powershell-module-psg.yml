@@ -60,9 +60,6 @@ jobs:
             $PackageVersion += "-$($ManifestFromData.PrivateData.PSData.Prerelease)"
           }
           Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "packagename=$($PackageName.ToLower()).$($PackageVersion).nupkg" -Confirm:$False -Encoding 'UTF8NoBOM'
-      # - name: "Test Publish"
-      #   run: |
-      #     Publish-Module -Path $Env:INPUT_PATH -NugetAPIKey 'GUID' -Force -WhatIf -Verbose
       - name: "Publish"
         run: |
           Publish-Module -Path $Env:INPUT_PATH -NugetAPIKey $Env:INPUT_TOKEN -Force -Verbose

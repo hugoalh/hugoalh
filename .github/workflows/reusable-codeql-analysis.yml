@@ -16,7 +16,7 @@ jobs:
         uses: "github/codeql-action/init@v2.21.8"
         with:
           queries: "+security-and-quality"
-      # Automatically build attempts to build any compiled languages (C/C++, C#, Go, or Java).
+      # Automatically build attempts to build any compiled languages (e.g.: C/C++, C#, Go, Java).
       - name: "Build Repository"
         uses: "github/codeql-action/autobuild@v2.21.8"
         continue-on-error: true

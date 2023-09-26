@@ -3,6 +3,7 @@ import eslintJS from "@eslint/js";
 import eslintOnlyWarn from "eslint-plugin-only-warn";
 import eslintTypeScript from "@typescript-eslint/eslint-plugin";
 import eslintTypeScriptParser from "@typescript-eslint/parser";
+/** @type {import("eslint").Linter.FlatConfig[]} */
 export default [
 	eslintJS.configs.recommended,
 	eslintTypeScript.configs,

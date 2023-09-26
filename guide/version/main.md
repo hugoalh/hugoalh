@@ -26,9 +26,9 @@ Most of the projects use [Semantic Versioning (SemVer) 2.0.0](#semantic-versioni
 <Major>.<Minor>.<Patch>-<PreRelease>+<Build>
 ```
 
-- Increment the \<Major> version when make incompatible API changes.
-- Increment the \<Minor> version when add functionality in a backward compatible manner.
-- Increment the \<Patch> version when make backward compatible bug fixes.
-- Additional labels for pre-release and build metadata are available as extensions to the \<Major>.\<Minor>.\<Patch> format.
+- Increment the major version when make incompatible API changes.
+- Increment the minor version when add functionality in a backward compatible manner.
+- Increment the patch version when make backward compatible bug fixes.
+- Additional labels for pre-release and build metadata are available as extensions to the format.
 
 > **Attribution:** This Semantic Versioning (SemVer) 2.0.0 is adapted from and available at https://semver.org/spec/v2.0.0.html.

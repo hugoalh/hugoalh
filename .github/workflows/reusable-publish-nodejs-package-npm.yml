@@ -41,66 +41,69 @@ jobs:
         id: "resolve"
         run: |
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
-          [PSCustomObject]$PackageMetaLocal = Get-Content -LiteralPath (Join-Path -Path $Env:GITHUB_WORKSPACE -ChildPath 'package.json') -Raw -Encoding 'UTF8NoBOM' |
+          [PSCustomObject]$Manifest = Get-Content -LiteralPath (Join-Path -Path $Env:GITHUB_WORKSPACE -ChildPath 'package.json') -Raw -Encoding 'UTF8NoBOM' |
             ConvertFrom-Json -Depth 100
-          [SemVer]$PackageMetaLocalVersion = [SemVer]::Parse($PackageMetaLocal.version)
-          [SemVer]$PackageMetaReleaseVersion = [SemVer]::Parse(($Env:INPUT_RELEASETAG -ireplace '^v', ''))
-          If ($PackageMetaReleaseVersion -ine $PackageMetaLocalVersion) {
-            Write-GitHubActionsWarning -Message "The local version ``$($PackageMetaLocalVersion.ToString())`` is not match the release version ``$($PackageMetaReleaseVersion.ToString())``! Will apply hot fix."
-            npm version $PackageMetaReleaseVersion.ToString()
-            $PackageMetaLocalVersion = $PackageMetaReleaseVersion
+          [SemVer]$ManifestVersion = [SemVer]::Parse($Manifest.version)
+          [SemVer]$ReleaseVersion = [SemVer]::Parse(($Env:INPUT_RELEASETAG -ireplace '^v', ''))
+          If ($ReleaseVersion -ine $ManifestVersion) {
+            Write-GitHubActionsWarning -Message "The manifest version ``$($ManifestVersion.ToString())`` is not match the release version ``$($ReleaseVersion.ToString())``! Will apply hot fix."
+            npm version $ReleaseVersion.ToString()
+            $ManifestVersion = $ReleaseVersion
           }
-          [String]$PackageName = $PackageMetaLocal.Name
-          [String]$PackageTarballName = "$($PackageName -ireplace '^@', '' -ireplace '\/', '-')-$($PackageMetaLocalVersion.ToString()).tgz"
-          [String[]]$PackageMetaLocalDevDependencies = $PackageMetaLocal.devDependencies.PSObject.Properties.Name ?? @()
-          [Boolean]$PackageNeedBuild = 'typescript' -iin $PackageMetaLocalDevDependencies -and !(Test-Path -LiteralPath '.\dist' -PathType 'Container') -and (Test-Path -LiteralPath '.\src' -PathType 'Container') -and (Test-Path -LiteralPath '.\tsconfig.json' -PathType 'Leaf')
-          [Boolean]$PackageTagLatest = $Null -ieq $PackageMetaLocalVersion.PreReleaseLabel
-          [Boolean]$PackageTagPre = $True
+          [String]$Name = $Manifest.Name
+          [String]$TarballName = "$($Name -ireplace '^@', '' -ireplace '\/', '-')-$($ManifestVersion.ToString()).tgz"
+          [String[]]$DevDependencies = $Manifest.devDependencies.PSObject.Properties.Name ?? @()
+          [Boolean]$NeedBuild = 'typescript' -iin $DevDependencies -and !(Test-Path -LiteralPath '.\dist' -PathType 'Container') -and (Test-Path -LiteralPath '.\src' -PathType 'Container') -and (Test-Path -LiteralPath '.\tsconfig.json' -PathType 'Leaf')
+          [Boolean]$VersionIsPreRelease = $Null -ine $ManifestVersion.PreReleaseLabel
+          [Boolean]$TagLatest = !$VersionIsPreRelease
+          [Boolean]$TagPre = $True
           Try {
-            [PSCustomObject]$PackageMetaRegistry = npm show $PackageName --json |
+            [PSCustomObject]$ManifestRegistry = npm show $Name --json |
               Join-String -Separator "`n" |
               ConvertFrom-Json -Depth 100
             If ($LASTEXITCODE -ne 0) {
               Throw 'Package not found!'
             }
-            If ($PackageMetaLocalVersion -ile [SemVer]::Parse(($PackageMetaRegistry.'dist-tags'.latest ?? '0.0.0'))) {
-              $PackageTagLatest = $False
+            If ($ManifestVersion -ile [SemVer]::Parse(($ManifestRegistry.'dist-tags'.latest ?? '0.0.0'))) {
+              $TagLatest = $False
             }
-            If ($PackageMetaLocalVersion -ile [SemVer]::Parse(($PackageMetaRegistry.'dist-tags'.pre ?? '0.0.0'))) {
-              $PackageTagPre = $False
+            If ($ManifestVersion -ile [SemVer]::Parse(($ManifestRegistry.'dist-tags'.pre ?? '0.0.0'))) {
+              $TagPre = $False
             }
           }
           Catch {
-            Write-Warning -Message "Unable to analysis package: $_"
+            Write-Warning -Message "Unable to resolve package: $_"
           }
-          [String[]]$PackageTags = @()
-          If ($PackageTagLatest) {
-            $PackageTags += 'latest'
+          [String[]]$Tags = @()
+          If ($TagLatest) {
+            $Tags += 'latest'
           }
-          If ($PackageTagPre) {
-            $PackageTags += 'pre'
+          If ($TagPre) {
+            $Tags += 'pre'
           }
-          $PackageTags += "latest-$($PackageMetaLocalVersion.Major)"
-          $PackageTags += "pre-$($PackageMetaLocalVersion.Major)"
-          $PackageTags += 'publish'
-          If ($PackageTags.Count -eq 0) {
+          If (!$VersionIsPreRelease) {
+            $Tags += "latest-$($ManifestVersion.Major)"
+          }
+          $Tags += "pre-$($ManifestVersion.Major)"
+          $Tags += 'publish'
+          If ($Tags.Count -eq 0) {
             Write-GitHubActionsFail -Message 'No available tags!'
           }
-          [String]$PackageTagsFirst = $PackageTags[0]
-          [String[]]$PackageTagsRest = (
-            $PackageTags |
+          [String]$TagsFirst = $Tags[0]
+          [String[]]$TagsRest = (
+            $Tags |
               Select-Object -SkipIndex 0
           ) ?? @()
-          Set-GitHubActionsOutput -Name 'name' -Value $PackageName
-          Set-GitHubActionsOutput -Name 'version' -Value $PackageMetaLocalVersion.ToString()
-          Set-GitHubActionsOutput -Name 'descriptor' -Value "$($PackageName)@$($PackageMetaLocalVersion.ToString())"
-          Set-GitHubActionsOutput -Name 'tags_first' -Value $PackageTagsFirst
+          Set-GitHubActionsOutput -Name 'name' -Value $Name
+          Set-GitHubActionsOutput -Name 'version' -Value $ManifestVersion.ToString()
+          Set-GitHubActionsOutput -Name 'descriptor' -Value "$($Name)@$($ManifestVersion.ToString())"
+          Set-GitHubActionsOutput -Name 'tags_first' -Value $TagsFirst
           Set-GitHubActionsOutput -Name 'tags_rest' -Value (
-            $PackageTagsRest |
+            $TagsRest |
               Join-String -Separator ';'
           )
-          Set-GitHubActionsOutput -Name 'tarballname' -Value $PackageTarballName
-          Set-GitHubActionsOutput -Name 'build' -Value $PackageNeedBuild.ToString().ToLower()
+          Set-GitHubActionsOutput -Name 'tarballname' -Value $TarballName
+          Set-GitHubActionsOutput -Name 'build' -Value $NeedBuild.ToString().ToLower()
       - name: "Build Package"
         if: "${{steps.resolve.outputs.build == 'true'}}"
         run: |

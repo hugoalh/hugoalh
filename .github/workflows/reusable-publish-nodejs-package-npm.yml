@@ -73,6 +73,7 @@ jobs:
           }
           Catch {
             Write-Warning -Message "Unable to resolve package: $_"
+            $LASTEXITCODE = 0
           }
           [String[]]$Tags = @()
           If ($TagLatest) {

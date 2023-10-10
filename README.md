@@ -32,19 +32,12 @@
 
 |  |  |
 |:-:|:--|
-| ✔️ | Cantonese (粵語 / 廣東話) - Hong Kong |
-| ✔️ | Cantonese (粵語 / 廣東話) - Macau |
-| ✔️ | Cantonese (粵語 / 廣東話) - Traditional (正體 / 繁體) |
-| ✔️ | Chinese (漢語 / 中文) - Hong Kong |
-| ✔️ | Chinese (漢語 / 中文) - Macau |
-| ✔️ | Chinese (漢語 / 中文) - Republic of China (Taiwan) |
-| ✔️ | Chinese (漢語 / 中文) - Traditional (正體 / 繁體) |
-| ✔️ | English - Hong Kong |
-| ✔️ | English - Macau |
-| ✔️ | English - United Kingdom |
-| ✔️ | English - United States |
+| ✔️ | Cantonese (粵語 / 廣東話) |
+| ✔️ | Chinese (Traditional) (漢語（正體）) |
+| ✔️ | English |
 
 </details>
+
 <details>
 <summary><h2>💻 Markups, Programming Languages & Softwares</h2></summary>
 

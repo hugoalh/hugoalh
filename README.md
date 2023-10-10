@@ -4,12 +4,11 @@
 </a>
 </h1>
 
-> **🕰️ Last Update:** 2023/08/29 02:30 UTC
+> **🕰️ Last Update:** 2023/10/10 09:25 UTC
 
 ![Discord: @hugoalh](https://img.shields.io/badge/Discord-@hugoalh-808080?labelColor=5865F2&logo=discord&logoColor=ffffff&style=flat-square "Discord: @hugoalh")
 [![Mastodon: @hugoalh@mastodon.social](https://img.shields.io/badge/Mastodon-@hugoalh@mastodon.social-808080?labelColor=6364FF&logo=mastodon&logoColor=ffffff&style=flat-square "Mastodon: @hugoalh@mastodon.social")](https://mastodon.social/@hugoalh)
 [![Tumblr: @hugoalh](https://img.shields.io/badge/Tumblr-@hugoalh-808080?labelColor=36465D&logo=tumblr&logoColor=ffffff&style=flat-square "Tumblr: @hugoalh")](https://hugoalh.tumblr.com)
-[![X (Twitter): @hugoalhofficial](https://img.shields.io/badge/X%20%28Twitter%29-@hugoalhofficial-808080?labelColor=000000&logo=x&logoColor=ffffff&style=flat-square "X (Twitter): @hugoalhofficial")](https://twitter.com/hugoalhofficial)
 
 <details>
 <summary><h2>💬 Languages</h2></summary>
@@ -92,7 +91,6 @@
 | ✔️ | [Advanced Determine (NodeJS)](https://github.com/hugoalh-studio/advanced-determine-nodejs) |
 | ✔️ | [Advanced Random (NodeJS)](https://github.com/hugoalh-studio/advanced-random-nodejs) |
 | ✔️ | [Argv (NodeJS)](https://github.com/hugoalh-studio/argv-nodejs) |
-| ✔️ | [Concatenate (NodeJS)](https://github.com/hugoalh-studio/concatenate-nodejs) |
 | ✔️ | [Disable Advancement (Minecraft Java Data Pack)](https://github.com/hugoalh/disable-advancement-mcjdp) <br />*(**Previous:** \[Minecraft Java Data Pack\] Disable Minecraft Advancement)* |
 | ✔️ | [Disk Space Optimizer (GitHub Action)](https://github.com/hugoalh/disk-space-optimizer-ghaction) |
 | ✔️ | [Equal (NodeJS)](https://github.com/hugoalh-studio/equal-nodejs) |
@@ -132,16 +130,17 @@
 | 🚧 | [String Overflow (Deno)](https://github.com/hugoalh-studio/string-overflow-deno) |
 | 🚧 | [Symmetric Crypto (Deno)](https://github.com/hugoalh-studio/symmetric-crypto-deno) |
 | 🚧 | [Temperature (Deno)](https://github.com/hugoalh-studio/temperature-deno) |
+| ❌ | [Concatenate (NodeJS)](https://github.com/hugoalh-studio/concatenate-nodejs) <br />*(Remove at 2024/03/01)* |
 | ❌ | Enchant+ (Minecraft Java Data Pack) |
 | ❌ | Environment Paths (NodeJS) |
-| ❌ | [GitHub Manager (NodeJS CLI)](https://github.com/hugoalh-studio/bulk-github-configuration-nodejs) <br />*Delete at 2024/02/01 00:00 UTC* |
-| ❌ | [GitHub Secret Manager (GitHub Action)](https://github.com/hugoalh/github-secret-manager-ghaction) <br />*Delete at 2024/02/01 00:00 UTC* |
+| ❌ | [GitHub Manager (NodeJS CLI)](https://github.com/hugoalh-studio/bulk-github-configuration-nodejs) <br />*(Remove at 2024/02/01)* |
+| ❌ | [GitHub Secret Manager (GitHub Action)](https://github.com/hugoalh/github-secret-manager-ghaction) <br />*(Remove at 2024/02/01)* |
 | ❌ | More Method (NodeJS) |
 | ❌ | Recipe+ (Minecraft Java Data Pack) |
 | ❌ | Regular Expression Constructor (NodeJS) |
 | ❌ | Tag+ (Minecraft Java Data Pack) |
 | ❌ | Trigger Pipedream Workflow (GitHub Action) <br />*(**Previous:** \[GitHub Action\] Send To Pipedream)* |
-| ❌ | [Undefinish (NodeJS)](https://github.com/hugoalh-studio/undefinish-nodejs) <br />*Delete at 2024/01/01 00:00 UTC* |
+| ❌ | [Undefinish (NodeJS)](https://github.com/hugoalh-studio/undefinish-nodejs) <br />*(Remove at 2024/01/01)* |
 
 </details>
 
@@ -155,7 +154,7 @@
 
 |  |  |
 |:-:|:--|
-| ⏮️ | [Auto Dark Mode](https://github.com/AutoDarkMode/Windows-Auto-Night-Mode) |
+|  | [Auto Dark Mode](https://github.com/AutoDarkMode/Windows-Auto-Night-Mode) |
 | ⏮️ | [MCA Selector](https://github.com/Querz/mcaselector) |
 | ⏮️ | [MrCrayfish Controllable](https://github.com/MrCrayfish/Controllable) |
 | ⏮️ | [MrCrayfish Furniture Mod](https://github.com/MrCrayfish/MrCrayfishFurnitureMod) |

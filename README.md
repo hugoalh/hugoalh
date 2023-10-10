@@ -6,9 +6,21 @@
 
 > **🕰️ Last Update:** 2023/10/10 09:25 UTC
 
-![Discord: @hugoalh](https://img.shields.io/badge/Discord-@hugoalh-808080?labelColor=5865F2&logo=discord&logoColor=ffffff&style=flat-square "Discord: @hugoalh")
-[![Mastodon: @hugoalh@mastodon.social](https://img.shields.io/badge/Mastodon-@hugoalh@mastodon.social-808080?labelColor=6364FF&logo=mastodon&logoColor=ffffff&style=flat-square "Mastodon: @hugoalh@mastodon.social")](https://mastodon.social/@hugoalh)
-[![Tumblr: @hugoalh](https://img.shields.io/badge/Tumblr-@hugoalh-808080?labelColor=36465D&logo=tumblr&logoColor=ffffff&style=flat-square "Tumblr: @hugoalh")](https://hugoalh.tumblr.com)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Discord-@hugoalh-1f1f1f?labelColor=5865F2&logo=discord&logoColor=ffffff&style=flat-square">
+  <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Discord-@hugoalh-dfdfdf?labelColor=5865F2&logo=discord&logoColor=ffffff&style=flat-square">
+  <img alt="Discord: @hugoalh" src="https://img.shields.io/badge/Discord-@hugoalh-dfdfdf?labelColor=5865F2&logo=discord&logoColor=ffffff&style=flat-square" title="Discord: @hugoalh">
+</picture>
+<a href="https://mastodon.social/@hugoalh"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Mastodon-@hugoalh@mastodon.social-1f1f1f?labelColor=6364FF&logo=mastodon&logoColor=ffffff&style=flat-square">
+  <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Mastodon-@hugoalh@mastodon.social-dfdfdf?labelColor=6364FF&logo=mastodon&logoColor=ffffff&style=flat-square">
+  <img alt="Mastodon: @hugoalh@mastodon.social" src="https://img.shields.io/badge/Mastodon-@hugoalh@mastodon.social-dfdfdf?labelColor=6364FF&logo=mastodon&logoColor=ffffff&style=flat-square" title="Mastodon: @hugoalh@mastodon.social">
+</picture></a>
+<a href="https://hugoalh.tumblr.com"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Tumblr-@hugoalh-1f1f1f?labelColor=36465D&logo=tumblr&logoColor=ffffff&style=flat-square">
+  <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Tumblr-@hugoalh-dfdfdf?labelColor=36465D&logo=tumblr&logoColor=ffffff&style=flat-square">
+  <img alt="Tumblr: @hugoalh" src="https://img.shields.io/badge/Tumblr-@hugoalh-dfdfdf?labelColor=36465D&logo=tumblr&logoColor=ffffff&style=flat-square" title="Tumblr: @hugoalh">
+</picture></a>
 
 <details>
 <summary><h2>💬 Languages</h2></summary>

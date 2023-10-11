@@ -4,7 +4,7 @@
 </a>
 </h1>
 
-> **🕰️ Last Update:** 2023/10/10 09:25 UTC
+> **🕰️ Last Update:** 2023/10/11 03:00 UTC
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Discord-@hugoalh-1f1f1f?labelColor=5865F2&logo=discord&logoColor=ffffff&style=flat-square">
@@ -92,22 +92,22 @@
 |  |  |
 |:-:|:--|
 | ✔️ | [__Path (NodeJS)](https://github.com/hugoalh-studio/underscore-path-nodejs) |
-| ✔️ | [Advanced Determine (Deno)](https://github.com/hugoalh-studio/advanced-determine-deno) |
-| ✔️ | [Advanced Determine (NodeJS)](https://github.com/hugoalh-studio/advanced-determine-nodejs) |
-| ✔️ | [Advanced Random (NodeJS)](https://github.com/hugoalh-studio/advanced-random-nodejs) |
 | ✔️ | [Argv (NodeJS)](https://github.com/hugoalh-studio/argv-nodejs) |
+| ✔️ | [Determine (Deno)](https://github.com/hugoalh-studio/determine-deno) <br />*(**Previous:** Advanced Determine (Deno))* |
+| ✔️ | [Determine (NodeJS)](https://github.com/hugoalh-studio/determine-nodejs) <br />*(**Previous:** Advanced Determine (NodeJS))* |
 | ✔️ | [Disable Advancement (Minecraft Java Data Pack)](https://github.com/hugoalh/disable-advancement-mcjdp) <br />*(**Previous:** \[Minecraft Java Data Pack\] Disable Minecraft Advancement)* |
 | ✔️ | [Disk Space Optimizer (GitHub Action)](https://github.com/hugoalh/disk-space-optimizer-ghaction) |
 | ✔️ | [Equal (NodeJS)](https://github.com/hugoalh-studio/equal-nodejs) |
-| ✔️ | [exFetch (Deno)](https://github.com/hugoalh-studio/exfetch-deno) 🆕 |
+| ✔️ | [exFetch (Deno)](https://github.com/hugoalh-studio/exfetch-deno) |
 | ✔️ | [GitHub Actions Toolkit (PowerShell)](https://github.com/hugoalh-studio/ghactions-toolkit-powershell) |
 | ✔️ | [GitHub Sodium (NodeJS)](https://github.com/hugoalh-studio/github-sodium-nodejs) |
 | ✔️ | [No Enderman Griefing (Minecraft Java Data Pack)](https://github.com/hugoalh/no-enderman-griefing-mcjdp) |
 | ✔️ | [No Item Despawn (Minecraft Java Data Pack)](https://github.com/hugoalh/no-item-despawn-mcjdp) |
 | ✔️ | [No Mob Despawn (Minecraft Java Data Pack)](https://github.com/hugoalh/no-mob-despawn-mcjdp) |
 | ✔️ | [Pressure (NodeJS)](https://github.com/hugoalh-studio/pressure-nodejs) |
-| ✔️ | [Range Iterator (Deno)](https://github.com/hugoalh-studio/range-iterator-deno) 🆕 |
-| ✔️ | [Replit Database Client (Deno)](https://github.com/hugoalh-studio/replit-database-client-deno) 🆕 |
+| ✔️ | [Range Iterator (Deno)](https://github.com/hugoalh-studio/range-iterator-deno) |
+| ✔️ | [Range Iterator (NodeJS)](https://github.com/hugoalh-studio/range-iterator-nodejs) 🆕 |
+| ✔️ | [Replit Database Client (Deno)](https://github.com/hugoalh-studio/replit-database-client-deno) |
 | ✔️ | [Scan Virus (GitHub Action)](https://github.com/hugoalh/scan-virus-ghaction) |
 | ✔️ | [Send Discord Webhook (GitHub Action)](https://github.com/hugoalh/send-discord-webhook-ghaction) <br />*(**Previous:** \[GitHub Action\] Send To Discord)* |
 | ✔️ | [Send IFTTT Webhook (Deno)](https://github.com/hugoalh-studio/send-ifttt-webhook-deno) |
@@ -123,29 +123,21 @@
 | ✔️ | [Temperature (NodeJS)](https://github.com/hugoalh-studio/temperature-nodejs) |
 | ✔️ | [Unique Array (Deno)](https://github.com/hugoalh-studio/unique-array-deno) |
 | ✔️ | [Unique Array (NodeJS)](https://github.com/hugoalh-studio/unique-array-nodejs) |
-| 🚧 | [Advanced Random (Deno)](https://github.com/hugoalh-studio/advanced-random-deno) |
-| 🚧 | [exFetch (NodeJS)](https://github.com/hugoalh-studio/exfetch-nodejs) |
-| 🚧 | [GitHub Label Manager (GitHub Action)](https://github.com/hugoalh/github-label-manager-ghaction) |
-| 🚧 | [Pressure (Deno)](https://github.com/hugoalh-studio/pressure-deno) |
-| 🚧 | [Range Iterator (NodeJS)](https://github.com/hugoalh-studio/range-iterator-nodejs) |
 | 🚧 | [RegExp Pattern (NodeJS)](https://github.com/hugoalh-studio/regexp-pattern-nodejs) <br />*(**Previous:** REPattern (NodeJS))* |
 | 🚧 | [Send Discord Webhook (NodeJS)](https://github.com/hugoalh-studio/send-discord-webhook-nodejs) |
 | 🚧 | [Setation (Deno)](https://github.com/hugoalh-studio/setation-deno) |
-| 🚧 | [String Dissect (Deno)](https://github.com/hugoalh-studio/string-dissect-deno) |
 | 🚧 | [String Overflow (Deno)](https://github.com/hugoalh-studio/string-overflow-deno) |
 | 🚧 | [Symmetric Crypto (Deno)](https://github.com/hugoalh-studio/symmetric-crypto-deno) |
-| 🚧 | [Temperature (Deno)](https://github.com/hugoalh-studio/temperature-deno) |
-| ❌ | [Concatenate (NodeJS)](https://github.com/hugoalh-studio/concatenate-nodejs) <br />*(Remove at 2024/03/01)* |
+| 🚧 | [Unit Convert (Deno)](https://github.com/hugoalh-studio/unit-convert-deno) |
+| ❌ | [Advanced Random (NodeJS)](https://github.com/hugoalh-studio/advanced-random-nodejs) <br />*(Remove at 2024/08/01)* |
+| ❌ | [Concatenate (NodeJS)](https://github.com/hugoalh-studio/concatenate-nodejs) <br />*(Remove at 2024/08/01)* |
 | ❌ | Enchant+ (Minecraft Java Data Pack) |
-| ❌ | Environment Paths (NodeJS) |
-| ❌ | [GitHub Manager (NodeJS CLI)](https://github.com/hugoalh-studio/bulk-github-configuration-nodejs) <br />*(Remove at 2024/02/01)* |
-| ❌ | [GitHub Secret Manager (GitHub Action)](https://github.com/hugoalh/github-secret-manager-ghaction) <br />*(Remove at 2024/02/01)* |
-| ❌ | More Method (NodeJS) |
+| ❌ | [GitHub Manager (NodeJS CLI)](https://github.com/hugoalh-studio/bulk-github-configuration-nodejs) <br />*(Remove at 2024/08/01)* |
+| ❌ | [GitHub Secret Manager (GitHub Action)](https://github.com/hugoalh/github-secret-manager-ghaction) <br />*(Remove at 2024/08/01)* |
 | ❌ | Recipe+ (Minecraft Java Data Pack) |
-| ❌ | Regular Expression Constructor (NodeJS) |
 | ❌ | Tag+ (Minecraft Java Data Pack) |
 | ❌ | Trigger Pipedream Workflow (GitHub Action) <br />*(**Previous:** \[GitHub Action\] Send To Pipedream)* |
-| ❌ | [Undefinish (NodeJS)](https://github.com/hugoalh-studio/undefinish-nodejs) <br />*(Remove at 2024/01/01)* |
+| ❌ | [Undefinish (NodeJS)](https://github.com/hugoalh-studio/undefinish-nodejs) <br />*(Remove at 2024/08/01)* |
 
 </details>
 

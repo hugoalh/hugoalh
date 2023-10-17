@@ -92,9 +92,9 @@
 |  |  |
 |:-:|:--|
 | ✔️ | [__Path (NodeJS)](https://github.com/hugoalh-studio/underscore-path-nodejs) |
+| ✔️ | [Advanced Determine (Deno)](https://github.com/hugoalh-studio/advanced-determine-deno) |
+| ✔️ | [Advanced Determine (NodeJS)](https://github.com/hugoalh-studio/advanced-determine-nodejs) |
 | ✔️ | [Argv (NodeJS)](https://github.com/hugoalh-studio/argv-nodejs) |
-| ✔️ | [Determine (Deno)](https://github.com/hugoalh-studio/determine-deno) <br />*(**Previous:** Advanced Determine (Deno))* |
-| ✔️ | [Determine (NodeJS)](https://github.com/hugoalh-studio/determine-nodejs) <br />*(**Previous:** Advanced Determine (NodeJS))* |
 | ✔️ | [Disable Advancement (Minecraft Java Data Pack)](https://github.com/hugoalh/disable-advancement-mcjdp) <br />*(**Previous:** \[Minecraft Java Data Pack\] Disable Minecraft Advancement)* |
 | ✔️ | [Disk Space Optimizer (GitHub Action)](https://github.com/hugoalh/disk-space-optimizer-ghaction) |
 | ✔️ | [Equal (NodeJS)](https://github.com/hugoalh-studio/equal-nodejs) |

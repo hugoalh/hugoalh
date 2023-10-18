@@ -21,7 +21,7 @@ jobs:
         with:
           version: "^1.7.2"
       - name: "Checkout Repository"
-        uses: "actions/checkout@v4.1.0"
+        uses: "actions/checkout@v4.1.1"
       - name: "Resolve Repository"
         id: "resolve"
         run: |

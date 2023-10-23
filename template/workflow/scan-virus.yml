@@ -43,8 +43,8 @@ jobs:
       git_integrate: "${{github.event.inputs.git_integrate || 'False'}}"
       git_limit: "${{github.event.inputs.git_limit || '0'}}"
       git_reverse: "${{github.event.inputs.git_reverse || 'False'}}"
-      ignores_pre: |-
-        Param($ElementPreMeta)
+      ignores_post: |-
+        Param($ElementPostMeta)
         Return (
-          $ElementPreMeta.Path -imatch '^node_modules[\\/]'
+          $ElementPostMeta.Path -imatch '^node_modules[\\/]'
         )

@@ -41,7 +41,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: "Scan Repository"
-        uses: "hugoalh/scan-virus-ghaction/clamav@v0.20.0"
+        uses: "hugoalh/scan-virus-ghaction/clamav@v0.20.1"
         with:
           git_integrate: "${{inputs.git_integrate}}"
           git_ignores: "${{inputs.git_ignores}}"

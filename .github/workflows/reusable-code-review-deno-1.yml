@@ -92,6 +92,7 @@ jobs:
       - name: "Check Dependencies Update"
         id: "check-dependencies-update"
         run: |
+          Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
           [Boolean]$IsFail = $False
           ForEach ($File In (
             $Env:INPUT_GENERAL_FILES |
@@ -99,10 +100,12 @@ jobs:
           )) {
             [String]$Output =  deno run --allow-net --allow-read="$Env:GITHUB_WORKSPACE" --no-prompt https://deno.land/x/udd@0.8.2/main.ts --dry-run $File |
               Join-String -Separator "`n"
+            $LASTEXITCODE = 0
+            Write-Host -Object $Output
             If ($Output -imatch 'able to update') {
               $IsFail = $True
+              Write-GitHubActionsError -Message "Dependencies in file ``$File`` are not up to date!"
             }
-            Write-Host -Object $Output
           }
           If ($IsFail) {
             Exit 1

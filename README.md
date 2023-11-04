@@ -4,7 +4,7 @@
 </a>
 </h1>
 
-> **🕰️ Last Update:** 2023/10/11 03:00 UTC
+> **🕰️ Last Update:** 2023/11/04 03:10 UTC
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Discord-@hugoalh-1f1f1f?labelColor=5865F2&logo=discord&logoColor=ffffff&style=flat-square">
@@ -99,6 +99,7 @@
 | ✔️ | [Disk Space Optimizer (GitHub Action)](https://github.com/hugoalh/disk-space-optimizer-ghaction) |
 | ✔️ | [Equal (NodeJS)](https://github.com/hugoalh-studio/equal-nodejs) |
 | ✔️ | [exFetch (Deno)](https://github.com/hugoalh-studio/exfetch-deno) |
+| ✔️ | [exFetch (NodeJS)](https://github.com/hugoalh-studio/exfetch-nodejs) 🆕 |
 | ✔️ | [GitHub Actions Toolkit (PowerShell)](https://github.com/hugoalh-studio/ghactions-toolkit-powershell) |
 | ✔️ | [GitHub Sodium (NodeJS)](https://github.com/hugoalh-studio/github-sodium-nodejs) |
 | ✔️ | [No Enderman Griefing (Minecraft Java Data Pack)](https://github.com/hugoalh/no-enderman-griefing-mcjdp) |
@@ -106,7 +107,7 @@
 | ✔️ | [No Mob Despawn (Minecraft Java Data Pack)](https://github.com/hugoalh/no-mob-despawn-mcjdp) |
 | ✔️ | [Pressure (NodeJS)](https://github.com/hugoalh-studio/pressure-nodejs) |
 | ✔️ | [Range Iterator (Deno)](https://github.com/hugoalh-studio/range-iterator-deno) |
-| ✔️ | [Range Iterator (NodeJS)](https://github.com/hugoalh-studio/range-iterator-nodejs) 🆕 |
+| ✔️ | [Range Iterator (NodeJS)](https://github.com/hugoalh-studio/range-iterator-nodejs) |
 | ✔️ | [Replit Database Client (Deno)](https://github.com/hugoalh-studio/replit-database-client-deno) |
 | ✔️ | [Scan Virus (GitHub Action)](https://github.com/hugoalh/scan-virus-ghaction) |
 | ✔️ | [Send Discord Webhook (GitHub Action)](https://github.com/hugoalh/send-discord-webhook-ghaction) <br />*(**Previous:** \[GitHub Action\] Send To Discord)* |
@@ -134,6 +135,8 @@
 | ❌ | Enchant+ (Minecraft Java Data Pack) |
 | ❌ | [GitHub Manager (NodeJS CLI)](https://github.com/hugoalh-studio/bulk-github-configuration-nodejs) <br />*(Remove at 2024/08/01)* |
 | ❌ | [GitHub Secret Manager (GitHub Action)](https://github.com/hugoalh/github-secret-manager-ghaction) <br />*(Remove at 2024/08/01)* |
+| ❌ | More Array (NodeJS) |
+| ❌ | More Method (NodeJS) |
 | ❌ | Recipe+ (Minecraft Java Data Pack) |
 | ❌ | Tag+ (Minecraft Java Data Pack) |
 | ❌ | Trigger Pipedream Workflow (GitHub Action) <br />*(**Previous:** \[GitHub Action\] Send To Pipedream)* |

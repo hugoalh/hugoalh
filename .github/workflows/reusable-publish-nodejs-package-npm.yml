@@ -123,7 +123,7 @@ jobs:
         env:
           INPUT_TAGSFIRST: "${{steps.resolve.outputs.tags_first}}"
       - name: "Publish With Tag ${{steps.resolve.outputs.tags_first}}"
-        if: "${{steps.publish-provenance.outcome == 'failure'}}"
+        if: "${{!cancelled() && steps.publish-provenance.outcome == 'failure'}}"
         id: "publish"
         run: |
           [String]$PackageTagsFirst = $Env:INPUT_TAGSFIRST
@@ -131,7 +131,7 @@ jobs:
         env:
           INPUT_TAGSFIRST: "${{steps.resolve.outputs.tags_first}}"
       - name: "Publish With Rest Tags"
-        if: "${{(steps.publish-provenance.outcome == 'success' || steps.publish.outcome == 'success') && steps.resolve.outputs.tags_rest != ''}}"
+        if: "${{(!cancelled() && (steps.publish-provenance.outcome == 'success' || steps.publish.outcome == 'success')) && steps.resolve.outputs.tags_rest != ''}}"
         run: |
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
           [String]$PackageDescriptor = $Env:INPUT_DESCRIPTOR

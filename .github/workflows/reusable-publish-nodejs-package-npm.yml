@@ -12,14 +12,6 @@ defaults:
 env:
   INPUT_RELEASETAG: "${{github.event.release.tag_name}}"
   NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
-permissions:
-  actions: "write"
-  checks: "write"
-  contents: "write"
-  deployments: "write"
-  id-token: "write"
-  security-events: "write"
-  statuses: "write"
 jobs:
   main:
     name: "Main"

@@ -15,7 +15,6 @@ jobs:
   main:
     name: "Main"
     runs-on: "${{inputs.runs-on}}"
-    if: "${{!(github.event_name == 'pull_request' && startsWith(github.event.pull_request.head.label, format('{0}:', github.repository_owner)))}}"
     steps:
       - name: "Setup PowerShell Toolkit"
         uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v1.6.0"

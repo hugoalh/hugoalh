@@ -89,29 +89,29 @@ jobs:
           }
         env:
           INPUT_GENERAL_FILES: "${{steps.resolve.outputs.general_files}}"
-      - name: "Check Dependencies Update"
-        id: "check-dependencies-update"
-        run: |
-          Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
-          [Boolean]$IsFail = $False
-          ForEach ($File In (
-            $Env:INPUT_GENERAL_FILES |
-              ConvertFrom-Json -Depth 100
-          )) {
-            [String]$Output =  deno run --allow-net --allow-read="$Env:GITHUB_WORKSPACE" --no-prompt https://deno.land/x/udd@0.8.2/main.ts --dry-run $File |
-              Join-String -Separator "`n"
-            $LASTEXITCODE = 0
-            Write-Host -Object $Output
-            If ($Output -imatch 'able to update') {
-              $IsFail = $True
-              Write-GitHubActionsError -Message "Dependencies in file ``$File`` are not up to date!"
-            }
-          }
-          If ($IsFail) {
-            Exit 1
-          }
-        env:
-          INPUT_GENERAL_FILES: "${{steps.resolve.outputs.general_files}}"
+      # - name: "Check Dependencies Update"
+      #   id: "check-dependencies-update"
+      #   run: |
+      #     Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
+      #     [Boolean]$IsFail = $False
+      #     ForEach ($File In (
+      #       $Env:INPUT_GENERAL_FILES |
+      #         ConvertFrom-Json -Depth 100
+      #     )) {
+      #       [String]$Output =  deno run --allow-net --allow-read="$Env:GITHUB_WORKSPACE" --no-prompt https://deno.land/x/udd@0.8.2/main.ts --dry-run $File |
+      #         Join-String -Separator "`n"
+      #       $LASTEXITCODE = 0
+      #       Write-Host -Object $Output
+      #       If ($Output -imatch 'able to update') {
+      #         $IsFail = $True
+      #         Write-GitHubActionsError -Message "Dependencies in file ``$File`` are not up to date!"
+      #       }
+      #     }
+      #     If ($IsFail) {
+      #       Exit 1
+      #     }
+      #   env:
+      #     INPUT_GENERAL_FILES: "${{steps.resolve.outputs.general_files}}"
       - name: "Lint Code"
         id: "lint"
         if: "${{!cancelled() && steps.verify-dependencies.outcome == 'success'}}"

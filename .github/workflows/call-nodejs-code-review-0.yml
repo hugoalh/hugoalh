@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+name: "[Call] NodeJS - Code Review (@0)"
+on:
+  workflow_call:
+    inputs:
+      runs-on:
+        type: "string"
+        description: "{string} Type of the machine to run the job on."
+        required: false
+        default: "ubuntu-latest"
+jobs:
+  main:
+    name: "Main"
+    runs-on: "${{inputs.runs-on}}"
+    steps:
+      - name: "Checkout Repository"
+        uses: "actions/checkout@v4.1.1"
+      - name: "Setup NodeJS"
+        uses: "actions/setup-node@v4.0.0"
+        with:
+          node-version: "lts/*"
+          check-latest: true
+          registry-url: "https://registry.npmjs.org/"
+      - name: "Setup PowerShell Toolkit"
+        uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v1.6.0"
+        with:
+          version: "^1.7.2"
+      - name: "Resolve NodeJS Cache Path"
+        id: "resolve-cache-path"
+        run: |
+          Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
+          [String]$NodeModulesPath = Join-Path -Path $Env:GITHUB_WORKSPACE -ChildPath 'node_modules'
+          [String]$NpmCachePath = npm config get cache |
+            Join-String -Separator "`n"
+          Set-GitHubActionsOutput -Name 'node_modules' -Value $NodeModulesPath
+          Set-GitHubActionsOutput -Name 'npm_cache' -Value $NpmCachePath
+        shell: "pwsh"
+      - name: "Restore NodeJS Cache"
+        id: "restore-cache"
+        uses: "actions/cache/restore@v3.3.2"
+        with:
+          key: "NodeJS/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}-${{runner.os}}"
+          path: |-
+            ${{steps.resolve-cache-path.outputs.node_modules}}
+            ${{steps.resolve-cache-path.outputs.npm_cache}}
+          restore-keys: |-
+            NodeJS/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}-
+            NodeJS/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}
+            NodeJS/${{github.run_id}}-${{github.run_attempt}}-
+            NodeJS/${{github.run_id}}-${{github.run_attempt}}
+            NodeJS/${{github.run_id}}-
+            NodeJS/${{github.run_id}}
+            NodeJS/
+      - name: "Manage Dependencies"
+        id: "manage-dependencies"
+        run: |
+          npm install
+      - name: "Lint Code"
+        run: |
+          npm run lint
+      - name: "Save NodeJS Cache"
+        if: "${{!cancelled() && steps.restore-cache.outcome == 'success'}}"
+        uses: "actions/cache/save@v3.3.2"
+        with:
+          key: "NodeJS/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}-${{runner.os}}"
+          path: |-
+            ${{steps.resolve-cache-path.outputs.node_modules}}
+            ${{steps.resolve-cache-path.outputs.npm_cache}}

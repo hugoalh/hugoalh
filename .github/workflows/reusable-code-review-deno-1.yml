@@ -19,7 +19,7 @@ jobs:
       - name: "Setup PowerShell Toolkit"
         uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v1.6.0"
         with:
-          version: "^1.7.2"
+          version: "^2.0.0"
       - name: "Checkout Repository"
         uses: "actions/checkout@v4.1.1"
       - name: "Resolve Repository"
@@ -48,7 +48,7 @@ jobs:
           [PSCustomObject]$DenoInfo = deno info --json |
             Join-String -Separator "`n" |
             ConvertFrom-Json -Depth 100
-          Set-GitHubActionsEnvironmentVariable -Name 'DENO_DIR' -Value $DenoInfo.denoDir -Scope Subsequent
+          Set-GitHubActionsEnvironmentVariable -Name 'DENO_DIR' -Value $DenoInfo.denoDir -Scope 'Subsequent'
       - name: "Restore Deno Cache"
         id: "restore-cache"
         uses: "actions/cache/restore@v3.3.2"

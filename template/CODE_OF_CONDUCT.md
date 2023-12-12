@@ -4,6 +4,8 @@
 
 # Contributor Covenant Code of Conduct
 
+> **ℹ️ Notice:** Please make sure you are reading the latest version of the document.
+
 ## Our Pledge
 
 We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, colo(u)r, religion, or sexual identity and orientation.
@@ -41,8 +43,6 @@ This Code of Conduct applies within all community spaces, and also applies when 
 ## Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior maybe report to the community leaders responsible for enforcement via [fill this form](https://forms.gle/AXq9hWq2DsJrDNjP7).
-
-All new requests may need `~96 hours (~4 days)` to begin the process.
 
 All complaints will be reviewed and investigated promptly and fairly.
 

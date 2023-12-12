@@ -1,5 +1,7 @@
 # Contributing Guide
 
+> **ℹ️ Notice:** Please make sure you are reading the latest version of the document.
+
 This Contributing Guide includes the guidelines, methods, and ways to contribute on different categories, items, and types; If this Contributing Guide does not include some of the categories, items, and/or types, maybe:
 
 - those guidelines, methods, and/or ways are separated from this Contributing Guide and exist and/or store in their corresponding places,
@@ -10,7 +12,7 @@ If you have any questions and/or still confused, try to create a discussion.
 
 ## Codes
 
-All of the codes in this project and repository are follow the [hxhS (hugoalh & hugoalh Studio) Coding Guide](https://github.com/hugoalh/hugoalh/blob/main/guide/code/main.md).
+All of the codes in this project are follow the [hxhS (hugoalh & hugoalh Studio) Coding Guide](https://github.com/hugoalh/hugoalh/blob/main/guide/code/main.md).
 
 ## Deploys & Versions
 
@@ -32,19 +34,19 @@ To improve the wiki, create an issue.
 
 ## I18ns (Internationalizations) & Translations
 
-This project and repository does not need to do i18ns and/or translations.
+This project does not need to do i18ns and/or translations.
 
 If you want to do i18ns and/or translations on the documentations, documents and/or wiki, please see the section "[Documentations, Documents & Wiki](#documentations-documents--wiki)".
 
 ## Issues
 
-- Before create an issue, check whether any similar issues are already exist.
+- Before create an issue, check whether any similar issues are already exist, even the closed issues.
 - Any questions should create a discussion instead.
 - For any security vulnerability reports, please visit the Security Policy (file: `SECURITY.md`).
 
 ## Pull Requests
 
-- Before create a pull request, check whether any similar pull requests are already exist.
+- Before create a pull request, check whether any similar pull requests are already exist, even the closed pull requests.
 - Always create a pull request to the default branch (mostly named `main` or `master`) of this repository.
 - Try to avoid merge conflicts if possible.
 - Try to avoid a pull request with too many changes if possible.

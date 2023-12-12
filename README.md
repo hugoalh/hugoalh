@@ -1,10 +1,10 @@
 <h1 align="center">
-<a href="https://github.com/hugoalh">
-<img alt="hugoalh" src="https://i.imgur.com/d7CW6xWl.png" title="hugoalh" />
-</a>
+  <a href="https://github.com/hugoalh">
+    <img alt="hugoalh" src="https://i.imgur.com/d7CW6xWl.png" title="hugoalh" />
+  </a>
 </h1>
 
-> **🕰️ Last Update:** 2023/11/04 03:10 UTC
+> **🕰️ Last Update:** 2023/12/12 03:10 UTC
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Discord-@hugoalh-1f1f1f?labelColor=5865F2&logo=discord&logoColor=ffffff&style=flat-square">
@@ -46,37 +46,38 @@
 > | ✔️ | Known. |
 > | 📖 | Learning. |
 
-|  |  |  |
-|:-:|:--|:--|
-| ✔️ | CSS | Cascading Style Sheets |
-| ✔️ | CSV | Comma Separated Values |
-| ✔️ | Docker |  |
-| ✔️ | HTML | HyperText Markup Language |
-| ✔️ | JavaScript - Browsers |  |
-| ✔️ | JavaScript - Deno |  |
-| ✔️ | JavaScript - NodeJS |  |
-| ✔️ | JSON | JavaScript Object Notation |
-| ✔️ | JSON5 | JavaScript Object Notation for Humans |
-| ✔️ | JSONC | JavaScript Object Notation with Comments |
-| ✔️ | ModernScript |  |
-| ✔️ | PowerShell |  |
-| ✔️ | SVG | Scalable Vector Graphics |
-| ✔️ | TOML | Tom's Obvious, Minimal Language |
-| ✔️ | TSV | Tab Separated Values |
-| ✔️ | TypeScript - Deno |  |
-| ✔️ | TypeScript - NodeJS |  |
-| ✔️ | YAML | YAML Ain't Markup Language |
-| 📖 | .NET - C# |  |
-| 📖 | Bash |  |
-| 📖 | CSON | CoffeeScript Object Notation |
-| 📖 | Go |  |
-| 📖 | MCFunction | Minecraft Function |
-| 📖 | Python |  |
-| 📖 | Rust |  |
-| 📖 | V |  |
-| 📖 | YARA | Yet Another Ridiculous Acronym |
+|  |  |
+|:-:|:--|
+| ✔️ | CSS (Cascading Style Sheets) |
+| ✔️ | CSV (Comma Separated Values) |
+| ✔️ | Docker |
+| ✔️ | HTML (HyperText Markup Language) |
+| ✔️ | JavaScript - Browsers |
+| ✔️ | JavaScript - Deno |
+| ✔️ | JavaScript - NodeJS |
+| ✔️ | JSON (JavaScript Object Notation) |
+| ✔️ | JSON5 (JavaScript Object Notation for Humans) |
+| ✔️ | JSONC (JavaScript Object Notation with Comments) |
+| ✔️ | ModernScript |
+| ✔️ | PowerShell |
+| ✔️ | SVG (Scalable Vector Graphics) |
+| ✔️ | TOML (Tom's Obvious, Minimal Language) |
+| ✔️ | TSV (Tab Separated Values) |
+| ✔️ | TypeScript - Deno |
+| ✔️ | TypeScript - NodeJS |
+| ✔️ | YAML (YAML Ain't Markup Language) |
+| 📖 | .NET - C# |
+| 📖 | Bash |
+| 📖 | CSON (CoffeeScript Object Notation) |
+| 📖 | Go |
+| 📖 | MCFunction (Minecraft Function) |
+| 📖 | Python |
+| 📖 | Rust |
+| 📖 | V |
+| 📖 | YARA (Yet Another Ridiculous Acronym) |
 
 </details>
+
 <details open>
 <summary><h2>📦 Projects</h2></summary>
 

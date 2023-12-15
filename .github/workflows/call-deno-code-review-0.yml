@@ -8,6 +8,8 @@ on:
         description: "{string} Type of the machine to run the job on."
         required: false
         default: "ubuntu-latest"
+permissions:
+  contents: "read"
 jobs:
   main:
     name: "Main"
@@ -18,7 +20,7 @@ jobs:
       - name: "Setup Deno"
         uses: "denoland/setup-deno@v1.1.3"
         with:
-          deno-version: "^1.38.5"
+          deno-version: "^1.39.0"
       - name: "Setup PowerShell Toolkit"
         uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v1.6.0"
         with:
@@ -119,16 +121,19 @@ jobs:
         if: "${{!cancelled() && steps.verify-dependencies.outcome == 'success'}}"
         run: |
           deno lint
+        shell: "pwsh"
       - name: "Test Code"
         id: "test"
         if: "${{!cancelled() && steps.verify-dependencies.outcome == 'success' && steps.resolve-repository.outputs.test_dispatch == 'true'}}"
         run: |
           deno test --allow-all --no-prompt
+        shell: "pwsh"
       - name: "Benchmark Code"
         id: "benchmark"
         if: "${{!cancelled() && steps.verify-dependencies.outcome == 'success' && steps.resolve-repository.outputs.benchmark_dispatch == 'true'}}"
         run: |
           deno bench --allow-all --no-prompt
+        shell: "pwsh"
       - name: "Save Deno Cache"
         if: "${{!cancelled() && steps.restore-cache.outcome == 'success'}}"
         uses: "actions/cache/save@v3.3.2"

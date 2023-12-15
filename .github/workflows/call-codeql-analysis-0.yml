@@ -2,6 +2,9 @@
 name: "[Call] CodeQL - Analysis (@0)"
 on:
   workflow_call:
+permissions:
+  contents: "read"
+  security-events: "write"
 jobs:
   main:
     name: "Main"

@@ -1,14 +1,14 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: "[Reusable] Publish NodeJS Package - NPM"
+name: "[Call] NodeJS - Publish - NPM (@0)"
 on:
   workflow_call:
     secrets:
       NPM_TOKEN:
         description: "{string} NPM token."
         required: true
-defaults:
-  run:
-    shell: "pwsh"
+permissions:
+  contents: "read"
+  id-token: "write"
 env:
   INPUT_RELEASETAG: "${{github.event.release.tag_name}}"
   NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
@@ -97,6 +97,7 @@ jobs:
           )
           Set-GitHubActionsOutput -Name 'tarballname' -Value $TarballName
           Set-GitHubActionsOutput -Name 'build' -Value $NeedBuild.ToString().ToLower()
+        shell: "pwsh"
       - name: "Build Package"
         if: "${{steps.resolve.outputs.build == 'true'}}"
         run: |
@@ -107,11 +108,13 @@ jobs:
             Remove-Item -LiteralPath '.\dist' -Recurse -Force -Confirm:$False
           }
           . $TscPath.Path -p $ConfigPath.Path
+        shell: "pwsh"
       - name: "Publish With Tag ${{steps.resolve.outputs.tags_first}} (Provenance)"
         id: "publish-provenance"
         run: |
           [String]$PackageTagsFirst = $Env:INPUT_TAGSFIRST
           npm publish --provenance --tag $PackageTagsFirst
+        shell: "pwsh"
         env:
           INPUT_TAGSFIRST: "${{steps.resolve.outputs.tags_first}}"
       - name: "Publish With Tag ${{steps.resolve.outputs.tags_first}}"
@@ -120,6 +123,7 @@ jobs:
         run: |
           [String]$PackageTagsFirst = $Env:INPUT_TAGSFIRST
           npm publish --tag $PackageTagsFirst
+        shell: "pwsh"
         env:
           INPUT_TAGSFIRST: "${{steps.resolve.outputs.tags_first}}"
       - name: "Publish With Rest Tags"
@@ -136,6 +140,7 @@ jobs:
               Write-GitHubActionsError -Message $_
             }
           }
+        shell: "pwsh"
         env:
           INPUT_DESCRIPTOR: "${{steps.resolve.outputs.descriptor}}"
           INPUT_TAGSREST: "${{steps.resolve.outputs.tags_rest}}"
@@ -144,6 +149,7 @@ jobs:
         run: |
           npm pack
           gh release upload $Env:INPUT_RELEASETAG $Env:INPUT_TARBALLNAME --clobber --repo $Env:GITHUB_REPOSITORY
+        shell: "pwsh"
         env:
           GH_TOKEN: "${{secrets.GITHUB_TOKEN}}"
           INPUT_TARBALLNAME: "${{steps.resolve.outputs.tarballname}}"

@@ -35,6 +35,8 @@ on:
         options:
           - "False"
           - "True"
+permissions:
+  contents: "read"
 jobs:
   main:
     name: "Main"

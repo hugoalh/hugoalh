@@ -8,6 +8,8 @@ on:
         description: "{string} Type of the machine to run the job on."
         required: false
         default: "ubuntu-latest"
+permissions:
+  contents: "read"
 jobs:
   main:
     name: "Main"
@@ -51,13 +53,15 @@ jobs:
             NodeJS/${{github.run_id}}-
             NodeJS/${{github.run_id}}
             NodeJS/
-      - name: "Manage Dependencies"
-        id: "manage-dependencies"
+      - name: "Verify Dependencies"
+        id: "verify-dependencies"
         run: |
           npm install
+        shell: "pwsh"
       - name: "Lint Code"
         run: |
           npm run lint
+        shell: "pwsh"
       - name: "Save NodeJS Cache"
         if: "${{!cancelled() && steps.restore-cache.outcome == 'success'}}"
         uses: "actions/cache/save@v3.3.2"

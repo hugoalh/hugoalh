@@ -30,6 +30,8 @@ on:
         type: "string"
         description: "{ScriptBlock} Ignores by the paths, sessions, symbols (i.e. rules or signatures), and tools after the scan."
         required: false
+permissions:
+  contents: "read"
 jobs:
   main:
     name: "Main"

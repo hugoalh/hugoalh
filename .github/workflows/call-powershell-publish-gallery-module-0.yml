@@ -13,7 +13,7 @@ on:
         description: "{String} PowerShell Gallery token."
         required: true
 permissions:
-  contents: "read"
+  contents: "write"
 env:
   INPUT_RELEASETAG: "${{github.event.release.tag_name}}"
 jobs:

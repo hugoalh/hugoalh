@@ -20,13 +20,19 @@
   <img alt="Tumblr: @hugoalh" src="https://img.shields.io/badge/Tumblr-@hugoalh-dfdfdf?labelColor=36465D&logo=tumblr&logoColor=ffffff&style=flat-square" title="Tumblr: @hugoalh">
 </picture></a>
 
-## 💬 Languages
+## 🌐 Languages
 
 - Cantonese (粵語 / 廣東話)
 - Chinese (Traditional) (漢語（正體）)
 - English
 
-## 📦 Projects
+## 📦 Packages & Registries
 
-- [@hugoalh](https://github.com/hugoalh?tab=repositories)
-- [@hugoalh-studio](https://github.com/orgs/hugoalh-studio/repositories)
+- [GitHub Packages](https://github.com/hugoalh?tab=packages)
+- [NPM](https://www.npmjs.com/~hugoalh)
+- [PowerShell Gallery](https://www.powershellgallery.com/profiles/hugoalh)
+
+## ⚒️ Projects
+
+- [GitHub @hugoalh](https://github.com/hugoalh?tab=repositories)
+- [GitHub @hugoalh-studio](https://github.com/orgs/hugoalh-studio/repositories)

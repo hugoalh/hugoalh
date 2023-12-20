@@ -30,12 +30,3 @@
 
 - [@hugoalh](https://github.com/hugoalh?tab=repositories)
 - [@hugoalh-studio](https://github.com/orgs/hugoalh-studio/repositories)
-
-## 🌐 I18ns (Internationalizations) & Translations
-
-- [Auto Dark Mode](https://github.com/AutoDarkMode/Windows-Auto-Night-Mode)
-- [MCA Selector](https://github.com/Querz/mcaselector)
-- [MrCrayfish Controllable](https://github.com/MrCrayfish/Controllable)
-- [MrCrayfish Furniture Mod](https://github.com/MrCrayfish/MrCrayfishFurnitureMod)
-- [MrCrayfish Gun Mod](https://github.com/MrCrayfish/MrCrayfishGunMod)
-- [MrCrayfish Vehicle Mod](https://github.com/MrCrayfish/MrCrayfishVehicleMod)

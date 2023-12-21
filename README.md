@@ -26,13 +26,14 @@
 - Chinese (Traditional) (漢語（正體）)
 - English
 
-## 📦 Packages & Registries
+## 📦 Registries Packages List
 
-- [GitHub Packages](https://github.com/hugoalh?tab=packages)
-- [NPM](https://www.npmjs.com/~hugoalh)
-- [PowerShell Gallery](https://www.powershellgallery.com/profiles/hugoalh)
+- [GitHub Packages @hugoalh](https://github.com/hugoalh?tab=packages)
+- [GitHub Packages @hugoalh-studio](https://github.com/orgs/hugoalh-studio/packages)
+- [NPM @hugoalh](https://www.npmjs.com/~hugoalh)
+- [PowerShell Gallery @hugoalh](https://www.powershellgallery.com/profiles/hugoalh)
 
-## ⚒️ Projects
+## 🗄️ Repositories List
 
 - [GitHub @hugoalh](https://github.com/hugoalh?tab=repositories)
 - [GitHub @hugoalh-studio](https://github.com/orgs/hugoalh-studio/repositories)

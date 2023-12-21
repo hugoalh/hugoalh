@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: "[Reusable] Publish Docker Container - GitHub Packages"
+name: "[Call] Docker - Publish - GitHub Packages (@0)"
 on:
   workflow_call:
     inputs:
@@ -28,6 +28,10 @@ on:
       tag:
         type: "string"
         description: "{string} Tag."
+        required: false
+      flavor:
+        type: "string"
+        description: "{string} Flavor."
         required: false
       latest:
         type: "string"
@@ -58,9 +62,11 @@ jobs:
           password: "${{github.token}}"
       - name: "Generate Docker Metadata"
         id: "docker-meta"
-        uses: "docker/metadata-action@v5.2.0"
+        uses: "docker/metadata-action@v5.4.0"
         with:
-          images: "${{env.REGISTRY}}/${{env.IMAGE_NAME}}"
+          images: |-
+            name=${{env.REGISTRY}}/${{env.IMAGE_NAME}}
+          flavor: "${{inputs.flavor}}"
           tags: |-
             type=raw,enable=${{inputs.tag != ''}},value=${{inputs.tag}}
             type=raw,enable=${{inputs.latest == 'true'}},value=latest

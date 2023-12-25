@@ -6,7 +6,7 @@
 This document includes the universal guidelines, methods, and ways to contribute over all of the hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) projects.
 
 > [!IMPORTANT]
-> Some of the projects may revise and will take precedence over this Universal Contributing Guide.
+> Some of the projects may revise and take precedence over this Universal Contributing Guide.
 
 > [!TIP]
 > If you have any questions and/or still confused, [create a discussion](#create-a-discussion) at that project.

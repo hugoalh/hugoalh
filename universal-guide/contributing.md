@@ -20,6 +20,18 @@ You can fix a typo by [create a pull request](#create-a-pull-request); Alternati
 > [!IMPORTANT]
 > [The spelling differences](https://en.wikipedia.org/wiki/American_and_British_English_spelling_differences) does not count as typo!
 
+### Report A Bug
+
+You can report a bug by [create an issue](#create-an-issue).
+
+### Report A Security Vulnerability
+
+You can report a security vulnerability by visit the Security Policy in that project, mostly located at file `SECURITY.md` or `.github/SECURITY.md`.
+
+### Request A New Feature
+
+You can request a new feature by [create an issue](#create-an-issue).
+
 ## Guideline
 
 ### Coding

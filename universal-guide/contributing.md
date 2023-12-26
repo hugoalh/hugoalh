@@ -10,16 +10,22 @@ This document includes the universal [guidelines](#guideline) and [methods/ways]
 
 ## To...
 
-### Fix A Typo
+### Fix The Misspelling/Typo
 
-You can fix a typo by [create a pull request](#create-a-pull-request); Alternatively, [create an issue](#create-an-issue) to point out the typo.
+You can fix the misspelling/typo by [create a pull request](#create-a-pull-request); Alternatively, [create an issue](#create-an-issue) to point out the misspelling/typo.
 
 > [!IMPORTANT]
-> [The spelling differences in English](https://en.wikipedia.org/wiki/American_and_British_English_spelling_differences) does not count as typo!
+> [The spelling differences in English](https://en.wikipedia.org/wiki/American_and_British_English_spelling_differences) does not count as misspelling/typo!
+
+### Fix/Improve The Grammar
+
+You can fix the grammar by [create a pull request](#create-a-pull-request); Alternatively, [create an issue](#create-an-issue) to point out the grammar issue.
 
 ### Internationalization (I18n) / Localization / Translation
 
-Internationalization (I18n), localization, and/or translation on that project is always depend on its necessity, its Contributing Guide will contain the detail when necessary. You can also advice to add internationalization (I18n), localization, and/or translation by [create an issue](#create-an-issue).
+Only the Contributing Guide of that project will contain the detail.
+
+You can also request for implementation by [create an issue](#create-an-issue).
 
 ### Report A Bug
 
@@ -37,7 +43,7 @@ You can request a new feature by [create an issue](#create-an-issue).
 
 ### Coding
 
-*Please visit the [hxhS (hugoalh & hugoalh Studio) Universal Coding Guide](https://github.com/hugoalh/hugoalh/blob/main/guide/code/main.md) for the coding guideline.*
+*Please visit the ["hxhS (hugoalh & hugoalh Studio) Universal Coding Guide"](https://github.com/hugoalh/hugoalh/blob/main/guide/code/main.md) for the coding guideline.*
 
 ### Create A Discussion
 
@@ -63,10 +69,10 @@ You can request a new feature by [create an issue](#create-an-issue).
 
 ### Create A Security Vulnerability Report
 
-*Please visit the [GitHub Docs - Privately reporting a security vulnerability](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability) for the steps to create a security vulnerability report.*
+*Please visit the ["GitHub Docs - Privately reporting a security vulnerability"](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability) for the steps to create a security vulnerability report.*
+
+> [!CAUTION]
+> Never report security vulnerabilities publicly, any public security vulnerability report will be rejected and deleted without notice.
 
 > [!NOTE]
 > If that project have not enabled the Security Advisories system (mostly cause by misconfiguration), please [create an issue](#create-an-issue) to request enable it.
-
-> [!CAUTION]
-> Never report security vulnerabilities publicly, any public security vulnerability report will be rejected and deleted.

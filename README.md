@@ -37,3 +37,7 @@
 
 - [GitHub @hugoalh](https://github.com/hugoalh?tab=repositories)
 - [GitHub @hugoalh-studio](https://github.com/orgs/hugoalh-studio/repositories)
+
+## 📚 Resources
+
+- [Universal Contributing Guide](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/contributing.md)

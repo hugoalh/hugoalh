@@ -3,10 +3,7 @@
 
 # hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Universal Contributing Guide
 
-This document includes the universal guidelines, methods, and ways to contribute over all of the hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) projects.
-
-> [!IMPORTANT]
-> Some of the projects may revise and take precedence over this Universal Contributing Guide.
+This document includes the universal [guidelines](#guideline) and [methods/ways](#to) to contribute over all of the hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) projects; However, some of the projects may revise and take precedence over this.
 
 > [!TIP]
 > If you have any questions and/or still confused, [create a discussion](#create-a-discussion) at that project.
@@ -18,7 +15,11 @@ This document includes the universal guidelines, methods, and ways to contribute
 You can fix a typo by [create a pull request](#create-a-pull-request); Alternatively, [create an issue](#create-an-issue) to point out the typo.
 
 > [!IMPORTANT]
-> [The spelling differences](https://en.wikipedia.org/wiki/American_and_British_English_spelling_differences) does not count as typo!
+> [The spelling differences in English](https://en.wikipedia.org/wiki/American_and_British_English_spelling_differences) does not count as typo!
+
+### Internationalization (I18n) / Localization / Translation
+
+Internationalization (I18n), localization, and/or translation on that project is always depend on its necessity, its Contributing Guide will contain the detail when necessary. You can also advice to add internationalization (I18n), localization, and/or translation by [create an issue](#create-an-issue).
 
 ### Report A Bug
 
@@ -26,7 +27,7 @@ You can report a bug by [create an issue](#create-an-issue).
 
 ### Report A Security Vulnerability
 
-You can report a security vulnerability by visit the Security Policy in that project, mostly located at file `SECURITY.md` or `.github/SECURITY.md`.
+You can report a security vulnerability by [create a security vulnerability report](#create-a-security-vulnerability-report).
 
 ### Request A New Feature
 
@@ -36,7 +37,7 @@ You can request a new feature by [create an issue](#create-an-issue).
 
 ### Coding
 
-*Please visit the [Universal Coding Guide](https://github.com/hugoalh/hugoalh/blob/main/guide/code/main.md).*
+*Please visit the [hxhS (hugoalh & hugoalh Studio) Universal Coding Guide](https://github.com/hugoalh/hugoalh/blob/main/guide/code/main.md) for the coding guideline.*
 
 ### Create A Discussion
 
@@ -46,7 +47,7 @@ You can request a new feature by [create an issue](#create-an-issue).
 ### Create An Issue
 
 - Any questions should [create a discussion](#create-a-discussion) instead.
-- For any security vulnerability reports, please visit the Security Policy in that project, mostly located at file `SECURITY.md` or `.github/SECURITY.md`.
+- Any security vulnerability reports should [create a security vulnerability report](#create-a-security-vulnerability-report) instead.
 - Before create an issue, check whether any similar issues are already exist, even the closed issues.
 
 ### Create A Pull Request
@@ -59,3 +60,13 @@ You can request a new feature by [create an issue](#create-an-issue).
   - It is better to split the pull request to multiple smaller ones.
 - If your pull request is for resolving issues, link those issues in the pull request.
 - If your pull request is not ready but want to save/stage it, you can mark the pull request as draft, and no need to add any identifications to the title (e.g.: `[WIP] XXXXXXXX`).
+
+### Create A Security Vulnerability Report
+
+*Please visit the [GitHub Docs - Privately reporting a security vulnerability](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability) for the steps to create a security vulnerability report.*
+
+> [!NOTE]
+> If that project have not enabled the Security Advisories system (mostly cause by misconfiguration), please [create an issue](#create-an-issue) to request enable it.
+
+> [!CAUTION]
+> Never report security vulnerabilities publicly, any public security vulnerability report will be rejected and deleted.

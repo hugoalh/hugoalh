@@ -15,22 +15,6 @@ updates:
     open-pull-requests-limit: 100
     pull-request-branch-name:
       separator: "/"
-    rebase-strategy: "disabled"
-  - package-ecosystem: "gitsubmodule"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-      day: "sunday"
-      time: "00:00"
-      timezone: "Etc/UTC"
-    labels:
-      - "Platform/Git"
-      - "Status/Pending 🔵"
-      - "Type/Dependency 📦"
-    open-pull-requests-limit: 100
-    pull-request-branch-name:
-      separator: "/"
-    rebase-strategy: "disabled"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -45,7 +29,6 @@ updates:
     open-pull-requests-limit: 100
     pull-request-branch-name:
       separator: "/"
-    rebase-strategy: "disabled"
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
@@ -55,15 +38,16 @@ updates:
       timezone: "Etc/UTC"
     groups:
       development:
+        dependency-type: "development"
         patterns:
-          - "@*/eslint-config-*"
           - "@*/eslint-config"
-          - "@*/eslint-formatter-*"
+          - "@*/eslint-config-*"
           - "@*/eslint-formatter"
-          - "@*/eslint-parser-*"
+          - "@*/eslint-formatter-*"
           - "@*/eslint-parser"
-          - "@*/eslint-plugin-*"
+          - "@*/eslint-parser-*"
           - "@*/eslint-plugin"
+          - "@*/eslint-plugin-*"
           - "@types/*"
           - "@typescript-eslint/*"
           - "eslint-config-*"
@@ -79,5 +63,4 @@ updates:
     open-pull-requests-limit: 100
     pull-request-branch-name:
       separator: "/"
-    rebase-strategy: "disabled"
     versioning-strategy: "increase"

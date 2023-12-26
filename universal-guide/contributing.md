@@ -3,12 +3,12 @@
 
 # hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) Universal Contributing Guide
 
-This document includes the universal [guidelines](#guideline) and [methods/ways](#to) to contribute over all of the hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) projects; However, some of the projects may revise and take precedence over this.
+This document includes the universal [guidelines](#guideline) and [methods/ways](#how-to) to contribute over all of the hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) projects; However, some of the projects may revise and take precedence over this.
 
 > [!TIP]
 > If you have any questions and/or still confused, [create a discussion](#create-a-discussion) at that project.
 
-## To...
+## How To...
 
 ### Fix A Misspelling/Typo
 
@@ -64,14 +64,19 @@ Please visit the ["hxhS (hugoalh & hugoalh Studio) Universal Coding Guide"](http
 - Try to avoid a pull request with too many changes if possible.
   - A large pull request not only stretches the review time, but also makes it much harder to spot issues.
   - It is better to split the pull request to multiple smaller ones.
-- If your pull request is for resolving issues, link those issues in the pull request.
-- If your pull request is not ready but want to save/stage it, you can mark the pull request as draft, and no need to add any identifications to the title (e.g.: `[WIP] XXXXXXXX`).
+- If the pull request is resolving issues, link those issues in the pull request.
+- If the pull request is not ready but want to save/stage it, mark it as draft and no need to add any identifications to the title (e.g.: `[WIP] XXXXXXXX`).
 
 ### Create A Security Vulnerability Report
 
 Please visit the ["GitHub Docs - Privately reporting a security vulnerability"](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability) for the steps to create a security vulnerability report.
 
-A new security vulnerability report may need ~48 hours (~2 days) to begin the process.
+A new security vulnerability report may need time to begin the process.
+
+| **Owner** | **Duration** |
+|:-:|:-:|
+| [hugoalh][hugoalh] | ~96 hours (~4 days) |
+| [hugoalh Studio][hugoalh-studio] | ~48 hours (~2 days) |
 
 > [!CAUTION]
 > Never report security vulnerabilities publicly, any public security vulnerability report will be rejected and deleted without notice.

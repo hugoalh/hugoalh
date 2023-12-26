@@ -21,10 +21,4 @@
 
 ## Report A Vulnerability
 
-Please visit the ["GitHub Docs - Privately reporting a security vulnerability"](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability) for the steps to create a security vulnerability report.
-
-A new security vulnerability report may need ~48 hours (~2 days) to begin the process.
-
-> **⚠️ Caution:** Never report security vulnerabilities publicly, any public security vulnerability report will be rejected and deleted without notice.
-
-> **ℹ️ Note:** If the project have not enabled the Security Advisories system (mostly cause by misconfiguration), please create an issue to request enable it.
+You can report a security vulnerability by [create a security vulnerability report](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/contributing.md#create-a-security-vulnerability-report).

@@ -10,16 +10,16 @@ This document includes the universal [guidelines](#guideline) and [methods/ways]
 
 ## To...
 
-### Fix The Misspelling/Typo
+### Fix A Misspelling/Typo
 
-You can fix the misspelling/typo by [create a pull request](#create-a-pull-request); Alternatively, [create an issue](#create-an-issue) to point out the misspelling/typo.
+You can fix a misspelling/typo by [create a pull request](#create-a-pull-request); Alternatively, [create an issue](#create-an-issue) to point out the misspelling/typo.
 
 > [!IMPORTANT]
-> [The spelling differences in English](https://en.wikipedia.org/wiki/American_and_British_English_spelling_differences) does not count as misspelling/typo!
+> [The spelling differences in English](https://en.wikipedia.org/wiki/American_and_British_English_spelling_differences) are not count as misspelling/typo!
 
-### Fix/Improve The Grammar
+### Fix A Grammar Mistake
 
-You can fix the grammar by [create a pull request](#create-a-pull-request); Alternatively, [create an issue](#create-an-issue) to point out the grammar issue.
+You can fix a grammar mistake by [create a pull request](#create-a-pull-request); Alternatively, [create an issue](#create-an-issue) to point out the grammar mistake.
 
 ### Internationalization (I18n) / Localization / Translation
 
@@ -43,7 +43,7 @@ You can request a new feature by [create an issue](#create-an-issue).
 
 ### Coding
 
-*Please visit the ["hxhS (hugoalh & hugoalh Studio) Universal Coding Guide"](https://github.com/hugoalh/hugoalh/blob/main/guide/code/main.md) for the coding guideline.*
+Please visit the ["hxhS (hugoalh & hugoalh Studio) Universal Coding Guide"](https://github.com/hugoalh/hugoalh/blob/main/guide/code/main.md) for the coding guideline.
 
 ### Create A Discussion
 
@@ -69,7 +69,9 @@ You can request a new feature by [create an issue](#create-an-issue).
 
 ### Create A Security Vulnerability Report
 
-*Please visit the ["GitHub Docs - Privately reporting a security vulnerability"](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability) for the steps to create a security vulnerability report.*
+Please visit the ["GitHub Docs - Privately reporting a security vulnerability"](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability) for the steps to create a security vulnerability report.
+
+A new security vulnerability report may need ~48 hours (~2 days) to begin the process.
 
 > [!CAUTION]
 > Never report security vulnerabilities publicly, any public security vulnerability report will be rejected and deleted without notice.

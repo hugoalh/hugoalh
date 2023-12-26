@@ -19,8 +19,12 @@
 > - Values in italic format are subject to change.
 > - Versions which not in the list are also end of life.
 
-## Report Vulnerability
+## Report A Vulnerability
 
-If you believe you have found any security vulnerability, please report it via the [Security Advisories system](https://github.com/hugoalh/hugoalh/security/advisories/new) instead of create an issue and/or report it publicly.
+Please visit the ["GitHub Docs - Privately reporting a security vulnerability"](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability) for the steps to create a security vulnerability report.
 
-All new reports may need `~48 hours (~2 days)` to begin the process.
+A new security vulnerability report may need ~48 hours (~2 days) to begin the process.
+
+> **⚠️ Caution:** Never report security vulnerabilities publicly, any public security vulnerability report will be rejected and deleted without notice.
+
+> **ℹ️ Note:** If the project have not enabled the Security Advisories system (mostly cause by misconfiguration), please create an issue to request enable it.

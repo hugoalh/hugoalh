@@ -43,7 +43,7 @@ You can request a new feature by [create an issue](#create-an-issue).
 
 ### Coding
 
-Please visit the ["hxhS (hugoalh & hugoalh Studio) Universal Coding Guide"](https://github.com/hugoalh/hugoalh/blob/main/guide/code/main.md) for the coding guideline.
+Please visit the ["hxhS (hugoalh & hugoalh Studio) Universal Coding Guide"](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/coding.md) for the coding guideline.
 
 ### Create A Discussion
 

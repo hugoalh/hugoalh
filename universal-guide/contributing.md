@@ -71,7 +71,7 @@ Please visit the ["hxhS (hugoalh & hugoalh Studio) Universal Coding Guide"](http
 
 Please visit the ["GitHub Docs - Privately reporting a security vulnerability"](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability) for the steps to create a security vulnerability report.
 
-A new security vulnerability report may need time to begin the process.
+A new security vulnerability report may need time to begin the process:
 
 | **Owner** | **Duration** |
 |:-:|:-:|

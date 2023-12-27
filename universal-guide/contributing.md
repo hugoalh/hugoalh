@@ -21,6 +21,10 @@ You can fix a misspelling/typo by [create a pull request](#create-a-pull-request
 
 You can fix a grammar mistake by [create a pull request](#create-a-pull-request); Alternatively, [create an issue](#create-an-issue) to point out the grammar mistake.
 
+### Improve GitHub Repository Wiki
+
+Unfortunately you cannot edit the wiki page directly, however you can [create an issue](#create-an-issue) to point out the wiki page that need to improve.
+
 ### Internationalization (I18n) / Localization / Translation
 
 Only the Contributing Guide of that project will contain the detail.

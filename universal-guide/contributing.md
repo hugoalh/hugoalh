@@ -60,6 +60,9 @@ Please visit the ["hxhS (hugoalh & hugoalh Studio) Universal Coding Guide"](http
 - Any security vulnerability reports should [create a security vulnerability report](#create-a-security-vulnerability-report) instead.
 - Before create an issue, check whether any similar issues are already exist, even the closed issues.
 
+> [!NOTE]
+> For the general process time, please visit the ["hxhS (hugoalh & hugoalh Studio) Universal Process Time - Issue"](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/process-time.md#issue).
+
 ### Create A Pull Request
 
 - Before create a pull request, check whether any similar pull requests are already exist, even the closed pull requests.
@@ -71,19 +74,16 @@ Please visit the ["hxhS (hugoalh & hugoalh Studio) Universal Coding Guide"](http
 - If the pull request is resolving issues, link those issues in the pull request.
 - If the pull request is not ready but want to save/stage it, mark it as draft and no need to add any identifications to the title (e.g.: `[WIP] XXXXXXXX`).
 
+> [!NOTE]
+> For the general process time, please visit the ["hxhS (hugoalh & hugoalh Studio) Universal Process Time - Pull Request"](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/process-time.md#pull-request).
+
 ### Create A Security Vulnerability Report
 
 Please visit the ["GitHub Docs - Privately reporting a security vulnerability"](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability) for the steps to create a security vulnerability report.
-
-A new security vulnerability report may need time to begin the process:
-
-| **Owner** | **Duration** |
-|:-:|:-:|
-| [hugoalh][hugoalh] | ~96 hours (~4 days) |
-| [hugoalh Studio][hugoalh-studio] | ~48 hours (~2 days) |
 
 > [!CAUTION]
 > Never report security vulnerabilities publicly, any public security vulnerability report will be rejected and deleted without notice.
 
 > [!NOTE]
-> If that project have not enabled the Security Advisories system (mostly cause by misconfiguration), please [create an issue](#create-an-issue) to request enable it.
+> - If that project have not enabled the Security Advisories system (mostly cause by misconfiguration), please [create an issue](#create-an-issue) to request enable it.
+> - For the general process time, please visit the ["hxhS (hugoalh & hugoalh Studio) Universal Process Time - Security Vulnerability Report"](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/process-time.md#security-vulnerability-report).

@@ -40,6 +40,8 @@
 
 ## 📚 Resources
 
-- [hxhS (hugoalh & hugoalh Studio) Universal Coding Guide](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/coding.md)
-- [hxhS (hugoalh & hugoalh Studio) Universal Contributing Guide](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/contributing.md)
-- [hxhS (hugoalh & hugoalh Studio) Universal Forbidden Targets](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/forbidden-targets.md)
+- hxhS (hugoalh & hugoalh Studio) Universal Guide
+  - [Coding](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/coding.md)
+  - [Contributing](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/contributing.md)
+  - [Forbidden Targets](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/forbidden-targets.md)
+  - [General Process Time](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/general-process-time.md)

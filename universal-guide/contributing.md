@@ -61,7 +61,7 @@ Please visit the ["hxhS (hugoalh & hugoalh Studio) Universal Coding Guide"](http
 - Before create an issue, check whether any similar issues are already exist, even the closed issues.
 
 > [!NOTE]
-> For the general process time, please visit the ["hxhS (hugoalh & hugoalh Studio) Universal Process Time - Issue"](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/process-time.md#issue).
+> For the general process time, please visit the ["hxhS (hugoalh & hugoalh Studio) Universal General Process Time - Issue"](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/general-process-time.md#issue).
 
 ### Create A Pull Request
 
@@ -75,7 +75,7 @@ Please visit the ["hxhS (hugoalh & hugoalh Studio) Universal Coding Guide"](http
 - If the pull request is not ready but want to save/stage it, mark it as draft and no need to add any identifications to the title (e.g.: `[WIP] XXXXXXXX`).
 
 > [!NOTE]
-> For the general process time, please visit the ["hxhS (hugoalh & hugoalh Studio) Universal Process Time - Pull Request"](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/process-time.md#pull-request).
+> For the general process time, please visit the ["hxhS (hugoalh & hugoalh Studio) Universal General Process Time - Pull Request"](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/general-process-time.md#pull-request).
 
 ### Create A Security Vulnerability Report
 
@@ -86,4 +86,4 @@ Please visit the ["GitHub Docs - Privately reporting a security vulnerability"](
 
 > [!NOTE]
 > - If that project have not enabled the Security Advisories system (mostly cause by misconfiguration), please [create an issue](#create-an-issue) to request enable it.
-> - For the general process time, please visit the ["hxhS (hugoalh & hugoalh Studio) Universal Process Time - Security Vulnerability Report"](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/process-time.md#security-vulnerability-report).
+> - For the general process time, please visit the ["hxhS (hugoalh & hugoalh Studio) Universal General Process Time - Security Vulnerability Report"](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/general-process-time.md#security-vulnerability-report).

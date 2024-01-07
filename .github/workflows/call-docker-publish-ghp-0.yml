@@ -62,7 +62,7 @@ jobs:
           password: "${{github.token}}"
       - name: "Generate Docker Metadata"
         id: "docker-meta"
-        uses: "docker/metadata-action@v5.4.0"
+        uses: "docker/metadata-action@v5.5.0"
         with:
           images: |-
             name=${{env.REGISTRY}}/${{env.IMAGE_NAME}}

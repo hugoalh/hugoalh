@@ -5,6 +5,11 @@
 
 This document includes the universal general process time over all of the hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) projects.
 
+> [!NOTE]
+> Process times are longer during the long events and/or holidays. Nearest long events and/or holidays:
+>
+> - **2024-02-03\~2024-02-24:** Spring Break
+
 ## Issue
 
 |  | **[hugoalh][hugoalh]** | **[hugoalh Studio][hugoalh-studio]** |

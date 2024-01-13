@@ -39,7 +39,7 @@ jobs:
         shell: "pwsh"
       - name: "Restore NodeJS Cache"
         id: "restore-cache"
-        uses: "actions/cache/restore@v3.3.2"
+        uses: "actions/cache/restore@v3.3.3"
         with:
           key: "NodeJS/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}-${{runner.os}}"
           path: |-
@@ -64,7 +64,7 @@ jobs:
         shell: "pwsh"
       - name: "Save NodeJS Cache"
         if: "${{!cancelled() && steps.restore-cache.outcome == 'success'}}"
-        uses: "actions/cache/save@v3.3.2"
+        uses: "actions/cache/save@v3.3.3"
         with:
           key: "NodeJS/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}-${{runner.os}}"
           path: |-

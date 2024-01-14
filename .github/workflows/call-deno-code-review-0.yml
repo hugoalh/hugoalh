@@ -93,7 +93,7 @@ jobs:
           INPUT_GENERAL_FILES: "${{steps.resolve-repository.outputs.general_files}}"
       - name: "Check Dependencies Update"
         id: "check-dependencies-update"
-        if: "${{github.event_name == 'schedule'}}"
+        if: "${{github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'}}"
         run: |
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
           [Boolean]$IsFail = $False

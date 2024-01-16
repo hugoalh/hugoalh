@@ -44,6 +44,9 @@ on:
         required: false
         default: |-
           linux/amd64
+permissions:
+  contents: "read"
+  packages: "write"
 env:
   REGISTRY: "ghcr.io"
   IMAGE_NAME: "${{github.event.repository.full_name}}"

@@ -18,6 +18,9 @@ on:
         options:
           - "false"
           - "true"
+permissions:
+  contents: "read"
+  packages: "write"
 jobs:
   main:
     name: "Main"

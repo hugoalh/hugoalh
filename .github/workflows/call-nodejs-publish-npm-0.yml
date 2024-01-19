@@ -78,7 +78,6 @@ jobs:
             $Tags += "latest-$($ManifestVersion.Major)"
           }
           $Tags += "pre-$($ManifestVersion.Major)"
-          $Tags += 'publish'
           If ($Tags.Count -eq 0) {
             Write-GitHubActionsFail -Message 'No available tags!'
           }

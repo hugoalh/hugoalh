@@ -43,9 +43,6 @@ jobs:
             $ManifestVersion = $ReleaseVersion
           }
           [String]$Name = $Manifest.Name
-          [String]$TarballName = "$($Name -ireplace '^@', '' -ireplace '\/', '-')-$($ManifestVersion.ToString()).tgz"
-          [String[]]$DevDependencies = $Manifest.devDependencies.PSObject.Properties.Name ?? @()
-          [Boolean]$NeedBuild = 'typescript' -iin $DevDependencies -and !(Test-Path -LiteralPath '.\dist' -PathType 'Container') -and (Test-Path -LiteralPath '.\src' -PathType 'Container') -and (Test-Path -LiteralPath '.\tsconfig.json' -PathType 'Leaf')
           [Boolean]$VersionIsPreRelease = $Null -ine $ManifestVersion.PreReleaseLabel
           [Boolean]$TagLatest = !$VersionIsPreRelease
           [Boolean]$TagPre = $True
@@ -81,34 +78,25 @@ jobs:
           If ($Tags.Count -eq 0) {
             Write-GitHubActionsFail -Message 'No available tags!'
           }
-          [String]$TagsFirst = $Tags[0]
-          [String[]]$TagsRest = (
-            $Tags |
-              Select-Object -SkipIndex 0
-          ) ?? @()
           Set-GitHubActionsOutput -Name 'name' -Value $Name
           Set-GitHubActionsOutput -Name 'version' -Value $ManifestVersion.ToString()
           Set-GitHubActionsOutput -Name 'descriptor' -Value "$($Name)@$($ManifestVersion.ToString())"
-          Set-GitHubActionsOutput -Name 'tags_first' -Value $TagsFirst
+          Set-GitHubActionsOutput -Name 'build_dist' -Value ($Null -ne $Manifest.scripts.'build-dist').ToString().ToLower()
+          Set-GitHubActionsOutput -Name 'tags_first' -Value $Tags[0]
           Set-GitHubActionsOutput -Name 'tags_rest' -Value (
-            $TagsRest |
-              Join-String -Separator ';'
+            $Tags |
+              Select-Object -SkipIndex 0 |
+              Join-String -Separator ','
           )
-          Set-GitHubActionsOutput -Name 'tarballname' -Value $TarballName
-          Set-GitHubActionsOutput -Name 'build' -Value $NeedBuild.ToString().ToLower()
+          Set-GitHubActionsOutput -Name 'tarballname' -Value "$($Name -ireplace '^@', '' -ireplace '\/', '-')-$($ManifestVersion.ToString()).tgz"
         shell: "pwsh"
-      - name: "Build Package"
-        if: "${{steps.resolve.outputs.build == 'true'}}"
+      - name: "Build `dist`"
+        if: "${{steps.resolve.outputs.build_dist == 'true'}}"
         run: |
           npm install
-          $TscPath = Resolve-Path -LiteralPath '.\node_modules\.bin\tsc.ps1'
-          $ConfigPath = Resolve-Path -LiteralPath '.\tsconfig.json'
-          If (Test-Path -LiteralPath '.\dist') {
-            Remove-Item -LiteralPath '.\dist' -Recurse -Force -Confirm:$False
-          }
-          . $TscPath.Path -p $ConfigPath.Path
+          npm run 'build-dist'
         shell: "pwsh"
-      - name: "Publish With Tag ${{steps.resolve.outputs.tags_first}} (Provenance)"
+      - name: "Publish With Tag `${{steps.resolve.outputs.tags_first}}` (Provenance)"
         id: "publish-provenance"
         run: |
           [String]$PackageTagsFirst = $Env:INPUT_TAGSFIRST
@@ -116,9 +104,9 @@ jobs:
         shell: "pwsh"
         env:
           INPUT_TAGSFIRST: "${{steps.resolve.outputs.tags_first}}"
-      - name: "Publish With Tag ${{steps.resolve.outputs.tags_first}}"
+      - name: "Publish With Tag `${{steps.resolve.outputs.tags_first}}`"
         if: "${{!cancelled() && steps.publish-provenance.outcome == 'failure'}}"
-        id: "publish"
+        id: "publish-raw"
         run: |
           [String]$PackageTagsFirst = $Env:INPUT_TAGSFIRST
           npm publish --tag $PackageTagsFirst
@@ -126,11 +114,11 @@ jobs:
         env:
           INPUT_TAGSFIRST: "${{steps.resolve.outputs.tags_first}}"
       - name: "Publish With Rest Tags"
-        if: "${{(!cancelled() && (steps.publish-provenance.outcome == 'success' || steps.publish.outcome == 'success')) && steps.resolve.outputs.tags_rest != ''}}"
+        if: "${{!cancelled() && (steps.publish-provenance.outcome == 'success' || steps.publish-raw.outcome == 'success') && steps.resolve.outputs.tags_rest != ''}}"
         run: |
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
           [String]$PackageDescriptor = $Env:INPUT_DESCRIPTOR
-          [String[]]$PackageTagsRest = $Env:INPUT_TAGSREST -isplit ';'
+          [String[]]$PackageTagsRest = $Env:INPUT_TAGSREST -isplit ','
           ForEach ($PackageTagRest In $PackageTagsRest) {
             Try {
               npm dist-tag add $PackageDescriptor $PackageTagRest
@@ -143,7 +131,7 @@ jobs:
         env:
           INPUT_DESCRIPTOR: "${{steps.resolve.outputs.descriptor}}"
           INPUT_TAGSREST: "${{steps.resolve.outputs.tags_rest}}"
-      - name: "Pack & Upload Tarball `${{steps.resolve.outputs.tarballname}}` To GitHub Release Tag ${{env.INPUT_RELEASETAG}}"
+      - name: "Pack & Upload Tarball `${{steps.resolve.outputs.tarballname}}` To GitHub Release Tag `${{env.INPUT_RELEASETAG}}`"
         if: "${{!cancelled() && steps.resolve.outcome == 'success'}}"
         run: |
           npm pack

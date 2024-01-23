@@ -90,10 +90,13 @@ jobs:
           )
           Set-GitHubActionsOutput -Name 'tarballname' -Value "$($Name -ireplace '^@', '' -ireplace '\/', '-')-$($ManifestVersion.ToString()).tgz"
         shell: "pwsh"
+      - name: "Install Dependencies"
+        run: |
+          npm install
+        shell: "pwsh"
       - name: "Build `dist`"
         if: "${{steps.resolve.outputs.build_dist == 'true'}}"
         run: |
-          npm install
           npm run 'build-dist'
         shell: "pwsh"
       - name: "Publish With Tag `${{steps.resolve.outputs.tags_first}}` (Provenance)"

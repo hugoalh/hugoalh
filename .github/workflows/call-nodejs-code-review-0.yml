@@ -31,10 +31,8 @@ jobs:
         id: "resolve-cache-path"
         run: |
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
-          [String]$NodeModulesPath = Join-Path -Path $Env:GITHUB_WORKSPACE -ChildPath 'node_modules'
           [String]$NpmCachePath = npm config get cache |
             Join-String -Separator "`n"
-          Set-GitHubActionsOutput -Name 'node_modules' -Value $NodeModulesPath
           Set-GitHubActionsOutput -Name 'npm_cache' -Value $NpmCachePath
         shell: "pwsh"
       - name: "Restore NodeJS Cache"
@@ -42,9 +40,7 @@ jobs:
         uses: "actions/cache/restore@v4.0.0"
         with:
           key: "NodeJS/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}-${{runner.os}}"
-          path: |-
-            ${{steps.resolve-cache-path.outputs.node_modules}}
-            ${{steps.resolve-cache-path.outputs.npm_cache}}
+          path: "${{steps.resolve-cache-path.outputs.npm_cache}}"
           restore-keys: |-
             NodeJS/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}-
             NodeJS/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}
@@ -67,6 +63,4 @@ jobs:
         uses: "actions/cache/save@v4.0.0"
         with:
           key: "NodeJS/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}-${{runner.os}}"
-          path: |-
-            ${{steps.resolve-cache-path.outputs.node_modules}}
-            ${{steps.resolve-cache-path.outputs.npm_cache}}
+          path: "${{steps.resolve-cache-path.outputs.npm_cache}}"

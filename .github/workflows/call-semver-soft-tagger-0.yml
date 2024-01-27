@@ -41,7 +41,7 @@ jobs:
             ForEach-Object -Process { $_.Trim() } |
             Where-Object -FilterScript { $_.Length -gt 0 }
           [String[]]$TagsRaw = @()
-          If ($Null -eq $Env:INPUT_TAGCURRENT) {
+          If ($Env:INPUT_TAGCURRENT.Trim().Length -eq 0) {
             $TagsRaw += git --no-pager tag --list
           }
           Else {

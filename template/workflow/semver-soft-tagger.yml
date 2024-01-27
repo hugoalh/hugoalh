@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+name: "SemVer Soft Tagger"
+on:
+  release:
+    types:
+      - "published"
+  workflow_dispatch:
+permissions:
+  contents: "write"
+jobs:
+  main:
+    name: "Main"
+    uses: "hugoalh/hugoalh/.github/workflows/call-semver-soft-tagger-0.yml@main"
+    with:
+      tagspattern_latest: |-
+        v{{Major}}
+        v{{Major}}.{{Minor}}

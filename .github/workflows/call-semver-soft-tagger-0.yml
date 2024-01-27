@@ -1,0 +1,86 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+name: "[Call] SemVer Soft Tagger (@0)"
+on:
+  workflow_call:
+    inputs:
+      tagcurrent:
+        type: "string"
+        description: "{String} Current tag."
+        required: false
+        default: "${{github.event.release.tag_name}}"
+      tagspattern_latest:
+        type: "string"
+        description: "{String[]} Latest release pattern of tags."
+        required: false
+      tagspattern_pre:
+        type: "string"
+        description: "{String[]} Pre release pattern of tags."
+        required: false
+permissions:
+  contents: "write"
+jobs:
+  main:
+    name: "Main"
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "Checkout Repository"
+        uses: "actions/checkout@v4.1.1"
+        with:
+          fetch-depth: 0
+      - name: "Config Git"
+        run: |
+          git --no-pager config --global 'user.name' 'github-actions'
+          git --no-pager config --global 'user.email' 'github-actions@users.noreply.github.com'
+        shell: "pwsh"
+      - name: "Update Soft Tags"
+        run: |
+          [String[]]$SoftTagsPatternLatest = $Env:INPUT_TAGSPATTERN_LATEST -isplit '\r?\n' |
+            ForEach-Object -Process { $_.Trim() } |
+            Where-Object -FilterScript { $_.Length -gt 0 }
+          [String[]]$SoftTagsPatternPre = $Env:INPUT_TAGSPATTERN_PRE -isplit '\r?\n' |
+            ForEach-Object -Process { $_.Trim() } |
+            Where-Object -FilterScript { $_.Length -gt 0 }
+          [String[]]$TagsRaw = @()
+          If ($Null -eq $Env:INPUT_TAGCURRENT) {
+            $TagsRaw += git --no-pager tag --list
+          }
+          Else {
+            $TagsRaw += $Env:INPUT_TAGCURRENT
+          }
+          [SemVer[]]$Tags = $TagsRaw |
+            Where-Object -FilterScript { $_ -imatch '^v(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)(?:-.+?)?(?:\+.+?)?$' } |
+            ForEach-Object -Process {
+              Try {
+                [SemVer]::Parse(($_ -ireplace '^v', ''))
+              }
+              Catch {}
+            } |
+            Sort-Object
+          [Hashtable]$SoftTags = @{}
+          ForEach ($Tag In $Tags) {
+            If ($Null -eq $Tag.PreReleaseLabel -and $Null -eq $Tag.BuildLabel) {
+              ForEach ($SoftTagPatternLatest In $SoftTagsPatternLatest) {
+                [String]$SoftTagLatest = $SoftTagPatternLatest
+                ForEach ($TagSection In $Tag.PSObject.Properties.Name) {
+                  $SoftTagLatest = $SoftTagLatest -ireplace "\{\{$($TagSection)\}\}", $Tag.($TagSection).ToString()
+                }
+                $SoftTags.($SoftTagLatest) = $Tag
+              }
+            }
+            ForEach ($SoftTagPatternPre In $SoftTagsPatternPre) {
+              [String]$SoftTagPre = $SoftTagPatternPre
+              ForEach ($TagSection In $Tag.PSObject.Properties.Name) {
+                $SoftTagPre = $SoftTagPre -ireplace "\{\{$($TagSection)\}\}", $Tag.($TagSection).ToString()
+              }
+              $SoftTags.($SoftTagPre) = $Tag
+            }
+          }
+          ForEach ($SoftTag In $SoftTags.GetEnumerator()) {
+            git --no-pager tag $SoftTag.Name "v$($SoftTag.Value.ToString())" --force
+            git --no-pager push origin tag $SoftTag.Name --force
+          }
+        shell: "pwsh"
+        env:
+          INPUT_TAGCURRENT: "${{inputs.tagcurrent}}"
+          INPUT_TAGSPATTERN_LATEST: "${{inputs.tagspattern_latest}}"
+          INPUT_TAGSPATTERN_PRE: "${{inputs.tagspattern_pre}}"

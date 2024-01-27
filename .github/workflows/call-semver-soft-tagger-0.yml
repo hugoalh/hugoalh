@@ -56,6 +56,11 @@ jobs:
               Catch {}
             } |
             Sort-Object
+          Write-Debug -Message "Tags [$($Tags.Count)]: $(
+            $Tags |
+              ForEach-Object -Process { $_.ToString() } |
+              Join-String -Separator ', '
+          )" -Debug
           [Hashtable]$SoftTags = @{}
           ForEach ($Tag In $Tags) {
             If ($Null -eq $Tag.PreReleaseLabel -and $Null -eq $Tag.BuildLabel) {
@@ -75,6 +80,11 @@ jobs:
               $SoftTags.($SoftTagPre) = $Tag
             }
           }
+          Write-Debug -Message "Soft Tags [$($SoftTags.Count)]: $(
+            $SoftTags.GetEnumerator() |
+              ForEach-Object -Process { "$($_.Name): $($_.Value.ToString())" } |
+              Join-String -Separator ', '
+          )" -Debug
           ForEach ($SoftTag In $SoftTags.GetEnumerator()) {
             git --no-pager tag $SoftTag.Name "v$($SoftTag.Value.ToString())" --force
             git --no-pager push origin tag $SoftTag.Name --force

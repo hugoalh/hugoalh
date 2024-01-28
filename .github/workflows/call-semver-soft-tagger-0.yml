@@ -66,8 +66,10 @@ jobs:
             If ($Null -eq $Tag.PreReleaseLabel -and $Null -eq $Tag.BuildLabel) {
               ForEach ($SoftTagPatternLatest In $SoftTagsPatternLatest) {
                 [String]$SoftTagLatest = $SoftTagPatternLatest
-                ForEach ($TagSection In $Tag.PSObject.Properties.Name) {
-                  $SoftTagLatest = $SoftTagLatest -ireplace "\{\{$($TagSection)\}\}", $Tag.($TagSection).ToString()
+                ForEach ($TagSection In $Tag.PSObject.Properties) {
+                  If ($Null -ne $TagSection.Value) {
+                    $SoftTagLatest = $SoftTagLatest -ireplace "\{\{$($TagSection.Name)\}\}", $Tag.($TagSection.Value).ToString()
+                  }
                 }
                 $SoftTags.($SoftTagLatest) = $Tag
               }

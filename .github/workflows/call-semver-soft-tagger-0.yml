@@ -34,6 +34,7 @@ jobs:
         shell: "pwsh"
       - name: "Update Soft Tags"
         run: |
+          [String[]]$SemVerParts = @('Major', 'Minor', 'Patch', 'PreReleaseLabel', 'BuildLabel')
           [String[]]$SoftTagsPatternLatest = $Env:INPUT_TAGSPATTERN_LATEST -isplit '\r?\n' |
             ForEach-Object -Process { $_.Trim() } |
             Where-Object -FilterScript { $_.Length -gt 0 }
@@ -45,7 +46,7 @@ jobs:
             $TagsRaw += git --no-pager tag --list
           }
           Else {
-            $TagsRaw += $Env:INPUT_TAGCURRENT
+            $TagsRaw += $Env:INPUT_TAGCURRENT.Trim()
           }
           [SemVer[]]$Tags = $TagsRaw |
             Where-Object -FilterScript { $_ -imatch '^v(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)(?:-.+?)?(?:\+.+?)?$' } |
@@ -53,7 +54,8 @@ jobs:
               Try {
                 [SemVer]::Parse(($_ -ireplace '^v', ''))
               }
-              Catch {}
+              Catch {
+              }
             } |
             Sort-Object
           Write-Debug -Message "Tags [$($Tags.Count)]: $(
@@ -66,9 +68,9 @@ jobs:
             If ($Null -eq $Tag.PreReleaseLabel -and $Null -eq $Tag.BuildLabel) {
               ForEach ($SoftTagPatternLatest In $SoftTagsPatternLatest) {
                 [String]$SoftTagLatest = $SoftTagPatternLatest
-                ForEach ($TagSection In $Tag.PSObject.Properties) {
-                  If ($Null -ne $TagSection.Value) {
-                    $SoftTagLatest = $SoftTagLatest -ireplace "\{\{$($TagSection.Name)\}\}", $Tag.($TagSection.Value).ToString()
+                ForEach ($SemVerPart In $SemVerParts) {
+                  If ($Null -ne $Tag.($SemVerPart)) {
+                    $SoftTagLatest = $SoftTagLatest -ireplace "\{\{$($SemVerPart)\}\}", $Tag.($SemVerPart).ToString()
                   }
                 }
                 $SoftTags.($SoftTagLatest) = $Tag
@@ -76,8 +78,10 @@ jobs:
             }
             ForEach ($SoftTagPatternPre In $SoftTagsPatternPre) {
               [String]$SoftTagPre = $SoftTagPatternPre
-              ForEach ($TagSection In $Tag.PSObject.Properties.Name) {
-                $SoftTagPre = $SoftTagPre -ireplace "\{\{$($TagSection)\}\}", $Tag.($TagSection).ToString()
+              ForEach ($SemVerPart In $SemVerParts) {
+                If ($Null -ne $Tag.($SemVerPart)) {
+                  $SoftTagPre = $SoftTagPre -ireplace "\{\{$($SemVerPart)\}\}", $Tag.($SemVerPart).ToString()
+                }
               }
               $SoftTags.($SoftTagPre) = $Tag
             }

@@ -17,6 +17,7 @@ on:
         description: "{String[]} Pre release pattern of tags."
         required: false
 permissions:
+  actions: "write"
   contents: "write"
 jobs:
   main:

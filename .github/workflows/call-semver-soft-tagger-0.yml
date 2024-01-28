@@ -16,9 +16,9 @@ on:
         type: "string"
         description: "{String[]} Pre release pattern of tags."
         required: false
-permissions:
-  actions: "write"
-  contents: "write"
+# permissions:
+#   actions: "write"
+#   contents: "write"
 jobs:
   main:
     name: "Main"

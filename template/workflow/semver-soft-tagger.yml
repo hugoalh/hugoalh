@@ -5,9 +5,7 @@ on:
     types:
       - "published"
   workflow_dispatch:
-permissions:
-  actions: "write"
-  contents: "write"
+permissions: {}
 jobs:
   main:
     name: "Main"
@@ -16,3 +14,5 @@ jobs:
       tagspattern_latest: |-
         v{{Major}}
         v{{Major}}.{{Minor}}
+    secrets:
+      token: "${{secrets.token}}"

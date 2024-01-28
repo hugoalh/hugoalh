@@ -16,9 +16,11 @@ on:
         type: "string"
         description: "{String[]} Pre release pattern of tags."
         required: false
-# permissions:
-#   actions: "write"
-#   contents: "write"
+    secrets:
+      token:
+        description: "{String} GitHub personal access token."
+        required: true
+permissions: {}
 jobs:
   main:
     name: "Main"
@@ -28,6 +30,7 @@ jobs:
         uses: "actions/checkout@v4.1.1"
         with:
           fetch-depth: 0
+          token: "${{secrets.token}}"
       - name: "Config Git"
         run: |
           git --no-pager config --global 'user.name' 'github-actions'

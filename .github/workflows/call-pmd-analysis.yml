@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+name: "[Call] PMD - Analysis (@0)"
+on:
+  workflow_call:
+permissions:
+  actions: "read"
+  contents: "read"
+  security-events: "write"
+jobs:
+  main:
+    name: "Main"
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "Checkout Repository"
+        uses: "actions/checkout@v4.1.1"
+        with:
+          fetch-depth: 0
+      - name: "Setup Java"
+        uses: "actions/setup-java@v4.0.0"
+        with:
+          java-version: "11"
+          distribution: "temurin"
+      - name: "Analyze Repository"
+        id: "pmd"
+        uses: "pmd/pmd-github-action@v1.4.1"
+        with:
+          rulesets: "ruleset.xml"
+          analyzeModifiedFilesOnly: "false"
+      - name: "Upload SARIF Report"
+        uses: "github/codeql-action/upload-sarif@v3.23.2"
+        with:
+          sarif_file: "pmd-report.sarif"

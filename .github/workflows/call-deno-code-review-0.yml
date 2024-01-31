@@ -20,7 +20,7 @@ jobs:
       - name: "Setup Deno"
         uses: "denoland/setup-deno@v1.1.4"
         with:
-          deno-version: "^1.39.0"
+          deno-version: "^1.40.2"
       - name: "Setup PowerShell Toolkit"
         uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v2.0.0"
         with:
@@ -37,18 +37,19 @@ jobs:
         id: "resolve-repository"
         run: |
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
-          [String[]]$FilesConfig = Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Include @('deno.json', 'deno.jsonc') -File -Name
-          If ($FilesConfig.Count -eq 0) {
-            Write-GitHubActionsFail -Message 'Missing Deno config!'
-          }
-          [String[]]$FilesGeneral = Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Include @('*.[jt]s', '*.[jt]sx', '*.m[jt]s') -Recurse -File -Name
-          [String[]]$FilesBenchmark = Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Include @('*_bench.[jt]s', '*_bench.[jt]sx', '*_bench.m[jt]s', '*.bench.[jt]s', '*.bench.[jt]sx', '*.bench.m[jt]s', 'bench.[jt]s', 'bench.[jt]sx', 'bench.m[jt]s') -Recurse -File -Name
-          [String[]]$FilesTest = Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Include @('*_test.[jt]s', '*_test.[jt]sx', '*_test.m[jt]s', '*.test.[jt]s', '*.test.[jt]sx', '*.test.m[jt]s', 'test.[jt]s', 'test.[jt]sx', 'test.m[jt]s') -Recurse -File -Name
-          Set-GitHubActionsOutput -Name 'general_files' -Value (ConvertTo-Json -InputObject $FilesGeneral -Depth 100 -Compress)
-          Set-GitHubActionsOutput -Name 'benchmark_dispatch' -Value ($FilesBenchmark.Count -gt 0).ToString().ToLower()
-          Set-GitHubActionsOutput -Name 'benchmark_files' -Value (ConvertTo-Json -InputObject $FilesBenchmark -Depth 100 -Compress)
-          Set-GitHubActionsOutput -Name 'test_dispatch' -Value ($FilesTest.Count -gt 0).ToString().ToLower()
-          Set-GitHubActionsOutput -Name 'test_files' -Value (ConvertTo-Json -InputObject $FilesTest -Depth 100 -Compress)
+          [String[]]$Files = Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Recurse -File -Name |
+            Where-Object -FilterScript { $_ -imatch '\.(?:m?[jt]s|[jt]sx?)$' }
+          [Boolean]$DispatchBenchmark = (
+            $Files |
+              Where-Object -FilterScript { $_ -imatch '(?:^|\/|\\|\.|_)bench\.(?:m?[jt]s|[jt]sx?)' }
+          ).Count -gt 0
+          [Boolean]$DispatchTest = (
+            $Files |
+              Where-Object -FilterScript { $_ -imatch '(?:^|\/|\\|\.|_)test\.(?:m?[jt]s|[jt]sx?)' }
+          ).Count -gt 0
+          Set-GitHubActionsOutput -Name 'files' -Value (ConvertTo-Json -InputObject $Files -Depth 100 -Compress)
+          Set-GitHubActionsOutput -Name 'dispatch_benchmark' -Value $DispatchBenchmark.ToString().ToLower()
+          Set-GitHubActionsOutput -Name 'dispatch_test' -Value $DispatchTest.ToString().ToLower()
         shell: "pwsh"
       - name: "Restore Deno Cache"
         id: "restore-cache"
@@ -64,22 +65,17 @@ jobs:
             Deno/${{github.run_id}}-
             Deno/${{github.run_id}}
             Deno/
-      - name: "Verify Dependencies"
-        id: "verify-dependencies"
+      - name: "Verify Code"
+        id: "verify-code"
         run: |
-          [Boolean]$ShouldReload = $Env:GITHUB_EVENT_NAME -ieq 'schedule'
+          [Boolean]$ShouldReload = $Env:GITHUB_EVENT_NAME -iin @('schedule')
           [Boolean]$IsFail = $False
           ForEach ($File In (
-            $Env:INPUT_GENERAL_FILES |
+            $Env:INPUT_FILES |
               ConvertFrom-Json -Depth 100
           )) {
             Try {
-              If ($ShouldReload) {
-                deno cache --reload $File
-              }
-              Else {
-                deno cache $File
-              }
+              $ShouldReload ? (deno cache --reload $File) : (deno cache $File)
             }
             Catch {
               $IsFail = $True
@@ -90,18 +86,32 @@ jobs:
           }
         shell: "pwsh"
         env:
-          INPUT_GENERAL_FILES: "${{steps.resolve-repository.outputs.general_files}}"
+          INPUT_FILES: "${{steps.resolve-repository.outputs.files}}"
+      - name: "Lint Code"
+        if: "${{!cancelled() && steps.verify-code.outcome == 'success'}}"
+        run: |
+          deno lint
+        shell: "pwsh"
+      - name: "Test Code"
+        if: "${{!cancelled() && steps.verify-code.outcome == 'success' && steps.resolve-repository.outputs.dispatch_test == 'true'}}"
+        run: |
+          deno test --allow-all --no-prompt
+        shell: "pwsh"
+      - name: "Benchmark Code"
+        if: "${{!cancelled() && steps.verify-code.outcome == 'success' && steps.resolve-repository.outputs.dispatch_benchmark == 'true'}}"
+        run: |
+          deno bench --allow-all --no-prompt
+        shell: "pwsh"
       - name: "Check Dependencies Update"
-        id: "check-dependencies-update"
-        if: "${{github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'}}"
+        if: "${{!cancelled() && steps.verify-code.outcome == 'success' && (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')}}"
         run: |
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
           [Boolean]$IsFail = $False
           ForEach ($File In (
-            $Env:INPUT_GENERAL_FILES |
+            $Env:INPUT_FILES |
               ConvertFrom-Json -Depth 100
           )) {
-            [String]$Output =  deno run --allow-net --allow-read="$Env:GITHUB_WORKSPACE" --no-prompt https://deno.land/x/udd@0.8.2/main.ts --dry-run $File |
+            [String]$Output =  deno run --allow-net "--allow-read=$($Env:GITHUB_WORKSPACE)" --no-prompt https://deno.land/x/udd@0.8.2/main.ts --dry-run $File |
               Join-String -Separator "`n"
             $LASTEXITCODE = 0
             Write-Host -Object $Output
@@ -115,25 +125,7 @@ jobs:
           }
         shell: "pwsh"
         env:
-          INPUT_GENERAL_FILES: "${{steps.resolve-repository.outputs.general_files}}"
-      - name: "Lint Code"
-        id: "lint"
-        if: "${{!cancelled() && steps.verify-dependencies.outcome == 'success'}}"
-        run: |
-          deno lint
-        shell: "pwsh"
-      - name: "Test Code"
-        id: "test"
-        if: "${{!cancelled() && steps.verify-dependencies.outcome == 'success' && steps.resolve-repository.outputs.test_dispatch == 'true'}}"
-        run: |
-          deno test --allow-all --no-prompt
-        shell: "pwsh"
-      - name: "Benchmark Code"
-        id: "benchmark"
-        if: "${{!cancelled() && steps.verify-dependencies.outcome == 'success' && steps.resolve-repository.outputs.benchmark_dispatch == 'true'}}"
-        run: |
-          deno bench --allow-all --no-prompt
-        shell: "pwsh"
+          INPUT_FILES: "${{steps.resolve-repository.outputs.files}}"
       - name: "Save Deno Cache"
         if: "${{!cancelled() && steps.restore-cache.outcome == 'success'}}"
         uses: "actions/cache/save@v4.0.0"

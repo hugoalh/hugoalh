@@ -27,40 +27,41 @@ jobs:
         uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v2.0.0"
         with:
           version: "^2.1.0"
-      - name: "Resolve NodeJS Cache Path"
+      - name: "Resolve NPM Cache Path"
         id: "resolve-cache-path"
         run: |
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
           [String]$NpmCachePath = npm config get cache |
             Join-String -Separator "`n"
-          Set-GitHubActionsOutput -Name 'npm_cache' -Value $NpmCachePath
+          Set-GitHubActionsOutput -Name 'npm' -Value $NpmCachePath
         shell: "pwsh"
-      - name: "Restore NodeJS Cache"
+      - name: "Restore NPM Cache"
         id: "restore-cache"
         uses: "actions/cache/restore@v4.0.0"
         with:
-          key: "NodeJS/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}-${{runner.os}}"
-          path: "${{steps.resolve-cache-path.outputs.npm_cache}}"
+          key: "NPM/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}-${{runner.os}}"
+          path: "${{steps.resolve-cache-path.outputs.npm}}"
           restore-keys: |-
-            NodeJS/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}-
-            NodeJS/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}
-            NodeJS/${{github.run_id}}-${{github.run_attempt}}-
-            NodeJS/${{github.run_id}}-${{github.run_attempt}}
-            NodeJS/${{github.run_id}}-
-            NodeJS/${{github.run_id}}
-            NodeJS/
+            NPM/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}-
+            NPM/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}
+            NPM/${{github.run_id}}-${{github.run_attempt}}-
+            NPM/${{github.run_id}}-${{github.run_attempt}}
+            NPM/${{github.run_id}}-
+            NPM/${{github.run_id}}
+            NPM/
       - name: "Verify Dependencies"
         id: "verify-dependencies"
         run: |
           npm install
         shell: "pwsh"
       - name: "Lint Code"
+        if: "${{!cancelled() && steps.verify-dependencies.outcome == 'success'}}"
         run: |
           npm run lint
         shell: "pwsh"
-      - name: "Save NodeJS Cache"
+      - name: "Save NPM Cache"
         if: "${{!cancelled() && steps.restore-cache.outcome == 'success'}}"
         uses: "actions/cache/save@v4.0.0"
         with:
-          key: "NodeJS/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}-${{runner.os}}"
-          path: "${{steps.resolve-cache-path.outputs.npm_cache}}"
+          key: "NPM/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}-${{runner.os}}"
+          path: "${{steps.resolve-cache-path.outputs.npm}}"

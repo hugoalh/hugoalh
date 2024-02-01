@@ -29,8 +29,8 @@ jobs:
       - name: "Checkout Repository"
         uses: "actions/checkout@v4.1.1"
         with:
-          fetch-depth: 0
           token: "${{secrets.token}}"
+          fetch-depth: "0"
       - name: "Config Git"
         run: |
           git --no-pager config --global 'user.name' 'github-actions'

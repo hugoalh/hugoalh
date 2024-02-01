@@ -40,7 +40,7 @@ jobs:
       - name: "Checkout Repository"
         uses: "actions/checkout@v4.1.1"
         with:
-          fetch-depth: 0
+          fetch-depth: "0"
       - name: "Scan Repository"
         uses: "hugoalh/scan-virus-ghaction/clamav@v0.20.1"
         with:

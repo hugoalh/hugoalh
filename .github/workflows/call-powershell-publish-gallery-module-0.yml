@@ -3,6 +3,11 @@ name: "[Call] PowerShell - Publish - Gallery Module (@0)"
 on:
   workflow_call:
     inputs:
+      builder:
+        type: "string"
+        description: "{String} PowerShell module builder."
+        required: false
+        default: ""
       path:
         type: "string"
         description: "{String} PowerShell module root."
@@ -14,8 +19,6 @@ on:
         required: true
 permissions:
   contents: "write"
-env:
-  INPUT_RELEASETAG: "${{github.event.release.tag_name}}"
 jobs:
   main:
     name: "Main"
@@ -35,7 +38,7 @@ jobs:
           }
         shell: "pwsh"
       - name: "Resolve Package"
-        id: "resolve"
+        id: "resolve-package"
         run: |
           $ManifestsPath = Get-ChildItem -LiteralPath (Join-Path -Path $Env:GITHUB_WORKSPACE -ChildPath $Env:INPUT_PATH) -Filter '*.psd1' -File
           If ($ManifestsPath.Count -ne 1) {
@@ -52,12 +55,19 @@ jobs:
           }
           Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "packagename=$($PackageName.ToLower()).$($PackageVersion).nupkg" -Confirm:$False -Encoding 'UTF8NoBOM'
         shell: "pwsh"
+      - name: "Build"
+        if: "${{inputs.builder != ''}}"
+        run: |
+          . $Env:INPUT_BUILDER
+        shell: "pwsh"
+        env:
+          INPUT_BUILDER: "${{inputs.builder}}"
       - name: "Publish"
         run: |
           Publish-Module -Path $Env:INPUT_PATH -NugetAPIKey $Env:INPUT_TOKEN -Force -Verbose
         shell: "pwsh"
     outputs:
-      packagename: "${{steps.resolve.outputs.packagename}}"
+      packagename: "${{steps.resolve-package.outputs.packagename}}"
   await:
     name: "Await"
     needs:
@@ -77,7 +87,7 @@ jobs:
     if: "${{needs.await.result == 'success'}}"
     runs-on: "ubuntu-latest"
     steps:
-      - name: "Copy `${{needs.main.outputs.packagename}}` To GitHub Release Tag ${{env.INPUT_RELEASETAG}}"
+      - name: "Copy `${{needs.main.outputs.packagename}}` To GitHub Release Tag ${{github.event.release.tag_name}}"
         run: |
           Invoke-WebRequest -Uri "https://psg-prod-eastus.azureedge.net/packages/$($Env:INPUT_PACKAGENAME)" -MaximumRedirection 1 -MaximumRetryCount 5 -RetryIntervalSec 5 -Method 'GET' -OutFile $Env:INPUT_PACKAGENAME
           gh release upload $Env:INPUT_RELEASETAG $Env:INPUT_PACKAGENAME --clobber --repo $Env:GITHUB_REPOSITORY
@@ -85,3 +95,4 @@ jobs:
         env:
           GH_TOKEN: "${{secrets.GITHUB_TOKEN}}"
           INPUT_PACKAGENAME: "${{needs.main.outputs.packagename}}"
+          INPUT_RELEASETAG: "${{github.event.release.tag_name}}"

@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: "[Call] NodeJS - Code Review (@0)"
+name: "[CALL] Review NodeJS Code (@0)"
 on:
   workflow_call:
     inputs:
@@ -49,13 +49,13 @@ jobs:
             NPM/${{github.run_id}}-
             NPM/${{github.run_id}}
             NPM/
-      - name: "Verify Dependencies"
-        id: "verify-dependencies"
+      - name: "Install Dependencies"
+        id: "install-dependencies"
         run: |
           npm install
         shell: "pwsh"
       - name: "Lint Code"
-        if: "${{!cancelled() && steps.verify-dependencies.outcome == 'success'}}"
+        if: "${{!cancelled() && steps.install-dependencies.outcome == 'success'}}"
         run: |
           npm run lint
         shell: "pwsh"

@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: "[DEPRECATED][CALL] Docker - Publish - GitHub Packages (@0)"
+name: "[CALL] Publish GitHub Packages Docker (@0)"
 on:
   workflow_call:
     inputs:
@@ -52,7 +52,7 @@ env:
   IMAGE_NAME: "${{github.event.repository.full_name}}"
 jobs:
   main:
-    name: "[DEPRECATED] Main"
+    name: "Main"
     runs-on: "ubuntu-latest"
     steps:
       - name: "Checkout Repository"

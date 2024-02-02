@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: "[DEPRECATED][CALL] PowerShell - Publish - Gallery Module (@0)"
+name: "[CALL] Publish PowerShell Gallery Module (@0)"
 on:
   workflow_call:
     inputs:
@@ -21,7 +21,7 @@ permissions:
   contents: "write"
 jobs:
   main:
-    name: "[DEPRECATED] Main"
+    name: "Main"
     runs-on: "windows-latest"
     env:
       INPUT_BUILD: "${{inputs.build}}"

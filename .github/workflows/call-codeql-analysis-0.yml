@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: "[Call] CodeQL - Analysis (@0)"
+name: "[CALL] CodeQL Analysis (@0)"
 on:
   workflow_call:
 permissions:

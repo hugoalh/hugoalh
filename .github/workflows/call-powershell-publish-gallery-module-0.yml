@@ -69,6 +69,7 @@ jobs:
       packagename: "${{steps.resolve-package.outputs.packagename}}"
   await:
     name: "Await"
+    permissions: {}
     needs:
       - "main"
     if: "${{needs.main.result == 'success'}}"
@@ -80,6 +81,8 @@ jobs:
         shell: "pwsh"
   assets:
     name: "Assets"
+    permissions:
+      contents: "write"
     needs:
       - "await"
       - "main"

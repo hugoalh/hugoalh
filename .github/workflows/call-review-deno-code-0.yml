@@ -9,8 +9,8 @@ on:
         required: false
         default: "ubuntu-latest"
 jobs:
-  deno-tools:
-    name: "Deno Tools"
+  main:
+    name: "Main"
     permissions:
       contents: "read"
     runs-on: "${{inputs.runs-on}}"

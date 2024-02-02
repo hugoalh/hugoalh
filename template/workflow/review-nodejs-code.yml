@@ -15,7 +15,7 @@ on:
   workflow_dispatch:
 jobs:
   main:
-    name: "Main"
+    name: "${{matrix.runs-on}}"
     permissions:
       contents: "read"
     strategy:

@@ -12,9 +12,23 @@ All of the examples in this document are in TypeScript syntax, similar style sho
 > [!IMPORTANT]
 > All of the markups and programming languages must follow this indentation rule, any invalid indentation are not acceptable!
 
-Always use tab for indentation on most of the markups and programming languages, including but not limited to CSS, HTML, JavaScript, JSON, PowerShell, TypeScript, and XML.
+Always use tab for indentation on most of the markups and programming languages, including but not limited to:
 
-However, some of the markups and programming languages are only support to use space for indentation, these are as exception, including but not limited to Markdown, Python, and YAML. Codes in Markdown code blocks are also as exceptions, always use space for indentation in order to prevent weird display on the view mode.
+- CSS,
+- HTML,
+- JavaScript,
+- JSON,
+- PowerShell,
+- TypeScript, and
+- XML.
+
+However, some of the markups and programming languages are only support to use space for indentation, these are as exception, including but not limited to:
+
+- Markdown,
+- Python, and
+- YAML.
+
+Codes in Markdown code blocks are also as exceptions, always use space for indentation in order to prevent weird display on the view mode.
 
 ## Keep AND conditions in single line
 
@@ -98,7 +112,10 @@ Use of hard word wrap can cause accessibility issues, difficult to edit, and loo
 
 [![Example of "texts-quake" when use of hard word wrap.](https://martin-ueding.de/posts/hard-vs-soft-line-wrap/vim-hard-narrow.png "Example of \"texts-quake\" when use of hard word wrap.")](https://martin-ueding.de/posts/hard-vs-soft-line-wrap)
 
-However, few of the markups are only support to have maximum 256 characters per line, these are as exceptions, including but not limited to Configs and Properties.
+However, few of the markups are only support to have maximum 256 characters per line, these are as exceptions, including but not limited to:
+
+- Configs, and
+- Properties.
 
 In such cases, applies hard word wrap between each sentences whenever possible.
 

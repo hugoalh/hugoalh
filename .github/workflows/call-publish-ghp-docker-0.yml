@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: "[CALL] Publish GitHub Packages Docker (@0)"
+name: "[CALL] Publish GitHub Packages - Docker (@0)"
 on:
   workflow_call:
     inputs:
@@ -44,16 +44,16 @@ on:
         required: false
         default: |-
           linux/amd64
-permissions:
-  contents: "read"
-  packages: "write"
-env:
-  REGISTRY: "ghcr.io"
-  IMAGE_NAME: "${{github.event.repository.full_name}}"
 jobs:
   main:
     name: "Main"
+    permissions:
+      contents: "read"
+      packages: "write"
     runs-on: "ubuntu-latest"
+    env:
+      REGISTRY: "ghcr.io"
+      IMAGE_NAME: "${{github.event.repository.full_name}}"
     steps:
       - name: "Checkout Repository"
         uses: "actions/checkout@v4.1.1"

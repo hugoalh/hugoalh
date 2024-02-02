@@ -1,10 +1,10 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: "[DEPRECATED][CALL] CodeQL Analysis (@0)"
+name: "[CALL] Invoke CodeQL Analysis (@0)"
 on:
   workflow_call:
 jobs:
   main:
-    name: "[DEPRECATED] Main"
+    name: "Main"
     permissions:
       contents: "read"
       security-events: "write"

@@ -20,10 +20,10 @@ on:
       token:
         description: "{String} GitHub personal access token."
         required: true
-permissions: {}
 jobs:
   main:
     name: "Main"
+    permissions: {}
     runs-on: "ubuntu-latest"
     steps:
       - name: "Checkout Repository"

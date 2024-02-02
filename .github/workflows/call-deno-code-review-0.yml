@@ -8,11 +8,11 @@ on:
         description: "{string} Type of the machine to run the job on."
         required: false
         default: "ubuntu-latest"
-permissions:
-  contents: "read"
 jobs:
   main:
     name: "[DEPRECATED] Main"
+    permissions:
+      contents: "read"
     runs-on: "${{inputs.runs-on}}"
     steps:
       - name: "Checkout Repository"
@@ -91,17 +91,14 @@ jobs:
         if: "${{!cancelled() && steps.verify-code.outcome == 'success'}}"
         run: |
           deno lint
-        shell: "pwsh"
       - name: "Test Code"
         if: "${{!cancelled() && steps.verify-code.outcome == 'success' && steps.resolve-repository.outputs.dispatch_test == 'true'}}"
         run: |
           deno test --allow-all --no-prompt
-        shell: "pwsh"
       - name: "Benchmark Code"
         if: "${{!cancelled() && steps.verify-code.outcome == 'success' && steps.resolve-repository.outputs.dispatch_benchmark == 'true'}}"
         run: |
           deno bench --allow-all --no-prompt
-        shell: "pwsh"
       - name: "Check Dependencies Update"
         if: "${{!cancelled() && steps.verify-code.outcome == 'success' && (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')}}"
         run: |

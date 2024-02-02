@@ -6,16 +6,16 @@ on:
       NPM_TOKEN:
         description: "{string} NPM token."
         required: true
-permissions:
-  contents: "write"
-  id-token: "write"
-env:
-  INPUT_RELEASETAG: "${{github.event.release.tag_name}}"
-  NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
 jobs:
   main:
     name: "[DEPRECATED] Main"
+    permissions:
+      contents: "write"
+      id-token: "write"
     runs-on: "ubuntu-latest"
+    env:
+      INPUT_RELEASETAG: "${{github.event.release.tag_name}}"
+      NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
     steps:
       - name: "Checkout Repository"
         uses: "actions/checkout@v4.1.1"
@@ -115,17 +115,14 @@ jobs:
       - name: "Install Dependencies"
         run: |
           npm install
-        shell: "pwsh"
       - name: "Build Package"
         if: "${{steps.resolve-package.outputs.build == 'true'}}"
         run: |
           npm run build
-        shell: "pwsh"
       - name: "Publish Package With Tag `${{steps.resolve-package.outputs.tags_first}}` (Provenance)"
         id: "publish-provenance"
         run: |
-          [String]$PackageTagsFirst = $Env:INPUT_TAGSFIRST
-          npm publish --provenance --tag $PackageTagsFirst
+          npm publish --provenance --tag $Env:INPUT_TAGSFIRST
         shell: "pwsh"
         env:
           INPUT_TAGSFIRST: "${{steps.resolve-package.outputs.tags_first}}"
@@ -133,8 +130,7 @@ jobs:
         if: "${{!cancelled() && steps.publish-provenance.outcome == 'failure'}}"
         id: "publish-raw"
         run: |
-          [String]$PackageTagsFirst = $Env:INPUT_TAGSFIRST
-          npm publish --tag $PackageTagsFirst
+          npm publish --tag $Env:INPUT_TAGSFIRST
         shell: "pwsh"
         env:
           INPUT_TAGSFIRST: "${{steps.resolve-package.outputs.tags_first}}"

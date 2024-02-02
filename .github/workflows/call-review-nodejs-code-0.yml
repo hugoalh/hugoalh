@@ -8,11 +8,11 @@ on:
         description: "{string} Type of the machine to run the job on."
         required: false
         default: "ubuntu-latest"
-permissions:
-  contents: "read"
 jobs:
-  main:
-    name: "Main"
+  nodejs-tools:
+    name: "NodeJS Tools"
+    permissions:
+      contents: "read"
     runs-on: "${{inputs.runs-on}}"
     steps:
       - name: "Checkout Repository"
@@ -53,12 +53,10 @@ jobs:
         id: "install-dependencies"
         run: |
           npm install
-        shell: "pwsh"
       - name: "Lint Code"
         if: "${{!cancelled() && steps.install-dependencies.outcome == 'success'}}"
         run: |
           npm run lint
-        shell: "pwsh"
       - name: "Save NPM Cache"
         if: "${{!cancelled() && steps.restore-cache.outcome == 'success'}}"
         uses: "actions/cache/save@v4.0.0"

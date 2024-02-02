@@ -44,16 +44,16 @@ on:
         required: false
         default: |-
           linux/amd64
-permissions:
-  contents: "read"
-  packages: "write"
-env:
-  REGISTRY: "ghcr.io"
-  IMAGE_NAME: "${{github.event.repository.full_name}}"
 jobs:
   main:
     name: "[DEPRECATED] Main"
+    permissions:
+      contents: "read"
+      packages: "write"
     runs-on: "ubuntu-latest"
+    env:
+      REGISTRY: "ghcr.io"
+      IMAGE_NAME: "${{github.event.repository.full_name}}"
     steps:
       - name: "Checkout Repository"
         uses: "actions/checkout@v4.1.1"

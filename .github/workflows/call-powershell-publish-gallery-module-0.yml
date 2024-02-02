@@ -17,11 +17,11 @@ on:
       POWERSHELLGALLERY_TOKEN:
         description: "{String} PowerShell Gallery token."
         required: true
-permissions:
-  contents: "write"
 jobs:
   main:
     name: "[DEPRECATED] Main"
+    permissions:
+      contents: "write"
     runs-on: "windows-latest"
     env:
       INPUT_BUILD: "${{inputs.build}}"

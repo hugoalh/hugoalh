@@ -10,6 +10,10 @@ This document includes the universal [guidelines](#guideline) and [methods/ways]
 
 ## How To...
 
+### Fix A Grammar Mistake
+
+You can fix a grammar mistake by [create a pull request](#create-a-pull-request); Alternatively, [create an issue](#create-an-issue) to point out the grammar mistake.
+
 ### Fix A Misspelling/Typo
 
 You can fix a misspelling/typo by [create a pull request](#create-a-pull-request); Alternatively, [create an issue](#create-an-issue) to point out the misspelling/typo.
@@ -17,17 +21,13 @@ You can fix a misspelling/typo by [create a pull request](#create-a-pull-request
 > [!IMPORTANT]
 > [The spelling differences in English](https://en.wikipedia.org/wiki/American_and_British_English_spelling_differences) are not count as misspelling/typo!
 
-### Fix A Grammar Mistake
+### Improve Repository Wiki
 
-You can fix a grammar mistake by [create a pull request](#create-a-pull-request); Alternatively, [create an issue](#create-an-issue) to point out the grammar mistake.
-
-### Improve GitHub Repository Wiki
-
-Unfortunately you cannot edit the wiki page directly, however you can [create an issue](#create-an-issue) to point out the wiki page that need to improve.
+Unfortunately you cannot edit the repository wiki page directly, however you can [create an issue](#create-an-issue) to point out the repository wiki page that need to improve.
 
 ### Internationalization (I18n) / Localization / Translation
 
-Only the Contributing Guide of that project will contain the detail.
+All of the details are only included in the Contributing Guide of that project.
 
 You can also request for implementation by [create an issue](#create-an-issue).
 
@@ -53,12 +53,14 @@ Please visit the ["hxhS (hugoalh & hugoalh Studio) Universal Coding Guide"](http
 
 - Any reports or requests should [create an issue](#create-an-issue) instead.
 - Before create a discussion, check whether any similar discussions are already exist.
+- Create a discussion under the most appropriate/suitable category.
 
 ### Create An Issue
 
 - Any questions should [create a discussion](#create-a-discussion) instead.
 - Any security vulnerability reports should [create a security vulnerability report](#create-a-security-vulnerability-report) instead.
 - Before create an issue, check whether any similar issues are already exist, even the closed issues.
+- Create an issue under the most appropriate/suitable category.
 
 > [!NOTE]
 > For the general process time, please visit the ["hxhS (hugoalh & hugoalh Studio) Universal General Process Time - Issue"](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/general-process-time.md#issue).
@@ -75,7 +77,8 @@ Please visit the ["hxhS (hugoalh & hugoalh Studio) Universal Coding Guide"](http
 - If the pull request is not ready but want to save/stage it, mark it as draft and no need to add any identifications to the title (e.g.: `[WIP] XXXXXXXX`).
 
 > [!NOTE]
-> For the general process time, please visit the ["hxhS (hugoalh & hugoalh Studio) Universal General Process Time - Pull Request"](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/general-process-time.md#pull-request).
+> - The pull request does not needs to pass all of the automatic checks, these are the references for the code reviewers.
+> - For the general process time, please visit the ["hxhS (hugoalh & hugoalh Studio) Universal General Process Time - Pull Request"](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/general-process-time.md#pull-request).
 
 ### Create A Security Vulnerability Report
 

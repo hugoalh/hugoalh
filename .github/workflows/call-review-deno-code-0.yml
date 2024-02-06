@@ -94,7 +94,8 @@ jobs:
       - name: "Test Code"
         if: "${{!cancelled() && steps.verify-code.outcome == 'success' && steps.resolve-repository.outputs.dispatch_test == 'true'}}"
         run: |
-          deno test --allow-all --no-prompt
+          deno test --allow-all --coverage --no-prompt
+          deno coverage
       - name: "Benchmark Code"
         if: "${{!cancelled() && steps.verify-code.outcome == 'success' && steps.resolve-repository.outputs.dispatch_benchmark == 'true'}}"
         run: |

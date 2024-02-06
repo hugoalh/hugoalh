@@ -18,12 +18,16 @@ You can fix a grammar mistake by [create a pull request](#create-a-pull-request)
 
 You can fix a misspelling/typo by [create a pull request](#create-a-pull-request); Alternatively, [create an issue](#create-an-issue) to point out the misspelling/typo.
 
-> [!IMPORTANT]
-> [The spelling differences in English](https://en.wikipedia.org/wiki/American_and_British_English_spelling_differences) are not count as misspelling/typo!
+Be aware that the spelling differences between the language variants are not count as misspelling/typo!
 
-### Improve Repository Wiki
+| **Language** | **Prefer Variant** |
+|:-:|:-:|
+| Chinese | Traditional / 正體 / 繁體 |
+| [English](https://en.wikipedia.org/wiki/American_and_British_English_spelling_differences) | England / United Kingdom (UK) |
 
-Unfortunately you cannot edit the repository wiki page directly, however you can [create an issue](#create-an-issue) to point out the repository wiki page that need to improve.
+### Improve GitHub Repository Wiki
+
+Unfortunately only maintainers able to edit the GitHub repository wiki page directly, however you can [create an issue](#create-an-issue) to point out the GitHub repository wiki page that need to improve.
 
 ### Internationalization (I18n) / Localization / Translation
 
@@ -47,7 +51,7 @@ You can request a new feature by [create an issue](#create-an-issue).
 
 ### Coding
 
-Please visit the ["hxhS (hugoalh & hugoalh Studio) Universal Coding Guide"](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/coding.md) for the coding guideline, and visit the ["hxhS (hugoalh & hugoalh Studio) Universal Forbidden Targets"](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/forbidden-targets.md) for the forbidden targets.
+*Please visit the ["hxhS (hugoalh & hugoalh Studio) Universal Coding Guide"](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/coding.md) for the coding guideline, and visit the ["hxhS (hugoalh & hugoalh Studio) Universal Forbidden Targets"](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/forbidden-targets.md) for the forbidden targets.*
 
 ### Create A Discussion
 
@@ -77,12 +81,12 @@ Please visit the ["hxhS (hugoalh & hugoalh Studio) Universal Coding Guide"](http
 - If the pull request is not ready but want to save/stage it, mark it as draft and no need to add any identifications to the title (e.g.: `[WIP] XXXXXXXX`).
 
 > [!NOTE]
-> - The pull request does not needs to pass all of the automatic checks, these are the references for the code reviewers.
+> - The pull request does not need to pass any automatic review, automatic reviews are the references for the code reviewers.
 > - For the general process time, please visit the ["hxhS (hugoalh & hugoalh Studio) Universal General Process Time - Pull Request"](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/general-process-time.md#pull-request).
 
 ### Create A Security Vulnerability Report
 
-Please visit the ["GitHub Docs - Privately reporting a security vulnerability"](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability) for the steps to create a security vulnerability report.
+*Please visit the ["GitHub Docs - Privately reporting a security vulnerability"](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability) for the steps to create a security vulnerability report.*
 
 > [!CAUTION]
 > Never report security vulnerabilities publicly, any public security vulnerability report will be rejected and deleted without notice.

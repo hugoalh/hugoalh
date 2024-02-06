@@ -59,7 +59,7 @@ jobs:
       - name: "Build Package"
         if: "${{inputs.build != ''}}"
         run: |
-          . $Env:INPUT_BUILD
+          . ".\$($Env:INPUT_BUILD)"
         shell: "pwsh"
       - name: "Publish Package"
         run: |

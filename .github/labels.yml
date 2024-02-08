@@ -6,7 +6,7 @@
   color: "#007AAC"
   description: "Related to AssemblyScript."
 - name: "Platform/Bun"
-  color: "#000000"
+  color: "#F9F1E1"
   description: "Related to Bun."
 - name: "Platform/ClamAV"
   color: "#B83033"

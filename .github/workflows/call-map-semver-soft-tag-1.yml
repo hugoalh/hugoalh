@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: "[CALL] Map SemVer Soft Tag (@0)"
+name: "[CALL] Map SemVer Soft Tag (@1)"
 on:
   workflow_call:
     inputs:
@@ -16,20 +16,16 @@ on:
         type: "string"
         description: "{String[]} Pre release pattern of tags."
         required: false
-    secrets:
-      token:
-        description: "{String} GitHub personal access token."
-        required: true
 jobs:
   main:
     name: "Main"
-    permissions: {}
+    permissions:
+      contents: "write"
     runs-on: "ubuntu-latest"
     steps:
       - name: "Checkout Repository"
         uses: "actions/checkout@v4.1.1"
         with:
-          token: "${{secrets.token}}"
           fetch-depth: "0"
       - name: "Config Git"
         run: |
@@ -96,8 +92,8 @@ jobs:
               Join-String -Separator ', '
           )" -Debug
           ForEach ($SoftTag In $SoftTags.GetEnumerator()) {
-            git --no-pager tag $SoftTag.Name "v$($SoftTag.Value.ToString())" --force
-            git --no-pager push origin tag $SoftTag.Name --force
+            git --no-pager switch --force-create $SoftTag.Name "v$($SoftTag.Value.ToString())"
+            git --no-pager push --force
           }
         shell: "pwsh"
         env:

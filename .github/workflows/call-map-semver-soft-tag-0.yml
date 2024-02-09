@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: "[CALL] Map SemVer Soft Tag (@1)"
+name: "[CALL] Map SemVer Soft Tag (@0)"
 on:
   workflow_call:
     inputs:
@@ -16,16 +16,20 @@ on:
         type: "string"
         description: "{String[]} Pre release pattern of tags."
         required: false
+    secrets:
+      token:
+        description: "{String} GitHub personal access token."
+        required: true
 jobs:
   main:
     name: "Main"
-    permissions:
-      contents: "write"
+    permissions: {}
     runs-on: "ubuntu-latest"
     steps:
       - name: "Checkout Repository"
         uses: "actions/checkout@v4.1.1"
         with:
+          token: "${{secrets.token}}"
           fetch-depth: "0"
       - name: "Config Git"
         run: |

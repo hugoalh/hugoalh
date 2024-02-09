@@ -93,7 +93,7 @@ jobs:
           )" -Debug
           ForEach ($SoftTag In $SoftTags.GetEnumerator()) {
             git --no-pager switch --force-create $SoftTag.Name "v$($SoftTag.Value.ToString())"
-            git --no-pager push --force
+            git --no-pager push --set-upstream origin $SoftTag.Name --force
           }
         shell: "pwsh"
         env:

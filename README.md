@@ -1,8 +1,10 @@
+<!--
 <h1 align="center">
   <a href="https://github.com/hugoalh">
     <img alt="hugoalh" src="https://i.imgur.com/d7CW6xWl.png" title="hugoalh" />
   </a>
 </h1>
+-->
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Discord-@hugoalh-1f1f1f?labelColor=5865F2&logo=discord&logoColor=ffffff&style=flat-square">

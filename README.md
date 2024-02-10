@@ -1,10 +1,4 @@
-<!--
-<h1 align="center">
-  <a href="https://github.com/hugoalh">
-    <img alt="hugoalh" src="https://i.imgur.com/d7CW6xWl.png" title="hugoalh" />
-  </a>
-</h1>
--->
+## 🕸️ Networks
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Discord-@hugoalh-1f1f1f?labelColor=5865F2&logo=discord&logoColor=ffffff&style=flat-square">
@@ -30,15 +24,15 @@
 
 ## 📦 Registries Packages List
 
-- [GitHub Packages @hugoalh](https://github.com/hugoalh?tab=packages)
-- [GitHub Packages @hugoalh-studio](https://github.com/orgs/hugoalh-studio/packages)
-- [NPM @hugoalh](https://www.npmjs.com/~hugoalh)
-- [PowerShell Gallery @hugoalh](https://www.powershellgallery.com/profiles/hugoalh)
+- [GitHub Packages `@hugoalh`](https://github.com/hugoalh?tab=packages)
+- [GitHub Packages `@hugoalh-studio`](https://github.com/orgs/hugoalh-studio/packages)
+- [NPM `@hugoalh`](https://www.npmjs.com/~hugoalh)
+- [PowerShell Gallery `@hugoalh`](https://www.powershellgallery.com/profiles/hugoalh)
 
 ## 🗄️ Repositories List
 
-- [GitHub @hugoalh](https://github.com/hugoalh?tab=repositories)
-- [GitHub @hugoalh-studio](https://github.com/orgs/hugoalh-studio/repositories)
+- [GitHub `@hugoalh`](https://github.com/hugoalh?tab=repositories)
+- [GitHub `@hugoalh-studio`](https://github.com/orgs/hugoalh-studio/repositories)
 
 ## 📚 Resources
 

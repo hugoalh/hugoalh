@@ -1,21 +1,11 @@
 ## 🕸️ Networks
 
-<a href="https://bsky.app/profile/hugoalh.bsky.social">
-  <img alt="Bluesky: @hugoalh.bsky.social" src="https://img.shields.io/badge/@hugoalh.bsky.social-0285FF?labelColor=0285FF&logo=bluesky&logoColor=ffffff&style=flat-square" title="Bluesky: @hugoalh.bsky.social" />
-</a>
+<a href="https://bsky.app/profile/hugoalh.bsky.social"><img alt="Bluesky: @hugoalh.bsky.social" src="https://img.shields.io/badge/@hugoalh.bsky.social-0285FF?labelColor=0285FF&logo=bluesky&logoColor=ffffff&style=flat-square" title="Bluesky: @hugoalh.bsky.social" /></a>
 <img alt="Discord: @hugoalh" src="https://img.shields.io/badge/@hugoalh-5865F2?labelColor=5865F2&logo=discord&logoColor=ffffff&style=flat-square" title="Discord: @hugoalh" />
-<a href="https://gravatar.com/hugoalh">
-  <img alt="Gravatar: hugoalh" src="https://img.shields.io/badge/hugoalh-1E8CBE?labelColor=1E8CBE&logo=gravatar&logoColor=ffffff&style=flat-square" title="Gravatar: hugoalh" />
-</a>
-<a href="https://mastodon.social/@hugoalh">
-  <img alt="Mastodon: @hugoalh@mastodon.social" src="https://img.shields.io/badge/@hugoalh@mastodon.social-6364FF?labelColor=6364FF&logo=mastodon&logoColor=ffffff&style=flat-square" title="Mastodon: @hugoalh@mastodon.social" />
-</a>
-<a href="https://hugoalh.tumblr.com">
-  <img alt="Tumblr: @hugoalh" src="https://img.shields.io/badge/@hugoalh-36465D?labelColor=36465D&logo=tumblr&logoColor=ffffff&style=flat-square" title="Tumblr: @hugoalh" />
-</a>
-<a href="https://x.com/hugoalhofficial">
-  <img alt="X: @hugoalhofficial" src="https://img.shields.io/badge/@hugoalhofficial-000000?labelColor=000000&logo=x&logoColor=ffffff&style=flat-square" title="X: @hugoalhofficial" />
-</a>
+<a href="https://gravatar.com/hugoalh"><img alt="Gravatar: hugoalh" src="https://img.shields.io/badge/hugoalh-1E8CBE?labelColor=1E8CBE&logo=gravatar&logoColor=ffffff&style=flat-square" title="Gravatar: hugoalh" /></a>
+<a href="https://mastodon.social/@hugoalh"><img alt="Mastodon: @hugoalh@mastodon.social" src="https://img.shields.io/badge/@hugoalh@mastodon.social-6364FF?labelColor=6364FF&logo=mastodon&logoColor=ffffff&style=flat-square" title="Mastodon: @hugoalh@mastodon.social" /></a>
+<a href="https://hugoalh.tumblr.com"><img alt="Tumblr: @hugoalh" src="https://img.shields.io/badge/@hugoalh-36465D?labelColor=36465D&logo=tumblr&logoColor=ffffff&style=flat-square" title="Tumblr: @hugoalh" /></a>
+<a href="https://x.com/hugoalhofficial"><img alt="X: @hugoalhofficial" src="https://img.shields.io/badge/@hugoalhofficial-000000?labelColor=000000&logo=x&logoColor=ffffff&style=flat-square" title="X: @hugoalhofficial" /></a>
 
 ## 🌐 Languages
 

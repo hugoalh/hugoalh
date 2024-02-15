@@ -9,6 +9,8 @@
 [![Guilded: @hugoalh](https://img.shields.io/badge/@hugoalh-F5C400?labelColor=F5C400&logo=guilded&logoColor=000000&style=flat-square "Guilded: @hugoalh")](https://www.guilded.gg/u/hugoalh)
 [![Imgur: @hugoalh](https://img.shields.io/badge/@hugoalh-1BB76E?labelColor=1BB76E&logo=imgur&logoColor=ffffff&style=flat-square "Imgur: @hugoalh")](https://imgur.com/user/hugoalh)
 [![Mastodon: @hugoalh@mastodon.social](https://img.shields.io/badge/@hugoalh@mastodon.social-6364FF?labelColor=6364FF&logo=mastodon&logoColor=ffffff&style=flat-square "Mastodon: @hugoalh@mastodon.social")](https://mastodon.social/@hugoalh)
+[![NPM: @hugoalh](https://img.shields.io/badge/@hugoalh-CB3837?labelColor=CB3837&logo=npm&logoColor=ffffff&style=flat-square "NPM: @hugoalh")](https://www.npmjs.com/~hugoalh)
+[![PowerShell Gallery: @hugoalh](https://img.shields.io/badge/@hugoalh-5391FE?labelColor=5391FE&logo=powershell&logoColor=ffffff&style=flat-square "PowerShell Gallery: @hugoalh")](https://www.powershellgallery.com/profiles/hugoalh)
 [![Reddit: /u/hugoalh](https://img.shields.io/badge/%2Fu%2Fhugoalh-FF4500?labelColor=FF4500&logo=reddit&logoColor=ffffff&style=flat-square "Reddit: /u/hugoalh")](https://www.reddit.com/user/hugoalh)
 [![Roblox: @hugoalh](https://img.shields.io/badge/@hugoalh-000000?labelColor=000000&logo=roblox&logoColor=ffffff&style=flat-square "Roblox: @hugoalh")](https://www.roblox.com/users/194932593/profile)
 [![SoundCloud: @hugoalh](https://img.shields.io/badge/@hugoalh-FF3300?labelColor=FF3300&logo=soundcloud&logoColor=ffffff&style=flat-square "SoundCloud: @hugoalh")](https://soundcloud.com/hugoalh)

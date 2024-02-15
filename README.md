@@ -1,5 +1,7 @@
 ## 🕸️ Networks
 
+<div align="center">
+
 [![Bluesky: @hugoalh.bsky.social](https://img.shields.io/badge/@hugoalh.bsky.social-0285FF?labelColor=0285FF&logo=bluesky&logoColor=ffffff&style=flat-square "Bluesky: @hugoalh.bsky.social")](https://bsky.app/profile/hugoalh.bsky.social)
 [![Crowdin: @hugoalh](https://img.shields.io/badge/@hugoalh-2E3340?labelColor=2E3340&logo=crowdin&logoColor=ffffff&style=flat-square "Crowdin: @hugoalh")](https://crowdin.com/profile/hugoalh)
 [![Gab: @hugoalh](https://img.shields.io/badge/g-@hugoalh-21CF7A?labelColor=21CF7A&logo=gab&logoColor=ffffff&style=flat-square "Gab: @hugoalh")](https://gab.com/hugoalh)
@@ -22,6 +24,8 @@
 ![Discord: @hugoalh](https://img.shields.io/badge/@hugoalh-5865F2?labelColor=5865F2&logo=discord&logoColor=ffffff&style=flat-square "Discord: @hugoalh")
 ![LINE: @hugoalh](https://img.shields.io/badge/@hugoalh-00C300?labelColor=00C300&logo=line&logoColor=ffffff&style=flat-square "LINE: @hugoalh")
 ![Revolt Chat: @hugoalh#5145](https://img.shields.io/badge/@hugoalh%235145-FD667A?labelColor=FD667A&logo=revoltdotchat&logoColor=ffffff&style=flat-square "Revolt Chat: @hugoalh#5145")
+
+</div>
 
 > [!NOTE]
 > Beware of fake accounts!

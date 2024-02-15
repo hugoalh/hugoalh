@@ -1,5 +1,10 @@
 ## 🕸️ Networks
 
+<a href="https://bsky.app/profile/hugoalh.bsky.social"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Bluesky-@hugoalh.bsky.social-1f1f1f?labelColor=0285FF&logo=bluesky&logoColor=ffffff&style=flat-square">
+  <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Bluesky-@hugoalh.bsky.social-dfdfdf?labelColor=0285FF&logo=bluesky&logoColor=ffffff&style=flat-square">
+  <img alt="Bluesky: @hugoalh.bsky.social" src="https://img.shields.io/badge/Bluesky-@hugoalh.bsky.social-dfdfdf?labelColor=0285FF&logo=bluesky&logoColor=ffffff&style=flat-square" title="Bluesky: @hugoalh.bsky.social">
+</picture></a>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Discord-@hugoalh-1f1f1f?labelColor=5865F2&logo=discord&logoColor=ffffff&style=flat-square">
   <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Discord-@hugoalh-dfdfdf?labelColor=5865F2&logo=discord&logoColor=ffffff&style=flat-square">
@@ -14,6 +19,11 @@
   <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Tumblr-@hugoalh-1f1f1f?labelColor=36465D&logo=tumblr&logoColor=ffffff&style=flat-square">
   <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Tumblr-@hugoalh-dfdfdf?labelColor=36465D&logo=tumblr&logoColor=ffffff&style=flat-square">
   <img alt="Tumblr: @hugoalh" src="https://img.shields.io/badge/Tumblr-@hugoalh-dfdfdf?labelColor=36465D&logo=tumblr&logoColor=ffffff&style=flat-square" title="Tumblr: @hugoalh">
+</picture></a>
+<a href="https://x.com/hugoalhofficial"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/X-@hugoalhofficial-1f1f1f?labelColor=000000&logo=x&logoColor=ffffff&style=flat-square">
+  <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/X-@hugoalhofficial-dfdfdf?labelColor=000000&logo=x&logoColor=ffffff&style=flat-square">
+  <img alt="X: @hugoalhofficial" src="https://img.shields.io/badge/X-@hugoalhofficial-dfdfdf?labelColor=000000&logo=x&logoColor=ffffff&style=flat-square" title="X: @hugoalhofficial">
 </picture></a>
 
 ## 🌐 Languages

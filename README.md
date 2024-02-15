@@ -1,9 +1,9 @@
 ## 🕸️ Networks
 
-[![Bluesky Social: @hugoalh.bsky.social](https://img.shields.io/badge/@hugoalh.bsky.social-0285FF?labelColor=0285FF&logo=bluesky&logoColor=ffffff&style=flat-square "Bluesky Social: @hugoalh.bsky.social")](https://bsky.app/profile/hugoalh.bsky.social)
+[![Bluesky: @hugoalh.bsky.social](https://img.shields.io/badge/@hugoalh.bsky.social-0285FF?labelColor=0285FF&logo=bluesky&logoColor=ffffff&style=flat-square "Bluesky: @hugoalh.bsky.social")](https://bsky.app/profile/hugoalh.bsky.social)
 ![Crowdin: @hugoalh](https://img.shields.io/badge/@hugoalh-2E3340?labelColor=2E3340&logo=crowdin&logoColor=ffffff&style=flat-square "Crowdin: @hugoalh")
 ![Discord: @hugoalh](https://img.shields.io/badge/@hugoalh-5865F2?labelColor=5865F2&logo=discord&logoColor=ffffff&style=flat-square "Discord: @hugoalh")
-[![Gab Social: @hugoalh](https://img.shields.io/badge/g-@hugoalh-21CF7A?labelColor=21CF7A&logo=gab&logoColor=ffffff&style=flat-square "Gab Social: @hugoalh")](https://gab.com/hugoalh)
+[![Gab: @hugoalh](https://img.shields.io/badge/g-@hugoalh-21CF7A?labelColor=21CF7A&logo=gab&logoColor=ffffff&style=flat-square "Gab: @hugoalh")](https://gab.com/hugoalh)
 [![Gravatar: @hugoalh](https://img.shields.io/badge/@hugoalh-1E8CBE?labelColor=1E8CBE&logo=gravatar&logoColor=ffffff&style=flat-square "Gravatar: @hugoalh")](https://gravatar.com/hugoalh)
 [![Guilded: @hugoalh](https://img.shields.io/badge/@hugoalh-F5C400?labelColor=F5C400&logo=guilded&logoColor=000000&style=flat-square "Guilded: @hugoalh")](https://www.guilded.gg/u/hugoalh)
 [![Imgur: @hugoalh](https://img.shields.io/badge/@hugoalh-1BB76E?labelColor=1BB76E&logo=imgur&logoColor=ffffff&style=flat-square "Imgur: @hugoalh")](https://imgur.com/user/hugoalh)

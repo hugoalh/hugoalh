@@ -16,15 +16,15 @@ This document includes the universal general process time over all of the hxhS (
 
 |  | **[hugoalh][hugoalh]** | **[hugoalh Studio][hugoalh-studio]** |
 |:-:|:-:|:-:|
-| **First Response / Triage** | 1 Day \~  14 Days | 1 Day \~ 7 Days |
-| **Close** | 2 Days \~ 84 Days | 2 Days \~ 28 Days |
+| **First Response / Triage** | 1 Day \~  28 Days | 1 Day \~ 14 Days |
+| **Close** | 2 Days \~ 168 Days | 2 Days \~ 56 Days |
 
 ## Pull Request
 
 |  | **[hugoalh][hugoalh]** | **[hugoalh Studio][hugoalh-studio]** |
 |:-:|:-:|:-:|
-| **First Response / Triage** | 1 Day \~  14 Days | 1 Day \~ 7 Days |
-| **Merge / Reject** | 2 Days \~ 84 Days | 2 Days \~ 28 Days |
+| **First Response / Triage** | 1 Day \~  28 Days | 1 Day \~ 14 Days |
+| **Merge / Reject** | 2 Days \~ 168 Days | 2 Days \~ 56 Days |
 
 ## Security Vulnerability Report
 

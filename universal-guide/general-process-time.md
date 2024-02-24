@@ -10,7 +10,7 @@ This document includes the universal general process time over all of the hxhS (
 >
 > |  | **Start** | **End** |
 > |:-:|:-:|:-:|
-> | **2024 Spring Break** | 2024-02-03 | 2024-02-24 |
+> | *N/A* |  |  |
 
 ## Issue
 

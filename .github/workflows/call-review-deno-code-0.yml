@@ -26,15 +26,16 @@ jobs:
         with:
           version: "^2.1.0"
       - name: "Resolve Deno Cache Path"
+        shell: "pwsh"
         run: |
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
           [PSCustomObject]$DenoInfo = deno info --json |
             Join-String -Separator "`n" |
             ConvertFrom-Json -Depth 100
           Set-GitHubActionsEnvironmentVariable -Name 'DENO_DIR' -Value $DenoInfo.denoDir -Scope 'Subsequent'
-        shell: "pwsh"
       - name: "Resolve Repository"
         id: "resolve-repository"
+        shell: "pwsh"
         run: |
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
           [String[]]$Files = Get-ChildItem -LiteralPath $Env:GITHUB_WORKSPACE -Recurse -File -Name |
@@ -50,7 +51,6 @@ jobs:
           Set-GitHubActionsOutput -Name 'files' -Value (ConvertTo-Json -InputObject $Files -Depth 100 -Compress)
           Set-GitHubActionsOutput -Name 'dispatch_benchmark' -Value $DispatchBenchmark.ToString().ToLower()
           Set-GitHubActionsOutput -Name 'dispatch_test' -Value $DispatchTest.ToString().ToLower()
-        shell: "pwsh"
       - name: "Restore Deno Cache"
         id: "restore-cache"
         uses: "actions/cache/restore@v4.0.0"
@@ -67,6 +67,9 @@ jobs:
             Deno/
       - name: "Verify Code"
         id: "verify-code"
+        env:
+          INPUT_FILES: "${{steps.resolve-repository.outputs.files}}"
+        shell: "pwsh"
         run: |
           [Boolean]$ShouldReload = $Env:GITHUB_EVENT_NAME -iin @('schedule')
           [Boolean]$IsFail = $False
@@ -84,9 +87,6 @@ jobs:
           If ($IsFail) {
             Exit 1
           }
-        shell: "pwsh"
-        env:
-          INPUT_FILES: "${{steps.resolve-repository.outputs.files}}"
       - name: "Lint Code"
         if: "${{!cancelled() && steps.verify-code.outcome == 'success'}}"
         run: |
@@ -102,6 +102,9 @@ jobs:
           deno bench --allow-all --no-prompt
       - name: "Check Dependencies Update"
         if: "${{!cancelled() && steps.verify-code.outcome == 'success' && (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')}}"
+        env:
+          INPUT_FILES: "${{steps.resolve-repository.outputs.files}}"
+        shell: "pwsh"
         run: |
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
           [Boolean]$IsFail = $False
@@ -121,9 +124,6 @@ jobs:
           If ($IsFail) {
             Exit 1
           }
-        shell: "pwsh"
-        env:
-          INPUT_FILES: "${{steps.resolve-repository.outputs.files}}"
       - name: "Save Deno Cache"
         if: "${{!cancelled() && steps.restore-cache.outcome == 'success'}}"
         uses: "actions/cache/save@v4.0.0"

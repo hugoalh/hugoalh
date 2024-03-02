@@ -32,11 +32,16 @@ jobs:
           token: "${{secrets.token}}"
           fetch-depth: "0"
       - name: "Config Git"
+        shell: "pwsh"
         run: |
           git --no-pager config --global 'user.name' 'github-actions'
           git --no-pager config --global 'user.email' 'github-actions@users.noreply.github.com'
-        shell: "pwsh"
       - name: "Update Soft Tags"
+        env:
+          INPUT_TAGCURRENT: "${{inputs.tagcurrent}}"
+          INPUT_TAGSPATTERN_LATEST: "${{inputs.tagspattern_latest}}"
+          INPUT_TAGSPATTERN_PRE: "${{inputs.tagspattern_pre}}"
+        shell: "pwsh"
         run: |
           [String[]]$SemVerParts = @('Major', 'Minor', 'Patch', 'PreReleaseLabel', 'BuildLabel')
           [String[]]$SoftTagsPatternLatest = $Env:INPUT_TAGSPATTERN_LATEST -isplit '\r?\n' |
@@ -99,8 +104,3 @@ jobs:
             git --no-pager tag $SoftTag.Name "v$($SoftTag.Value.ToString())" --force
             git --no-pager push origin tag $SoftTag.Name --force
           }
-        shell: "pwsh"
-        env:
-          INPUT_TAGCURRENT: "${{inputs.tagcurrent}}"
-          INPUT_TAGSPATTERN_LATEST: "${{inputs.tagspattern_latest}}"
-          INPUT_TAGSPATTERN_PRE: "${{inputs.tagspattern_pre}}"

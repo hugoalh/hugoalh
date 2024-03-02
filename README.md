@@ -8,6 +8,7 @@
 [![Gravatar: @hugoalh](https://img.shields.io/badge/@hugoalh-1E8CBE?labelColor=1E8CBE&logo=gravatar&logoColor=ffffff&style=flat-square "Gravatar: @hugoalh")](https://gravatar.com/hugoalh)
 [![Guilded: /u/hugoalh](https://img.shields.io/badge/%2Fu%2Fhugoalh-F5C400?labelColor=F5C400&logo=guilded&logoColor=000000&style=flat-square "Guilded: /u/hugoalh")](https://www.guilded.gg/u/hugoalh)
 [![Imgur: @hugoalh](https://img.shields.io/badge/@hugoalh-1BB76E?labelColor=1BB76E&logo=imgur&logoColor=ffffff&style=flat-square "Imgur: @hugoalh")](https://imgur.com/user/hugoalh)
+[![JSR: @hugoalh](https://img.shields.io/badge/JSR-@hugoalh-F7DF1E?labelColor=F7DF1E&logoColor=000000&style=flat-square "JSR: @hugoalh")](https://jsr.io/@hugoalh)
 [![Mastodon: @hugoalh@mastodon.social](https://img.shields.io/badge/@hugoalh@mastodon.social-6364FF?labelColor=6364FF&logo=mastodon&logoColor=ffffff&style=flat-square "Mastodon: @hugoalh@mastodon.social")](https://mastodon.social/@hugoalh)
 [![NPM: @hugoalh](https://img.shields.io/badge/@hugoalh-CB3837?labelColor=CB3837&logo=npm&logoColor=ffffff&style=flat-square "NPM: @hugoalh")](https://www.npmjs.com/~hugoalh)
 [![PowerShell Gallery: @hugoalh](https://img.shields.io/badge/@hugoalh-5391FE?labelColor=5391FE&logo=powershell&logoColor=ffffff&style=flat-square "PowerShell Gallery: @hugoalh")](https://www.powershellgallery.com/profiles/hugoalh)
@@ -38,10 +39,11 @@
 - Chinese (Traditional) (漢語（正體）)
 - English
 
-## 📦 Registries Packages List
+## 📦 Registries List
 
 - [GitHub Packages `@hugoalh`](https://github.com/hugoalh?tab=packages)
 - [GitHub Packages `@hugoalh-studio`](https://github.com/orgs/hugoalh-studio/packages)
+- [JSR (JavaScript Registry) `@hugoalh`](https://jsr.io/@hugoalh)
 - [NPM `@hugoalh`](https://www.npmjs.com/~hugoalh)
 - [PowerShell Gallery `@hugoalh`](https://www.powershellgallery.com/profiles/hugoalh)
 

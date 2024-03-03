@@ -39,7 +39,7 @@ jobs:
         shell: "pwsh"
       - name: "Restore NPM Cache"
         id: "restore-cache"
-        uses: "actions/cache/restore@v4.0.0"
+        uses: "actions/cache/restore@v4.0.1"
         with:
           key: "NPM/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}-${{runner.os}}"
           path: "${{steps.resolve-cache-path.outputs.npm}}"
@@ -163,7 +163,7 @@ jobs:
           INPUT_TARBALLNAME: "${{steps.resolve-package.outputs.tarballname}}"
       - name: "Save NPM Cache"
         if: "${{!cancelled() && steps.restore-cache.outcome == 'success'}}"
-        uses: "actions/cache/save@v4.0.0"
+        uses: "actions/cache/save@v4.0.1"
         with:
           key: "NPM/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}-${{runner.os}}"
           path: "${{steps.resolve-cache-path.outputs.npm}}"

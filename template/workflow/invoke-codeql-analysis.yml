@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: "Review NodeJS Code"
+name: "Invoke CodeQL Analysis"
 on:
   push:
     branches:
@@ -15,14 +15,8 @@ on:
   workflow_dispatch:
 jobs:
   main:
-    name: "${{matrix.runs-on}}"
+    name: "Main"
     permissions:
       contents: "read"
-    strategy:
-      matrix:
-        runs-on:
-          - "ubuntu-latest"
-      fail-fast: false
-    uses: "hugoalh/hugoalh/.github/workflows/call-review-nodejs-code-0.yml@main"
-    with:
-      runs-on: "${{matrix.runs-on}}"
+      security-events: "write"
+    uses: "hugoalh/hugoalh/.github/workflows/call-invoke-codeql-analysis-0.yml@main"

@@ -10,7 +10,7 @@ jobs:
     name: "Main"
     permissions:
       contents: "write"
-    uses: "hugoalh/hugoalh/.github/workflows/call-map-semver-soft-tag-1.yml@main"
+    uses: "hugoalh/hugoalh/.github/workflows/call-map-semver-soft-tag-0.yml@main"
     with:
       tagspattern_latest: |-
         v{{Major}}

@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: "[CALL] DevSkim Analysis (@0)"
+name: "[CALL] Invoke OSSAR Analysis (@0)"
 on:
   workflow_call:
 jobs:
@@ -9,13 +9,18 @@ jobs:
       actions: "read"
       contents: "read"
       security-events: "write"
-    runs-on: "ubuntu-latest"
+    runs-on: "windows-latest"
     steps:
       - name: "Checkout Repository"
         uses: "actions/checkout@v4.1.1"
-      - name: "Analyze Repository"
-        uses: "microsoft/DevSkim-Action@v1.0.11"
-      - name: "Upload Analysis Result"
-        uses: "github/codeql-action/upload-sarif@v3.24.5"
+      - name: "Setup .NET"
+        uses: "actions/setup-dotnet@v4.0.0"
         with:
-          sarif_file: "devskim-results.sarif"
+          dotnet-version: "3.1.x"
+      - name: "Analyze Repository"
+        id: "ossar"
+        uses: "github/ossar-action@v1.1.0"
+      - name: "Upload Analysis Result"
+        uses: "github/codeql-action/upload-sarif@v3.24.6"
+        with:
+          sarif_file: "${{steps.ossar.outputs.sarifFile}}"

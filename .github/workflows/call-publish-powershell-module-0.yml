@@ -1,16 +1,15 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: "[CALL] Publish PowerShell Gallery Module (@0)"
+name: "[CALL] Publish PowerShell Module (@0)"
 on:
   workflow_call:
     inputs:
-      build:
+      builder:
         type: "string"
-        description: "{String} Builder for the PowerShell module."
+        description: "{String} Builder of the PowerShell module."
         required: false
-        default: ""
-      path:
+      context:
         type: "string"
-        description: "{String} Root for the PowerShell module."
+        description: "{String} Context of the PowerShell module."
         required: false
         default: ".\\"
     secrets:
@@ -24,24 +23,25 @@ jobs:
       contents: "write"
     runs-on: "windows-latest"
     env:
-      INPUT_BUILD: "${{inputs.build}}"
-      INPUT_PATH: "${{inputs.path}}"
+      INPUT_BUILDER: "${{inputs.builder}}"
+      INPUT_CONTEXT: "${{inputs.context}}"
       INPUT_TOKEN: "${{secrets.POWERSHELLGALLERY_TOKEN}}"
     steps:
       - name: "Checkout Repository"
         uses: "actions/checkout@v4.1.1"
       - name: "Setup PowerShell Environment"
+        shell: "pwsh"
         run: |
           $PSRepositoryPSGalleryMeta = Get-PSRepository -Name 'PSGallery'
           If ($PSRepositoryPSGalleryMeta.InstallationPolicy -ine 'Trusted') {
             Write-Host -Object 'Tweak PowerShell repository configuration.'
             Set-PSRepository -Name 'PSGallery' -InstallationPolicy 'Trusted' -Verbose
           }
-        shell: "pwsh"
       - name: "Resolve Package"
         id: "resolve-package"
+        shell: "pwsh"
         run: |
-          $ManifestsPath = Get-ChildItem -LiteralPath (Join-Path -Path $Env:GITHUB_WORKSPACE -ChildPath $Env:INPUT_PATH) -Filter '*.psd1' -File
+          $ManifestsPath = Get-ChildItem -LiteralPath (Join-Path -Path $Env:GITHUB_WORKSPACE -ChildPath $Env:INPUT_CONTEXT) -Filter '*.psd1' -File
           If ($ManifestsPath.Count -ne 1) {
             Write-Host -Object "::error::Invalid manifest count! Expect ``1``; Current ``$($ManifestsPath.Count)``."
             Exit 1
@@ -54,19 +54,18 @@ jobs:
           If ($Null -ine $ManifestFromData.PrivateData.PSData.Prerelease) {
             $PackageVersion += "-$($ManifestFromData.PrivateData.PSData.Prerelease)"
           }
-          Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "packagename=$($PackageName.ToLower()).$($PackageVersion).nupkg" -Confirm:$False -Encoding 'UTF8NoBOM'
-        shell: "pwsh"
+          Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "package-slug=$($PackageName.ToLower()).$($PackageVersion).nupkg" -Confirm:$False -Encoding 'UTF8NoBOM'
       - name: "Build Package"
-        if: "${{inputs.build != ''}}"
-        run: |
-          . ".\$($Env:INPUT_BUILD)"
+        if: "${{inputs.builder != ''}}"
         shell: "pwsh"
-      - name: "Publish Package"
         run: |
-          Publish-Module -Path $Env:INPUT_PATH -NugetAPIKey $Env:INPUT_TOKEN -Force -Verbose
+          . ".\$($Env:INPUT_BUILDER)"
+      - name: "Publish Package To PowerShell Gallery"
+        run: |
+          Publish-Module -Path $Env:INPUT_CONTEXT -NugetAPIKey $Env:INPUT_TOKEN -Force -Verbose
         shell: "pwsh"
     outputs:
-      packagename: "${{steps.resolve-package.outputs.packagename}}"
+      package-slug: "${{steps.resolve-package.outputs.package-slug}}"
   await:
     name: "Await"
     permissions: {}
@@ -75,9 +74,9 @@ jobs:
     if: "${{needs.main.result == 'success'}}"
     runs-on: "ubuntu-latest"
     steps:
-      - name: "Wait For Registry Update"
+      - name: "Wait For PowerShell Gallery Update"
         run: |
-          Start-Sleep -Seconds 60
+          Start-Sleep -Seconds 120
         shell: "pwsh"
   assets:
     name: "Assets"
@@ -89,12 +88,12 @@ jobs:
     if: "${{needs.await.result == 'success'}}"
     runs-on: "ubuntu-latest"
     steps:
-      - name: "Upload Package `${{needs.main.outputs.packagename}}` To GitHub Release Tag ${{github.event.release.tag_name}}"
+      - name: "Upload Package `${{needs.main.outputs.package-slug}}` To GitHub Release Tag ${{github.event.release.tag_name}}"
         run: |
-          Invoke-WebRequest -Uri "https://psg-prod-eastus.azureedge.net/packages/$($Env:INPUT_PACKAGENAME)" -MaximumRedirection 1 -MaximumRetryCount 5 -RetryIntervalSec 5 -Method 'GET' -OutFile $Env:INPUT_PACKAGENAME
-          gh release upload $Env:INPUT_RELEASETAG $Env:INPUT_PACKAGENAME --clobber --repo $Env:GITHUB_REPOSITORY
+          Invoke-WebRequest -Uri "https://psg-prod-eastus.azureedge.net/packages/$($Env:INPUT_PACKAGESLUG)" -MaximumRedirection 1 -MaximumRetryCount 5 -RetryIntervalSec 5 -Method 'GET' -OutFile $Env:INPUT_PACKAGESLUG
+          gh release upload $Env:INPUT_RELEASETAG $Env:INPUT_PACKAGESLUG --clobber --repo $Env:GITHUB_REPOSITORY
         shell: "pwsh"
         env:
           GH_TOKEN: "${{secrets.GITHUB_TOKEN}}"
-          INPUT_PACKAGENAME: "${{needs.main.outputs.packagename}}"
+          INPUT_PACKAGESLUG: "${{needs.main.outputs.package-slug}}"
           INPUT_RELEASETAG: "${{github.event.release.tag_name}}"

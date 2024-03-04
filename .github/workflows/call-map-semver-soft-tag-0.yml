@@ -10,11 +10,11 @@ on:
         default: "${{github.event.release.tag_name}}"
       tagspattern_latest:
         type: "string"
-        description: "{String[]} Latest release pattern of tags."
+        description: "{String[]} Tags pattern for the latest release."
         required: false
       tagspattern_pre:
         type: "string"
-        description: "{String[]} Pre release pattern of tags."
+        description: "{String[]} Tags pattern for the pre release."
         required: false
     secrets:
       token:

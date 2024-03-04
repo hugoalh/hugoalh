@@ -17,8 +17,8 @@ on:
         description: "{String} PowerShell Gallery token."
         required: true
 jobs:
-  main:
-    name: "Main"
+  publish:
+    name: "Publish"
     permissions:
       contents: "write"
     runs-on: "windows-latest"
@@ -41,7 +41,7 @@ jobs:
         id: "resolve-package"
         shell: "pwsh"
         run: |
-          $ManifestsPath = Get-ChildItem -LiteralPath (Join-Path -Path $Env:GITHUB_WORKSPACE -ChildPath $Env:INPUT_CONTEXT) -Filter '*.psd1' -File
+          $ManifestsPath = Get-ChildItem -LiteralPath $Env:INPUT_CONTEXT -Filter '*.psd1' -File
           If ($ManifestsPath.Count -ne 1) {
             Write-Host -Object "::error::Invalid manifest count! Expect ``1``; Current ``$($ManifestsPath.Count)``."
             Exit 1
@@ -61,39 +61,39 @@ jobs:
         run: |
           . ".\$($Env:INPUT_BUILDER)"
       - name: "Publish Package To PowerShell Gallery"
+        shell: "pwsh"
         run: |
           Publish-Module -Path $Env:INPUT_CONTEXT -NugetAPIKey $Env:INPUT_TOKEN -Force -Verbose
-        shell: "pwsh"
     outputs:
       package-slug: "${{steps.resolve-package.outputs.package-slug}}"
   await:
     name: "Await"
-    permissions: {}
     needs:
-      - "main"
-    if: "${{needs.main.result == 'success'}}"
+      - "publish"
+    if: "${{needs.publish.result == 'success'}}"
+    permissions: {}
     runs-on: "ubuntu-latest"
     steps:
       - name: "Wait For PowerShell Gallery Update"
+        shell: "pwsh"
         run: |
           Start-Sleep -Seconds 120
-        shell: "pwsh"
   assets:
     name: "Assets"
-    permissions:
-      contents: "write"
     needs:
       - "await"
-      - "main"
+      - "publish"
     if: "${{needs.await.result == 'success'}}"
+    permissions:
+      contents: "write"
     runs-on: "ubuntu-latest"
     steps:
-      - name: "Upload Package `${{needs.main.outputs.package-slug}}` To GitHub Release Tag ${{github.event.release.tag_name}}"
+      - name: "Upload Package `${{needs.publish.outputs.package-slug}}` To GitHub Release Tag ${{github.event.release.tag_name}}"
+        env:
+          GH_TOKEN: "${{secrets.GITHUB_TOKEN}}"
+          INPUT_PACKAGESLUG: "${{needs.publish.outputs.package-slug}}"
+          INPUT_RELEASETAG: "${{github.event.release.tag_name}}"
+        shell: "pwsh"
         run: |
           Invoke-WebRequest -Uri "https://psg-prod-eastus.azureedge.net/packages/$($Env:INPUT_PACKAGESLUG)" -MaximumRedirection 1 -MaximumRetryCount 5 -RetryIntervalSec 5 -Method 'GET' -OutFile $Env:INPUT_PACKAGESLUG
           gh release upload $Env:INPUT_RELEASETAG $Env:INPUT_PACKAGESLUG --clobber --repo $Env:GITHUB_REPOSITORY
-        shell: "pwsh"
-        env:
-          GH_TOKEN: "${{secrets.GITHUB_TOKEN}}"
-          INPUT_PACKAGESLUG: "${{needs.main.outputs.package-slug}}"
-          INPUT_RELEASETAG: "${{github.event.release.tag_name}}"

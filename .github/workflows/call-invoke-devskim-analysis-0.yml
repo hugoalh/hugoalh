@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: "Checkout Repository"
         uses: "actions/checkout@v4.1.1"
+        with:
+          fetch-depth: "0"
       - name: "Analyze Repository"
         uses: "microsoft/DevSkim-Action@v1.0.11"
       - name: "Upload Analysis Result"

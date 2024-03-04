@@ -35,7 +35,7 @@ on:
         required: false
       latest:
         type: "string"
-        description: "{boolean} Whether to label this Docker image as latest manually."
+        description: "{boolean} Whether to label the Docker image as latest."
         required: false
         default: "false"
       platforms:
@@ -67,7 +67,7 @@ jobs:
           username: "${{github.actor}}"
           password: "${{github.token}}"
       - name: "Resolve Metadata"
-        id: "resolve-meta"
+        id: "metadata"
         uses: "docker/metadata-action@v5.5.1"
         with:
           images: |-
@@ -90,11 +90,11 @@ jobs:
         with:
           context: "${{inputs.context}}"
           file: "${{inputs.dockerfile}}"
-          labels: "${{steps.resolve-meta.outputs.labels}}"
+          labels: "${{steps.metadata.outputs.labels}}"
           platforms: "${{inputs.platforms}}"
           pull: "true"
           push: "true"
-          tags: "${{steps.resolve-meta.outputs.tags}}"
+          tags: "${{steps.metadata.outputs.tags}}"
           cache-from: |-
             type=gha
           cache-to: |-

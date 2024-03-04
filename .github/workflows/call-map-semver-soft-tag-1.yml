@@ -1,20 +1,15 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: "[CALL] Map SemVer Soft Tag (@0)"
+name: "[CALL] Map SemVer Soft Tag (@1)"
 on:
   workflow_call:
     inputs:
-      tagcurrent:
+      patterns_latest:
         type: "string"
-        description: "{String} Current tag."
+        description: "{String[]} Patterns for the latest release."
         required: false
-        default: "${{github.event.release.tag_name}}"
-      tagspattern_latest:
+      patterns_pre:
         type: "string"
-        description: "{String[]} Tags pattern for the latest release."
-        required: false
-      tagspattern_pre:
-        type: "string"
-        description: "{String[]} Tags pattern for the pre release."
+        description: "{String[]} Patterns for the pre release."
         required: false
     secrets:
       token:
@@ -36,28 +31,20 @@ jobs:
         run: |
           git --no-pager config --global 'user.name' 'github-actions'
           git --no-pager config --global 'user.email' 'github-actions@users.noreply.github.com'
-      - name: "Update Soft Tags"
+      - name: "Update Soft Tag"
         env:
-          INPUT_TAGCURRENT: "${{inputs.tagcurrent}}"
-          INPUT_TAGSPATTERN_LATEST: "${{inputs.tagspattern_latest}}"
-          INPUT_TAGSPATTERN_PRE: "${{inputs.tagspattern_pre}}"
+          INPUT_PATTERNS_LATEST: "${{inputs.patterns_latest}}"
+          INPUT_PATTERNS_PRE: "${{inputs.patterns_pre}}"
         shell: "pwsh"
         run: |
           [String[]]$SemVerParts = @('Major', 'Minor', 'Patch', 'PreReleaseLabel', 'BuildLabel')
-          [String[]]$SoftTagsPatternLatest = $Env:INPUT_TAGSPATTERN_LATEST -isplit '\r?\n' |
+          [String[]]$SoftTagPatternsLatest = $Env:INPUT_PATTERNS_LATEST -isplit '\r?\n' |
             ForEach-Object -Process { $_.Trim() } |
             Where-Object -FilterScript { $_.Length -gt 0 }
-          [String[]]$SoftTagsPatternPre = $Env:INPUT_TAGSPATTERN_PRE -isplit '\r?\n' |
+          [String[]]$SoftTagPatternsPre = $Env:INPUT_PATTERNS_PRE -isplit '\r?\n' |
             ForEach-Object -Process { $_.Trim() } |
             Where-Object -FilterScript { $_.Length -gt 0 }
-          [String[]]$TagsRaw = @()
-          If ($Env:INPUT_TAGCURRENT.Trim().Length -eq 0) {
-            $TagsRaw += git --no-pager tag --list
-          }
-          Else {
-            $TagsRaw += $Env:INPUT_TAGCURRENT.Trim()
-          }
-          [SemVer[]]$Tags = $TagsRaw |
+          [SemVer[]]$Tags = git --no-pager tag --list |
             Where-Object -FilterScript { $_ -imatch '^v(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)(?:-.+?)?(?:\+.+?)?$' } |
             ForEach-Object -Process {
               Try {
@@ -75,7 +62,7 @@ jobs:
           [Hashtable]$SoftTags = @{}
           ForEach ($Tag In $Tags) {
             If ($Null -eq $Tag.PreReleaseLabel -and $Null -eq $Tag.BuildLabel) {
-              ForEach ($SoftTagPatternLatest In $SoftTagsPatternLatest) {
+              ForEach ($SoftTagPatternLatest In $SoftTagPatternsLatest) {
                 [String]$SoftTagLatest = $SoftTagPatternLatest
                 ForEach ($SemVerPart In $SemVerParts) {
                   If ($Null -ne $Tag.($SemVerPart)) {
@@ -85,7 +72,7 @@ jobs:
                 $SoftTags.($SoftTagLatest) = $Tag
               }
             }
-            ForEach ($SoftTagPatternPre In $SoftTagsPatternPre) {
+            ForEach ($SoftTagPatternPre In $SoftTagPatternsPre) {
               [String]$SoftTagPre = $SoftTagPatternPre
               ForEach ($SemVerPart In $SemVerParts) {
                 If ($Null -ne $Tag.($SemVerPart)) {

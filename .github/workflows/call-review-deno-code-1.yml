@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: "[CALL] Review TypeScript Code (@0)"
+name: "[CALL] Review Deno Code (@1)"
 on:
   workflow_call:
     inputs:
@@ -8,6 +8,11 @@ on:
         description: "{string} Type of the runner to run on."
         required: false
         default: "ubuntu-latest"
+      registry_jsr:
+        type: "boolean"
+        description: "{boolean} Whether also check things related to JSR (JavaScript Registry)."
+        required: false
+        default: false
       issub:
         type: "boolean"
         description: "{boolean} Whether this is a sub (e.g.: test on specific operate system)."
@@ -26,15 +31,14 @@ jobs:
         uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v2.0.0"
         with:
           version: "^2.1.0"
-      - name: "Resolve Repository"
-        id: "resolve-repository"
+      - name: "Resolve Metadata"
+        id: "metadata"
         shell: "pwsh"
         run: |
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
-          If (!(Test-Path -LiteralPath 'deno.jsonc' -PathType 'Leaf')) {
+          If (!(Test-Path -LiteralPath '.\deno.jsonc' -PathType 'Leaf')) {
             Write-GitHubActionsFail -Message 'Missing Deno config file!'
           }
-          [Boolean]$IsBaseJSR = Test-Path -LiteralPath 'jsr.jsonc' -PathType 'Leaf'
           [String[]]$Files = Get-ChildItem -Recurse -File -Name |
             Where-Object -FilterScript { $_ -imatch '\.(?:m?[jt]s|[jt]sx?)$' }
           [Boolean]$DispatchBenchmark = (
@@ -46,14 +50,14 @@ jobs:
               Where-Object -FilterScript { $_ -imatch '(?:^|\/|\\|\.|_)test\.(?:m?[jt]s|[jt]sx?)' }
           ).Count -gt 0
           Set-GitHubActionsOutput -Name 'dispatch_benchmark' -Value $DispatchBenchmark.ToString().ToLower()
+          Set-GitHubActionsOutput -Name 'dispatch_jsr' -Value (Test-Path -LiteralPath '.\jsr.jsonc' -PathType 'Leaf').ToString().ToLower()
           Set-GitHubActionsOutput -Name 'dispatch_test' -Value $DispatchTest.ToString().ToLower()
           Set-GitHubActionsOutput -Name 'files' -Value (ConvertTo-Json -InputObject $Files -Depth 100 -Compress)
-          Set-GitHubActionsOutput -Name 'isbasejsr' -Value $IsBaseJSR.ToString().ToLower()
       - name: "Setup Deno"
         uses: "denoland/setup-deno@v1.1.4"
         with:
           deno-version: "^1.41.1"
-      - name: "Resolve Deno Cache Path"
+      - name: "Resolve Cache Path"
         shell: "pwsh"
         run: |
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
@@ -62,7 +66,7 @@ jobs:
             ConvertFrom-Json -Depth 100
           Set-GitHubActionsEnvironmentVariable -Name 'DENO_DIR' -Value $DenoInfo.denoDir -Scope 'Subsequent'
       - name: "Restore Deno Cache"
-        id: "restore-cache"
+        id: "restore-deno-cache"
         uses: "actions/cache/restore@v4.0.1"
         with:
           key: "Deno/${{runner.os}}-${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
@@ -78,7 +82,7 @@ jobs:
       - name: "Verify Code"
         id: "verify-code"
         env:
-          INPUT_FILES: "${{steps.resolve-repository.outputs.files}}"
+          INPUT_FILES: "${{steps.metadata.outputs.files}}"
         shell: "pwsh"
         run: |
           [Boolean]$ShouldReload = $Env:GITHUB_EVENT_NAME -iin @('schedule')
@@ -98,9 +102,8 @@ jobs:
           If ($IsFail) {
             Exit 1
           }
-      - name: "Verify JSR (JavaScript Registry) Package"
-        if: "${{!cancelled() && !inputs.issub && steps.resolve-repository.outputs.isbasejsr == 'true'}}"
-        shell: "pwsh"
+      - name: "Verify JSR Metadata"
+        if: "${{!cancelled() && !inputs.issub && inputs.registry_jsr && steps.metadata.outputs.dispatch_jsr == 'true'}}"
         run: |
           deno publish --config jsr.jsonc --dry-run --no-provenance
       - name: "Lint Code"
@@ -108,21 +111,21 @@ jobs:
         run: |
           deno lint
       - name: "Test Code"
-        if: "${{!cancelled() && steps.verify-code.outcome == 'success' && steps.resolve-repository.outputs.dispatch_test == 'true'}}"
+        if: "${{!cancelled() && steps.verify-code.outcome == 'success' && steps.metadata.outputs.dispatch_test == 'true'}}"
         run: |
           deno test --allow-all --coverage --no-prompt
       - name: "List Test Code Coverage"
-        if: "${{!cancelled() && steps.verify-code.outcome == 'success' && steps.resolve-repository.outputs.dispatch_test == 'true'}}"
+        if: "${{!cancelled() && steps.verify-code.outcome == 'success' && steps.metadata.outputs.dispatch_test == 'true'}}"
         run: |
           deno coverage
       - name: "Benchmark Code"
-        if: "${{!cancelled() && steps.verify-code.outcome == 'success' && steps.resolve-repository.outputs.dispatch_benchmark == 'true'}}"
+        if: "${{!cancelled() && steps.verify-code.outcome == 'success' && steps.metadata.outputs.dispatch_benchmark == 'true'}}"
         run: |
           deno bench --allow-all --no-prompt
       - name: "Check Dependencies Update"
         if: "${{!cancelled() && !inputs.issub && steps.verify-code.outcome == 'success' && (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')}}"
         env:
-          INPUT_FILES: "${{steps.resolve-repository.outputs.files}}"
+          INPUT_FILES: "${{steps.metadata.outputs.files}}"
         shell: "pwsh"
         run: |
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
@@ -144,7 +147,7 @@ jobs:
             Exit 1
           }
       - name: "Save Deno Cache"
-        if: "${{!cancelled() && steps.restore-cache.outcome == 'success'}}"
+        if: "${{!cancelled() && steps.restore-deno-cache.outcome == 'success'}}"
         uses: "actions/cache/save@v4.0.1"
         with:
           key: "Deno/${{runner.os}}-${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"

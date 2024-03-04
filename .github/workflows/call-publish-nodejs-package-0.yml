@@ -1,0 +1,184 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+name: "[CALL] Publish NodeJS Package (@0)"
+on:
+  workflow_call:
+    inputs:
+      registry_jsr:
+        type: "boolean"
+        description: "{boolean} Whether also publish NodeJS package to JSR (JavaScript Registry)."
+        required: false
+        default: false
+    secrets:
+      NPM_TOKEN:
+        description: "{string} NPM token."
+        required: true
+jobs:
+  main:
+    name: "Main"
+    permissions:
+      contents: "write"
+      id-token: "write"
+    runs-on: "ubuntu-latest"
+    env:
+      INPUT_RELEASETAG: "${{github.event.release.tag_name}}"
+      NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
+    steps:
+      - name: "Checkout Repository"
+        uses: "actions/checkout@v4.1.1"
+      - name: "Setup NodeJS"
+        uses: "actions/setup-node@v4.0.2"
+        with:
+          node-version: "lts/*"
+          check-latest: true
+          registry-url: "https://registry.npmjs.org/"
+      - name: "Setup PowerShell Toolkit"
+        uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v2.0.0"
+        with:
+          version: "^2.1.0"
+      - name: "Resolve Cache Path"
+        id: "cache-path"
+        shell: "pwsh"
+        run: |
+          Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
+          [String]$NpmCachePath = npm config get cache |
+            Join-String -Separator "`n"
+          Set-GitHubActionsOutput -Name 'npm' -Value $NpmCachePath
+      - name: "Restore NPM Cache"
+        id: "restore-npm-cache"
+        uses: "actions/cache/restore@v4.0.0"
+        with:
+          key: "NPM/${{runner.os}}-${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
+          path: "${{steps.cache-path.outputs.npm}}"
+          restore-keys: |-
+            NPM/${{runner.os}}-${{github.run_id}}-${{github.run_attempt}}-
+            NPM/${{runner.os}}-${{github.run_id}}-${{github.run_attempt}}
+            NPM/${{runner.os}}-${{github.run_id}}-
+            NPM/${{runner.os}}-${{github.run_id}}
+            NPM/${{runner.os}}-
+            NPM/${{runner.os}}
+            NPM/
+      - name: "Resolve Metadata"
+        id: "metadata"
+        shell: "pwsh"
+        run: |
+          Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
+          [PSCustomObject]$Manifest = Get-Content -LiteralPath '.\package.json' -Raw -Encoding 'UTF8NoBOM' |
+            ConvertFrom-Json -Depth 100
+          [SemVer]$VersionManifest = [SemVer]::Parse($Manifest.version)
+          [SemVer]$VersionTag = [SemVer]::Parse(($Env:INPUT_RELEASETAG -ireplace '^v', ''))
+          If ($VersionTag -ine $VersionManifest) {
+            Write-GitHubActionsWarning -Message "The version in manifest ``$($VersionManifest.ToString())`` is not match the version in release ``$($VersionTag.ToString())``! Will apply hot fix."
+            npm version $VersionTag.ToString()
+            $VersionManifest = $VersionTag
+          }
+          [String]$Name = $Manifest.Name
+          [Boolean]$VersionIsPreRelease = $Null -ine $VersionManifest.PreReleaseLabel
+          [Boolean]$TagLatest = !$VersionIsPreRelease
+          [Boolean]$TagPre = $True
+          Try {
+            [PSCustomObject]$NpmMetadata = npm show $Name --json |
+              ConvertFrom-Json -Depth 100
+            If ($LASTEXITCODE -ne 0) {
+              Throw 'Package not found!'
+            }
+            If ($VersionManifest -ile [SemVer]::Parse(($NpmMetadata.'dist-tags'.latest ?? '0.0.0'))) {
+              $TagLatest = $False
+            }
+            If ($VersionManifest -ile [SemVer]::Parse(($NpmMetadata.'dist-tags'.pre ?? '0.0.0'))) {
+              $TagPre = $False
+            }
+          }
+          Catch {
+            Write-Warning -Message "Unable to resolve package NPM publish tags: $_"
+            $LASTEXITCODE = 0
+          }
+          [String[]]$Tags = @()
+          If ($TagLatest) {
+            $Tags += 'latest'
+          }
+          If ($TagPre) {
+            $Tags += 'pre'
+          }
+          If (!$VersionIsPreRelease) {
+            $Tags += "latest-$($VersionManifest.Major)"
+          }
+          $Tags += "pre-$($VersionManifest.Major)"
+          If ($Tags.Count -eq 0) {
+            Write-GitHubActionsFail -Message 'No NPM publish tags!'
+          }
+          Set-GitHubActionsOutput -Name 'name' -Value $Name
+          Set-GitHubActionsOutput -Name 'version' -Value $VersionManifest.ToString()
+          Set-GitHubActionsOutput -Name 'descriptor' -Value "$($Name)@$($VersionManifest.ToString())"
+          Set-GitHubActionsOutput -Name 'dispatch_build' -Value ($Null -ne $Manifest.scripts.'build').ToString().ToLower()
+          Set-GitHubActionsOutput -Name 'dispatch_jsr' -Value (Test-Path -LiteralPath '.\jsr.json' -PathType 'Leaf').ToString().ToLower()
+          Set-GitHubActionsOutput -Name 'tags_first' -Value $Tags[0]
+          Set-GitHubActionsOutput -Name 'tags_rest' -Value (
+            $Tags |
+              Select-Object -SkipIndex 0 |
+              Join-String -Separator ','
+          )
+          Set-GitHubActionsOutput -Name 'tarballname' -Value "$($Name -ireplace '^@', '' -ireplace '\/', '-')-$($VersionManifest.ToString()).tgz"
+      - name: "Install Dependencies"
+        run: |
+          npm install
+      - name: "Build Package"
+        if: "${{steps.metadata.outputs.dispatch_build == 'true'}}"
+        run: |
+          npm run build
+      - name: "Publish Package To NPM With Tag `${{steps.metadata.outputs.tags_first}}` (Provenance)"
+        id: "publish-npm-provenance"
+        env:
+          INPUT_TAGSFIRST: "${{steps.metadata.outputs.tags_first}}"
+        shell: "pwsh"
+        run: |
+          npm publish --provenance --tag $Env:INPUT_TAGSFIRST
+      - name: "Publish Package To NPM With Tag `${{steps.metadata.outputs.tags_first}}`"
+        if: "${{!cancelled() && steps.publish-npm-provenance.outcome == 'failure'}}"
+        id: "publish-npm-raw"
+        env:
+          INPUT_TAGSFIRST: "${{steps.metadata.outputs.tags_first}}"
+        shell: "pwsh"
+        run: |
+          npm publish --tag $Env:INPUT_TAGSFIRST
+      - name: "Publish Package To NPM With Rest Tags"
+        if: "${{!cancelled() && (steps.publish-npm-provenance.outcome == 'success' || steps.publish-npm-raw.outcome == 'success') && steps.metadata.outputs.tags_rest != ''}}"
+        env:
+          INPUT_DESCRIPTOR: "${{steps.metadata.outputs.descriptor}}"
+          INPUT_TAGSREST: "${{steps.metadata.outputs.tags_rest}}"
+        shell: "pwsh"
+        run: |
+          Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
+          [String]$Descriptor = $Env:INPUT_DESCRIPTOR
+          [String[]]$TagsRest = $Env:INPUT_TAGSREST -isplit ','
+          ForEach ($TagRest In $TagsRest) {
+            Try {
+              npm dist-tag add $Descriptor $TagRest
+            }
+            Catch {
+              Write-GitHubActionsError -Message $_
+            }
+          }
+      - name: "Pack & Upload Package `${{steps.metadata.outputs.tarballname}}` To GitHub Release Tag `${{env.INPUT_RELEASETAG}}`"
+        if: "${{!cancelled() && steps.metadata.outcome == 'success'}}"
+        env:
+          GH_TOKEN: "${{secrets.GITHUB_TOKEN}}"
+          INPUT_TARBALLNAME: "${{steps.metadata.outputs.tarballname}}"
+        shell: "pwsh"
+        run: |
+          npm pack
+          gh release upload $Env:INPUT_RELEASETAG $Env:INPUT_TARBALLNAME --clobber --repo $Env:GITHUB_REPOSITORY
+      - name: "Publish Package To JSR (Provenance)"
+        id: "publish-jsr-provenance"
+        if: "${{!cancelled() && inputs.registry_jsr && steps.metadata.outputs.dispatch_jsr == 'true'}}"
+        run: |
+          npx jsr publish
+      - name: "Publish Package To JSR"
+        if: "${{!cancelled() && inputs.registry_jsr && steps.metadata.outputs.dispatch_jsr == 'true' && steps.publish-jsr-provenance.outcome == 'failure'}}"
+        run: |
+          npx jsr publish --no-provenance
+      - name: "Save NPM Cache"
+        if: "${{!cancelled() && steps.restore-npm-cache.outcome == 'success'}}"
+        uses: "actions/cache/save@v4.0.0"
+        with:
+          key: "NPM/${{runner.os}}-${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
+          path: "${{steps.cache-path.outputs.npm}}"

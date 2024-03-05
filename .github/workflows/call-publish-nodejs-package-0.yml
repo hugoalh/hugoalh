@@ -2,12 +2,6 @@
 name: "[CALL] Publish NodeJS Package (@0)"
 on:
   workflow_call:
-    inputs:
-      registry_jsr:
-        type: "boolean"
-        description: "{boolean} Whether also publish NodeJS package to JSR (JavaScript Registry)."
-        required: false
-        default: false
     secrets:
       NPM_TOKEN:
         description: "{string} NPM token."
@@ -110,7 +104,6 @@ jobs:
           Set-GitHubActionsOutput -Name 'version' -Value $VersionManifest.ToString()
           Set-GitHubActionsOutput -Name 'descriptor' -Value "$($Name)@$($VersionManifest.ToString())"
           Set-GitHubActionsOutput -Name 'dispatch_build' -Value ($Null -ne $Manifest.scripts.'build').ToString().ToLower()
-          Set-GitHubActionsOutput -Name 'dispatch_jsr' -Value (Test-Path -LiteralPath '.\jsr.json' -PathType 'Leaf').ToString().ToLower()
           Set-GitHubActionsOutput -Name 'tags_first' -Value $Tags[0]
           Set-GitHubActionsOutput -Name 'tags_rest' -Value (
             $Tags |
@@ -167,15 +160,6 @@ jobs:
         run: |
           npm pack
           gh release upload $Env:INPUT_RELEASETAG $Env:INPUT_TARBALLNAME --clobber --repo $Env:GITHUB_REPOSITORY
-      - name: "Publish Package To JSR (Provenance)"
-        id: "publish-jsr-provenance"
-        if: "${{!cancelled() && inputs.registry_jsr && steps.metadata.outputs.dispatch_jsr == 'true'}}"
-        run: |
-          npx jsr publish
-      - name: "Publish Package To JSR"
-        if: "${{!cancelled() && inputs.registry_jsr && steps.metadata.outputs.dispatch_jsr == 'true' && steps.publish-jsr-provenance.outcome == 'failure'}}"
-        run: |
-          npx jsr publish --no-provenance
       - name: "Save NPM Cache"
         if: "${{!cancelled() && steps.restore-npm-cache.outcome == 'success'}}"
         uses: "actions/cache/save@v4.0.0"

@@ -10,10 +10,10 @@
 > | 🟠 | Maintenance |
 > | 🔴 | End Of Life / Not Supported |
 
-| **Versions** | **Status** | **🔵 Date** | **🟢 Date** | **🔴 Date** | **Target** |
-|:-:|:-:|:-:|:-:|:-:|:-:|
+| **Versions** | **Status** | **🔵 Date** | **🟢 Date** | **🔴 Date** |
+|:-:|:-:|:-:|:-:|:-:|
 
-> **ℹ️ Notice:**
+> **ℹ️ Note**
 >
 > - The date format is according to ISO 8601 standard.
 > - Values in italic format are subject to change.

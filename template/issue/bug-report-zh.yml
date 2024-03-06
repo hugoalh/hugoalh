@@ -58,7 +58,7 @@ body:
         > **ℹ️ 注意**
         >
         > - 接受版本範圍。
-        > - 必須是安全政策（英文，檔案 `SECURITY-ZH.md`）中列出的受支持版本。
+        > - 必須是安全政策（英文，檔案 `SECURITY.md`）中列出的受支持版本。
       placeholder: |-
         1.2.3
     validations:

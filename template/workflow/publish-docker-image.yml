@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: "Publish GitHub Packages - Docker"
+name: "Publish Docker Image"
 on:
   push:
     tags:
@@ -24,7 +24,7 @@ jobs:
     permissions:
       contents: "read"
       packages: "write"
-    uses: "hugoalh/hugoalh/.github/workflows/call-publish-github-packages-docker-0.yml@main"
+    uses: "hugoalh/hugoalh/.github/workflows/call-publish-docker-image-0.yml@main"
     with:
       title: "Scan Virus (GitHub Action) Image"
       description: "A Docker image for Scan Virus (GitHub Action) to scan virus in the GitHub Action workspace."

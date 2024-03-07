@@ -2,12 +2,6 @@
 name: "[CALL] Publish Deno Package (@0)"
 on:
   workflow_call:
-    inputs:
-      registry_jsr:
-        type: "boolean"
-        description: "{boolean} Whether also publish to JSR (JavaScript Registry)."
-        required: false
-        default: false
 jobs:
   main:
     name: "Main"
@@ -84,11 +78,11 @@ jobs:
           }
       - name: "Publish Package To JSR (Provenance)"
         id: "publish-jsr-provenance"
-        if: "${{inputs.registry_jsr && steps.metadata.outputs.dispatch_jsr == 'true'}}"
+        if: "${{steps.metadata.outputs.dispatch_jsr == 'true'}}"
         run: |
           deno publish --config jsr.jsonc
       - name: "Publish Package To JSR"
-        if: "${{!cancelled() && steps.publish-jsr-provenance.outcome == 'failure' && inputs.registry_jsr && steps.metadata.outputs.dispatch_jsr == 'true'}}"
+        if: "${{!cancelled() && steps.publish-jsr-provenance.outcome == 'failure' && steps.metadata.outputs.dispatch_jsr == 'true'}}"
         run: |
           deno publish --config jsr.jsonc --no-provenance
       - name: "Save Deno Cache"

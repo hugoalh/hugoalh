@@ -8,11 +8,6 @@ on:
         description: "{string} Type of the runner to run on."
         required: false
         default: "ubuntu-latest"
-      registry_jsr:
-        type: "boolean"
-        description: "{boolean} Whether also check things related to JSR (JavaScript Registry)."
-        required: false
-        default: false
       issub:
         type: "boolean"
         description: "{boolean} Whether this is a sub (e.g.: test on specific operate system)."
@@ -103,7 +98,7 @@ jobs:
             Exit 1
           }
       - name: "Verify JSR Metadata"
-        if: "${{!cancelled() && !inputs.issub && inputs.registry_jsr && steps.metadata.outputs.dispatch_jsr == 'true'}}"
+        if: "${{!cancelled() && !inputs.issub && steps.metadata.outputs.dispatch_jsr == 'true'}}"
         shell: "pwsh"
         run: |
           deno publish --config jsr.jsonc --dry-run --no-provenance --token 'ThisIsATokenPlaceholder'

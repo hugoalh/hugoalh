@@ -18,3 +18,5 @@ jobs:
         with:
           config-file: ".github/labels.yml"
           clean-labels: "true"
+        env:
+          FORCE_JAVASCRIPT_ACTIONS_TO_NODE20: "true"

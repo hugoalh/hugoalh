@@ -51,7 +51,7 @@ jobs:
       - name: "Setup Deno"
         uses: "denoland/setup-deno@v1.1.4"
         with:
-          deno-version: "^1.41.1"
+          deno-version: "^1.41.2"
       - name: "Resolve Cache Path"
         shell: "pwsh"
         run: |

@@ -72,8 +72,9 @@
 *.xproj text eol=crlf
 *.zsh text eol=lf
 
-.gvimrc text eol=lf
 .husky/* text eol=lf
+
+.gvimrc text eol=lf
 .vimrc text eol=lf
 gradlew text eol=lf
 mvnw text eol=lf

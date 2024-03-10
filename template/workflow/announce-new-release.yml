@@ -1,12 +1,12 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: "Announce New Release - Discord"
+name: "Announce New Release"
 on:
   release:
     types:
       - "published"
 jobs:
-  main:
-    name: "Main"
+  discord:
+    name: "Discord"
     permissions: {}
     runs-on: "ubuntu-latest"
     steps:
@@ -19,7 +19,7 @@ jobs:
               description: |
                 > ${{github.event.repository.description}}
 
-                Version ${{github.event.release.name}} (${{github.event.release.tag_name}}) just released!
+                Version ${{github.event.release.name}} (`${{github.event.release.tag_name}}`) just released!
               timestamp: "${{github.event.release.published_at}}"
               color: "#2088FF"
               thumbnail:
@@ -29,12 +29,9 @@ jobs:
                 url: "${{github.event.release.author.html_url}}"
                 icon_url: "${{github.event.release.author.avatar_url}}"
               fields:
-                - name: "GitHub - Repository"
-                  value: "${{github.event.repository.html_url}}"
-                  inline: false
-                - name: "GitHub - Release"
+                - name: "📋 Changelog"
                   value: "${{github.event.release.html_url}}"
                   inline: false
-                - name: "GitHub Marketplace"
-                  value: "https://github.com/marketplace/actions/send-discord-webhook"
+                - name: "GitHub"
+                  value: "${{github.event.repository.html_url}}"
                   inline: false

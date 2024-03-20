@@ -85,7 +85,7 @@ jobs:
             org.opencontainers.image.title=${{inputs.title}}
             org.opencontainers.image.description=${{inputs.description}}
       - name: "Build & Publish Docker Image"
-        uses: "docker/build-push-action@v5.2.0"
+        uses: "docker/build-push-action@v5.3.0"
         with:
           context: "${{inputs.context}}"
           file: "${{inputs.dockerfile}}"

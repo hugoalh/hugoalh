@@ -42,7 +42,7 @@ jobs:
           Set-GitHubActionsEnvironmentVariable -Name 'DENO_DIR' -Value $DenoInfo.denoDir -Scope 'Subsequent'
       - name: "Restore Deno Cache"
         id: "restore-deno-cache"
-        uses: "actions/cache/restore@v4.0.1"
+        uses: "actions/cache/restore@v4.0.2"
         with:
           key: "Deno/${{runner.os}}-${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
           path: "${{env.DENO_DIR}}"
@@ -87,7 +87,7 @@ jobs:
           deno publish --config jsr.jsonc --no-provenance
       - name: "Save Deno Cache"
         if: "${{!cancelled() && steps.restore-deno-cache.outcome == 'success'}}"
-        uses: "actions/cache/save@v4.0.1"
+        uses: "actions/cache/save@v4.0.2"
         with:
           key: "Deno/${{runner.os}}-${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
           path: "${{env.DENO_DIR}}"

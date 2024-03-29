@@ -19,6 +19,8 @@ jobs:
     permissions:
       contents: "read"
     runs-on: "${{inputs.runon}}"
+    env:
+      DENO_FUTURE: "1"
     steps:
       - name: "Checkout Repository"
         uses: "actions/checkout@v4.1.2"
@@ -51,7 +53,7 @@ jobs:
       - name: "Setup Deno"
         uses: "denoland/setup-deno@v1.1.4"
         with:
-          deno-version: "^1.41.2"
+          deno-version: "^1.42.0"
       - name: "Resolve Cache Path"
         shell: "pwsh"
         run: |

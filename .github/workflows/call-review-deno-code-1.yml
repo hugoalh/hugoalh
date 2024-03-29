@@ -103,7 +103,7 @@ jobs:
         if: "${{!cancelled() && !inputs.issub && steps.metadata.outputs.dispatch_jsr == 'true'}}"
         shell: "pwsh"
         run: |
-          deno publish --config jsr.jsonc --dry-run --no-provenance --token 'ThisIsATokenPlaceholder'
+          deno publish --allow-dirty --config jsr.jsonc --dry-run --no-provenance --token 'ThisIsATokenPlaceholder'
       - name: "Lint Code"
         if: "${{!cancelled() && steps.verify-code.outcome == 'success'}}"
         run: |

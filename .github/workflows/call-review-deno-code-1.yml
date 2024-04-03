@@ -117,7 +117,7 @@ jobs:
           INPUT_FILES: "${{steps.analyze-repository.outputs.files}}"
         shell: "pwsh"
         run: |
-          [String]$Output = deno run --allow-net "--allow-read=$($Env:GITHUB_WORKSPACE)" --no-prompt https://deno.land/x/udd@0.8.2/main.ts --dry-run **/*.ts **/*.tsx |
+          [String]$Output = deno run --allow-net "--allow-read=$($Env:GITHUB_WORKSPACE)" --no-prompt https://deno.land/x/udd@0.8.2/main.ts --dry-run **/*.ts **/*.tsx deno.jsonc |
             Join-String -Separator "`n"
           $LASTEXITCODE = 0
           Write-Host -Object $Output

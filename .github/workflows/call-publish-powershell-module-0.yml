@@ -37,8 +37,8 @@ jobs:
             Write-Host -Object 'Tweak PowerShell repository configuration.'
             Set-PSRepository -Name 'PSGallery' -InstallationPolicy 'Trusted' -Verbose
           }
-      - name: "Resolve Metadata"
-        id: "metadata"
+      - name: "Analyze Repository"
+        id: "analyze-repository"
         shell: "pwsh"
         run: |
           $ManifestsPath = Get-ChildItem -LiteralPath $Env:INPUT_CONTEXT -Filter '*.psd1' -File
@@ -65,7 +65,7 @@ jobs:
         run: |
           Publish-Module -Path $Env:INPUT_CONTEXT -NugetAPIKey $Env:INPUT_TOKEN -Force -Verbose
     outputs:
-      package_ballname: "${{steps.metadata.outputs.ballname}}"
+      package_ballname: "${{steps.analyze-repository.outputs.ballname}}"
   await:
     name: "Await"
     needs:

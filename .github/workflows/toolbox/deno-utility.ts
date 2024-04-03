@@ -1,4 +1,5 @@
 import { walk as readDir, type WalkEntry } from "https://deno.land/std@0.221.0/fs/walk.ts";
+import { writeError } from "https://raw.githubusercontent.com/hugoalh-studio/github-actions-core-ts/v0.2.1/log.ts";
 async function checkFile(filePath: string): Promise<boolean> {
 	try {
 		const { isFile }: Deno.FileInfo = await Deno.stat(filePath);
@@ -20,7 +21,8 @@ export async function validateDenoResources(): Promise<void> {
 			throw undefined;
 		}
 	} catch {
-		throw new Error("Missing Deno configuration file!");
+		writeError("Missing Deno configuration file!");
+		Deno.exit(1);
 	}
 }
 export async function validateJSRResources(): Promise<void> {
@@ -29,7 +31,8 @@ export async function validateJSRResources(): Promise<void> {
 			throw undefined;
 		}
 	} catch {
-		throw new Error("Missing JSR configuration file!");
+		writeError("Missing JSR configuration file!");
+		Deno.exit(1);
 	}
 }
 export async function validateNPMResources(): Promise<void> {
@@ -38,27 +41,31 @@ export async function validateNPMResources(): Promise<void> {
 			throw undefined;
 		}
 	} catch {
-		throw new Error("Missing Deno NPM Transformer file!");
+		writeError("Missing Deno NPM Transformer file!");
+		Deno.exit(1);
 	}
 	try {
 		if (!(await checkFile("npm/.npmrc"))) {
 			throw undefined;
 		}
 	} catch {
-		throw new Error("Missing NPM configuration file!");
+		writeError("Missing NPM configuration file!");
+		Deno.exit(1);
 	}
 	try {
 		if (!(await checkFile("npm/package.json"))) {
 			throw undefined;
 		}
 	} catch {
-		throw new Error("Missing NPM package metadata file!");
+		writeError("Missing NPM package metadata file!");
+		Deno.exit(1);
 	}
 	try {
 		if (!(await checkFile("npm/tsconfig.json"))) {
 			throw undefined;
 		}
 	} catch {
-		throw new Error("Missing NPM TypeScript configuration file!");
+		writeError("Missing NPM TypeScript configuration file!");
+		Deno.exit(1);
 	}
 }

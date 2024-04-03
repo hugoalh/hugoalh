@@ -38,7 +38,7 @@ jobs:
         uses: "denoland/setup-deno@v1.1.4"
         with:
           deno-version: "^1.42.1"
-      - name: "Get Cache Path"
+      - name: "Get Deno Cache Path"
         shell: "pwsh"
         run: |
           [PSCustomObject]$DenoInfo = deno info --json |

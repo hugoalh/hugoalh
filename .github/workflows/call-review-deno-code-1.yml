@@ -66,7 +66,7 @@ jobs:
           INPUT_NPM_HASDEPLOYMENT: "${{inputs.npm_hasdeployment}}"
         shell: "pwsh"
         run: |
-          deno run --allow-env --allow-read --allow-write --no-prompt --quiet 'https://raw.githubusercontent.com/hugoalh/hugoalh/main/.github/workflows/review-deno-code/analyze-repository.ts'
+          deno run --allow-env --allow-read --allow-write --no-prompt --quiet 'https://raw.githubusercontent.com/hugoalh/hugoalh/main/.github/workflows/toolbox/review-deno-code/analyze-repository.ts'
       - name: "Verify Code"
         id: "verify-code"
         env:

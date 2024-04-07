@@ -2,52 +2,50 @@
 name: "[CALL] Publish Deno Package (@0)"
 on:
   workflow_call:
+    inputs:
+      deployment_jsr:
+        type: "boolean"
+        description: "{boolean} Whether has deployment for JSR (JavaScript Registry)."
+        required: false
+        default: false
+      deployment_npm:
+        type: "boolean"
+        description: "{boolean} Whether has deployment for NPM."
+        required: false
+        default: false
+    secrets:
+      NPM_TOKEN:
+        description: "{string} NPM token."
+        required: false
 jobs:
   main:
     name: "Main"
     permissions:
-      contents: "read"
+      contents: "write"
       id-token: "write"
     runs-on: "ubuntu-latest"
     env:
       DENO_FUTURE: "1"
+      INPUT_RELEASETAG: "${{github.event.release.tag_name}}"
     steps:
       - name: "Checkout Repository"
         uses: "actions/checkout@v4.1.2"
-      - name: "Setup PowerShell Toolkit"
-        uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v2.0.0"
-        with:
-          version: "^2.1.0"
-      - name: "Resolve Metadata"
-        id: "metadata"
-        shell: "pwsh"
-        run: |
-          Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
-          If (!(Test-Path -LiteralPath '.\deno.jsonc' -PathType 'Leaf')) {
-            Write-GitHubActionsFail -Message 'Missing Deno config file!'
-          }
-          [String[]]$Files = Get-ChildItem -Recurse -File -Name |
-            Where-Object -FilterScript { $_ -imatch '\.(?:m?[jt]s|[jt]sx?)$' }
-          Set-GitHubActionsOutput -Name 'dispatch_jsr' -Value (Test-Path -LiteralPath '.\jsr.jsonc' -PathType 'Leaf').ToString().ToLower()
-          Set-GitHubActionsOutput -Name 'files' -Value (ConvertTo-Json -InputObject $Files -Depth 100 -Compress)
       - name: "Setup Deno"
         uses: "denoland/setup-deno@v1.1.4"
         with:
-          deno-version: "^1.42.0"
-      - name: "Resolve Cache Path"
+          deno-version: "^1.42.1"
+      - name: "Get Deno Cache Path"
         shell: "pwsh"
         run: |
-          Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
           [PSCustomObject]$DenoInfo = deno info --json |
             Join-String -Separator "`n" |
             ConvertFrom-Json -Depth 100
-          Set-GitHubActionsEnvironmentVariable -Name 'DENO_DIR' -Value $DenoInfo.denoDir -Scope 'Subsequent'
+          Add-Content -LiteralPath $Env:GITHUB_ENV -Value "DENO_DIR=$($DenoInfo.denoDir.Trim())" -Confirm:$False -Encoding 'UTF8NoBOM'
       - name: "Restore Deno Cache"
-        id: "restore-deno-cache"
+        id: "deno-cache-restore"
         uses: "actions/cache/restore@v4.0.2"
         with:
           key: "Deno/${{runner.os}}-${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
-          path: "${{env.DENO_DIR}}"
           restore-keys: |-
             Deno/${{runner.os}}-${{github.run_id}}-${{github.run_attempt}}-
             Deno/${{runner.os}}-${{github.run_id}}-${{github.run_attempt}}
@@ -56,39 +54,132 @@ jobs:
             Deno/${{runner.os}}-
             Deno/${{runner.os}}
             Deno/
-      - name: "Verify Code"
-        env:
-          INPUT_FILES: "${{steps.metadata.outputs.files}}"
+          path: "${{env.DENO_DIR}}"
+      - name: "Analyze Repository"
+        id: "repository-analyze"
         shell: "pwsh"
         run: |
-          [Boolean]$ShouldReload = $Env:GITHUB_EVENT_NAME -iin @('schedule')
-          [Boolean]$IsFail = $False
+          deno run --allow-env --allow-read --allow-write --no-prompt --quiet 'https://raw.githubusercontent.com/hugoalh/hugoalh/main/.github/workflows/toolbox/publish-deno-package-0/analyze-repository.ts'
+      - name: "Verify Code"
+        id: "verify-code"
+        env:
+          INPUT_FILES: "${{steps.repository-analyze.outputs.files}}"
+        shell: "pwsh"
+        run: |
           ForEach ($File In (
             $Env:INPUT_FILES |
               ConvertFrom-Json -Depth 100
           )) {
-            Try {
-              $ShouldReload ? (deno cache --reload $File) : (deno cache $File)
-            }
-            Catch {
-              $IsFail = $True
-            }
-            $LASTEXITCODE = 0
+            deno cache $File
           }
-          If ($IsFail) {
-            Exit 1
-          }
-      - name: "Publish Package To JSR (Provenance)"
-        id: "publish-jsr-provenance"
-        if: "${{steps.metadata.outputs.dispatch_jsr == 'true'}}"
+      - name: "Publish JSR Package (Provenance)"
+        id: "jsr-publish-provenance"
+        if: "${{!cancelled() && steps.verify-code.outcome == 'success' && inputs.deployment_jsr}}"
         run: |
           deno publish --allow-dirty --config jsr.jsonc
-      - name: "Publish Package To JSR"
-        if: "${{!cancelled() && steps.publish-jsr-provenance.outcome == 'failure' && steps.metadata.outputs.dispatch_jsr == 'true'}}"
+      - name: "Publish JSR Package"
+        if: "${{!cancelled() && steps.jsr-publish-provenance.outcome == 'failure'}}"
         run: |
           deno publish --allow-dirty --config jsr.jsonc --no-provenance
+      - name: "Setup NodeJS"
+        id: "npm-setup-nodejs"
+        if: "${{!cancelled() && steps.verify-code.outcome == 'success' && inputs.deployment_npm}}"
+        uses: "actions/setup-node@v4.0.2"
+        with:
+          node-version: "lts/*"
+          check-latest: true
+          registry-url: "https://registry.npmjs.org/"
+      - name: "Get NPM Cache Path"
+        id: "npm-cache-path"
+        if: "${{!cancelled() && steps.npm-setup-nodejs.outcome == 'success'}}"
+        shell: "pwsh"
+        run: |
+          [String]$NpmCachePath = npm config get cache |
+            Join-String -Separator "`n"
+          Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "result=$($NpmCachePath.Trim())" -Confirm:$False -Encoding 'UTF8NoBOM'
+      - name: "Restore NPM Cache"
+        id: "npm-cache-restore"
+        if: "${{!cancelled() && steps.npm-cache-path.outcome == 'success'}}"
+        uses: "actions/cache/restore@v4.0.2"
+        with:
+          key: "NPM/${{runner.os}}-${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
+          path: "${{steps.npm-cache-path.outputs.result}}"
+          restore-keys: |-
+            NPM/${{runner.os}}-${{github.run_id}}-${{github.run_attempt}}-
+            NPM/${{runner.os}}-${{github.run_id}}-${{github.run_attempt}}
+            NPM/${{runner.os}}-${{github.run_id}}-
+            NPM/${{runner.os}}-${{github.run_id}}
+            NPM/${{runner.os}}-
+            NPM/${{runner.os}}
+            NPM/
+      - name: "Build NPM Package"
+        id: "npm-build"
+        if: "${{!cancelled() && steps.npm-cache-restore.outcome == 'success'}}"
+        env:
+          NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
+        run: |
+          deno run --allow-all --deny-hrtime --no-prompt --quiet .dnt.ts
+      - name: "Analyze NPM Package Metadata"
+        id: "npm-analyze"
+        if: "${{!cancelled() && steps.npm-build.outcome == 'success'}}"
+        env:
+          NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
+        shell: "pwsh"
+        working-directory: "${{github.workspace}}/npm"
+        run: |
+          deno run --allow-env --allow-read --allow-write --no-prompt --quiet 'https://raw.githubusercontent.com/hugoalh/hugoalh/main/.github/workflows/toolbox/publish-deno-package-0/analyze-npm-package-metadata.ts'
+      - name: "Publish NPM Package To NPM With Main Tag `${{steps.npm-analyze.outputs.tags_main}}` (Provenance)"
+        id: "npm-publish-provenance"
+        if: "${{!cancelled() && steps.npm-analyze.outcome == 'success'}}"
+        env:
+          INPUT_TAGS_MAIN: "${{steps.npm-analyze.outputs.tags_main}}"
+          NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
+        shell: "pwsh"
+        working-directory: "${{github.workspace}}/npm"
+        run: |
+          npm publish --provenance --tag $Env:INPUT_TAGS_MAIN
+      - name: "Publish NPM Package To NPM With Main Tag `${{steps.npm-analyze.outputs.tags_main}}`"
+        id: "npm-publish-raw"
+        if: "${{!cancelled() && steps.npm-publish-provenance.outcome == 'failure'}}"
+        env:
+          INPUT_TAGS_MAIN: "${{steps.npm-analyze.outputs.tags_main}}"
+          NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
+        shell: "pwsh"
+        working-directory: "${{github.workspace}}/npm"
+        run: |
+          npm publish --tag $Env:INPUT_TAGS_MAIN
+      - name: "Publish NPM Package To NPM With Rest Tags"
+        if: "${{!cancelled() && (steps.npm-publish-provenance.outcome == 'success' || steps.npm-publish-raw.outcome == 'success') && steps.npm-analyze.outputs.tags_rest != ''}}"
+        env:
+          INPUT_DESCRIPTOR: "${{steps.npm-analyze.outputs.descriptor}}"
+          INPUT_TAGS_REST: "${{steps.npm-analyze.outputs.tags_rest}}"
+          NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
+        shell: "pwsh"
+        working-directory: "${{github.workspace}}/npm"
+        run: |
+          [String]$Descriptor = $Env:INPUT_DESCRIPTOR
+          [String[]]$TagsRest = $Env:INPUT_TAGS_REST -isplit ','
+          ForEach ($TagRest In $TagsRest) {
+            npm dist-tag add $Descriptor $TagRest
+          }
+      - name: "Publish NPM Package To GitHub Release With Tag `${{env.INPUT_RELEASETAG}}` File `${{steps.npm-analyze.outputs.tarballname}}`"
+        if: "${{!cancelled() && steps.npm-analyze.outcome == 'success'}}"
+        env:
+          GH_TOKEN: "${{secrets.GITHUB_TOKEN}}"
+          INPUT_TARBALLNAME: "${{steps.npm-analyze.outputs.tarballname}}"
+        shell: "pwsh"
+        working-directory: "${{github.workspace}}/npm"
+        run: |
+          npm pack
+          gh release upload $Env:INPUT_RELEASETAG $Env:INPUT_TARBALLNAME --clobber --repo $Env:GITHUB_REPOSITORY
+      - name: "Save NPM Cache"
+        if: "${{!cancelled() && steps.npm-cache-restore.outcome == 'success'}}"
+        uses: "actions/cache/save@v4.0.2"
+        with:
+          key: "NPM/${{runner.os}}-${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
+          path: "${{steps.npm-cache-path.outputs.npm}}"
       - name: "Save Deno Cache"
-        if: "${{!cancelled() && steps.restore-deno-cache.outcome == 'success'}}"
+        if: "${{!cancelled() && steps.deno-cache-restore.outcome == 'success'}}"
         uses: "actions/cache/save@v4.0.2"
         with:
           key: "Deno/${{runner.os}}-${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"

@@ -59,15 +59,15 @@ jobs:
             Deno/${{runner.os}}
             Deno/
           path: "${{env.DENO_DIR}}"
-      - name: "Analyze"
-        id: "analyze"
+      - name: "Analyze Repository"
+        id: "repository-analyze"
         shell: "pwsh"
         run: |
-          deno run --allow-env --allow-read --allow-write --no-prompt --quiet 'https://raw.githubusercontent.com/hugoalh/hugoalh/main/.github/workflows/toolbox/review-deno-code-2/analyze.ts'
+          deno run --allow-env --allow-read --allow-write --no-prompt --quiet 'https://raw.githubusercontent.com/hugoalh/hugoalh/main/.github/workflows/toolbox/review-deno-code-2/analyze-repository.ts'
       - name: "Verify Code"
         id: "verify-code"
         env:
-          INPUT_FILES: "${{steps.analyze.outputs.files}}"
+          INPUT_FILES: "${{steps.repository-analyze.outputs.files}}"
         shell: "pwsh"
         run: |
           [Boolean]$ShouldReload = $Env:GITHUB_EVENT_NAME -iin @('schedule')
@@ -78,27 +78,26 @@ jobs:
             $ShouldReload ? (deno cache --reload $File) : (deno cache $File)
           }
       - name: "Lint Code"
+        if: "${{!cancelled() && steps.verify-code.outcome == 'success'}}"
         run: |
           deno lint
       - name: "Test Code"
-        if: "${{!cancelled() && steps.verify-code.outcome == 'success' && steps.analyze.outputs.test_dispatch == 'true'}}"
+        if: "${{!cancelled() && steps.verify-code.outcome == 'success' && steps.repository-analyze.outputs.test_dispatch == 'true'}}"
         run: |
           deno test --allow-all --coverage --no-prompt
       - name: "List Test Code Coverage"
-        if: "${{!cancelled() && steps.verify-code.outcome == 'success' && steps.analyze.outputs.test_dispatch == 'true'}}"
+        if: "${{!cancelled() && steps.verify-code.outcome == 'success' && steps.repository-analyze.outputs.test_dispatch == 'true'}}"
         run: |
           deno coverage
       - name: "Benchmark Code"
-        if: "${{!cancelled() && steps.verify-code.outcome == 'success' && steps.analyze.outputs.benchmark_dispatch == 'true'}}"
+        if: "${{!cancelled() && steps.verify-code.outcome == 'success' && steps.repository-analyze.outputs.benchmark_dispatch == 'true'}}"
         run: |
           deno bench --allow-all --no-prompt
       - name: "Check Dependencies Update"
         if: "${{!cancelled() && steps.verify-code.outcome == 'success' && !inputs.run_sub && (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')}}"
-        env:
-          INPUT_FILES: "${{steps.analyze.outputs.files}}"
         shell: "pwsh"
         run: |
-          [String]$Output = deno run --allow-net "--allow-read=$($Env:GITHUB_WORKSPACE)" --no-prompt https://deno.land/x/udd@0.8.2/main.ts --dry-run **/*.ts **/*.tsx deno.jsonc |
+          [String]$Output = deno run --allow-net "--allow-read=$($Env:GITHUB_WORKSPACE)" --no-prompt https://deno.land/x/udd@0.8.2/main.ts --dry-run **/*.ts **/*.tsx deno.jsonc *>&1 |
             Join-String -Separator "`n"
           $LASTEXITCODE = 0
           Write-Host -Object $Output

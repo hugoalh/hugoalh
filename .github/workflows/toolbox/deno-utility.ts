@@ -61,8 +61,8 @@ export async function validateNPMResources(): Promise<void> {
 		Deno.exit(1);
 	}
 	try {
-		const packageMetadata = JSON.parse(await Deno.readTextFile("npm/package.json"));
-		if (typeof packageMetadata?.scripts?.build !== "string") {
+		const packageManifest = JSON.parse(await Deno.readTextFile("npm/package.json"));
+		if (typeof packageManifest?.scripts?.build !== "string") {
 			throw undefined;
 		}
 	} catch {

@@ -120,9 +120,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
         run: |
-          [String]$ScriptURL = '.dnt.ts'
-          deno cache "--reload=$ScriptURL" $ScriptURL
-          deno run --allow-all --deny-hrtime --no-prompt --quiet $ScriptURL
+          deno run --allow-all --deny-hrtime --no-prompt --quiet .dnt.ts
       - name: "Analyze NPM Package Metadata"
         id: "npm-analyze"
         if: "${{!cancelled() && steps.npm-build.outcome == 'success'}}"
@@ -183,7 +181,7 @@ jobs:
         uses: "actions/cache/save@v4.0.2"
         with:
           key: "NPM/${{runner.os}}-${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
-          path: "${{steps.npm-cache-path.outputs.npm}}"
+          path: "${{steps.npm-cache-path.outputs.result}}"
       - name: "Save Deno Cache"
         if: "${{!cancelled() && steps.deno-cache-restore.outcome == 'success'}}"
         uses: "actions/cache/save@v4.0.2"

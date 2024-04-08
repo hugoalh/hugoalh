@@ -72,8 +72,7 @@ jobs:
             $Env:INPUT_FILES |
               ConvertFrom-Json -Depth 100
           )) {
-            [String]$FileFullName = Join-Path -Path $Env:GITHUB_WORKSPACE -ChildPath $File
-            deno cache "--reload=$FileFullName" $FileFullName
+            deno cache $File
           }
       - name: "Publish JSR Package (Provenance)"
         id: "jsr-publish-provenance"

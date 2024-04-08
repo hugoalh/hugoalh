@@ -72,13 +72,12 @@ jobs:
           INPUT_FILES: "${{steps.repository-analyze.outputs.files}}"
         shell: "pwsh"
         run: |
-          [Boolean]$ShouldReloadAll = $Env:GITHUB_EVENT_NAME -iin @('schedule')
+          [Boolean]$ShouldReload = $Env:GITHUB_EVENT_NAME -iin @('schedule')
           ForEach ($File In (
             $Env:INPUT_FILES |
               ConvertFrom-Json -Depth 100
           )) {
-            [String]$FileFullName = Join-Path -Path $Env:GITHUB_WORKSPACE -ChildPath $File
-            $ShouldReloadAll ? (deno cache --reload $FileFullName) : (deno cache "--reload=$FileFullName" $FileFullName)
+            $ShouldReload ? (deno cache --reload $File) : (deno cache $File)
           }
       - name: "Lint Code"
         if: "${{!cancelled() && steps.verify-code.outcome == 'success'}}"

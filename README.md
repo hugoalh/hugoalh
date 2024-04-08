@@ -20,6 +20,7 @@
 [![Telegram: @hugoalh](https://img.shields.io/badge/@hugoalh-26A5E4?labelColor=26A5E4&logo=telegram&logoColor=ffffff&style=flat "Telegram: @hugoalh")](https://t.me/hugoalh)
 [![Tumblr: @hugoalh](https://img.shields.io/badge/@hugoalh-36465D?labelColor=36465D&logo=tumblr&logoColor=ffffff&style=flat "Tumblr: @hugoalh")](https://hugoalh.tumblr.com)
 [![Twitch: @hugoalh](https://img.shields.io/badge/@hugoalh-9146FF?labelColor=9146FF&logo=twitch&logoColor=ffffff&style=flat "Twitch: @hugoalh")](https://www.twitch.tv/hugoalh)
+[![Vivaldi Social: @hugoalh@vivaldi.net](https://img.shields.io/badge/Social-@hugoalh@vivaldi.net-EF3939?labelColor=EF3939&logo=vivaldi&logoColor=ffffff&style=flat "Vivaldi Social: @hugoalh@vivaldi.net")](https://social.vivaldi.net/@hugoalh)
 [![Weblate: @hugoalh](https://img.shields.io/badge/@hugoalh-2ECCAA?labelColor=2ECCAA&logo=weblate&logoColor=ffffff&style=flat "Weblate: @hugoalh")](https://hosted.weblate.org/user/hugoalh)
 [![X: @hugoalhofficial](https://img.shields.io/badge/@hugoalhofficial-000000?labelColor=000000&logo=x&logoColor=ffffff&style=flat "X: @hugoalhofficial")](https://x.com/hugoalhofficial)
 [![YouTube: @hugoalh](https://img.shields.io/badge/@hugoalh-FF0000?labelColor=FF0000&logo=youtube&logoColor=ffffff&style=flat "YouTube: @hugoalh")](https://www.youtube.com/@hugoalh)

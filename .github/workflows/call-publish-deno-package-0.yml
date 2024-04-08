@@ -72,7 +72,7 @@ jobs:
             $Env:INPUT_FILES |
               ConvertFrom-Json -Depth 100
           )) {
-            deno cache "--reload=$($Env:GITHUB_WORKSPACE/$File)" $File
+            deno cache "--reload=$($Env:GITHUB_WORKSPACE)/$File" $File
           }
       - name: "Publish JSR Package (Provenance)"
         id: "jsr-publish-provenance"

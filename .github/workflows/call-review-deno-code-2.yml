@@ -77,7 +77,7 @@ jobs:
             $Env:INPUT_FILES |
               ConvertFrom-Json -Depth 100
           )) {
-            $ShouldReloadAll ? (deno cache --reload $File) : (deno cache "--reload=$($Env:GITHUB_WORKSPACE/$File)" $File)
+            $ShouldReloadAll ? (deno cache --reload $File) : (deno cache "--reload=$($Env:GITHUB_WORKSPACE)/$File" $File)
           }
       - name: "Lint Code"
         if: "${{!cancelled() && steps.verify-code.outcome == 'success'}}"

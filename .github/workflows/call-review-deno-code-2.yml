@@ -63,19 +63,21 @@ jobs:
         id: "repository-analyze"
         shell: "pwsh"
         run: |
-          deno run --allow-env --allow-read --allow-write --no-prompt --quiet 'https://raw.githubusercontent.com/hugoalh/hugoalh/main/.github/workflows/toolbox/review-deno-code-2/analyze-repository.ts'
+          [String]$ScriptURL = 'https://raw.githubusercontent.com/hugoalh/hugoalh/main/.github/workflows/toolbox/review-deno-code-2/analyze-repository.ts'
+          deno cache "--reload=$ScriptURL" $ScriptURL
+          deno run --allow-env --allow-read --allow-write --no-prompt --quiet $ScriptURL
       - name: "Verify Code"
         id: "verify-code"
         env:
           INPUT_FILES: "${{steps.repository-analyze.outputs.files}}"
         shell: "pwsh"
         run: |
-          [Boolean]$ShouldReload = $Env:GITHUB_EVENT_NAME -iin @('schedule')
+          [Boolean]$ShouldReloadAll = $Env:GITHUB_EVENT_NAME -iin @('schedule')
           ForEach ($File In (
             $Env:INPUT_FILES |
               ConvertFrom-Json -Depth 100
           )) {
-            $ShouldReload ? (deno cache --reload $File) : (deno cache $File)
+            $ShouldReloadAll ? (deno cache --reload $File) : (deno cache "--reload=$($Env:GITHUB_WORKSPACE/$File)" $File)
           }
       - name: "Lint Code"
         if: "${{!cancelled() && steps.verify-code.outcome == 'success'}}"
@@ -109,13 +111,17 @@ jobs:
         if: "${{!cancelled() && steps.verify-code.outcome == 'success' && !inputs.run_sub && inputs.deployment_jsr}}"
         shell: "pwsh"
         run: |
-          deno run --allow-env --allow-read --allow-write --no-prompt --quiet 'https://raw.githubusercontent.com/hugoalh/hugoalh/main/.github/workflows/toolbox/review-deno-code-2/verify-jsr-resources.ts'
+          [String]$ScriptURL = 'https://raw.githubusercontent.com/hugoalh/hugoalh/main/.github/workflows/toolbox/review-deno-code-2/verify-jsr-resources.ts'
+          deno cache "--reload=$ScriptURL" $ScriptURL
+          deno run --allow-env --allow-read --allow-write --no-prompt --quiet $ScriptURL
           deno publish --allow-dirty --config jsr.jsonc --dry-run --no-provenance --token 'ThisIsATokenPlaceholder'
       - name: "Verify Deployment For NPM"
         if: "${{!cancelled() && steps.verify-code.outcome == 'success' && !inputs.run_sub && inputs.deployment_npm}}"
         shell: "pwsh"
         run: |
-          deno run --allow-env --allow-read --allow-write --no-prompt --quiet 'https://raw.githubusercontent.com/hugoalh/hugoalh/main/.github/workflows/toolbox/review-deno-code-2/verify-npm-resources.ts'
+          [String]$ScriptURL = 'https://raw.githubusercontent.com/hugoalh/hugoalh/main/.github/workflows/toolbox/review-deno-code-2/verify-npm-resources.ts'
+          deno cache "--reload=$ScriptURL" $ScriptURL
+          deno run --allow-env --allow-read --allow-write --no-prompt --quiet $ScriptURL
       - name: "Save Deno Cache"
         if: "${{!cancelled() && steps.deno-cache-restore.outcome == 'success'}}"
         uses: "actions/cache/save@v4.0.2"

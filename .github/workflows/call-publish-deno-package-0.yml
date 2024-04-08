@@ -59,7 +59,9 @@ jobs:
         id: "repository-analyze"
         shell: "pwsh"
         run: |
-          deno run --allow-env --allow-read --allow-write --no-prompt --quiet 'https://raw.githubusercontent.com/hugoalh/hugoalh/main/.github/workflows/toolbox/publish-deno-package-0/analyze-repository.ts'
+          [String]$ScriptURL = 'https://raw.githubusercontent.com/hugoalh/hugoalh/main/.github/workflows/toolbox/publish-deno-package-0/analyze-repository.ts'
+          deno cache "--reload=$ScriptURL" $ScriptURL
+          deno run --allow-env --allow-read --allow-write --no-prompt --quiet $ScriptURL
       - name: "Verify Code"
         id: "verify-code"
         env:
@@ -70,7 +72,7 @@ jobs:
             $Env:INPUT_FILES |
               ConvertFrom-Json -Depth 100
           )) {
-            deno cache $File
+            deno cache "--reload=$($Env:GITHUB_WORKSPACE/$File)" $File
           }
       - name: "Publish JSR Package (Provenance)"
         id: "jsr-publish-provenance"
@@ -118,7 +120,9 @@ jobs:
         env:
           NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
         run: |
-          deno run --allow-all --deny-hrtime --no-prompt --quiet .dnt.ts
+          [String]$ScriptURL = '.dnt.ts'
+          deno cache "--reload=$ScriptURL" $ScriptURL
+          deno run --allow-all --deny-hrtime --no-prompt --quiet $ScriptURL
       - name: "Analyze NPM Package Metadata"
         id: "npm-analyze"
         if: "${{!cancelled() && steps.npm-build.outcome == 'success'}}"
@@ -127,7 +131,9 @@ jobs:
         shell: "pwsh"
         working-directory: "${{github.workspace}}/npm"
         run: |
-          deno run --allow-env --allow-read --allow-write --no-prompt --quiet 'https://raw.githubusercontent.com/hugoalh/hugoalh/main/.github/workflows/toolbox/publish-deno-package-0/analyze-npm-package-metadata.ts'
+          [String]$ScriptURL = 'https://raw.githubusercontent.com/hugoalh/hugoalh/main/.github/workflows/toolbox/publish-deno-package-0/analyze-npm-package-metadata.ts'
+          deno cache "--reload=$ScriptURL" $ScriptURL
+          deno run --allow-env --allow-read --allow-write --no-prompt --quiet $ScriptURL
       - name: "Publish NPM Package To NPM With Main Tag `${{steps.npm-analyze.outputs.tags_main}}` (Provenance)"
         id: "npm-publish-provenance"
         if: "${{!cancelled() && steps.npm-analyze.outcome == 'success'}}"

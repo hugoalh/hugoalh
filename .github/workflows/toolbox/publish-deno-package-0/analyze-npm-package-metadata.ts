@@ -6,7 +6,7 @@ const packageManifest = JSON.parse(await Deno.readTextFile("package.json"));
 const name = packageManifest.name;
 const versionPackageString = packageManifest.version;
 const versionPackageSemVer = parseSemVer(versionPackageString);
-const versionIsPreRelease: boolean = (versionPackageSemVer.prerelease ?? []).length === 0;
+const versionIsPreRelease: boolean = (versionPackageSemVer.prerelease ?? []).length > 0;
 let tagLatest: boolean = !versionIsPreRelease;
 let tagPre: boolean = true;
 try {

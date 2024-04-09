@@ -131,7 +131,7 @@ jobs:
         run: |
           [String]$ScriptURL = 'https://raw.githubusercontent.com/hugoalh/hugoalh/main/.github/workflows/toolbox/publish-deno-package-0/analyze-npm-package-metadata.ts'
           deno cache "--reload=$ScriptURL" $ScriptURL
-          deno run --allow-env --allow-read --allow-write --no-prompt --quiet $ScriptURL
+          deno run --allow-env --allow-read --allow-run --allow-write --no-prompt --quiet $ScriptURL
       - name: "Publish NPM Package To NPM With Main Tag `${{steps.npm-analyze.outputs.tags_main}}` (Provenance)"
         id: "npm-publish-provenance"
         if: "${{!cancelled() && steps.npm-analyze.outcome == 'success'}}"

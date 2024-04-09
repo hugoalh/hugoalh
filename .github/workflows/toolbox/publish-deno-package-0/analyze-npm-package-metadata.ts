@@ -51,7 +51,7 @@ setOutputs({
 	name: name,
 	version: versionPackageString,
 	descriptor: `${name}@${versionPackageString}`,
-	tags_first: tags[0],
+	tags_main: tags[0],
 	tags_rest: tags.slice(1).join(","),
 	tarballname: `${name.replace(/^@/, "").replaceAll("\/", "-")}-${versionPackageString}.tgz`
 });

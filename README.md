@@ -1,16 +1,16 @@
 > <div align="center"><b>
 >
-> [💬 Languages](#💬-languages) 💠 [📦 Registries](#📦-registries) 💠 [🗄️ Repositories](#🗄️-repositories) 💠 [📚 Resources](#📚-resources) 💠 [👥 Socials](#👥-socials) 💠 [🦜 Translate Platforms](#🦜-translate-platforms)
+> [💬 Languages](#47e957fba4554541bca85acc1ee69832-languages) 💠 [📦 Registries](#47e957fba4554541bca85acc1ee69832-registries) 💠 [🗄️ Repositories](#47e957fba4554541bca85acc1ee69832-repositories) 💠 [📚 Resources](#47e957fba4554541bca85acc1ee69832-resources) 💠 [👥 Socials](#47e957fba4554541bca85acc1ee69832-socials) 💠 [🦜 Translation Platforms](#47e957fba4554541bca85acc1ee69832-translation-platforms)
 >
 > </b></div>
 
-## 💬 Languages
+<h2 id="47e957fba4554541bca85acc1ee69832-languages">💬 Languages</h2>
 
 - Cantonese (粵語 / 廣東話)
 - Chinese (Traditional) (漢語（正體）)
 - English
 
-## 📦 Registries
+<h2 id="47e957fba4554541bca85acc1ee69832-registries">📦 Registries</h2>
 
 <div align="center">
 
@@ -22,7 +22,7 @@
 
 </div>
 
-## 🗄️ Repositories
+<h2 id="47e957fba4554541bca85acc1ee69832-repositories">🗄️ Repositories</h2>
 
 <div align="center">
 
@@ -31,7 +31,7 @@
 
 </div>
 
-## 📚 Resources
+<h2 id="47e957fba4554541bca85acc1ee69832-resources">📚 Resources</h2>
 
 - hxhS (hugoalh & hugoalh Studio) Universal Guide
   - [Coding](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/coding.md)
@@ -39,7 +39,7 @@
   - [Forbidden Targets](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/forbidden-targets.md)
   - [General Process Time](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/general-process-time.md)
 
-## 👥 Socials
+<h2 id="47e957fba4554541bca85acc1ee69832-socials">👥 Socials</h2>
 
 <div align="center">
 
@@ -69,7 +69,7 @@
 
 </div>
 
-## 🦜 Translate Platforms
+<h2 id="47e957fba4554541bca85acc1ee69832-translation-platforms">🦜 Translation Platforms</h2>
 
 <div align="center">
 

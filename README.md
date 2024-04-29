@@ -21,6 +21,7 @@
 [![JSR: @hugoalh](https://img.shields.io/badge/JSR-@hugoalh-F7DF1E?labelColor=F7DF1E&logoColor=000000&style=flat "JSR: @hugoalh")](https://jsr.io/@hugoalh)
 [![NPM: @hugoalh](https://img.shields.io/badge/@hugoalh-CB3837?labelColor=CB3837&logo=npm&logoColor=ffffff&style=flat "NPM: @hugoalh")](https://www.npmjs.com/search?q=%40hugoalh%2F)
 [![PowerShell Gallery: hugoalh](https://img.shields.io/badge/hugoalh-5391FE?labelColor=5391FE&logo=powershell&logoColor=ffffff&style=flat "PowerShell Gallery: hugoalh")](https://www.powershellgallery.com/profiles/hugoalh)
+[![Visual Studio Marketplace: hugoalh](https://img.shields.io/badge/hugoalh-CB2E6D?labelColor=CB2E6D&logo=visualstudio&logoColor=ffffff&style=flat "Visual Studio Marketplace: hugoalh")](https://marketplace.visualstudio.com/publishers/hugoalh)
 
 </div>
 
@@ -63,7 +64,7 @@
 [![X: @hugoalhofficial](https://img.shields.io/badge/@hugoalhofficial-000000?labelColor=000000&logo=x&logoColor=ffffff&style=flat "X: @hugoalhofficial")](https://x.com/hugoalhofficial)
 [![YouTube: @hugoalh](https://img.shields.io/badge/@hugoalh-FF0000?labelColor=FF0000&logo=youtube&logoColor=ffffff&style=flat "YouTube: @hugoalh")](https://www.youtube.com/@hugoalh)
 
-🔹🔷🔸🔶🔸🔷🔹
+🔹🔷🔹🔸🔶🔸🔹🔷🔹
 
 ![Discord: @hugoalh](https://img.shields.io/badge/@hugoalh-5865F2?labelColor=5865F2&logo=discord&logoColor=ffffff&style=flat "Discord: @hugoalh")
 ![LINE: @hugoalh](https://img.shields.io/badge/@hugoalh-00C300?labelColor=00C300&logo=line&logoColor=ffffff&style=flat "LINE: @hugoalh")

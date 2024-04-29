@@ -1,8 +1,10 @@
-> <div align="center"><b>
->
-> [💬 Languages](#47e957fba4554541bca85acc1ee69832-languages) 💠 [📦 Registries](#47e957fba4554541bca85acc1ee69832-registries) 💠 [🗄️ Repositories](#47e957fba4554541bca85acc1ee69832-repositories) 💠 [📚 Resources](#47e957fba4554541bca85acc1ee69832-resources) 💠 [👥 Socials](#47e957fba4554541bca85acc1ee69832-socials) 💠 [🦜 Translation Platforms](#47e957fba4554541bca85acc1ee69832-translation-platforms)
->
-> </b></div>
+<div align="center"><b>
+
+[💬 Languages](#47e957fba4554541bca85acc1ee69832-languages) 💠 [📦 Registries](#47e957fba4554541bca85acc1ee69832-registries) 💠 [🗄️ Repositories](#47e957fba4554541bca85acc1ee69832-repositories) 💠 [📚 Resources](#47e957fba4554541bca85acc1ee69832-resources) 💠 [👥 Socials](#47e957fba4554541bca85acc1ee69832-socials) 💠 [🦜 Translation Platforms](#47e957fba4554541bca85acc1ee69832-translation-platforms)
+
+</b></div>
+
+---
 
 <h2 id="47e957fba4554541bca85acc1ee69832-languages">💬 Languages</h2>
 

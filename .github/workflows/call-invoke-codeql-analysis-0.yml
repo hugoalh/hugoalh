@@ -12,16 +12,16 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
       - name: "Checkout Repository"
-        uses: "actions/checkout@v4.1.3"
+        uses: "actions/checkout@v4.1.4"
         with:
           fetch-depth: "0"
       - name: "Initialize CodeQL"
-        uses: "github/codeql-action/init@v3.25.1"
+        uses: "github/codeql-action/init@v3.25.3"
         with:
           queries: "+security-and-quality"
       # Automatically build attempts to build any compiled languages.
       - name: "Build Repository"
-        uses: "github/codeql-action/autobuild@v3.25.1"
+        uses: "github/codeql-action/autobuild@v3.25.3"
         continue-on-error: true
       - name: "Analyze Repository"
-        uses: "github/codeql-action/analyze@v3.25.1"
+        uses: "github/codeql-action/analyze@v3.25.3"

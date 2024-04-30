@@ -51,7 +51,7 @@ You can request a new feature by [create an issue](#create-an-issue).
 
 ### Coding
 
-*Please visit the ["hxhS (hugoalh & hugoalh Studio) Universal Coding Guide"](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/coding.md) for the coding guideline, and visit the ["hxhS (hugoalh & hugoalh Studio) Universal Forbidden Targets"](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/forbidden-targets.md) for the forbidden targets.*
+*Please visit the "[hxhS (hugoalh & hugoalh Studio) Universal Coding Guide](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/coding.md)" for the coding guideline, and visit the "[hxhS (hugoalh & hugoalh Studio) Universal Forbidden Targets](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/forbidden-targets.md)" for the forbidden targets.*
 
 ### Create A Discussion
 
@@ -67,7 +67,7 @@ You can request a new feature by [create an issue](#create-an-issue).
 - Create an issue under the most appropriate/suitable category.
 
 > [!NOTE]
-> For the general process time, please visit the ["hxhS (hugoalh & hugoalh Studio) Universal General Process Time - Issue"](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/general-process-time.md#issue).
+> For the general process time, please visit the "[hxhS (hugoalh & hugoalh Studio) Universal General Process Time - Issue](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/general-process-time.md#issue)".
 
 ### Create A Pull Request
 
@@ -82,15 +82,15 @@ You can request a new feature by [create an issue](#create-an-issue).
 
 > [!NOTE]
 > - The pull request does not need to pass any automatic review, automatic reviews are the references for the code reviewers.
-> - For the general process time, please visit the ["hxhS (hugoalh & hugoalh Studio) Universal General Process Time - Pull Request"](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/general-process-time.md#pull-request).
+> - For the general process time, please visit the "[hxhS (hugoalh & hugoalh Studio) Universal General Process Time - Pull Request](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/general-process-time.md#pull-request)".
 
 ### Create A Security Vulnerability Report
 
-*Please visit the ["GitHub Docs - Privately reporting a security vulnerability"](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability) for the steps to create a security vulnerability report.*
+*Please visit the "[GitHub Docs - Privately reporting a security vulnerability](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability)" for the steps to create a security vulnerability report.*
 
 > [!CAUTION]
 > Never report security vulnerabilities publicly, any public security vulnerability report will be rejected and deleted without notice.
 
 > [!NOTE]
 > - If that project have not enabled the Security Advisories system (mostly cause by misconfiguration), please [create an issue](#create-an-issue) to request enable it.
-> - For the general process time, please visit the ["hxhS (hugoalh & hugoalh Studio) Universal General Process Time - Security Vulnerability Report"](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/general-process-time.md#security-vulnerability-report).
+> - For the general process time, please visit the "[hxhS (hugoalh & hugoalh Studio) Universal General Process Time - Security Vulnerability Report](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/general-process-time.md#security-vulnerability-report)".

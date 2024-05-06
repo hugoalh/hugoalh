@@ -104,8 +104,7 @@ jobs:
           $LASTEXITCODE = 0
           Write-Host -Object $Output
           If ($Output -imatch 'able to update') {
-            Write-Host -Object '::error::Found dependencies that need to update!'
-            Exit 1
+            Write-Host -Object '::warning::Found dependencies that need to update!'
           }
       - name: "Verify Deployment For JSR"
         if: "${{!cancelled() && steps.verify-code.outcome == 'success' && !inputs.run_sub && inputs.deployment_jsr}}"

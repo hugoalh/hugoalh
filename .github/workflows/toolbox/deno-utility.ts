@@ -1,5 +1,5 @@
-import { walk as readDir, type WalkEntry } from "https://deno.land/std@0.221.0/fs/walk.ts";
-import { writeError } from "https://raw.githubusercontent.com/hugoalh-studio/github-actions-core-ts/v0.2.1/log.ts";
+import { walk as readDir, type WalkEntry } from "jsr:@std/fs@0.224.0/walk";
+import { writeError } from "https://raw.githubusercontent.com/hugoalh-studio/github-actions-core-es/v0.2.1/log.ts";
 async function checkFileExist(filePath: string): Promise<boolean> {
 	try {
 		const { isFile }: Deno.FileInfo = await Deno.stat(filePath);

@@ -37,7 +37,7 @@ jobs:
       - name: "Setup Deno"
         uses: "denoland/setup-deno@v1.1.4"
         with:
-          deno-version: "^1.42.1"
+          deno-version: "^1.43.3"
       - name: "Get Deno Cache Path"
         shell: "pwsh"
         run: |
@@ -95,17 +95,17 @@ jobs:
         if: "${{!cancelled() && steps.verify-code.outcome == 'success' && steps.repository-analyze.outputs.benchmark_dispatch == 'true'}}"
         run: |
           deno bench --allow-all --no-prompt
-      - name: "Check Dependencies Update"
-        if: "${{!cancelled() && steps.verify-code.outcome == 'success' && !inputs.run_sub && (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')}}"
-        shell: "pwsh"
-        run: |
-          [String]$Output = deno run --allow-net "--allow-read=$($Env:GITHUB_WORKSPACE)" --no-prompt https://deno.land/x/udd@0.8.2/main.ts --dry-run **/*.ts **/*.tsx deno.jsonc *>&1 |
-            Join-String -Separator "`n"
-          $LASTEXITCODE = 0
-          Write-Host -Object $Output
-          If ($Output -imatch 'able to update') {
-            Write-Host -Object '::warning::Found dependencies that need to update!'
-          }
+      # - name: "Check Dependencies Update"
+      #   if: "${{!cancelled() && steps.verify-code.outcome == 'success' && !inputs.run_sub && (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')}}"
+      #   shell: "pwsh"
+      #   run: |
+      #     [String]$Output = deno run --allow-net "--allow-read=$($Env:GITHUB_WORKSPACE)" --no-prompt https://deno.land/x/udd@0.8.2/main.ts --dry-run **/*.ts **/*.tsx deno.jsonc *>&1 |
+      #       Join-String -Separator "`n"
+      #     $LASTEXITCODE = 0
+      #     Write-Host -Object $Output
+      #     If ($Output -imatch 'able to update') {
+      #       Write-Host -Object '::warning::Found dependencies that need to update!'
+      #     }
       - name: "Verify Deployment For JSR"
         if: "${{!cancelled() && steps.verify-code.outcome == 'success' && !inputs.run_sub && inputs.deployment_jsr}}"
         shell: "pwsh"

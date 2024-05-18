@@ -18,7 +18,7 @@
 
 [![GitHub Packages: @hugoalh](https://img.shields.io/badge/Packages-@hugoalh-181717?labelColor=181717&logo=github&logoColor=ffffff&style=flat "GitHub Packages: @hugoalh")](https://github.com/hugoalh?tab=packages)
 [![GitHub Packages: @hugoalh-studio](https://img.shields.io/badge/Packages-@hugoalh--studio-181717?labelColor=181717&logo=github&logoColor=ffffff&style=flat "GitHub Packages: @hugoalh-studio")](https://github.com/orgs/hugoalh-studio/packages)
-[![JSR: @hugoalh](https://img.shields.io/badge/JSR-@hugoalh-F7DF1E?labelColor=F7DF1E&logoColor=000000&style=flat "JSR: @hugoalh")](https://jsr.io/@hugoalh)
+[![JSR: @hugoalh](https://img.shields.io/badge/@hugoalh-F7DF1E?labelColor=F7DF1E&logo=jsr&logoColor=000000&style=flat "JSR: @hugoalh")](https://jsr.io/@hugoalh)
 [![NPM: @hugoalh](https://img.shields.io/badge/@hugoalh-CB3837?labelColor=CB3837&logo=npm&logoColor=ffffff&style=flat "NPM: @hugoalh")](https://www.npmjs.com/search?q=%40hugoalh%2F)
 [![PowerShell Gallery: @hugoalh](https://img.shields.io/badge/@hugoalh-5391FE?labelColor=5391FE&logo=powershell&logoColor=ffffff&style=flat "PowerShell Gallery: @hugoalh")](https://www.powershellgallery.com/profiles/hugoalh)
 [![Visual Studio Marketplace: @hugoalh](https://img.shields.io/badge/@hugoalh-CB2E6D?labelColor=CB2E6D&logo=visualstudio&logoColor=ffffff&style=flat "Visual Studio Marketplace: @hugoalh")](https://marketplace.visualstudio.com/publishers/hugoalh)

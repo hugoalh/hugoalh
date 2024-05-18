@@ -74,6 +74,7 @@
 <div align="center">
 
 [![Crowdin: @hugoalh](https://img.shields.io/badge/@hugoalh-2E3340?labelColor=2E3340&logo=crowdin&logoColor=ffffff&style=flat "Crowdin: @hugoalh")](https://crowdin.com/profile/hugoalh)
+[![Transifex: @hugoalh](https://img.shields.io/badge/@hugoalh-0064AB?labelColor=0064AB&logo=transifex&logoColor=ffffff&style=flat "Transifex: @hugoalh")](https://app.transifex.com/user/profile/hugoalh)
 [![Weblate: @hugoalh](https://img.shields.io/badge/@hugoalh-2ECCAA?labelColor=2ECCAA&logo=weblate&logoColor=ffffff&style=flat "Weblate: @hugoalh")](https://hosted.weblate.org/user/hugoalh)
 
 </div>

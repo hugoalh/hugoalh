@@ -33,7 +33,7 @@ jobs:
       DENO_FUTURE: "1"
     steps:
       - name: "Checkout Repository"
-        uses: "actions/checkout@v4.1.6"
+        uses: "actions/checkout@v4.1.7"
       - name: "Setup Deno"
         uses: "denoland/setup-deno@v1.1.4"
         with:

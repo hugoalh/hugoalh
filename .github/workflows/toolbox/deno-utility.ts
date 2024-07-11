@@ -1,4 +1,4 @@
-import { walk as readDir, type WalkEntry } from "jsr:@std/fs@0.224.0/walk";
+import { walk as readDir, type WalkEntry } from "jsr:@std/fs@1.0.0-rc.4/walk";
 import { writeError } from "https://raw.githubusercontent.com/hugoalh-studio/github-actions-core-es/v0.2.1/log.ts";
 async function checkFileExist(filePath: string): Promise<boolean> {
 	try {

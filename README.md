@@ -20,8 +20,8 @@
 [![GitHub Packages: @hugoalh-studio](./asset/badge/registry/github-packages-studio.svg "GitHub Packages: @hugoalh-studio")](https://github.com/orgs/hugoalh-studio/packages)
 [![JSR: @hugoalh](./asset/badge/registry/jsr.svg "JSR: @hugoalh")](https://jsr.io/@hugoalh)
 [![NPM: @hugoalh](./asset/badge/registry/npm.svg "NPM: @hugoalh")](https://www.npmjs.com/search?q=%40hugoalh%2F)
-[![PowerShell Gallery: @hugoalh](https://img.shields.io/badge/@hugoalh-5391FE?label=PowerShell%20Gallery&labelColor=5391FE&logoColor=ffffff&style=flat "PowerShell Gallery: @hugoalh")](https://www.powershellgallery.com/profiles/hugoalh)
-[![Visual Studio Marketplace: @hugoalh](https://img.shields.io/badge/@hugoalh-CB2E6D?label=Visual%20Studio%20Marketplace&labelColor=CB2E6D&logoColor=ffffff&style=flat "Visual Studio Marketplace: @hugoalh")](https://marketplace.visualstudio.com/publishers/hugoalh)
+[![PowerShell Gallery: @hugoalh](./asset/badge/registry/powershell-gallery.svg "PowerShell Gallery: @hugoalh")](https://www.powershellgallery.com/profiles/hugoalh)
+[![Visual Studio Marketplace: @hugoalh](./asset/badge/registry/visual-studio-marketplace.svg "Visual Studio Marketplace: @hugoalh")](https://marketplace.visualstudio.com/publishers/hugoalh)
 
 </div>
 

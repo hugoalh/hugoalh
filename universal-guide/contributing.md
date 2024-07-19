@@ -51,7 +51,7 @@ You can request a new feature by [create an issue](#create-an-issue).
 
 ### Coding
 
-*Please visit the "[hxhS (hugoalh & hugoalh Studio) Universal Coding Guide](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/coding.md)" for the coding guideline, and visit the "[hxhS (hugoalh & hugoalh Studio) Universal Forbidden Targets](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/forbidden-targets.md)" for the forbidden targets.*
+*Please visit the "[hxhS (hugoalh & hugoalh Studio) Universal Coding Guide](https://github.com/hugoalh/hugoalh/blob/main/universal-guide/coding.md)" for the coding guideline.*
 
 ### Create A Discussion
 

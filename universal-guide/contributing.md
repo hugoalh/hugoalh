@@ -18,12 +18,22 @@ You can fix a grammar mistake by [create a pull request](#create-a-pull-request)
 
 You can fix a misspelling/typo by [create a pull request](#create-a-pull-request); Alternatively, [create an issue](#create-an-issue) to point out the misspelling/typo.
 
-Be aware that the spelling differences between the language variants are not count as misspelling/typo!
+Be aware that the spelling differences between the language variants are not count as misspelling/typo, unless language variants are provide and support in the project!
 
-| **Language** | **Prefer Variant** |
-|:-:|:-:|
-| Chinese | Traditional / 正體 / 繁體 |
-| [English](https://en.wikipedia.org/wiki/American_and_British_English_spelling_differences) | England / United Kingdom (UK) |
+| **Language** | **Language In English** | **Prefer Variant** |
+|:-:|:-:|:--|
+| اَلْعَرَبِيَّةُ | Arabic | United Arab Emirates |
+| বাংলা | Bangla | Bangladesh |
+| 漢語 | Chinese | Traditional / 正體 / 繁體 |
+|  | Dutch | Standard Dutch / The Netherlands |
+| English | English | British / England / United Kingdom (UK) |
+| Français | French | France |
+|  | German | Standard German / Germany |
+|  | Italian | Standard Italian / Italy |
+| 한국어 | Korean | Hangul / South Korea |
+|  | Portuguese | European Portuguese / Portugal |
+|  | Spanish | Castilian Spanish / Spain |
+|  | Swedish | Standard Swedish / Sweden |
 
 ### Improve GitHub Repository Wiki
 

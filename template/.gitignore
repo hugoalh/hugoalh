@@ -1,15 +1,20 @@
 #MARK: {Common}
 *.bak
+*.diff
+*.gcov
 *.gho
+*.kcov
 *.lcov
 *.log
 *.ori
 *.orig
+*.patch
 *.temp
 *.tmp
 .cache/
 .temp/
 .tmp/
+*_cache/
 .env
 .env.dev.local
 .env.development.local
@@ -20,41 +25,59 @@
 
 #MARK: {Archives & Packages}
 *.7z
+*.apfs
 *.apk
+*.arj
 *.bz2
 *.bzip
 *.bzip2
 *.cab
+*.cpio
 *.crx
 *.deb
 *.dll
 *.dmg
 *.ear
 *.egg
+*.esd
 *.exe
+*.fat
 *.gem
 *.gz
 *.gzip
+*.hfs
 *.iso
 *.jar
+*.lha
+*.lzh
 *.lzma
 *.msi
 *.msix
 *.msm
 *.msp
 *.nar
+*.ntfs
 *.rar
 *.rpm
+*.squashfs
+*.swm
 *.tar
 *.tar.gz
+*.taz
+*.tbz
+*.tbz2
 *.tgz
 *.txz
 *.tzst
+*.vhd
+*.vhdx
 *.vsix
 *.war
+*.wim
 *.xar
 *.xpi
 *.xz
+*.z
 *.zip
 *.zst
 
@@ -92,6 +115,10 @@ ehthumbs.db
 Thumbs.db
 Thumbs.db:encryptable
 
+#MARK: AL
+.alcache/
+.alpackages/
+
 #MARK: BowerIO
 bower_components/
 
@@ -99,9 +126,9 @@ bower_components/
 CVS/
 .cvsignore
 
-#MARK: Diff
-*.diff
-*.patch
+#MARK: Delphi
+__history/
+__recovery/
 
 #MARK: Docusaurus
 .docusaurus
@@ -114,18 +141,30 @@ CVS/
 #MARK: DynamoDB
 .dynamodb/
 
+#MARK: Eagle
+*.b#?
+*.b$?
+*.l#?
+*.l$?
+*.s#?
+*.s$?
+
+#MARK: Elm
+elm-stuff
+repl-temp-*
+
 #MARK: ESLint
 .eslintcache
 
 #MARK: FuseBox
 .fusebox/
 
-#MARK: Godot
-.godot/
-
-#MARK: GoLang
+#MARK: Go
 go.work
 go.work.sum
+
+#MARK: Godot
+.godot/
 
 #MARK: Gradle
 .gradle/
@@ -139,11 +178,18 @@ gradle-app.setting
 
 #MARK: Jekyll
 .jekyll-cache/
-.sass-cache/
 .jekyll-metadata
 
 #MARK: KDE
 .directory
+
+#MARK: Leiningen
+.cpcache/
+.lein-plugins/
+.lein-deps-sum
+.lein-failures
+.lein-repl-history
+.nrepl-port
 
 #MARK: LibreOffice
 .~lock.*#
@@ -172,6 +218,7 @@ mono_crash.*.json
 #MARK: NodeJS
 jspm_packages/
 node_modules/
+.node_history
 .node_repl_history
 lerna-debug.log*
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
@@ -186,6 +233,9 @@ npm-debug.log*
 #MARK: NuxtJS
 .nuxt
 
+#MARK: Packer
+packer_cache/
+
 #MARK: ParcelJS
 .cache
 .parcel-cache
@@ -194,7 +244,9 @@ npm-debug.log*
 .pnpm-debug.log*
 
 #MARK: Python
-*.py[cod]
+*.pyc
+*.pyd
+*.pyo
 __pycache__/
 .pybuilder/
 .ipynb_checkpoints
@@ -204,8 +256,26 @@ ipython_config.py
 pip-log.txt
 pip-delete-this-directory.txt
 
-#MARK: RustLang
+#MARK: Qt
+.qmake.cache
+*_qmlcache.qrc
+
+#MARK: R
+.Rapp.history
+.RData
+.RDataTmp
+.Rhistory
+.Ruserdata
+*-Ex.R
+
+#MARK: Ruby (+ Rails)
+.byebug_history
+
+#MARK: Rust
 *.rs.bk
+
+#MARK: SASS
+.sass-cache/
 
 #MARK: Serverless
 .serverless/
@@ -223,7 +293,9 @@ web_modules/
 *.tsbuildinfo
 
 #MARK: Visual Studio
+.localhistory/
 .vs/
+.vshistory/
 
 #MARK: Visual Studio Code
 .history/

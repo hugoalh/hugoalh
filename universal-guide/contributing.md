@@ -18,7 +18,7 @@ You can fix a grammar mistake by [create a pull request](#create-a-pull-request)
 
 You can fix a misspelling/typo by [create a pull request](#create-a-pull-request); Alternatively, [create an issue](#create-an-issue) to point out the misspelling/typo.
 
-Be aware that the spelling differences between the language variants are not count as misspelling/typo, unless language variants are provide and support in the project!
+Be aware that the spelling differences between the language variants are not count as misspelling/typo, unless language variants are provide and support in that project!
 
 | **Language** | **Language In English** | **Prefer Variant** |
 |:-:|:-:|:--|

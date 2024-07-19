@@ -25,15 +25,15 @@ Be aware that the spelling differences between the language variants are not cou
 | اَلْعَرَبِيَّةُ | Arabic | United Arab Emirates |
 | বাংলা | Bangla | Bangladesh |
 | 漢語 | Chinese | Traditional / 正體 / 繁體 |
-|  | Dutch | Standard Dutch / The Netherlands |
+| Nederlands | Dutch | Standard Dutch / The Netherlands |
 | English | English | British / England / United Kingdom (UK) |
 | Français | French | France |
-|  | German | Standard German / Germany |
-|  | Italian | Standard Italian / Italy |
+| Deutsch | German | Standard German / Germany |
+| Italiano | Italian | Standard Italian / Italy |
 | 한국어 | Korean | Hangul / South Korea |
-|  | Portuguese | European Portuguese / Portugal |
-|  | Spanish | Castilian Spanish / Spain |
-|  | Swedish | Standard Swedish / Sweden |
+| Português | Portuguese | European Portuguese / Portugal |
+| Español | Spanish | Castilian Spanish / Spain |
+| Svenska | Swedish | Standard Swedish / Sweden |
 
 ### Improve GitHub Repository Wiki
 

@@ -12,6 +12,7 @@
 *.temp
 *.tmp
 .cache/
+.git/
 .temp/
 .tmp/
 *_cache/
@@ -28,6 +29,7 @@
 *.apfs
 *.apk
 *.arj
+*.bin
 *.bz2
 *.bzip
 *.bzip2
@@ -59,6 +61,7 @@
 *.ntfs
 *.rar
 *.rpm
+*.scs
 *.squashfs
 *.swm
 *.tar

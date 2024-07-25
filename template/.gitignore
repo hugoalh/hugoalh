@@ -1,6 +1,8 @@
 #MARK: {Common}
 *.bak
 *.diff
+*.dump
+*.eml
 *.gcov
 *.gho
 *.kcov
@@ -169,6 +171,9 @@ go.work.sum
 #MARK: Godot
 .godot/
 
+#MARK: Google App Engine
+appengine-generated/
+
 #MARK: Gradle
 .gradle/
 .gradletasknamecache
@@ -178,6 +183,9 @@ gradle-app.setting
 
 #MARK: GruntJS
 .grunt/
+
+#MARK: GWT
+.apt_generated/
 
 #MARK: Jekyll
 .jekyll-cache/
@@ -270,6 +278,13 @@ pip-delete-this-directory.txt
 .Rhistory
 .Ruserdata
 *-Ex.R
+
+#MARK: Redis
+dump.rdb
+
+#MARK: ROS
+msg_gen/
+srv_gen/
 
 #MARK: Ruby (+ Rails)
 .byebug_history

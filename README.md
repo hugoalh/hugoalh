@@ -1,6 +1,6 @@
 <div align="center"><b>
 
-[💬 Languages](#47e957fba4554541bca85acc1ee69832-languages) 💠 [📦 Registries](#47e957fba4554541bca85acc1ee69832-registries) 💠 [🗄️ Repositories](#47e957fba4554541bca85acc1ee69832-repositories) 💠 [📚 Resources](#47e957fba4554541bca85acc1ee69832-resources) 💠 [👥 Socials](#47e957fba4554541bca85acc1ee69832-socials) 💠 [🦜 Translation Platforms](#47e957fba4554541bca85acc1ee69832-translation-platforms)
+[💬 Languages](#47e957fba4554541bca85acc1ee69832-languages) 💠 <!-- [🧑‍💻 Programming Languages](#47e957fba4554541bca85acc1ee69832-programming-languages) 💠  -->[📦 Registries](#47e957fba4554541bca85acc1ee69832-registries) 💠 [🗄️ Repositories](#47e957fba4554541bca85acc1ee69832-repositories) 💠 [📚 Resources](#47e957fba4554541bca85acc1ee69832-resources) 💠 [👥 Socials](#47e957fba4554541bca85acc1ee69832-socials) 💠 [🦜 Translation Platforms](#47e957fba4554541bca85acc1ee69832-translation-platforms)
 
 </b></div>
 
@@ -12,6 +12,14 @@
 - Chinese (Traditional) (漢語（正體）)
 - English
 
+<!-- 
+<h2 id="47e957fba4554541bca85acc1ee69832-programming-languages">🧑‍💻 Programming Languages</h2>
+
+<div align="center">
+
+</div>
+
+ -->
 <h2 id="47e957fba4554541bca85acc1ee69832-registries">📦 Registries</h2>
 
 <div align="center">

@@ -1,6 +1,6 @@
 <div align="center"><b>
 
-[💬 Languages](#47e957fba4554541bca85acc1ee69832-languages) 💠 <!-- [🧑‍💻 Programming Languages](#47e957fba4554541bca85acc1ee69832-programming-languages) 💠  -->[📦 Registries](#47e957fba4554541bca85acc1ee69832-registries) 💠 [🗄️ Repositories](#47e957fba4554541bca85acc1ee69832-repositories) 💠 [📚 Resources](#47e957fba4554541bca85acc1ee69832-resources) 💠 [👥 Socials](#47e957fba4554541bca85acc1ee69832-socials) 💠 [🦜 Translation Platforms](#47e957fba4554541bca85acc1ee69832-translation-platforms)
+[💬 Languages](#47e957fba4554541bca85acc1ee69832-languages) 💠 [🧑‍💻 Programming Languages](#47e957fba4554541bca85acc1ee69832-programming-languages) 💠 [📦 Registries](#47e957fba4554541bca85acc1ee69832-registries) 💠 [🗄️ Repositories](#47e957fba4554541bca85acc1ee69832-repositories) 💠 [📚 Resources](#47e957fba4554541bca85acc1ee69832-resources) 💠 [👥 Socials](#47e957fba4554541bca85acc1ee69832-socials) 💠 [🦜 Translation Platforms](#47e957fba4554541bca85acc1ee69832-translation-platforms)
 
 </b></div>
 
@@ -12,14 +12,20 @@
 - Chinese (Traditional) (漢語（正體）)
 - English
 
-<!-- 
 <h2 id="47e957fba4554541bca85acc1ee69832-programming-languages">🧑‍💻 Programming Languages</h2>
 
 <div align="center">
 
+![CSS 3](./asset/icon/brand/css-3.svg "CSS 3")
+![Deno](./asset/icon/brand/deno.svg "Deno")
+![HTML 5](./asset/icon/brand/html-5.svg "HTML 5")
+![JavaScript](./asset/icon/brand/javascript.svg "JavaScript")
+![NodeJS](./asset/icon/brand/nodejs.svg "NodeJS")
+![Python](./asset/icon/brand/python.svg "Python")
+![TypeScript](./asset/icon/brand/typescript.svg "TypeScript")
+
 </div>
 
- -->
 <h2 id="47e957fba4554541bca85acc1ee69832-registries">📦 Registries</h2>
 
 <div align="center">

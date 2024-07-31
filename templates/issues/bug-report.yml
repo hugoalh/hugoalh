@@ -10,11 +10,11 @@ body:
     attributes:
       label: "Describe"
       description: |-
-        What the bug is? Add images and/or videos to help for explain this bug if needed.
+        What the bug is? If needed, attach images or videos to help for explain this bug.
 
         > [!NOTE]
-        > - Should not blur anything in the images and/or videos, except personal secrets.
-        > - For external images and/or videos, please ensure we are able to view those.
+        > - For external images or videos, please ensure we are able to view those.
+        > - Should not blur or crop anything in the images or videos, except personal informations and personal secrets.
       placeholder: |-
         It cannot XXXXXXXX.
     validations:
@@ -24,11 +24,11 @@ body:
     attributes:
       label: "To Reproduce"
       description: |-
-        Is this bug reproducible? If reproducible, please show the required steps by list, images, and/or videos!
+        Is this bug reproducible? If reproducible, please show the required steps by list, images, or videos!
 
         > [!NOTE]
-        > - Should not blur anything in the images and/or videos, except personal secrets.
-        > - For external images and/or videos, please ensure we are able to view those.
+        > - For external images or videos, please ensure we are able to view those.
+        > - Should not blur or crop anything in the images or videos, except personal informations and personal secrets.
       placeholder: |-
         1. Go to XXXXXXXX.
         2. Click on XXXXXXXX.
@@ -37,13 +37,23 @@ body:
     validations:
       required: false
   - type: "textarea"
-    id: "expected-behaviour"
+    id: "behaviour-expected"
     attributes:
-      label: "Expected Behaviour"
+      label: "Behaviour Expected"
       description: |-
         What things should expected to happen?
       placeholder: |-
         It should XXXXXXXX.
+    validations:
+      required: false
+  - type: "textarea"
+    id: "behaviour-actual"
+    attributes:
+      label: "Behaviour Actual"
+      description: |-
+        What things happened instead of the expected?
+      placeholder: |-
+        It XXXXXXXX.
     validations:
       required: false
   - type: "textarea"
@@ -60,35 +70,40 @@ body:
         1.2.3
     validations:
       required: false
+  - type: "dropdown"
+    id: "frequency"
+    attributes:
+      label: "Frequency"
+      description: |-
+        How often does this bug occur?
+      options:
+        - "Always"
+        - "Often"
+        - "Sometimes"
+        - "Rarely"
+    validations:
+      required: false
   - type: "textarea"
     id: "execution-environment"
     attributes:
       label: "Execution Environment"
       description: |-
-        How is the execution environment?
+        How is the execution environment? Different browsers, operate systems, screen sizes, or zoom levels may have differently.
 
-        - **Type:** Device type.
-          > Computer / Phone / Server / ...
-        - **Hardware:** Hardware specifications.
-        - **Platforms:** Operate system and softwares, with architecture and version.
-          > Windows 11 22H2 X64 / Android 14 ARM64 / Alpine 3.18.0 X64 / NodeJS 20.6.0 X64 / Deno 1.36.0 X64 / Git 2.42.0 X64 / Python 3.11.0 X64 / ...
-        - **IsSubSystem:** Whether the execution environment in the sub system?
-          > False / True
-        - **Variables:** Environment variables.
-          > NO_COLOR=1 / ...
+        These are common properties:
+        
+        | **Property** | **Description** | **Example** |
+        |:--|:--|:--|
+        | Type | Device type. | Computer / Phone / Server / ... |
+        | Hardware | Hardware specifications. |  |
+        | Platforms | Operate system and softwares, with architecture and version. | Windows 11 23H2 X64 / NodeJS 20.6.0 X64 / Deno 1.36.0 X64 / ... |
+        | Is Sub System | Whether the execution environment in the sub system? | False / True |
+        | Environment Variables | Environment variables. | NO_COLOR=1 / ... |
 
         > [!NOTE]
         > - Accept multiple execution environments.
         > - All of the properties are optional.
         > - It is recommended to provide this information for reproducible steps.
-
-        **\[🖌️ YAML\]**
-      placeholder: |-
-        - Type: Server
-          Platforms:
-            - Ubuntu 23.04 X64
-            - NodeJS 20.6.0 X64
-          IsSubSystem: false
       render: "yml"
     validations:
       required: false

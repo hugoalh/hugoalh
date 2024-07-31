@@ -1,5 +1,5 @@
-import { lessOrEqual as isSemVerLessOrEqual } from "jsr:@std/semver@1.0.0-rc.1/less-or-equal";
-import { parse as parseSemVer } from "jsr:@std/semver@1.0.0-rc.1/parse";
+import { lessOrEqual as isSemVerLessOrEqual } from "jsr:@std/semver@1.0.0-rc.3/less-or-equal";
+import { parse as parseSemVer } from "jsr:@std/semver@1.0.0-rc.3/parse";
 import { writeError, writeWarn } from "https://raw.githubusercontent.com/hugoalh-studio/github-actions-core-es/v0.2.1/log.ts";
 import { setOutputs } from "https://raw.githubusercontent.com/hugoalh-studio/github-actions-core-es/v0.2.1/parameter.ts";
 const packageManifest = JSON.parse(await Deno.readTextFile("package.json"));

@@ -21,6 +21,7 @@
 ![HTML 5](./assets/icons/brand/html-5.svg "HTML 5")
 ![JavaScript](./assets/icons/brand/javascript.svg "JavaScript")
 ![NodeJS](./assets/icons/brand/nodejs.svg "NodeJS")
+![PowerShell](./assets/icons/brand/powershell.svg "PowerShell")
 ![Python](./assets/icons/brand/python.svg "Python")
 ![TypeScript](./assets/icons/brand/typescript.svg "TypeScript")
 

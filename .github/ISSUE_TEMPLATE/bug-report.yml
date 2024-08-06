@@ -15,7 +15,7 @@ body:
         > [!NOTE]
         > - Also accept common versions range syntax.
         > - For multiple values, separate each value with `, ` (comma-space).
-        > - Versions must be listed as supported in the Security Policy (file `SECURITY.md`).
+        > - These versions must be currently supported (stated in the Security Policy file `SECURITY.md`).
       placeholder: "1.2.3"
     validations:
       required: true
@@ -76,19 +76,15 @@ body:
       label: "Frequency"
       description: |-
         How often does this bug occur?
-
-        - **`100%`:** Always
-        - **`75%`:** Frequently
-        - **`50%`:** Half
-        - **`25%`:** Sometimes
-        - **`5%`:** Rarely
       options:
-        - "100%"
-        - "75%"
-        - "50%"
-        - "25%"
-        - "5%"
+        - "Unknown / Untested"
+        - "Always (~100%)"
+        - "Frequently (~75%)"
+        - "Half (~50%)"
+        - "Sometimes (~25%)"
+        - "Rarely (~5%)"
       multiple: false
+      default: 0
     validations:
       required: false
   - type: "textarea"
@@ -98,19 +94,24 @@ body:
       description: |-
         How is the execution environment? Different browsers, operate systems, screen sizes, or zoom levels may have differently.
 
-        These are common properties:
+        These are common categories:
 
-        | **Property** | **Description** | **Example** |
+        | **Name** | **Description** | **Example** |
         |:--|:--|:--|
         | Type | Device type. | Computer / Phone / Server / ... |
-        | Hardware | Hardware specifications. |  |
-        | Platforms | Operate system and softwares, with architecture and version. | Windows 11 23H2 X64 / NodeJS 20.6.0 X64 / Deno 1.36.0 X64 / ... |
-        | Is Sub System | Whether the execution environment in the sub system? | False / True |
+        | CPU |  | Intel i7-6700 / ... |
+        | RAM | Memory size with type. | 8 GB / ... |
+        | Storage | Storage size with type. | 500 GB SSD / ... |
+        | Network | Network type. | Ethernet / Wireless / ... |
+        | GPU |  | NVIDIA GeForce RTX 4090 / ... |
+        | Operate System | Operate system with architecture and version. | Windows 11 Professional 23H2 X64 / ... |
+        | Softwares | Softwares with architecture and version. | NodeJS 20.6.0 X64 / Deno 1.36.0 X64 / ... |
+        | In Virtual | Whether is in the virtual environment? | False / True |
         | Environment Variables | Environment variables. | NO_COLOR=1 / ... |
 
         > [!NOTE]
-        > - Accept multiple execution environments.
-        > - All of the properties are optional.
+        > - Accept multiple execution environments. For multiple execution environments, separate each execution environment per array element.
+        > - All of the categories are optional.
         > - It is recommended to provide this information for reproducible steps.
         
         **\[🖌️ YAML\]**

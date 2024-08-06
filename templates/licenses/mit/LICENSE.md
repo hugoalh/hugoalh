@@ -1,7 +1,3 @@
-**🌐** [English](./LICENSE.md) / [漢語](./LICENSE-ZH.md)
-
----
-
 # MIT License
 
 Copyright © 2024 hxhS (hugoalh & hugoalh Studio)

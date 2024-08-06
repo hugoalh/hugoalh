@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=https://hugoalh.github.io/schema/json/github-labels.json
+# yaml-language-server: $schema=https://hugoalh.github.io/schema/json/sdvcfs-labels.json
 - name: "Platform/Android"
   color: "#3DDC84"
   description: "Related to Android."
@@ -160,18 +160,23 @@
 - name: "Priority/Critical 🚨"
   color: "#D50000"
   description: "Critical priority."
+  exclusive: true
 - name: "Priority/High 🔴"
   color: "#F44336"
   description: "High priority."
+  exclusive: true
 - name: "Priority/Low 🟢"
   color: "#4CAF50"
   description: "Low priority."
+  exclusive: true
 - name: "Priority/Medium 🟡"
   color: "#FFEB3B"
   description: "Medium priority."
+  exclusive: true
 - name: "Status/Duplicated 🔁"
   color: "#CFD3D7" # GitHub Default Label Color
   description: "This already exists."
+  exclusive: true
   aliases:
     - "duplicate" # GitHub Default Label
 - name: "Status/HelpWanted ⛑️"
@@ -182,6 +187,7 @@
 - name: "Status/Invalid ⚠️"
   color: "#E4E669" # GitHub Default Label Color
   description: "This does not seem right."
+  exclusive: true
   aliases:
     - "invalid" # GitHub Default Label
 - name: "Status/Investigating 🔍"
@@ -193,6 +199,7 @@
 - name: "Status/Pending 🔵"
   color: "#2196F3"
   description: "This is new."
+  exclusive: true
 - name: "Status/Question ❓"
   color: "#D876E3" # GitHub Default Label Color
   description: "This needs further information."
@@ -201,9 +208,11 @@
 - name: "Status/Rejected ❌"
   color: "#B71C1C"
   description: "This is rejected."
+  exclusive: true
 - name: "Status/Transfer ↗️"
   color: "#607D8B"
   description: "This is transferred to a more relevant place."
+  exclusive: true
 - name: "Status/WillNotFix 🙅"
   color: "#FFFFFF" # GitHub Default Label Color
   description: "This will not be worked on."
@@ -212,21 +221,26 @@
 - name: "Type/Bug 🐛"
   color: "#D73A4A" # GitHub Default Label Color
   description: "Something is not working as expected or intended."
+  exclusive: true
   aliases:
     - "bug" # GitHub Default Label
 - name: "Type/Chore ⚙️"
   color: "#C0C0C0"
   description: "Miscellaneous task."
+  exclusive: true
 - name: "Type/Dependency 📦"
   color: "#6D4C41"
   description: "Related to dependency."
+  exclusive: true
 - name: "Type/Documentation 📓"
   color: "#0075CA" # GitHub Default Label Color
   description: "Additions or improvements to the documentation."
+  exclusive: true
   aliases:
     - "documentation" # GitHub Default Label
 - name: "Type/Enhancement 💡"
   color: "#A2EEEF" # GitHub Default Label Color
   description: "New feature or request."
+  exclusive: true
   aliases:
     - "enhancement" # GitHub Default Label

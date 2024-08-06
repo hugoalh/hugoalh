@@ -91,7 +91,7 @@ You can request a new feature by [create an issue](#create-an-issue).
 - If the pull request is not ready but want to save/stage it, mark it as draft and no need to add any identifications to the title (e.g.: `[WIP] XXXXXXXX`).
 
 > [!NOTE]
-> - The pull request does not need to pass any automatic review, automatic reviews are the references for the code reviewers.
+> - The pull request does not need to pass any automatic reviews, automatic reviews are the references for the code reviewers.
 > - For the general process time, please visit the "[hxhS (hugoalh & hugoalh Studio) Universal General Process Time - Pull Request](https://github.com/hugoalh/hugoalh/blob/main/guides/hxhs-universal-general-process-time.md#pull-request)".
 
 ### Create A Security Vulnerability Report
@@ -99,7 +99,7 @@ You can request a new feature by [create an issue](#create-an-issue).
 *Please visit the "[GitHub Docs - Privately reporting a security vulnerability](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability)" for the steps to create a security vulnerability report.*
 
 > [!CAUTION]
-> Never report security vulnerabilities publicly, any public security vulnerability report will be rejected and deleted without notice.
+> Never report security vulnerabilities publicly, any public security vulnerability reports will be rejected and deleted without notice.
 
 > [!NOTE]
 > - If that project have not enabled the Security Advisories system (mostly cause by misconfiguration), please [create an issue](#create-an-issue) to request enable it.

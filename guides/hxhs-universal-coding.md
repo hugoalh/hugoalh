@@ -10,7 +10,7 @@ All of the examples in this document are in TypeScript syntax, similar style sho
 ## Indent with tab whenever possible
 
 > [!IMPORTANT]
-> All of the markups and programming languages must follow this indentation rule, any invalid indentation are not acceptable!
+> All of the markups and programming languages must follow this indentation rule, any invalid indentations are not acceptable!
 
 Always use tab for indentation on most of the markups and programming languages, including but not limited to:
 

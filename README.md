@@ -44,8 +44,10 @@
 
 <div align="center">
 
+[![Codeberg: @hugoalh](./assets/badges/repositories/codeberg.svg "Codeberg: @hugoalh")](https://codeberg.org/hugoalh?tab=repositories)
 [![GitHub: @hugoalh](./assets/badges/repositories/github.svg "GitHub: @hugoalh")](https://github.com/hugoalh?tab=repositories)
 [![GitHub: @hugoalh-studio](./assets/badges/repositories/github-studio.svg "GitHub: @hugoalh-studio")](https://github.com/orgs/hugoalh-studio/repositories)
+[![KaKi87 Git: @hugoalh](./assets/badges/repositories/kaki87-git.svg "KaKi87 Git: @hugoalh")](https://git.kaki87.net/hugoalh?tab=repositories)
 
 </div>
 
@@ -86,6 +88,7 @@
 
 <div align="center">
 
+[![Codeberg Translate: @hugoalh](./assets/badges/translation-platforms/codeberg-translate.svg "Codeberg Translate: @hugoalh")](https://translate.codeberg.org/user/hugoalh)
 [![Crowdin: @hugoalh](./assets/badges/translation-platforms/crowdin.svg "Crowdin: @hugoalh")](https://crowdin.com/profile/hugoalh)
 [![Transifex: @hugoalh](./assets/badges/translation-platforms/transifex.svg "Transifex: @hugoalh")](https://app.transifex.com/user/profile/hugoalh)
 [![Weblate: @hugoalh](./assets/badges/translation-platforms/weblate.svg "Weblate: @hugoalh")](https://hosted.weblate.org/user/hugoalh)

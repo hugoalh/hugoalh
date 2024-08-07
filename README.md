@@ -1,6 +1,6 @@
 <div align="center"><b>
 
-[💬 Languages](#f13b05c6e608-languages) 💠 [🧑‍💻 Programming Languages](#f13b05c6e608-programming-languages) 💠 [📦 Registries](#f13b05c6e608-registries) 💠 [🗄️ Repositories](#f13b05c6e608-repositories) 💠 [📚 Resources](#f13b05c6e608-resources) 💠 [👥 Socials](#f13b05c6e608-socials) 💠 [🦜 Translation Platforms](#f13b05c6e608-translation-platforms)
+[💬 Languages](#f13b05c6e608-languages) 💠 [🧑‍💻 Programming Languages](#f13b05c6e608-programming-languages) 💠 [📦 Registries](#f13b05c6e608-registries) 💠 [🗄️ Repositories](#f13b05c6e608-repositories) 💠 [📚 Resources](#f13b05c6e608-resources) 💠 [👥 Socials](#f13b05c6e608-socials) 💠 [🦜 Translation Platforms](#f13b05c6e608-translation-platforms) 💠 [🔐 SSH](#f13b05c6e608-ssh) 💠 [🔐 GPG](#f13b05c6e608-gpg)
 
 </b></div>
 
@@ -94,3 +94,16 @@
 [![Weblate: @hugoalh](./assets/badges/translation-platforms/weblate.svg "Weblate: @hugoalh")](https://hosted.weblate.org/user/hugoalh)
 
 </div>
+
+<h2 id="f13b05c6e608-ssh">🔐 SSH</h2>
+
+| **Version** | **Date** | **Fingerprint** |
+|:-:|:-:|:-:|
+| 2 | 2024-08-07 | `SHA256:KVHU6tGp2Tyb6ZrYxjA6CTwXyAtgT7NJME1r0c8m7vY` |
+| 1 | 2023-01-08 | `SHA256:oaESISMGDcP2iYUd0EFAb28F+YJJVTBWmzChfUdIRJA` |
+
+<h2 id="f13b05c6e608-gpg">🔐 GPG</h2>
+
+| **Version** | **Date** | **ID** |
+|:-:|:-:|:-:|
+| *N/A* | *N/A* | *N/A* |

@@ -92,22 +92,20 @@ body:
     attributes:
       label: "Execution Environment"
       description: |-
-        How is the execution environment? Different browsers, operate systems, screen sizes, or zoom levels may have differently.
-
-        These are common categories:
+        How is the execution environment? Different execution environment may have differently. These are common categories:
 
         | **Name** | **Description** | **Example** |
         |:--|:--|:--|
         | Type | Device type. | Computer / Phone / Server / ... |
-        | CPU |  | Intel i7-6700 / ... |
-        | RAM | Memory size with type. | 8 GB / ... |
-        | Storage | Storage size with type. | 500 GB SSD / ... |
+        | CPU | Central processing unit. | Intel i7-6700 / ... |
+        | RAM | Random access memory. | 8 GB / ... |
+        | Storage | Storage unit. | 500 GB SSD / ... |
         | Network | Network type. | Ethernet / Wireless / ... |
-        | GPU |  | NVIDIA GeForce RTX 4090 / ... |
-        | Operate System | Operate system with architecture and version. | Windows 11 Professional 23H2 X64 / ... |
-        | Softwares | Softwares with architecture and version. | NodeJS 20.6.0 X64 / Deno 1.36.0 X64 / ... |
-        | In Virtual | Whether is in the virtual environment? | False / True |
-        | Environment Variables | Environment variables. | NO_COLOR=1 / ... |
+        | GPU | Graphics processing unit. | NVIDIA GeForce RTX 4090 / ... |
+        | OS | Operate system. | Windows 11 Professional 23H2 X64 / ... |
+        | Softwares |  | NodeJS 20.6.0 X64 / Deno 1.36.0 X64 / ... |
+        | In Virtual | Whether is in the virtual environment or operate system? | False / True |
+        | ENV | Environment variables. | NO_COLOR=1 / ... |
 
         > [!NOTE]
         > - Accept multiple execution environments. For multiple execution environments, separate each execution environment per array element.

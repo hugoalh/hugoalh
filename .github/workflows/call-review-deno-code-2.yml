@@ -35,7 +35,7 @@ jobs:
       - name: "Checkout Repository"
         uses: "actions/checkout@v4.1.7"
       - name: "Setup Deno"
-        uses: "denoland/setup-deno@1.3.0"
+        uses: "denoland/setup-deno@1.4.0"
         with:
           deno-version: "^1.43.3"
       - name: "Get Deno Cache Path"

@@ -9,7 +9,7 @@
 <h2 id="f13b05c6e608-languages">💬 Languages</h2>
 
 - Cantonese (粵語 / 廣東話)
-- Chinese (Traditional) (漢語（正體）)
+- Chinese (Traditional) (華語（正體）)
 - English
 
 <h2 id="f13b05c6e608-programming-languages">🧑‍💻 Programming Languages</h2>

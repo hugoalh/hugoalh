@@ -24,7 +24,7 @@ Be aware that the spelling differences between the language variants are not cou
 |:-:|:-:|:--|
 | اَلْعَرَبِيَّةُ | Arabic | United Arab Emirates |
 | বাংলা | Bangla | Bangladesh |
-| 漢語 | Chinese | Traditional / 正體 / 繁體 |
+| 華語 | Chinese | Traditional / 正體 / 繁體 |
 | Nederlands | Dutch | Standard Dutch / The Netherlands |
 | English | English | British / England / United Kingdom (UK) |
 | Français | French | France |

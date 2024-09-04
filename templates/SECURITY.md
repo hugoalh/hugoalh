@@ -21,4 +21,4 @@ To report via GitHub, visit the "[GitHub Docs - Privately reporting a security v
 
 > [!NOTE]
 > - If the project's GitHub repository have not enabled the Security Advisories system (mostly cause by misconfiguration), please create issue to request enable it.
-> - For the general process time, please visit the "[hxhS (hugoalh & hugoalh Studio) Universal General Process Time - Security Vulnerability Report](https://github.com/hugoalh/hugoalh/blob/main/guides/hxhs-universal-general-process-time.md#security-vulnerability-report)".
+> - For the general process time, please visit the "[hxhS (hugoalh & hugoalh Studio) Universal General Process Time](https://github.com/hugoalh/hugoalh/blob/main/guides/hxhs-universal-general-process-time.md)".

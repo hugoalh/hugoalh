@@ -6,11 +6,11 @@
 This document includes the universal general process time over all of the hxhS ([hugoalh][hugoalh] & [hugoalh Studio][hugoalh-studio]) projects.
 
 > [!NOTE]
-> Process times are longer during these events or holidays:
+> - Process times are longer during these events or holidays:
 >
-> |  | **Start** | **End** |
-> |:-:|:-:|:-:|
-> | *N/A* |  |  |
+>   |  | **Start** | **End** |
+>   |:-:|:-:|:-:|
+>   | *N/A* | *N/A* | *N/A* |
 
 ## Issue
 

@@ -2,34 +2,23 @@
 
 ## Supported Versions
 
-> ```mermaid
-> ---
-> title: Versions Status Flow
-> ---
-> flowchart LR
->   Unstable("Unstable")
->   Pre("Pre Release")
->   Release("Release")
->   LTS("Long Term Support")
->   Maintenance("Maintenance")
->   EOL("End Of Life")
->   Unstable --> Pre --> Release
->   subgraph Supported
->     Release -- Major = 0 --> Maintenance
->     Release -- Major > 0 --> LTS --> Maintenance
->   end
->   Maintenance --> EOL
-> ```
-
 | **Versions** | **Release Date** | **Long Term Support Date** | **End Of Life Date** |
 |:-:|:-:|:-:|:-:|
 
-> **ℹ️ Note**
->
+> [!NOTE]
 > - The date format is according to the specification ISO 8601.
 > - Values in italic format are subject to change.
-> - Versions which not in the list are also end of life.
+> - Versions which not in the list are already end of life.
 
 ## Report Vulnerabilities
 
-You can report security vulnerabilities by [create security vulnerability report](https://github.com/hugoalh/hugoalh/blob/main/guides/hxhs-universal-contributing.md#create-a-security-vulnerability-report).
+To report security vulnerabilities, please create security vulnerability report.
+
+To report via GitHub repository, visit the "[GitHub Docs - Privately reporting a security vulnerability](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability)" for the details.
+
+> [!CAUTION]
+> Never report security vulnerabilities publicly, any public security vulnerability report will be rejected and deleted without notice.
+
+> [!NOTE]
+> - If the project's GitHub repository have not enabled the Security Advisories system (mostly cause by misconfiguration), please [create an issue](#create-an-issue) to request enable it.
+> - For the general process time, please visit the "[hxhS (hugoalh & hugoalh Studio) Universal General Process Time - Security Vulnerability Report](https://github.com/hugoalh/hugoalh/blob/main/guides/hxhs-universal-general-process-time.md#security-vulnerability-report)".

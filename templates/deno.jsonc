@@ -8,8 +8,7 @@
 		"singleQuote": false,
 		"useTabs": true
 	},
-	"imports": {
-		// Only remap development dependencies! For more information, please visit https://docs.deno.com/runtime/manual/basics/import_maps.
+	"imports": {// Only remap development dependencies!
 	},
 	"lint": {
 		"rules": {
@@ -27,7 +26,8 @@
 				"no-sparse-arrays",
 				"no-sync-fn-in-async-fn",
 				"no-undef",
-				"triple-slash-reference"
+				"triple-slash-reference",
+				"verbatim-module-syntax"
 			]
 		}
 	},

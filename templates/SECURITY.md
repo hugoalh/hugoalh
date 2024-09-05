@@ -12,13 +12,4 @@
 
 ## Report Vulnerabilities
 
-To report security vulnerabilities, please create security vulnerability report.
-
-To report via GitHub, visit the "[GitHub Docs - Privately reporting a security vulnerability](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability)" for the details and steps.
-
-> [!CAUTION]
-> - Never report security vulnerabilities publicly, any public security vulnerability report will be rejected and deleted without notice.
-
-> [!NOTE]
-> - If the project's GitHub repository have not enabled the Security Advisories system (mostly cause by misconfiguration), please create issue to request enable it.
-> - For the general process time, please visit the "[hxhS (hugoalh & hugoalh Studio) Universal General Process Time](https://github.com/hugoalh/hugoalh/blob/main/guides/hxhs-universal-general-process-time.md)".
+To report security vulnerabilities, please [create security vulnerability report](https://github.com/hugoalh/hugoalh/blob/main/guides/hxhs-universal-contributing.md#create-security-vulnerability-report).

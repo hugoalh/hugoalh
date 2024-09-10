@@ -19,15 +19,55 @@ on:
           - "false"
           - "true"
 jobs:
-  main:
-    name: "Main"
+  ghp:
+    name: "GitHub Packages"
     permissions:
       contents: "read"
       packages: "write"
-    uses: "hugoalh/hugoalh/.github/workflows/call-publish-docker-image-0.yml@main"
-    with:
-      title: "Scan Virus (GitHub Action) Image"
-      description: "A Docker image for Scan Virus (GitHub Action) to scan virus in the GitHub Action workspace."
-      license: "MIT"
-      tag: "${{github.event.inputs.tag}}"
-      latest: "${{github.event.inputs.latest}}"
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "Checkout Repository"
+        uses: "actions/checkout@v4.1.7"
+      - name: "Setup Docker Buildx"
+        uses: "docker/setup-buildx-action@v3.6.1"
+      - name: "Sign In To GitHub Packages"
+        uses: "docker/login-action@v3.3.0"
+        with:
+          registry: "ghcr.io"
+          username: "${{github.actor}}"
+          password: "${{github.token}}"
+      - name: "Resolve Metadata"
+        id: "metadata"
+        uses: "docker/metadata-action@v5.5.1"
+        with:
+          images: |-
+            name=ghcr.io/${{github.repository}}
+          tags: |-
+            type=raw,enable=${{inputs.tag != ''}},value=${{inputs.tag}}
+            type=raw,enable=${{inputs.latest == 'true'}},value=latest
+            type=semver,enable=${{inputs.tag == ''}},pattern={{version}}
+            type=semver,enable=${{inputs.tag == ''}},pattern={{major}}.{{minor}}.{{patch}}
+            type=semver,enable=${{inputs.tag == ''}},pattern={{major}}.{{minor}}
+            type=semver,enable=${{inputs.tag == ''}},pattern={{major}}
+          labels: |-
+            org.opencontainers.image.authors=${{github.repository_owner}}
+            org.opencontainers.image.licenses=MIT
+            org.opencontainers.image.title=Scan Virus (GitHub Action) Image
+            org.opencontainers.image.description=A Docker image for Scan Virus (GitHub Action) to scan virus in the GitHub Action workspace.
+      - name: "Build & Publish Docker Image"
+        uses: "docker/build-push-action@v6.7.0"
+        with:
+          context: "${{inputs.context}}"
+          file: "${{inputs.dockerfile}}"
+          labels: "${{steps.metadata.outputs.labels}}"
+          platforms: "${{inputs.platforms}}"
+          pull: "true"
+          push: "true"
+          tags: "${{steps.metadata.outputs.tags}}"
+          cache-from: |-
+            type=gha
+          cache-to: |-
+            type=gha,mode=max
+      - name: "List Docker Image"
+        run: |-
+          docker image ls --all --digests --no-trunc

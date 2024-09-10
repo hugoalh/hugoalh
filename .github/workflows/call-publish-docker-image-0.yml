@@ -99,5 +99,5 @@ jobs:
           cache-to: |-
             type=gha,mode=max
       - name: "List Docker Image"
-        run: |
+        run: |-
           docker image ls --all --digests --no-trunc

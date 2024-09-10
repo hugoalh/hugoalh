@@ -31,7 +31,7 @@ jobs:
         uses: "actions/checkout@v4.1.7"
       - name: "Setup PowerShell Environment"
         shell: "pwsh"
-        run: |
+        run: |-
           $PSRepositoryPSGalleryMeta = Get-PSRepository -Name 'PSGallery'
           If ($PSRepositoryPSGalleryMeta.InstallationPolicy -ine 'Trusted') {
             Write-Host -Object 'Tweak PowerShell repository configuration.'
@@ -40,7 +40,7 @@ jobs:
       - name: "Analyze Repository"
         id: "analyze-repository"
         shell: "pwsh"
-        run: |
+        run: |-
           $ManifestsPath = Get-ChildItem -LiteralPath $Env:INPUT_CONTEXT -Filter '*.psd1' -File
           If ($ManifestsPath.Count -ne 1) {
             Write-Host -Object "::error::Invalid manifest count! Expect ``1``; Current ``$($ManifestsPath.Count)``."
@@ -58,11 +58,11 @@ jobs:
       - name: "Build Package"
         if: "${{inputs.builder != ''}}"
         shell: "pwsh"
-        run: |
+        run: |-
           . ".\$($Env:INPUT_BUILDER)"
       - name: "Publish Package To PowerShell Gallery"
         shell: "pwsh"
-        run: |
+        run: |-
           Publish-Module -Path $Env:INPUT_CONTEXT -NugetAPIKey $Env:INPUT_TOKEN -Force -Verbose
     outputs:
       package_ballname: "${{steps.analyze-repository.outputs.ballname}}"
@@ -76,7 +76,7 @@ jobs:
     steps:
       - name: "Wait For PowerShell Gallery Update"
         shell: "pwsh"
-        run: |
+        run: |-
           Start-Sleep -Seconds 120
   assets:
     name: "Assets"
@@ -94,6 +94,6 @@ jobs:
           INPUT_PACKAGEBALLNAME: "${{needs.publish.outputs.package_ballname}}"
           INPUT_RELEASETAG: "${{github.event.release.tag_name}}"
         shell: "pwsh"
-        run: |
+        run: |-
           Invoke-WebRequest -Uri "https://psg-prod-eastus.azureedge.net/packages/$($Env:INPUT_PACKAGEBALLNAME)" -MaximumRedirection 1 -MaximumRetryCount 5 -RetryIntervalSec 5 -Method 'GET' -OutFile $Env:INPUT_PACKAGEBALLNAME
           gh release upload $Env:INPUT_RELEASETAG $Env:INPUT_PACKAGEBALLNAME --clobber --repo $Env:GITHUB_REPOSITORY

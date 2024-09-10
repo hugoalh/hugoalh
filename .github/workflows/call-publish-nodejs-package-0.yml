@@ -32,7 +32,7 @@ jobs:
       - name: "Resolve Cache Path"
         id: "cache-path"
         shell: "pwsh"
-        run: |
+        run: |-
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
           [String]$NpmCachePath = npm config get cache |
             Join-String -Separator "`n"
@@ -54,7 +54,7 @@ jobs:
       - name: "Resolve Metadata"
         id: "metadata"
         shell: "pwsh"
-        run: |
+        run: |-
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
           [PSCustomObject]$Manifest = Get-Content -LiteralPath '.\package.json' -Raw -Encoding 'UTF8NoBOM' |
             ConvertFrom-Json -Depth 100
@@ -112,18 +112,18 @@ jobs:
           )
           Set-GitHubActionsOutput -Name 'tarballname' -Value "$($Name -ireplace '^@', '' -ireplace '\/', '-')-$($VersionManifest.ToString()).tgz"
       - name: "Install Dependencies"
-        run: |
+        run: |-
           npm install
       - name: "Build Package"
         if: "${{steps.metadata.outputs.dispatch_build == 'true'}}"
-        run: |
+        run: |-
           npm run build
       - name: "Publish Package To NPM With Tag `${{steps.metadata.outputs.tags_first}}` (Provenance)"
         id: "publish-npm-provenance"
         env:
           INPUT_TAGSFIRST: "${{steps.metadata.outputs.tags_first}}"
         shell: "pwsh"
-        run: |
+        run: |-
           npm publish --provenance --tag $Env:INPUT_TAGSFIRST
       - name: "Publish Package To NPM With Tag `${{steps.metadata.outputs.tags_first}}`"
         if: "${{!cancelled() && steps.publish-npm-provenance.outcome == 'failure'}}"
@@ -131,7 +131,7 @@ jobs:
         env:
           INPUT_TAGSFIRST: "${{steps.metadata.outputs.tags_first}}"
         shell: "pwsh"
-        run: |
+        run: |-
           npm publish --tag $Env:INPUT_TAGSFIRST
       - name: "Publish Package To NPM With Rest Tags"
         if: "${{!cancelled() && (steps.publish-npm-provenance.outcome == 'success' || steps.publish-npm-raw.outcome == 'success') && steps.metadata.outputs.tags_rest != ''}}"
@@ -139,7 +139,7 @@ jobs:
           INPUT_DESCRIPTOR: "${{steps.metadata.outputs.descriptor}}"
           INPUT_TAGSREST: "${{steps.metadata.outputs.tags_rest}}"
         shell: "pwsh"
-        run: |
+        run: |-
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
           [String]$Descriptor = $Env:INPUT_DESCRIPTOR
           [String[]]$TagsRest = $Env:INPUT_TAGSREST -isplit ','
@@ -157,7 +157,7 @@ jobs:
           GH_TOKEN: "${{secrets.GITHUB_TOKEN}}"
           INPUT_TARBALLNAME: "${{steps.metadata.outputs.tarballname}}"
         shell: "pwsh"
-        run: |
+        run: |-
           npm pack
           gh release upload $Env:INPUT_RELEASETAG $Env:INPUT_TARBALLNAME --clobber --repo $Env:GITHUB_REPOSITORY
       - name: "Save NPM Cache"

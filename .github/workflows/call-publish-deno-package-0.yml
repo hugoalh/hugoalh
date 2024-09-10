@@ -25,7 +25,6 @@ jobs:
       id-token: "write"
     runs-on: "ubuntu-latest"
     env:
-      DENO_FUTURE: "1"
       INPUT_RELEASETAG: "${{github.event.release.tag_name}}"
     steps:
       - name: "Checkout Repository"
@@ -36,7 +35,7 @@ jobs:
           deno-version: "^1.43.3"
       - name: "Get Deno Cache Path"
         shell: "pwsh"
-        run: |
+        run: |-
           [PSCustomObject]$DenoInfo = deno info --json |
             Join-String -Separator "`n" |
             ConvertFrom-Json -Depth 100
@@ -58,7 +57,7 @@ jobs:
       - name: "Analyze Repository"
         id: "repository-analyze"
         shell: "pwsh"
-        run: |
+        run: |-
           [String]$ScriptURL = 'https://raw.githubusercontent.com/hugoalh/hugoalh/main/.github/workflows/toolbox/publish-deno-package-0/analyze-repository.ts'
           deno cache "--reload=$ScriptURL" $ScriptURL
           deno run --allow-env --allow-read --allow-write --no-prompt --quiet $ScriptURL
@@ -67,7 +66,7 @@ jobs:
         env:
           INPUT_FILES: "${{steps.repository-analyze.outputs.files}}"
         shell: "pwsh"
-        run: |
+        run: |-
           ForEach ($File In (
             $Env:INPUT_FILES |
               ConvertFrom-Json -Depth 100
@@ -77,11 +76,11 @@ jobs:
       - name: "Publish JSR Package (Provenance)"
         id: "jsr-publish-provenance"
         if: "${{!cancelled() && steps.verify-code.outcome == 'success' && inputs.deployment_jsr}}"
-        run: |
+        run: |-
           deno publish --allow-dirty --config jsr.jsonc
       - name: "Publish JSR Package"
         if: "${{!cancelled() && steps.jsr-publish-provenance.outcome == 'failure'}}"
-        run: |
+        run: |-
           deno publish --allow-dirty --config jsr.jsonc --no-provenance
       - name: "Setup NodeJS"
         id: "npm-setup-nodejs"
@@ -95,7 +94,7 @@ jobs:
         id: "npm-cache-path"
         if: "${{!cancelled() && steps.npm-setup-nodejs.outcome == 'success'}}"
         shell: "pwsh"
-        run: |
+        run: |-
           [String]$NpmCachePath = npm config get cache |
             Join-String -Separator "`n"
           Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "result=$($NpmCachePath.Trim())" -Confirm:$False -Encoding 'UTF8NoBOM'
@@ -119,7 +118,7 @@ jobs:
         if: "${{!cancelled() && steps.npm-cache-restore.outcome == 'success'}}"
         env:
           NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
-        run: |
+        run: |-
           deno run --allow-all --deny-hrtime --no-prompt --quiet .dnt.ts
       - name: "Analyze NPM Package Metadata"
         id: "npm-analyze"
@@ -128,7 +127,7 @@ jobs:
           NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
         shell: "pwsh"
         working-directory: "${{github.workspace}}/npm"
-        run: |
+        run: |-
           [String]$ScriptURL = 'https://raw.githubusercontent.com/hugoalh/hugoalh/main/.github/workflows/toolbox/publish-deno-package-0/analyze-npm-package-metadata.ts'
           deno cache "--reload=$ScriptURL" $ScriptURL
           deno run --allow-env --allow-read --allow-run --allow-write --no-prompt --quiet $ScriptURL
@@ -140,7 +139,7 @@ jobs:
           NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
         shell: "pwsh"
         working-directory: "${{github.workspace}}/npm"
-        run: |
+        run: |-
           npm publish --provenance --tag $Env:INPUT_TAGS_MAIN
       - name: "Publish NPM Package To NPM With Main Tag `${{steps.npm-analyze.outputs.tags_main}}`"
         id: "npm-publish-raw"
@@ -150,7 +149,7 @@ jobs:
           NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
         shell: "pwsh"
         working-directory: "${{github.workspace}}/npm"
-        run: |
+        run: |-
           npm publish --tag $Env:INPUT_TAGS_MAIN
       - name: "Publish NPM Package To NPM With Rest Tags"
         if: "${{!cancelled() && (steps.npm-publish-provenance.outcome == 'success' || steps.npm-publish-raw.outcome == 'success') && steps.npm-analyze.outputs.tags_rest != ''}}"
@@ -160,7 +159,7 @@ jobs:
           NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
         shell: "pwsh"
         working-directory: "${{github.workspace}}/npm"
-        run: |
+        run: |-
           [String]$Descriptor = $Env:INPUT_DESCRIPTOR
           [String[]]$TagsRest = $Env:INPUT_TAGS_REST -isplit ','
           ForEach ($TagRest In $TagsRest) {
@@ -173,7 +172,7 @@ jobs:
           INPUT_TARBALLNAME: "${{steps.npm-analyze.outputs.tarballname}}"
         shell: "pwsh"
         working-directory: "${{github.workspace}}/npm"
-        run: |
+        run: |-
           npm pack
           gh release upload $Env:INPUT_RELEASETAG $Env:INPUT_TARBALLNAME --clobber --repo $Env:GITHUB_REPOSITORY
       - name: "Save NPM Cache"

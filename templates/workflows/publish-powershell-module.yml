@@ -12,9 +12,9 @@ jobs:
       contents: "write"
     runs-on: "windows-latest"
     env:
-      INPUT_BUILDER: ""
-      INPUT_CONTEXT: ".\\"
-      INPUT_TOKEN: "${{secrets.POWERSHELLGALLERY_TOKEN}}"
+      CDV_BUILDER: ""
+      CDV_POWERSHELLGALLERY_TOKEN: "${{secrets.POWERSHELLGALLERY_TOKEN}}"
+      CDV_ROOT: ".\\"
     steps:
       - name: "Checkout Repository"
         uses: "actions/checkout@v4.1.7"
@@ -30,10 +30,9 @@ jobs:
         id: "metadata"
         shell: "pwsh"
         run: |-
-          $ManifestsPath = Get-ChildItem -LiteralPath $Env:INPUT_CONTEXT -Filter '*.psd1' -File
+          $ManifestsPath = Get-ChildItem -LiteralPath $Env:CDV_ROOT -Filter '*.psd1' -File
           If ($ManifestsPath.Count -ne 1) {
-            Write-Host -Object "::error::Missing PowerShell module manifest file!"
-            Exit 1
+            Write-Error -Message 'Missing PowerShell module manifest file!' -ErrorAction 'Stop'
           }
           [String]$ManifestPath = $ManifestsPath.FullName
           $ManifestFromTest = Test-ModuleManifest -Path $ManifestPath -Verbose
@@ -45,14 +44,14 @@ jobs:
           }
           Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "ballname=$($Name.ToLower()).$($Version).nupkg" -Confirm:$False -Encoding 'UTF8NoBOM'
       - name: "Build Package"
-        if: "${{inputs.builder != ''}}"
+        if: "${{env.CDV_BUILDER != ''}}"
         shell: "pwsh"
         run: |-
-          . ".\$($Env:INPUT_BUILDER)"
+          . ".\$($Env:CDV_BUILDER)"
       - name: "Publish Package To PowerShell Gallery"
         shell: "pwsh"
         run: |-
-          Publish-Module -Path $Env:INPUT_CONTEXT -NugetAPIKey $Env:INPUT_TOKEN -Force -Verbose
+          Publish-Module -Path $Env:CDV_ROOT -NugetAPIKey $Env:CDV_POWERSHELLGALLERY_TOKEN -Force -Verbose
     outputs:
       package-ballname: "${{steps.metadata.outputs.ballname}}"
   release-assets:
@@ -63,16 +62,16 @@ jobs:
     permissions:
       contents: "write"
     runs-on: "ubuntu-latest"
+    env:
+      GH_TOKEN: "${{secrets.GITHUB_TOKEN}}"
     steps:
-      - name: "Wait For PowerShell Gallery Data Update"
+      - name: "Wait For PowerShell Gallery Registry Data Update"
         shell: "pwsh"
         run: |-
           Start-Sleep -Seconds 300
       - name: "Upload Package `${{needs.psg.outputs.package-ballname}}` To GitHub Release Tag `${{github.event.release.tag_name}}`"
-        env:
-          GH_TOKEN: "${{secrets.GITHUB_TOKEN}}"
         shell: "pwsh"
         run: |-
           [String]$BallName = '${{needs.psg.outputs.package-ballname}}'
-          Invoke-WebRequest -Uri "https://psg-prod-eastus.azureedge.net/packages/$($BallName)" -MaximumRedirection 1 -MaximumRetryCount 5 -RetryIntervalSec 5 -Method 'GET' -OutFile $BallName
+          Invoke-WebRequest -Uri "https://psg-prod-eastus.azureedge.net/packages/$($BallName)" -MaximumRetryCount 5 -RetryIntervalSec 5 -Method 'GET' -OutFile $BallName
           gh release upload '${{github.event.release.tag_name}}' $BallName --clobber --repo $Env:GITHUB_REPOSITORY

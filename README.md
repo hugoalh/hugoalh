@@ -1,6 +1,6 @@
 <div align="center"><b>
 
-[💬 Languages](#f13b05c6e608-languages) 💠 [🧑‍💻 Programming Languages](#f13b05c6e608-programming-languages) 💠 [📦 Registries](#f13b05c6e608-registries) 💠 [🗄️ Repositories](#f13b05c6e608-repositories) 💠 [📚 Resources](#f13b05c6e608-resources) 💠 [👥 Socials](#f13b05c6e608-socials) 💠 [🦜 Translation Platforms](#f13b05c6e608-translation-platforms)
+[💬 Languages](#f13b05c6e608-languages) 💠 [📦 Registries](#f13b05c6e608-registries) 💠 [🗄️ Repositories](#f13b05c6e608-repositories) 💠 [📚 Resources](#f13b05c6e608-resources) 💠 [👥 Socials](#f13b05c6e608-socials) 💠 [🦜 Translation Platforms](#f13b05c6e608-translation-platforms)
 
 </b></div>
 
@@ -8,13 +8,11 @@
 
 <h2 id="f13b05c6e608-languages">💬 Languages</h2>
 
+<div align="center">
+
 - Cantonese (粵語 / 廣東話)
 - Chinese (Traditional) (華語（正體）)
 - English
-
-<h2 id="f13b05c6e608-programming-languages">🧑‍💻 Programming Languages</h2>
-
-<div align="center">
 
 ![CSS 3](./assets/icons/brand/css-3.svg "CSS 3")
 ![Deno](./assets/icons/brand/deno.svg "Deno")

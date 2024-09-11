@@ -37,7 +37,6 @@ jobs:
         shell: "pwsh"
         run: |-
           [PSCustomObject]$DenoInfo = deno info --json |
-            Join-String -Separator "`n" |
             ConvertFrom-Json -Depth 100
           Add-Content -LiteralPath $Env:GITHUB_ENV -Value "DENO_DIR=$($DenoInfo.denoDir.Trim())" -Confirm:$False -Encoding 'UTF8NoBOM'
       - name: "Restore Deno Cache"

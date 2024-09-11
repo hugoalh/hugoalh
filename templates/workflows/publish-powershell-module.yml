@@ -26,13 +26,13 @@ jobs:
             Write-Host -Object 'Tweak PowerShell repository configuration.'
             Set-PSRepository -Name 'PSGallery' -InstallationPolicy 'Trusted' -Verbose
           }
-      - name: "Analyze Repository"
-        id: "analyze-repository"
+      - name: "Resolve Metadata"
+        id: "metadata"
         shell: "pwsh"
         run: |-
           $ManifestsPath = Get-ChildItem -LiteralPath $Env:INPUT_CONTEXT -Filter '*.psd1' -File
           If ($ManifestsPath.Count -ne 1) {
-            Write-Host -Object "::error::Invalid manifest count! Expect ``1``; Current ``$($ManifestsPath.Count)``."
+            Write-Host -Object "::error::Missing PowerShell module manifest file!"
             Exit 1
           }
           [String]$ManifestPath = $ManifestsPath.FullName
@@ -54,35 +54,25 @@ jobs:
         run: |-
           Publish-Module -Path $Env:INPUT_CONTEXT -NugetAPIKey $Env:INPUT_TOKEN -Force -Verbose
     outputs:
-      package_ballname: "${{steps.analyze-repository.outputs.ballname}}"
-  await:
-    name: "Await"
+      package-ballname: "${{steps.metadata.outputs.ballname}}"
+  release-assets:
+    name: "Release Assets"
     needs:
-      - "publish"
-    if: "${{needs.publish.result == 'success'}}"
-    permissions: {}
-    runs-on: "ubuntu-latest"
-    steps:
-      - name: "Wait For PowerShell Gallery Update"
-        shell: "pwsh"
-        run: |-
-          Start-Sleep -Seconds 120
-  assets:
-    name: "Assets"
-    needs:
-      - "await"
-      - "publish"
-    if: "${{needs.await.result == 'success'}}"
+      - "psg"
+    if: "${{needs.psg.result == 'success'}}"
     permissions:
       contents: "write"
     runs-on: "ubuntu-latest"
     steps:
-      - name: "Upload Package `${{needs.publish.outputs.package_ballname}}` To GitHub Release Tag ${{github.event.release.tag_name}}"
-        env:
-          GH_TOKEN: "${{secrets.GITHUB_TOKEN}}"
-          INPUT_PACKAGEBALLNAME: "${{needs.publish.outputs.package_ballname}}"
-          INPUT_RELEASETAG: "${{github.event.release.tag_name}}"
+      - name: "Wait For PowerShell Gallery Data Update"
         shell: "pwsh"
         run: |-
-          Invoke-WebRequest -Uri "https://psg-prod-eastus.azureedge.net/packages/$($Env:INPUT_PACKAGEBALLNAME)" -MaximumRedirection 1 -MaximumRetryCount 5 -RetryIntervalSec 5 -Method 'GET' -OutFile $Env:INPUT_PACKAGEBALLNAME
-          gh release upload $Env:INPUT_RELEASETAG $Env:INPUT_PACKAGEBALLNAME --clobber --repo $Env:GITHUB_REPOSITORY
+          Start-Sleep -Seconds 300
+      - name: "Upload Package `${{needs.psg.outputs.package-ballname}}` To GitHub Release Tag `${{github.event.release.tag_name}}`"
+        env:
+          GH_TOKEN: "${{secrets.GITHUB_TOKEN}}"
+        shell: "pwsh"
+        run: |-
+          [String]$BallName = '${{needs.psg.outputs.package-ballname}}'
+          Invoke-WebRequest -Uri "https://psg-prod-eastus.azureedge.net/packages/$($BallName)" -MaximumRedirection 1 -MaximumRetryCount 5 -RetryIntervalSec 5 -Method 'GET' -OutFile $BallName
+          gh release upload '${{github.event.release.tag_name}}' $BallName --clobber --repo $Env:GITHUB_REPOSITORY

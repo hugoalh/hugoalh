@@ -56,7 +56,7 @@ jobs:
         shell: "pwsh"
         run: |-
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
-          [PSCustomObject]$Manifest = Get-Content -LiteralPath '.\package.json' -Raw -Encoding 'UTF8NoBOM' |
+          [PSCustomObject]$Manifest = Get-Content -LiteralPath '.\package.json' -Encoding 'UTF8NoBOM' |
             ConvertFrom-Json -Depth 100
           [SemVer]$VersionManifest = [SemVer]::Parse($Manifest.version)
           [SemVer]$VersionTag = [SemVer]::Parse(($Env:INPUT_RELEASETAG -ireplace '^v', ''))

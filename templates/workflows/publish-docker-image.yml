@@ -57,10 +57,11 @@ jobs:
       - name: "Build & Publish Docker Image"
         uses: "docker/build-push-action@v6.7.0"
         with:
-          context: "${{inputs.context}}"
-          file: "${{inputs.dockerfile}}"
+          context: "./"
+          file: "Dockerfile"
           labels: "${{steps.metadata.outputs.labels}}"
-          platforms: "${{inputs.platforms}}"
+          platforms: |-
+            linux/amd64
           pull: "true"
           push: "true"
           tags: "${{steps.metadata.outputs.tags}}"

@@ -131,7 +131,7 @@ jobs:
         if: "${{!cancelled() && steps.analyze.outcome == 'success' && steps.analyze.outputs.jsr-check == 'true'}}"
         run: |-
           deno task jsr-check
-      - name: "Build Repository For NPM"
+      - name: "Build Package For NPM"
         if: "${{!cancelled() && steps.analyze.outcome == 'success' && steps.analyze.outputs.npm-build == 'true'}}"
         run: |-
           deno task npm-build

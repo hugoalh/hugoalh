@@ -87,6 +87,10 @@ jobs:
         if: "${{!cancelled() && steps.analyze.outcome == 'success' && steps.analyze.outputs.build == 'true'}}"
         run: |-
           npm run build
+      - name: "Test Code"
+        if: "${{!cancelled() && steps.analyze.outcome == 'success' && steps.analyze.outputs.test == 'true'}}"
+        run: |-
+          npm run test
       - name: "Check Deployment"
         if: "${{!cancelled() && steps.analyze.outcome == 'success'}}"
         run: |-

@@ -94,6 +94,10 @@ jobs:
         if: "${{!cancelled() && steps.analyze.outcome == 'success'}}"
         run: |-
           deno lint
+      - name: "Build Repository"
+        if: "${{!cancelled() && steps.analyze.outcome == 'success' && steps.analyze.outputs.build == 'true'}}"
+        run: |-
+          deno task build
       - name: "Test Code"
         id: "test"
         if: "${{!cancelled() && steps.analyze.outcome == 'success' && steps.analyze.outputs.test == 'true'}}"
@@ -118,10 +122,6 @@ jobs:
       #     If ($Output -imatch 'able to update') {
       #       Write-Warning -Message 'Found dependencies that need to update!'
       #     }
-      - name: "Build Repository"
-        if: "${{!cancelled() && steps.analyze.outcome == 'success' && steps.analyze.outputs.build == 'true'}}"
-        run: |-
-          deno task build
       - name: "Check Deployment"
         if: "${{!cancelled() && steps.analyze.outcome == 'success'}}"
         shell: "pwsh"

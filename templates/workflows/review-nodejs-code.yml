@@ -1,0 +1,99 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+name: "Review NodeJS Code"
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+    branches:
+      - "**"
+    types:
+      - "edited"
+      - "opened"
+      - "reopened"
+      - "synchronize"
+  workflow_dispatch:
+jobs:
+  main:
+    name: "${{matrix.runon}}"
+    permissions:
+      contents: "read"
+    strategy:
+      matrix:
+        runon:
+          - "macos-latest"
+          - "ubuntu-latest"
+          - "windows-latest"
+      fail-fast: false
+    runs-on: "${{matrix.runon}}"
+    env:
+      CDV_RUN_LITE: "${{matrix.runon != 'ubuntu-latest'}}"
+    steps:
+      - name: "Checkout Repository"
+        uses: "actions/checkout@v4.1.7"
+      - name: "Setup NodeJS"
+        uses: "actions/setup-node@v4.0.3"
+        with:
+          node-version: "lts/*"
+          check-latest: true
+          registry-url: "https://registry.npmjs.org/"
+      - name: "Get NPM Cache Path"
+        id: "npm-cache-path"
+        shell: "pwsh"
+        run: |-
+          [String]$NpmCachePath = (
+            npm config get cache |
+              Join-String -Separator "`n"
+          ).Trim()
+          Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "value=$($NpmCachePath)" -Confirm:$False -Encoding 'UTF8NoBOM'
+      - name: "Restore NPM Cache"
+        id: "npm-cache-restore"
+        uses: "actions/cache/restore@v4.0.2"
+        with:
+          key: "NPM/${{runner.os}}-${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
+          restore-keys: |-
+            NPM/${{runner.os}}-${{github.run_id}}-${{github.run_attempt}}-
+            NPM/${{runner.os}}-${{github.run_id}}-${{github.run_attempt}}
+            NPM/${{runner.os}}-${{github.run_id}}-
+            NPM/${{runner.os}}-${{github.run_id}}
+            NPM/${{runner.os}}-
+            NPM/${{runner.os}}
+            NPM/
+          path: "${{steps.npm-cache-path.outputs.value}}"
+      - name: "Analyze Repository"
+        id: "analyze"
+        shell: "pwsh"
+        run: |-
+          [PSCustomObject]$Config = Get-Content -LiteralPath '.\package.json' -Encoding 'UTF8NoBOM' |
+            ConvertFrom-Json -Depth 100
+          Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "build=$(($Null -ine $Config.scripts.build).ToString().ToLower())"
+          Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "test=$(($Null -ine $Config.scripts.test).ToString().ToLower())"
+      - name: "Check Repository"
+        if: "${{!cancelled() && steps.analyze.outcome == 'success' && env.CDV_RUN_LITE == 'false'}}"
+        shell: "pwsh"
+        run: |-
+          [String[]]$FilesForbid = Get-ChildItem -LiteralPath '.\' -Include @('*.js', '*.jsx', '*.mjs', '*.mts') -File -Recurse -Name
+          If ($FilesForbid.Count -gt 0) {
+            Write-Error -Message "Repository contains forbid file formats (``.js``, ``.jsx``, ``.mjs``, ``.mts``): $(
+              $FilesForbid |
+                Join-String -Separator ', '
+            )" -ErrorAction 'Stop'
+          }
+      - name: "Install Dependencies"
+        if: "${{!cancelled() && steps.analyze.outcome == 'success'}}"
+        run: |-
+          npm install
+      - name: "Build Repository"
+        if: "${{!cancelled() && steps.analyze.outcome == 'success' && steps.analyze.outputs.build == 'true'}}"
+        run: |-
+          npm run build
+      - name: "Check Deployment"
+        if: "${{!cancelled() && steps.analyze.outcome == 'success'}}"
+        run: |-
+          npm publish --dry-run
+      - name: "Save NPM Cache"
+        if: "${{!cancelled() && steps.npm-cache-restore.outcome == 'success'}}"
+        uses: "actions/cache/save@v4.0.2"
+        with:
+          key: "NPM/${{runner.os}}-${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
+          path: "${{steps.npm-cache-path.outputs.value}}"

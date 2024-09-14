@@ -9,7 +9,7 @@ jobs:
   psg:
     name: "PowerShell Gallery"
     permissions:
-      contents: "write"
+      contents: "read"
     runs-on: "windows-latest"
     env:
       CDV_BUILDER: ""
@@ -43,7 +43,7 @@ jobs:
             $Version += "-$($ManifestFromData.PrivateData.PSData.Prerelease)"
           }
           Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "ballname=$($Name.ToLower()).$($Version).nupkg" -Confirm:$False -Encoding 'UTF8NoBOM'
-      - name: "Build Package"
+      - name: "Build Repository"
         if: "${{env.CDV_BUILDER != ''}}"
         shell: "pwsh"
         run: |-
@@ -53,7 +53,7 @@ jobs:
         run: |-
           Publish-Module -Path $Env:CDV_ROOT -NugetAPIKey $Env:CDV_POWERSHELLGALLERY_TOKEN -Force -Verbose
     outputs:
-      package-ballname: "${{steps.metadata.outputs.ballname}}"
+      ballname: "${{steps.metadata.outputs.ballname}}"
   release-assets:
     name: "Release Assets"
     needs:
@@ -69,9 +69,9 @@ jobs:
         shell: "pwsh"
         run: |-
           Start-Sleep -Seconds 300
-      - name: "Upload Package `${{needs.psg.outputs.package-ballname}}` To GitHub Release Tag `${{github.event.release.tag_name}}`"
+      - name: "Upload Package `${{needs.psg.outputs.ballname}}` To GitHub Release Tag `${{github.event.release.tag_name}}`"
         shell: "pwsh"
         run: |-
-          [String]$BallName = '${{needs.psg.outputs.package-ballname}}'
+          [String]$BallName = '${{needs.psg.outputs.ballname}}'
           Invoke-WebRequest -Uri "https://psg-prod-eastus.azureedge.net/packages/$($BallName)" -MaximumRetryCount 5 -RetryIntervalSec 5 -Method 'GET' -OutFile $BallName
           gh release upload '${{github.event.release.tag_name}}' $BallName --clobber --repo $Env:GITHUB_REPOSITORY

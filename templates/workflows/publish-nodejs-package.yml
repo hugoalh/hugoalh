@@ -22,17 +22,17 @@ jobs:
           node-version: "lts/*"
           check-latest: true
           registry-url: "https://registry.npmjs.org/"
-      - name: "Get Cache Path"
-        id: "cache-path"
+      - name: "Get NPM Cache Path"
+        id: "npm-cache-path"
         shell: "pwsh"
         run: |-
           [String]$NpmCachePath = (
             npm config get cache |
               Join-String -Separator "`n"
           ).Trim()
-          Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "npm=$($NpmCachePath)" -Confirm:$False -Encoding 'UTF8NoBOM'
+          Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "value=$($NpmCachePath)" -Confirm:$False -Encoding 'UTF8NoBOM'
       - name: "Restore NPM Cache"
-        id: "cache-npm-restore"
+        id: "npm-cache-restore"
         uses: "actions/cache/restore@v4.0.2"
         with:
           key: "NPM/${{runner.os}}-${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
@@ -44,7 +44,7 @@ jobs:
             NPM/${{runner.os}}-
             NPM/${{runner.os}}
             NPM/
-          path: "${{steps.cache-path.outputs.npm}}"
+          path: "${{steps.npm-cache-path.outputs.value}}"
       - name: "Resolve Metadata"
         id: "metadata"
         shell: "pwsh"
@@ -106,29 +106,29 @@ jobs:
       - name: "Install Dependencies"
         run: |-
           npm install
-      - name: "Build Package"
+      - name: "Build Repository"
         if: "${{steps.metadata.outputs.build == 'true'}}"
         run: |-
           npm run build
       - name: "Publish Package To NPM With Tag `${{steps.metadata.outputs.tags-first}}` (Provenance)"
-        id: "publish-provenance"
+        id: "npm-publish-provenance"
         shell: "pwsh"
         run: |-
           npm publish --provenance --tag '${{steps.metadata.outputs.tags-first}}'
       - name: "Publish Package To NPM With Tag `${{steps.metadata.outputs.tags-first}}`"
-        if: "${{!cancelled() && steps.publish-provenance.outcome == 'failure'}}"
-        id: "publish-raw"
+        if: "${{!cancelled() && steps.npm-publish-provenance.outcome == 'failure'}}"
+        id: "npm-publish-raw"
         shell: "pwsh"
         run: |-
           npm publish --tag '${{steps.metadata.outputs.tags-first}}'
       - name: "Publish Package To NPM With Rest Tags"
-        if: "${{!cancelled() && (steps.publish-provenance.outcome == 'success' || steps.publish-raw.outcome == 'success') && steps.metadata.outputs.tags-rest != ''}}"
+        if: "${{!cancelled() && (steps.npm-publish-provenance.outcome == 'success' || steps.npm-publish-raw.outcome == 'success') && steps.metadata.outputs.tags-rest != ''}}"
         shell: "pwsh"
         run: |-
           [String]$Descriptor = '${{steps.metadata.outputs.descriptor}}'
           [String[]]$TagsRest = '${{steps.metadata.outputs.tags-rest}}' -isplit ','
           ForEach ($TagRest In $TagsRest) {
-              npm dist-tag add $Descriptor $TagRest
+            npm dist-tag add $Descriptor $TagRest
           }
       - name: "Upload Package `${{steps.metadata.outputs.ballname}}` To GitHub Release Tag `${{github.event.release.tag_name}}`"
         if: "${{!cancelled() && steps.metadata.outcome == 'success'}}"
@@ -139,8 +139,8 @@ jobs:
           npm pack
           gh release upload '${{github.event.release.tag_name}}' '${{steps.metadata.outputs.ballname}}' --clobber --repo $Env:GITHUB_REPOSITORY
       - name: "Save NPM Cache"
-        if: "${{!cancelled() && steps.cache-npm-restore.outcome == 'success'}}"
+        if: "${{!cancelled() && steps.npm-cache-restore.outcome == 'success'}}"
         uses: "actions/cache/save@v4.0.2"
         with:
           key: "NPM/${{runner.os}}-${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
-          path: "${{steps.cache-path.outputs.npm}}"
+          path: "${{steps.npm-cache-path.outputs.value}}"

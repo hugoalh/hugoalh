@@ -16,12 +16,19 @@
 
 ![CSS 3](./assets/icons/brand/css-3.svg "CSS 3")
 ![Deno](./assets/icons/brand/deno.svg "Deno")
+![Docker](./assets/icons/brand/docker.svg "Docker")
+![GitHub Actions](./assets/icons/brand/github-actions.svg "GitHub Actions")
 ![HTML 5](./assets/icons/brand/html-5.svg "HTML 5")
 ![JavaScript](./assets/icons/brand/javascript.svg "JavaScript")
+![JSON](./assets/icons/brand/json.svg "JSON")
+![Markdown](./assets/icons/brand/markdown.svg "Markdown")
+![Mermaid](./assets/icons/brand/mermaid.svg "Mermaid")
 ![NodeJS](./assets/icons/brand/nodejs.svg "NodeJS")
 ![PowerShell](./assets/icons/brand/powershell.svg "PowerShell")
 ![Python](./assets/icons/brand/python.svg "Python")
+![SVG](./assets/icons/brand/svg.svg "SVG")
 ![TypeScript](./assets/icons/brand/typescript.svg "TypeScript")
+![YAML](./assets/icons/brand/yaml.svg "YAML")
 
 </div>
 

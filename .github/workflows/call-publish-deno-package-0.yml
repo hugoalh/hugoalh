@@ -84,7 +84,7 @@ jobs:
       - name: "Setup NodeJS"
         id: "npm-setup-nodejs"
         if: "${{!cancelled() && steps.verify-code.outcome == 'success' && inputs.deployment_npm}}"
-        uses: "actions/setup-node@v4.0.3"
+        uses: "actions/setup-node@v4.0.4"
         with:
           node-version: "lts/*"
           check-latest: true

@@ -27,7 +27,7 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
       - name: "Checkout Repository"
-        uses: "actions/checkout@v4.1.7"
+        uses: "actions/checkout@v4.2.0"
       - name: "Setup Docker QEMU"
         uses: "docker/setup-qemu-action@v3.2.0"
       - name: "Setup Docker Buildx"
@@ -57,7 +57,7 @@ jobs:
             org.opencontainers.image.title=Scan Virus (GitHub Action) Image
             org.opencontainers.image.description=A Docker image for Scan Virus (GitHub Action) to scan virus in the GitHub Action workspace.
       - name: "Build & Publish Docker Image"
-        uses: "docker/build-push-action@v6.7.0"
+        uses: "docker/build-push-action@v6.8.0"
         with:
           context: "./"
           file: "Dockerfile"

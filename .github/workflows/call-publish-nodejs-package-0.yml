@@ -39,7 +39,7 @@ jobs:
           Set-GitHubActionsOutput -Name 'npm' -Value $NpmCachePath
       - name: "Restore NPM Cache"
         id: "restore-npm-cache"
-        uses: "actions/cache/restore@v4.0.2"
+        uses: "actions/cache/restore@v4.1.0"
         with:
           key: "NPM/${{runner.os}}-${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
           path: "${{steps.cache-path.outputs.npm}}"
@@ -162,7 +162,7 @@ jobs:
           gh release upload $Env:INPUT_RELEASETAG $Env:INPUT_TARBALLNAME --clobber --repo $Env:GITHUB_REPOSITORY
       - name: "Save NPM Cache"
         if: "${{!cancelled() && steps.restore-npm-cache.outcome == 'success'}}"
-        uses: "actions/cache/save@v4.0.2"
+        uses: "actions/cache/save@v4.1.0"
         with:
           key: "NPM/${{runner.os}}-${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
           path: "${{steps.cache-path.outputs.npm}}"

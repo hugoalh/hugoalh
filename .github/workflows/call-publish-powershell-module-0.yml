@@ -28,7 +28,7 @@ jobs:
       INPUT_TOKEN: "${{secrets.POWERSHELLGALLERY_TOKEN}}"
     steps:
       - name: "Checkout Repository"
-        uses: "actions/checkout@v4.2.0"
+        uses: "actions/checkout@v4.2.1"
       - name: "Setup PowerShell Environment"
         shell: "pwsh"
         run: |-

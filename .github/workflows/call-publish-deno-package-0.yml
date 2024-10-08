@@ -28,7 +28,7 @@ jobs:
       INPUT_RELEASETAG: "${{github.event.release.tag_name}}"
     steps:
       - name: "Checkout Repository"
-        uses: "actions/checkout@v4.2.0"
+        uses: "actions/checkout@v4.2.1"
       - name: "Setup Deno"
         uses: "denoland/setup-deno@v1.5.1"
         with:

@@ -15,7 +15,7 @@ jobs:
       NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
     steps:
       - name: "Checkout Repository"
-        uses: "actions/checkout@v4.2.0"
+        uses: "actions/checkout@v4.2.1"
       - name: "Setup NodeJS"
         uses: "actions/setup-node@v4.0.3"
         with:

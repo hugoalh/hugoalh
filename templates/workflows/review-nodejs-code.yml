@@ -92,7 +92,7 @@ jobs:
         run: |-
           npm run test
       - name: "Check Deployment"
-        if: "${{!cancelled() && steps.analyze.outcome == 'success'}}"
+        if: "${{!cancelled() && steps.analyze.outcome == 'success' && env.CDV_RUN_LITE == 'false'}}"
         run: |-
           npm publish --dry-run
       - name: "Save NPM Cache"

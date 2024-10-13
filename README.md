@@ -101,3 +101,5 @@
 [![Weblate: @hugoalh](./assets/badges/translation-platforms/weblate.svg "Weblate: @hugoalh")](https://hosted.weblate.org/user/hugoalh)
 
 </div>
+
+<!-- Rerender f47bd7 -->

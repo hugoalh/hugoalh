@@ -68,7 +68,6 @@
 
 [![Bluesky: @hugoalh.bsky.social](./assets/badges/socials/bluesky.svg "Bluesky: @hugoalh.bsky.social")](https://bsky.app/profile/hugoalh.bsky.social)
 ![Discord: @hugoalh](./assets/badges/socials/discord.svg "Discord: @hugoalh")
-[![Gab: @hugoalh](./assets/badges/socials/gab.svg "Gab: @hugoalh")](https://gab.com/hugoalh)
 [![Gravatar: @hugoalh](./assets/badges/socials/gravatar.svg "Gravatar: @hugoalh")](https://gravatar.com/hugoalh)
 [![Guilded: /u/hugoalh](./assets/badges/socials/guilded.svg "Guilded: /u/hugoalh")](https://www.guilded.gg/u/hugoalh)
 [![Imgur: @hugoalh](./assets/badges/socials/imgur.svg "Imgur: @hugoalh")](https://imgur.com/user/hugoalh)
@@ -84,7 +83,6 @@
 [![Tumblr: @hugoalh](./assets/badges/socials/tumblr.svg "Tumblr: @hugoalh")](https://hugoalh.tumblr.com)
 [![Twitch: @hugoalh](./assets/badges/socials/twitch.svg "Twitch: @hugoalh")](https://www.twitch.tv/hugoalh)
 [![Vivaldi Social: @hugoalh](./assets/badges/socials/vivaldi-social.svg "Vivaldi Social: @hugoalh")](https://social.vivaldi.net/@hugoalh)
-[![X: @hugoalhofficial](./assets/badges/socials/x.svg "X: @hugoalhofficial")](https://x.com/hugoalhofficial)
 [![YouTube: @hugoalh](./assets/badges/socials/youtube.svg "YouTube: @hugoalh")](https://www.youtube.com/@hugoalh)
 
 </div>

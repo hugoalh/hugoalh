@@ -15,9 +15,9 @@ jobs:
       NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
     steps:
       - name: "Checkout Repository"
-        uses: "actions/checkout@v4.2.1"
+        uses: "actions/checkout@v4"
       - name: "Setup NodeJS"
-        uses: "actions/setup-node@v4.0.3"
+        uses: "actions/setup-node@v4"
         with:
           node-version: "lts/*"
           check-latest: true
@@ -33,7 +33,7 @@ jobs:
           Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "value=$($NpmCachePath)" -Confirm:$False -Encoding 'UTF8NoBOM'
       - name: "Restore NPM Cache"
         id: "npm-cache-restore"
-        uses: "actions/cache/restore@v4.1.1"
+        uses: "actions/cache/restore@v4"
         with:
           key: "NPM/${{runner.os}}-${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
           restore-keys: |-
@@ -141,7 +141,7 @@ jobs:
           gh release upload '${{github.event.release.tag_name}}' '${{steps.metadata.outputs.ballname}}' --clobber --repo $Env:GITHUB_REPOSITORY
       - name: "Save NPM Cache"
         if: "${{!cancelled() && steps.npm-cache-restore.outcome == 'success'}}"
-        uses: "actions/cache/save@v4.1.1"
+        uses: "actions/cache/save@v4"
         with:
           key: "NPM/${{runner.os}}-${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
           path: "${{steps.npm-cache-path.outputs.value}}"

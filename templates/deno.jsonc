@@ -8,7 +8,7 @@
 		"singleQuote": false,
 		"useTabs": true
 	},
-	"imports": {// IMPORTANT: Only remap development dependencies!
+	"imports": { // IMPORTANT: Only remap development dependencies!
 	},
 	"lint": {
 		"rules": {
@@ -31,5 +31,9 @@
 			]
 		}
 	},
-	"lock": false
+	"lock": false,
+	"tasks": {
+	},
+	"unstable": [
+	]
 }

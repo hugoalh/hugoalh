@@ -20,7 +20,7 @@ You can fix misspellings/typos by [create pull request](#create-pull-request); A
 Be aware that the spelling differences between the language variants are not count as misspelling/typo, unless language variants are provided and support at the project!
 
 | **Language** | **Prefer Variant** |
-|:-:|:--|
+|:--|:--|
 | Arabic (اَلْعَرَبِيَّةُ) | United Arab Emirates |
 | Bangla (বাংলা) | Bangladesh |
 | Chinese (華語) | Traditional / 正體 / 繁體 |

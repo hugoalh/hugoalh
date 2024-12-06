@@ -56,6 +56,7 @@
 
 <h2 id="f13b05c6e608-resources">📚 Resources</h2>
 
+- [ES Dependencies Graph](https://github.com/hugoalh/hugoalh/blob/main/assets/es-dependencies-graph.md)
 - [GPG Keys](https://github.com/hugoalh/hugoalh/blob/main/assets/gpg-keys.tsv)
 - [SSH Keys](https://github.com/hugoalh/hugoalh/blob/main/assets/ssh-keys.tsv)
 - [Universal Coding Guide](https://github.com/hugoalh/hugoalh/blob/main/guides/universal-coding.md)

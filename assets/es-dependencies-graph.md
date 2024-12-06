@@ -1,7 +1,14 @@
+# ES Dependencies Graph
+
+**🕰️ Last Update:** 2024-12-06 09:15 UTC
+
+> [!NOTE]
+>
+> - All of the packages have these development dependencies:
+>   - `deno-nodejs-transformer`
+> - Only the latest version of the packages are rendered.
+
 ```mermaid
----
-title: ES Dependencies Graph (As of 2024-12-06 09:15 UTC)
----
 %%{init: {"flowchart": {"defaultRenderer": "elk", "htmlLabels": false}} }%%
 flowchart LR
   adler32([adler32])
@@ -45,8 +52,6 @@ flowchart LR
   npm_url-regex-safe(npm:url-regex-safe)
 
   adler32 -- CLI --> jsr_std_cli
-  adler32 -- Development --> deno-nodejs-transformer
-  bytes-matcher -- Development --> deno-nodejs-transformer
   deno-nodejs-transformer --> jsr_deno_dnt
   deno-nodejs-transformer --> is-json
   deno-nodejs-transformer --> jsr_std_collections
@@ -54,48 +59,23 @@ flowchart LR
   deno-nodejs-transformer --> jsr_std_jsonc
   deno-nodejs-transformer --> jsr_std_path
   env --> jsr_std_path
-  env -- Development --> deno-nodejs-transformer
   eol -- CLI --> jsr_std_cli
-  eol -- Development --> deno-nodejs-transformer
   exfetch --> http-header-link
   exfetch --> http-header-retry-after
-  exfetch -- Development --> deno-nodejs-transformer
   fs --> jsr_std_path
-  fs -- Development --> deno-nodejs-transformer
   github-actions-core --> env
   github-actions-core --> is-json
   github-actions-core --> is-string-singleline
   github-actions-core --> jsr_std_fs
   github-actions-core --> jsr_std_path
-  github-actions-core -- Development --> deno-nodejs-transformer
   github-sodium --> is-json
   github-sodium --> npm_libsodium-wrappers
-  github-sodium -- Development --> deno-nodejs-transformer
   http-header-link --> is-string-singleline
-  http-header-link -- Development --> deno-nodejs-transformer
-  http-header-retry-after -- Development --> deno-nodejs-transformer
+  http-header-retry-after
   is-empty --> is-object-plain
-  is-empty -- Development --> deno-nodejs-transformer
   is-json --> is-object-plain
-  is-json -- Development --> deno-nodejs-transformer
-  is-numeric-integral -- Development --> deno-nodejs-transformer
-  is-numeric-prime -- Development --> deno-nodejs-transformer
-  is-object-plain -- Development --> deno-nodejs-transformer
-  is-primitive -- Development --> deno-nodejs-transformer
-  is-special-type -- Development --> deno-nodejs-transformer
-  is-string-ascii -- Development --> deno-nodejs-transformer
-  is-string-singleline -- Development --> deno-nodejs-transformer
-  pressure -- Development --> deno-nodejs-transformer
-  range-iterator -- Development --> deno-nodejs-transformer
-  shuffle-array -- Development --> deno-nodejs-transformer
-  sort -- Development --> deno-nodejs-transformer
   string-dissect --> npm_ansi-regex
   string-dissect --> npm_url-regex-safe
-  string-dissect -- Development --> deno-nodejs-transformer
   string-overflow --> string-dissect
-  string-overflow -- Development --> deno-nodejs-transformer
   symmetric-crypto --> jsr_std_encoding
-  symmetric-crypto -- Development --> deno-nodejs-transformer
-  temperature -- Development --> deno-nodejs-transformer
-  unique-array -- Development --> deno-nodejs-transformer
 ```

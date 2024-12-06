@@ -1,16 +1,18 @@
 # ES Dependencies Graph
 
-**🕰️ Last Update:** 2024-12-06 09:15 UTC
+**🕰️ Last Update:** 2024-12-06 09:40 UTC
 
 > [!NOTE]
 >
 > - All of the packages have these development dependencies:
 >   - `deno-nodejs-transformer`
-> - Only the latest version of the packages are rendered.
+> - Only the latest release version of the packages are rendered.
 
 ```mermaid
 %%{init: {"flowchart": {"defaultRenderer": "elk", "htmlLabels": false}} }%%
 flowchart LR
+  classDef external fill:#e0e0e0,stroke:#e0e0e0;
+
   adler32([adler32])
   bytes-matcher([bytes-matcher])
   deno-nodejs-transformer([deno-nodejs-transformer])
@@ -33,6 +35,7 @@ flowchart LR
   is-string-singleline([is-string-singleline])
   pressure([pressure])
   range-iterator([range-iterator])
+  setation([setation])
   shuffle-array([shuffle-array])
   sort([sort])
   string-dissect([string-dissect])
@@ -40,16 +43,16 @@ flowchart LR
   symmetric-crypto([symmetric-crypto])
   temperature([temperature])
   unique-array([unique-array])
-  jsr_deno_dnt(jsr:@deno/dnt)
-  jsr_std_cli(jsr:@std/cli)
-  jsr_std_collections(jsr:@std/collections)
-  jsr_std_encoding(jsr:@std/encoding)
-  jsr_std_fs(jsr:@std/fs)
-  jsr_std_jsonc(jsr:@std/jsonc)
-  jsr_std_path(jsr:@std/path)
-  npm_ansi-regex(npm:ansi-regex)
-  npm_libsodium-wrappers(npm:libsodium-wrappers)
-  npm_url-regex-safe(npm:url-regex-safe)
+  jsr_deno_dnt(jsr:@deno/dnt):::external
+  jsr_std_cli(jsr:@std/cli):::external
+  jsr_std_collections(jsr:@std/collections):::external
+  jsr_std_encoding(jsr:@std/encoding):::external
+  jsr_std_fs(jsr:@std/fs):::external
+  jsr_std_jsonc(jsr:@std/jsonc):::external
+  jsr_std_path(jsr:@std/path):::external
+  npm_ansi-regex(npm:ansi-regex):::external
+  npm_libsodium-wrappers(npm:libsodium-wrappers):::external
+  npm_url-regex-safe(npm:url-regex-safe):::external
 
   adler32 -- CLI --> jsr_std_cli
   deno-nodejs-transformer --> jsr_deno_dnt

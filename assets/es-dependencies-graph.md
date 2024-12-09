@@ -94,34 +94,34 @@ flowchart LR
   is-empty --> is-object-plain
   is-json --> is-object-plain
   string-overflow --> string-dissect
-  
-  shuffle-array -- Development --> deno-nodejs-transformer
-  unique-array -- Development --> deno-nodejs-transformer
-  github-actions-core -- Development --> deno-nodejs-transformer
-  github-sodium -- Development --> deno-nodejs-transformer
-  symmetric-crypto -- Development --> deno-nodejs-transformer
-  adler32 -- Development --> deno-nodejs-transformer
-  range-iterator -- Development --> deno-nodejs-transformer
-  setation -- Development --> deno-nodejs-transformer
-  bytes-matcher -- Development --> deno-nodejs-transformer
-  is-empty -- Development --> deno-nodejs-transformer
-  is-json -- Development --> deno-nodejs-transformer
-  is-object-plain -- Development --> deno-nodejs-transformer
-  is-primitive -- Development --> deno-nodejs-transformer
-  is-special-type -- Development --> deno-nodejs-transformer
-  exfetch -- Development --> deno-nodejs-transformer
-  http-header-link -- Development --> deno-nodejs-transformer
-  http-header-retry-after -- Development --> deno-nodejs-transformer
-  is-numeric-integral -- Development --> deno-nodejs-transformer
-  is-numeric-prime -- Development --> deno-nodejs-transformer
-  env -- Development --> deno-nodejs-transformer
-  eol -- Development --> deno-nodejs-transformer
-  fs -- Development --> deno-nodejs-transformer
-  is-string-ascii -- Development --> deno-nodejs-transformer
-  is-string-singleline -- Development --> deno-nodejs-transformer
-  string-dissect -- Development --> deno-nodejs-transformer
-  string-overflow -- Development --> deno-nodejs-transformer
-  pressure -- Development --> deno-nodejs-transformer
-  temperature -- Development --> deno-nodejs-transformer
-  sort -- Development --> deno-nodejs-transformer
+
+  adler32 -. Development .-> deno-nodejs-transformer
+  bytes-matcher -. Development .-> deno-nodejs-transformer
+  env -. Development .-> deno-nodejs-transformer
+  eol -. Development .-> deno-nodejs-transformer
+  exfetch -. Development .-> deno-nodejs-transformer
+  fs -. Development .-> deno-nodejs-transformer
+  github-actions-core -. Development .-> deno-nodejs-transformer
+  github-sodium -. Development .-> deno-nodejs-transformer
+  http-header-link -. Development .-> deno-nodejs-transformer
+  http-header-retry-after -. Development .-> deno-nodejs-transformer
+  is-empty -. Development .-> deno-nodejs-transformer
+  is-json -. Development .-> deno-nodejs-transformer
+  is-numeric-integral -. Development .-> deno-nodejs-transformer
+  is-numeric-prime -. Development .-> deno-nodejs-transformer
+  is-object-plain -. Development .-> deno-nodejs-transformer
+  is-primitive -. Development .-> deno-nodejs-transformer
+  is-special-type -. Development .-> deno-nodejs-transformer
+  is-string-ascii -. Development .-> deno-nodejs-transformer
+  is-string-singleline -. Development .-> deno-nodejs-transformer
+  pressure -. Development .-> deno-nodejs-transformer
+  range-iterator -. Development .-> deno-nodejs-transformer
+  setation -. Development .-> deno-nodejs-transformer
+  shuffle-array -. Development .-> deno-nodejs-transformer
+  sort -. Development .-> deno-nodejs-transformer
+  string-dissect -. Development .-> deno-nodejs-transformer
+  string-overflow -. Development .-> deno-nodejs-transformer
+  symmetric-crypto -. Development .-> deno-nodejs-transformer
+  temperature -. Development .-> deno-nodejs-transformer
+  unique-array -. Development .-> deno-nodejs-transformer
 ```

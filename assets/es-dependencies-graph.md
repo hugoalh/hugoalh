@@ -10,76 +10,76 @@
 ```mermaid
 %%{init: {"flowchart": {"htmlLabels": false}} }%%
 flowchart LR
-  subgraph GRAPH_Array_Operation [Array - Operation]
-    shuffle-array([shuffle-array])
-    unique-array([unique-array])
+  subgraph GRAPH_Array_Operation ["Array - Operation"]
+    shuffle-array(["shuffle-array"])
+    unique-array(["unique-array"])
   end
 
-  subgraph GRAPH_CI [CI / Workflow]
-    github-actions-core([github-actions-core])
+  subgraph GRAPH_CI ["CI / Workflow"]
+    github-actions-core(["github-actions-core"])
   end
 
-  subgraph GRAPH_Compiler [Bundler / Compiler / Transformer]
-    deno-nodejs-transformer([deno-nodejs-transformer])
+  subgraph GRAPH_Compiler ["Bundler / Compiler / Transformer"]
+    deno-nodejs-transformer(["deno-nodejs-transformer"])
   end
 
-  subgraph GRAPH_Crypto [Crypto]
-    github-sodium([github-sodium])
-    symmetric-crypto([symmetric-crypto])
+  subgraph GRAPH_Crypto ["Crypto"]
+    github-sodium(["github-sodium"])
+    symmetric-crypto(["symmetric-crypto"])
   end
 
-  subgraph GRAPH_Hash [Checksum / Hash]
-    adler32([adler32])
+  subgraph GRAPH_Hash ["Checksum / Hash"]
+    adler32(["adler32"])
   end
 
-  subgraph GRAPH_Iterate [Iterate]
-    range-iterator([range-iterator])
-    setation([setation])
+  subgraph GRAPH_Iterate ["Iterate"]
+    range-iterator(["range-iterator"])
+    setation(["setation"])
   end
 
-  subgraph GRAPH_Misc_Assert [Miscellaneous - Assert / Determine]
-    bytes-matcher([bytes-matcher])
-    is-empty([is-empty])
-    is-json([is-json])
-    is-object-plain([is-object-plain])
-    is-primitive([is-primitive])
-    is-special-type([is-special-type])
+  subgraph GRAPH_Misc_Assert ["Miscellaneous - Assert / Determine"]
+    bytes-matcher(["bytes-matcher"])
+    is-empty(["is-empty"])
+    is-json(["is-json"])
+    is-object-plain(["is-object-plain"])
+    is-primitive(["is-primitive"])
+    is-special-type(["is-special-type"])
   end
 
-  subgraph GRAPH_Net [Net]
-    exfetch([exfetch])
-    http-header-link([http-header-link])
-    http-header-retry-after([http-header-retry-after])
+  subgraph GRAPH_Net ["Net"]
+    exfetch(["exfetch"])
+    http-header-link(["http-header-link"])
+    http-header-retry-after(["http-header-retry-after"])
   end
 
-  subgraph GRAPH_Numeric_Assert [Numeric - Assert / Determine]
-    is-numeric-integral([is-numeric-integral])
-    is-numeric-prime([is-numeric-prime])
+  subgraph GRAPH_Numeric_Assert ["Numeric - Assert / Determine"]
+    is-numeric-integral(["is-numeric-integral"])
+    is-numeric-prime(["is-numeric-prime"])
   end
 
-  subgraph GRAPH_System [File System / Operate System]
-    env([env])
-    eol([eol])
-    fs([fs])
+  subgraph GRAPH_System ["File System / Operate System"]
+    env(["env"])
+    eol(["eol"])
+    fs(["fs"])
   end
 
-  subgraph GRAPH_String_Assert [String - Assert / Determine]
-    is-string-ascii([is-string-ascii])
-    is-string-singleline([is-string-singleline])
-    string-dissect([string-dissect])
+  subgraph GRAPH_String_Assert ["String - Assert / Determine"]
+    is-string-ascii(["is-string-ascii"])
+    is-string-singleline(["is-string-singleline"])
+    string-dissect(["string-dissect"])
   end
 
-  subgraph GRAPH_String_Operation [String - Operation]
-    string-overflow([string-overflow])
+  subgraph GRAPH_String_Operation ["String - Operation"]
+    string-overflow(["string-overflow"])
   end
 
-  subgraph GRAPH_Units [Units]
-    pressure([pressure])
-    temperature([temperature])
+  subgraph GRAPH_Units ["Units"]
+    pressure(["pressure"])
+    temperature(["temperature"])
   end
 
-  subgraph GRAPH_Misc [Miscellaneous]
-    sort([sort])
+  subgraph GRAPH_Misc ["Miscellaneous"]
+    sort(["sort"])
   end
 
   deno-nodejs-transformer --> is-json

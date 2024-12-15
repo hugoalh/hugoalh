@@ -50,15 +50,11 @@ jobs:
         id: "npm-cache-restore"
         uses: "actions/cache/restore@v4"
         with:
-          key: "NPM/${{runner.os}}-${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
+          key: "${{runner.os}}/NPM/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
           restore-keys: |-
-            NPM/${{runner.os}}-${{github.run_id}}-${{github.run_attempt}}-
-            NPM/${{runner.os}}-${{github.run_id}}-${{github.run_attempt}}
-            NPM/${{runner.os}}-${{github.run_id}}-
-            NPM/${{runner.os}}-${{github.run_id}}
-            NPM/${{runner.os}}-
-            NPM/${{runner.os}}
-            NPM/
+            ${{runner.os}}/NPM/${{github.run_id}}-${{github.run_attempt}}-
+            ${{runner.os}}/NPM/${{github.run_id}}-
+            ${{runner.os}}/NPM/
           path: "${{steps.npm-cache-path.outputs.value}}"
       - name: "Analyze Repository"
         id: "analyze"
@@ -99,5 +95,5 @@ jobs:
         if: "${{!cancelled() && steps.npm-cache-restore.outcome == 'success'}}"
         uses: "actions/cache/save@v4"
         with:
-          key: "NPM/${{runner.os}}-${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
+          key: "${{runner.os}}/NPM/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
           path: "${{steps.npm-cache-path.outputs.value}}"

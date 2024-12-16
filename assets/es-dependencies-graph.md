@@ -86,6 +86,7 @@ flowchart LR
   exfetch --> http-header-link
   exfetch --> http-header-retry-after
   github-actions-core --> env
+  github-actions-core --> eol
   github-actions-core --> is-json
   github-actions-core --> is-string-singleline
   github-sodium --> is-json

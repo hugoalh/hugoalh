@@ -1,6 +1,6 @@
 # ES Dependencies Graph
 
-**🕰️ Last Updated:** 2024-12-16 08:15 UTC
+**🕰️ Last Updated:** 2024-12-18 10:00 UTC
 
 > [!NOTE]
 >
@@ -82,7 +82,9 @@ flowchart LR
     sort(["sort"])
   end
 
+  deno-nodejs-transformer --> fs
   deno-nodejs-transformer --> is-json
+  deno-nodejs-transformer --> sort
   exfetch --> http-header-link
   exfetch --> http-header-retry-after
   github-actions-core --> env

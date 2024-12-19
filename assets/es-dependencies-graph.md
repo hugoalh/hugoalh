@@ -1,6 +1,6 @@
 # ES Dependencies Graph
 
-**🕰️ Last Updated:** 2024-12-18 10:00 UTC
+**🕰️ Last Updated:** 2024-12-19 10:25 UTC
 
 > [!NOTE]
 >
@@ -96,6 +96,7 @@ flowchart LR
   http-header-retry-after
   is-empty --> is-object-plain
   is-json --> is-object-plain
+  setation --> sort
   string-overflow --> string-dissect
 
   adler32 -. Development .-> deno-nodejs-transformer

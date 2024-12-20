@@ -1,6 +1,18 @@
 # yaml-language-server: $schema=https://json.schemastore.org/dependabot-2.0.json
 version: 2
 updates:
+  - package-ecosystem: "cargo"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      timezone: "Etc/UTC"
+    labels:
+      - "Platform/Rust"
+      - "Status/Pending 🔵"
+      - "Type/Dependency 📦"
+    open-pull-requests-limit: 100
+    pull-request-branch-name:
+      separator: "/"
   - package-ecosystem: "docker"
     directory: "/"
     schedule:

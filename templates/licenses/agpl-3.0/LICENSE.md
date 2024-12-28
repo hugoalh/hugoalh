@@ -4,7 +4,7 @@
 >
 > Copyright © 2007 Free Software Foundation, Inc. https://fsf.org/
 
-Copyright © 2024 hugoalh
+Copyright © 2025 hugoalh
 
 Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.
 

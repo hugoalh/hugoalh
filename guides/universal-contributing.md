@@ -78,9 +78,6 @@ Please visit the "[hugoalh Universal Coding Guide](https://github.com/hugoalh/hu
 - Before create issue, check whether any similar issues are already exist, even the closed issues.
 - Create issue under the most appropriate/suitable category.
 
-> [!NOTE]
-> - For the general process time, please visit the "[hugoalh Universal General Process Time](https://github.com/hugoalh/hugoalh/blob/main/guides/universal-general-process-time.md)".
-
 ### Create Pull Request
 
 - Before create pull request, check whether any similar pull requests are already exist, even the closed pull requests.
@@ -94,7 +91,6 @@ Please visit the "[hugoalh Universal Coding Guide](https://github.com/hugoalh/hu
 
 > [!NOTE]
 > - The pull request does not need to pass any automatic reviews, automatic reviews are the references for the code reviewers.
-> - For the general process time, please visit the "[hugoalh Universal General Process Time](https://github.com/hugoalh/hugoalh/blob/main/guides/universal-general-process-time.md)".
 
 ### Create Security Vulnerability Report
 
@@ -107,4 +103,3 @@ To report security vulnerabilities via other methods/ways, these are not availab
 
 > [!NOTE]
 > - If the project's GitHub repository have not enabled the Security Advisories system (mostly cause by misconfiguration), please [create issue](#create-issue) to request enable it.
-> - For the general process time, please visit the "[hugoalh Universal General Process Time](https://github.com/hugoalh/hugoalh/blob/main/guides/universal-general-process-time.md)".

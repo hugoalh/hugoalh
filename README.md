@@ -61,7 +61,6 @@
 - [SSH Keys](https://github.com/hugoalh/hugoalh/blob/main/assets/ssh-keys.tsv)
 - [Universal Coding Guide](https://github.com/hugoalh/hugoalh/blob/main/guides/universal-coding.md)
 - [Universal Contributing Guide](https://github.com/hugoalh/hugoalh/blob/main/guides/universal-contributing.md)
-- [Universal General Process Time](https://github.com/hugoalh/hugoalh/blob/main/guides/universal-general-process-time.md)
 
 <h2 id="f13b05c6e608-socials">👥 Socials</h2>
 

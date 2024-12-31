@@ -1,6 +1,6 @@
 # ES Dependencies Graph
 
-**🕰️ Last Updated:** 2024-12-19 10:25 UTC
+**🕰️ Last Updated:** 2024-12-31 08:15 UTC
 
 > [!NOTE]
 >
@@ -61,6 +61,7 @@ flowchart LR
     env(["env"])
     eol(["eol"])
     fs(["fs"])
+    process(["process"])
   end
 
   subgraph GRAPH_String_Assert ["String - Assert / Determine"]
@@ -87,6 +88,7 @@ flowchart LR
   deno-nodejs-transformer --> sort
   exfetch --> http-header-link
   exfetch --> http-header-retry-after
+  fs --> is-json
   github-actions-core --> env
   github-actions-core --> eol
   github-actions-core --> is-json
@@ -96,6 +98,7 @@ flowchart LR
   http-header-retry-after
   is-empty --> is-object-plain
   is-json --> is-object-plain
+  process --> is-json
   setation --> sort
   string-overflow --> string-dissect
 
@@ -119,6 +122,7 @@ flowchart LR
   is-string-ascii -. Development .-> deno-nodejs-transformer
   is-string-singleline -. Development .-> deno-nodejs-transformer
   pressure -. Development .-> deno-nodejs-transformer
+  process -. Development .-> deno-nodejs-transformer
   range-iterator -. Development .-> deno-nodejs-transformer
   setation -. Development .-> deno-nodejs-transformer
   shuffle-array -. Development .-> deno-nodejs-transformer

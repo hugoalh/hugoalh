@@ -1,6 +1,6 @@
 # ES Dependencies Graph
 
-**🕰️ Last Updated:** 2024-12-31 08:15 UTC
+**🕰️ Last Updated:** 2025-01-01 04:00 UTC
 
 > [!NOTE]
 >
@@ -10,9 +10,18 @@
 ```mermaid
 %%{init: {"flowchart": {"htmlLabels": false}} }%%
 flowchart LR
-  subgraph GRAPH_Array_Operation ["Array - Operation"]
-    shuffle-array(["shuffle-array"])
-    unique-array(["unique-array"])
+  subgraph GRAPH_Assert ["Assert / Determine"]
+    bytes-matcher(["bytes-matcher"])
+    is-empty(["is-empty"])
+    is-json(["is-json"])
+    is-object-plain(["is-object-plain"])
+    is-primitive(["is-primitive"])
+    is-special-type(["is-special-type"])
+    is-numeric-integral(["is-numeric-integral"])
+    is-numeric-prime(["is-numeric-prime"])
+    is-string-ascii(["is-string-ascii"])
+    is-string-singleline(["is-string-singleline"])
+    string-dissect(["string-dissect"])
   end
 
   subgraph GRAPH_CI ["CI / Workflow"]
@@ -37,50 +46,29 @@ flowchart LR
     setation(["setation"])
   end
 
-  subgraph GRAPH_Misc_Assert ["Miscellaneous - Assert / Determine"]
-    bytes-matcher(["bytes-matcher"])
-    is-empty(["is-empty"])
-    is-json(["is-json"])
-    is-object-plain(["is-object-plain"])
-    is-primitive(["is-primitive"])
-    is-special-type(["is-special-type"])
-  end
-
   subgraph GRAPH_Net ["Net"]
     exfetch(["exfetch"])
     http-header-link(["http-header-link"])
     http-header-retry-after(["http-header-retry-after"])
   end
 
-  subgraph GRAPH_Numeric_Assert ["Numeric - Assert / Determine"]
-    is-numeric-integral(["is-numeric-integral"])
-    is-numeric-prime(["is-numeric-prime"])
-  end
-
-  subgraph GRAPH_System ["File System / Operate System"]
+  subgraph GRAPH_System ["System"]
     env(["env"])
     eol(["eol"])
     fs(["fs"])
     process(["process"])
   end
 
-  subgraph GRAPH_String_Assert ["String - Assert / Determine"]
-    is-string-ascii(["is-string-ascii"])
-    is-string-singleline(["is-string-singleline"])
-    string-dissect(["string-dissect"])
-  end
-
-  subgraph GRAPH_String_Operation ["String - Operation"]
+  subgraph GRAPH_Types_Operation ["Types Operation"]
+    shuffle-array(["shuffle-array"])
+    sort(["sort"])
     string-overflow(["string-overflow"])
+    unique-array(["unique-array"])
   end
 
   subgraph GRAPH_Units ["Units"]
     pressure(["pressure"])
     temperature(["temperature"])
-  end
-
-  subgraph GRAPH_Misc ["Miscellaneous"]
-    sort(["sort"])
   end
 
   deno-nodejs-transformer --> fs

@@ -3,7 +3,6 @@ name: "Documentation Issue"
 description: "Report a documentation issue."
 labels:
   - "📓 Documentation"
-  - "🔵 Pending"
 body:
   - type: "textarea"
     id: "document"

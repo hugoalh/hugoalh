@@ -325,11 +325,6 @@
   description: "This cannot be worked on due to no possible solution."
   aliases:
     - "Status/NoSolution 🤷"
-- name: "🔵 Pending"
-  color: "#2196F3"
-  description: "This is new."
-  aliases:
-    - "Status/Pending 🔵"
 - name: "❓ Question"
   color: "#D876E3" # GitHub Default Label Color
   description: "This needs further information."

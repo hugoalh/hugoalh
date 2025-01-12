@@ -9,7 +9,6 @@ updates:
     labels:
       - "* Rust"
       - "📦 Dependency"
-      - "🔵 Pending"
     open-pull-requests-limit: 100
     pull-request-branch-name:
       separator: "/"
@@ -21,7 +20,6 @@ updates:
     labels:
       - "* Docker"
       - "📦 Dependency"
-      - "🔵 Pending"
     open-pull-requests-limit: 100
     pull-request-branch-name:
       separator: "/"
@@ -33,7 +31,6 @@ updates:
     labels:
       - "* GitHubActions"
       - "📦 Dependency"
-      - "🔵 Pending"
     open-pull-requests-limit: 100
     pull-request-branch-name:
       separator: "/"
@@ -45,7 +42,6 @@ updates:
     labels:
       - "* NodeJS"
       - "📦 Dependency"
-      - "🔵 Pending"
     open-pull-requests-limit: 100
     pull-request-branch-name:
       separator: "/"

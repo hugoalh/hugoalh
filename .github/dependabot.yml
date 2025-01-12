@@ -9,7 +9,6 @@ updates:
     labels:
       - "* GitHubActions"
       - "📦 Dependency"
-      - "🔵 Pending"
     open-pull-requests-limit: 100
     pull-request-branch-name:
       separator: "/"

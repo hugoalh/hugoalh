@@ -2,8 +2,8 @@
 name: "Feature Request"
 description: "Suggest an idea."
 labels:
-  - "Status/Pending 🔵"
-  - "Type/Enhancement 💡"
+  - "💡 Enhancement"
+  - "🔵 Pending"
 body:
   - type: "textarea"
     id: "describe"

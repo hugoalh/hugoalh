@@ -2,8 +2,8 @@
 name: "Documentation Issue"
 description: "Report a documentation issue."
 labels:
-  - "Status/Pending 🔵"
-  - "Type/Documentation 📓"
+  - "📓 Documentation"
+  - "🔵 Pending"
 body:
   - type: "textarea"
     id: "document"

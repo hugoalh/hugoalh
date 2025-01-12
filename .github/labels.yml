@@ -1,232 +1,379 @@
 # yaml-language-server: $schema=https://hugoalh.github.io/schema/json/sdvcfs-labels.json
-- name: "Platform/Android"
+
+#MARK: Platforms
+- name: "* Alpine"
+  color: "#0D597F"
+  description: "Related to Alpine."
+  aliases:
+    - "Platform/LinuxAlpine"
+- name: "* Android"
   color: "#3DDC84"
   description: "Related to Android."
-- name: "Platform/Bluesky"
+  aliases:
+    - "Platform/Android"
+- name: "* Bluesky"
   color: "#0285FF"
   description: "Related to Bluesky."
-- name: "Platform/Bun"
+  aliases:
+    - "Platform/Bluesky"
+- name: "* Bun"
   color: "#F9F1E1"
   description: "Related to Bun."
-- name: "Platform/ClamAV"
+  aliases:
+    - "Platform/Bun"
+- name: "* ClamAV"
   color: "#B83033"
   description: "Related to ClamAV."
-- name: "Platform/CloudflareWorkers"
+  aliases:
+    - "Platform/ClamAV"
+- name: "* CloudflareWorkers"
   color: "#F38020"
   description: "Related to Cloudflare Workers."
-- name: "Platform/CodeQL"
+  aliases:
+    - "Platform/CloudflareWorkers"
+- name: "* CodeQL"
   color: "#FFFFFF"
   description: "Related to CodeQL."
-- name: "Platform/Crowdin"
+  aliases:
+    - "Platform/CodeQL"
+- name: "* Crowdin"
   color: "#2E3340"
   description: "Related to Crowdin."
-- name: "Platform/Deno"
+  aliases:
+    - "Platform/Crowdin"
+- name: "* Dart"
+  color: "#0175C2"
+  description: "Related to Dart."
+- name: "* Debian"
+  color: "#A81D33"
+  description: "Related to Debian."
+  aliases:
+    - "Platform/LinuxDebian"
+- name: "* Deno"
   color: "#000000"
   description: "Related to Deno."
-- name: "Platform/DenoNetwork"
+  aliases:
+    - "Platform/Deno"
+- name: "* DenoNetwork"
   color: "#000000"
   description: "Related to Deno Deploy, Deno Land, or Deno Module Registry."
-- name: "Platform/Dependabot"
+  aliases:
+    - "Platform/DenoNetwork"
+- name: "* Dependabot"
   color: "#025E8C"
   description: "Related to Dependabot."
-- name: "Platform/Discord"
+  aliases:
+    - "Platform/Dependabot"
+- name: "* Discord"
   color: "#5865F2"
   description: "Related to Discord."
-- name: "Platform/Docker"
+  aliases:
+    - "Platform/Discord"
+- name: "* Docker"
   color: "#2496ED"
   description: "Related to Docker."
-- name: "Platform/DotNet"
+  aliases:
+    - "Platform/Docker"
+- name: "* DotNet"
   color: "#512BD4"
   description: "Related to .NET."
-- name: "Platform/Git"
+  aliases:
+    - "Platform/DotNet"
+- name: "* FDroid"
+  color: "#1976D2"
+  description: "Related to F-Droid."
+- name: "* Flutter"
+  color: "#02569B"
+  description: "Related to Flutter."
+- name: "* Git"
   color: "#F05032"
   description: "Related to Git."
-- name: "Platform/GitHub"
+  aliases:
+    - "Platform/Git"
+- name: "* GitHub"
   color: "#181717"
   description: "Related to GitHub."
-- name: "Platform/GitHubActions"
+  aliases:
+    - "Platform/GitHub"
+- name: "* GitHubActions"
   color: "#2088FF"
   description: "Related to GitHub Actions."
-- name: "Platform/GitHubPackages"
+  aliases:
+    - "Platform/GitHubActions"
+- name: "* GitHubPackages"
   color: "#181717"
   description: "Related to GitHub Packages."
-- name: "Platform/GitHubPages"
+  aliases:
+    - "Platform/GitHubPackages"
+- name: "* GitHubPages"
   color: "#222222"
   description: "Related to GitHub Pages."
-- name: "Platform/GitLFS"
+  aliases:
+    - "Platform/GitHubPages"
+- name: "* GitLFS"
   color: "#F64935"
   description: "Related to Git LFS."
-- name: "Platform/Godot"
+  aliases:
+    - "Platform/GitLFS"
+- name: "* Godot"
   color: "#478CBF"
   description: "Related to Godot."
-- name: "Platform/GoogleChrome"
+  aliases:
+    - "Platform/Godot"
+- name: "* Google"
+  color: "#4285F4"
+  description: "Related to Google."
+- name: "* GoogleChrome"
   color: "#4285F4"
   description: "Related to Google Chrome."
-- name: "Platform/Guilded"
+  aliases:
+    - "Platform/GoogleChrome"
+- name: "* GooglePlay"
+  color: "#414141"
+  description: "Related to Google Play."
+- name: "* Guilded"
   color: "#F5C400"
   description: "Related to Guilded."
-- name: "Platform/JavaScript"
+  aliases:
+    - "Platform/Guilded"
+- name: "* JavaScript"
   color: "#F7DF1E"
   description: "Related to JavaScript."
-- name: "Platform/JSR"
+  aliases:
+    - "Platform/JavaScript"
+- name: "* JSR"
   color: "#F7DF1E"
   description: "Related to JSR (JavaScript Registry)."
-- name: "Platform/Linux"
+  aliases:
+    - "Platform/JSR"
+- name: "* Linux"
   color: "#FCC624"
   description: "Related to Linux."
-- name: "Platform/LinuxAlpine"
-  color: "#0D597F"
-  description: "Related to Linux Alpine."
-- name: "Platform/LinuxDebian"
-  color: "#A81D33"
-  description: "Related to Linux Debian."
-- name: "Platform/LinuxUbuntu"
-  color: "#E95420"
-  description: "Related to Linux Ubuntu."
-- name: "Platform/MacOS"
+  aliases:
+    - "Platform/Linux"
+- name: "* MacOS"
   color: "#000000"
   description: "Related to MacOS."
   aliases:
     - "Platform/AppleOS"
-- name: "Platform/Mastodon"
+    - "Platform/MacOS"
+- name: "* Mastodon"
   color: "#6364FF"
   description: "Related to Mastodon."
-- name: "Platform/MicrosoftAzure"
+  aliases:
+    - "Platform/Mastodon"
+- name: "* MicrosoftAzure"
   color: "#0078D4"
   description: "Related to Microsoft Azure."
-- name: "Platform/MicrosoftEdge"
+  aliases:
+    - "Platform/MicrosoftAzure"
+- name: "* MicrosoftEdge"
   color: "#0078D7"
   description: "Related to Microsoft Edge."
-- name: "Platform/Minecraft"
+  aliases:
+    - "Platform/MicrosoftEdge"
+- name: "* Minecraft"
   color: "#62B47A"
   description: "Related to Minecraft (Bedrock)."
-- name: "Platform/MinecraftJava"
+  aliases:
+    - "Platform/Minecraft"
+- name: "* MinecraftJava"
   color: "#62B47A"
   description: "Related to Minecraft Java."
-- name: "Platform/NodeJS"
+  aliases:
+    - "Platform/MinecraftJava"
+- name: "* NodeJS"
   color: "#339933"
   description: "Related to NodeJS."
-- name: "Platform/NPM"
+  aliases:
+    - "Platform/NodeJS"
+- name: "* NPM"
   color: "#CB3837"
   description: "Related to NPM."
-- name: "Platform/POEditor"
-  color: "#00BCC9"
-  description: "Related to POEditor."
-- name: "Platform/PowerShell"
+  aliases:
+    - "Platform/NPM"
+- name: "* PowerShell"
   color: "#5391FE"
   description: "Related to PowerShell."
-- name: "Platform/PowerShellGallery"
+  aliases:
+    - "Platform/PowerShell"
+- name: "* PowerShellGallery"
   color: "#5391FE"
   description: "Related to PowerShell Gallery."
-- name: "Platform/Python"
+  aliases:
+    - "Platform/PowerShellGallery"
+- name: "* Python"
   color: "#3776AB"
   description: "Related to Python."
-- name: "Platform/RevoltChat"
+  aliases:
+    - "Platform/Python"
+- name: "* RevoltChat"
   color: "#FF4655"
   description: "Related to Revolt Chat."
-- name: "Platform/Roblox"
+  aliases:
+    - "Platform/RevoltChat"
+- name: "* Roblox"
   color: "#000000"
   description: "Related to Roblox."
-- name: "Platform/RobloxStudio"
+  aliases:
+    - "Platform/Roblox"
+- name: "* RobloxStudio"
   color: "#00A2FF"
   description: "Related to Roblox Studio."
-- name: "Platform/Rust"
+  aliases:
+    - "Platform/RobloxStudio"
+- name: "* Rust"
   color: "#000000"
   description: "Related to Rust."
-- name: "Platform/Telegram"
+  aliases:
+    - "Platform/Rust"
+- name: "* Steam"
+  color: "#000000"
+  description: "Related to Steam."
+- name: "* Telegram"
   color: "#26A5E4"
   description: "Related to Telegram."
-- name: "Platform/Transifex"
-  color: "#0064AB"
-  description: "Related to Transifex."
-- name: "Platform/TypeScript"
+  aliases:
+    - "Platform/Telegram"
+- name: "* TypeScript"
   color: "#3178C6"
   description: "Related to TypeScript."
-- name: "Platform/VisualStudio"
+  aliases:
+    - "Platform/TypeScript"
+- name: "* Ubuntu"
+  color: "#E95420"
+  description: "Related to Ubuntu."
+  aliases:
+    - "Platform/LinuxUbuntu"
+- name: "* VisualStudio"
   color: "#5C2D91"
   description: "Related to Visual Studio."
-- name: "Platform/VisualStudioCode"
+  aliases:
+    - "Platform/VisualStudio"
+- name: "* VisualStudioCode"
   color: "#007ACC"
   description: "Related to Visual Studio Code."
-- name: "Platform/VisualStudioMarketplace"
+  aliases:
+    - "Platform/VisualStudioCode"
+- name: "* VisualStudioMarketplace"
   color: "#CB2E6D"
   description: "Related to Visual Studio Marketplace."
-- name: "Platform/Weblate"
+  aliases:
+    - "Platform/VisualStudioMarketplace"
+- name: "* Weblate"
   color: "#2ECCAA"
   description: "Related to Weblate."
-- name: "Platform/Windows"
+  aliases:
+    - "Platform/Weblate"
+- name: "* Windows"
   color: "#0078D4"
   description: "Related to Windows."
-- name: "Priority/Critical 🚨"
-  color: "#D50000"
-  description: "Critical priority."
-- name: "Priority/High 🔴"
+  aliases:
+    - "Platform/Windows"
+- name: "* YARA"
+  color: "#808080"
+  description: "Related to YARA."
+
+#MARK: Priorities
+- name: "🔴 High"
   color: "#F44336"
-  description: "High priority."
-- name: "Priority/Low 🟢"
+  description: "This is high priority."
+  aliases:
+    - "Priority/High 🔴"
+- name: "🟢 Low"
   color: "#4CAF50"
-  description: "Low priority."
-- name: "Priority/Medium 🟡"
+  description: "This is low priority."
+  aliases:
+    - "Priority/Low 🟢"
+- name: "🟡 Medium"
   color: "#FFEB3B"
-  description: "Medium priority."
-- name: "Status/Duplicated 🔁"
+  description: "This is medium priority."
+  aliases:
+    - "Priority/Medium 🟡"
+- name: "🚨 Urgent"
+  color: "#D50000"
+  description: "This is urgent."
+  aliases:
+    - "Priority/Critical 🚨"
+
+#MARK: Status
+- name: "🔁 Duplicated"
   color: "#CFD3D7" # GitHub Default Label Color
   description: "This already exists."
   aliases:
     - "duplicate" # GitHub Default Label
-- name: "Status/HelpWanted ⛑️"
+    - "Status/Duplicated 🔁"
+- name: "⛑️ HelpWanted"
   color: "#008672" # GitHub Default Label Color
   description: "This needs extra help."
   aliases:
     - "help wanted" # GitHub Default Label
-- name: "Status/Invalid ⚠️"
+    - "Status/HelpWanted ⛑️"
+- name: "⚠️ Invalid"
   color: "#E4E669" # GitHub Default Label Color
   description: "This does not seem right."
   aliases:
     - "invalid" # GitHub Default Label
-- name: "Status/Investigating 🔍"
+    - "Status/Invalid ⚠️"
+- name: "🔍 Investigating"
   color: "#03A9F4"
   description: "This is in investigating."
-- name: "Status/NoSolution 🤷"
+  aliases:
+    - "Status/Investigating 🔍"
+- name: "🤷 NoSolution"
   color: "#FFFFFF"
   description: "This cannot be worked on due to no possible solution."
-- name: "Status/Pending 🔵"
+  aliases:
+    - "Status/NoSolution 🤷"
+- name: "🔵 Pending"
   color: "#2196F3"
   description: "This is new."
-- name: "Status/Question ❓"
+  aliases:
+    - "Status/Pending 🔵"
+- name: "❓ Question"
   color: "#D876E3" # GitHub Default Label Color
   description: "This needs further information."
   aliases:
     - "question" # GitHub Default Label
-- name: "Status/Rejected ❌"
-  color: "#B71C1C"
-  description: "This is rejected."
-- name: "Status/Transfer ↗️"
+    - "Status/Question ❓"
+- name: "↗️ Transfer"
   color: "#607D8B"
   description: "This is transferred to a more relevant place."
-- name: "Status/WillNotFix 🙅"
+  aliases:
+    - "Status/Transfer ↗️"
+- name: "🙅 WillNotFix"
   color: "#FFFFFF" # GitHub Default Label Color
   description: "This will not be worked on."
   aliases:
     - "wontfix" # GitHub Default Label
-- name: "Type/Bug 🐛"
+    - "Status/WillNotFix 🙅"
+
+#MARK: Types
+- name: "🐛 Bug"
   color: "#D73A4A" # GitHub Default Label Color
   description: "Something is not working as expected or intended."
   aliases:
     - "bug" # GitHub Default Label
-- name: "Type/Chore ⚙️"
+    - "Type/Bug 🐛"
+- name: "⚙️ Chore"
   color: "#C0C0C0"
   description: "Miscellaneous task."
-- name: "Type/Dependency 📦"
+  aliases:
+    - "Type/Chore ⚙️"
+- name: "📦 Dependency"
   color: "#6D4C41"
   description: "Related to dependency."
-- name: "Type/Documentation 📓"
+  aliases:
+    - "Type/Dependency 📦"
+- name: "📓 Documentation"
   color: "#0075CA" # GitHub Default Label Color
   description: "Additions or improvements to the documentation."
   aliases:
     - "documentation" # GitHub Default Label
-- name: "Type/Enhancement 💡"
+    - "Type/Documentation 📓"
+- name: "💡 Enhancement"
   color: "#A2EEEF" # GitHub Default Label Color
   description: "New feature or request."
   aliases:
     - "enhancement" # GitHub Default Label
+    - "Type/Enhancement 💡"

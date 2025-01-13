@@ -1,16 +1,20 @@
 # yaml-language-server: $schema=https://hugoalh.github.io/schema/json/sdvcfs-labels.json
 
 #MARK: Platforms
-- name: "* Alpine"
+- name: "* AlpineLinux"
   color: "#0D597F"
-  description: "Related to Alpine."
+  description: "Related to Alpine Linux."
   aliases:
+    - "* Alpine"
     - "Platform/LinuxAlpine"
 - name: "* Android"
   color: "#3DDC84"
   description: "Related to Android."
   aliases:
     - "Platform/Android"
+- name: "* ArchLinux"
+  color: "#1793D1"
+  description: "Related to Arch Linux."
 - name: "* Bluesky"
   color: "#0285FF"
   description: "Related to Bluesky."
@@ -21,6 +25,9 @@
   description: "Related to Bun."
   aliases:
     - "Platform/Bun"
+- name: "* CentOS"
+  color: "#262577"
+  description: "Related to CentOS."
 - name: "* ClamAV"
   color: "#B83033"
   description: "Related to ClamAV."
@@ -82,6 +89,9 @@
 - name: "* FDroid"
   color: "#1976D2"
   description: "Related to F-Droid."
+- name: "* FedoraLinux"
+  color: "#51A2DA"
+  description: "Related to Fedora Linux."
 - name: "* Flutter"
   color: "#02569B"
   description: "Related to Flutter."
@@ -146,6 +156,9 @@
   description: "Related to JSR (JavaScript Registry)."
   aliases:
     - "Platform/JSR"
+- name: "* Kubernetes"
+  color: "#326CE5"
+  description: "Related to Kubernetes."
 - name: "* Linux"
   color: "#FCC624"
   description: "Related to Linux."
@@ -192,6 +205,9 @@
   description: "Related to NPM."
   aliases:
     - "Platform/NPM"
+- name: "* Podman"
+  color: "#892CA0"
+  description: "Related to Podman."
 - name: "* PowerShell"
   color: "#5391FE"
   description: "Related to PowerShell."

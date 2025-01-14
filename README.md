@@ -71,7 +71,6 @@
 [![Gravatar: @hugoalh](./assets/badges/socials/gravatar.svg "Gravatar: @hugoalh")](https://gravatar.com/hugoalh)
 [![Guilded: /u/hugoalh](./assets/badges/socials/guilded.svg "Guilded: /u/hugoalh")](https://www.guilded.gg/u/hugoalh)
 [![Imgur: @hugoalh](./assets/badges/socials/imgur.svg "Imgur: @hugoalh")](https://imgur.com/user/hugoalh)
-![LINE: @hugoalh](./assets/badges/socials/line.svg "LINE: @hugoalh")
 [![Mastodon: @hugoalh@mastodon.social](./assets/badges/socials/mastodon.svg "Mastodon: @hugoalh@mastodon.social")](https://mastodon.social/@hugoalh)
 [![Reddit: /u/hugoalh](./assets/badges/socials/reddit.svg "Reddit: /u/hugoalh")](https://www.reddit.com/user/hugoalh)
 ![Revolt Chat: @hugoalh#5145](./assets/badges/socials/revolt-chat.svg "Revolt Chat: @hugoalh#5145")

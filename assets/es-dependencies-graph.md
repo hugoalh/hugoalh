@@ -1,6 +1,6 @@
 # ES Dependencies Graph
 
-**🕰️ Last Updated:** 2025-01-01 04:00 UTC
+**🕰️ Last Updated:** 2025-01-18 03:30 UTC
 
 > [!NOTE]
 >
@@ -39,6 +39,9 @@ flowchart LR
 
   subgraph GRAPH_Hash ["Checksum / Hash"]
     adler32(["adler32"])
+    djb2a(["djb2a"])
+    fnv(["fnv"])
+    sdbm(["sdbm"])
   end
 
   subgraph GRAPH_Iterate ["Iterate"]
@@ -92,9 +95,11 @@ flowchart LR
 
   adler32 -. Development .-> deno-nodejs-transformer
   bytes-matcher -. Development .-> deno-nodejs-transformer
+  djb2a -. Development .-> deno-nodejs-transformer
   env -. Development .-> deno-nodejs-transformer
   eol -. Development .-> deno-nodejs-transformer
   exfetch -. Development .-> deno-nodejs-transformer
+  fnv -. Development .-> deno-nodejs-transformer
   fs -. Development .-> deno-nodejs-transformer
   github-actions-core -. Development .-> deno-nodejs-transformer
   github-sodium -. Development .-> deno-nodejs-transformer
@@ -112,6 +117,7 @@ flowchart LR
   pressure -. Development .-> deno-nodejs-transformer
   process -. Development .-> deno-nodejs-transformer
   range-iterator -. Development .-> deno-nodejs-transformer
+  sdbm -. Development .-> deno-nodejs-transformer
   setation -. Development .-> deno-nodejs-transformer
   shuffle-array -. Development .-> deno-nodejs-transformer
   sort -. Development .-> deno-nodejs-transformer

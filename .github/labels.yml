@@ -38,6 +38,9 @@
   description: "Related to Cloudflare Workers."
   aliases:
     - "Platform/CloudflareWorkers"
+- name: "* Codeberg"
+  color: "#2185D0"
+  description: "Related to Codeberg."
 - name: "* CodeQL"
   color: "#FFFFFF"
   description: "Related to CodeQL."
@@ -48,6 +51,11 @@
   description: "Related to Crowdin."
   aliases:
     - "Platform/Crowdin"
+- name: "* CurseForge"
+  color: "#F16436"
+  description: "Related to CurseForge."
+  aliases:
+    - "Platform/CurseForge"
 - name: "* Dart"
   color: "#0175C2"
   description: "Related to Dart."
@@ -95,6 +103,9 @@
 - name: "* Flutter"
   color: "#02569B"
   description: "Related to Flutter."
+- name: "* Forgejo"
+  color: "#FB923C"
+  description: "Related to Forgejo."
 - name: "* Git"
   color: "#F05032"
   description: "Related to Git."

@@ -1,6 +1,6 @@
 # ES Dependencies Graph
 
-**🕰️ Last Updated:** 2025-01-18 09:45 UTC
+**🕰️ Last Updated:** 2025-01-25 05:20 UTC
 
 > [!NOTE]
 >
@@ -74,6 +74,8 @@ flowchart LR
     temperature(["temperature"])
   end
 
+  url-regexp(["url-regexp"])
+
   deno-nodejs-transformer --> fs
   deno-nodejs-transformer --> is-json
   deno-nodejs-transformer --> sort
@@ -128,4 +130,5 @@ flowchart LR
   symmetric-crypto -. Development .-> deno-nodejs-transformer
   temperature -. Development .-> deno-nodejs-transformer
   unique-array -. Development .-> deno-nodejs-transformer
+  url-regexp -. Development .-> deno-nodejs-transformer
 ```

@@ -19,13 +19,16 @@
 				"default-param-last",
 				"eqeqeq",
 				"guard-for-in",
+				"jsx-no-danger-with-children",
 				"no-const-assign",
+				"no-danger",
 				"no-eval",
 				"no-non-null-asserted-optional-chain",
 				"no-self-compare",
 				"no-sparse-arrays",
 				"no-sync-fn-in-async-fn",
 				"no-undef",
+				"no-useless-rename",
 				"triple-slash-reference",
 				"verbatim-module-syntax"
 			]

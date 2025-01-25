@@ -1,6 +1,6 @@
 # ES Dependencies Graph
 
-**🕰️ Last Updated:** 2025-01-25 05:20 UTC
+**🕰️ Last Updated:** 2025-01-25 09:50 UTC
 
 > [!NOTE]
 >
@@ -55,6 +55,10 @@ flowchart LR
     http-header-retry-after(["http-header-retry-after"])
   end
 
+  subgraph GRAPH_RegExp ["Regular Expression"]
+    url-regexp(["url-regexp"])
+  end
+
   subgraph GRAPH_System ["System"]
     env(["env"])
     eol(["eol"])
@@ -73,8 +77,6 @@ flowchart LR
     pressure(["pressure"])
     temperature(["temperature"])
   end
-
-  url-regexp(["url-regexp"])
 
   deno-nodejs-transformer --> fs
   deno-nodejs-transformer --> is-json
@@ -95,6 +97,7 @@ flowchart LR
   is-json --> is-object-plain
   process --> is-json
   setation --> sort
+  string-dissect --> url-regexp
   string-overflow --> string-dissect
 
   adler32 -. Development .-> deno-nodejs-transformer

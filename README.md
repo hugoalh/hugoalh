@@ -68,6 +68,7 @@
 
 [![Bluesky: @hugoalh.bsky.social](./assets/badges/socials/bluesky.svg "Bluesky: @hugoalh.bsky.social")](https://bsky.app/profile/hugoalh.bsky.social)
 ![Discord: @hugoalh](./assets/badges/socials/discord.svg "Discord: @hugoalh")
+[![Discord: hugoalh Community](./assets/badges/socials/discord_community.svg "Discord: hugoalh Community")](https://discord.gg/jgG7S34DJH)
 [![Gravatar: @hugoalh](./assets/badges/socials/gravatar.svg "Gravatar: @hugoalh")](https://gravatar.com/hugoalh)
 [![Guilded: /u/hugoalh](./assets/badges/socials/guilded.svg "Guilded: /u/hugoalh")](https://www.guilded.gg/u/hugoalh)
 [![Imgur: @hugoalh](./assets/badges/socials/imgur.svg "Imgur: @hugoalh")](https://imgur.com/user/hugoalh)

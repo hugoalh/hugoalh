@@ -4,13 +4,6 @@
 
 > [!NOTE]
 > 
-> - Legend:
->   ```mermaid
->   %%{ init: { "flowchart": { "htmlLabels": false } } }%%
->   flowchart LR
->   1([" "]) -- Production --> 2([" "])
->   3([" "]) -. Development .-> 4([" "])
->   ```
 > - External dependencies are not rendered.
 > - Only the latest release version of the packages are rendered.
 

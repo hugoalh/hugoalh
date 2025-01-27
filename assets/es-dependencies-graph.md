@@ -1,14 +1,21 @@
 # ES Dependencies Graph
 
-**🕰️ Last Updated:** 2025-01-25 09:50 UTC
+**🕰️ Last Updated:** 2025-01-27 03:45 UTC
 
 > [!NOTE]
->
+> 
+> - Legend:
+>   ```mermaid
+>   %%{ init: { "flowchart": { "htmlLabels": false } } }%%
+>   flowchart LR
+>   1([" "]) -- Production --> 2([" "])
+>   3([" "]) -. Development .-> 4([" "])
+>   ```
 > - External dependencies are not rendered.
 > - Only the latest release version of the packages are rendered.
 
 ```mermaid
-%%{init: {"flowchart": {"htmlLabels": false}} }%%
+%%{ init: { "flowchart": { "htmlLabels": false } } }%%
 flowchart LR
   subgraph GRAPH_Assert ["Assert / Determine"]
     bytes-matcher(["bytes-matcher"])

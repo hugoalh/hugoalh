@@ -50,7 +50,6 @@
 
 [![Codeberg: @hugoalh](./assets/badges/repositories/codeberg.svg "Codeberg: @hugoalh")](https://codeberg.org/hugoalh?tab=repositories)
 [![GitHub: @hugoalh](./assets/badges/repositories/github.svg "GitHub: @hugoalh")](https://github.com/hugoalh?tab=repositories)
-[![KaKi87 Git: @hugoalh](./assets/badges/repositories/kaki87-git.svg "KaKi87 Git: @hugoalh")](https://git.kaki87.net/hugoalh?tab=repositories)
 
 </div>
 
@@ -68,7 +67,6 @@
 
 [![Bluesky: @hugoalh.bsky.social](./assets/badges/socials/bluesky.svg "Bluesky: @hugoalh.bsky.social")](https://bsky.app/profile/hugoalh.bsky.social)
 ![Discord: @hugoalh](./assets/badges/socials/discord.svg "Discord: @hugoalh")
-[![Discord: hugoalh Community](./assets/badges/socials/discord_community.svg "Discord: hugoalh Community")](https://discord.gg/jgG7S34DJH)
 [![Gravatar: @hugoalh](./assets/badges/socials/gravatar.svg "Gravatar: @hugoalh")](https://gravatar.com/hugoalh)
 [![Guilded: /u/hugoalh](./assets/badges/socials/guilded.svg "Guilded: /u/hugoalh")](https://www.guilded.gg/u/hugoalh)
 [![Imgur: @hugoalh](./assets/badges/socials/imgur.svg "Imgur: @hugoalh")](https://imgur.com/user/hugoalh)
@@ -84,6 +82,8 @@
 [![Twitch: @hugoalh](./assets/badges/socials/twitch.svg "Twitch: @hugoalh")](https://www.twitch.tv/hugoalh)
 [![Vivaldi Social: @hugoalh](./assets/badges/socials/vivaldi-social.svg "Vivaldi Social: @hugoalh")](https://social.vivaldi.net/@hugoalh)
 [![YouTube: @hugoalh](./assets/badges/socials/youtube.svg "YouTube: @hugoalh")](https://www.youtube.com/@hugoalh)
+
+[![Discord: hugoalh Community](./assets/badges/socials/discord_community.svg "Discord: hugoalh Community")](https://discord.gg/jgG7S34DJH)
 
 </div>
 

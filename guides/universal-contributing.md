@@ -1,6 +1,6 @@
-# @hugoalh Universal Contributing Guide
+# hugoalh Universal Contributing Guide
 
-This document includes the universal [guidelines](#guideline) and [methods/ways](#how-to) to contribute over all of the @hugoalh projects; However, some of the projects may have revises and take precedence over this document.
+This document includes the universal [guidelines](#guideline) and [methods/ways](#how-to) to contribute over all of the hugoalh projects; However, some of the projects may have revises and take precedence over this document.
 
 > [!TIP]
 > - If you have any questions, [create discussion](#create-discussion) at the project's repository.

@@ -55,11 +55,11 @@
 
 <h2 id="f13b05c6e608-resources">📚 Resources</h2>
 
-- [ES Dependencies Graph](https://github.com/hugoalh/hugoalh/blob/main/assets/es-dependencies-graph.md)
-- [GPG Keys](https://github.com/hugoalh/hugoalh/blob/main/assets/gpg-keys.tsv)
-- [SSH Keys](https://github.com/hugoalh/hugoalh/blob/main/assets/ssh-keys.tsv)
-- [Universal Coding Guide](https://github.com/hugoalh/hugoalh/blob/main/guides/universal-coding.md)
-- [Universal Contributing Guide](https://github.com/hugoalh/hugoalh/blob/main/guides/universal-contributing.md)
+- [ES Dependencies Graph](./assets/es-dependencies-graph.md)
+- [GPG Keys](./assets/gpg-keys.tsv)
+- [SSH Keys](./assets/ssh-keys.tsv)
+- [Universal Coding Guide](./guides/universal-coding.md)
+- [Universal Contributing Guide](./guides/universal-contributing.md)
 
 <h2 id="f13b05c6e608-socials">👥 Socials</h2>
 

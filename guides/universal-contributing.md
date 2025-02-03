@@ -1,8 +1,6 @@
-[hugoalh]: https://github.com/hugoalh
+# @hugoalh Universal Contributing Guide
 
-# [hugoalh][hugoalh] Universal Contributing Guide
-
-This document includes the universal [guidelines](#guideline) and [methods/ways](#how-to) to contribute over all of the [hugoalh][hugoalh] projects; However, some of the projects may have revises and take precedence over this document.
+This document includes the universal [guidelines](#guideline) and [methods/ways](#how-to) to contribute over all of the @hugoalh projects; However, some of the projects may have revises and take precedence over this document.
 
 > [!TIP]
 > - If you have any questions, [create discussion](#create-discussion) at the project's repository.
@@ -60,7 +58,7 @@ To request new features, please [create issue](#create-issue).
 
 ### Coding
 
-Please visit the "[hugoalh Universal Coding Guide](https://github.com/hugoalh/hugoalh/blob/main/guides/universal-coding.md)" for the details.
+Please visit the "[hugoalh Universal Coding Guide](./universal-coding.md)" for the details.
 
 ### Create Discussion
 

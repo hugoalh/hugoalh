@@ -1,6 +1,6 @@
 # ES Dependencies Graph
 
-**🕰️ Last Updated:** 2025-03-12 10:20 UTC
+**🕰️ Last Updated:** 2025-03-13 05:50 UTC
 
 > [!NOTE]
 > 
@@ -104,73 +104,73 @@ flowchart LR
   string-dissect --> url-regexp
   string-overflow --> string-dissect
 
-  adler32 -. Development .-> deno-nodejs-transformer
-  bytes-matcher -. Development .-> deno-nodejs-transformer
-  djb2a -. Development .-> deno-nodejs-transformer
-  env -. Development .-> deno-nodejs-transformer
-  eol -. Development .-> deno-nodejs-transformer
-  exfetch -. Development .-> deno-nodejs-transformer
-  fnv -. Development .-> deno-nodejs-transformer
-  fs -. Development .-> deno-nodejs-transformer
-  github-actions-core -. Development .-> deno-nodejs-transformer
-  github-sodium -. Development .-> deno-nodejs-transformer
-  http-header-link -. Development .-> deno-nodejs-transformer
-  http-header-retry-after -. Development .-> deno-nodejs-transformer
-  is-empty -. Development .-> deno-nodejs-transformer
-  is-json -. Development .-> deno-nodejs-transformer
-  is-numeric-integral -. Development .-> deno-nodejs-transformer
-  is-numeric-prime -. Development .-> deno-nodejs-transformer
-  is-object-plain -. Development .-> deno-nodejs-transformer
-  is-primitive -. Development .-> deno-nodejs-transformer
-  is-special-type -. Development .-> deno-nodejs-transformer
-  is-string-ascii -. Development .-> deno-nodejs-transformer
-  is-string-singleline -. Development .-> deno-nodejs-transformer
-  pressure -. Development .-> deno-nodejs-transformer
-  process -. Development .-> deno-nodejs-transformer
-  range-iterator -. Development .-> deno-nodejs-transformer
-  sdbm -. Development .-> deno-nodejs-transformer
-  setation -. Development .-> deno-nodejs-transformer
-  shuffle-array -. Development .-> deno-nodejs-transformer
-  sort -. Development .-> deno-nodejs-transformer
-  string-dissect -. Development .-> deno-nodejs-transformer
-  string-overflow -. Development .-> deno-nodejs-transformer
-  symmetric-crypto -. Development .-> deno-nodejs-transformer
-  temperature -. Development .-> deno-nodejs-transformer
-  unique-array -. Development .-> deno-nodejs-transformer
-  url-regexp -. Development .-> deno-nodejs-transformer
+  adler32 -.-> deno-nodejs-transformer
+  bytes-matcher -.-> deno-nodejs-transformer
+  djb2a -.-> deno-nodejs-transformer
+  env -.-> deno-nodejs-transformer
+  eol -.-> deno-nodejs-transformer
+  exfetch -.-> deno-nodejs-transformer
+  fnv -.-> deno-nodejs-transformer
+  fs -.-> deno-nodejs-transformer
+  github-actions-core -.-> deno-nodejs-transformer
+  github-sodium -.-> deno-nodejs-transformer
+  http-header-link -.-> deno-nodejs-transformer
+  http-header-retry-after -.-> deno-nodejs-transformer
+  is-empty -.-> deno-nodejs-transformer
+  is-json -.-> deno-nodejs-transformer
+  is-numeric-integral -.-> deno-nodejs-transformer
+  is-numeric-prime -.-> deno-nodejs-transformer
+  is-object-plain -.-> deno-nodejs-transformer
+  is-primitive -.-> deno-nodejs-transformer
+  is-special-type -.-> deno-nodejs-transformer
+  is-string-ascii -.-> deno-nodejs-transformer
+  is-string-singleline -.-> deno-nodejs-transformer
+  pressure -.-> deno-nodejs-transformer
+  process -.-> deno-nodejs-transformer
+  range-iterator -.-> deno-nodejs-transformer
+  sdbm -.-> deno-nodejs-transformer
+  setation -.-> deno-nodejs-transformer
+  shuffle-array -.-> deno-nodejs-transformer
+  sort -.-> deno-nodejs-transformer
+  string-dissect -.-> deno-nodejs-transformer
+  string-overflow -.-> deno-nodejs-transformer
+  symmetric-crypto -.-> deno-nodejs-transformer
+  temperature -.-> deno-nodejs-transformer
+  unique-array -.-> deno-nodejs-transformer
+  url-regexp -.-> deno-nodejs-transformer
 
-  adler32 -. Development .-> deno-lint-rules
-  bytes-matcher -. Development .-> deno-lint-rules
-  djb2a -. Development .-> deno-lint-rules
-  env -. Development .-> deno-lint-rules
-  eol -. Development .-> deno-lint-rules
-  exfetch -. Development .-> deno-lint-rules
-  fnv -. Development .-> deno-lint-rules
-  fs -. Development .-> deno-lint-rules
-  github-actions-core -. Development .-> deno-lint-rules
-  github-sodium -. Development .-> deno-lint-rules
-  http-header-link -. Development .-> deno-lint-rules
-  http-header-retry-after -. Development .-> deno-lint-rules
-  is-empty -. Development .-> deno-lint-rules
-  is-json -. Development .-> deno-lint-rules
-  is-numeric-integral -. Development .-> deno-lint-rules
-  is-numeric-prime -. Development .-> deno-lint-rules
-  is-object-plain -. Development .-> deno-lint-rules
-  is-primitive -. Development .-> deno-lint-rules
-  is-special-type -. Development .-> deno-lint-rules
-  is-string-ascii -. Development .-> deno-lint-rules
-  is-string-singleline -. Development .-> deno-lint-rules
-  pressure -. Development .-> deno-lint-rules
-  process -. Development .-> deno-lint-rules
-  range-iterator -. Development .-> deno-lint-rules
-  sdbm -. Development .-> deno-lint-rules
-  setation -. Development .-> deno-lint-rules
-  shuffle-array -. Development .-> deno-lint-rules
-  sort -. Development .-> deno-lint-rules
-  string-dissect -. Development .-> deno-lint-rules
-  string-overflow -. Development .-> deno-lint-rules
-  symmetric-crypto -. Development .-> deno-lint-rules
-  temperature -. Development .-> deno-lint-rules
-  unique-array -. Development .-> deno-lint-rules
-  url-regexp -. Development .-> deno-lint-rules
+  adler32 -.-> deno-lint-rules
+  bytes-matcher -.-> deno-lint-rules
+  djb2a -.-> deno-lint-rules
+  env -.-> deno-lint-rules
+  eol -.-> deno-lint-rules
+  exfetch -.-> deno-lint-rules
+  fnv -.-> deno-lint-rules
+  fs -.-> deno-lint-rules
+  github-actions-core -.-> deno-lint-rules
+  github-sodium -.-> deno-lint-rules
+  http-header-link -.-> deno-lint-rules
+  http-header-retry-after -.-> deno-lint-rules
+  is-empty -.-> deno-lint-rules
+  is-json -.-> deno-lint-rules
+  is-numeric-integral -.-> deno-lint-rules
+  is-numeric-prime -.-> deno-lint-rules
+  is-object-plain -.-> deno-lint-rules
+  is-primitive -.-> deno-lint-rules
+  is-special-type -.-> deno-lint-rules
+  is-string-ascii -.-> deno-lint-rules
+  is-string-singleline -.-> deno-lint-rules
+  pressure -.-> deno-lint-rules
+  process -.-> deno-lint-rules
+  range-iterator -.-> deno-lint-rules
+  sdbm -.-> deno-lint-rules
+  setation -.-> deno-lint-rules
+  shuffle-array -.-> deno-lint-rules
+  sort -.-> deno-lint-rules
+  string-dissect -.-> deno-lint-rules
+  string-overflow -.-> deno-lint-rules
+  symmetric-crypto -.-> deno-lint-rules
+  temperature -.-> deno-lint-rules
+  unique-array -.-> deno-lint-rules
+  url-regexp -.-> deno-lint-rules
 ```

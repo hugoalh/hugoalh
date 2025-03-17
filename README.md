@@ -55,7 +55,6 @@
 
 <h2 id="f13b05c6e608-resources">📚 Resources</h2>
 
-- [ES Dependencies Graph](./assets/es-dependencies-graph.svg)
 - [GPG Keys](./assets/gpg-keys.tsv)
 - [SSH Keys](./assets/ssh-keys.tsv)
 - [Universal Coding Guide](./guides/universal-coding.md)
@@ -97,5 +96,3 @@
 [![Weblate: @hugoalh](./assets/badges/translation-platforms/weblate.svg "Weblate: @hugoalh")](https://hosted.weblate.org/user/hugoalh)
 
 </div>
-
-<!-- Rerender f47bd7 -->

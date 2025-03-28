@@ -7,8 +7,8 @@ updates:
       interval: "daily"
       timezone: "Etc/UTC"
     labels:
-      - "* Rust"
-      - "📦 Dependency"
+      - "Platform/Rust"
+      - "Type/Dependency 📦"
     open-pull-requests-limit: 100
     pull-request-branch-name:
       separator: "/"
@@ -18,8 +18,8 @@ updates:
       interval: "daily"
       timezone: "Etc/UTC"
     labels:
-      - "* Docker"
-      - "📦 Dependency"
+      - "Platform/Docker"
+      - "Type/Dependency 📦"
     open-pull-requests-limit: 100
     pull-request-branch-name:
       separator: "/"
@@ -29,8 +29,8 @@ updates:
       interval: "daily"
       timezone: "Etc/UTC"
     labels:
-      - "* GitHubActions"
-      - "📦 Dependency"
+      - "Platform/GitHubActions"
+      - "Type/Dependency 📦"
     open-pull-requests-limit: 100
     pull-request-branch-name:
       separator: "/"
@@ -40,8 +40,8 @@ updates:
       interval: "daily"
       timezone: "Etc/UTC"
     labels:
-      - "* NodeJS"
-      - "📦 Dependency"
+      - "Platform/NodeJS"
+      - "Type/Dependency 📦"
     open-pull-requests-limit: 100
     pull-request-branch-name:
       separator: "/"

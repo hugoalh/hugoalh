@@ -7,8 +7,8 @@ updates:
       interval: "daily"
       timezone: "Etc/UTC"
     labels:
-      - "* GitHubActions"
-      - "📦 Dependency"
+      - "Platform/GitHubActions"
+      - "Type/Dependency 📦"
     open-pull-requests-limit: 100
     pull-request-branch-name:
       separator: "/"

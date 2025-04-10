@@ -13,9 +13,11 @@ on:
     branches:
       - "**"
   workflow_dispatch:
+env:
+  CDV_RUN_SKIP: "${{github.event_name == 'pull_request' && github.event.pull_request.head.repo.id == github.event.pull_request.base.repo.id}}"
 jobs:
   main:
-    if: "${{!(github.event_name == 'pull_request' && github.event.pull_request.head.repo.id == github.event.pull_request.base.repo.id)}}"
+    if: "${{env.CDV_RUN_SKIP == 'false'}}"
     permissions:
       actions: "read"
       contents: "read"
@@ -37,7 +39,7 @@ jobs:
       - name: "Analyze Repository"
         uses: "github/codeql-action/analyze@v3"
   skip:
-    if: "${{github.event_name == 'pull_request' && github.event.pull_request.head.repo.id == github.event.pull_request.base.repo.id}}"
+    if: "${{env.CDV_RUN_SKIP == 'true'}}"
     permissions: {}
     runs-on: "ubuntu-latest"
     steps:

@@ -13,12 +13,10 @@ on:
     branches:
       - "**"
   workflow_dispatch:
-env:
-  CDV_RUN_SKIP: "${{github.event_name == 'pull_request' && github.event.pull_request.head.repo.id == github.event.pull_request.base.repo.id}}"
 jobs:
   main:
     name: "${{matrix.run_on}}"
-    if: "${{env.CDV_RUN_SKIP == 'false'}}"
+    if: "${{!(github.event_name == 'pull_request' && github.event.pull_request.head.repo.id == github.event.pull_request.base.repo.id)}}"
     permissions:
       contents: "read"
     strategy:
@@ -101,7 +99,7 @@ jobs:
           key: "${{runner.os}}/NPM/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
           path: "${{steps.npm-cache-path.outputs.value}}"
   skip:
-    if: "${{env.CDV_RUN_SKIP == 'true'}}"
+    if: "${{github.event_name == 'pull_request' && github.event.pull_request.head.repo.id == github.event.pull_request.base.repo.id}}"
     permissions: {}
     runs-on: "ubuntu-latest"
     steps:

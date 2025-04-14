@@ -127,10 +127,3 @@ jobs:
         with:
           key: "${{runner.os}}/Deno/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
           path: "${{steps.deno-cache-path.outputs.value}}"
-  skip:
-    if: "${{github.event_name == 'pull_request' && github.event.pull_request.head.repo.id == github.event.pull_request.base.repo.id}}"
-    permissions: {}
-    runs-on: "ubuntu-latest"
-    steps:
-      - run: |-
-          sleep 1

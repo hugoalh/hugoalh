@@ -31,8 +31,8 @@ jobs:
               Join-String -Separator "`n"
           ).Trim()
           Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "value=$($NpmCachePath)" -Confirm:$False -Encoding 'UTF8NoBOM'
-      - name: "Restore NPM Cache"
-        id: "npm-cache-restore"
+      - name: "Load NPM Cache"
+        id: "npm-cache-load"
         uses: "actions/cache/restore@v4"
         with:
           key: "${{runner.os}}/NPM/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
@@ -136,7 +136,7 @@ jobs:
           npm pack
           gh release upload '${{github.event.release.tag_name}}' '${{steps.metadata.outputs.ballname}}' --clobber --repo $Env:GITHUB_REPOSITORY
       - name: "Save NPM Cache"
-        if: "${{!cancelled() && steps.npm-cache-restore.outcome == 'success'}}"
+        if: "${{!cancelled() && steps.npm-cache-laod.outcome == 'success'}}"
         uses: "actions/cache/save@v4"
         with:
           key: "${{runner.os}}/NPM/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"

@@ -3,7 +3,7 @@
 This document includes the universal [guidelines](#guideline) and [methods/ways](#how-to) to contribute over all of the hugoalh projects; However, some of the projects may have revises and take precedence over this document.
 
 > [!TIP]
-> - If you have any questions, [create discussion](#create-discussion) at the project's repository.
+> - If you have any question, [create discussion](#create-discussion) at the project's repository.
 
 ## How To...
 
@@ -63,7 +63,7 @@ Please visit the "[hugoalh Universal Coding Guide](./universal-coding.md)" for t
 ### Create Discussion
 
 - Any report or request should [create issue](#create-issue) instead.
-- Before create discussion, check whether any similar discussions are already exist.
+- Before create discussion, check whether any similar discussion already exist.
 - Create discussion under the most appropriate/suitable category.
 
 > [!NOTE]
@@ -73,22 +73,22 @@ Please visit the "[hugoalh Universal Coding Guide](./universal-coding.md)" for t
 
 - Any question should [create discussion](#create-discussion) instead.
 - Any security vulnerability report should [create security vulnerability report](#create-security-vulnerability-report) instead.
-- Before create issue, check whether any similar issues are already exist, even the closed issues.
+- Before create issue, check whether any similar issue already exist, even the closed issues.
 - Create issue under the most appropriate/suitable category.
 
 ### Create Pull Request
 
-- Before create pull request, check whether any similar pull requests are already exist, even the closed pull requests.
-- Always create pull request to the default branch (mostly named `main` or `master`).
+- Before create pull request, check whether any similar pull request already exist, even the closed pull requests.
+- Always create pull request to the default branch, mostly named `main` or `master`.
 - Try to avoid merge conflicts if possible.
 - Try to avoid pull request with too many changes if possible.
   - A large pull request not only stretches the review time, but also makes it much harder to spot issues.
   - It is better to split the pull request to multiple smaller ones.
 - If the pull request is resolving issues, link those issues in the pull request.
-- If the pull request is not ready but want to save/stage it, mark it as draft and no need to add any identifications to the title (e.g.: `[WIP] XXXXXXXX`).
+- If the pull request is not ready but want to save/stage it, mark it as draft and no need to add any identification to the title (e.g.: `[WIP] XXXXXXXX`).
 
 > [!NOTE]
-> - The pull request does not need to pass any automatic reviews, automatic reviews are the references for the code reviewers.
+> - The pull request does not need to pass any automatic review, automatic reviews are the references for the code reviewers.
 
 ### Create Security Vulnerability Report
 

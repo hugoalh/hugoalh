@@ -1,6 +1,6 @@
 <div align="center"><b>
 
-[💬 Languages](#f13b05c6e608-languages) 💠 [📦 Registries](#f13b05c6e608-registries) 💠 [🗄️ Repositories](#f13b05c6e608-repositories) 💠 [📚 Resources](#f13b05c6e608-resources) 💠 [👥 Socials](#f13b05c6e608-socials) 💠 [🦜 Translation Platforms](#f13b05c6e608-translation-platforms)
+[💬 Languages](#f13b05c6e608-languages) 💠 [🚪 Portals](#f13b05c6e608-portals) 💠 [📦 Registries](#f13b05c6e608-registries) 💠 [🗄️ Repositories](#f13b05c6e608-repositories) 💠 [📚 Resources](#f13b05c6e608-resources) 💠 [👥 Socials](#f13b05c6e608-socials) 💠 [🦜 Translation Platforms](#f13b05c6e608-translation-platforms)
 
 </b></div>
 
@@ -29,6 +29,14 @@
 ![SVG](./assets/icons/brand/svg.svg "SVG")
 ![TypeScript](./assets/icons/brand/typescript.svg "TypeScript")
 ![YAML](./assets/icons/brand/yaml.svg "YAML")
+
+</div>
+
+<h2 id="f13b05c6e608-portals">🚪 Portals</h2>
+
+<div align="center">
+
+[![Gravatar: @hugoalh](./assets/badges/portals/gravatar.svg "Gravatar: @hugoalh")](https://gravatar.com/hugoalh)
 
 </div>
 
@@ -66,7 +74,7 @@
 
 [![Bluesky: @hugoalh.bsky.social](./assets/badges/socials/bluesky.svg "Bluesky: @hugoalh.bsky.social")](https://bsky.app/profile/hugoalh.bsky.social)
 ![Discord: @hugoalh](./assets/badges/socials/discord.svg "Discord: @hugoalh")
-[![Gravatar: @hugoalh](./assets/badges/socials/gravatar.svg "Gravatar: @hugoalh")](https://gravatar.com/hugoalh)
+[![Discord: hugoalh Community](./assets/badges/socials/discord_community.svg "Discord: hugoalh Community")](https://discord.gg/jgG7S34DJH)
 [![Guilded: /u/hugoalh](./assets/badges/socials/guilded.svg "Guilded: /u/hugoalh")](https://www.guilded.gg/u/hugoalh)
 [![Imgur: @hugoalh](./assets/badges/socials/imgur.svg "Imgur: @hugoalh")](https://imgur.com/user/hugoalh)
 [![Mastodon: @hugoalh@mastodon.social](./assets/badges/socials/mastodon.svg "Mastodon: @hugoalh@mastodon.social")](https://mastodon.social/@hugoalh)
@@ -82,7 +90,6 @@
 [![Vivaldi Social: @hugoalh](./assets/badges/socials/vivaldi-social.svg "Vivaldi Social: @hugoalh")](https://social.vivaldi.net/@hugoalh)
 [![YouTube: @hugoalh](./assets/badges/socials/youtube.svg "YouTube: @hugoalh")](https://www.youtube.com/@hugoalh)
 
-[![Discord: hugoalh Community](./assets/badges/socials/discord_community.svg "Discord: hugoalh Community")](https://discord.gg/jgG7S34DJH)
 
 </div>
 

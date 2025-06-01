@@ -1,4 +1,5 @@
 FileName	Uri
+portals/gravatar.svg	https://img.shields.io/badge/@hugoalh-1E8CBE?labelColor=1E8CBE&logo=gravatar&logoColor=ffffff&style=flat
 registries/github-packages.svg	https://img.shields.io/badge/Packages-@hugoalh-181717?labelColor=181717&logo=github&logoColor=ffffff&style=flat
 registries/jsr.svg	https://img.shields.io/badge/@hugoalh-F7DF1E?labelColor=F7DF1E&logo=jsr&logoColor=000000&style=flat
 registries/npm.svg	https://img.shields.io/badge/@hugoalh-CB3837?labelColor=CB3837&logo=npm&logoColor=ffffff&style=flat
@@ -10,7 +11,6 @@ repositories/kaki87-git.svg	https://img.shields.io/badge/KaKi87%20Git-@hugoalh-F
 socials/bluesky.svg	https://img.shields.io/badge/@hugoalh.bsky.social-0285FF?labelColor=0285FF&logo=bluesky&logoColor=ffffff&style=flat
 socials/discord.svg	https://img.shields.io/badge/@hugoalh-5865F2?labelColor=5865F2&logo=discord&logoColor=ffffff&style=flat
 socials/discord_community.svg	https://img.shields.io/badge/hugoalh%20Community-5865F2?labelColor=5865F2&logo=discord&logoColor=ffffff&style=flat
-socials/gravatar.svg	https://img.shields.io/badge/@hugoalh-1E8CBE?labelColor=1E8CBE&logo=gravatar&logoColor=ffffff&style=flat
 socials/guilded.svg	https://img.shields.io/badge/%2Fu%2Fhugoalh-F5C400?labelColor=F5C400&logo=guilded&logoColor=000000&style=flat
 socials/imgur.svg	https://img.shields.io/badge/@hugoalh-1BB76E?labelColor=1BB76E&logo=imgur&logoColor=ffffff&style=flat
 socials/mastodon.svg	https://img.shields.io/badge/@hugoalh@mastodon.social-6364FF?labelColor=6364FF&logo=mastodon&logoColor=ffffff&style=flat

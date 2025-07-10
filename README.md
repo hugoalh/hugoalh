@@ -10,8 +10,8 @@
 
 <div align="center">
 
-- Cantonese (粵語 / 廣東話)
-- Chinese (Traditional) (華語（正體）)
+- Cantonese / 粵語 / 廣東語
+- Chinese (Traditional) / 中文（正體） / 漢語（正體） / 華語（正體）
 - English
 
 ![CSS 3](./assets/icons/brand/css-3.svg "CSS 3")

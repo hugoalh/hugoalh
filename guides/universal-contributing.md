@@ -21,7 +21,7 @@ Be aware that the spelling differences between the language variants are not cou
 |:--|:--|
 | Arabic (اَلْعَرَبِيَّةُ) | United Arab Emirates |
 | Bangla (বাংলা) | Bangladesh |
-| Chinese (華語) | Traditional / 正體 / 繁體 |
+| Chinese (中文) | Traditional / 正體 / 繁體 |
 | Dutch (Nederlands) | Standard Dutch / The Netherlands |
 | English (English) | British / England / United Kingdom (UK) |
 | French (Français) | France |

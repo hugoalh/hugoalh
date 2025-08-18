@@ -14,18 +14,19 @@ jobs:
       CDV_NPM_ROOT: "dist/npm"
     steps:
       - name: "Checkout Repository"
-        uses: "actions/checkout@v4"
+        uses: "actions/checkout@v5"
       - name: "Setup Deno"
         uses: "denoland/setup-deno@v2"
         with:
-          deno-version: "^2.3.3"
+          deno-version: "^2.4.4"
       - name: "Get Deno Cache Path"
         id: "deno-cache-path"
         shell: "pwsh"
         run: |-
           [PSCustomObject]$DenoInfo = deno info --json |
             ConvertFrom-Json -Depth 100
-          Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "value=$($DenoInfo.denoDir)" -Confirm:$False -Encoding 'UTF8NoBOM'
+          Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "root=$($DenoInfo.denoDir)" -Confirm:$False -Encoding 'UTF8NoBOM'
+          Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "generate=$($DenoInfo.typescriptCache)" -Confirm:$False -Encoding 'UTF8NoBOM'
       - name: "Load Deno Cache"
         id: "deno-cache-load"
         uses: "actions/cache/restore@v4"
@@ -35,7 +36,7 @@ jobs:
             ${{runner.os}}/Deno/${{github.run_id}}-${{github.run_attempt}}-
             ${{runner.os}}/Deno/${{github.run_id}}-
             ${{runner.os}}/Deno/
-          path: "${{steps.deno-cache-path.outputs.value}}"
+          path: "${{steps.deno-cache-path.outputs.root}}"
       - name: "Resolve Metadata"
         id: "metadata"
         shell: "pwsh"
@@ -51,15 +52,23 @@ jobs:
         if: "${{steps.metadata.outputs.build == 'true'}}"
         run: |-
           deno task build
-      - name: "Publish Package To JSR (Provenance)"
-        id: "jsr-publish-provenance"
-        if: "${{steps.metadata.outputs.jsr-publish-provenance == 'true'}}"
-        run: |-
-          deno task jsr-publish-provenance
       - name: "Publish Package To JSR"
-        if: "${{!cancelled() && ((steps.metadata.outputs.jsr-publish-provenance == 'true' && steps.jsr-publish-provenance.outcome == 'failure') || (steps.metadata.outputs.jsr-publish-provenance == 'false' && steps.metadata.outputs.jsr-publish == 'true'))}}"
+        if: "${{steps.metadata.outputs.jsr-publish-provenance == 'true' || steps.metadata.outputs.jsr-publish == 'true'}}"
+        shell: "pwsh"
+        env:
+          CDV_JSR_PUBLISH: "${{steps.metadata.outputs.jsr-publish}}"
+          CDV_JSR_PUBLISH_PROVENANCE: "${{steps.metadata.outputs.jsr-publish-provenance}}"
         run: |-
-          deno task jsr-publish
+          If ($Env:CDV_JSR_PUBLISH_PROVENANCE -eq 'true') {
+            deno task jsr-publish-provenance
+          }
+          If (
+            (($Env:CDV_JSR_PUBLISH_PROVENANCE -eq 'true') -and ($LASTEXITCODE -ne 0)) -or
+            (($Env:CDV_JSR_PUBLISH_PROVENANCE -eq 'false') -and ($Env:CDV_JSR_PUBLISH -eq 'true'))
+          ) {
+            $LASTEXITCODE = 0
+            deno task jsr-publish
+          }
       - name: "Build Package For NPM"
         id: "npm-build"
         if: "${{!cancelled() && steps.metadata.outputs.npm-build == 'true'}}"
@@ -75,12 +84,19 @@ jobs:
           if-no-files-found: "error"
           retention-days: "1"
           include-hidden-files: "true"
+      - name: "Flush Deno Cache"
+        if: "${{!cancelled()}}"
+        shell: "pwsh"
+        env:
+          CDV_DENO_CACHE_PATH_GENERATE: "${{steps.deno-cache-path.outputs.generate}}"
+        run: |-
+          Remove-Item -LiteralPath $Env:CDV_DENO_CACHE_PATH_GENERATE -Recurse -Confirm:$False -ErrorAction 'SilentlyContinue'
       - name: "Save Deno Cache"
         if: "${{!cancelled() && steps.deno-cache-load.outcome == 'success'}}"
         uses: "actions/cache/save@v4"
         with:
           key: "${{runner.os}}/Deno/${{github.run_id}}-${{github.run_attempt}}-${{github.job}}"
-          path: "${{steps.deno-cache-path.outputs.value}}"
+          path: "${{steps.deno-cache-path.outputs.root}}"
     outputs:
       npm-artifact: "${{steps.npm-artifact.outcome == 'success'}}"
       npm-build: "${{steps.metadata.outputs.npm-build}}"

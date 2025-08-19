@@ -99,13 +99,10 @@ jobs:
               Join-String -Separator ','
           )" -Confirm:$False -Encoding 'UTF8NoBOM'
           Add-Content -LiteralPath $Env:GITHUB_OUTPUT -Value "ballname=$($Name -ireplace '^@', '' -ireplace '\/', '-')-$($VersionManifest.ToString()).tgz" -Confirm:$False -Encoding 'UTF8NoBOM'
-      - name: "Install Dependencies"
-        if: "${{steps.metadata.outputs.build == 'true'}}"
-        run: |-
-          npm install
       - name: "Build Repository"
         if: "${{steps.metadata.outputs.build == 'true'}}"
         run: |-
+          npm install
           npm run build
       - name: "Publish Package To NPM With Tag `${{steps.metadata.outputs.tags-first}}` (Provenance)"
         id: "npm-publish-provenance"

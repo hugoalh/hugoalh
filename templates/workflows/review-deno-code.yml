@@ -98,7 +98,6 @@ jobs:
         run: |-
           deno task jsr-check
       - name: "Test Code"
-        id: "test"
         if: "${{!cancelled() && steps.analyze.outcome == 'success'}}"
         run: |-
           deno test --allow-all --coverage --coverage-raw-data-only --no-prompt --permit-no-files --trace-leaks

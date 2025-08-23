@@ -2,17 +2,18 @@
 name: "Bug Report"
 description: "Report a bug."
 labels:
-  - "Type/Bug 🐛"
+  - "bug 🐛"
 body:
   - type: "input"
     id: "version"
     attributes:
       label: "Version"
       description: |-
-        Which version occur this bug? Version must be supported at the time of submit, the supported versions are listed in the Security Policy file `SECURITY.md`.
+        Which version occur this bug?
 
-        > [!NOTE]
-        > - For multiple versions, separate each version with comma-space (`, `), or use versions range syntax from [OSGi](https://docs.osgi.org/whitepaper/semantic-versioning/040-semantic-versions.html) or [SemVer](https://devhints.io/semver).
+        Version must be supported as of submit. Supported versions are listed in the Security Policy (file `SECURITY.md`).
+
+        For multiple versions, separate each version with comma-space (`, `), or use versions range syntax from [OSGi Semantic Versioning](https://docs.osgi.org/whitepaper/semantic-versioning/040-semantic-versions.html) or [Semantic Versioning 2.0.0](https://devhints.io/semver).
       placeholder: "1.0.2"
     validations:
       required: true
@@ -21,43 +22,21 @@ body:
     attributes:
       label: "Describe"
       description: |-
-        What the bug is? If needed, use images, videos, or other media type to help for explain this bug.
-
-        > [!NOTE]
-        > - For external media, please ensure we are able to view those without any extra step.
+        What the bug is?
+        
+        If needed, use images, videos, or other types of media to help for explain this bug. Not accept any external resource.
       placeholder: |-
         It unable to XXXXXXXX.
     validations:
       required: true
-  - type: "input"
-    id: "behaviour-expected"
-    attributes:
-      label: "Behaviour Expected"
-      description: |-
-        What things should expected to happen?
-      placeholder: |-
-        It should XXXXXXXX.
-    validations:
-      required: false
-  - type: "input"
-    id: "behaviour-actual"
-    attributes:
-      label: "Behaviour Actual"
-      description: |-
-        What things happened instead of the expected?
-      placeholder: |-
-        It XXXXXXXX.
-    validations:
-      required: false
   - type: "textarea"
     id: "reproduce"
     attributes:
       label: "To Reproduce"
       description: |-
-        Is this bug reproducible? If reproducible, please show the reproduce steps; If needed, use images, videos, or other media to help for show the reproduce steps.
+        Is this bug able to reproduce? If so, please show the steps to reproduce.
 
-        > [!NOTE]
-        > - For external media, please ensure we are able to view those without any extra step.
+        If needed, use images, videos, or other types of media to help for explain the steps to reproduce. Not accept any external resource.
       placeholder: |-
         1. Go to XXXXXXXX.
         2. Click on XXXXXXXX.
@@ -83,11 +62,11 @@ body:
     validations:
       required: true
   - type: "textarea"
-    id: "execution-environment"
+    id: "environment"
     attributes:
-      label: "Execution Environment"
+      label: "Environment / Set Up"
       description: |-
-        How is the execution environment? Different execution environment may have different outcome, provide this information may help for reproduce this bug.
+        How is the environment/set-up? Different environments/set-ups maybe have different outcomes, provide this information maybe help for reproduce this bug.
 
         These are common categories:
 
@@ -95,25 +74,22 @@ body:
         - **`cpu`:** Details of the central processing unit (e.g.: `Intel i7-6700`).
         - **`ram`:** Details of the random access memory (e.g.: `8 GB`).
         - **`storage`:** Details of the storage unit (e.g.: `500 GB SSD`).
-        - **`network`:** Details of the network.
+        - **`network`:** Details of the network (e.g.: `Wi-Fi`).
         - **`gpu`:** Details of the graphics processing unit (e.g.: `NVIDIA GeForce RTX 4090`).
         - **`os`:** Details of the operate system (e.g.: `Windows 11 Professional 23H2 X64`).
-        - **`softwares`:** List of the installed softwares (e.g.: `NodeJS 20.6.0 X64`, `Deno 1.36.0 X64`).
+        - **`programs`:** List of the installed programs (e.g.: `NodeJS 20.6.0 X64`, `Deno 1.36.0 X64`).
         - **`env`:** List of the environment variables (e.g.: `NO_COLOR=1`).
-
-        > [!NOTE]
-        > - Accept multiple execution environments.
-        > - All of the categories are optional.
-
-        **\[🖌️ YAML\]**
       render: "yml"
+      placeholder: |-
+        type: [computer, server]
+        os: Windows 11 Professional 23H2 X64
     validations:
       required: false
   - type: "textarea"
-    id: "additional-information"
+    id: "additional"
     attributes:
-      label: "Additional Information"
+      label: "Additional"
       description: |-
-        If there have information which relevant to this bug but not suitable at other fields, please list those at here.
+        Information which relevant to this bug but not suitable at other fields.
     validations:
       required: false

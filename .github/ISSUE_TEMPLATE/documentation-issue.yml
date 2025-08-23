@@ -2,7 +2,7 @@
 name: "Documentation Issue"
 description: "Report a documentation issue."
 labels:
-  - "Type/Documentation 📓"
+  - "documentation 📚"
 body:
   - type: "textarea"
     id: "document"

@@ -2,7 +2,7 @@
 name: "Bug Report"
 description: "Report a bug."
 labels:
-  - "Type/Bug 🐛"
+  - "bug 🐛"
 body:
   - type: "input"
     id: "version"

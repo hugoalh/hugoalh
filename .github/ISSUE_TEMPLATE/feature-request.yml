@@ -2,7 +2,7 @@
 name: "Feature Request"
 description: "Suggest an idea."
 labels:
-  - "Type/Enhancement 💡"
+  - "enhancement 💡"
 body:
   - type: "textarea"
     id: "describe"

@@ -7,8 +7,8 @@ updates:
     schedule:
       interval: "weekly"
     labels:
-      - "Platform/Bun"
-      - "Type/Dependency 📦"
+      - "dependency 📦"
+      - "bun"
     pull-request-branch-name:
       separator: "/"
     cooldown:
@@ -19,8 +19,8 @@ updates:
     schedule:
       interval: "weekly"
     labels:
-      - "Platform/Rust"
-      - "Type/Dependency 📦"
+      - "dependency 📦"
+      - "rust"
     pull-request-branch-name:
       separator: "/"
     cooldown:
@@ -31,8 +31,8 @@ updates:
     schedule:
       interval: "weekly"
     labels:
-      - "Platform/Docker"
-      - "Type/Dependency 📦"
+      - "dependency 📦"
+      - "docker"
     pull-request-branch-name:
       separator: "/"
     cooldown:
@@ -43,8 +43,8 @@ updates:
     schedule:
       interval: "weekly"
     labels:
-      - "Platform/GitHubActions"
-      - "Type/Dependency 📦"
+      - "dependency 📦"
+      - "github-actions"
     pull-request-branch-name:
       separator: "/"
     cooldown:
@@ -55,8 +55,8 @@ updates:
     schedule:
       interval: "weekly"
     labels:
-      - "Platform/NodeJS"
-      - "Type/Dependency 📦"
+      - "dependency 📦"
+      - "nodejs"
     pull-request-branch-name:
       separator: "/"
     versioning-strategy: "increase-if-necessary"

@@ -11,7 +11,7 @@ body:
       description: |-
         Which version occur this bug?
 
-        Version must be supported as of submit. Supported versions are listed in the Security Policy (file `SECURITY.md`).
+        Version must be supported as of submit; Supported versions are listed in the Security Policy (file `SECURITY.md`).
 
         For multiple versions, separate each version with comma-space (`, `), or use versions range syntax from [OSGi Semantic Versioning](https://docs.osgi.org/whitepaper/semantic-versioning/040-semantic-versions.html) or [Semantic Versioning 2.0.0](https://devhints.io/semver).
       placeholder: "1.0.2"
@@ -23,8 +23,8 @@ body:
       label: "Describe"
       description: |-
         What the bug is?
-        
-        If needed, use images, videos, or other types of media to help for explain this bug. Not accept any external resource.
+
+        If needed, use images, videos, or other types of media to help for explain this bug; Not accept any external resource.
       placeholder: |-
         It unable to XXXXXXXX.
     validations:
@@ -36,7 +36,7 @@ body:
       description: |-
         Is this bug able to reproduce? If so, please show the steps to reproduce.
 
-        If needed, use images, videos, or other types of media to help for explain the steps to reproduce. Not accept any external resource.
+        If needed, use images, videos, or other types of media to help for explain the steps to reproduce; Not accept any external resource.
       placeholder: |-
         1. Go to XXXXXXXX.
         2. Click on XXXXXXXX.
@@ -79,10 +79,13 @@ body:
         - **`os`:** Details of the operate system (e.g.: `Windows 11 Professional 23H2 X64`).
         - **`programs`:** List of the installed programs (e.g.: `NodeJS 20.6.0 X64`, `Deno 1.36.0 X64`).
         - **`env`:** List of the environment variables (e.g.: `NO_COLOR=1`).
+
+        **[🖌️ YAML]**
       render: "yml"
       placeholder: |-
         type: [computer, server]
         os: Windows 11 Professional 23H2 X64
+        programs: Deno 1.36.0 X64
     validations:
       required: false
   - type: "textarea"

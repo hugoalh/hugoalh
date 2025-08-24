@@ -11,7 +11,9 @@ body:
       description: |-
         Which document path occur this issue?
 
-        Accept multiple documents path.
+        Accept glob syntax and multiple documents path.
+
+        **[🖌️ YAML]**
       render: "yml"
       placeholder: |-
         README.md
@@ -23,8 +25,8 @@ body:
       label: "Describe"
       description: |-
         What the issue is?
-        
-        If needed, use images, videos, or other types of media to help for explain this issue. Not accept any external resource.
+
+        If needed, use images, videos, or other types of media to help for explain this issue; Not accept any external resource.
     validations:
       required: true
   - type: "textarea"

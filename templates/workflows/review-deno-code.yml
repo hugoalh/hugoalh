@@ -90,6 +90,14 @@ jobs:
           [Boolean]$NPMCheck = $Null -ine $Config.tasks.'npm-check'
           [Boolean]$NPMDistributionRelative = $Null -ine $Config.tasks.'npm-var-distribution-relative'
           [Boolean]$NPMPublish = $Null -ine $Config.tasks.'npm-publish'
+          [Boolean]$CodebergBuild = $Null -ine $Config.tasks.'codeberg-build'
+          [Boolean]$CodebergCheck = $Null -ine $Config.tasks.'codeberg-check'
+          [Boolean]$CodebergDistributionRelative = $Null -ine $Config.tasks.'codeberg-var-distribution-relative'
+          [Boolean]$CodebergPublish = $Null -ine $Config.tasks.'codeberg-publish'
+          [Boolean]$KaKi87Build = $Null -ine $Config.tasks.'kaki87-build'
+          [Boolean]$KaKi87Check = $Null -ine $Config.tasks.'kaki87-check'
+          [Boolean]$KaKi87DistributionRelative = $Null -ine $Config.tasks.'kaki87-var-distribution-relative'
+          [Boolean]$KaKi87Publish = $Null -ine $Config.tasks.'kaki87-publish'
           If ($Env:CDV_RUN_LITE -ieq 'false') {
             Add-Content -LiteralPath $Env:GITHUB_STEP_SUMMARY -Value @"
           # Dispatch
@@ -103,12 +111,26 @@ jobs:
             - **Check:** $($NPMCheck ? '✔️' : '❌')
             - **DistributionRelative:** $($NPMDistributionRelative ? '✔️' : '❌')
             - **Publish:** $($NPMPublish ? '✔️' : '❌')
+          - **Codeberg:**
+            - **Build:** $($CodebergBuild ? '✔️' : '❌')
+            - **Check:** $($CodebergCheck ? '✔️' : '❌')
+            - **DistributionRelative:** $($CodebergDistributionRelative ? '✔️' : '❌')
+            - **Publish:** $($CodebergPublish ? '✔️' : '❌')
+          - **KaKi87:**
+            - **Build:** $($KaKi87Build ? '✔️' : '❌')
+            - **Check:** $($KaKi87Check ? '✔️' : '❌')
+            - **DistributionRelative:** $($KaKi87DistributionRelative ? '✔️' : '❌')
+            - **Publish:** $($KaKi87Publish ? '✔️' : '❌')
           "@
           }
           Add-Content -LiteralPath $Env:GITHUB_ENV -Value "CDV_BUILD=$($Build.ToString().ToLower())"
           Add-Content -LiteralPath $Env:GITHUB_ENV -Value "CDV_JSR_CHECK=$($JSRCheck.ToString().ToLower())"
           Add-Content -LiteralPath $Env:GITHUB_ENV -Value "CDV_NPM_BUILD=$($NPMBuild.ToString().ToLower())"
           Add-Content -LiteralPath $Env:GITHUB_ENV -Value "CDV_NPM_CHECK=$($NPMCheck.ToString().ToLower())"
+          Add-Content -LiteralPath $Env:GITHUB_ENV -Value "CDV_CODEBERG_BUILD=$($CodebergBuild.ToString().ToLower())"
+          Add-Content -LiteralPath $Env:GITHUB_ENV -Value "CDV_CODEBERG_CHECK=$($CodebergCheck.ToString().ToLower())"
+          Add-Content -LiteralPath $Env:GITHUB_ENV -Value "CDV_KAKI87_BUILD=$($KaKi87Build.ToString().ToLower())"
+          Add-Content -LiteralPath $Env:GITHUB_ENV -Value "CDV_KAKI87_CHECK=$($KaKi87Check.ToString().ToLower())"
       - name: "Check Repository"
         if: "${{!cancelled() && steps.analyze.outcome == 'success' && env.CDV_RUN_LITE == 'false'}}"
         shell: "pwsh"
@@ -164,6 +186,22 @@ jobs:
         if: "${{!cancelled() && steps.analyze.outcome == 'success' && env.CDV_RUN_LITE == 'false' && env.CDV_NPM_CHECK == 'true'}}"
         run: |-
           deno task npm-check
+      - name: "Build Package For Codeberg"
+        if: "${{!cancelled() && steps.analyze.outcome == 'success' && env.CDV_RUN_LITE == 'false' && env.CDV_CODEBERG_BUILD == 'true'}}"
+        run: |-
+          deno task codeberg-build
+      - name: "Check Package For Codeberg"
+        if: "${{!cancelled() && steps.analyze.outcome == 'success' && env.CDV_RUN_LITE == 'false' && env.CDV_CODEBERG_CHECK == 'true'}}"
+        run: |-
+          deno task codeberg-check
+      - name: "Build Package For KaKi87"
+        if: "${{!cancelled() && steps.analyze.outcome == 'success' && env.CDV_RUN_LITE == 'false' && env.CDV_KAKI87_BUILD == 'true'}}"
+        run: |-
+          deno task kaki87-build
+      - name: "Check Package For KaKi87"
+        if: "${{!cancelled() && steps.analyze.outcome == 'success' && env.CDV_RUN_LITE == 'false' && env.CDV_KAKI87_CHECK == 'true'}}"
+        run: |-
+          deno task kaki87-check
       - name: "Flush Cache"
         if: "${{!cancelled()}}"
         shell: "pwsh"

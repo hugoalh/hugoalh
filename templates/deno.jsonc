@@ -52,6 +52,22 @@
 	},
 	"lock": false,
 	"tasks": {
+		"codeberg-build": {
+			"command": "deno run --allow-all --no-prompt --quiet .codeberg.dnt.ts",
+			"description": "Build package for Codeberg Packages Registry."
+		},
+		"codeberg-check": {
+			"command": "deno task --cwd \"$(deno task codeberg-var-distribution-relative)\" --eval \"npm publish --dry-run\"",
+			"description": "Check package for Codeberg Packages Registry."
+		},
+		"codeberg-publish": {
+			"command": "deno task --cwd \"$(deno task codeberg-var-distribution-relative)\" --eval \"npm publish --tag recent\"",
+			"description": "Publish package to Codeberg Packages Registry."
+		},
+		"codeberg-var-distribution-relative": {
+			"command": "echo \"dist/codeberg\"",
+			"description": "Variable of the Codeberg Packages Registry distribution directory relative path."
+		},
 		"jsr-check": {
 			"command": "deno publish --allow-dirty --config \"$(deno task jsr-var-manifest-relative)\" --dry-run --no-provenance",
 			"description": "Check package for JSR."
@@ -64,8 +80,24 @@
 			"command": "echo \"jsr.jsonc\"",
 			"description": "Variable of the JSR manifest file relative path."
 		},
+		"kaki87-build": {
+			"command": "deno run --allow-all --no-prompt --quiet .kaki87.dnt.ts",
+			"description": "Build package for KaKi87 Packages Registry."
+		},
+		"kaki87-check": {
+			"command": "deno task --cwd \"$(deno task kaki87-var-distribution-relative)\" --eval \"npm publish --dry-run\"",
+			"description": "Check package for KaKi87 Packages Registry."
+		},
+		"kaki87-publish": {
+			"command": "deno task --cwd \"$(deno task kaki87-var-distribution-relative)\" --eval \"npm publish --tag recent\"",
+			"description": "Publish package to KaKi87 Packages Registry."
+		},
+		"kaki87-var-distribution-relative": {
+			"command": "echo \"dist/kaki87\"",
+			"description": "Variable of the KaKi87 Packages Registry distribution directory relative path."
+		},
 		"npm-build": {
-			"command": "deno run --allow-all --no-prompt --quiet .dnt.ts",
+			"command": "deno run --allow-all --no-prompt --quiet .npm.dnt.ts",
 			"description": "Build package for NPM."
 		},
 		"npm-check": {
@@ -73,7 +105,7 @@
 			"description": "Check package for NPM."
 		},
 		"npm-publish": {
-			"command": "deno task --cwd \"$(deno task npm-var-distribution-relative)\" --eval \"npm publish --tag publish\"",
+			"command": "deno task --cwd \"$(deno task npm-var-distribution-relative)\" --eval \"npm publish --tag recent\"",
 			"description": "Publish package to NPM."
 		},
 		"npm-var-distribution-relative": {

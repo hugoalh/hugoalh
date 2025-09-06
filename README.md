@@ -1,18 +1,20 @@
-<div align="center"><b>
+<details open>
+  <summary><b>🗄️ Forges / Registries / Repositories</b></summary>
+  <div align="center">
 
-[💬 Languages](#f13b05c6e608-languages) 💠 [🚪 Portals](#f13b05c6e608-portals) 💠 [📦 Registries](#f13b05c6e608-registries) 💠 [🗄️ Repositories](#f13b05c6e608-repositories) 💠 [📚 Resources](#f13b05c6e608-resources) 💠 [👥 Socials](#f13b05c6e608-socials) 💠 [🦜 Translation Platforms](#f13b05c6e608-translation-platforms)
+[![Codeberg: @hugoalh](./assets/badges/repositories/codeberg.svg "Codeberg: @hugoalh")](https://codeberg.org/hugoalh)
+[![GitHub: @hugoalh](./assets/badges/repositories/github.svg "GitHub: @hugoalh")](https://github.com/hugoalh)
+[![JSR: @hugoalh](./assets/badges/registries/jsr.svg "JSR: @hugoalh")](https://jsr.io/@hugoalh)
+[<kbd>KaKi87 `@hugoalh`</kbd>](https://git.kaki87.net/hugoalh)
+[![NPM: @hugoalh](./assets/badges/registries/npm.svg "NPM: @hugoalh")](https://www.npmjs.com/search?q=%40hugoalh%2F)
+[![PowerShell Gallery: @hugoalh](./assets/badges/registries/powershell-gallery.svg "PowerShell Gallery: @hugoalh")](https://www.powershellgallery.com/profiles/hugoalh)
+[![Visual Studio Marketplace: @hugoalh](./assets/badges/registries/visual-studio-marketplace.svg "Visual Studio Marketplace: @hugoalh")](https://marketplace.visualstudio.com/publishers/hugoalh)
 
-</b></div>
-
----
-
-<h2 id="f13b05c6e608-languages">💬 Languages</h2>
-
-<div align="center">
-
-- Cantonese / 粵語 / 廣東語
-- Chinese (Traditional) / 中文（正體） / 漢語（正體） / 華語（正體）
-- English
+  </div>
+</details>
+<details open>
+  <summary><b>💬 Languages</b></summary>
+  <div align="center">
 
 ![CSS 3](./assets/icons/brand/css-3.svg "CSS 3")
 ![Deno](./assets/icons/brand/deno.svg "Deno")
@@ -30,47 +32,28 @@
 ![TypeScript](./assets/icons/brand/typescript.svg "TypeScript")
 ![YAML](./assets/icons/brand/yaml.svg "YAML")
 
-</div>
-
-<h2 id="f13b05c6e608-portals">🚪 Portals</h2>
-
-<div align="center">
+  </div>
+</details>
+<details open>
+  <summary><b>🚪 Portals</b></summary>
+  <div align="center">
 
 [![Gravatar: @hugoalh](./assets/badges/portals/gravatar.svg "Gravatar: @hugoalh")](https://gravatar.com/hugoalh)
 
-</div>
-
-<h2 id="f13b05c6e608-registries">📦 Registries</h2>
-
-<div align="center">
-
-[![GitHub Packages: @hugoalh](./assets/badges/registries/github-packages.svg "GitHub Packages: @hugoalh")](https://github.com/hugoalh?tab=packages)
-[![JSR: @hugoalh](./assets/badges/registries/jsr.svg "JSR: @hugoalh")](https://jsr.io/@hugoalh)
-[![NPM: @hugoalh](./assets/badges/registries/npm.svg "NPM: @hugoalh")](https://www.npmjs.com/search?q=%40hugoalh%2F)
-[![PowerShell Gallery: @hugoalh](./assets/badges/registries/powershell-gallery.svg "PowerShell Gallery: @hugoalh")](https://www.powershellgallery.com/profiles/hugoalh)
-[![Visual Studio Marketplace: @hugoalh](./assets/badges/registries/visual-studio-marketplace.svg "Visual Studio Marketplace: @hugoalh")](https://marketplace.visualstudio.com/publishers/hugoalh)
-
-</div>
-
-<h2 id="f13b05c6e608-repositories">🗄️ Repositories</h2>
-
-<div align="center">
-
-[![Codeberg: @hugoalh](./assets/badges/repositories/codeberg.svg "Codeberg: @hugoalh")](https://codeberg.org/hugoalh?tab=repositories)
-[![GitHub: @hugoalh](./assets/badges/repositories/github.svg "GitHub: @hugoalh")](https://github.com/hugoalh?tab=repositories)
-
-</div>
-
-<h2 id="f13b05c6e608-resources">📚 Resources</h2>
+  </div>
+</details>
+<details open>
+  <summary><b>📚 Resources</b></summary>
 
 - [GPG Keys](./assets/gpg-keys.tsv)
 - [SSH Keys](./assets/ssh-keys.tsv)
 - [Universal Coding Guide](./guides/universal-coding.md)
 - [Universal Contributing Guide](./guides/universal-contributing.md)
 
-<h2 id="f13b05c6e608-socials">👥 Socials</h2>
-
-<div align="center">
+</details>
+<details open>
+  <summary><b>👥 Socials</b></summary>
+  <div align="center">
 
 [![Bluesky: @hugoalh.bsky.social](./assets/badges/socials/bluesky.svg "Bluesky: @hugoalh.bsky.social")](https://bsky.app/profile/hugoalh.bsky.social)
 ![Discord: @hugoalh](./assets/badges/socials/discord.svg "Discord: @hugoalh")
@@ -90,16 +73,16 @@
 [![Vivaldi Social: @hugoalh](./assets/badges/socials/vivaldi-social.svg "Vivaldi Social: @hugoalh")](https://social.vivaldi.net/@hugoalh)
 [![YouTube: @hugoalh](./assets/badges/socials/youtube.svg "YouTube: @hugoalh")](https://www.youtube.com/@hugoalh)
 
-
-</div>
-
-<h2 id="f13b05c6e608-translation-platforms">🦜 Translation Platforms</h2>
-
-<div align="center">
+  </div>
+</details>
+<details open>
+  <summary><b>🦜 Translation Platforms</b></summary>
+  <div align="center">
 
 [![Codeberg Translate: @hugoalh](./assets/badges/translation-platforms/codeberg-translate.svg "Codeberg Translate: @hugoalh")](https://translate.codeberg.org/user/hugoalh)
 [![Crowdin: @hugoalh](./assets/badges/translation-platforms/crowdin.svg "Crowdin: @hugoalh")](https://crowdin.com/profile/hugoalh)
 [![Transifex: @hugoalh](./assets/badges/translation-platforms/transifex.svg "Transifex: @hugoalh")](https://app.transifex.com/user/profile/hugoalh)
 [![Weblate: @hugoalh](./assets/badges/translation-platforms/weblate.svg "Weblate: @hugoalh")](https://hosted.weblate.org/user/hugoalh)
 
-</div>
+  </div>
+</details>

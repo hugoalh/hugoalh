@@ -44,6 +44,8 @@ jobs:
       - name: "Get Cache Path"
         shell: "pwsh"
         run: |-
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $True
           [PSCustomObject]$DenoInfo = ConvertFrom-Json -InputObject (
             deno info --json |
               Join-String -Separator "`n"
@@ -82,6 +84,8 @@ jobs:
         id: "analyze"
         shell: "pwsh"
         run: |-
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $True
           [PSCustomObject]$Config = ConvertFrom-Json -InputObject (Get-Content -LiteralPath '.\deno.jsonc' -Raw -Encoding 'UTF8NoBOM') -Depth 100
           [Boolean]$Build = $Null -ine $Config.tasks.build
           [Boolean]$CodebergNPMBuild = $Null -ine $Config.tasks.'codeberg-npm-build'
@@ -151,6 +155,8 @@ jobs:
         if: "${{!cancelled() && steps.analyze.outcome == 'success' && env.CDV_RUN_LITE == 'false'}}"
         shell: "pwsh"
         run: |-
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $True
           [String[]]$FilesForbid = Get-ChildItem -LiteralPath '.\' -Include @('*.mjs', '*.mts') -File -Recurse -Name
           If ($FilesForbid.Count -gt 0) {
             Write-Error -Message "Repository contains forbid file formats (``.mjs``, ``.mts``): $(
@@ -162,6 +168,8 @@ jobs:
         if: "${{!cancelled() && steps.analyze.outcome == 'success' && env.CDV_RUN_LITE == 'false'}}"
         shell: "pwsh"
         run: |-
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $True
           Get-ChildItem -LiteralPath '.\' -File -Recurse -Name
       - name: "Lint Code"
         if: "${{!cancelled() && steps.analyze.outcome == 'success' && env.CDV_RUN_LITE == 'false'}}"
@@ -183,6 +191,8 @@ jobs:
         if: "${{!cancelled() && steps.analyze.outcome == 'success'}}"
         shell: "pwsh"
         run: |-
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $True
           If ((Test-Path -LiteralPath '.\coverage' -PathType 'Container') -and (Get-ChildItem -LiteralPath '.\coverage' -File).Count -gt 0) {
             deno coverage
           }
@@ -234,6 +244,8 @@ jobs:
         if: "${{!cancelled()}}"
         shell: "pwsh"
         run: |-
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $True
           ConvertFrom-Json -InputObject ($Env:CDV_DENO_CACHE_PATH_FLUSHES ?? '[]') -Depth 100 |
             ForEach-Object -Process {
               Remove-Item -LiteralPath $_ -Recurse -Confirm:$False -ErrorAction 'SilentlyContinue'

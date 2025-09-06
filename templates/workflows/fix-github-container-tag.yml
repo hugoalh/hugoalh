@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: "Fix GitHub Packages Docker Image Tag"
+name: "Fix GitHub Container Tag"
 on:
   workflow_dispatch:
     inputs:
@@ -18,13 +18,17 @@ jobs:
       packages: "write"
     runs-on: "ubuntu-latest"
     steps:
-      - name: "Sign In To GitHub Packages"
+      - name: "Sign In To GitHub"
         uses: "docker/login-action@v3"
         with:
           registry: "ghcr.io"
           username: "${{github.actor}}"
           password: "${{secrets.GITHUB_TOKEN}}"
-      - name: "Fix Tag"
-        shell: "pwsh"
+      - shell: "pwsh"
+        env:
+          CDV_LABEL: "${{inputs.label}}"
+          CDV_TAG: "${{inputs.tag}}"
         run: |-
-          docker buildx imagetools create 'ghcr.io/${{github.repository}}:${{inputs.tag}}' --tag 'ghcr.io/${{github.repository}}:${{inputs.label}}'
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $True
+          docker buildx imagetools create "ghcr.io/$($Env:GITHUB_REPOSITORY):$($Env:CDV_TAG)" --tag "ghcr.io/$($Env:GITHUB_REPOSITORY):$($Env:CDV_LABEL)"

@@ -68,6 +68,8 @@ jobs:
       - name: "Get Cache Path"
         shell: "pwsh"
         run: |-
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $True
           [PSCustomObject]$DenoInfo = ConvertFrom-Json -InputObject (
             deno info --json |
               Join-String -Separator "`n"
@@ -114,6 +116,8 @@ jobs:
           CDV_KAKI87_NPM_DISPATCH: "${{inputs.kaki87-npm || 'auto'}}"
           CDV_NPM_DISPATCH: "${{inputs.npm || 'auto'}}"
         run: |-
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $True
           [PSCustomObject]$Config = ConvertFrom-Json -InputObject (Get-Content -LiteralPath '.\deno.jsonc' -Raw -Encoding 'UTF8NoBOM') -Depth 100
           [Boolean]$Build = $Null -ine $Config.tasks.build
           [Boolean]$CodebergNPMBuild = $Null -ine $Config.tasks.'codeberg-npm-build'
@@ -199,56 +203,45 @@ jobs:
       - name: "Publish Package To JSR"
         if: "${{!cancelled() && (steps.build-general.outcome == 'success' || steps.build-general.outcome == 'skip') && env.CDV_JSR_PUBLISH == 'true'}}"
         run: |-
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $True
+          If ($Env:CDV_JSR_BUILD -ieq 'true') {
+            deno task jsr-build
+          }
           deno task jsr-publish
-      - name: "Build Package For Codeberg NPM"
-        id: "build-codeberg-npm"
-        if: "${{!cancelled() && (steps.build-general.outcome == 'success' || steps.build-general.outcome == 'skip') && env.CDV_CODEBERG_NPM_PUBLISH == 'true' && env.CDV_CODEBERG_NPM_BUILD == 'true'}}"
-        run: |-
-          deno task codeberg-npm-build
-      - name: "Build Package For GitHub NPM"
-        id: "build-github-npm"
-        if: "${{!cancelled() && (steps.build-general.outcome == 'success' || steps.build-general.outcome == 'skip') && env.CDV_GITHUB_NPM_PUBLISH == 'true' && env.CDV_GITHUB_NPM_BUILD == 'true'}}"
-        run: |-
-          deno task github-npm-build
-      - name: "Build Package For KaKi87 NPM"
-        id: "build-kaki87-npm"
-        if: "${{!cancelled() && (steps.build-general.outcome == 'success' || steps.build-general.outcome == 'skip') && env.CDV_KAKI87_NPM_PUBLISH == 'true' && env.CDV_KAKI87_NPM_BUILD == 'true'}}"
-        run: |-
-          deno task kaki87-npm-build
-      - name: "Build Package For NPM"
-        id: "build-npm"
-        if: "${{!cancelled() && (steps.build-general.outcome == 'success' || steps.build-general.outcome == 'skip') && env.CDV_NPM_PUBLISH == 'true' && env.CDV_NPM_BUILD == 'true'}}"
-        run: |-
-          deno task npm-build
-      - name: "Publish Package To NPM (Pre)"
-        id: "publish-npm-pre"
-        if: "${{!cancelled() && (steps.build-npm.outcome == 'success' || steps.build-npm.outcome == 'skip') && env.CDV_NPM_PUBLISH == 'true'}}"
+      - name: "Publish Package To Codeberg NPM"
+        if: "${{!cancelled() && (steps.build-general.outcome == 'success' || steps.build-general.outcome == 'skip') && env.CDV_CODEBERG_NPM_PUBLISH == 'true'}}"
         shell: "pwsh"
         env:
-          CDV_NPM_TOKEN: "${{secrets.NPM_TOKEN}}"
+          CDV_CODEBERG_NPM_TOKEN: "${{secrets.CODEBERG_NPM_TOKEN}}"
         run: |-
-          npm --global config set registry https://registry.npmjs.org/
-          npm --global config set //registry.npmjs.org/:_authToken $Env:CDV_NPM_TOKEN
-          npm --global config set provenance true
-          [PSCustomObject]$Manifest = ConvertFrom-Json -InputObject (Get-Content -LiteralPath (Join-Path -Path $Env:CDV_NPM_DISTRIBUTION_RELATIVE -ChildPath 'package.json') -Raw -Encoding 'UTF8NoBOM') -Depth 100
-          Add-Content -LiteralPath $Env:GITHUB_ENV -Value "CDV_NPM_PACKAGE_NAME=$($Manifest.Name)" -Confirm:$False -Encoding 'UTF8NoBOM'
-          Add-Content -LiteralPath $Env:GITHUB_ENV -Value "CDV_NPM_PACKAGE_VERSION=$($Manifest.version)" -Confirm:$False -Encoding 'UTF8NoBOM'
-      - name: "Publish Package To NPM"
-        id: "publish-npm-main"
-        if: "${{!cancelled() && steps.publish-npm-pre.outcome == 'success'}}"
-        run: |-
-          deno task npm-publish
-      - name: "Publish Package To NPM (Post)"
-        if: "${{!cancelled() && steps.publish-npm-pre.outcome == 'success'}}"
-        shell: "pwsh"
-        env:
-          CDV_NPM_PUBLISH_SUCCESS: "${{steps.publish-npm-main.outcome == 'success'}}"
-        run: |-
-          If ($Env:CDV_NPM_PUBLISH_SUCCESS -ieq 'true') {
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $True
+          If ($Env:CDV_CODEBERG_NPM_BUILD -ieq 'true') {
+            deno task codeberg-npm-build
+          }
+          [String]$RegistryEndpoint = 'codeberg.org/api/packages/hugoalh/npm'
+          npm --global config set registry "https://$($RegistryEndpoint)/"
+          npm --global config set "//$($RegistryEndpoint)/:_authToken" $Env:CDV_CODEBERG_NPM_TOKEN
+          [PSCustomObject]$Manifest = ConvertFrom-Json -InputObject (Get-Content -LiteralPath (Join-Path -Path (
+            deno task codeberg-npm-var-distribution-relative |
+              Join-String -Separator "`n"
+          ).Trim() -ChildPath 'package.json') -Raw -Encoding 'UTF8NoBOM') -Depth 100
+          [String]$PackageName = $Manifest.name
+          [String]$PackageVersion = $Manifest.version
+          Try {
+            deno task codeberg-npm-publish
+          }
+          Catch { }
+          Finally {
+            [Boolean]$PublishIsSuccess = $LASTEXITCODE -eq 0
+            $LASTEXITCODE = 0
+          }
+          If ($PublishIsSuccess) {
             Try {
-              [SemVer]$VersionCurrent = [SemVer]::Parse($Env:CDV_NPM_PACKAGE_VERSION)
+              [SemVer]$VersionCurrent = [SemVer]::Parse($PackageVersion)
               [SemVer[]]$VersionsPublished = ConvertFrom-Json -InputObject (
-                npm view $Env:CDV_NPM_PACKAGE_NAME versions --json |
+                npm view $PackageName versions --json |
                   Join-String -Separator "`n"
               ) -Depth 100 |
                 ForEach-Object -Process {
@@ -264,14 +257,207 @@ jobs:
                 $VersionsStable |
                   Select-Object -Last 1
               )) {
-                npm dist-tag add "$($Env:CDV_NPM_PACKAGE_NAME)@$($Env:CDV_NPM_PACKAGE_VERSION)" latest
+                npm dist-tag add "$($PackageName)@$($PackageVersion)" latest
+              }
+            }
+            Catch {
+              $LASTEXITCODE = 0
+            }
+          }
+          Try {
+            npm --global config delete "//$($RegistryEndpoint)/:_authToken"
+            npm --global config delete registry
+          }
+          Catch {
+            $LASTEXITCODE = 0
+          }
+          $LASTEXITCODE = $PublishIsSuccess ? 0 : 1
+      - name: "Publish Package To GitHub NPM"
+        if: "${{!cancelled() && (steps.build-general.outcome == 'success' || steps.build-general.outcome == 'skip') && env.CDV_GITHUB_NPM_PUBLISH == 'true'}}"
+        shell: "pwsh"
+        env:
+          CDV_GITHUB_NPM_TOKEN: "${{secrets.GITHUB_TOKEN}}"
+        run: |-
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $True
+          If ($Env:CDV_GITHUB_NPM_BUILD -ieq 'true') {
+            deno task github-npm-build
+          }
+          [String]$RegistryEndpoint = 'npm.pkg.github.com'
+          npm --global config set registry "https://$($RegistryEndpoint)/"
+          npm --global config set "//$($RegistryEndpoint)/:_authToken" $Env:CDV_GITHUB_NPM_TOKEN
+          [PSCustomObject]$Manifest = ConvertFrom-Json -InputObject (Get-Content -LiteralPath (Join-Path -Path (
+            deno task github-npm-var-distribution-relative |
+              Join-String -Separator "`n"
+          ).Trim() -ChildPath 'package.json') -Raw -Encoding 'UTF8NoBOM') -Depth 100
+          [String]$PackageName = $Manifest.name
+          [String]$PackageVersion = $Manifest.version
+          Try {
+            deno task github-npm-publish
+          }
+          Catch { }
+          Finally {
+            [Boolean]$PublishIsSuccess = $LASTEXITCODE -eq 0
+            $LASTEXITCODE = 0
+          }
+          If ($PublishIsSuccess) {
+            Try {
+              [SemVer]$VersionCurrent = [SemVer]::Parse($PackageVersion)
+              [SemVer[]]$VersionsPublished = ConvertFrom-Json -InputObject (
+                npm view $PackageName versions --json |
+                  Join-String -Separator "`n"
+              ) -Depth 100 |
+                ForEach-Object -Process {
+                  [SemVer]::Parse($_)
+                }
+              [SemVer[]]$VersionsStable = (@($VersionCurrent) + $VersionsPublished) |
+                Where-Object -FilterScript {
+                  $Null -ieq $_.PreReleaseLabel
+                } |
+                Get-Unique |
+                Sort-Object
+              If ($Null -ieq $VersionCurrent.PreReleaseLabel -and $VersionCurrent -ge (
+                $VersionsStable |
+                  Select-Object -Last 1
+              )) {
+                npm dist-tag add "$($PackageName)@$($PackageVersion)" latest
+              }
+            }
+            Catch {
+              $LASTEXITCODE = 0
+            }
+          }
+          Try {
+            npm --global config delete "//$($RegistryEndpoint)/:_authToken"
+            npm --global config delete registry
+          }
+          Catch {
+            $LASTEXITCODE = 0
+          }
+          $LASTEXITCODE = $PublishIsSuccess ? 0 : 1
+      - name: "Publish Package To KaKi87 NPM"
+        if: "${{!cancelled() && (steps.build-general.outcome == 'success' || steps.build-general.outcome == 'skip') && env.CDV_KAKI87_NPM_PUBLISH == 'true'}}"
+        shell: "pwsh"
+        env:
+          CDV_KAKI87_NPM_TOKEN: "${{secrets.KAKI87_NPM_TOKEN}}"
+        run: |-
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $True
+          If ($Env:CDV_KAKI87_NPM_BUILD -ieq 'true') {
+            deno task kaki87-npm-build
+          }
+          [String]$RegistryEndpoint = 'git.kaki87.net/api/packages/hugoalh/npm'
+          npm --global config set registry "https://$($RegistryEndpoint)/"
+          npm --global config set "//$($RegistryEndpoint)/:_authToken" $Env:CDV_KAKI87_NPM_TOKEN
+          [PSCustomObject]$Manifest = ConvertFrom-Json -InputObject (Get-Content -LiteralPath (Join-Path -Path (
+            deno task kaki87-npm-var-distribution-relative |
+              Join-String -Separator "`n"
+          ).Trim() -ChildPath 'package.json') -Raw -Encoding 'UTF8NoBOM') -Depth 100
+          [String]$PackageName = $Manifest.name
+          [String]$PackageVersion = $Manifest.version
+          Try {
+            deno task kaki87-npm-publish
+          }
+          Catch { }
+          Finally {
+            [Boolean]$PublishIsSuccess = $LASTEXITCODE -eq 0
+            $LASTEXITCODE = 0
+          }
+          If ($PublishIsSuccess) {
+            Try {
+              [SemVer]$VersionCurrent = [SemVer]::Parse($PackageVersion)
+              [SemVer[]]$VersionsPublished = ConvertFrom-Json -InputObject (
+                npm view $PackageName versions --json |
+                  Join-String -Separator "`n"
+              ) -Depth 100 |
+                ForEach-Object -Process {
+                  [SemVer]::Parse($_)
+                }
+              [SemVer[]]$VersionsStable = (@($VersionCurrent) + $VersionsPublished) |
+                Where-Object -FilterScript {
+                  $Null -ieq $_.PreReleaseLabel
+                } |
+                Get-Unique |
+                Sort-Object
+              If ($Null -ieq $VersionCurrent.PreReleaseLabel -and $VersionCurrent -ge (
+                $VersionsStable |
+                  Select-Object -Last 1
+              )) {
+                npm dist-tag add "$($PackageName)@$($PackageVersion)" latest
+              }
+            }
+            Catch {
+              $LASTEXITCODE = 0
+            }
+          }
+          Try {
+            npm --global config delete "//$($RegistryEndpoint)/:_authToken"
+            npm --global config delete registry
+          }
+          Catch {
+            $LASTEXITCODE = 0
+          }
+          $LASTEXITCODE = $PublishIsSuccess ? 0 : 1
+      - name: "Publish Package To NPM"
+        if: "${{!cancelled() && (steps.build-general.outcome == 'success' || steps.build-general.outcome == 'skip') && env.CDV_NPM_PUBLISH == 'true'}}"
+        shell: "pwsh"
+        env:
+          CDV_NPM_TOKEN: "${{secrets.NPM_TOKEN}}"
+        run: |-
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $True
+          If ($Env:CDV_NPM_BUILD -ieq 'true') {
+            deno task npm-build
+          }
+          [String]$RegistryEndpoint = 'registry.npmjs.org'
+          npm --global config set registry "https://$($RegistryEndpoint)/"
+          npm --global config set "//$($RegistryEndpoint)/:_authToken" $Env:CDV_NPM_TOKEN
+          npm --global config set provenance true
+          [PSCustomObject]$Manifest = ConvertFrom-Json -InputObject (Get-Content -LiteralPath (Join-Path -Path (
+            deno task npm-var-distribution-relative |
+              Join-String -Separator "`n"
+          ).Trim() -ChildPath 'package.json') -Raw -Encoding 'UTF8NoBOM') -Depth 100
+          [String]$PackageName = $Manifest.name
+          [String]$PackageVersion = $Manifest.version
+          Try {
+            deno task npm-publish
+          }
+          Catch { }
+          Finally {
+            [Boolean]$PublishIsSuccess = $LASTEXITCODE -eq 0
+          }
+          If ($PublishIsSuccess) {
+            Try {
+              [SemVer]$VersionCurrent = [SemVer]::Parse($PackageVersion)
+              [SemVer[]]$VersionsPublished = ConvertFrom-Json -InputObject (
+                npm view $PackageName versions --json |
+                  Join-String -Separator "`n"
+              ) -Depth 100 |
+                ForEach-Object -Process {
+                  [SemVer]::Parse($_)
+                }
+              [SemVer[]]$VersionsStable = (@($VersionCurrent) + $VersionsPublished) |
+                Where-Object -FilterScript {
+                  $Null -ieq $_.PreReleaseLabel
+                } |
+                Get-Unique |
+                Sort-Object
+              If ($Null -ieq $VersionCurrent.PreReleaseLabel -and $VersionCurrent -ge (
+                $VersionsStable |
+                  Select-Object -Last 1
+              )) {
+                npm dist-tag add "$($PackageName)@$($PackageVersion)" latest
               }
             }
             Catch { }
           }
-          npm --global config delete provenance
-          npm --global config delete //registry.npmjs.org/:_authToken
-          npm --global config delete registry
+          Try {
+            npm --global config delete provenance
+            npm --global config delete "//$($RegistryEndpoint)/:_authToken"
+            npm --global config delete registry
+          }
+          Catch { }
+          $LASTEXITCODE = $PublishIsSuccess ? 0 : 1
       - name: "Flush Cache"
         if: "${{!cancelled()}}"
         shell: "pwsh"

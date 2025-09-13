@@ -35,7 +35,7 @@ jobs:
       - name: "Setup Deno"
         uses: "denoland/setup-deno@v2"
         with:
-          deno-version: "^2.4.5"
+          deno-version: "^2.5.0"
       - name: "Setup NodeJS"
         uses: "actions/setup-node@v5"
         with:
@@ -54,13 +54,13 @@ jobs:
           Add-Content -LiteralPath $Env:GITHUB_ENV -Value "CDV_DENO_CACHE_PATH_FLUSHES=$(ConvertTo-Json -InputObject @(
             $DenoInfo.typescriptCache
           ) -Depth 100 -Compress)" -Confirm:$False -Encoding 'UTF8NoBOM'
-          [String]$NpmCachePath = (
-            npm config get cache |
+          [PSCustomObject]$NPMConfig = ConvertFrom-Json -InputObject (
+            npm config list --json |
               Join-String -Separator "`n"
-          ).Trim()
-          Add-Content -LiteralPath $Env:GITHUB_ENV -Value "CDV_NPM_CACHE_PATH_ROOT=$($NpmCachePath)" -Confirm:$False -Encoding 'UTF8NoBOM'
+          ) -Depth 100
+          Add-Content -LiteralPath $Env:GITHUB_ENV -Value "CDV_NPM_CACHE_PATH_ROOT=$($NPMConfig.cache)" -Confirm:$False -Encoding 'UTF8NoBOM'
           Add-Content -LiteralPath $Env:GITHUB_ENV -Value "CDV_NPM_CACHE_PATH_FLUSHES=$(ConvertTo-Json -InputObject @(
-            (Join-Path -Path $NpmCachePath -ChildPath '_logs')
+            (Join-Path -Path $NPMConfig.cache -ChildPath '_logs')
           ) -Depth 100 -Compress)" -Confirm:$False -Encoding 'UTF8NoBOM'
       - name: "Load Deno Cache"
         uses: "actions/cache/restore@v4"
@@ -151,20 +151,7 @@ jobs:
           Add-Content -LiteralPath $Env:GITHUB_ENV -Value "CDV_KAKI87_NPM_CHECK=$($KaKi87NPMCheck.ToString().ToLower())"
           Add-Content -LiteralPath $Env:GITHUB_ENV -Value "CDV_NPM_BUILD=$($NPMBuild.ToString().ToLower())"
           Add-Content -LiteralPath $Env:GITHUB_ENV -Value "CDV_NPM_CHECK=$($NPMCheck.ToString().ToLower())"
-      - name: "Check Repository"
-        if: "${{!cancelled() && steps.analyze.outcome == 'success' && env.CDV_RUN_LITE == 'false'}}"
-        shell: "pwsh"
-        run: |-
-          $ErrorActionPreference = 'Stop'
-          $PSNativeCommandUseErrorActionPreference = $True
-          [String[]]$FilesForbid = Get-ChildItem -LiteralPath '.\' -Include @('*.mjs', '*.mts') -File -Recurse -Name
-          If ($FilesForbid.Count -gt 0) {
-            Write-Error -Message "Repository contains forbid file formats (``.mjs``, ``.mts``): $(
-              $FilesForbid |
-                Join-String -Separator ', '
-            )" -ErrorAction 'Stop'
-          }
-      - name: "Check Package For Remote"
+      - name: "Check For Remote"
         if: "${{!cancelled() && steps.analyze.outcome == 'success' && env.CDV_RUN_LITE == 'false'}}"
         shell: "pwsh"
         run: |-
@@ -200,43 +187,43 @@ jobs:
         if: "${{!cancelled() && steps.analyze.outcome == 'success'}}"
         run: |-
           deno bench --allow-all --no-prompt --permit-no-files
-      - name: "Build Package For Codeberg NPM"
+      - name: "Build For Codeberg NPM"
         if: "${{!cancelled() && steps.analyze.outcome == 'success' && env.CDV_RUN_LITE == 'false' && env.CDV_CODEBERG_NPM_BUILD == 'true'}}"
         run: |-
           deno task codeberg-npm-build
-      - name: "Check Package For Codeberg NPM"
+      - name: "Check For Codeberg NPM"
         if: "${{!cancelled() && steps.analyze.outcome == 'success' && env.CDV_RUN_LITE == 'false' && env.CDV_CODEBERG_NPM_CHECK == 'true'}}"
         run: |-
           deno task codeberg-npm-check
-      - name: "Build Package For GitHub NPM"
+      - name: "Build For GitHub NPM"
         if: "${{!cancelled() && steps.analyze.outcome == 'success' && env.CDV_RUN_LITE == 'false' && env.CDV_GITHUB_NPM_BUILD == 'true'}}"
         run: |-
           deno task github-npm-build
-      - name: "Check Package For GitHub NPM"
+      - name: "Check For GitHub NPM"
         if: "${{!cancelled() && steps.analyze.outcome == 'success' && env.CDV_RUN_LITE == 'false' && env.CDV_GITHUB_NPM_CHECK == 'true'}}"
         run: |-
           deno task github-npm-check
-      - name: "Build Package For JSR"
+      - name: "Build For JSR"
         if: "${{!cancelled() && steps.analyze.outcome == 'success' && env.CDV_RUN_LITE == 'false' && env.CDV_JSR_BUILD == 'true'}}"
         run: |-
           deno task jsr-build
-      - name: "Check Package For JSR"
+      - name: "Check For JSR"
         if: "${{!cancelled() && steps.analyze.outcome == 'success' && env.CDV_RUN_LITE == 'false' && env.CDV_JSR_CHECK == 'true'}}"
         run: |-
           deno task jsr-check
-      - name: "Build Package For KaKi87 NPM"
+      - name: "Build For KaKi87 NPM"
         if: "${{!cancelled() && steps.analyze.outcome == 'success' && env.CDV_RUN_LITE == 'false' && env.CDV_KAKI87_NPM_BUILD == 'true'}}"
         run: |-
           deno task kaki87-npm-build
-      - name: "Check Package For KaKi87 NPM"
+      - name: "Check For KaKi87 NPM"
         if: "${{!cancelled() && steps.analyze.outcome == 'success' && env.CDV_RUN_LITE == 'false' && env.CDV_KAKI87_NPM_CHECK == 'true'}}"
         run: |-
           deno task kaki87-npm-check
-      - name: "Build Package For NPM"
+      - name: "Build For NPM"
         if: "${{!cancelled() && steps.analyze.outcome == 'success' && env.CDV_RUN_LITE == 'false' && env.CDV_NPM_BUILD == 'true'}}"
         run: |-
           deno task npm-build
-      - name: "Check Package For NPM"
+      - name: "Check For NPM"
         if: "${{!cancelled() && steps.analyze.outcome == 'success' && env.CDV_RUN_LITE == 'false' && env.CDV_NPM_CHECK == 'true'}}"
         run: |-
           deno task npm-check

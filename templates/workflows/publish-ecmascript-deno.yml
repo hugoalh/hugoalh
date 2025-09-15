@@ -274,7 +274,7 @@ jobs:
         run: |-
           deno task build
       - name: "Publish To JSR"
-        if: "${{!cancelled() && (steps.build-general.outcome == 'success' || steps.build-general.outcome == 'skip') && env.CDV_JSR_PUBLISH == 'true'}}"
+        if: "${{!cancelled() && (steps.build-general.outcome == 'success' || steps.build-general.outcome == 'skipped') && env.CDV_JSR_PUBLISH == 'true'}}"
         shell: "pwsh"
         run: |-
           $ErrorActionPreference = 'Stop'
@@ -284,7 +284,7 @@ jobs:
           }
           deno task jsr-publish
       - name: "Publish To Codeberg NPM"
-        if: "${{!cancelled() && (steps.build-general.outcome == 'success' || steps.build-general.outcome == 'skip') && env.CDV_CODEBERG_NPM_PUBLISH == 'true'}}"
+        if: "${{!cancelled() && (steps.build-general.outcome == 'success' || steps.build-general.outcome == 'skipped') && env.CDV_CODEBERG_NPM_PUBLISH == 'true'}}"
         shell: "pwsh"
         env:
           CDV_CODEBERG_NPM_TOKEN: "${{secrets.CODEBERG_NPM_TOKEN}}"
@@ -297,7 +297,7 @@ jobs:
           Set-Location -LiteralPath (Join-Path -Path $Env:GITHUB_WORKSPACE -ChildPath $Env:CDV_CODEBERG_NPM_DISTRIBUTION_RELATIVE)
           . $Env:CDV_NPH_PATH -Endpoint 'codeberg.org/api/packages/hugoalh/npm' -Token $Env:CDV_CODEBERG_NPM_TOKEN
       - name: "Publish To GitHub NPM"
-        if: "${{!cancelled() && (steps.build-general.outcome == 'success' || steps.build-general.outcome == 'skip') && env.CDV_GITHUB_NPM_PUBLISH == 'true'}}"
+        if: "${{!cancelled() && (steps.build-general.outcome == 'success' || steps.build-general.outcome == 'skipped') && env.CDV_GITHUB_NPM_PUBLISH == 'true'}}"
         shell: "pwsh"
         env:
           CDV_GITHUB_NPM_TOKEN: "${{secrets.GITHUB_TOKEN}}"
@@ -310,7 +310,7 @@ jobs:
           Set-Location -LiteralPath (Join-Path -Path $Env:GITHUB_WORKSPACE -ChildPath $Env:CDV_GITHUB_NPM_DISTRIBUTION_RELATIVE)
           . $Env:CDV_NPH_PATH -Endpoint 'npm.pkg.github.com' -Token $Env:CDV_GITHUB_NPM_TOKEN
       - name: "Publish To KaKi87 NPM"
-        if: "${{!cancelled() && (steps.build-general.outcome == 'success' || steps.build-general.outcome == 'skip') && env.CDV_KAKI87_NPM_PUBLISH == 'true'}}"
+        if: "${{!cancelled() && (steps.build-general.outcome == 'success' || steps.build-general.outcome == 'skipped') && env.CDV_KAKI87_NPM_PUBLISH == 'true'}}"
         shell: "pwsh"
         env:
           CDV_KAKI87_NPM_TOKEN: "${{secrets.KAKI87_NPM_TOKEN}}"
@@ -323,7 +323,7 @@ jobs:
           Set-Location -LiteralPath (Join-Path -Path $Env:GITHUB_WORKSPACE -ChildPath $Env:CDV_KAKI87_NPM_DISTRIBUTION_RELATIVE)
           . $Env:CDV_NPH_PATH -Endpoint 'git.kaki87.net/api/packages/hugoalh/npm' -Token $Env:CDV_KAKI87_NPM_TOKEN
       - name: "Publish To NPM"
-        if: "${{!cancelled() && (steps.build-general.outcome == 'success' || steps.build-general.outcome == 'skip') && env.CDV_NPM_PUBLISH == 'true'}}"
+        if: "${{!cancelled() && (steps.build-general.outcome == 'success' || steps.build-general.outcome == 'skipped') && env.CDV_NPM_PUBLISH == 'true'}}"
         shell: "pwsh"
         env:
           CDV_NPM_TOKEN: "${{secrets.NPM_TOKEN}}"

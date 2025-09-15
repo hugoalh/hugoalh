@@ -204,69 +204,69 @@ jobs:
             [String]$NPHPath = Join-Path -Path $Env:RUNNER_TEMP -ChildPath 'nodejs-publish-helper.ps1'
             Add-Content -LiteralPath $Env:GITHUB_ENV -Value "CDV_NPH_PATH=$NPHPath"
             Set-Content -LiteralPath $NPHPath -Value @'
-            Param (
-              [Parameter(Mandatory = $True, Position = 0)][String]$Endpoint,
-              [Parameter(Mandatory = $True, Position = 1)][String]$Token,
-              [String]$PublishTag = 'recent',
-              [Switch]$SupportProvenance
-            )
-            $ErrorActionPreference = 'Stop'
-            $PSNativeCommandUseErrorActionPreference = $True
-            npm --global config set registry "https://$($Endpoint)/"
-            npm --global config set "//$($Endpoint)/:_authToken" $Token
-            If ($SupportProvenance.IsPresent) {
-              npm --global config set provenance true
-            }
-            [PSCustomObject]$Manifest = ConvertFrom-Json -InputObject (Get-Content -LiteralPath '.\package.json' -Raw -Encoding 'UTF8NoBOM') -Depth 100
+          Param (
+            [Parameter(Mandatory = $True, Position = 0)][String]$Endpoint,
+            [Parameter(Mandatory = $True, Position = 1)][String]$Token,
+            [String]$PublishTag = 'recent',
+            [Switch]$SupportProvenance
+          )
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $True
+          npm --global config set registry "https://$($Endpoint)/"
+          npm --global config set "//$($Endpoint)/:_authToken" $Token
+          If ($SupportProvenance.IsPresent) {
+            npm --global config set provenance true
+          }
+          [PSCustomObject]$Manifest = ConvertFrom-Json -InputObject (Get-Content -LiteralPath '.\package.json' -Raw -Encoding 'UTF8NoBOM') -Depth 100
+          Try {
+            npm publish --tag $PublishTag
+          }
+          Catch { }
+          Finally {
+            [Boolean]$PublishIsSuccess = $LASTEXITCODE -eq 0
+            $LASTEXITCODE = 0
+          }
+          If ($PublishIsSuccess) {
             Try {
-              npm publish --tag $PublishTag
-            }
-            Catch { }
-            Finally {
-              [Boolean]$PublishIsSuccess = $LASTEXITCODE -eq 0
-              $LASTEXITCODE = 0
-            }
-            If ($PublishIsSuccess) {
-              Try {
-                [SemVer]$PackageVersion = [SemVer]::Parse($Manifest.version)
-                [SemVer[]]$Versions = @($PackageVersion) + (
-                  ConvertFrom-Json -InputObject (
-                    npm view $Manifest.name versions --json |
-                      Join-String -Separator "`n"
-                  ) -Depth 100 |
-                  ForEach-Object -Process {
-                    [SemVer]::Parse($_)
-                  }
-                )
-                [SemVer[]]$VersionsStable = $Versions |
-                  Where-Object -FilterScript {
-                    $Null -ieq $_.PreReleaseLabel
-                  } |
-                  Get-Unique |
-                  Sort-Object
-                If ($Null -ieq $PackageVersion.PreReleaseLabel -and $PackageVersion -ge (
-                  $VersionsStable |
-                    Select-Object -Last 1
-                )) {
-                  npm dist-tag add "$($Manifest.name)@$($Manifest.version)" latest
+              [SemVer]$PackageVersion = [SemVer]::Parse($Manifest.version)
+              [SemVer[]]$Versions = @($PackageVersion) + (
+                ConvertFrom-Json -InputObject (
+                  npm view $Manifest.name versions --json |
+                    Join-String -Separator "`n"
+                ) -Depth 100 |
+                ForEach-Object -Process {
+                  [SemVer]::Parse($_)
                 }
+              )
+              [SemVer[]]$VersionsStable = $Versions |
+                Where-Object -FilterScript {
+                  $Null -ieq $_.PreReleaseLabel
+                } |
+                Get-Unique |
+                Sort-Object
+              If ($Null -ieq $PackageVersion.PreReleaseLabel -and $PackageVersion -ge (
+                $VersionsStable |
+                  Select-Object -Last 1
+              )) {
+                npm dist-tag add "$($Manifest.name)@$($Manifest.version)" latest
               }
-              Catch {
-                $LASTEXITCODE = 0
-              }
-            }
-            Try {
-              If ($SupportProvenance.IsPresent) {
-                npm --global config set provenance true
-              }
-              npm --global config delete "//$($Endpoint)/:_authToken"
-              npm --global config delete registry
             }
             Catch {
               $LASTEXITCODE = 0
             }
-            $LASTEXITCODE = $PublishIsSuccess ? 0 : 1
-            '@ -Encoding 'UTF8NoBOM'
+          }
+          Try {
+            If ($SupportProvenance.IsPresent) {
+              npm --global config set provenance true
+            }
+            npm --global config delete "//$($Endpoint)/:_authToken"
+            npm --global config delete registry
+          }
+          Catch {
+            $LASTEXITCODE = 0
+          }
+          $LASTEXITCODE = $PublishIsSuccess ? 0 : 1
+          '@ -Encoding 'UTF8NoBOM'
           }
       - name: "Build Repository"
         id: "build-general"

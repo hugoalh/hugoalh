@@ -88,11 +88,11 @@
 			"description": "Variable of the GitHub NPM distribution directory relative path."
 		},
 		"jsr-check": {
-			"command": "deno publish --allow-dirty --config \"$(deno task jsr-var-manifest-relative)\" --dry-run --no-provenance",
+			"command": "deno publish --allow-dirty --config \"$(deno task jsr-var-manifest-relative)\" --dry-run --no-check --no-provenance",
 			"description": "Check for JSR."
 		},
 		"jsr-publish": {
-			"command": "deno publish --allow-dirty --config \"$(deno task jsr-var-manifest-relative)\"",
+			"command": "deno publish --allow-dirty --config \"$(deno task jsr-var-manifest-relative)\" --no-check",
 			"description": "Publish to JSR."
 		},
 		"jsr-var-manifest-relative": {

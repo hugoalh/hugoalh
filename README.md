@@ -35,10 +35,28 @@
   </div>
 </details>
 <details open>
-  <summary><b>🚪 Portals</b></summary>
+  <summary><b>🕸️ Networks</b></summary>
   <div align="center">
 
+[![Bluesky: @hugoalh.bsky.social](./assets/badges/bluesky.svg "Bluesky: @hugoalh.bsky.social")](https://bsky.app/profile/hugoalh.bsky.social)
+[![Crowdin: @hugoalh](./assets/badges/crowdin.svg "Crowdin: @hugoalh")](https://crowdin.com/profile/hugoalh)
+[![Discord: @hugoalh](./assets/badges/discord.svg "Discord: @hugoalh")](https://discord.com/)
 [![Gravatar: @hugoalh](./assets/badges/gravatar.svg "Gravatar: @hugoalh")](https://gravatar.com/hugoalh)
+[![Imgur: @hugoalh](./assets/badges/imgur.svg "Imgur: @hugoalh")](https://imgur.com/user/hugoalh)
+[![Mastodon: @hugoalh@mastodon.social](./assets/badges/mastodon.svg "Mastodon: @hugoalh@mastodon.social")](https://mastodon.social/@hugoalh)
+[![Reddit: /u/hugoalh](./assets/badges/reddit.svg "Reddit: /u/hugoalh")](https://www.reddit.com/user/hugoalh)
+[![Roblox: @hugoalh](./assets/badges/roblox.svg "Roblox: @hugoalh")](https://www.roblox.com/users/194932593/profile)
+[![SoundCloud: @hugoalh](./assets/badges/soundcloud.svg "SoundCloud: @hugoalh")](https://soundcloud.com/hugoalh)
+[![Spotify: @hugoalh](./assets/badges/spotify.svg "Spotify: @hugoalh")](https://open.spotify.com/user/hugoalh)
+[![Steam: @hugoalh](./assets/badges/steam.svg "Steam: @hugoalh")](https://steamcommunity.com/id/hugoalh)
+[<kbd>Stoat `@hugoalh#5145`</kbd>](https://stoat.chat/)
+[![Telegram: @hugoalh](./assets/badges/telegram.svg "Telegram: @hugoalh")](https://t.me/hugoalh)
+[![Transifex: @hugoalh](./assets/badges/transifex.svg "Transifex: @hugoalh")](https://app.transifex.com/user/profile/hugoalh)
+[![Tumblr: @hugoalh](./assets/badges/tumblr.svg "Tumblr: @hugoalh")](https://hugoalh.tumblr.com)
+[![Twitch: @hugoalh](./assets/badges/twitch.svg "Twitch: @hugoalh")](https://www.twitch.tv/hugoalh)
+[![Vivaldi: @hugoalh](./assets/badges/vivaldi.svg "Vivaldi: @hugoalh")](https://social.vivaldi.net/@hugoalh)
+[![Weblate: @hugoalh](./assets/badges/weblate.svg "Weblate: @hugoalh")](https://hosted.weblate.org/user/hugoalh)
+[![YouTube: @hugoalh](./assets/badges/youtube.svg "YouTube: @hugoalh")](https://www.youtube.com/@hugoalh)
 
   </div>
 </details>
@@ -50,37 +68,4 @@
 - [Universal Coding Guide](./guides/universal-coding.md)
 - [Universal Contributing Guide](./guides/universal-contributing.md)
 
-</details>
-<details open>
-  <summary><b>👥 Socials</b></summary>
-  <div align="center">
-
-[![Bluesky: @hugoalh.bsky.social](./assets/badges/bluesky.svg "Bluesky: @hugoalh.bsky.social")](https://bsky.app/profile/hugoalh.bsky.social)
-![Discord: @hugoalh](./assets/badges/discord.svg "Discord: @hugoalh")
-[![Imgur: @hugoalh](./assets/badges/imgur.svg "Imgur: @hugoalh")](https://imgur.com/user/hugoalh)
-[![Mastodon: @hugoalh@mastodon.social](./assets/badges/mastodon.svg "Mastodon: @hugoalh@mastodon.social")](https://mastodon.social/@hugoalh)
-[![Reddit: /u/hugoalh](./assets/badges/reddit.svg "Reddit: /u/hugoalh")](https://www.reddit.com/user/hugoalh)
-[![Roblox: @hugoalh](./assets/badges/roblox.svg "Roblox: @hugoalh")](https://www.roblox.com/users/194932593/profile)
-[![SoundCloud: @hugoalh](./assets/badges/soundcloud.svg "SoundCloud: @hugoalh")](https://soundcloud.com/hugoalh)
-[![Spotify: @hugoalh](./assets/badges/spotify.svg "Spotify: @hugoalh")](https://open.spotify.com/user/hugoalh)
-[![Steam: @hugoalh](./assets/badges/steam.svg "Steam: @hugoalh")](https://steamcommunity.com/id/hugoalh)
-<kbd>Stoat `@hugoalh#5145`</kbd>
-[![Telegram: @hugoalh](./assets/badges/telegram.svg "Telegram: @hugoalh")](https://t.me/hugoalh)
-[![Tumblr: @hugoalh](./assets/badges/tumblr.svg "Tumblr: @hugoalh")](https://hugoalh.tumblr.com)
-[![Twitch: @hugoalh](./assets/badges/twitch.svg "Twitch: @hugoalh")](https://www.twitch.tv/hugoalh)
-[![Vivaldi Social: @hugoalh](./assets/badges/vivaldi-social.svg "Vivaldi Social: @hugoalh")](https://social.vivaldi.net/@hugoalh)
-[![YouTube: @hugoalh](./assets/badges/youtube.svg "YouTube: @hugoalh")](https://www.youtube.com/@hugoalh)
-
-  </div>
-</details>
-<details open>
-  <summary><b>🦜 Translation Platforms</b></summary>
-  <div align="center">
-
-[![Codeberg Translate: @hugoalh](./assets/badges/codeberg-translate.svg "Codeberg Translate: @hugoalh")](https://translate.codeberg.org/user/hugoalh)
-[![Crowdin: @hugoalh](./assets/badges/crowdin.svg "Crowdin: @hugoalh")](https://crowdin.com/profile/hugoalh)
-[![Transifex: @hugoalh](./assets/badges/transifex.svg "Transifex: @hugoalh")](https://app.transifex.com/user/profile/hugoalh)
-[![Weblate: @hugoalh](./assets/badges/weblate.svg "Weblate: @hugoalh")](https://hosted.weblate.org/user/hugoalh)
-
-  </div>
 </details>

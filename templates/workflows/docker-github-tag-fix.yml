@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: "Fix GitHub Container Tag"
+name: "Docker GitHub Tag Fix"
 on:
   workflow_dispatch:
     inputs:

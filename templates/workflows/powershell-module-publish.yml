@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+name: "PowerShell Module Publish"
+on:
+  release:
+    types:
+      - "published"
+  workflow_dispatch:
+jobs:
+  main:
+    permissions:
+      contents: "read"
+    runs-on: "windows-latest"
+    env:
+      CDV_BUILDER: ""
+      CDV_POWERSHELLGALLERY_TOKEN: "${{secrets.POWERSHELLGALLERY_TOKEN}}"
+      CDV_ROOT: ".\\"
+    steps:
+      - name: "Checkout Repository"
+        uses: "actions/checkout@v6"
+      - name: "Setup PowerShell Environment"
+        shell: "pwsh"
+        run: |-
+          If ((Get-PSRepository -Name 'PSGallery').InstallationPolicy -ine 'Trusted') {
+            Set-PSRepository -Name 'PSGallery' -InstallationPolicy 'Trusted' -Verbose
+          }
+      - name: "Build Repository"
+        if: "${{env.CDV_BUILDER != ''}}"
+        shell: "pwsh"
+        run: |-
+          . ".\$($Env:CDV_BUILDER)"
+      - name: "Publish Package To PowerShell Gallery"
+        shell: "pwsh"
+        run: |-
+          Publish-Module -Path $Env:CDV_ROOT -NugetAPIKey $Env:CDV_POWERSHELLGALLERY_TOKEN -Force -Verbose

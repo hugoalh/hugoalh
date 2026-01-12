@@ -1,6 +1,6 @@
 # BSD Zero Clause License
 
-Copyright © 2025 hugoalh
+Copyright © 2026 hugoalh
 
 Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted.
 

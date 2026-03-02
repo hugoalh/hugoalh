@@ -26,7 +26,9 @@
 [![Bluesky: @hugoalh.bsky.social](./assets/icons/bluesky.svg "Bluesky: @hugoalh.bsky.social")](https://bsky.app/profile/hugoalh.bsky.social)
 [![Codeberg: @hugoalh](./assets/icons/codeberg.svg "Codeberg: @hugoalh")](https://codeberg.org/hugoalh)
 [![Crowdin: @hugoalh](./assets/icons/crowdin.svg "Crowdin: @hugoalh")](https://crowdin.com/profile/hugoalh)
-![Discord: @hugoalh](./assets/icons/discord.svg "Discord: @hugoalh")
+<kbd>
+![Discord: @hugoalh](./assets/icons/discord.svg "Discord: @hugoalh") @hugoalh
+</kbd>
 [![GitHub: @hugoalh](./assets/icons/github.svg "GitHub: @hugoalh")](https://github.com/hugoalh)
 [![Gravatar: @hugoalh](./assets/icons/gravatar.svg "Gravatar: @hugoalh")](https://gravatar.com/hugoalh)
 [![Imgur: @hugoalh](./assets/icons/imgur.svg "Imgur: @hugoalh")](https://imgur.com/user/hugoalh)
@@ -40,7 +42,9 @@
 [![SoundCloud: @hugoalh](./assets/icons/soundcloud.svg "SoundCloud: @hugoalh")](https://soundcloud.com/hugoalh)
 [![Spotify: @hugoalh](./assets/icons/spotify.svg "Spotify: @hugoalh")](https://open.spotify.com/user/hugoalh)
 [![Steam: @hugoalh](./assets/icons/steam.svg "Steam: @hugoalh")](https://steamcommunity.com/id/hugoalh)
-![Stoat: @hugoalh#5145](./assets/icons/stoat.svg "Stoat: @hugoalh#5145")
+<kbd>
+![Stoat: @hugoalh#5145](./assets/icons/stoat.svg "Stoat: @hugoalh#5145") @hugoalh#5145
+</kbd>
 [![Telegram: @hugoalh](./assets/icons/telegram.svg "Telegram: @hugoalh")](https://t.me/hugoalh)
 [![Transifex: @hugoalh](./assets/icons/transifex.svg "Transifex: @hugoalh")](https://app.transifex.com/user/profile/hugoalh)
 [![Tumblr: @hugoalh](./assets/icons/tumblr.svg "Tumblr: @hugoalh")](https://hugoalh.tumblr.com)

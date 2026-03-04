@@ -26,9 +26,7 @@
 [![Bluesky: @hugoalh.bsky.social](./assets/icons/bluesky.svg "Bluesky: @hugoalh.bsky.social")](https://bsky.app/profile/hugoalh.bsky.social)
 [![Codeberg: @hugoalh](./assets/icons/codeberg.svg "Codeberg: @hugoalh")](https://codeberg.org/hugoalh)
 [![Crowdin: @hugoalh](./assets/icons/crowdin.svg "Crowdin: @hugoalh")](https://crowdin.com/profile/hugoalh)
-<kbd>
-![Discord: @hugoalh](./assets/icons/discord.svg "Discord: @hugoalh") @hugoalh
-</kbd>
+[![Discord: @hugoalh](./assets/icons/discord.svg "Discord: @hugoalh")](https://discord.com/users/478422899880099852)
 [![GitHub: @hugoalh](./assets/icons/github.svg "GitHub: @hugoalh")](https://github.com/hugoalh)
 [![Gravatar: @hugoalh](./assets/icons/gravatar.svg "Gravatar: @hugoalh")](https://gravatar.com/hugoalh)
 [![Imgur: @hugoalh](./assets/icons/imgur.svg "Imgur: @hugoalh")](https://imgur.com/user/hugoalh)

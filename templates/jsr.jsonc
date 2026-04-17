@@ -28,6 +28,7 @@
 			"**/test.tsx",
 			"_bench/**",
 			"_test/**",
+			".astro/**",
 			".forgejo/**",
 			".git/**",
 			".github/**",

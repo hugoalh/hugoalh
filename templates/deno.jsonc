@@ -75,7 +75,7 @@
 			"description": "Check for Codeberg NPM."
 		},
 		"npm-codeberg-publish": {
-			"command": "deno run --allow-all --no-prompt --quiet NPP --cleanup --cwd \"dist/npm-codeberg\" --ignore-ppv --provenance false --registry \"codeberg.org/api/packages/hugoalh/npm\"",
+			"command": "deno run --allow-all --no-prompt --quiet NPP --workspace \"dist/npm-codeberg\" --provenance false --registry \"codeberg.org/api/packages/hugoalh/npm\"",
 			"description": "Publish to Codeberg NPM."
 		},
 		"npm-github-build": {
@@ -87,7 +87,7 @@
 			"description": "Check for GitHub NPM."
 		},
 		"npm-github-publish": {
-			"command": "deno run --allow-all --no-prompt --quiet NPP --cleanup --cwd \"dist/npm-github\" --ignore-ppv --provenance false --registry \"npm.pkg.github.com\"",
+			"command": "deno run --allow-all --no-prompt --quiet NPP --workspace \"dist/npm-github\" --provenance false --registry \"npm.pkg.github.com\"",
 			"description": "Publish to GitHub NPM."
 		},
 		"npm-kaki87-build": {
@@ -99,7 +99,7 @@
 			"description": "Check for KaKi87 NPM."
 		},
 		"npm-kaki87-publish": {
-			"command": "deno run --allow-all --no-prompt --quiet NPP --cleanup --cwd \"dist/npm-kaki87\" --ignore-ppv --provenance false --registry \"git.kaki87.net/api/packages/hugoalh/npm\"",
+			"command": "deno run --allow-all --no-prompt --quiet NPP --workspace \"dist/npm-kaki87\" --provenance false --registry \"git.kaki87.net/api/packages/hugoalh/npm\"",
 			"description": "Publish to KaKi87 NPM."
 		},
 		"npm-npm-build": {
@@ -111,7 +111,7 @@
 			"description": "Check for NPM."
 		},
 		"npm-npm-publish": {
-			"command": "deno run --allow-all --no-prompt --quiet NPP --cleanup --cwd \"dist/npm-npm\" --ignore-ppv",
+			"command": "deno run --allow-all --no-prompt --quiet NPP --workspace \"dist/npm-npm\"",
 			"description": "Publish to NPM."
 		}
 	},

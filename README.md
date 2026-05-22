@@ -32,6 +32,7 @@
 [![Imgur: @hugoalh](./assets/icons/imgur.svg "Imgur: @hugoalh")](https://imgur.com/user/hugoalh)
 [![JSR: @hugoalh](./assets/icons/jsr.svg "JSR: @hugoalh")](https://jsr.io/@hugoalh)
 [![KaKi87: @hugoalh](./assets/icons/kaki87.svg "KaKi87: @hugoalh")](https://git.kaki87.net/hugoalh)
+[![Linktree: @hugoalh](./assets/icons/linktree.svg "Linktree: @hugoalh")](https://linktr.ee/hugoalh)
 [![Mastodon: @hugoalh@mastodon.social](./assets/icons/mastodon.svg "Mastodon: @hugoalh@mastodon.social")](https://mastodon.social/@hugoalh)
 [![NPM: @hugoalh](./assets/icons/npm.svg "NPM: @hugoalh")](https://www.npmjs.com/~hugoalh)
 [![PowerShell Gallery: @hugoalh](./assets/icons/powershell-gallery.svg "PowerShell Gallery: @hugoalh")](https://www.powershellgallery.com/profiles/hugoalh)

@@ -41,9 +41,7 @@
 [![SoundCloud: @hugoalh](./assets/icons/soundcloud.svg "SoundCloud: @hugoalh")](https://soundcloud.com/hugoalh)
 [![Spotify: @hugoalh](./assets/icons/spotify.svg "Spotify: @hugoalh")](https://open.spotify.com/user/hugoalh)
 [![Steam: @hugoalh](./assets/icons/steam.svg "Steam: @hugoalh")](https://steamcommunity.com/id/hugoalh)
-<kbd>
-![Stoat: @hugoalh#5145](./assets/icons/stoat.svg "Stoat: @hugoalh#5145") @hugoalh#5145
-</kbd>
+[![Stoat: @hugoalh#5145](./assets/icons/stoat.svg "Stoat: @hugoalh#5145")](https://stoat.chat/qr?v2Zmb3JtYXRqcnFyJHVzZXIkMGZhdmF0YXJ4KmFidk8yZlJ2VmpFelJiTUI2bnVpazVCY1dBQVhsVFAyeFhDQUZITFpkV2tkaXNwbGF5TmFtZXgaMDFKRFpSREQxWVo4NEhBOEVTVDJFNUdWWFRodXNlcm5hbWVnaHVnb2FsaG1kaXNjcmltaW5hdG9yZDUxNDViaWR4GjAxRkZINzczSFE3NkYzU0RLUTdSNDZSUTFa/w==)
 [![Telegram: @hugoalh](./assets/icons/telegram.svg "Telegram: @hugoalh")](https://t.me/hugoalh)
 [![Transifex: @hugoalh](./assets/icons/transifex.svg "Transifex: @hugoalh")](https://app.transifex.com/user/profile/hugoalh)
 [![Tumblr: @hugoalh](./assets/icons/tumblr.svg "Tumblr: @hugoalh")](https://hugoalh.tumblr.com)

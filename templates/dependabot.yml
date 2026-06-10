@@ -25,6 +25,18 @@ updates:
       separator: "/"
     cooldown:
       default-days: 1
+  - package-ecosystem: "deno"
+    directories:
+      - "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependency 📦"
+      - "deno"
+    pull-request-branch-name:
+      separator: "/"
+    cooldown:
+      default-days: 1
   - package-ecosystem: "docker"
     directories:
       - "/"

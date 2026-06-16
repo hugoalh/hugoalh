@@ -1,6 +1,6 @@
-# hugoalh Universal Coding Guide
+# HUGOALH Universal Coding Guide
 
-This document includes the universal coding guidelines over all of the hugoalh projects, and for all of the markups and programming languages.
+This document includes the universal coding guidelines over all of the HUGOALH projects, and for all of the markups and programming languages.
 
 All of the examples in this document are in TypeScript syntax, similar style should apply on other programming languages.
 

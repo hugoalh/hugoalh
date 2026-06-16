@@ -1,6 +1,6 @@
-# hugoalh Universal Contributing Guide
+# HUGOALH Universal Contributing Guide
 
-This document includes the universal [guidelines](#guideline) and [methods/ways](#how-to) to contribute over all of the hugoalh projects; However, some of the projects may have revises and take precedence over this document.
+This document includes the universal [guidelines](#guideline) and [methods/ways](#how-to) to contribute over all of the HUGOALH projects; However, some of the projects may have revises and take precedence over this document.
 
 > [!TIP]
 > - If you have any question, [create discussion](#create-discussion) at the project's repository.
@@ -58,7 +58,7 @@ To request new features, please [create issue](#create-issue).
 
 ### Coding
 
-Please visit the "[hugoalh Universal Coding Guide](./universal-coding.md)" for the details.
+Please visit the "[HUGOALH Universal Coding Guide](./universal-coding.md)" for the details.
 
 ### Create Discussion
 
@@ -94,7 +94,7 @@ Please visit the "[hugoalh Universal Coding Guide](./universal-coding.md)" for t
 
 To report security vulnerabilities, please create security vulnerability report with one of these ways:
 
-- **["hugoalh Project Security Vulnerability Report" form](https://tally.so/r/Zjv8M5):** For any contributor.
+- **["HUGOALH Project Security Vulnerability Report" form](https://tally.so/r/Zjv8M5):** For any contributor.
 - **GitHub Repository Security Advisory:** For GitHub contributor. Please visit the "[GitHub Docs - Privately reporting a security vulnerability](https://docs.github.com/en/code-security/how-tos/report-and-fix-vulnerabilities/privately-reporting-a-security-vulnerability)" for the details and steps.
 
 > [!CAUTION]

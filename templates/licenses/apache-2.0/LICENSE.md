@@ -4,7 +4,7 @@
 >
 > https://www.apache.org/licenses
 
-Copyright © 2026 hugoalh
+Copyright © 2026 HUGOALH
 
 ## TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 

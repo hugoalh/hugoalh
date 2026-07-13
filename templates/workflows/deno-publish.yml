@@ -141,8 +141,6 @@ jobs:
           | NPM KaKi87 | $(($Null -ine $Config.tasks.'npm-kaki87-build') ? '✔️' : '❌') | $($NPMKaKi87Publish ? '✔️' : '❌') | $($NPMKaKi87Dispatch ? '✔️' : '❌') |
           | NPM NPM | $(($Null -ine $Config.tasks.'npm-npm-build') ? '✔️' : '❌') | $($NPMNPMPublish ? '✔️' : '❌') | $($NPMNPMDispatch ? '✔️' : '❌') |
           "@
-          }
-          "@
           Add-Content -LiteralPath $Env:GITHUB_ENV -Value "CDV_DEPLOY_JSR=$($JSRDispatch.ToString().ToLower())"
           Add-Content -LiteralPath $Env:GITHUB_ENV -Value "CDV_DEPLOY_NPM_CODEBERG=$($NPMCodebergDispatch.ToString().ToLower())"
           Add-Content -LiteralPath $Env:GITHUB_ENV -Value "CDV_DEPLOY_NPM_GITHUB=$($NPMGitHubDispatch.ToString().ToLower())"

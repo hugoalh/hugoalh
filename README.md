@@ -2,6 +2,7 @@
   <summary><b>💬 Languages</b></summary>
   <div align="center">
 
+[![Bun](./assets/icons/bun.svg "Bun")](https://bun.sh/)
 ![CSS 3](./assets/icons/css-3.svg "CSS 3")
 [![Dart](./assets/icons/dart.svg "Dart")](https://dart.dev/)
 [![Deno](./assets/icons/deno.svg "Deno")](https://deno.land/)

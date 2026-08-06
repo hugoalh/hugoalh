@@ -3,8 +3,10 @@
   <div align="center">
 
 ![CSS 3](./assets/icons/css-3.svg "CSS 3")
+[![Dart](./assets/icons/dart.svg "Dart")](https://dart.dev/)
 [![Deno](./assets/icons/deno.svg "Deno")](https://deno.land/)
 [![Docker](./assets/icons/docker.svg "Docker")](https://www.docker.com/)
+[![Flutter](./assets/icons/flutter.svg "Flutter")](https://flutter.dev/)
 ![GitHub Actions](./assets/icons/github-actions.svg "GitHub Actions")
 ![HTML 5](./assets/icons/html-5.svg "HTML 5")
 ![JavaScript](./assets/icons/javascript.svg "JavaScript")

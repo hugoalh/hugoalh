@@ -12,4 +12,4 @@ updates:
     pull-request-branch-name:
       separator: "/"
     cooldown:
-      default-days: 1
+      default-days: 7

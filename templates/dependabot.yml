@@ -12,7 +12,7 @@ updates:
     pull-request-branch-name:
       separator: "/"
     cooldown:
-      default-days: 1
+      default-days: 7
   - package-ecosystem: "cargo"
     directories:
       - "/"
@@ -24,7 +24,7 @@ updates:
     pull-request-branch-name:
       separator: "/"
     cooldown:
-      default-days: 1
+      default-days: 7
   - package-ecosystem: "deno"
     directories:
       - "/"
@@ -36,7 +36,7 @@ updates:
     pull-request-branch-name:
       separator: "/"
     cooldown:
-      default-days: 1
+      default-days: 7
   - package-ecosystem: "docker"
     directories:
       - "/"
@@ -58,7 +58,7 @@ updates:
     pull-request-branch-name:
       separator: "/"
     cooldown:
-      default-days: 1
+      default-days: 7
   - package-ecosystem: "npm"
     directories:
       - "/"
@@ -71,4 +71,4 @@ updates:
       separator: "/"
     versioning-strategy: "increase-if-necessary"
     cooldown:
-      default-days: 1
+      default-days: 7

@@ -1,5 +1,16 @@
 {
 	"$schema": "https://raw.githubusercontent.com/denoland/deno/main/cli/schemas/config-file.v1.json",
+	"license": "MIT",
+	"imports": {
+	},
+	"lock": false,
+	"minimumDependencyAge": {
+		"age": "P7D",
+		"exclude": [
+			"jsr:@hugoalh/*",
+			"npm:@hugoalh/*"
+		]
+	},
 	"publish": {
 		"exclude": [
 			"**/*_bench.js",
